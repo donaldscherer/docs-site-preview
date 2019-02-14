@@ -3,521 +3,521 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://docs.tealium.com/platforms/csharp/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/csharp/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/javascript/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/javascript/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/python/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/python/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/amp/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/amp/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/android-wear/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/android-wear/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/android/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/android/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/angular/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/angular/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/cordova/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/cordova/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/java/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/java/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/node/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/node/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/react-native/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/react-native/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/watchos/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/watchos/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/http-api/endpoint-spec/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/http-api/endpoint-spec/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/amp/install/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/amp/install/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/android-wear/install/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/android-wear/install/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/android/install/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/android/install/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/angular/install/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/angular/install/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/cordova/install/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/cordova/install/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/csharp/install/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/csharp/install/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/ios/install/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/ios/install/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/java/install/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/java/install/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/javascript/install/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/javascript/install/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/node/install/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/node/install/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/python/install/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/python/install/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/react-native/install/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/react-native/install/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/roku/install/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/roku/install/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/ruby/install/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/ruby/install/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/install/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/install/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/tvos/install/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/tvos/install/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/watchos/install/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/watchos/install/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/track/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/track/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/class-definitions/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/class-definitions/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/consent-manager/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/consent-manager/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/android/consent-manager/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/android/consent-manager/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/ios/consent-manager/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/ios/consent-manager/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/csharp/functions/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/csharp/functions/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/java/function-definitions/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/java/function-definitions/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/react-native/functions/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/react-native/functions/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/roku/functions/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/roku/functions/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/modules/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/modules/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/javascript/page-tracking/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/javascript/page-tracking/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/cordova/track/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/cordova/track/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/ios/data-layer-variables/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/ios/data-layer-variables/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/javascript/event-tracking/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/javascript/event-tracking/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/cordova/functions/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/cordova/functions/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/android/adid-module/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/android/adid-module/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/ios/lifecycle-tracking-module/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/ios/lifecycle-tracking-module/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/data-layer/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/data-layer/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/cordova/module-adid/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/cordova/module-adid/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/android/crash-reporter-module/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/android/crash-reporter-module/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/ios/optimizely-x-tracking-module/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/ios/optimizely-x-tracking-module/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/javascript/validate/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/javascript/validate/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/ios/migrate-from-4x/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/ios/migrate-from-4x/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/cordova/module-crash-reporter/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/cordova/module-crash-reporter/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/android/lifecycle-tracking-module/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/android/lifecycle-tracking-module/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/release-notes/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/release-notes/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/module-list/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/module-list/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/cordova/module-install-referrer/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/cordova/module-install-referrer/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/android/optimizely-x-tracking-module/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/android/optimizely-x-tracking-module/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/feature-comparison/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/feature-comparison/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/android/referrer-module/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/android/referrer-module/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/javascript/settings/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/javascript/settings/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/with-objective-c/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/with-objective-c/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/javascript/about-utag-js/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/javascript/about-utag-js/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/javascript/about-utag-data/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/javascript/about-utag-data/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/javascript/the-b-object/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/javascript/the-b-object/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/javascript/debugging/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/javascript/debugging/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/javascript/built-in-variables/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/javascript/built-in-variables/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/javascript/release-notes/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/javascript/release-notes/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/module-list/appdata/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/module-list/appdata/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/module-list/attribution/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/module-list/attribution/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/module-list/autotracking/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/module-list/autotracking/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/module-list/collect/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/module-list/collect/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/module-list/connectivity/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/module-list/connectivity/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/module-list/crash-reporter/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/module-list/crash-reporter/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/module-list/datasource/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/module-list/datasource/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/module-list/defaults-storage/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/module-list/defaults-storage/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/module-list/delegate/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/module-list/delegate/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/module-list/device-data/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/module-list/device-data/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/module-list/dispatch-queue/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/module-list/dispatch-queue/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/module-list/file-storage/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/module-list/file-storage/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/module-list/lifecycle/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/module-list/lifecycle/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/module-list/logger/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/module-list/logger/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/module-list/persistent-data/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/module-list/persistent-data/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/module-list/remote-commands/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/module-list/remote-commands/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/module-list/tag-management/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/module-list/tag-management/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/module-list/volatile-data/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/module-list/volatile-data/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/class-definitions/tealium/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/class-definitions/tealium/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/class-definitions/tealium-config/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/class-definitions/tealium-config/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/swift/class-definitions/tealium-instance-manager/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/swift/class-definitions/tealium-instance-manager/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/xamarin/install/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/xamarin/install/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/http-api/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/http-api/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/ios/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/ios/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/roku/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/roku/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/ruby/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/ruby/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/tvos/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/tvos/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/xamarin/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/xamarin/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/</loc>
+    <loc>http://docs-preview.tealium.com/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/guides/mobile/05_general_mobile_concepts-glossary/</loc>
+    <loc>http://docs-preview.tealium.com/guides/mobile/05_general_mobile_concepts-glossary/</loc>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/platforms/javascript/install-utag/</loc>
+    <loc>http://docs-preview.tealium.com/platforms/javascript/install-utag/</loc>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/</loc>
+    <loc>http://docs-preview.tealium.com/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://docs.tealium.com/guides/</loc>
+    <loc>http://docs-preview.tealium.com/guides/</loc>
     <priority>0</priority>
   </url>
   
