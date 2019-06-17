@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>Optimizely X Tracking Module | Tealium for iOS |Preview of Tealium Developer Docs</title>
+    <title>Tag Management | Tealium for iOS |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -206,11 +206,10 @@ var utag_data = {
 
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">In this article:</p>
-      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#install">Install</a></li>
-              <li><a href="#initialize">Initialize</a></li>
-              <li><a href="#track">Track</a></li>
-              <li><a href="#data-layer-variables">Data Layer Variables</a></li>
-              <ul class="toc-h3"><li><a href="#override-default-names">Override Default Names</a></li>
+      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#how-it-works">How It Works</a></li>
+              <li><a href="#about-wkwebview">About WKWebView</a></li>
+              <li><a href="#about-uiwebview">About UIWebView</a></li>
+              <li><a href="#samples">Samples</a></li>
               </nav>
   </aside></div>
 
@@ -227,13 +226,13 @@ var utag_data = {
     
   
 
-  <h1 class="lh-title mb3 mv0 pt3">Optimizely X Tracking Module</h1>
+  <h1 class="lh-title mb3 mv0 pt3">Tag Management</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      An integration between Optimizely X and Tealium Collect. The module listens for events triggered by Optimizely X library and passes the event data to Tealium Collect.
+      Tag management is implemented as a non-rendered WKWebView instance to execute the Universal Tag (utag.js) JavaScript client-side.
     </div>
   
 
@@ -246,105 +245,73 @@ var utag_data = {
 
 
 
-<h2 id="install">Install</h2>
+<p>This tag management feature allows you to integrate JavaScript based vendor tags into your app and manage them remotely using Tealium iQ, just like you would for a website.</p>
 
-<p>The Optimizely Tracker module must be added to your app. </p>
+<h2 id="how-it-works">How It Works</h2>
 
-<p>To install the module into your app: </p>
-
-<ol>
-<li>Download here: <a href="https://github.com/Tealium/tealium-ios/tree/master/TealiumIOSOptimizely.framework">https://github.com/Tealium/tealium-ios/tree/master/TealiumIOSOptimizely.framework</a></li>
-<li>Add the &ldquo;TealiumIOSOptimizely.framework&rdquo; file into your Xcode project (in the &ldquo;Embedded Binaries&rdquo; section of your project settings).</li>
-</ol>
-
-<p>Learn more about the Optimizely X Library:</p>
+<p>Once you have <a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/Creating-a-Mobile-Profile/ta-p/16328">created a mobile profile in Tealium iQ</a> with Tag Management enabled, when you initialize the Tealium instance in your app, a non-rendered web view is created to load a simple HTML file from the Tealium mCDN network in which to load the Universal Tag (utag.js). This web view is never rendered to the user.</p>
 
 <ul>
-<li>(Optimizely) <a href="https://developers.optimizely.com/x/solutions/sdks/introduction/index.html?language=objectivec&amp;platform=mobile">Optimizely X Library</a></li>
+<li>Versions 5.5.0 and newer, running iOS 11.0 and newer use <a href="https://developer.apple.com/documentation/webkit/wkwebview?language=objc">WKWebView</a>.</li>
+<li>Versions 5.4.x and older, running iOS 10.0 and older use <a href="https://developer.apple.com/documentation/uikit/uiwebview">UIWebView</a>.</li>
 </ul>
 
-<h2 id="initialize">Initialize</h2>
+<h2 id="about-wkwebview">About WKWebView</h2>
 
-<p>The Optimizely module must be initialized after the standard Tealium instance is created. Initialize the <code>TealiumOptimizelyTracker</code> instance by passing the Tealium instance and providing an instance name:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#998;font-style:italic">// Initialize the Tealium Optimizely instance
-</span><span style="color:#998;font-style:italic"></span>TealiumOptimizelyTracker <span style="font-weight:bold">*</span> optimizelyTracker <span style="font-weight:bold">=</span> [TealiumOptimizelyTracker tealium];
-[optimizelyTracker addInstanceWithName:<span style="color:#b84">@&#34;INSTANCE_KEY&#34;</span>];</code></pre></div>
-<p>No additional configuration is needed. The module will now listen for notifications from the Optimizely SDK and pass the data to Tealium Collect as required.</p>
+<p>WKWebView is required to be attached to a UIView, even if it is not rendered. To accommodate this the Tealium SDK will attempt to attach the non-rendered WKWebView to the <code>rootViewController.view</code>, the most common scenario when your window&rsquo;s rootViewController is a subclass of <code>UIViewController</code> or one of Apple&rsquo;s container view controllers (UINavigationController or UITabBarController).</p>
 
-<h2 id="track">Track</h2>
+<p>If your app has a complex view hierarchy you can set the TEALConfiguration instance with a view to attach to in <code>viewDidLoad</code>, <code>viewWillAppear:</code>, or <code>viewDidAppear:</code>.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-obj-c" data-lang="obj-c">TEALConfiguration <span style="font-weight:bold">*</span>tealConfig <span style="font-weight:bold">=</span> [TEALConfiguration configurationWithAccount:<span style="color:#b84">@&#34;YOUR_ACCOUNT&#34;</span>
+                                                                    profile:<span style="color:#b84">@&#34;YOUR_PROFILE&#34;</span>
+                                                                environment:<span style="color:#b84">@&#34;prod&#34;</span>
+                                                                 datasource:<span style="color:#b84">@&#34;DATASOURCE&#34;</span>];
+tealConfig.view <span style="font-weight:bold">=</span> <span style="font-weight:bold">&lt;</span>YOUR_UIVIEW<span style="font-weight:bold">&gt;</span>; <span style="color:#998;font-style:italic">// e.g. self.view in a UIViewController subclass
+</span><span style="color:#998;font-style:italic">// Initialize with a unique key for this instance
+</span><span style="color:#998;font-style:italic"></span>Tealium <span style="font-weight:bold">*</span>tealium <span style="font-weight:bold">=</span> [Tealium newInstanceForKey:<span style="color:#b84">@&#34;INSTANCE&#34;</span> configuration:tealConfig]; </code></pre></div>
+<p>Upon receiving a push notification, if your app jumps to a <code>UIViewController</code> and has a different view hierarchy than when Tealium was initialized, you must remove the old instance of Tealium and create a new one with the view to attach to. The sample app shows an example of this in <a href="https://github.com/Tealium/tealium-ios/blob/master/Samples/iOS_WKWebView%2BTealium_Objc/iOS_WKWebView%2BTealium_Objc/GreenViewController.m" target="_blank">GreenViewController.m</a> and <a href="https://github.com/Tealium/tealium-ios/blob/master/Samples/iOS_WKWebView%2BTealium_Objc/iOS_WKWebView%2BTealium_Objc/TealiumHelper.m" target="_blank">TealiumHelper.m</a>.</p>
 
-<p>There are two types of Optimizely events that will be passed along to Tealium Collect: experiments and custom events. </p>
+<p>Although the Objective-C SDK is currently closed source, to provide more context, this following code snippet shows how the web view is created.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-obj-c" data-lang="obj-c">- (UIView <span style="font-weight:bold">*</span>_Nullable)<span style="color:#900;font-weight:bold">webViewContainer</span> {
+    <span style="font-weight:bold">if</span> (<span style="font-weight:bold">!</span>_webViewContainer) {
+        UIWindow <span style="font-weight:bold">*</span>window <span style="font-weight:bold">=</span> [[UIApplication sharedApplication] keyWindow];
+        UIViewController <span style="font-weight:bold">*</span>rootViewController <span style="font-weight:bold">=</span> window.rootViewController;
+        UIViewController <span style="font-weight:bold">*</span>topViewController;
+        
+        <span style="font-weight:bold">if</span> ([rootViewController isKindOfClass:[UINavigationController <span style="font-weight:bold">class</span>]]) {
+            topViewController <span style="font-weight:bold">=</span> [((UINavigationController <span style="font-weight:bold">*</span>)rootViewController).viewControllers lastObject];
+        } <span style="font-weight:bold">else</span> <span style="font-weight:bold">if</span> ([rootViewController isKindOfClass:[UITabBarController <span style="font-weight:bold">class</span>]]) {
+            topViewController <span style="font-weight:bold">=</span> ((UITabBarController <span style="font-weight:bold">*</span>)rootViewController).selectedViewController;
+        } <span style="font-weight:bold">else</span> {
+            topViewController <span style="font-weight:bold">=</span> rootViewController;
+        }
+        
+        UIView <span style="font-weight:bold">*</span>view <span style="font-weight:bold">=</span> topViewController.viewIfLoaded;
+        <span style="font-weight:bold">if</span> (view) {
+            <span style="color:#999">self</span>.webViewContainer <span style="font-weight:bold">=</span> view;
+        }
+    }
+    <span style="font-weight:bold">return</span> _webViewContainer;
+}</code></pre></div>
+<p>The view is only used once to initialize the WKWebView.</p>
 
-<p>These events are captured by Tealilum with the following event names:</p>
+<h2 id="about-uiwebview">About UIWebView</h2>
+
+<p>If you encounter issues with WKWebView and want to force the use of <code>UIWebView</code>, set the <code>webViewType</code> in the TEALConfiguration instance:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-obj-c" data-lang="obj-c"><span style="color:#998;font-style:italic">// Set your account, profile, and environment
+</span><span style="color:#998;font-style:italic"></span>TEALConfiguration <span style="font-weight:bold">*</span>tealConfig <span style="font-weight:bold">=</span> [TEALConfiguration configurationWithAccount:<span style="color:#b84">@&#34;YOUR_ACCOUNT&#34;</span>
+                                                                    profile:<span style="color:#b84">@&#34;YOUR_PROFILE&#34;</span>
+                                                                environment:<span style="color:#b84">@&#34;prod&#34;</span>
+                                                                 datasource:<span style="color:#b84">@&#34;DATASOURCE&#34;</span>];
+<span style="color:#998;font-style:italic">// set the web view type to use UIWebView
+</span><span style="color:#998;font-style:italic"></span>tealConfig.webViewType <span style="font-weight:bold">=</span> TEALUIWebView;
+<span style="color:#998;font-style:italic">// Initialize with a unique key for this instance
+</span><span style="color:#998;font-style:italic"></span>Tealium <span style="font-weight:bold">*</span>tealium <span style="font-weight:bold">=</span> [Tealium newInstanceForKey:<span style="color:#b84">@&#34;INSTANCE&#34;</span> configuration:tealConfig]; </code></pre></div>
+<h2 id="samples">Samples</h2>
 
 <ul>
-<li><code>tealium_event=&quot;Optimizely Experiment Started&quot;</code> - when the Optimizely SDK activates an experiment.</li>
-<li><code>tealium_event=&quot;Optimizely Event Tracked&quot;</code> - when the Optimizely SDK receives a custom event (generated by manually calling Optimizely&rsquo;s <code>track</code> method).</li>
+<li><a href="https://github.com/Tealium/tealium-ios/tree/master/Samples/iOS_WKWebView%2BTealium_Objc" target="_blank">WKWebView Sample</a></li>
 </ul>
 
-<h2 id="data-layer-variables">Data Layer Variables</h2>
-
-<p>The following event attributes are included in the tracked events:</p>
-
-<table>
-<thead>
-<tr>
-<th>Variable</th>
-<th>Scope</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>optimizely_experiment_key</td>
-<td>Volatile (session)</td>
-<td>Optimizely experiment name (e.g. &ldquo;Homescreen MVT&rdquo;)</td>
-</tr>
-
-<tr>
-<td>optimizely_variation_key</td>
-<td>Volatile (session)</td>
-<td>Optimizely variation name (e.g. &ldquo;Variation A&rdquo;)</td>
-</tr>
-
-<tr>
-<td>optimizely_user_id</td>
-<td>Volatile (session)</td>
-<td>Optimizely user ID (e.g. &ldquo;ralph@tealium.com&rdquo;)</td>
-</tr>
-
-<tr>
-<td>optimizely_event_key</td>
-<td>Hit (single event)</td>
-<td>Optimizely event name (e.g. &ldquo;purchase&rdquo;)</td>
-</tr>
-
-<tr>
-<td>optimizely_event_value</td>
-<td>Hit (single event)</td>
-<td>Optimizely event value (e.g. &ldquo;123&rdquo; - integer values only)</td>
-</tr>
-
-<tr>
-<td>optimizely_XXX</td>
-<td>Hit (single event)</td>
-<td>Optimizely custom attribute prefix. All custom attributes are prefixed with &ldquo;optimizely_&rdquo; and passed directly to Tealium</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="override-default-names">Override Default Names</h3>
-
-<p>The default variable names can be overridden if you prefer a different naming convention. To override variable names change the public properties in the <code>TealiumOptimizelyTracker</code> class:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">TealiumOptimizelyTracker <span style="font-weight:bold">*</span> optimizelyTracker <span style="font-weight:bold">=</span> [TealiumOptimizelyTracker sharedInstance];
-
-[optimizelyTracker addInstanceWithName:<span style="color:#b84">@&#34;myinstancename&#34;</span>];
-optimizelyTracker.TEOptimizelyUserIdKeyName <span style="font-weight:bold">=</span> <span style="color:#b84">@&#34;my_user_id_key&#34;</span>;
-optimizelyTracker.TEOptimizelyExperimentKeyName <span style="font-weight:bold">=</span> <span style="color:#b84">@&#34;my_experiment_name_key&#34;</span>;
-optimizelyTracker.TEOptimizelyVariationKeyName <span style="font-weight:bold">=</span> <span style="color:#b84">@&#34;my_variation_name_key&#34;</span>;
-optimizelyTracker.TEOptimizelyEventKeyKeyName <span style="font-weight:bold">=</span> <span style="color:#b84">@&#34;my_event_name_key&#34;</span>;
-optimizelyTracker.TEOptimizelyEventValueKeyName <span style="font-weight:bold">=</span> <span style="color:#b84">@&#34;my_event_value_key&#34;</span>;</code></pre></div>
 </div>
 
           
@@ -558,7 +525,7 @@ optimizelyTracker.TEOptimizelyEventValueKeyName <span style="font-weight:bold">=
             </a>
           </li>
           <li class="fw4">
-            <a href="/platforms/ios/tag-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/ios/tag-management/" class="db link pl3 pr2 pv1 bg-secondary white">
               Tag Management
             </a>
           </li>
@@ -568,7 +535,7 @@ optimizelyTracker.TEOptimizelyEventValueKeyName <span style="font-weight:bold">=
             </a>
           </li>
           <li class="fw4">
-            <a href="/platforms/ios/optimizely-x-tracking-module/" class="db link pl3 pr2 pv1 bg-secondary white">
+            <a href="/platforms/ios/optimizely-x-tracking-module/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Module: Optimizely X Tracking
             </a>
           </li>
@@ -876,11 +843,11 @@ optimizelyTracker.TEOptimizelyEventValueKeyName <span style="font-weight:bold">=
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa2 ph0 ph6-ns center nested-lh-copy lh-copy">
       <p>
-  <a href="http://docs-preview.tealium.com/platforms/ios/optimizely-x-tracking-module/" class="hide-child link primary-color">
+  <a href="http://docs-preview.tealium.com/platforms/ios/tag-management/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Optimizely X Tracking Module”
-  </a> was last updated: November 7, 2018
+    “Tag Management”
+  </a> was last updated: April 1, 2019
 </p>
 
       
