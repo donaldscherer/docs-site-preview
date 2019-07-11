@@ -1766,6 +1766,57 @@ pre {
 /* Code Tabs */
 /* tabbed code blocks */
 /* taken from http://bootsnipp.com/snippets/featured/material-design-tab-style */
+.code-tabs {
+  border: 1px solid lightgray;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+.code-tabs ul.nav-tabs {
+  border-bottom: 2px solid #DDD;
+  margin-bottom: 0;
+  padding-left: 0;
+  display: table;
+  list-style: none;
+}
+.code-tabs ul.nav-tabs > li {
+  float: left;
+  margin-bottom: 0px;
+  margin-right: 2px;
+  position: relative;
+  display: block;
+}
+.code-tabs ul.nav-tabs > li > a {
+  padding: 5px 10px;
+}
+.code-tabs ul.nav-tabs > li.active > a, code-tabs ul.nav-tabs > li.active > a:focus, code-tabs ul.nav-tabs > li.active > a:hover {
+  border-width: 0;
+}
+.code-tabs ul.nav-tabs > li > a {
+  border: none;
+  color: #666;
+}
+.code-tabs ul.nav-tabs > li.active > a, .nav-tabs > li > a:hover {
+  border: none;
+  color: #4285F4 !important;
+  background: transparent;
+}
+.code-tabs ul.nav-tabs > li > a::after {
+  content: "";
+  background: #4285F4;
+  height: 2px;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  bottom: 0px;
+  transition: all 250ms ease 0s;
+  transform: scale(0);
+}
+.code-tabs ul.nav-tabs > li.active > a::after, ul.nav-tabs > li:hover > a::after {
+  transform: scale(1);
+}
+.code-tabs .tab-pane {
+  padding: 3px 0;
+}
 /* end tabbed code blocks */
 .primary-color                      {color: #147DC0}
 .bg-primary-color                   {background-color: #147DC0}
