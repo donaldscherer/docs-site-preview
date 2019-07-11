@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.54.0" />
+     <meta name="generator" content="Hugo 0.55.6" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -322,9 +322,7 @@ To delete the stored install referrer string, you can call the standard methods 
 </span><span style="color:#998;font-style:italic"></span>instance<span style="font-weight:bold">.</span><span style="color:#008080">getDataSources</span><span style="font-weight:bold">().</span><span style="color:#008080">getPersistentDataSources</span><span style="font-weight:bold">().</span><span style="color:#008080">edit</span><span style="font-weight:bold">().</span><span style="color:#008080">remove</span><span style="font-weight:bold">(</span>InstallReferrerReceiver<span style="font-weight:bold">.</span><span style="color:#008080">KEYNAME</span><span style="font-weight:bold">).</span><span style="color:#008080">apply</span><span style="font-weight:bold">();</span>
 
 <span style="color:#998;font-style:italic">// remove from volatile data store (session only)
-</span><span style="color:#998;font-style:italic"></span>instance<span style="font-weight:bold">.</span><span style="color:#008080">getDataSources</span><span style="font-weight:bold">().</span><span style="color:#008080">getVolatileDataSources</span><span style="font-weight:bold">().</span><span style="color:#008080">remove</span><span style="font-weight:bold">(</span>InstallReferrerReceiver<span style="font-weight:bold">.</span><span style="color:#008080">KEYNAME</span><span style="font-weight:bold">);</span></code></pre></div></li>
-</ul>
-
+</span><span style="color:#998;font-style:italic"></span>instance<span style="font-weight:bold">.</span><span style="color:#008080">getDataSources</span><span style="font-weight:bold">().</span><span style="color:#008080">getVolatileDataSources</span><span style="font-weight:bold">().</span><span style="color:#008080">remove</span><span style="font-weight:bold">(</span>InstallReferrerReceiver<span style="font-weight:bold">.</span><span style="color:#008080">KEYNAME</span><span style="font-weight:bold">);</span></code></pre></div>
 <h2 id="solution-for-tealium-sdk-v4-x">Solution for Tealium SDK v4.x</h2>
 
 <p>This module is only compatible with Tealium SDK v5.x.</p>
@@ -332,12 +330,14 @@ To delete the stored install referrer string, you can call the standard methods 
 <p>To achieve this functionality on v4.x, use the following code:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">// Android Manifest 
 <span style="color:#000080">&lt;receiver</span>
-    <span style="color:#008080">android:name=</span><span style="color:#b84">&#34;com.tealium.InstallReferrerReceiver&#34;</span>
-    <span style="color:#008080">android:exported=</span><span style="color:#b84">&#34;true&#34;</span><span style="color:#000080">&gt;</span>
-    <span style="color:#000080">&lt;intent-filter&gt;</span>
-        <span style="color:#000080">&lt;action</span> <span style="color:#008080">android:name=</span><span style="color:#b84">&#34;com.android.vending.INSTALL_REFERRER&#34;</span> <span style="color:#000080">/&gt;</span>
-    <span style="color:#000080">&lt;/intent-filter&gt;</span>
-<span style="color:#000080">&lt;/receiver&gt;</span></code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// Class for retrieving install referrer
+<span style="color:#008080">android:name=</span><span style="color:#b84">&#34;com.tealium.InstallReferrerReceiver&#34;</span>
+<span style="color:#008080">android:exported=</span><span style="color:#b84">&#34;true&#34;</span><span style="color:#000080">&gt;</span>
+<span style="color:#000080">&lt;intent-filter&gt;</span>
+    <span style="color:#000080">&lt;action</span> <span style="color:#008080">android:name=</span><span style="color:#b84">&#34;com.android.vending.INSTALL_REFERRER&#34;</span> <span style="color:#000080">/&gt;</span>
+<span style="color:#000080">&lt;/intent-filter&gt;</span>
+<span style="color:#000080">&lt;/receiver&gt;</span></code></pre></div></li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// Class for retrieving install referrer
 </span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="color:#458;font-weight:bold">InstallReferrerReceiver</span> <span style="font-weight:bold">extends</span> BroadcastReceiver <span style="font-weight:bold">{</span>
 
     <span style="font-weight:bold">private</span> <span style="font-weight:bold">static</span> <span style="font-weight:bold">final</span> String INSTALL_REFERRER <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;INSTALL_REFERRER&#34;</span><span style="font-weight:bold">;</span>
@@ -888,11 +888,7 @@ To delete the stored install referrer string, you can call the standard methods 
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa2 ph0 ph6-ns center nested-lh-copy lh-copy">
       <p>
-  <a href="http://docs-preview.tealium.com/platforms/android/referrer-module/" class="hide-child link primary-color">
-  <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
-</span>
-    “Install Referrer Module”
-  </a> was last updated: November 7, 2018
+  This page was last updated: June 7, 2019
 </p>
 
       

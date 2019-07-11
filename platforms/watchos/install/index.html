@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.54.0" />
+     <meta name="generator" content="Hugo 0.55.6" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -292,7 +292,8 @@ To install:</p>
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
-  <div class="tab-content"><div class="tab-pane" data-lang="Swift" title="Swift">
+  <div class="tab-content">
+<div class="tab-pane" data-lang="Swift" title="Swift">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#998;font-style:italic">// Get Tealium instance</span>
 <span style="font-weight:bold">let</span> <span style="color:#008080">config</span> = TEALWKExtensionConfiguration.configuration()
     <span style="font-weight:bold">guard</span> <span style="font-weight:bold">let</span> <span style="color:#008080">tealium</span> = TEALWKExtension.newInstanceForKey(<span style="color:#b84">&#34;[hostTealiumInstanceKey]&#34;</span>) <span style="font-weight:bold">else</span> {
@@ -312,9 +313,9 @@ To install:</p>
 config.logLevel <span style="font-weight:bold">=</span> TEALLogLevelDev;
 [TEALWKExtension newInstanceForKey:<span style="color:#b84">@&#34;[hostTealiumInstanceKey]&#34;</span> configuration:config]; </code></pre></div>
 </div>
-</div>
-</div>
 
+<p></div>
+</div></p>
 
 <h2 id="track">Track</h2>
 
@@ -326,16 +327,17 @@ config.logLevel <span style="font-weight:bold">=</span> TEALLogLevelDev;
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
-  <div class="tab-content"><div class="tab-pane" data-lang="Swift" title="Swift">
+  <div class="tab-content">
+<div class="tab-pane" data-lang="Swift" title="Swift">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">TEALWKExtension.instanceForKey(<span style="color:#b84">&#34;[hostTealiumInstanceKey]&#34;</span>)?.trackViewWithTitle(NSStringFromClass(<span style="font-weight:bold">self</span>.classForCoder), dataSources: [<span style="color:#999">String</span>:<span style="color:#999">String</span>]())</code></pre></div>
 </div>
 
 <div class="tab-pane" data-lang="Objective-C" title="Objective-C">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">[[TEALWKExtension instanceForKey:<span style="color:#b84">@&#34;[hostTealiumInstanceKey]&#34;</span>] trackViewWithTitle:NSStringFromClass([<span style="color:#999">self</span> <span style="font-weight:bold">class</span>]) dataSources:@{}];</code></pre></div>
 </div>
-</div>
-</div>
 
+<p></div>
+</div></p>
 
 <h4 id="events">Events</h4>
 
@@ -345,16 +347,17 @@ config.logLevel <span style="font-weight:bold">=</span> TEALLogLevelDev;
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
-  <div class="tab-content"><div class="tab-pane" data-lang="Swift" title="Swift">
+  <div class="tab-content">
+<div class="tab-pane" data-lang="Swift" title="Swift">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">TEALWKExtension.instanceForKey(<span style="color:#b84">&#34;[hostTealiumInstanceKey]&#34;</span>)?.trackEventwWithTitle(<span style="color:#b84">&#34;someEvent&#34;</span>), dataSources: [<span style="color:#999">String</span>:<span style="color:#999">String</span>]())</code></pre></div>
 </div>
 
 <div class="tab-pane" data-lang="Objective-C" title="Objective-C">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">[[Tealium instanceForKey:<span style="color:#b84">@&#34;[hostTealiumInstanceKey]&#34;</span>] trackEventWithTitle:<span style="color:#b84">@&#34;someEvent&#34;</span> dataSources:@{<span style="color:#b84">@&#34;optionalKey&#34;</span><span style="font-weight:bold">:</span><span style="color:#b84">@&#34;optionalValue&#34;</span>}];</code></pre></div>
 </div>
-</div>
-</div>
 
+<p></div>
+</div></p>
 
 <h2 id="sample-app">Sample App</h2>
 
@@ -893,11 +896,7 @@ config.logLevel <span style="font-weight:bold">=</span> TEALLogLevelDev;
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa2 ph0 ph6-ns center nested-lh-copy lh-copy">
       <p>
-  <a href="http://docs-preview.tealium.com/platforms/watchos/install/" class="hide-child link primary-color">
-  <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
-</span>
-    “Install”
-  </a> was last updated: November 7, 2018
+  This page was last updated: April 3, 2019
 </p>
 
       

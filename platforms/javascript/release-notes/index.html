@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.54.0" />
+     <meta name="generator" content="Hugo 0.55.6" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -497,9 +497,9 @@ b[<span style="color:#b84">&#34;_t_session_id&#34;</span>] <span style="font-wei
 <li><p>Added an override (utag_cfg_ovrd) flag to utag.js in order to delay the loading of Tags until the DOM readyState &ldquo;complete&rdquo; (AKA &ldquo;load&rdquo;) event. This flag provides a delay that may improve page display time speeds by causing all Tags with the <a href="https://community.tealiumiq.com/t5/Tealium-iQ/Tag-Configuration-Advanced-Settings/ta-p/13600" target="_blank">Wait = Yes setting</a> to execute even later. You can set this flag by entering the following code into a PreLoader-scoped <a href="https://community.tealiumiq.com/t5/Tealium-iQ/JavaScript-Code-Extension/ta-p/11925" target="_blank">JavaScript Code extension</a>:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> utag_cfg_ovrd <span style="font-weight:bold">=</span> {};
 utag_cfg_ovrd.dom_complete <span style="font-weight:bold">=</span> <span style="font-weight:bold">true</span>;
-</code></pre></div></li>
-
-<li><p>Fixed a bug for Internet Explorer (IE) in which the DOM readyState was reported as &ldquo;interactive&rdquo; prematurely. An extra delay for readyState &ldquo;complete&rdquo; was added for older versions of IE.</p></li>
+</code></pre></div>
+<ul>
+<li>Fixed a bug for Internet Explorer (IE) in which the DOM readyState was reported as &ldquo;interactive&rdquo; prematurely. An extra delay for readyState &ldquo;complete&rdquo; was added for older versions of IE.</li>
 </ul>
 
 <h2 id="version-4-33">Version 4.33</h2>
@@ -519,8 +519,9 @@ utag_cfg_ovrd.dom_complete <span style="font-weight:bold">=</span> <span style="
 <ul>
 <li>Fixed a bug with Publish Settings so that you may now enable both the <a href="https://community.tealiumiq.com/t5/Tealium-iQ/Publish-Configurations/ta-p/13632" target="_blank">Ready Wait Flag and Bundling Libs publish settings</a> for the same profile.</li>
 <li>Fixed a bug in which enabling the Ready Wait Flag setting caused the <a href="#version-4-26">utag.cfg.noview flag</a> to reset to &ldquo;false&rdquo; if you had set it to &ldquo;true&rdquo;.</li>
-
-<li><p>Introducing the new configuration flag, Wait Timer (utag_cfg_ovrd.waittimer). Tags will not load until the DOM Ready signal goes out. With this flag you can set exactly how long after the DOM Ready signal the Tags will wait before they load. Setting this flag can expose the load time of a webpage without including the load times of 3rd-party vendor Tags. You set this value in milliseconds.</p>
+<li>Introducing the new configuration flag, Wait Timer (utag_cfg_ovrd.waittimer). Tags will not load until the DOM Ready signal goes out. With this flag you can set exactly how long after the DOM Ready signal the Tags will wait before they load. Setting this flag can expose the load time of a webpage without including the load times of 3rd-party vendor Tags. You set this value in milliseconds.
+<br /></li>
+</ul>
 
 <p>Here is an example of how to set the Wait Timer flag:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> utag_cfg_ovrd<span style="font-weight:bold">=</span>{};
@@ -585,9 +586,11 @@ utag_cfg_ovrd.waittimer<span style="font-weight:bold">=</span><span style="color
 
 <p>To reference this value, use the following syntax:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">b[<span style="color:#b84">&#34;cp.utag_main_ses_id&#34;</span>]
-</code></pre></div></li>
-
-<li><p>Introduces the session number (_sn) value in the utag_main cookie.</p>
+</code></pre></div>
+<ul>
+<li>Introduces the session number (_sn) value in the utag_main cookie.
+<br /></li>
+</ul>
 
 <p>To reference this value, use the following syntax:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">b[<span style="color:#b84">&#34;cp.utag_main__sn&#34;</span>]
@@ -597,9 +600,10 @@ utag_cfg_ovrd.waittimer<span style="font-weight:bold">=</span><span style="color
 
 <p>To reference this value, use the following syntax:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">b[<span style="color:#b84">&#34;cp.utag_main__pn&#34;</span>]
-</code></pre></div></li>
-
-<li><p>Known issue: The page number (_pn) and session number (_sn) values are set to <a href="http://en.wikipedia.org/wiki/NaN" target="_blank">NaN</a> whenever a visitor visits a website in which the utag_main session cookies was already set by a version of utag.js prior to 4.27. This issue is resolved in utag.js version 4.28.</p></li>
+</code></pre></div>
+<ul>
+<li>Known issue: The page number (_pn) and session number (_sn) values are set to <a href="http://en.wikipedia.org/wiki/NaN" target="_blank">NaN</a> whenever a visitor visits a website in which the utag_main session cookies was already set by a version of utag.js prior to 4.27. This issue is resolved in utag.js version 4.28.</li>
+</ul></li>
 </ul></li>
 
 <li><p>Introduces the <strong>utag.ut.flatten</strong> function, which flattens objects. This is primarily used with Data Layer Enrichment for AudienceStream.</p></li>
@@ -1370,11 +1374,7 @@ utag_cfg_ovrd.nocookie<span style="font-weight:bold">=</span><span style="font-w
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa2 ph0 ph6-ns center nested-lh-copy lh-copy">
       <p>
-  <a href="http://docs-preview.tealium.com/platforms/javascript/release-notes/" class="hide-child link primary-color">
-  <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
-</span>
-    “Release Notes”
-  </a> was last updated: November 7, 2018
+  This page was last updated: February 12, 2019
 </p>
 
       

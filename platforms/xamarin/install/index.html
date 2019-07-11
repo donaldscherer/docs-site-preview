@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.54.0" />
+     <meta name="generator" content="Hugo 0.55.6" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -325,13 +325,15 @@ var utag_data = {
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
-  <div class="tab-content"><div class="tab-pane" data-lang="Android" title="Android">
+  <div class="tab-content">
+<div class="tab-pane" data-lang="Android" title="Android">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="font-weight:bold">using</span> <span style="color:#555">Tealium.Droid</span>;
 <span style="color:#998;font-style:italic">//...
 </span><span style="color:#998;font-style:italic"></span>
 ITealiumInstanceManager instanceManager = <span style="font-weight:bold">new</span> TealiumInstanceManager(<span style="font-weight:bold">new</span> TealiumInstanceFactoryDroid(&lt;myAndroidApplication&gt;));
 <span style="color:#998;font-style:italic">//Optional Lifecycle Module enablement - must reference Tealium.Platform.Lifecycle.Droid.dll
-</span><span style="color:#998;font-style:italic"></span>TealiumLifecycleManager.SetLifecycleAutoTracking = TealiumDroid.Lifecycle.TealiumLifecycleControlDelegation.SetLifecycleAutoTracking;</code></pre></div>
+</span><span style="color:#998;font-style:italic"></span>TealiumLifecycleManager.SetLifecycleAutoTracking = TealiumDroid.Lifecycle.TealiumLifecycleControlDelegation.SetLifecycleAutoTracking;
+</code></pre></div>
 </div>
 
 <div class="tab-pane" data-lang="iOS" title="iOS">
@@ -340,11 +342,12 @@ ITealiumInstanceManager instanceManager = <span style="font-weight:bold">new</sp
 </span><span style="color:#998;font-style:italic"></span>
 ITealiumInstanceManager instanceManager = <span style="font-weight:bold">new</span> TealiumInstanceManager(<span style="font-weight:bold">new</span> TealiumInstanceFactoryIOS());
 <span style="color:#998;font-style:italic">//Optional Lifecycle Module enablement - must reference Tealium.Platform.Lifecycle.iOS.dll
-</span><span style="color:#998;font-style:italic"></span>TealiumLifecycleManager.SetLifecycleAutoTracking =TealiumIOS.Lifecycle.TealiumLifecycleControlDelegation.SetLifecycleAutoTracking;</code></pre></div>
-</div>
-</div>
+</span><span style="color:#998;font-style:italic"></span>TealiumLifecycleManager.SetLifecycleAutoTracking =TealiumIOS.Lifecycle.TealiumLifecycleControlDelegation.SetLifecycleAutoTracking;
+</code></pre></div>
 </div>
 
+<p></div>
+</div></p>
 
 <h2 id="initialize">Initialize</h2>
 
@@ -384,7 +387,8 @@ ITealiumInstanceManager instanceManager = <span style="font-weight:bold">new</sp
 
 <span style="color:#998;font-style:italic">// Track a Page View event with the title &#34;View Name&#34; along with a single piece of event data.
 </span><span style="color:#998;font-style:italic">// (equivalent to the track call above)
-</span><span style="color:#998;font-style:italic"></span>tealium.TrackView(<span style="color:#b84">&#34;View Name&#34;</span>, <span style="color:#b84">&#34;page_type&#34;</span>, <span style="color:#b84">&#34;product detail page&#34;</span>);</code></pre></div>
+</span><span style="color:#998;font-style:italic"></span>tealium.TrackView(<span style="color:#b84">&#34;View Name&#34;</span>, <span style="color:#b84">&#34;page_type&#34;</span>, <span style="color:#b84">&#34;product detail page&#34;</span>);
+</code></pre></div>
 <h4 id="events">Events</h4>
 
 <p>The following example uses event tracking:</p>
@@ -397,7 +401,8 @@ ITealiumInstanceManager instanceManager = <span style="font-weight:bold">new</sp
     {<span style="color:#b84">&#34;event_category&#34;</span>, <span style="color:#b84">&#34;Menu&#34;</span>},
     {<span style="color:#b84">&#34;event_action&#34;</span>, <span style="color:#b84">&#34;Button Click&#34;</span>},
     {<span style="color:#b84">&#34;event_label&#34;</span>, <span style="color:#b84">&#34;Logo&#34;</span>}
-});</code></pre></div>
+});
+</code></pre></div>
 <h2 id="manage-event-data">Manage Event Data</h2>
 
 <p>As with the native SDKs, there are two additional types of variables that you can set to be added to each of your events.</p>
@@ -444,7 +449,8 @@ tealium.AddVolatileDataSources(new Dictionary&lt;string, object&gt;(1)
             }
         };
     <span style="font-weight:bold">return</span> <span style="font-weight:bold">new</span> List&lt;IRemoteCommand&gt;() { command };
-}</code></pre></div>
+}
+</code></pre></div>
 <h3 id="delegate-methods">Delegate Methods</h3>
 
 <p>There are five delegated methods that allow you to inject code into the processing logic within the Tealium SDK:</p>
@@ -519,7 +525,8 @@ tealium.AddVolatileDataSources(new Dictionary&lt;string, object&gt;(1)
         webViewListener,
         settingsListener);
     <span style="font-weight:bold">return</span> advConfig;
-}</code></pre></div>
+}
+</code></pre></div>
 <h2 id="consent-management">Consent Management</h2>
 
 <p>The Consent Management feature comes from the two native SDKs embedded into the DLLs named <code>Tealium.Platform.*.dlls</code>. The <code>Tealium.Common.dll</code> provides the following category and status enums to use:</p>
@@ -543,7 +550,8 @@ tealium.AddVolatileDataSources(new Dictionary&lt;string, object&gt;(1)
 </span><span style="color:#998;font-style:italic"></span>tealConfig.IsConsentManagerEnabled = <span style="font-weight:bold">true</span>;
 
 <span style="color:#998;font-style:italic">// initialise your Tealium Instance:
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">var</span> tealium = instanceManager.CreateInstance(tealConfig);</code></pre></div>
+</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">var</span> tealium = instanceManager.CreateInstance(tealConfig);
+</code></pre></div>
 <h3 id="consent-status">Consent Status</h3>
 
 <p>As with the native SDKs for both Android and iOS, when Consent Management is enabled, new users are assumed to be in an unknown state. Tracking requests are queued up until the consent status has been opted-in or out, at which point events will be sent or purged, respectively.</p>
@@ -565,7 +573,8 @@ tealium.AddVolatileDataSources(new Dictionary&lt;string, object&gt;(1)
 </span><span style="color:#998;font-style:italic"></span>tealConfig.InitialUserConsentCategories = <span style="font-weight:bold">new</span> ConsentCategory<span style="color:#008080">[]</span>{
     ConsentManager.ConsentCategory.Analytics,
         ConsentManager.ConsentCategory.Mobile
-};</code></pre></div>
+};
+</code></pre></div>
 <h3 id="consent-selection">Consent Selection</h3>
 
 <p>The ConsentManager can be interacted with directly from the Tealium instance, through the ConsentManager property.</p>
@@ -579,14 +588,16 @@ tealium.ConsentManager.UserConsentStatus = ConsentManager.ConsentStatus.Consente
 </span><span style="color:#998;font-style:italic">// To grant consent and opt into a subset of categories you can use the overload:
 </span><span style="color:#998;font-style:italic"></span>tealium.ConsentManager.UserConsentStatusWithCategories(ConsentManager.ConsentStatus.Consented, <span style="font-weight:bold">new</span> ConsentCategory<span style="color:#008080">[]</span>{
         ConsentManager.ConsentCategory.Analytics
-        });</code></pre></div>
+        });
+</code></pre></div>
 <h3 id="resetting">Resetting</h3>
 
 <p>Additional options are available to reset the currently selected consent preferences. This will revert the user back to an Unknown status so that subsequent events will begin being queued again.</p>
 
 <p>To completely disable, disable it on the <code>TealiumConfig</code> object, as shown in the following example:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">ITealium tealium = instanceManager.GetExistingInstance(TealiumConsts.INSTANCE_ID);
-tealium.ConsentManager.ResetUserConsentPreferences();</code></pre></div>
+tealium.ConsentManager.ResetUserConsentPreferences();
+</code></pre></div>
 <h2 id="resources">Resources</h2>
 
 <p>The following sections provide links to Tealium and Xamarin resources that contain detailed information about Tealium for iOS and Android</p>
@@ -1144,11 +1155,7 @@ tealium.ConsentManager.ResetUserConsentPreferences();</code></pre></div>
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa2 ph0 ph6-ns center nested-lh-copy lh-copy">
       <p>
-  <a href="http://docs-preview.tealium.com/platforms/xamarin/install/" class="hide-child link primary-color">
-  <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
-</span>
-    “Install”
-  </a> was last updated: November 7, 2018
+  This page was last updated: April 3, 2019
 </p>
 
       

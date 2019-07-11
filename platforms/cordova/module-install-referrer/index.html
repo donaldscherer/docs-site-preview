@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.54.0" />
+     <meta name="generator" content="Hugo 0.55.6" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -251,21 +251,23 @@ To install:</p>
 
 <ol>
 <li><p>Navigate to your Cordova app&rsquo;s directory in a terminal window, and enter:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cordova plugin add tealium-cordova-installreferrer</code></pre></div></li>
-
-<li><p>In the JavaScript file where you instantiate the main Tealium plugin, after calling tealium.init, add the following code:</p></li>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cordova plugin add tealium-cordova-installreferrer</code></pre></div>
+<ol>
+<li>In the JavaScript file where you instantiate the main Tealium plugin, after calling tealium.init, add the following code:</li>
 </ol>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">function</span> tealiumInit(accountName, profileName, environmentName, instanceName){
-    <span style="font-weight:bold">var</span> ir;
-    tealium.init({...});
-    <span style="color:#998;font-style:italic">// check if installreferrer is installed and available
-</span><span style="color:#998;font-style:italic"></span>    ir <span style="font-weight:bold">=</span> <span style="color:#999">window</span>.tealiumInstallReferrer;
-    <span style="font-weight:bold">if</span> (ir) {
-        <span style="color:#998;font-style:italic">// init install referrer and store any received values as persistent data
-</span><span style="color:#998;font-style:italic"></span>        ir.setPersistent(instanceName);
-    }
+<span style="font-weight:bold">var</span> ir;
+tealium.init({...});
+<span style="color:#998;font-style:italic">// check if installreferrer is installed and available
+</span><span style="color:#998;font-style:italic"></span>ir <span style="font-weight:bold">=</span> <span style="color:#999">window</span>.tealiumInstallReferrer;
+<span style="font-weight:bold">if</span> (ir) {
+    <span style="color:#998;font-style:italic">// init install referrer and store any received values as persistent data
+</span><span style="color:#998;font-style:italic"></span>    ir.setPersistent(instanceName);
 }
-</code></pre></div>
+}
+</code></pre></div></li>
+</ol>
+
 <h2 id="test">Test</h2>
 
 <p>Once the plugin has been installed, you can test it by manually triggering a system broadcast. Substitute <code>com.tealium.sample</code> with the RDNS bundle identifier for your app (unless testing with the Tealium sample app).</p>
@@ -816,11 +818,7 @@ tealium.removePersistent(&quot;install_referrer&quot;, &lt;your tealium instance
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa2 ph0 ph6-ns center nested-lh-copy lh-copy">
       <p>
-  <a href="http://docs-preview.tealium.com/platforms/cordova/module-install-referrer/" class="hide-child link primary-color">
-  <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
-</span>
-    “Module: Install Referrer”
-  </a> was last updated: November 7, 2018
+  This page was last updated: February 1, 2019
 </p>
 
       
