@@ -520,6 +520,37 @@ NSDictionary <span style="font-weight:bold">*</span>volatileDataSources <span st
 <p></div>
 </div></p>
 
+<h2 id="persistent-and-volatile-data">Persistent and Volatile Data</h2>
+
+<p>In addition to the transient event data that can be sent via the <code>trackView</code> and <code>trackEvent</code> functions outlined above, there are also functions to set common data for each tracking call.</p>
+
+<div class="code-tabs">
+  <ul class="nav nav-tabs"></ul>
+  <div class="tab-content"><div class="tab-pane" data-lang="Swift" title="Swift">
+  <p>Persistent and volatile values are stored on the device. The persistent object will be merged into each event and preserved between launches of the app, whereas the volatile object will be discarded upon closing the app and restarting.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#998;font-style:italic">//persistent data</span>
+tealium.persistentData()?.add(data: [<span style="color:#b84">&#34;persistent_key&#34;</span>: <span style="color:#b84">&#34;persistent_value&#34;</span>])
+<span style="font-weight:bold">let</span> <span style="color:#008080">persistentData</span> = tealium.persistentData()
+
+<span style="color:#998;font-style:italic">//volatile data</span>
+tealium.volatileData()?.add(data: [<span style="color:#b84">&#34;volatile_key&#34;</span>: <span style="color:#b84">&#34;volatile_value&#34;</span>])
+<span style="font-weight:bold">let</span> <span style="color:#008080">volatileData</span> = tealium.volatileData()</code></pre></div>
+</div>
+
+<div class="tab-pane" data-lang="Objective-C" title="Objective-C">
+  <p>Persistent and volatile values are stored on the device as a <a href="https://developer.apple.com/documentation/foundation/nsdictionary">NSDictionary</a> object. The persistent object will be merged into each event and preserved between launches of the app, whereas the volatile object will be discarded upon closing the app and restarting.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-obj-c" data-lang="obj-c"><span style="color:#998;font-style:italic">//persistent data
+</span><span style="color:#998;font-style:italic"></span>[<span style="color:#999">self</span>.tealium addPersistentDataSources:@{<span style="color:#b84">@&#34;persistent_key&#34;</span><span style="font-weight:bold">:</span> <span style="color:#b84">@&#34;persistent_value&#34;</span>}];
+NSDictionary <span style="font-weight:bold">*</span>persistentDataSources <span style="font-weight:bold">=</span> [<span style="color:#999">self</span>.tealium persistentDataSourcesCopy];
+
+<span style="color:#998;font-style:italic">//volatile data
+</span><span style="color:#998;font-style:italic"></span>[<span style="color:#999">self</span>.tealium addVolatileDataSources:@{<span style="color:#b84">@&#34;volatile_key&#34;</span><span style="font-weight:bold">:</span> <span style="color:#b84">@&#34;volatile_value&#34;</span>}];
+NSDictionary <span style="font-weight:bold">*</span>volatileDataSources <span style="font-weight:bold">=</span> [<span style="color:#999">self</span>.tealium volatileDataSourcesCopy];</code></pre></div>
+</div>
+</div>
+</div>
+
+
 <h2 id="samples-documentation">Samples &amp; Documentation </h2>
 
 <ul>
