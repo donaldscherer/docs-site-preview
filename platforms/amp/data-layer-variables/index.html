@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>Install | Tealium for watchOS |Preview of Tealium Developer Docs</title>
+    <title>Data Layer | Tealium for AMP |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -25,7 +25,7 @@
         
 <script>
 var utag_data = {
-    category_name : "watchOS",
+    category_name : "AMP",
     site_section  : "platforms",
     site_language : "en",
     ui_platform   : "docs",
@@ -220,16 +220,7 @@ var utag_data = {
 
 
 
-  <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
-      <p class="b">In this article:</p>
-      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#requirements">Requirements</a></li>
-              <li><a href="#sample-apps">Sample Apps</a></li>
-              <li><a href="#install">Install</a></li>
-              <li><a href="#initialize">Initialize</a></li>
-              <li><a href="#track">Track</a></li>
-              <li><a href="#sample-app">Sample App</a></li>
-              </nav>
-  </aside></div>
+  </div>
 
       <div class="order-1 ph0 ph4-ns mid-gray nested-copy-line-height no-underline nested-links nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
         <div class="documentation-copy center measure-wide-l">
@@ -238,19 +229,19 @@ var utag_data = {
           <header class="flex-none w-100">
   
     
-      <a href="/platforms/watchos" class="f6 fw8 mb0 link mid-gray dim mr3">
-        WATCHOS
+      <a href="/platforms/amp" class="f6 fw8 mb0 link mid-gray dim mr3">
+        AMP
       </a>
     
   
 
-  <h1 class="lh-title mb3 mv0 pt3">Install</h1>
+  <h1 class="lh-title mb3 mv0 pt3">Data Layer</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Install and set up the Tealium for watchOS library to track user activity.
+      Full list of data layer variables available from the AMP library.
     </div>
   
 
@@ -261,125 +252,171 @@ var utag_data = {
 
 <div class="prose" id="prose">
 
+<p>The following parameters are populated by the Tealium AMP Library. These variables are included automatically in each tracking call from the library and can be used in your Universal Data Hub configuration.</p>
 
+<p>In the following table, some variables are used for both page view/event tracking, while some are only used for each.</p>
 
-<h2 id="requirements">Requirements</h2>
+<p class="note">For page view tracking, the default event specification for <code>tealium_event</code> is "screen_view". For event tracking, each trigger should specify an event name for <code>tealium_event</code>.</p>
 
-<ul>
-<li>Xcode 7 or higher</li>
-<li>iOS 8.1 or higher</li>
-<li>watchOS 2.0 or higher</li>
-<li><a href="/platforms/ios/">Tealium for iOS</a> installed in the host app</li>
-<li>400KB available space in .ipa file size (this accounts for the tealium-ios library needed in the host app)</li>
-<li><a href="https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/AppThinning/AppThinning.html">Bitcode compliant</a> framework</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Page Tracking</th>
+<th>Event Tracking</th>
+</tr>
+</thead>
 
-<h2 id="sample-apps">Sample Apps</h2>
+<tbody>
+<tr>
+<td>amp_hostname</td>
+<td>AMP hostname <br>Example: example.com</td>
+<td>&#10004;</td>
+<td>&#10004;</td>
+</tr>
 
-<p>We recommend downloading one or more sample apps we provide on the main iOS repository. This will help to familiarize yourself with our library, the tracking methods, and best practice implementation.</p>
+<tr>
+<td>amp_request_count</td>
+<td>AMP request count <br>Example:  1</td>
+<td>&#10004;</td>
+<td>&#10004;</td>
+</tr>
 
-<ul>
-<li><a href="https://github.com/Tealium/tealium-ios/tree/master/Samples/WatchOS_Catalog%2BTealium_ObjC">WatchOS Sample App</a></li>
-</ul>
+<tr>
+<td>amp_version</td>
+<td>AMP version number <br>Example:  1907022322580</td>
+<td>&#10004;</td>
+<td>&#10004;</td>
+</tr>
 
-<p>We also recommend the use of a helper class to abstract the Tealium implementation from the rest of your app. This will give you a single entry point from which to initialize and make tracking calls. This approach allows you to update the code in your helper file and not in every single header/method file.</p>
+<tr>
+<td>ampdoc_url</td>
+<td>AMP document URL <br>Example:  <a href="http://example.com/path/to/file.html">http://example.com/path/to/file.html</a></td>
+<td>&#10004;</td>
+<td>&#10004;</td>
+</tr>
 
-<ul>
-<li><a href="https://github.com/Tealium/tealium-ios/blob/master/Samples/WatchOS_Catalog%2BTealium_ObjC/WatchKit%20Catalog/Tealium/TealiumHelper.m">Sample Helper Class</a></li>
-</ul>
+<tr>
+<td>canonical_hostname</td>
+<td>Canonical hostname <br>Example:  example.ampproject.org</td>
+<td>&#10004;</td>
+<td>&#10004;</td>
+</tr>
 
-<h2 id="install">Install</h2>
+<tr>
+<td>content_load_ms</td>
+<td>Time in milliseconds to load the content <br>Example:  66</td>
+<td>&#10004;</td>
+<td></td>
+</tr>
 
-<p>Tealium for watchOS is intended to be used in a watchOS extension application where <code>TealiumIOS.framework</code> has been implemented in the host application. 
-To install:</p>
+<tr>
+<td>domain</td>
+<td>The full domain name of the URL <br>Example: example.com</td>
+<td>&#10004;</td>
+<td>&#10004;</td>
+</tr>
 
-<ol>
-<li>Add <code>TealiumWATCHOSExtension.framework</code> to your project&rsquo;s watchOS Extension target.</li>
-<li>Copy or reference the framework to the project in the resulting dialog box.</li>
-<li>In the Target&rsquo;s <strong>General: Embedded Binaries: Options</strong> add <code>TealiumWATCHOSExtension.framework</code><p class="note">For Swift projects be sure to add <code>&lt;TealiumWATCHOSExtension/TEALWKExtension.h&gt;</code> to your bridging header file.</p></li>
-<li>Make sure all paths are as expected under <strong>Projects: Target: Build Settings</strong> </li>
-</ol>
+<tr>
+<td>lang</td>
+<td>Language code <br>Example: en-us</td>
+<td>&#10004;</td>
+<td>&#10004;</td>
+</tr>
 
-<h2 id="initialize">Initialize</h2>
+<tr>
+<td>page_view_id</td>
+<td>Page view ID number <br>Example: 769</td>
+<td>&#10004;</td>
+<td></td>
+</tr>
 
-<p>Once Tealium for watchOS is added to your project you are ready to start coding.</p>
+<tr>
+<td>pathname</td>
+<td>Path of the URL, excluding the query parameters and domain <br>Example: /path/to/file.html</td>
+<td>&#10004;</td>
+<td>&#10004;</td>
+</tr>
 
-<p>In the Application Delegate, or within a helper class setup method, add the following code to initialize the Tealium instance: </p>
+<tr>
+<td>referrer</td>
+<td>URL path without the file name <br>Example: <a href="http://example.com/path/to/">http://example.com/path/to/</a></td>
+<td>&#10004;</td>
+<td></td>
+</tr>
 
-<div class="code-tabs">
-  <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" data-lang="Swift" title="Swift">
-  <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#998;font-style:italic">// Get Tealium instance</span>
-<span style="font-weight:bold">let</span> <span style="color:#008080">config</span> = TEALWKExtensionConfiguration.configuration()
-    <span style="font-weight:bold">guard</span> <span style="font-weight:bold">let</span> <span style="color:#008080">tealium</span> = TEALWKExtension.newInstanceForKey(<span style="color:#b84">&#34;[hostTealiumInstanceKey]&#34;</span>) <span style="font-weight:bold">else</span> {
+<tr>
+<td>screen_size</td>
+<td>Screen resolution height x width (pixels) <br>Example: 2560x1440</td>
+<td>&#10004;</td>
+<td></td>
+</tr>
 
-        <span style="color:#998;font-style:italic">// Any additional failure response here</span>
+<tr>
+<td>scroll_x</td>
+<td>Horizontal scrolling value (x-axis) <br>Example: 0</td>
+<td></td>
+<td>&#10004;</td>
+</tr>
 
-        <span style="font-weight:bold">return</span>
-    }</code></pre></div>
-</div>
+<tr>
+<td>scroll_y</td>
+<td>Vertical scrolling value (y-axis) <br>Example: 0</td>
+<td></td>
+<td>&#10004;</td>
+</tr>
 
-<div class="tab-pane" data-lang="Objective-C" title="Objective-C">
-  <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#998;font-style:italic">// Import area
-</span><span style="color:#998;font-style:italic"></span><span style="color:#999;font-weight:bold">#import &lt;TealiumWATCHOSExtension/TealiumWATCHOS.h&gt;
-</span><span style="color:#999;font-weight:bold"></span>
-<span style="color:#998;font-style:italic">// Within a setup method
-</span><span style="color:#998;font-style:italic"></span>TEALWKExtensionConfiguration <span style="font-weight:bold">*</span>config <span style="font-weight:bold">=</span> [TEALWKExtensionConfiguration configuration];
-config.logLevel <span style="font-weight:bold">=</span> TEALLogLevelDev;
-[TEALWKExtension newInstanceForKey:<span style="color:#b84">@&#34;[hostTealiumInstanceKey]&#34;</span> configuration:config]; </code></pre></div>
-</div>
+<tr>
+<td>tealium_visitor_id</td>
+<td>Generated uuid (case-sensitive) <br>Example: amp-ABc1dEF2gH3IJK4lmn5OPz</td>
+<td>&#10004;</td>
+<td>&#10004;</td>
+</tr>
 
-<p></div>
-</div></p>
+<tr>
+<td>timestamp</td>
+<td>Epoch timestamp (can be overridden in the <code>vars</code> block)<br>Example: 1563305241134</td>
+<td>&#10004;</td>
+<td>&#10004;</td>
+</tr>
 
-<h2 id="track">Track</h2>
+<tr>
+<td>title</td>
+<td>AMP document&rsquo;s title (can be overridden in the <code>vars</code> block) <br>Example: Hello, AMP</td>
+<td>&#10004;</td>
+<td>&#10004;</td>
+</tr>
 
-<h4 id="views">Views</h4>
+<tr>
+<td>tz</td>
+<td>Time zone <br>Example: 420</td>
+<td>&#10004;</td>
+<td>&#10004;</td>
+</tr>
 
-<p>Every time a user opens or changes a screen in the app a tracking call should be made. A view is tracked by calling <code>trackViewWithTitle()</code> with two parameters: the name of the screen and (optionally) contextual view data.</p>
+<tr>
+<td>url</td>
+<td>The full URL of the page <br>Example: <a href="http://example.com/path/to/file.html">http://example.com/path/to/file.html</a></td>
+<td>&#10004;</td>
+<td>&#10004;</td>
+</tr>
 
-<p>In any UIViewController&rsquo;s <code>viewDidAppear</code> method, use this code:</p>
+<tr>
+<td>viewport_height</td>
+<td>Browser viewport height (pixels) <br>Example: 1417</td>
+<td>&#10004;</td>
+<td>&#10004;</td>
+</tr>
 
-<div class="code-tabs">
-  <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" data-lang="Swift" title="Swift">
-  <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">TEALWKExtension.instanceForKey(<span style="color:#b84">&#34;[hostTealiumInstanceKey]&#34;</span>)?.trackViewWithTitle(NSStringFromClass(<span style="font-weight:bold">self</span>.classForCoder), dataSources: [<span style="color:#999">String</span>:<span style="color:#999">String</span>]())</code></pre></div>
-</div>
-
-<div class="tab-pane" data-lang="Objective-C" title="Objective-C">
-  <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">[[TEALWKExtension instanceForKey:<span style="color:#b84">@&#34;[hostTealiumInstanceKey]&#34;</span>] trackViewWithTitle:NSStringFromClass([<span style="color:#999">self</span> <span style="font-weight:bold">class</span>]) dataSources:@{}];</code></pre></div>
-</div>
-
-<p></div>
-</div></p>
-
-<h4 id="events">Events</h4>
-
-<p>All non-view activity should be tracked as an event. This is easily done by calling <code>trackEventWithTitle()</code> with two parameters: an event name and (optionally) contextual event data. </p>
-
-<p>In any method that triggers or responds to an event trigger, use this code: </p>
-
-<div class="code-tabs">
-  <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" data-lang="Swift" title="Swift">
-  <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">TEALWKExtension.instanceForKey(<span style="color:#b84">&#34;[hostTealiumInstanceKey]&#34;</span>)?.trackEventwWithTitle(<span style="color:#b84">&#34;someEvent&#34;</span>), dataSources: [<span style="color:#999">String</span>:<span style="color:#999">String</span>]())</code></pre></div>
-</div>
-
-<div class="tab-pane" data-lang="Objective-C" title="Objective-C">
-  <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">[[Tealium instanceForKey:<span style="color:#b84">@&#34;[hostTealiumInstanceKey]&#34;</span>] trackEventWithTitle:<span style="color:#b84">@&#34;someEvent&#34;</span> dataSources:@{<span style="color:#b84">@&#34;optionalKey&#34;</span><span style="font-weight:bold">:</span><span style="color:#b84">@&#34;optionalValue&#34;</span>}];</code></pre></div>
-</div>
-
-<p></div>
-</div></p>
-
-<h2 id="sample-app">Sample App</h2>
-
-<ul>
-<li><a href="https://github.com/Tealium/tealium-ios/tree/master/Samples/WatchOS_Sample_Swift">Sample Apps</a></li>
-</ul>
+<tr>
+<td>viewport_width</td>
+<td>Browser viewport width (pixels) <br>Example:  2560</td>
+<td>&#10004;</td>
+<td>&#10004;</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 
@@ -393,9 +430,9 @@ config.logLevel <span style="font-weight:bold">=</span> TEALLogLevelDev;
   <ul class="list pa0 nl2">
     
       
-      <li class="w-100 hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".amp">AMP</a>
-        <ul class="amp desktopmenu animated fadeIn list pl0 dn">
+      <li class="w-100 hover-accent-color-light fw8 active">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".amp">AMP</a>
+        <ul class="amp desktopmenu animated fadeIn list pl0 db">
           <li class="fw4">
             <a href="/platforms/amp/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Overview
@@ -407,7 +444,7 @@ config.logLevel <span style="font-weight:bold">=</span> TEALLogLevelDev;
             </a>
           </li>
           <li class="fw4">
-            <a href="/platforms/amp/data-layer-variables/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/amp/data-layer-variables/" class="db link pl3 pr2 pv1 bg-secondary white">
               Data Layer
             </a>
           </li>
@@ -875,16 +912,16 @@ config.logLevel <span style="font-weight:bold">=</span> TEALLogLevelDev;
         </ul>
       </li>
       
-      <li class="w-100 hover-accent-color-light fw8 active">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".watchos">watchOS</a>
-        <ul class="watchos desktopmenu animated fadeIn list pl0 db">
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".watchos">watchOS</a>
+        <ul class="watchos desktopmenu animated fadeIn list pl0 dn">
           <li class="fw4">
             <a href="/platforms/watchos/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Overview
             </a>
           </li>
           <li class="fw4">
-            <a href="/platforms/watchos/install/" class="db link pl3 pr2 pv1 bg-secondary white">
+            <a href="/platforms/watchos/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Install
             </a>
           </li>
@@ -917,7 +954,7 @@ config.logLevel <span style="font-weight:bold">=</span> TEALLogLevelDev;
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa2 ph0 ph6-ns center nested-lh-copy lh-copy">
       <p>
-  This page was last updated: April 3, 2019
+  This page was last updated: July 19, 2019
 </p>
 
       
