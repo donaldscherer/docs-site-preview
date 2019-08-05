@@ -225,9 +225,9 @@ var utag_data = {
       <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#requirements">Requirements</a></li>
               <li><a href="#how-it-works">How It Works</a></li>
               <li><a href="#install">Install</a></li>
-              <li><a href="#initialize">Initialize</a></li>
-              <li><a href="#supported-methods">Supported Methods</a></li>
-              <ul class="toc-h3"><li><a href="#sdk-setup">SDK Setup</a></li>
+              <ul class="toc-h3"><li><a href="#dependency-manager">Dependency Manager</a></li>
+              <li><a href="#manual-for-ios">Manual for iOS</a></li>
+              <li><a href="#sdk-setup">SDK Setup</a></li>
               <li><a href="#user-tracking">User Tracking</a></li>
               <li><a href="#user-attributes">User Attributes</a></li>
               <li><a href="#social-data-tracking">Social Data Tracking</a></li>
@@ -286,6 +286,10 @@ var utag_data = {
 
 <h2 id="install">Install</h2>
 
+<h3 id="dependency-manager">Dependency Manager</h3>
+
+<p>Install options are available for the following dependency managers. This is the recommended install method.</p>
+
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
   <div class="tab-content">
@@ -308,9 +312,69 @@ var utag_data = {
 <p></div>
 </div></p>
 
-<h2 id="initialize">Initialize</h2>
+<h3 id="manual-for-ios">Manual for iOS</h3>
 
-<p>For all Teaium libraries, you will need to register the Braze Remote Command when you initialize.</p>
+<p>The Braze remote command can be installed manually for your Ojbective-C or Swift project using the following repo:</p>
+
+<ul>
+<li><a href="https://github.com/tealium/tealium-ios-braze-remote-command">Tealium iOS Braze Remote Command</a></li>
+</ul>
+
+<p>To include the remote command files in your own project, clone this repo and drag the files within the <code>Sources</code> folder into your project.</p>
+
+<p class="note">This assumes you have <a href="/platforms/swift/install/">Tealium Swift</a> and <a target="_blank" href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/initial_sdk_setup/">Braze</a> installed already.</p>
+
+<p>When initializing the Tealium SDK, in the completion handler:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">tealium = Tealium(config: config) { responses <span style="font-weight:bold">in</span>
+  <span style="font-weight:bold">guard</span> <span style="font-weight:bold">let</span> <span style="color:#008080">remoteCommands</span> = <span style="font-weight:bold">self</span>.tealium?.remoteCommands() <span style="font-weight:bold">else</span> {
+      <span style="font-weight:bold">return</span>
+  }
+  <span style="font-weight:bold">let</span> <span style="color:#008080">brazeCommandRunner</span> = BrazeCommandRunner()
+  <span style="font-weight:bold">let</span> <span style="color:#008080">brazeCommand</span> = BrazeCommand(brazeCommandRunner: brazeCommandRunner)
+  <span style="font-weight:bold">let</span> <span style="color:#008080">brazeRemoteCommand</span> = brazeCommand.remoteCommand()
+  remoteCommands.add(brazeRemoteCommand)
+}</code></pre></div>
+<p>Manual install options are available for the following platforms:
+<div class="code-tabs">
+  <ul class="nav nav-tabs"></ul>
+  <div class="tab-content">
+<div class="tab-pane" data-lang="Objective-C" title="Objective-C">
+  <p>First, clone the repo and drag the files from the <code>Objective-C</code> folder into your project.</p></p>
+
+<p>Then, in <code>TealiumHelper.m</code>, add this line to import the Swift code:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">#<span style="font-weight:bold">import</span> <span style="color:#b84">&#34;TealiumRemoteCommandObjcApp-Swift.h&#34;</span></code></pre></div>
+<p>For more information on importing Swift into Objective-C see:<br>
+<a href="https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_swift_into_objective-c">Apple Developer Documentation: Importing Swift Into Objective-C</a></p>
+
+<p>Then initialize the remote command:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Objective-C" data-lang="Objective-C">BrazeCommandRunner <span style="font-weight:bold">*</span>brazeCommandRunner <span style="font-weight:bold">=</span> [[BrazeCommandRunner alloc] init];
+BrazeCommand <span style="font-weight:bold">*</span>brazeCommand <span style="font-weight:bold">=</span> [[BrazeCommand alloc] initWithBrazeCommandRunner:brazeCommandRunner];
+TEALRemoteCommandResponseBlock brazeRemoteCommand <span style="font-weight:bold">=</span> [brazeCommand remoteCommand];
+[[Tealium instanceForKey:<span style="color:#b84">@&#34;MY_INSTANCE&#34;</span>] addRemoteCommandID:<span style="color:#b84">@&#34;braze&#34;</span>
+                                    description:<span style="color:#b84">@&#34;Braze Remote Command&#34;</span>
+                                    targetQueue:dispatch_get_main_queue()
+                                    responseBlock:brazeRemoteCommand];</code></pre></div>
+</div>
+
+
+<div class="tab-pane" data-lang="Swift" title="Swift">
+  <p>In your <code>TealiumHelper.swift</code>, add the remote command as follows:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">let</span> <span style="color:#008080">brazeCommandRunner</span> = BrazeCommandRunner()
+<span style="font-weight:bold">let</span> <span style="color:#008080">brazeCommand</span> = BrazeCommand(brazeCommandRunner: brazeCommandRunner)
+<span style="font-weight:bold">let</span> <span style="color:#008080">brazeRemoteCommand</span> = brazeCommand.remoteCommand()
+tealium.addRemoteCommandID(<span style="color:#b84">&#34;braze&#34;</span>,
+                           description: <span style="font-weight:bold">nil</span>,
+                           targetQueue: DispatchQueue.main,
+                           responseBlock: brazeRemoteCommand)</code></pre></div>
+</div>
+
+</div>
+</div>
+
+
+## Initialize
+
+For all Teaium libraries, you will need to register the Braze Remote Command when you initialize. 
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
@@ -325,6 +389,7 @@ Tealium teal <span style="font-weight:bold">=</span> Tealium<span style="font-we
 teal<span style="font-weight:bold">.</span><span style="color:#008080">addRemoteCommand</span><span style="font-weight:bold">(</span>braze<span style="font-weight:bold">);</span></code></pre></div>
 </div>
 
+
 <div class="tab-pane" data-lang="Objective-C" title="Objective-C">
   <p>This class is designed for the Objective-C library, but the code itself is written in Swift. You will need to have a Bridging Header in your Xcode project for this to work correctly.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#998;font-style:italic">// this code sets up a config object and creates a Tealium instance.
@@ -337,6 +402,7 @@ let teal <span style="font-weight:bold">=</span> Tealium.newInstance(forKey: <sp
 
 teal.addRemoteCommandID(<span style="color:#b84">&#34;braze&#34;</span>, description: <span style="color:#999">nil</span>, targetQueue: DispatchQueue.main, responseBlock: BrazeCommands.brazeCommand())</code></pre></div>
 </div>
+
 
 <div class="tab-pane" data-lang="Swift" title="Swift">
   <p>This class is designed for use with Tealium&rsquo;s Swift library for iOS (will not work with other platforms).</p>
@@ -356,112 +422,42 @@ teal = Tealium(config: config) { responses <span style="font-weight:bold">in</sp
   <span style="font-weight:bold">let</span> <span style="color:#008080">brazeCommand</span> = BrazeCommand(brazeCommandRunner: brazeCommandRunner)
   <span style="font-weight:bold">let</span> <span style="color:#008080">brazeRemoteCommand</span> = brazeCommand.remoteCommand()
       remoteCommands.add(brazeRemoteCommand)
-  }</code></pre></div>
+}</code></pre></div>
 </div>
 
-<p></div>
-</div></p>
+</div>
+</div>
 
-<h2 id="supported-methods">Supported Methods</h2>
 
-<p>The following Braze methods can be triggered using a data mapping in the Braze Remote Command tag using these Tealium commands:</p>
 
-<table>
-<thead>
-<tr>
-<th>Remote Command</th>
-<th>Braze Method</th>
-</tr>
-</thead>
+## Supported Methods
 
-<tbody>
-<tr>
-<td>initialize</td>
-<td>startWithApiKey()</td>
-</tr>
+The following Braze methods can be triggered using a data mapping in the Braze Remote Command tag using these Tealium commands:
 
-<tr>
-<td>useridentifier</td>
-<td>changeUser()</td>
-</tr>
-
-<tr>
-<td>useralias</td>
-<td>addAlias()</td>
-</tr>
-
-<tr>
-<td>userattribute</td>
-<td>ABKUser()</td>
-</tr>
-
-<tr>
-<td>facebookuser</td>
-<td>facebookUser()</td>
-</tr>
-
-<tr>
-<td>twitteruser</td>
-<td>twitterUser()</td>
-</tr>
-
-<tr>
-<td>setcustomattribute</td>
-<td>setCustomAttributeWithKey()</td>
-</tr>
-
-<tr>
-<td>unsetcustomattribute</td>
-<td>unsetCustomAttributeWithKey()</td>
-</tr>
-
-<tr>
-<td>setcustomarrayattribute</td>
-<td>setCustomAttributeArrayWithKey()</td>
-</tr>
-
-<tr>
-<td>appendcustomarrayattribute</td>
-<td>addToCustomAttributeArrayWithKey()</td>
-</tr>
-
-<tr>
-<td>removecustomarrayattribute</td>
-<td>removeFromCustomAttributeArrayWithKey()</td>
-</tr>
-
-<tr>
-<td>incrementcustomattribute</td>
-<td>incrementCustomUserAttribute()</td>
-</tr>
-
-<tr>
-<td>emailnotification</td>
-<td>setEmailNotificationSubscriptionType()</td>
-</tr>
-
-<tr>
-<td>pushnotification</td>
-<td>setPushNotificationSubscriptionType()</td>
-</tr>
-
-<tr>
-<td>logcustomevent</td>
-<td>logCustomEvent()</td>
-</tr>
-
-<tr>
-<td>logpurchase</td>
-<td>logPurchase()</td>
-</tr>
-</tbody>
-</table>
+|Remote Command|Braze Method|
+|--------------|------------|
+| initialize | startWithApiKey() |
+| useridentifier | changeUser() |
+| useralias | addAlias() |
+| userattribute | ABKUser() |
+| facebookuser | facebookUser() |
+| twitteruser | twitterUser() |
+| setcustomattribute | setCustomAttributeWithKey() |
+| unsetcustomattribute | unsetCustomAttributeWithKey() |
+| setcustomarrayattribute | setCustomAttributeArrayWithKey() |
+| appendcustomarrayattribute | addToCustomAttributeArrayWithKey() |
+| removecustomarrayattribute | removeFromCustomAttributeArrayWithKey() |
+| incrementcustomattribute | incrementCustomUserAttribute() |
+| emailnotification | setEmailNotificationSubscriptionType() |
+| pushnotification | setPushNotificationSubscriptionType() |
+| logcustomevent | logCustomEvent() |
+| logpurchase | logPurchase() |
 
 <p class="note">Since the Braze SDK is installed alongside the Tealium SDK, you can trigger any native Braze functionality given the corresponding tag configuration.</p>
 
 <h3 id="sdk-setup">SDK Setup</h3>
 
-<h4 id="initialize-1">Initialize</h4>
+<h4 id="initialize">Initialize</h4>
 
 <p>The Braze SDK is initialized automatically upon launch. The Braze API key is set in the tag configuration.</p>
 
@@ -2017,6 +2013,27 @@ teal = Tealium(config: config) { responses <span style="font-weight:bold">in</sp
           </li>
         </ul>
       </li>
+      
+      
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".">android-tv</a>
+        <ul class=" desktopmenu animated fadeIn list pl0 dn">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/android-tv/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/android-tv/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Install
+            </a>
+          </li>
+        </ul>
+      </li>
   </ul>
 </nav>
 
@@ -2028,7 +2045,7 @@ teal = Tealium(config: config) { responses <span style="font-weight:bold">in</sp
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa2 ph0 ph6-ns center nested-lh-copy lh-copy">
       <p>
-  This page was last updated: July 31, 2019
+  This page was last updated: August 5, 2019
 </p>
 
       
@@ -2191,6 +2208,12 @@ teal = Tealium(config: config) { responses <span style="font-weight:bold">in</sp
     <li  class="tl dib ma0 hover-bg-primary w-100">
         <a href="/platforms/xamarin/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
           Xamarin
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          android-tv
         </a>
     </li>
   
