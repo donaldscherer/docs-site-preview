@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>Remote Command: Braze | Integrations |Preview of Tealium Developer Docs</title>
+    <title>Remote Command: Braze (Beta) | Integrations |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -265,7 +265,7 @@ var utag_data = {
     
   
 
-  <h1 class="lh-title mb3 mv0 pt3">Remote Command: Braze</h1>
+  <h1 class="lh-title mb3 mv0 pt3">Remote Command: Braze (Beta)</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
@@ -2175,14 +2175,15 @@ teal = Tealium(config: config) { responses <span style="font-weight:bold">in</sp
 		<button enabled id="feedback_yes" class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-green link">Yes</button>
 	  <button enabled id="feedback_no" class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-green link">No</button>
   </span>
-	<span id="feedback_comment" style="display:none">
-	  <br/>
-		<strong>Tell us how we can make this article better (Optional):</strong>
-		<textarea id="feedback_textarea" rows="4" cols="70"></textarea>
-		<button enabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-blue link">Submit</button>
-	</span>
+	<span id="feedback_comment">
+		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better..." rows="4" cols="70"></textarea>
+		<button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button>
+  </span>
+  <span id="feedback_thank_you" style="display: none;">
+     <em>Thank you for your feedback!</em>
+  </span>
 </div>
-<p>This page was last updated: August 21, 2019</p>
+<p> This page was last updated: August 21, 2019</p>
 
       
 
