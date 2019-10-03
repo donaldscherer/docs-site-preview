@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.55.6" />
+     <meta name="generator" content="Hugo 0.54.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -311,6 +311,7 @@ var utag_data = {
 
 <p class="tip">Cloning the library, rather than downloading, makes it easier to update to future releases.</p>
 
+
 <h2 id="maven-install">Maven Install</h2>
 
 <p>Tealium uses Maven to install and manage dependencies.</p>
@@ -341,16 +342,14 @@ var utag_data = {
            dirs <span style="color:#b84">&#39;libs&#39;</span>
        <span style="font-weight:bold">}</span>
    <span style="font-weight:bold">}</span>
-<span style="font-weight:bold">}</span></code></pre></div>
-<ol>
-<li>Add <code>tealium-5.x.x.aar</code> to <code>&lt;PROJECT_ROOT&gt;/&lt;MODULE&gt;/libs</code>.</li>
-<li>Add the Tealium library dependency to your <code>build.gradle</code> file:<br />
-<code>groovy
-dependencies {
-implementation(name:'tealium-5.5.5', ext:'aar')
-} 
-</code></li>
-</ol></li>
+<span style="font-weight:bold">}</span></code></pre></div></li>
+
+<li><p>Add <code>tealium-5.x.x.aar</code> to <code>&lt;PROJECT_ROOT&gt;/&lt;MODULE&gt;/libs</code>.</p></li>
+
+<li><p>Add the Tealium library dependency to your <code>build.gradle</code> file:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">dependencies <span style="font-weight:bold">{</span>
+    implementation<span style="font-weight:bold">(</span>name:<span style="color:#b84">&#39;tealium-5.5.5&#39;</span><span style="font-weight:bold">,</span> ext:<span style="color:#b84">&#39;aar&#39;</span><span style="font-weight:bold">)</span>
+<span style="font-weight:bold">}</span> </code></pre></div></li>
 </ol>
 
 <h2 id="initialize">Initialize</h2>
@@ -408,11 +407,13 @@ Tealium<span style="font-weight:bold">.</span><span style="color:#008080">create
 <strong>Version 5.5.1 and above</strong> - data is sent to the profile provided in <code>Tealium.Config</code> object<br />
 <strong>Version 5.5.0 and below</strong> - data is sent to the default profile (&ldquo;main&rdquo;)</p>
 
+
 <h2 id="track-views">Track Views</h2>
 
 <p>A screen view is tracked by calling <code>trackView()</code> with two parameters: the name of the screen and (optionally) contextual view data.</p>
 
 <p class="note">The screen name value is set in the event data as the variable <code>screen_title</code>.</p>
+
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Map<span style="font-weight:bold">&lt;</span>String<span style="font-weight:bold">,</span> Object<span style="font-weight:bold">&gt;</span> data <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> HashMap<span style="font-weight:bold">&lt;&gt;(</span>1<span style="font-weight:bold">);</span>
 data<span style="font-weight:bold">.</span><span style="color:#008080">put</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;someKey&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;someValue&#34;</span><span style="font-weight:bold">);</span>
 Tealium<span style="font-weight:bold">.</span><span style="color:#008080">getInstance</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;INSTANCE&#34;</span><span style="font-weight:bold">).</span><span style="color:#008080">trackView</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;screenName&#34;</span><span style="font-weight:bold">,</span> data<span style="font-weight:bold">);</span></code></pre></div>
@@ -421,6 +422,7 @@ Tealium<span style="font-weight:bold">.</span><span style="color:#008080">getIns
 <p>A non-view event is tracked by calling <code>trackEvent()</code> with two parameters: the event name and (optionally) contextual event data.</p>
 
 <p class="note">The event name is set in the event data as the variable <code>tealium_event</code>.</p>
+
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Map<span style="font-weight:bold">&lt;</span>String<span style="font-weight:bold">,</span> Object<span style="font-weight:bold">&gt;</span> data <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> HashMap<span style="font-weight:bold">&lt;&gt;(</span>1<span style="font-weight:bold">);</span>
 data<span style="font-weight:bold">.</span><span style="color:#008080">put</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;someKey&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;someValue&#34;</span><span style="font-weight:bold">);</span>
 Tealium<span style="font-weight:bold">.</span><span style="color:#008080">getInstance</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;INSTANCE_NAME&#34;</span><span style="font-weight:bold">).</span><span style="color:#008080">trackEvent</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;someEvent&#34;</span><span style="font-weight:bold">,</span> data<span style="font-weight:bold">);</span> </code></pre></div>
@@ -473,6 +475,7 @@ sp<span style="font-weight:bold">.</span><span style="color:#008080">edit</span>
 <p class="note">In version 5.1.0 and above, <code>CookieManager</code> is <strong>enabled</strong> by default.<br />
 In version 5.0.4 and below, <code>CookieManager</code> is <strong>disabled</strong> by default.<br />
 Enabling <code>CookieManager</code> is <strong>required</strong> if using Tag Management.</p>
+
 
 <h2 id="multiprocess-apps">Multiprocess Apps</h2>
 

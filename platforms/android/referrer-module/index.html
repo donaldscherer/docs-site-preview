@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.55.6" />
+     <meta name="generator" content="Hugo 0.54.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -323,6 +323,7 @@ var utag_data = {
 <span style="font-weight:bold">}</span></code></pre></div>
 <p class="note">The <a href="https://developer.android.com/google/play/installreferrer/library">Google Install Referrer API</a> is a dependency for this module, but is not automatically added for you. Please add the module to your build.</p>
 
+
 <p>In the same block where you instantiate the Tealium library (after instantiating Tealium), add the following calls:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// import the Tealium InstallReferrer module in the import section
 </span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">import</span> <span style="color:#555">com.tealium.installreferrer.InstallReferrerReceiver</span><span style="font-weight:bold">;</span>
@@ -354,7 +355,9 @@ To delete the stored install referrer string, you can call the standard methods 
 </span><span style="color:#998;font-style:italic"></span>instance<span style="font-weight:bold">.</span><span style="color:#008080">getDataSources</span><span style="font-weight:bold">().</span><span style="color:#008080">getPersistentDataSources</span><span style="font-weight:bold">().</span><span style="color:#008080">edit</span><span style="font-weight:bold">().</span><span style="color:#008080">remove</span><span style="font-weight:bold">(</span>InstallReferrerReceiver<span style="font-weight:bold">.</span><span style="color:#008080">KEYNAME</span><span style="font-weight:bold">).</span><span style="color:#008080">apply</span><span style="font-weight:bold">();</span>
 
 <span style="color:#998;font-style:italic">// remove from volatile data store (session only)
-</span><span style="color:#998;font-style:italic"></span>instance<span style="font-weight:bold">.</span><span style="color:#008080">getDataSources</span><span style="font-weight:bold">().</span><span style="color:#008080">getVolatileDataSources</span><span style="font-weight:bold">().</span><span style="color:#008080">remove</span><span style="font-weight:bold">(</span>InstallReferrerReceiver<span style="font-weight:bold">.</span><span style="color:#008080">KEYNAME</span><span style="font-weight:bold">);</span></code></pre></div>
+</span><span style="color:#998;font-style:italic"></span>instance<span style="font-weight:bold">.</span><span style="color:#008080">getDataSources</span><span style="font-weight:bold">().</span><span style="color:#008080">getVolatileDataSources</span><span style="font-weight:bold">().</span><span style="color:#008080">remove</span><span style="font-weight:bold">(</span>InstallReferrerReceiver<span style="font-weight:bold">.</span><span style="color:#008080">KEYNAME</span><span style="font-weight:bold">);</span></code></pre></div></li>
+</ul>
+
 <h2 id="solution-for-tealium-sdk-v4-x">Solution for Tealium SDK v4.x</h2>
 
 <p>This module is only compatible with Tealium SDK v5.x.</p>
@@ -362,14 +365,12 @@ To delete the stored install referrer string, you can call the standard methods 
 <p>To achieve this functionality on v4.x, use the following code:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">// Android Manifest 
 <span style="color:#000080">&lt;receiver</span>
-<span style="color:#008080">android:name=</span><span style="color:#b84">&#34;com.tealium.InstallReferrerReceiver&#34;</span>
-<span style="color:#008080">android:exported=</span><span style="color:#b84">&#34;true&#34;</span><span style="color:#000080">&gt;</span>
-<span style="color:#000080">&lt;intent-filter&gt;</span>
-    <span style="color:#000080">&lt;action</span> <span style="color:#008080">android:name=</span><span style="color:#b84">&#34;com.android.vending.INSTALL_REFERRER&#34;</span> <span style="color:#000080">/&gt;</span>
-<span style="color:#000080">&lt;/intent-filter&gt;</span>
-<span style="color:#000080">&lt;/receiver&gt;</span></code></pre></div></li>
-</ul>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// Class for retrieving install referrer
+    <span style="color:#008080">android:name=</span><span style="color:#b84">&#34;com.tealium.InstallReferrerReceiver&#34;</span>
+    <span style="color:#008080">android:exported=</span><span style="color:#b84">&#34;true&#34;</span><span style="color:#000080">&gt;</span>
+    <span style="color:#000080">&lt;intent-filter&gt;</span>
+        <span style="color:#000080">&lt;action</span> <span style="color:#008080">android:name=</span><span style="color:#b84">&#34;com.android.vending.INSTALL_REFERRER&#34;</span> <span style="color:#000080">/&gt;</span>
+    <span style="color:#000080">&lt;/intent-filter&gt;</span>
+<span style="color:#000080">&lt;/receiver&gt;</span></code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// Class for retrieving install referrer
 </span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="color:#458;font-weight:bold">InstallReferrerReceiver</span> <span style="font-weight:bold">extends</span> BroadcastReceiver <span style="font-weight:bold">{</span>
 
     <span style="font-weight:bold">private</span> <span style="font-weight:bold">static</span> <span style="font-weight:bold">final</span> String INSTALL_REFERRER <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;INSTALL_REFERRER&#34;</span><span style="font-weight:bold">;</span>

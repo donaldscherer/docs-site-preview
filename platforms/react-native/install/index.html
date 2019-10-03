@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.55.6" />
+     <meta name="generator" content="Hugo 0.54.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -311,6 +311,7 @@ var utag_data = {
 
 <p class="note">The Core library is required. If you want to track lifecycle events, then the lifecycle module is also needed. These are available from <a href="https://github.com/Tealium/tealium-ios">our GitHub repository for iOS</a>. There are two versions of each module: one for publishing to the App Store and one that includes the ability to run the app on a simulator (cannot be published to the App Store). When working on your own app with intent to publish to the App Store, make sure to use the frameworks in <a href="https://github.com/Tealium/tealium-ios/tree/master/DevicesOnly">devices only folder</a>.</p>
 
+
 <h2 id="sample-apps">Sample Apps</h2>
 
 <p>We recommend downloading the sample app we provide within the React Native repository. This helps to familiarize yourself with our library, the tracking methods, and best practice implementation.</p>
@@ -339,6 +340,7 @@ react-native link</code></pre></div>
 <p>Finally, under <strong>Libraries</strong> find <code>TealiumModule.xcodeproj</code>. Within, you will find a <strong>Products</strong> folder containing the file <code>libTealiumModule.a</code>.</p>
 
 <p class="note">If you are looking for <code>Libraries &gt; TealiumModule.xcodeproj &gt; Products &gt; libTealiumModule.a</code>. Under the <code>Build Phases</code> tab of your target, find the section <code>Link Binary With Libraries</code> and drag <code>libTealiumModule.a</code> into it. More information on linking libraries can be found in the <a href="https://facebook.github.io/react-native/docs/linking-libraries-ios#step-2-1">React Native documentation</a>.</p>
+
 
 <h2 id="manual-install">Manual Install</h2>
 

@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.55.6" />
+     <meta name="generator" content="Hugo 0.54.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -300,8 +300,7 @@ var utag_data = {
 </ul>
 
 <p>Import the <em>Tealium</em> folder into your solution.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="font-weight:bold">using</span> <span style="color:#555">TealiumCSharp</span>;
-</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="font-weight:bold">using</span> <span style="color:#555">TealiumCSharp</span>;</code></pre></div>
 <h2 id="initialize">Initialize</h2>
 
 <p>Once the Tealium for C# package is installed you are ready to start coding. Use the following code to initialize:</p>
@@ -314,8 +313,7 @@ var utag_data = {
                                <span style="color:#b84">&#34;overrideCollectUrl&#34;</span>,
                                <span style="font-weight:bold">new</span> Dictionary&lt;<span style="color:#458;font-weight:bold">string</span>, <span style="color:#458;font-weight:bold">object</span>&gt; optionalData,
                                Method.POST);
-Tealium tealium = <span style="font-weight:bold">new</span> Tealium(tealConfig);
-</code></pre></div>
+Tealium tealium = <span style="font-weight:bold">new</span> Tealium(tealConfig);</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -379,8 +377,7 @@ Tealium tealium = <span style="font-weight:bold">new</span> Tealium(tealConfig);
     customData,
     (success, info, error)=&gt;) {
         Debug.WriteLine(<span style="color:#b84">&#34;eventTrackComplete: was successful: &#34;</span> + success);
-});
-</code></pre></div>
+});</code></pre></div>
 <h4 id="parameters">Parameters</h4>
 
 <table>
@@ -420,21 +417,17 @@ Tealium tealium = <span style="font-weight:bold">new</span> Tealium(tealConfig);
    {<span style="color:#b84">&#34;foo2&#34;</span>, <span style="color:#b84">&#34;bar2&#34;</span>},
    {<span style="color:#b84">&#34;foo3&#34;</span>, <span style="color:#b84">&#34;bar3&#34;</span>}
 };
-tealium.Track(<span style="color:#b84">&#34;My Event&#34;</span>, customData);
-</code></pre></div>
+tealium.Track(<span style="color:#b84">&#34;My Event&#34;</span>, customData);</code></pre></div>
 <h2 id="trace">Trace</h2>
 
 <p>This library uses the <a href="/platforms/http-api/">HTTP API</a> and therefore supports sending a Trace Id for debugging purposes. To join a Trace, simply generate a new Trace Id in the UDH User Interface and then pass that Id to the JoinTrace method:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">tealium.JoinTrace(<span style="color:#b84">&#34;01234&#34;</span>);
-</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">tealium.JoinTrace(<span style="color:#b84">&#34;01234&#34;</span>);</code></pre></div>
 <p>This will add the <code>tealium_trace_id</code> key to all subsequent events allowing you to debug your events using the Trace system.</p>
 
 <p>To leave a trace, simply execute:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">tealium.LeaveTrace();
-</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">tealium.LeaveTrace();</code></pre></div>
 <p>You can also trigger an additional event to end the trace session at the server - this is useful for verifying end-of-visit behaviour in your UDH configuration/connectors. You can do this by executing the following. This will also call the LeaveTrace() method for you in order to remove the expired <code>tealium_trace_id</code> from any subsequent events.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">tealium.KillTraceSession();
-</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">tealium.KillTraceSession();</code></pre></div>
 <h2 id="xamarin-mobile-applications">Xamarin Mobile Applications</h2>
 
 <p>If you are building a mobile application in Xamarin then you can make use of the <a href="/platforms/xamarin/">Xamarin integration</a> which has prebuilt bindings to our <a href="/platforms/ios/">iOS</a> and <a href="/platforms/android/">Android</a> SDKs</p>

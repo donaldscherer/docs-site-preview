@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.55.6" />
+     <meta name="generator" content="Hugo 0.54.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -358,11 +358,10 @@ When tracking events for a known visitor (when a value exists for a Visitor ID 
     <span style="color:#998;font-style:italic">// MD5 Hash of user@example.com
 </span><span style="color:#998;font-style:italic"></span>    <span style="color:#b84">&#34;tealium_visitor_id&#34;</span> <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;b58996c504c5638798eb6b511e6f49af&#34;</span>
 }
-</code></pre></div>
-<ul>
-<li><strong>Anonymous Visitors</strong> (Required for AudienceStream)<br />
-When tracking events for an anonymous visitor from a website (without a known identifier), then the value of the <code>tealium_visitor_id</code> will need to match the value in the <code>utag_main_v_id</code> cookie. (Learn more about the <a href="/platforms/javascript/built-in-variables/">built-in variables from utag.js</a>.)
-<br /></li>
+</code></pre></div></li>
+
+<li><p><strong>Anonymous Visitors</strong> (Required for AudienceStream)<br />
+When tracking events for an anonymous visitor from a website (without a known identifier), then the value of the <code>tealium_visitor_id</code> will need to match the value in the <code>utag_main_v_id</code> cookie. (Learn more about the <a href="/platforms/javascript/built-in-variables/">built-in variables from utag.js</a>.)</p></li>
 </ul>
 
 <h2 id="post-method">POST Method</h2>
@@ -372,13 +371,11 @@ When tracking events for an anonymous visitor from a website (without a known i
 <p>Example of <code>user_login</code> event:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
     <span style="color:#b84">&#34;tealium_account&#34;</span>   <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;{ACCOUNT}&#34;</span>,
-<span style="color:#b84">&#34;tealium_profile&#34;</span>   <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;{PROFILE}&#34;</span>,
-<span style="color:#b84">&#34;tealium_event&#34;</span>     <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;user_login&#34;</span>,
-<span style="color:#b84">&#34;email_address&#34;</span>     <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;user@example.com&#34;</span>
+    <span style="color:#b84">&#34;tealium_profile&#34;</span>   <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;{PROFILE}&#34;</span>,
+    <span style="color:#b84">&#34;tealium_event&#34;</span>     <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;user_login&#34;</span>,
+    <span style="color:#b84">&#34;email_address&#34;</span>     <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;user@example.com&#34;</span>
 }
-</code></pre></div></li>
-</ul>
-
+</code></pre></div>
 <p>Example using curl:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -X POST -H <span style="color:#b84">&#39;Content-type: application/json&#39;</span> <span style="color:#b84">\
 </span><span style="color:#b84"></span>--data <span style="color:#b84">&#39;{&#34;tealium_account&#34;:&#34;{ACCOUNT}&#34;,&#34;tealium_profile&#34;:&#34;{PROFILE}&#34;,&#34;tealium_event&#34;:&#34;user_login&#34;,&#34;email_address&#34;:&#34;user@example.com&#34;}&#39;</span> <span style="color:#b84">\

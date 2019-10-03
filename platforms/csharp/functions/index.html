@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.55.6" />
+     <meta name="generator" content="Hugo 0.54.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -284,8 +284,7 @@ var utag_data = {
                <span style="color:#458;font-weight:bold">string</span> datasource = <span style="font-weight:bold">null</span>,
                <span style="color:#458;font-weight:bold">string</span> overrideCollectUrl = <span style="font-weight:bold">null</span>,
                Dictionary&lt;<span style="color:#458;font-weight:bold">string</span>, <span style="color:#458;font-weight:bold">object</span>&gt; optionalData = <span style="font-weight:bold">null</span>,
-               Method method = Method.POST)
-</code></pre></div>
+               Method method = Method.POST)</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -355,8 +354,7 @@ var utag_data = {
 <h2 id="tealium">Tealium()</h2>
 
 <p>Primary object constructor.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">Tealium(Config config) 
-</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">Tealium(Config config) </code></pre></div>
 <table>
 <thead>
 <tr>
@@ -378,16 +376,13 @@ var utag_data = {
 <h2 id="enable">Enable()</h2>
 
 <p>Automatically called with the initial initialization. Re-enable the Tealium instance and any internal modules if the library had been disabled prior.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">tealium.Enable()
-</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">tealium.Enable()</code></pre></div>
 <h2 id="disable">Disable()</h2>
 
 <p>Disable library modules from temporarily processing events. May deinit internal class objects.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">tealium.Disable()
-</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">tealium.Disable()</code></pre></div>
 <h2 id="track">Track()</h2>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">Track(<span style="color:#458;font-weight:bold">string</span> eventName, Dictionary&lt;<span style="color:#458;font-weight:bold">string</span>, <span style="color:#458;font-weight:bold">object</span>&gt; customData, TrackCompletion completion)
-</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">Track(<span style="color:#458;font-weight:bold">string</span> eventName, Dictionary&lt;<span style="color:#458;font-weight:bold">string</span>, <span style="color:#458;font-weight:bold">object</span>&gt; customData, TrackCompletion completion)</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -429,8 +424,7 @@ tealium.Track(<span style="color:#b84">&#34;My Event&#34;</span>,
         {
         Debug.WriteLine(<span style="color:#b84">&#34;Track action completion block triggered.&#34;</span>);
         Debug.WriteLine(<span style="color:#b84">&#34;Success: &#34;</span> + success + <span style="color:#b84">&#34; info: &#34;</span> + info + <span style="color:#b84">&#34; error: &#34;</span> + error);
-});
-</code></pre></div>
+});</code></pre></div>
 <h3 id="trackcompletion">TrackCompletion</h3>
 
 <p>The optional callback for track calls will contain the following parameters:</p>
@@ -469,8 +463,7 @@ tealium.Track(<span style="color:#b84">&#34;My Event&#34;</span>,
 
 <p>Joins a Trace using the supplied Id. The <code>tealium_trace_id</code> will be present in all future Track calls until the LeaveTrace() method is called.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#998;font-style:italic">//Sample
-</span><span style="color:#998;font-style:italic"></span>tealium.JoinTrace(<span style="color:#b84">&#34;01234&#34;</span>);
-</code></pre></div>
+</span><span style="color:#998;font-style:italic"></span>tealium.JoinTrace(<span style="color:#b84">&#34;01234&#34;</span>);</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -493,22 +486,19 @@ tealium.Track(<span style="color:#b84">&#34;My Event&#34;</span>,
 
 <p>Leaves a trace if one has been joined. The <code>tealium_trace_id</code> will no longer be populated automatically on future events.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#998;font-style:italic">//Sample
-</span><span style="color:#998;font-style:italic"></span>tealium.LeaveTrace();
-</code></pre></div>
+</span><span style="color:#998;font-style:italic"></span>tealium.LeaveTrace();</code></pre></div>
 <h2 id="killtracesession">KillTraceSession()</h2>
 
 <p>Sends an additional event to Tealium to end the visitor session at the server. This is useful for testing end-of-visit configuration.
 Also calls LeaveTrace() to stop any more events being sent with the previous trace id.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#998;font-style:italic">//Sample
-</span><span style="color:#998;font-style:italic"></span>tealium.KillTraceSession();
-</code></pre></div>
+</span><span style="color:#998;font-style:italic"></span>tealium.KillTraceSession();</code></pre></div>
 <h2 id="available-modules">Available Modules</h2>
 
 <p>The following string values can be used to enable modules with the current build.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">config.Modules = <span style="font-weight:bold">new</span> <span style="color:#458;font-weight:bold">string</span><span style="color:#008080">[]</span> { AppDataModule.Name,
                                 CollectModule.Name,
-                                LoggerModule.Name };
-</code></pre></div>
+                                LoggerModule.Name };</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -536,6 +526,7 @@ Also calls LeaveTrace() to stop any more events being sent with the previous tra
 </table>
 
 <p class="note">Use the .Name constant of each Module class.</p>
+
 
 </div>
 

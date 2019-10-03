@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.55.6" />
+     <meta name="generator" content="Hugo 0.54.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -308,10 +308,9 @@ To install:</p>
 <ol>
 <li>Add <code>TealiumWATCHOSExtension.framework</code> to your project&rsquo;s watchOS Extension target.</li>
 <li>Copy or reference the framework to the project in the resulting dialog box.</li>
-
-<li><p>In the Target&rsquo;s <strong>General: Embedded Binaries: Options</strong> add <code>TealiumWATCHOSExtension.framework</code><p class="note">For Swift projects, add <code>&lt;TealiumWATCHOSExtension/TEALWKExtension.h&gt;</code> to your bridging header file.</p></p></li>
-
-<li><p>Make sure all paths are as expected under <strong>Projects: Target: Build Settings</strong>.</p></li>
+<li>In the Target&rsquo;s <strong>General: Embedded Binaries: Options</strong> add <code>TealiumWATCHOSExtension.framework</code><p class="note">For Swift projects, add <code>&lt;TealiumWATCHOSExtension/TEALWKExtension.h&gt;</code> to your bridging header file.</p>
+</li>
+<li>Make sure all paths are as expected under <strong>Projects: Target: Build Settings</strong>.</li>
 </ol>
 
 <h2 id="initialize">Initialize</h2>
@@ -322,8 +321,7 @@ To install:</p>
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" data-lang="Swift" title="Swift">
+  <div class="tab-content"><div class="tab-pane" data-lang="Swift" title="Swift">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#998;font-style:italic">// Get Tealium instance</span>
 <span style="font-weight:bold">let</span> <span style="color:#008080">config</span> = TEALWKExtensionConfiguration.configuration()
     <span style="font-weight:bold">guard</span> <span style="font-weight:bold">let</span> <span style="color:#008080">tealium</span> = TEALWKExtension.newInstanceForKey(<span style="color:#b84">&#34;[hostTealiumInstanceKey]&#34;</span>) <span style="font-weight:bold">else</span> {
@@ -343,9 +341,9 @@ To install:</p>
 config.logLevel <span style="font-weight:bold">=</span> TEALLogLevelDev;
 [TEALWKExtension newInstanceForKey:<span style="color:#b84">@&#34;[hostTealiumInstanceKey]&#34;</span> configuration:config]; </code></pre></div>
 </div>
+</div>
+</div>
 
-<p></div>
-</div></p>
 
 <h2 id="track">Track</h2>
 
@@ -357,17 +355,16 @@ config.logLevel <span style="font-weight:bold">=</span> TEALLogLevelDev;
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" data-lang="Swift" title="Swift">
+  <div class="tab-content"><div class="tab-pane" data-lang="Swift" title="Swift">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">TEALWKExtension.instanceForKey(<span style="color:#b84">&#34;[hostTealiumInstanceKey]&#34;</span>)?.trackViewWithTitle(NSStringFromClass(<span style="font-weight:bold">self</span>.classForCoder), dataSources: [<span style="color:#999">String</span>:<span style="color:#999">String</span>]())</code></pre></div>
 </div>
 
 <div class="tab-pane" data-lang="Objective-C" title="Objective-C">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">[[TEALWKExtension instanceForKey:<span style="color:#b84">@&#34;[hostTealiumInstanceKey]&#34;</span>] trackViewWithTitle:NSStringFromClass([<span style="color:#999">self</span> <span style="font-weight:bold">class</span>]) dataSources:@{}];</code></pre></div>
 </div>
+</div>
+</div>
 
-<p></div>
-</div></p>
 
 <h4 id="events">Events</h4>
 
@@ -377,17 +374,16 @@ config.logLevel <span style="font-weight:bold">=</span> TEALLogLevelDev;
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" data-lang="Swift" title="Swift">
+  <div class="tab-content"><div class="tab-pane" data-lang="Swift" title="Swift">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">TEALWKExtension.instanceForKey(<span style="color:#b84">&#34;[hostTealiumInstanceKey]&#34;</span>)?.trackEventwWithTitle(<span style="color:#b84">&#34;someEvent&#34;</span>), dataSources: [<span style="color:#999">String</span>:<span style="color:#999">String</span>]())</code></pre></div>
 </div>
 
 <div class="tab-pane" data-lang="Objective-C" title="Objective-C">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">[[Tealium instanceForKey:<span style="color:#b84">@&#34;[hostTealiumInstanceKey]&#34;</span>] trackEventWithTitle:<span style="color:#b84">@&#34;someEvent&#34;</span> dataSources:@{<span style="color:#b84">@&#34;optionalKey&#34;</span><span style="font-weight:bold">:</span><span style="color:#b84">@&#34;optionalValue&#34;</span>}];</code></pre></div>
 </div>
+</div>
+</div>
 
-<p></div>
-</div></p>
 
 <h2 id="sample-app">Sample App</h2>
 

@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.55.6" />
+     <meta name="generator" content="Hugo 0.54.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -289,11 +289,10 @@ var utag_data = {
 <li>Give this file a temporary name, such as &ldquo;placeholder.m&rdquo;, as you are going to remove it later.</li>
 <li>Click &ldquo;Finish&rdquo; and XCode will prompt you to create a Bridging Header (if it doesn&rsquo;t, you probably already have a Bridging Header in your project). Press &ldquo;Create Bridging Header&rdquo; to continue, and Xcode will automatically create the new header file for you.</li>
 <li>Delete the <code>placeholder.m</code> file from the project and notice a new file called <code>&lt;ProjectName&gt;-Bridging-Header.h</code></li>
-
-<li><p>Add the following import statement to the new Bridging Header:</p>
-
-<pre><code>@import TealiumIOS;
-</code></pre></li>
+<li>Add the following import statement to the new Bridging Header:<br />
+<code>
+@import TealiumIOS;
+</code></li>
 </ol>
 
 <p>Next, to call the Objective-C code from Swift:</p>
@@ -313,11 +312,10 @@ However, by using an intermediate helper class, it is possible to call the Swift
 
 <ol>
 <li>In your Objective-C project, create a new Swift file. You will be prompted to add a bridging header if you don&rsquo;t already have one. Accept this prompt. Name the new Swift file &ldquo;TealiumHelper.swift&rdquo;.</li>
-
-<li><p>Import the new Swift header (<code>&lt;ProjectName&gt;-Swift.h</code>) into files that need to call the new helper.</p>
-
-<pre><code>#import &quot;ProjectName-Swift.h&quot;
-</code></pre></li>
+<li>Import the new Swift header (<code>&lt;ProjectName&gt;-Swift.h</code>) into files that need to call the new helper.<br />
+<code>
+#import &quot;ProjectName-Swift.h&quot;
+</code></li>
 </ol>
 
 <p>The methods in the helper file are now be available to use in your Objective-C code. We recommend making the helper a singleton.</p>

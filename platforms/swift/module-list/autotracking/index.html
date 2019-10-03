@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.55.6" />
+     <meta name="generator" content="Hugo 0.54.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -335,10 +335,13 @@ var utag_data = {
 <li>Give this file a temporary name, such as &ldquo;placeholder.m&rdquo;, as you are going to remove it later.</li>
 <li>Click &ldquo;Finish&rdquo;. Xcode prompts you to create a Bridging Header (if it doesn&rsquo;t, you probably already have a Bridging Header in your project). Press &ldquo;Create Bridging Header&rdquo; to continue and have Xcode create the new header file for you.</li>
 <li>Delete &ldquo;placeholder.m&rdquo; from your project. Notice a new file called <code>ProjectName-Bridging-Header.h</code>.</li>
+<li>Add the following import statements to the new Bridging Header:<br />
+<code>swift
+#import &quot;uiapplication+tealiumtracker.h&quot;
+#import &quot;uiviewcontroller+tealiumtracker.h&quot;
+</code></li>
+</ol>
 
-<li><p>Add the following import statements to the new Bridging Header:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">#<span style="font-weight:bold">import</span> <span style="color:#b84">&#34;uiapplication+tealiumtracker.h&#34;</span>
-#<span style="font-weight:bold">import</span> <span style="color:#b84">&#34;uiviewcontroller+tealiumtracker.h&#34;</span></code></pre></div>
 <h2 id="compatible-platforms">Compatible Platforms</h2>
 
 <ul>
@@ -389,9 +392,7 @@ var utag_data = {
 <p>The following methods are available to change the default behavior of the Autotracking module, or to monitor autotracked tracking calls:</p>
 
 <h3 id="tealiumautotrackingshouldtrack">tealiumAutotrackingShouldTrack</h3>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">tealiumAutotrackingShouldTrack(data: [<span style="color:#999">String</span>:<span style="color:#999">Any</span>]) -&gt; <span style="color:#999">Bool</span></code></pre></div></li>
-</ol>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">tealiumAutotrackingShouldTrack(data: [<span style="color:#999">String</span>:<span style="color:#999">Any</span>]) -&gt; <span style="color:#999">Bool</span></code></pre></div>
 <table>
 <thead>
 <tr>

@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.55.6" />
+     <meta name="generator" content="Hugo 0.54.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -316,6 +316,7 @@ var utag_data = {
 
 <p class="tip">We recommend cloning the library (instead of downloading) to make it easier to update to future releases.</p>
 
+
 <p>Once the code is in place, embed the framework:</p>
 
 <ol>
@@ -331,8 +332,7 @@ var utag_data = {
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" data-lang="Swift" title="Swift">
+  <div class="tab-content"><div class="tab-pane" data-lang="Swift" title="Swift">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">let</span> <span style="color:#008080">config</span> = TEALConfiguration.<span style="font-weight:bold">init</span>(account: <span style="color:#b84">&#34;ACCOUNT&#34;</span>,
                                     profile: <span style="color:#b84">&#34;PROFILE&#34;</span>,
                                 environment: <span style="color:#b84">&#34;ENV&#34;</span>,
@@ -352,9 +352,9 @@ var utag_data = {
 
 Tealium <span style="font-weight:bold">*</span>tealiumInstance1 <span style="font-weight:bold">=</span> [Tealium newInstanceForKey:<span style="color:#b84">@&#34;uniqueInstanceKey&#34;</span> configuration:configuration]; </code></pre></div>
 </div>
+</div>
+</div>
 
-<p></div>
-</div></p>
 
 <table>
 <thead>
@@ -402,19 +402,19 @@ Tealium <span style="font-weight:bold">*</span>tealiumInstance1 <span style="fon
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" data-lang="Swift" title="Swift">
+  <div class="tab-content"><div class="tab-pane" data-lang="Swift" title="Swift">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">Tealium.instanceForKey(<span style="color:#b84">&#34;uniqueInstanceKey&#34;</span>)?.trackViewWithTitle(NSStringFromClass(<span style="font-weight:bold">self</span>.classForCoder), dataSources: [:])</code></pre></div>
 </div>
 
 <div class="tab-pane" data-lang="Objective-C" title="Objective-C">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">[[Tealium instanceForKey:<span style="color:#b84">@&#34;uniqueInstanceKey&#34;</span>] trackViewWithTitle:NSStringFromClass([<span style="color:#999">self</span> <span style="font-weight:bold">class</span>]) dataSources:<span style="color:#999">nil</span>];</code></pre></div>
 </div>
+</div>
+</div>
 
-<p></div>
-</div></p>
 
 <p class="note">The screen name is populated in the event data as <code>screen_title</code>.</p>
+
 
 <h4 id="events">Events</h4>
 
@@ -422,19 +422,19 @@ Tealium <span style="font-weight:bold">*</span>tealiumInstance1 <span style="fon
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" data-lang="Swift" title="Swift">
+  <div class="tab-content"><div class="tab-pane" data-lang="Swift" title="Swift">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">Tealium.instanceForKey(<span style="color:#b84">&#34;uniqueInstanceKey&#34;</span>)?.trackEventWithTitle(<span style="color:#b84">&#34;someEvent&#34;</span>, dataSources: [:])</code></pre></div>
 </div>
 
 <div class="tab-pane" data-lang="Objective-C" title="Objective-C">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">[[Tealium instanceForKey:<span style="color:#b84">@&#34;uniqueInstanceKey&#34;</span>] trackEventWithTitle:<span style="color:#b84">@&#34;someEvent&#34;</span> dataSources:<span style="color:#999">nil</span>];</code></pre></div>
 </div>
+</div>
+</div>
 
-<p></div>
-</div></p>
 
 <p class="note">The event name is populated in the event data as <code>tealium_event</code>.</p>
+
 
 <h2 id="additional-resources">Additional Resources</h2>
 

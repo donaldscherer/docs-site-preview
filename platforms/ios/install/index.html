@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.55.6" />
+     <meta name="generator" content="Hugo 0.54.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -359,7 +359,8 @@ var utag_data = {
 <ol>
 <li>Add <code>TealiumIOS.framework</code> to your project.</li>
 <li>Copy framework to project in the resulting dialog box.</li>
-<li>In the Target go to <strong>General &gt; Embedded Binaries</strong> and add <code>TealiumIOS.framework</code>.<p class="note">For Swift projects go to the <strong>Build Settings &gt; Swift Compiler &gt; Objective-C Bridging Header</strong> option and include the file <code>TealiumIOSBridgingHeader.h</code>.</p></li>
+<li>In the Target go to <strong>General &gt; Embedded Binaries</strong> and add <code>TealiumIOS.framework</code>.<p class="note">For Swift projects go to the <strong>Build Settings &gt; Swift Compiler &gt; Objective-C Bridging Header</strong> option and include the file <code>TealiumIOSBridgingHeader.h</code>.</p>
+</li>
 </ol>
 
 <h2 id="initialize">Initialize</h2>
@@ -406,8 +407,7 @@ var utag_data = {
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" data-lang="Swift" title="Swift">
+  <div class="tab-content"><div class="tab-pane" data-lang="Swift" title="Swift">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#998;font-style:italic">// set your account, profile, and environment</span>
 <span style="font-weight:bold">let</span> <span style="color:#008080">tealConfig</span> = TEALConfiguration.<span style="font-weight:bold">init</span>(account: <span style="color:#b84">&#34;ACCOUNT&#34;</span>,
                                         profile: <span style="color:#b84">&#34;PROFILE&#34;</span>,
@@ -434,16 +434,15 @@ var utag_data = {
 <span style="color:#998;font-style:italic">// Initialize with a unique key for this instance
 </span><span style="color:#998;font-style:italic"></span>Tealium <span style="font-weight:bold">*</span>tealium <span style="font-weight:bold">=</span> [Tealium newInstanceForKey:<span style="color:#b84">@&#34;INSTANCE&#34;</span> configuration:tealConfig]; </code></pre></div>
 </div>
+</div>
+</div>
 
-<p></div>
-</div></p>
 
 <p>The log level is set by default from the publish settings from your iQ account. To overriide this setting set the <code>logLevel</code> property in the TEALConfiguration instance:</p>
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" data-lang="Swift" title="Swift">
+  <div class="tab-content"><div class="tab-pane" data-lang="Swift" title="Swift">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#998;font-style:italic">// Set the log verbosity to errors only</span>
 tealConfig.logLevel = .prod</code></pre></div>
 </div>
@@ -452,9 +451,9 @@ tealConfig.logLevel = .prod</code></pre></div>
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-obj-c" data-lang="obj-c"><span style="color:#998;font-style:italic">// Set the log verbosity to maximum
 </span><span style="color:#998;font-style:italic"></span>[tealConfig setLogLevel: TEALLogLevelDev];</code></pre></div>
 </div>
+</div>
+</div>
 
-<p></div>
-</div></p>
 
 <h2 id="track-views">Track Views</h2>
 
@@ -462,10 +461,10 @@ tealConfig.logLevel = .prod</code></pre></div>
 
 <p class="note">The screen name value is set in the event attribute <code>screen_title</code>.</p>
 
+
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" data-lang="Swift" title="Swift">
+  <div class="tab-content"><div class="tab-pane" data-lang="Swift" title="Swift">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#998;font-style:italic">// Retrieve instance</span>
 <span style="font-weight:bold">let</span> <span style="color:#008080">tealium</span> = Tealium.instance(forKey: <span style="color:#b84">&#34;INSTANCE&#34;</span>)
 
@@ -496,9 +495,9 @@ tealium?.trackView(withTitle: <span style="color:#b84">&#34;screenName&#34;</spa
 </span><span style="color:#998;font-style:italic"></span>NSDictionary <span style="font-weight:bold">*</span>optionalData <span style="font-weight:bold">=</span> @{<span style="color:#b84">@&#34;someKey&#34;</span> <span style="font-weight:bold">:</span> @[<span style="color:#b84">@&#34;arrayValue1&#34;</span>, <span style="color:#b84">&#34;arrayValue2&#34;</span>]};
 [tealium trackViewWithTitle:<span style="color:#b84">@&#34;screenName&#34;</span> dataSources: optionalData];</code></pre></div>
 </div>
+</div>
+</div>
 
-<p></div>
-</div></p>
 
 <h2 id="track-events">Track Events</h2>
 
@@ -506,10 +505,10 @@ tealium?.trackView(withTitle: <span style="color:#b84">&#34;screenName&#34;</spa
 
 <p class="note">The event name value will be populated in the event attribute named <code>tealium_event</code>.</p>
 
+
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" data-lang="Swift" title="Swift">
+  <div class="tab-content"><div class="tab-pane" data-lang="Swift" title="Swift">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#998;font-style:italic">// Retrieve instance</span>
 <span style="font-weight:bold">let</span> <span style="color:#008080">tealium</span> = Tealium.instance(forKey: <span style="color:#b84">&#34;INSTANCE&#34;</span>)
 
@@ -540,9 +539,9 @@ tealium?.trackEvent(withTitle: <span style="color:#b84">&#34;someEvent&#34;</spa
 </span><span style="color:#998;font-style:italic"></span>NSDictionary <span style="font-weight:bold">*</span>optionalData <span style="font-weight:bold">=</span> @{<span style="color:#b84">@&#34;someKey&#34;</span> <span style="font-weight:bold">:</span> @[<span style="color:#b84">@&#34;arrayValue1&#34;</span>, <span style="color:#b84">@&#34;arrayValue2&#34;</span>]};
 [tealium trackEventWithTitle:<span style="color:#b84">@&#34;someEvent&#34;</span> dataSources:optionalData];</code></pre></div>
 </div>
+</div>
+</div>
 
-<p></div>
-</div></p>
 
 <h2 id="persistent-and-volatile-data">Persistent and Volatile Data</h2>
 
@@ -550,8 +549,7 @@ tealium?.trackEvent(withTitle: <span style="color:#b84">&#34;someEvent&#34;</spa
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" data-lang="Swift" title="Swift">
+  <div class="tab-content"><div class="tab-pane" data-lang="Swift" title="Swift">
   <p>Persistent and volatile values are stored on the device. The persistent object will be merged into each event and preserved between launches of the app, whereas the volatile object will be discarded upon closing the app and restarting.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#998;font-style:italic">//persistent data</span>
 tealium.persistentData()?.add(data: [<span style="color:#b84">&#34;persistent_key&#34;</span>: <span style="color:#b84">&#34;persistent_value&#34;</span>])
@@ -572,9 +570,9 @@ NSDictionary <span style="font-weight:bold">*</span>persistentDataSources <span 
 </span><span style="color:#998;font-style:italic"></span>[<span style="color:#999">self</span>.tealium addVolatileDataSources:@{<span style="color:#b84">@&#34;volatile_key&#34;</span><span style="font-weight:bold">:</span> <span style="color:#b84">@&#34;volatile_value&#34;</span>}];
 NSDictionary <span style="font-weight:bold">*</span>volatileDataSources <span style="font-weight:bold">=</span> [<span style="color:#999">self</span>.tealium volatileDataSourcesCopy];</code></pre></div>
 </div>
+</div>
+</div>
 
-<p></div>
-</div></p>
 
 <h2 id="submit-to-the-app-store">Submit to the App Store</h2>
 

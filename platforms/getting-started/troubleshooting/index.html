@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.55.6" />
+     <meta name="generator" content="Hugo 0.54.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -264,7 +264,7 @@ var utag_data = {
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Troubleshooting mobile solutions.
+      Learn about the various methods for validating your mobile installation.
     </div>
   
 
@@ -276,8 +276,6 @@ var utag_data = {
 <div class="prose" id="prose">
 
 
-
-<p>This section explains several methods of debugging Tealium iQ and AudienceStream mobile app installations.</p>
 
 <h2 id="basics">Basics</h2>
 
@@ -293,6 +291,7 @@ var utag_data = {
 
 <p class="note">If you enable this in a production environment, you may be charged for the volume usage. Be sure to disable this feature before your app goes live.</p>
 
+
 <p>Use one of the following methods to enable the event collection feature.</p>
 
 <h4 id="option-1-tealium-collect-tag">Option 1 - Tealium Collect Tag</h4>
@@ -307,17 +306,16 @@ var utag_data = {
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" data-lang="Android" title="Android">
+  <div class="tab-content"><div class="tab-pane" data-lang="Android" title="Android">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Tealium<span style="font-weight:bold">.</span><span style="color:#008080">Config</span> config <span style="font-weight:bold">=</span> Tealium<span style="font-weight:bold">.</span><span style="color:#008080">Config</span><span style="font-weight:bold">.</span><span style="color:#008080">create</span><span style="font-weight:bold">(</span>application<span style="font-weight:bold">,</span> <span style="color:#b84">&#34;[ACCOUNT]&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;[PROFILE]&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;ENVIRONMENT&#34;</span><span style="font-weight:bold">);</span>config<span style="font-weight:bold">.</span><span style="color:#008080">setOverrideCollectDispatchUrl</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;https://collect.tealiumiq.com/vdata/i.gif?tealium_account=[ACCOUNT]&amp;tealium_profile=[PROFILE]&#34;</span><span style="font-weight:bold">);</span></code></pre></div>
 </div>
 
 <div class="tab-pane" data-lang="iOS/Objective-C" title="iOS/Objective-C">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-obj-c" data-lang="obj-c">TEALConfiguration <span style="font-weight:bold">*</span>configuration <span style="font-weight:bold">=</span> [TEALConfiguration configurationWithAccount:<span style="color:#b84">@&#34;[account]&#34;</span>profile:<span style="color:#b84">@&#34;[profile]&#34;</span> environment:<span style="color:#b84">@&#34;dev&#34;</span>];[configuration setOverrideCollectDispatchURL:<span style="color:#b84">@&#34;https://collect.tealiumiq.com/vdata/i.gif?tealium_account=[account]&amp;tealium_profile=[profile]&#34;</span>];</code></pre></div>
 </div>
+</div>
+</div>
 
-<p></div>
-</div></p>
 
 <p>Once you have configured one of the collection methods above, log in to EventStream and go to Live Events to see the incoming events.</p>
 
@@ -345,6 +343,7 @@ var utag_data = {
 <p>Charles Proxy now switches all requests from the &ldquo;prod&rdquo; environment to the &ldquo;dev&rdquo; environment. To switch back to the app&rsquo;s default environment, disable or delete the Map Remote rule, or turn off the proxy on your device.</p>
 
 <p class="note">Kill the app and relaunch it for this setting to take effect.</p>
+
 
 <h4 id="traffic-inspection">Traffic Inspection</h4>
 
@@ -437,8 +436,7 @@ var utag_data = {
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" data-lang="Android" title="Android">
+  <div class="tab-content"><div class="tab-pane" data-lang="Android" title="Android">
   <pre><code>instance.getDataSources().getVolatileDataSources().put(&quot;tealium_trace_id&quot;, TRACE_ID&quot;);
 </code></pre>
 
@@ -465,9 +463,9 @@ var utag_data = {
 </code></pre>
 
 </div>
+</div>
+</div>
 
-<p></div>
-</div></p>
 
 <h4 id="ending-a-trace-using-native-code">Ending a Trace Using Native Code</h4>
 
@@ -477,8 +475,7 @@ var utag_data = {
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" data-lang="Android" title="Android">
+  <div class="tab-content"><div class="tab-pane" data-lang="Android" title="Android">
   <pre><code>Map&lt;String, Object&gt; data = new HashMap&lt;&gt;(1);
 data.put(&quot;event&quot;, &quot;kill_visitor_session&quot;);
 data.put(&quot;cp.trace_id&quot;, &quot;TRACE_ID&quot;);
@@ -493,9 +490,9 @@ data.put(&quot;cp.trace_id&quot;, &quot;TRACE_ID&quot;);
 </code></pre>
 
 </div>
+</div>
+</div>
 
-<p></div>
-</div></p>
 
 <h4 id="adding-a-trace-id-in-tealium-iq">Adding a Trace ID in Tealium iQ</h4>
 
@@ -535,8 +532,7 @@ data.put(&quot;cp.trace_id&quot;, &quot;TRACE_ID&quot;);
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" data-lang="Android" title="Android">
+  <div class="tab-content"><div class="tab-pane" data-lang="Android" title="Android">
   <ol>
 <li>Install <a href="https://developer.android.com/studio">Android Studio</a> on your machine.</li>
 <li><a href="https://developer.android.com/studio/debug/dev-options#enable">Enable USB Debugging</a> on your Android device.</li>
@@ -556,18 +552,18 @@ data.put(&quot;cp.trace_id&quot;, &quot;TRACE_ID&quot;);
 </ol>
 
 </div>
+</div>
+</div>
 
-<p></div>
-</div></p>
 
 <p class="tip">If you filter the console with &ldquo;tealium&rdquo; you might see these logs more clearly.</p>
+
 
 <h4 id="tealium-debug-logs">Tealium Debug Logs</h4>
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" data-lang="Android" title="Android">
+  <div class="tab-content"><div class="tab-pane" data-lang="Android" title="Android">
   <ol>
 <li>Open Android Studio and plug in your device.</li>
 <li>Set the Tealium Debug Level to the most verbose setting (&ldquo;dev&rdquo;&ldquo;) by calling the <code>.setForceOverrideLogLevel()</code> method. (For example,  <code>.setForceOverrideLogLevel(&quot;dev&quot;);</code>)</li>
@@ -593,9 +589,9 @@ data.put(&quot;cp.trace_id&quot;, &quot;TRACE_ID&quot;);
 <p class="tip">If you filter your IDE console with &ldquo;datasources payload&rdquo; you might see these logs more clearly.</p>
 
 </div>
+</div>
+</div>
 
-<p></div>
-</div></p>
 
 <h2 id="debugging-mobile-html">Debugging mobile.html</h2>
 
@@ -659,8 +655,7 @@ data.put(&quot;cp.trace_id&quot;, &quot;TRACE_ID&quot;);
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" data-lang="Android" title="Android">
+  <div class="tab-content"><div class="tab-pane" data-lang="Android" title="Android">
   <p>Ensure the app is configured to allow <a href="https://developers.google.com/web/tools/chrome-devtools/remote-debugging/webviews?hl=en#configure_webviews_for_debugging">remote debugging</a> of the Tealium webview (Must be done by the app developer at build time).</p>
 
 <p>Launch the <a href="https://developers.google.com/web/tools/chrome-devtools/remote-debugging/webviews?hl=en#open_a_webview_in_devtools">web inspector</a> in Google Chrome.</p>
@@ -679,9 +674,9 @@ data.put(&quot;cp.trace_id&quot;, &quot;TRACE_ID&quot;);
 <p class="note">This also works when using the iOS Simulator to debug your app</p>
 
 </div>
+</div>
+</div>
 
-<p></div>
-</div></p>
 
 </div>
 
