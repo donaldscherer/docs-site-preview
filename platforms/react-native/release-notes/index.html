@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>Optimizely X Tracking Module | Overview |Preview of Tealium Developer Docs</title>
+    <title>Release Notes | Tealium for React Native |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -25,7 +25,7 @@
         
 <script>
 var utag_data = {
-    category_name : "Android",
+    category_name : "React Native",
     site_section  : "platforms",
     site_language : "en",
     tealium_event : "page_view"
@@ -234,13 +234,11 @@ var utag_data = {
 
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">In this article:</p>
-      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#dependencies">Dependencies</a></li>
-              <li><a href="#manual-install">Manual Install</a></li>
-              <li><a href="#maven-install">Maven Install</a></li>
-              <li><a href="#initialize">Initialize</a></li>
-              <li><a href="#auto-tracked-events">Auto-Tracked Events</a></li>
-              <li><a href="#data-layer-variables">Data Layer Variables</a></li>
-              <ul class="toc-h3"><li><a href="#variable-name-overrides-optional">Variable Name Overrides (optional)</a></li>
+      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#1-0-5-1-0-6-september-2019">1.0.5 - 1.0.6 (September 2019)</a></li>
+              <li><a href="#1-0-3-1-0-4-march-2019">1.0.3 - 1.0.4 (March 2019)</a></li>
+              <li><a href="#1-0-2-february-2019">1.0.2 (February 2019)</a></li>
+              <li><a href="#1-0-1-february-2019">1.0.1 (February 2019)</a></li>
+              <li><a href="#1-0-0-august-2018">1.0.0 (August 2018)</a></li>
               </nav>
   </aside></div>
 
@@ -251,19 +249,19 @@ var utag_data = {
           <header class="flex-none w-100">
   
     
-      <a href="/platforms/android" class="f6 fw8 mb0 link mid-gray dim mr3">
-        ANDROID
+      <a href="/platforms/react-native" class="f6 fw8 mb0 link mid-gray dim mr3">
+        REACT NATIVE
       </a>
     
   
 
-  <h1 class="lh-title mb3 mv0 pt3">Optimizely X Tracking Module</h1>
+  <h1 class="lh-title mb3 mv0 pt3">Release Notes</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      An integration between Optimizely X and Tealium Collect. The module listens for events triggered by Optimizely X library and passes the event data to Tealium Collect.
+      Release notes
     </div>
   
 
@@ -276,160 +274,63 @@ var utag_data = {
 
 
 
-<h2 id="dependencies">Dependencies</h2>
+<p>Below is a complete list of changes for each release of the React Native library.</p>
 
-<p>This module depends on the Optimizely X Android SDK, and your app will not compile if this SDK is not present in your project.</p>
+<h2 id="1-0-5-1-0-6-september-2019">1.0.5 - 1.0.6 (September 2019)</h2>
 
-<h2 id="manual-install">Manual Install</h2>
-
-<p>Download the OptimizelyListener file from:</p>
-
-<p><a href="https://github.com/Tealium/tealium-android/tree/master/Support/Optimizely">https://github.com/Tealium/tealium-android/tree/master/Support/Optimizely</a></p>
-
-<p>In the project&rsquo;s root build.gradle, add the following:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">allprojects <span style="font-weight:bold">{</span>
-    repositories <span style="font-weight:bold">{</span>
-       jcenter<span style="font-weight:bold">()</span>
-        flatDir <span style="font-weight:bold">{</span>
-              dirs <span style="color:#b84">&#39;libs&#39;</span>
-        <span style="font-weight:bold">}</span>
-    <span style="font-weight:bold">}</span>
-<span style="font-weight:bold">}</span></code></pre></div>
-<p>Include in your app&rsquo;s &ldquo;libs&rdquo; directory, and add the following to your project module&rsquo;s build.gradle:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">dependencies <span style="font-weight:bold">{</span>
-    <span style="color:#998;font-style:italic">// only required if you do not already have this reference
-</span><span style="color:#998;font-style:italic"></span>    implementation<span style="font-weight:bold">(</span>name:<span style="color:#b84">&#39;tealium-5.5.5&#39;</span><span style="font-weight:bold">,</span> ext:<span style="color:#b84">&#39;aar&#39;</span><span style="font-weight:bold">)</span>
-    implementation<span style="font-weight:bold">(</span>name:<span style="color:#b84">&#39;tealium.optimizelylistener-1.1.1&#39;</span><span style="font-weight:bold">,</span> ext:<span style="color:#b84">&#39;aar&#39;</span><span style="font-weight:bold">)</span>
-    <span style="color:#998;font-style:italic">// only required if you do not already have this reference and require lifecycle tracking
-</span><span style="color:#998;font-style:italic"></span>    implementation<span style="font-weight:bold">(</span>name:<span style="color:#b84">&#39;tealium.lifecycle-1.1.2&#39;</span><span style="font-weight:bold">,</span> ext:<span style="color:#b84">&#39;aar&#39;</span><span style="font-weight:bold">)</span>
-<span style="font-weight:bold">}</span></code></pre></div>
-<h2 id="maven-install">Maven Install</h2>
-
-<p>In your project&rsquo;s root gradle file, add the following maven repository:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">maven <span style="font-weight:bold">{</span>
-    url <span style="color:#b84">&#34;https://maven.tealiumiq.com/android/releases/&#34;</span>
-<span style="font-weight:bold">}</span></code></pre></div>
-<p>In your project module gradle file, add the following maven dependency:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">dependencies<span style="font-weight:bold">{</span>
-    <span style="color:#998;font-style:italic">//only required if you do not have this reference
-</span><span style="color:#998;font-style:italic"></span>    implementation <span style="color:#b84">&#39;com.tealium:library:5.5.5&#39;</span>
-    implementation <span style="color:#b84">&#39;com.tealium:optimizelylistener:1.1.1.&#39;</span>
-    <span style="color:#998;font-style:italic">//only required if you do not already have this reference and require lifecycle tracking
-</span><span style="color:#998;font-style:italic"></span>    implementation <span style="color:#b84">&#39;com.tealium:lifecycle:1.1.2&#39;</span>
-<span style="font-weight:bold">}</span></code></pre></div>
-<h2 id="initialize">Initialize</h2>
-
-<p>The module must be initialized after the OptimizelyManager has finished initializing. If initialized elsewhere, some or all events may not be tracked. Optimizely provides a listener which is called as soon as the OptimizelyManager is initalized, so it makes sense to place the code here.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// import the Tealium OptimizelyListener module in the import section
-</span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">import</span> <span style="color:#555">com.tealium.optimizelylistener.TealiumOptimizelyEventListener</span><span style="font-weight:bold">;</span>
-<span style="font-weight:bold">...</span>
-
-<span style="color:#998;font-style:italic">// substitute the example instance name here with the same instance name you used when initializing the Tealium library
-</span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">private</span> <span style="font-weight:bold">static</span> <span style="font-weight:bold">final</span> String TEALIUM_INSTANCENAME <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;teal&#34;</span><span style="font-weight:bold">;</span>
-
-myOptlyManager<span style="font-weight:bold">.</span><span style="color:#008080">initialize</span><span style="font-weight:bold">(</span>getApplicationContext<span style="font-weight:bold">(),</span> <span style="font-weight:bold">new</span> OptimizelyStartListener<span style="font-weight:bold">()</span> <span style="font-weight:bold">{</span>
-    @Override <span style="font-weight:bold">public</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">onStart</span><span style="font-weight:bold">(</span>OptimizelyClient optimizely<span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
-        <span style="color:#998;font-style:italic">// call this to init the Optimizely listener with a valid OptimizelyManager instance
-</span><span style="color:#998;font-style:italic"></span>        <span style="color:#998;font-style:italic">// myOptlyManager is your own reference to the global OptimizelyManager instance
-</span><span style="color:#998;font-style:italic"></span>        TealiumOptimizelyEventListener<span style="font-weight:bold">.</span><span style="color:#008080">init</span><span style="font-weight:bold">(</span>TEALIUM_INSTANCENAME<span style="font-weight:bold">,</span> myOptlyManager<span style="font-weight:bold">);</span>
-        <span style="color:#998;font-style:italic">// activate experiment AFTER initializing the Tealium listener.
-</span><span style="color:#998;font-style:italic"></span>        <span style="color:#998;font-style:italic">// tracking calls will be missed if not done in this order.
-</span><span style="color:#998;font-style:italic"></span>        Variation v <span style="font-weight:bold">=</span> optimizely<span style="font-weight:bold">.</span><span style="color:#008080">activate</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;tealiumtest&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;userid&#34;</span><span style="font-weight:bold">);</span>
-    <span style="font-weight:bold">}</span>
-<span style="font-weight:bold">});</span></code></pre></div>
-<p>Once you have initialized the module, no additional config is required. The module will now listen for notifications from the Optimizely SDK and pass the data to the Tealium SDK as required.</p>
-
-<h2 id="auto-tracked-events">Auto-Tracked Events</h2>
-
-<p>There are two types of Optimizely events that will be passed along to Tealium Collect: experiments and custom events. </p>
-
-<p>These events are set in the <code>tealium_event</code> variable with the values:</p>
+<p><strong>Low Impact Changes</strong></p>
 
 <ul>
-<li><strong>&ldquo;Optimizely Experiment Started&rdquo;</strong> - when the Optimizely SDK activates an experiment.</li>
-<li><strong>&ldquo;Optimizely Event Tracked&rdquo;</strong> - when the Optimizely SDK receives a custom event (generated by manually calling Optimizely&rsquo;s <code>track</code> method).</li>
+<li>Removed <code>rnpm</code> from <code>package.json</code> and added a <code>react-native.config.js</code> per React documentation.</li>
+<li>Updated Android and gradle versions in the sample app.</li>
+<li>Updated both Android and iOS sample apps to use the latest versions of their respective Tealium libraries.</li>
 </ul>
 
-<h2 id="data-layer-variables">Data Layer Variables</h2>
+<h2 id="1-0-3-1-0-4-march-2019">1.0.3 - 1.0.4 (March 2019)</h2>
 
-<p>The following event attributes are included in the tracked Optimizely events:</p>
+<p><strong>Low Impact Changes</strong></p>
 
-<table>
-<thead>
-<tr>
-<th>Variable</th>
-<th>Scope</th>
-<th>Experiment Activation</th>
-<th>Event Tracking</th>
-<th>Description</th>
-</tr>
-</thead>
+<ul>
+<li>Null activity handling, as well as extra instance null checks for Consent Manager methods.</li>
+<li>Gradle updates to target latest Android version.</li>
+</ul>
 
-<tbody>
-<tr>
-<td>optimizely_experiment_key</td>
-<td>Volatile (session)</td>
-<td>X</td>
-<td>X</td>
-<td>Optimizely experiment name (e.g. &ldquo;Homescreen MVT&rdquo;)</td>
-</tr>
+<h2 id="1-0-2-february-2019">1.0.2 (February 2019)</h2>
 
-<tr>
-<td>optimizely_variation_key</td>
-<td>Volatile (session)</td>
-<td>X</td>
-<td>X</td>
-<td>Optimizely variation name (e.g. &ldquo;Variation A&rdquo;)</td>
-</tr>
+<p><strong>Low Impact Changes</strong></p>
 
-<tr>
-<td>optimizely_user_id</td>
-<td>Volatile (session)</td>
-<td>X</td>
-<td>X</td>
-<td>Optimizely user ID (e.g. &ldquo;<a href="mailto:alice@tealium.com">alice@tealium.com</a>&rdquo;)</td>
-</tr>
+<ul>
+<li>Bug Fix - Fixed public trackEvent to call trackEvent on Tealium instance for Android</li>
+</ul>
 
-<tr>
-<td>optimizely_event_key</td>
-<td>Hit (single event)</td>
-<td>X</td>
-<td>X</td>
-<td>Optimizely event name (e.g. &ldquo;purchase&rdquo;)</td>
-</tr>
+<h2 id="1-0-1-february-2019">1.0.1 (February 2019)</h2>
 
-<tr>
-<td>optimizely_event_value</td>
-<td>Hit (single event)</td>
-<td>X</td>
-<td>X</td>
-<td>Optimizely event value (e.g. &ldquo;123&rdquo; - integer values only)</td>
-</tr>
+<p><strong>High Impact Changes</strong></p>
 
-<tr>
-<td>optimizely_XXX</td>
-<td>Hit (single event)</td>
-<td>X</td>
-<td>X</td>
-<td>Optimizely custom attribute prefix. All custom attributes are prefixed with &ldquo;optimizely_&rdquo; and passed directly to Tealium</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li>Additional public-facing methods of Tealium iOS and Tealium Android are now exposed.
 
-<h3 id="variable-name-overrides-optional">Variable Name Overrides (optional)</h3>
+<ul>
+<li>Consent Management
 
-<p>The default variable names can be overridden easily if you prefer a different naming convention. Overriding variable names can be done by changing a set of public properties on the TealiumOptimizelyEventListener class.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="font-weight:bold">...</span>
-<span style="font-weight:bold">import</span> <span style="color:#555">com.tealium.optimizelylistener</span><span style="font-weight:bold">;</span>
+<ul>
+<li><a href="https://docs.tealium.com/platforms/ios/consent-manager/">iOS</a></li>
+<li><a href="https://docs.tealium.com/platforms/android/consent-manager/">Android</a></li>
+</ul></li>
+<li><a href="https://docs.tealium.com/platforms/react-native/functions/">VisitorID</a> - You can now retrieve the Visitor ID for the current Tealium instance, or for any other instance specified.</li>
+</ul></li>
+<li>Multiple instances of Tealium are now supported.</li>
+<li>New <a href="https://docs.tealium.com/platforms/react-native/functions/">configuration options</a> have been added that include the enablement of Consent Management, Lifecycle, and a Datasource Id.</li>
+</ul>
 
-TealiumOptimizelyEventListener<span style="font-weight:bold">.</span><span style="color:#008080">OPTIMIZELY_EXPERIMENT_KEYNAME</span> <span style="font-weight:bold">=</span> <span style="font-weight:bold">&lt;</span>your <span style="font-weight:bold">new</span> value<span style="font-weight:bold">&gt;;</span>
-TealiumOptimizelyEventListener<span style="font-weight:bold">.</span><span style="color:#008080">OPTIMIZELY_VARIATION_KEYNAME</span> <span style="font-weight:bold">=</span> <span style="font-weight:bold">&lt;</span>your <span style="font-weight:bold">new</span> value<span style="font-weight:bold">&gt;;</span>
-TealiumOptimizelyEventListener<span style="font-weight:bold">.</span><span style="color:#008080">OPTIMIZELY_USERID_KEYNAME</span> <span style="font-weight:bold">=</span> <span style="font-weight:bold">&lt;</span>your <span style="font-weight:bold">new</span> value<span style="font-weight:bold">&gt;;</span>
-TealiumOptimizelyEventListener<span style="font-weight:bold">.</span><span style="color:#008080">OPTIMIZELY_EVENTKEY_KEYNAME</span> <span style="font-weight:bold">=</span> <span style="font-weight:bold">&lt;</span>your <span style="font-weight:bold">new</span> value<span style="font-weight:bold">&gt;;</span>
-TealiumOptimizelyEventListener<span style="font-weight:bold">.</span><span style="color:#008080">OPTIMIZELY_EVENTVALUE_KEYNAME</span> <span style="font-weight:bold">=</span> <span style="font-weight:bold">&lt;</span>your <span style="font-weight:bold">new</span> value<span style="font-weight:bold">&gt;;</span>
-TealiumOptimizelyEventListener<span style="font-weight:bold">.</span><span style="color:#008080">OPTIMIZELY_EXPERIMENT_STARTED</span> <span style="font-weight:bold">=</span> <span style="font-weight:bold">&lt;</span>your <span style="font-weight:bold">new</span> value<span style="font-weight:bold">&gt;;</span>
-TealiumOptimizelyEventListener<span style="font-weight:bold">.</span><span style="color:#008080">OPTIMIZELY_EVENT_TRACKED</span> <span style="font-weight:bold">=</span> <span style="font-weight:bold">&lt;</span>your <span style="font-weight:bold">new</span> value<span style="font-weight:bold">&gt;;</span>
-TealiumOptimizelyEventListener<span style="font-weight:bold">.</span><span style="color:#008080">OPTIMIZELY_ATTRIBUTE_PREFIX</span> <span style="font-weight:bold">=</span> <span style="font-weight:bold">&lt;</span>your <span style="font-weight:bold">new</span> value<span style="font-weight:bold">&gt;;</span></code></pre></div>
+<h2 id="1-0-0-august-2018">1.0.0 (August 2018)</h2>
+
+<p><strong>High Impact Changes</strong></p>
+
+<ul>
+<li>Added NPM Package support to the initial release</li>
+</ul>
+
 </div>
 
           
@@ -499,9 +400,9 @@ TealiumOptimizelyEventListener<span style="font-weight:bold">.</span><span style
       </li>
       
       
-      <li class="w-100 hover-accent-color-light fw8 active">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".android">Android</a>
-        <ul class="android desktopmenu animated fadeIn list pl0 db">
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".android">Android</a>
+        <ul class="android desktopmenu animated fadeIn list pl0 dn">
           <li class="fw4">
             
             
@@ -561,7 +462,7 @@ TealiumOptimizelyEventListener<span style="font-weight:bold">.</span><span style
           <li class="fw4">
             
             
-            <a href="/platforms/android/optimizely-x-tracking-module/" class="db link pl3 pr2 pv1 bg-secondary white">
+            <a href="/platforms/android/optimizely-x-tracking-module/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Module: Optimizely X Tracking
             </a>
           </li>
@@ -1010,9 +911,9 @@ TealiumOptimizelyEventListener<span style="font-weight:bold">.</span><span style
       </li>
       
       
-      <li class="w-100 hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".react-native">React Native</a>
-        <ul class="react-native desktopmenu animated fadeIn list pl0 dn">
+      <li class="w-100 hover-accent-color-light fw8 active">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".react-native">React Native</a>
+        <ul class="react-native desktopmenu animated fadeIn list pl0 db">
           <li class="fw4">
             
             
@@ -1037,7 +938,7 @@ TealiumOptimizelyEventListener<span style="font-weight:bold">.</span><span style
           <li class="fw4">
             
             
-            <a href="/platforms/react-native/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/react-native/release-notes/" class="db link pl3 pr2 pv1 bg-secondary white">
               Release Notes
             </a>
           </li>
@@ -1263,7 +1164,7 @@ TealiumOptimizelyEventListener<span style="font-weight:bold">.</span><span style
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: August 15, 2019</p>
+<p> This page was last updated: September 17, 2019</p>
 
       
 

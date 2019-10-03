@@ -308,8 +308,10 @@ To install:</p>
 <ol>
 <li>Add <code>TealiumWATCHOSExtension.framework</code> to your project&rsquo;s watchOS Extension target.</li>
 <li>Copy or reference the framework to the project in the resulting dialog box.</li>
-<li>In the Target&rsquo;s <strong>General: Embedded Binaries: Options</strong> add <code>TealiumWATCHOSExtension.framework</code><p class="note">For Swift projects be sure to add <code>&lt;TealiumWATCHOSExtension/TEALWKExtension.h&gt;</code> to your bridging header file.</p></li>
-<li>Make sure all paths are as expected under <strong>Projects: Target: Build Settings</strong> </li>
+
+<li><p>In the Target&rsquo;s <strong>General: Embedded Binaries: Options</strong> add <code>TealiumWATCHOSExtension.framework</code><p class="note">For Swift projects, add <code>&lt;TealiumWATCHOSExtension/TEALWKExtension.h&gt;</code> to your bridging header file.</p></p></li>
+
+<li><p>Make sure all paths are as expected under <strong>Projects: Target: Build Settings</strong>.</p></li>
 </ol>
 
 <h2 id="initialize">Initialize</h2>
@@ -349,7 +351,7 @@ config.logLevel <span style="font-weight:bold">=</span> TEALLogLevelDev;
 
 <h4 id="views">Views</h4>
 
-<p>Every time a user opens or changes a screen in the app a tracking call should be made. A view is tracked by calling <code>trackViewWithTitle()</code> with two parameters: the name of the screen and (optionally) contextual view data.</p>
+<p>Track screen views by calling <code>trackViewWithTitle()</code> with two parameters: the name of the screen and (optionally) contextual view data.</p>
 
 <p>In any UIViewController&rsquo;s <code>viewDidAppear</code> method, use this code:</p>
 
@@ -369,7 +371,7 @@ config.logLevel <span style="font-weight:bold">=</span> TEALLogLevelDev;
 
 <h4 id="events">Events</h4>
 
-<p>All non-view activity should be tracked as an event. This is easily done by calling <code>trackEventWithTitle()</code> with two parameters: an event name and (optionally) contextual event data. </p>
+<p>Track non-view activity by calling <code>trackEventWithTitle()</code> with two parameters: an event name and (optionally) contextual event data. </p>
 
 <p>In any method that triggers or responds to an event trigger, use this code: </p>
 
@@ -997,6 +999,13 @@ config.logLevel <span style="font-weight:bold">=</span> TEALLogLevelDev;
               Function Definitions
             </a>
           </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/react-native/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
         </ul>
       </li>
       
@@ -1219,7 +1228,7 @@ config.logLevel <span style="font-weight:bold">=</span> TEALLogLevelDev;
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: April 3, 2019</p>
+<p> This page was last updated: October 1, 2019</p>
 
       
 

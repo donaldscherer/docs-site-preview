@@ -278,7 +278,7 @@ var utag_data = {
 <h2 id="requirements">Requirements</h2>
 
 <ul>
-<li>Tealium <a href="https://community.tealiumiq.com/t5/Universal-Data-Hub/tkb-p/udh" target="_blank">Universal Data Hub</a> account</li>
+<li>Tealium <a href="https://community.tealiumiq.com/t5/Universal-Data-Hub/tkb-p/udh">Universal Data Hub</a> account</li>
 </ul>
 
 <h2 id="install">Install</h2>
@@ -289,13 +289,7 @@ var utag_data = {
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install tealium-collect</code></pre></div>
 <h2 id="initialize">Initialize</h2>
 
-<p>Once the module is installed you are ready to start coding. Use the following code to require the Tealium modules and initialize with the following parameters:</p>
-
-<ul>
-<li><strong>account</strong> - the name of your account</li>
-<li><strong>profile</strong> - the name of the profile within your account (usually &ldquo;main&rdquo;)</li>
-<li><strong>datasource</strong> - (optional) the data source key from UDH</li>
-</ul>
+<p>Import the modules and initialize the Tealium instance:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> Tealium <span style="font-weight:bold">=</span> require(<span style="color:#b84">&#39;tealium&#39;</span>);
 <span style="font-weight:bold">var</span> tealiumCollect <span style="font-weight:bold">=</span> require(<span style="color:#b84">&#39;tealium-collect&#39;</span>);
 <span style="font-weight:bold">var</span> config <span style="font-weight:bold">=</span> {
@@ -306,27 +300,66 @@ var utag_data = {
 <span style="font-weight:bold">var</span> tealium <span style="font-weight:bold">=</span> Tealium(config);
 tealium.addModule(tealiumCollect);
 </code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>account</td>
+<td>the name of your account</td>
+</tr>
+
+<tr>
+<td>profile</td>
+<td>the name of your profile</td>
+</tr>
+
+<tr>
+<td>datasource</td>
+<td>(optional) the data source key from UDH</td>
+</tr>
+</tbody>
+</table>
+
 <h2 id="track">Track</h2>
 
-<p>Once the Tealium object has been defined you can begin tracking events with the method<code>track()</code>, which takes the following parameters:</p>
-
-<ul>
-<li><strong>event</strong> (required) - a name to identify the event, sent as the attribute <code>tealium_event</code></li>
-<li><strong>data</strong> - object with event data as key/value pairs</li>
-</ul>
-
-<p>Example tracking call:  </p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">tealium.track(<span style="color:#b84">&#34;my_event&#34;</span>, {<span style="color:#b84">&#34;mydata&#34;</span><span style="font-weight:bold">:</span> <span style="color:#b84">&#34;hello world&#34;</span>}); 
+<p>Track events with the method <code>track()</code>:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">tealium.track(<span style="color:#b84">&#34;event&#34;</span>, {<span style="color:#b84">&#34;some_key&#34;</span><span style="font-weight:bold">:</span> <span style="color:#b84">&#34;some_value&#34;</span>}); 
 </code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>event</td>
+<td>Name of the event (sets the value of <code>tealium_event</code></td>
+</tr>
+
+<tr>
+<td>data</td>
+<td>Object with event data as key/value pairs</td>
+</tr>
+</tbody>
+</table>
+
 <h4 id="visitor-id">Visitor ID</h4>
 
-<p>If your application tracks user activity and you want to associate events with a visitor, set the <code>tealium_visitor_id</code> attribute in the data object. The value should uniquely identify the current user, either anonymously or with a personal identifier such as an email address.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// A visitor ID could be read from Cookie Header or other function
-</span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">var</span> myVisitorId <span style="font-weight:bold">=</span> myVisitorIdFunction();
+<p>If your application tracks user activity and you want to associate events with a visitor, include the <code>tealium_visitor_id</code> attribute in the data object. This event attribute uniquely identifies the current user, either anonymously or with a personal identifier such as an email address.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> myVisitorId <span style="font-weight:bold">=</span> myVisitorIdFunction();
 
 tealium.track(<span style="color:#b84">&#34;page_view&#34;</span>, {
     <span style="color:#b84">&#34;tealium_visitor_id&#34;</span> <span style="font-weight:bold">:</span> myVisitorId,
-    <span style="color:#b84">&#34;mydata&#34;</span>             <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;hello world&#34;</span>
+    <span style="color:#b84">&#34;some_key&#34;</span>           <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;some_value&#34;</span>
 });
 </code></pre></div>
 </div>
@@ -933,6 +966,13 @@ tealium.track(<span style="color:#b84">&#34;page_view&#34;</span>, {
               Function Definitions
             </a>
           </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/react-native/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
         </ul>
       </li>
       
@@ -1155,7 +1195,7 @@ tealium.track(<span style="color:#b84">&#34;page_view&#34;</span>, {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: June 5, 2019</p>
+<p> This page was last updated: September 10, 2019</p>
 
       
 

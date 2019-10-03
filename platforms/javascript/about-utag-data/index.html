@@ -281,7 +281,7 @@ var utag_data = {
 
 <h2 id="universal-data-object-udo">Universal Data Object (UDO)</h2>
 
-<p>The data layer is implemented on your website as a JavaScript object called <code>utag_data</code> in which you expose data from the page to the Tealium tag. The properties in this object should be named using plain-English, vendor neutral terms that are tailored to your business.</p>
+<p>The data layer is implemented on your website as a JavaScript object called <code>utag_data</code> in which you expose data from the page to the Tealium tag. The properties in this object use plain, vendor neutral names that are tailored to your business.</p>
 
 <p>Example declaration of <code>utag_data</code>:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#000080">script</span> <span style="color:#008080">type</span><span style="font-weight:bold">=</span><span style="color:#b84">&#34;text/javascript&#34;</span>&gt;
@@ -292,7 +292,7 @@ var utag_data = {
     <span style="color:#b84">&#34;search_keyword&#34;</span> <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;Tealium shirt&#34;</span>
 };
 &lt;/<span style="color:#000080">script</span>&gt;</code></pre></div>
-<p class="note">The <code>utag_data</code> object variable should be defined and populated prior to loading the Universal Tag (utag.js).</p>
+<p class="note">Define and populate the <code>utag_data</code> object variable prior to loading the Universal Tag (utag.js).</p>
 
 <p>When utag.js loads in the page it looks for the <code>utag_data</code> variable and uses its data to automatically trigger an page view tracking call with <code>utag.view()</code>. If you have a single page application, or are calling utag.view() manually, you might not need utag_data. Learn more about your <a href="/platforms/javascript/page-tracking/">page tracking options</a>.</p>
 
@@ -364,7 +364,7 @@ Do not add extra code to the UDO script block. If any code in the same script bl
 </code></pre></div>
 <h3 id="array-alignment">Array Alignment</h3>
 
-<p>All product array variables should have the same number of elements to ensure data alignment. In this example, notice that the first element in each array corresponds to the first product. Properties associated with this product (such as ID, price, and quantity) all appear in the first element in each array, while the properties of the second product will appear in the second element in each array, and so on.</p>
+<p>All product array variables must have the same number of elements to ensure data alignment. In this example, notice that the first element in each array corresponds to the first product. Properties associated with this product (such as ID, price, and quantity) all appear in the first element in each array, while the properties of the second product will appear in the second element in each array, and so on.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// Product 1:
 </span><span style="color:#998;font-style:italic">//   ID    = PROD123
 </span><span style="color:#998;font-style:italic">//   Price = 3.00
@@ -382,8 +382,8 @@ utag_data[<span style="color:#b84">&#34;product_quantity&#34;</span>] <span styl
 <h2 id="additional-reading">Additional Reading</h2>
 
 <ul>
-<li><a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/Data-Layer-Variables/ta-p/9427" target="_blank">Data Layer Variables in iQ Tag Management</a></li>
-<li><a href="https://community.tealiumiq.com/t5/Data-Layer/An-Introduction-to-the-Data-Layer/ta-p/15885" target="_blank">An Introduction to the Data Layer</a></li>
+<li><a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/Data-Layer-Variables/ta-p/9427">Data Layer Variables in iQ Tag Management</a></li>
+<li><a href="https://community.tealiumiq.com/t5/Data-Layer/An-Introduction-to-the-Data-Layer/ta-p/15885">An Introduction to the Data Layer</a></li>
 </ul>
 
 </div>
@@ -990,6 +990,13 @@ utag_data[<span style="color:#b84">&#34;product_quantity&#34;</span>] <span styl
               Function Definitions
             </a>
           </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/react-native/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
         </ul>
       </li>
       
@@ -1212,7 +1219,7 @@ utag_data[<span style="color:#b84">&#34;product_quantity&#34;</span>] <span styl
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: February 12, 2019</p>
+<p> This page was last updated: September 10, 2019</p>
 
       
 

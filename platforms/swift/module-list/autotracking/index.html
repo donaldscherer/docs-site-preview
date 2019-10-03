@@ -333,12 +333,12 @@ var utag_data = {
 <ol>
 <li>In your Swift project, create a new file. When prompted to select a file type, select Objective-C File.</li>
 <li>Give this file a temporary name, such as &ldquo;placeholder.m&rdquo;, as you are going to remove it later.</li>
-<li>Click &ldquo;Finish&rdquo;, and XCode should prompt you to create a Bridging Header (if it doesn&rsquo;t, you probably already have a Bridging Header in your project). Press &ldquo;Create Bridging Header&rdquo; to continue, and Xcode will automatically create the new header file for you.</li>
-<li>Delete your &ldquo;placeholder.m&rdquo; file from the project. You will notice a new file called <project name>-Bridging-Header.h</li>
-<li>Add the following import statements to the new Bridging Header:</li>
-</ol>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">#<span style="font-weight:bold">import</span> <span style="color:#b84">&#34;UIApplication+TealiumTracker.h&#34;</span>
-#<span style="font-weight:bold">import</span> <span style="color:#b84">&#34;UIViewController+TealiumTracker.h&#34;</span></code></pre></div>
+<li>Click &ldquo;Finish&rdquo;. Xcode prompts you to create a Bridging Header (if it doesn&rsquo;t, you probably already have a Bridging Header in your project). Press &ldquo;Create Bridging Header&rdquo; to continue and have Xcode create the new header file for you.</li>
+<li>Delete &ldquo;placeholder.m&rdquo; from your project. Notice a new file called <code>ProjectName-Bridging-Header.h</code>.</li>
+
+<li><p>Add the following import statements to the new Bridging Header:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">#<span style="font-weight:bold">import</span> <span style="color:#b84">&#34;uiapplication+tealiumtracker.h&#34;</span>
+#<span style="font-weight:bold">import</span> <span style="color:#b84">&#34;uiviewcontroller+tealiumtracker.h&#34;</span></code></pre></div>
 <h2 id="compatible-platforms">Compatible Platforms</h2>
 
 <ul>
@@ -389,7 +389,9 @@ var utag_data = {
 <p>The following methods are available to change the default behavior of the Autotracking module, or to monitor autotracked tracking calls:</p>
 
 <h3 id="tealiumautotrackingshouldtrack">tealiumAutotrackingShouldTrack</h3>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">tealiumAutotrackingShouldTrack(data: [<span style="color:#999">String</span>:<span style="color:#999">Any</span>]) -&gt; <span style="color:#999">Bool</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">tealiumAutotrackingShouldTrack(data: [<span style="color:#999">String</span>:<span style="color:#999">Any</span>]) -&gt; <span style="color:#999">Bool</span></code></pre></div></li>
+</ol>
+
 <table>
 <thead>
 <tr>
@@ -1075,6 +1077,13 @@ var utag_data = {
               Function Definitions
             </a>
           </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/react-native/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
         </ul>
       </li>
       
@@ -1297,7 +1306,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: July 31, 2019</p>
+<p> This page was last updated: September 10, 2019</p>
 
       
 

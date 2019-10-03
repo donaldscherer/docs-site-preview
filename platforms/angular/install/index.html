@@ -276,7 +276,7 @@ var utag_data = {
 
 <p>This sample is based on the <a href="https://angular.io/docs/ts/latest/cli-quickstart.html">Angular CLI Quickstart</a>.</p>
 
-<p class="note">If you are looking for the older <a href="https://angularjs.org/" target="_blank" rel="nofollow noopener noreferrer">AngularJS 1.x</a> integration, visit <a href="http://github.com/Tealium/integration-angularjs" target="_blank" rel="nofollow noopener noreferrer">http://github.com/Tealium/integration-angularjs</a></p>
+<p class="note">If you are looking for the older AngularJS 1.x integration, visit <a href="http://github.com/Tealium/integration-angularjs">http://github.com/Tealium/integration-angularjs</a>.</p>
 
 <h2 id="requirements">Requirements</h2>
 
@@ -287,7 +287,7 @@ var utag_data = {
 
 <h2 id="install">Install</h2>
 
-<p>Download - <a href="https://github.com/Tealium/integration-angular">Tealium for Angular [Example]</a></p>
+<p>Download - <a href="https://github.com/Tealium/integration-angular">Tealium for Angular Example</a></p>
 
 <p>The installation only requires one file to be added to your application. This service takes care of loading the Tealium utag.js library for your account and handling the tracking calls.</p>
 
@@ -303,11 +303,31 @@ var utag_data = {
 
 <p>The installation adds a new class to your application called <code>TealiumUtagService</code> which is now available by registering it as a provider to a component. Add this class to your application constructor and initialize it with the <code>setConfig()</code> method using the following parameters:</p>
 
-<ul>
-<li><strong>account</strong> - the name of your account</li>
-<li><strong>profile</strong> - the name of your profile within your account</li>
-<li><strong>environment</strong> - one of &ldquo;dev&rdquo;, &ldquo;qa&rdquo;, or &ldquo;prod&rdquo;</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>account</td>
+<td>Name of your account.</td>
+</tr>
+
+<tr>
+<td>profile</td>
+<td>Name of your profile.</td>
+</tr>
+
+<tr>
+<td>environment</td>
+<td>One of &ldquo;dev&rdquo;, &ldquo;qa&rdquo; or &ldquo;prod&rdquo;.</td>
+</tr>
+</tbody>
+</table>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">constructor(<span style="font-weight:bold">private</span> tealium<span style="font-weight:bold">:</span> TealiumUtagService) {
     <span style="font-weight:bold">this</span>.tealium.setConfig({
         <span style="color:#b84">&#34;account&#34;</span>     <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;your_account&#34;</span>,
@@ -939,6 +959,13 @@ var utag_data = {
               Function Definitions
             </a>
           </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/react-native/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
         </ul>
       </li>
       
@@ -1161,7 +1188,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: February 1, 2019</p>
+<p> This page was last updated: September 10, 2019</p>
 
       
 

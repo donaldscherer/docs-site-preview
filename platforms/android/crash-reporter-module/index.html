@@ -294,27 +294,29 @@ var utag_data = {
 <p>Use the following steps to manually install the Crash Reporter module:</p>
 
 <ol>
-<li>Go to <a href="https://github.com/Tealium/tealium-android/tree/master/Support/CrashReporter" target="_blank">Tealium Android Crash Reporter Module</a>.</li>
+<li>Go to <a href="https://github.com/Tealium/tealium-android/tree/master/Support/CrashReporter">Tealium Android Crash Reporter Module</a>.</li>
 <li>Download the required files to add the module to your application.</li>
-<li>From the downloaded files, copy the <strong>tealium.crashreporter-5.x.x.aar</strong> file to the following directory:<br><code>&lt;PROJECT_ROOT&gt;/&lt;MODULE&gt;/libs</code></li>
-<li>Add the Tealium library dependency to your <code>build.gradle</code> file, as follows:<br></li>
-</ol>
+<li>From the downloaded files, copy <code>tealium.crashreporter-5.x.x.aar</code> to <code>&lt;PROJECT_ROOT&gt;/&lt;MODULE&gt;/libs</code>.</li>
+
+<li><p>Add the Tealium library dependency to your <code>build.gradle</code> file, as follows:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">dependencies <span style="font-weight:bold">{</span>
     implementation <span style="font-weight:bold">(</span>name:<span style="color:#b84">&#39;tealium.crashreporter-1.0.1&#39;</span><span style="font-weight:bold">,</span> ext:<span style="color:#b84">&#39;aar&#39;</span><span style="font-weight:bold">)</span>
 <span style="font-weight:bold">}</span></code></pre></div>
 <h3 id="maven-install">Maven Install</h3>
 
-<p>Ensure that the Tealium Maven repository is added in the <code>build.gradle</code> file for your project, as shown in the following example:<br></p>
+<p>Ensure that the Tealium Maven repository is added in the <code>build.gradle</code> file for your project, as shown in the following example:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy"><span style="color:#998;font-style:italic">// Top-level build file where you can add configuration options common to all sub-projects/modules.
 </span><span style="color:#998;font-style:italic"></span>allprojects <span style="font-weight:bold">{</span>
-    repositories <span style="font-weight:bold">{</span>
-        jcenter<span style="font-weight:bold">()</span>
-        <span style="color:#998;font-style:italic">// Tealium Maven repo directive
-</span><span style="color:#998;font-style:italic"></span>        maven <span style="font-weight:bold">{</span>
-            url <span style="color:#b84">&#34;https://maven.tealiumiq.com/android/releases/&#34;</span>
-        <span style="font-weight:bold">}</span>
+repositories <span style="font-weight:bold">{</span>
+    jcenter<span style="font-weight:bold">()</span>
+    <span style="color:#998;font-style:italic">// Tealium Maven repo directive
+</span><span style="color:#998;font-style:italic"></span>    maven <span style="font-weight:bold">{</span>
+        url <span style="color:#b84">&#34;https://maven.tealiumiq.com/android/releases/&#34;</span>
     <span style="font-weight:bold">}</span>
-<span style="font-weight:bold">}</span></code></pre></div>
+<span style="font-weight:bold">}</span>
+<span style="font-weight:bold">}</span></code></pre></div></li>
+</ol>
+
 <p>Add the Tealium Crash Reporter module to your application level <code>build.gradle</code> file, as follows:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">dependencies <span style="font-weight:bold">{</span>
     <span style="color:#998;font-style:italic">// only add if not already present
@@ -389,7 +391,7 @@ var utag_data = {
 <h2 id="integrations">Integrations</h2>
 
 <ul>
-<li><a href="https://community.tealiumiq.com/t5/Universal-Data-Hub/New-Relic-Mobile-Crash-Tracking-Setup-Guide/ta-p/20849" target="_blank">New Relic Mobile Crash Tracking Connector</a></li>
+<li><a href="https://community.tealiumiq.com/t5/Universal-Data-Hub/New-Relic-Mobile-Crash-Tracking-Setup-Guide/ta-p/20849">New Relic Mobile Crash Tracking Connector</a></li>
 </ul>
 
 </div>
@@ -996,6 +998,13 @@ var utag_data = {
               Function Definitions
             </a>
           </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/react-native/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
         </ul>
       </li>
       
@@ -1218,7 +1227,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: August 15, 2019</p>
+<p> This page was last updated: September 10, 2019</p>
 
       
 

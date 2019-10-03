@@ -328,7 +328,7 @@ By creating a local copy of <code>utag.data</code>, you can customize the valu
 </code></pre></div>
 <h3 id="cookie-values">Cookie Values</h3>
 
-<p>Tealium has two ways to store cookie values. The syntax to reference these two types varies slightly. Please refer to the <a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/Tealium-Cookies/ta-p/138" target="_blank">Tealium Cookies</a> article for more information on working with cookies in Tealium iQ.</p>
+<p>Tealium has two ways to store cookie values. The syntax to reference these two types varies slightly. Please refer to the <a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/Tealium-Cookies/ta-p/138">Tealium Cookies</a> article for more information on working with cookies in Tealium iQ.</p>
 
 <h3 id="utag-main-cookie-values">utag_main Cookie Values</h3>
 
@@ -346,15 +346,15 @@ By creating a local copy of <code>utag.data</code>, you can customize the valu
 
 <p>The <code>b</code> object is a locally scoped variable, only available in <strong>All Tags</strong> and <strong>Tag Scoped</strong> extensions. Extensions scoped to <strong>Pre Loader</strong> run before the <code>b</code> object has been created. Likewise, extensions scoped to <strong>DOM Ready</strong> run independently from the main order of operations, so the <code>b</code> object cannot be referenced in this scope either.</p>
 
-<p>Learn more about how to reference the <a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/Extensions/ta-p/13649" target="_blank">data object variable in extensions</a>.</p>
+<p>Learn more about how to reference the <a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/Extensions/ta-p/13649">data object variable in extensions</a>.</p>
 
 <h4 id="the-b-object-in-tracking-calls">The b object in tracking calls</h4>
 
 <p>During a standard page load, the <code>b</code> object becomes a copy of the <code>utag_data</code> object.</p>
 
-<p>However, on manual tracking calls, the <code>b</code> object is a copy of the object passed to <code>utag.view()</code> or <code>utag.link()</code> and does not contain variables from the origial <code>utag_data</code> object. To preserve data from <code>utag_data</code> in tracking calls (per page load) use the <a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/Publish-Configuration/ta-p/13632#implementation" target="_blank">Base Variables setting in the publish settings</a>.</p>
+<p>However, on manual tracking calls, the <code>b</code> object is a copy of the object passed to <code>utag.view()</code> or <code>utag.link()</code> and does not contain variables from the origial <code>utag_data</code> object. To preserve data from <code>utag_data</code> in tracking calls (per page load) use the <a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/Publish-Configuration/ta-p/13632#implementation">Base Variables setting in the publish settings</a>.</p>
 
-<p class="note">For profiles loading <em>utag.js version 4.39</em> or older, the content of the <code>b</code> object during tracking calls will be a complete copy of <code>utag.data</code>. Learn more about this update in release history <a href="/platforms/javascript/release-notes/#version-4-40">utag.js 4.40</a>.</p>
+<p class="note">For profiles loading version 4.39 or older, the content of the <code>b</code> object during tracking calls will be a complete copy of <code>utag.data</code>. Learn more about this update in release history <a href="/platforms/javascript/release-notes/#version-4-40">utag.js 4.40</a>.</p>
 
 </div>
 
@@ -960,6 +960,13 @@ By creating a local copy of <code>utag.data</code>, you can customize the valu
               Function Definitions
             </a>
           </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/react-native/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
         </ul>
       </li>
       
@@ -1182,7 +1189,7 @@ By creating a local copy of <code>utag.data</code>, you can customize the valu
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: February 12, 2019</p>
+<p> This page was last updated: September 10, 2019</p>
 
       
 

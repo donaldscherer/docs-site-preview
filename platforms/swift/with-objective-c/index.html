@@ -287,8 +287,8 @@ var utag_data = {
 <ol>
 <li>In your Swift project, create a new file. When prompted to select a file type, select Objective-C File.</li>
 <li>Give this file a temporary name, such as &ldquo;placeholder.m&rdquo;, as you are going to remove it later.</li>
-<li>Click &ldquo;Finish&rdquo;, and XCode should prompt you to create a Bridging Header (if it doesn&rsquo;t, you probably already have a Bridging Header in your project). Press &ldquo;Create Bridging Header&rdquo; to continue, and Xcode will automatically create the new header file for you.</li>
-<li>Delete your &ldquo;placeholder.m&rdquo; file from the project. You will notice a new file called &lt;project name&gt;-Bridging-Header.h</li>
+<li>Click &ldquo;Finish&rdquo; and XCode will prompt you to create a Bridging Header (if it doesn&rsquo;t, you probably already have a Bridging Header in your project). Press &ldquo;Create Bridging Header&rdquo; to continue, and Xcode will automatically create the new header file for you.</li>
+<li>Delete the <code>placeholder.m</code> file from the project and notice a new file called <code>&lt;ProjectName&gt;-Bridging-Header.h</code></li>
 
 <li><p>Add the following import statement to the new Bridging Header:</p>
 
@@ -296,7 +296,7 @@ var utag_data = {
 </code></pre></li>
 </ol>
 
-<p>Once you&rsquo;ve done this, you will now be able to call the Objective-C code from Swift:</p>
+<p>Next, to call the Objective-C code from Swift:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="font-weight:bold">class</span> TealiumHelper {
     func somefunc () {
         let tealConfig <span style="font-weight:bold">=</span> TEALConfiguration.init(account: <span style="color:#b84">&#34;account&#34;</span>, profile: <span style="color:#b84">&#34;profile&#34;</span>, environment: <span style="color:#b84">&#34;dev&#34;</span>)
@@ -312,15 +312,15 @@ However, by using an intermediate helper class, it is possible to call the Swift
 <h3 id="helper-class">Helper Class</h3>
 
 <ol>
-<li>In your Objective-C project, create a new Swift file. You will be prompted to add a bridging header if you don&rsquo;t already have one. Accept this prompt. The new Swift file should be called something like &ldquo;TealiumHelper.swift&rdquo;. See below for a sample Objective-C compatible helper file.</li>
+<li>In your Objective-C project, create a new Swift file. You will be prompted to add a bridging header if you don&rsquo;t already have one. Accept this prompt. Name the new Swift file &ldquo;TealiumHelper.swift&rdquo;.</li>
 
-<li><p>In any files you wish to call the new helper from, ensure you import the invisible new Swift header created by Xcode. The header should be called &ldquo;YourProjectName-Swift.h&rdquo; (substitute your project name). The full import statement should look like this:</p>
+<li><p>Import the new Swift header (<code>&lt;ProjectName&gt;-Swift.h</code>) into files that need to call the new helper.</p>
 
-<pre><code>#import &quot;YourProjectName-Swift.h&quot;
+<pre><code>#import &quot;ProjectName-Swift.h&quot;
 </code></pre></li>
-
-<li><p>The methods in the helper file should now be available to use in your Objective-C code. We recommend making the helper a singleton. Assuming you have two methods in your helper, initializing and calling the singleton might look like this:</p></li>
 </ol>
+
+<p>The methods in the helper file are now be available to use in your Objective-C code. We recommend making the helper a singleton.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#999;font-weight:bold">#import &#34;TestSwiftBridge-Swift.h&#34;
 </span><span style="color:#999;font-weight:bold"></span>
 - (<span style="color:#458;font-weight:bold">BOOL</span>)<span style="color:#900;font-weight:bold">application:</span>(UIApplication <span style="font-weight:bold">*</span>)<span style="color:#008080">application</span> <span style="color:#900;font-weight:bold">didFinishLaunchingWithOptions:</span>(NSDictionary <span style="font-weight:bold">*</span>)<span style="color:#008080">launchOptions</span> {
@@ -942,6 +942,13 @@ However, by using an intermediate helper class, it is possible to call the Swift
               Function Definitions
             </a>
           </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/react-native/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
         </ul>
       </li>
       
@@ -1164,7 +1171,7 @@ However, by using an intermediate helper class, it is possible to call the Swift
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: February 5, 2019</p>
+<p> This page was last updated: September 10, 2019</p>
 
       
 

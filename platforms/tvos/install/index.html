@@ -316,29 +316,18 @@ var utag_data = {
 
 <p class="tip">We recommend cloning the library (instead of downloading) to make it easier to update to future releases.</p>
 
-<p>Once the code is in place follow these steps to add Tealium to your project:</p>
+<p>Once the code is in place, embed the framework:</p>
 
 <ol>
 <li>Add <code>TealiumTVOS.framework</code> to your project</li>
 <li>Copy framework to project in the resulting dialog box</li>
-<li>In the Target&rsquo;s General: Embedded Binaries: options add TealiumTVOS.framework </li>
+<li>Go to the app target&rsquo;s <strong>General</strong> configuration page.</li>
+<li>In the <strong>Embedded Binaries</strong> section, add the <code>TealiumTVOS.framework</code> binary.</li>
 </ol>
 
 <h2 id="initialize">Initialize</h2>
 
-<p>Once the Tealium for tvOS is added to your project you are ready to start coding.</p>
-
-<p>You will need the following parameters to initialize the code:</p>
-
-<ul>
-<li><strong>account</strong> - the name of your iQ account</li>
-<li><strong>profile</strong> - the name of the mobile profile within your iQ account</li>
-<li><strong>environment</strong> - one of &ldquo;qa&rdquo; or &ldquo;prod&rdquo;</li>
-<li><strong>datasource</strong> - (optional) the data source key from UDH</li>
-<li><strong>instance key</strong> - a unique name for your instance (multiple instances are supported)</li>
-</ul>
-
-<p>In the Application Delegate or within a helper class setup method, you will invoke a Tealium instance with the following code:</p>
+<p>In the Application Delegate, or within a helper class setup method, invoke a Tealium instance with the following code:</p>
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
@@ -367,11 +356,47 @@ Tealium <span style="font-weight:bold">*</span>tealiumInstance1 <span style="fon
 <p></div>
 </div></p>
 
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>account</td>
+<td>Name of your account.</td>
+</tr>
+
+<tr>
+<td>profile</td>
+<td>Name of your profile.</td>
+</tr>
+
+<tr>
+<td>environment</td>
+<td>One of &ldquo;qa&rdquo; or &ldquo;prod&rdquo;.</td>
+</tr>
+
+<tr>
+<td>datasource</td>
+<td>(optional) The data source key from UDH.</td>
+</tr>
+
+<tr>
+<td>instance</td>
+<td>A unique name for your instance (multiple instances are supported).</td>
+</tr>
+</tbody>
+</table>
+
 <h2 id="track">Track</h2>
 
 <h4 id="views">Views</h4>
 
-<p>Every time a user opens or changes a screen in the app a tracking call should be made.  A view is tracked by calling <code>trackViewWithTitle()</code> with two parameters: the name of the screen and (optionally) contextual view data.</p>
+<p>Track screen views by calling <code>trackViewWithTitle()</code> with two parameters: the name of the screen and (optionally) contextual view data.</p>
 
 <p>In any UIViewController&rsquo;s <code>viewDidAppear</code> method: </p>
 
@@ -393,7 +418,7 @@ Tealium <span style="font-weight:bold">*</span>tealiumInstance1 <span style="fon
 
 <h4 id="events">Events</h4>
 
-<p>All non-view activity should be tracked as an event. This is easily done by calling <code>trackEventWithTitle()</code> with two parameters: an event name and (optionally) contextual event data. </p>
+<p>Track non-view events by calling <code>trackEventWithTitle()</code> with two parameters: an event name and (optionally) contextual event data. </p>
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
@@ -1022,6 +1047,13 @@ Tealium <span style="font-weight:bold">*</span>tealiumInstance1 <span style="fon
               Function Definitions
             </a>
           </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/react-native/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
         </ul>
       </li>
       
@@ -1244,7 +1276,7 @@ Tealium <span style="font-weight:bold">*</span>tealiumInstance1 <span style="fon
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: April 3, 2019</p>
+<p> This page was last updated: September 10, 2019</p>
 
       
 

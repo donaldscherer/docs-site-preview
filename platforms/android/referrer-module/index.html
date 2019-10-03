@@ -321,7 +321,7 @@ var utag_data = {
     <span style="color:#998;font-style:italic">// Google&#39;s Install Referrer API
 </span><span style="color:#998;font-style:italic"></span>    implementation <span style="color:#b84">&#39;com.android.installreferrer:installreferrer:1.0&#39;</span>
 <span style="font-weight:bold">}</span></code></pre></div>
-<p class="note">The [Google Install Referrer API](https://developer.android.com/google/play/installreferrer/library) is a dependency for this module, but is not automatically added for you. Please add the module to your build.</p>
+<p class="note">The <a href="https://developer.android.com/google/play/installreferrer/library">Google Install Referrer API</a> is a dependency for this module, but is not automatically added for you. Please add the module to your build.</p>
 
 <p>In the same block where you instantiate the Tealium library (after instantiating Tealium), add the following calls:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// import the Tealium InstallReferrer module in the import section
@@ -348,8 +348,8 @@ utm_campaign=test_name
 <h2 id="additional-considerations">Additional Considerations</h2>
 
 <ul>
-<li><p><strong>Delete the Stored Referrer</strong><br>
-To delete the stored install referrer string, you can call the standard methods provided by the Tealium library to remove variables from persistent or volatile storage. The key name for the variable is exposed by the InstallReferrerReceiver class. Here&rsquo;s an example to remove the stored install referrer from both persistent and volatile data. This code will have no effect and will not throw an error, if the variable doesn&rsquo;t already exist.<br></p>
+<li><p><strong>Delete the Stored Referrer</strong><br />
+To delete the stored install referrer string, you can call the standard methods provided by the Tealium library to remove variables from persistent or volatile storage. The key name for the variable is exposed by the InstallReferrerReceiver class. Here&rsquo;s an example to remove the stored install referrer from both persistent and volatile data. This code will have no effect and will not throw an error, if the variable doesn&rsquo;t already exist.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// remove from persistent data store
 </span><span style="color:#998;font-style:italic"></span>instance<span style="font-weight:bold">.</span><span style="color:#008080">getDataSources</span><span style="font-weight:bold">().</span><span style="color:#008080">getPersistentDataSources</span><span style="font-weight:bold">().</span><span style="color:#008080">edit</span><span style="font-weight:bold">().</span><span style="color:#008080">remove</span><span style="font-weight:bold">(</span>InstallReferrerReceiver<span style="font-weight:bold">.</span><span style="color:#008080">KEYNAME</span><span style="font-weight:bold">).</span><span style="color:#008080">apply</span><span style="font-weight:bold">();</span>
 
@@ -993,6 +993,13 @@ To delete the stored install referrer string, you can call the standard methods 
               Function Definitions
             </a>
           </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/react-native/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
         </ul>
       </li>
       
@@ -1215,7 +1222,7 @@ To delete the stored install referrer string, you can call the standard methods 
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: August 21, 2019</p>
+<p> This page was last updated: September 10, 2019</p>
 
       
 

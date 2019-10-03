@@ -290,7 +290,7 @@ var utag_data = {
 
 <ul>
 <li><strong>command</strong>: the name of the command, or &ldquo;command ID&rdquo;, registered with native code in your app and with a tag in Tealium iQ.</li>
-<li><strong>payload</strong>: the data passed from the tag to the native app, configured as data mappings and received in the app as a <code>requestPayload</code> object in the reponse callback of the handler.</li>
+<li><strong>payload</strong>: the data passed from the tag to the native app, configured as data mappings and received in the app as a <code>requestPayload</code> object in the response callback of the handler.</li>
 </ul>
 
 <p class="note">Remote commands must be defined in your native app at build time. The remote command tag can only execute code that is already defined on the device.</p>
@@ -313,12 +313,15 @@ var utag_data = {
 <p>In iQ Tag Management, a remote command is set up as an instance of the TagBridge Custom Command tag with the following settings:</p>
 
 <ul>
-<li><strong>Command ID:</strong> set to the name of the command (same name used in native code method <code>addRemoteCommandID</code>).</li>
-<li><strong>Load Rule:</strong> a rule to determine when the remote command should be triggered.</li>
-<li><strong>Mapped Variables:</strong> mapped data layer variables will be available in the <code>response.requstPayload</code> object in the native code callback.</li>
+<li><strong>Command ID</strong><br />
+The name of the command (the same name used in the native method <code>addRemoteCommandID</code>).</li>
+<li><strong>Load Rule</strong><br />
+A rule to determine when to trigger the remote command.</li>
+<li><strong>Mapped Variables</strong><br />
+The data to include in the remote command. Mapped data layer variables are available in the <code>response.requstPayload</code> object in the native code callback.</li>
 </ul>
 
-<p>Here is how an event goes from being tracked in your app to triggering a remote command.</p>
+<p>Example remote command tag:</p>
 
 <h4 id="tracked-event">Tracked Event:</h4>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">tealium?.track(
@@ -328,24 +331,27 @@ var utag_data = {
 <h4 id="tag-setup">Tag Setup:</h4>
 
 <ul>
-<li>Command ID: <code>myRemoteCommand</code></li>
-<li>Load Rule: <code>IF tealium_event EQUALS my_event</code></li>
-<li>Mapped Variable: <code>my_variable -&gt; myVariable</code></li>
+<li><strong>Command ID</strong><br />
+<code>myRemoteCommand</code></li>
+<li><strong>Load Rule</strong><br />
+<code>IF tealium_event EQUALS my_event</code></li>
+<li><strong>Mapped Variable</strong><br />
+<code>my_variable -&gt; myVariable</code></li>
 </ul>
 
 <p><img src="/images/platforms/remote-commands/tag-example.png" alt="tag-example.png" title="tag-example.png" /></p>
 
 <h2 id="vendor-integrations">Vendor Integrations</h2>
 
-<p>A pre-built remote command for a vendor takes care of the native code requirements for you. The remote command module installs the vendor SDK and defines remote command handlers for the vendor&rsquo;s SDK methods.</p>
+<p>A vendor integration is a pre-built remote command module that installs the vendor SDK and and defines native code handlers for the vendor&rsquo;s API.</p>
 
 <p>Implementing a remote command integration requires the following:</p>
 
 <ul>
-<li><strong>Vendor Remote Command Module</strong><br>
-Replace the vendor&rsquo;s SDK install with the remote command module in your app build scripts. The remote command module handles the vendor SDK installation and setup for you.</li>
-<li><strong>Vendor Remote Command Tag</strong><br>
-In iQ Tag Management, add the remote command tag for the vendor integration. Supported vendor SDK methods and data variables are configured as tag settings or data mappings.</li>
+<li><strong>Vendor Remote Command Module</strong><br />
+In your app build scripts, Replace the vendor SDK with the remote command module. The remote command module handles the vendor SDK installation and setup for you.</li>
+<li><strong>Vendor Remote Command Tag</strong><br />
+In iQ Tag Management, add the remote command tag for the vendor integration. Configure the tag settings and data mappings to implement the desired vendor methods.</li>
 </ul>
 
 <h3 id="native-code-1">Native Code</h3>
@@ -364,6 +370,8 @@ pod &quot;TealiumVendorXYZ&quot;
 <h3 id="remote-command-tag">Remote Command Tag</h3>
 
 <p>A remote command tag for the vendor integration is offered in iQ Tag Management. Use this tag just like a regular website tag. Each remote command tag offers event mappings for the vendor&rsquo;s SDK methods, which are defined as remote commands in the app module.</p>
+
+<p><a href="/platforms/remote-commands/integrations/">List of remote command vendor integrations.</a></p>
 
 </div>
 
@@ -969,6 +977,13 @@ pod &quot;TealiumVendorXYZ&quot;
               Function Definitions
             </a>
           </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/react-native/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
         </ul>
       </li>
       
@@ -1191,7 +1206,7 @@ pod &quot;TealiumVendorXYZ&quot;
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: July 31, 2019</p>
+<p> This page was last updated: September 10, 2019</p>
 
       
 

@@ -300,7 +300,8 @@ var utag_data = {
 <ol>
 <li>In Chrome Developer Tools, go to Sources and open utag.js.</li>
 <li>Unminify (pretty print) the code by clicking the curly braces at the bottom left of the window.</li>
-<li>Find the line with <code>return this.track(</code> and click the line number to set a breakpoint:<br><img src="/images/platforms/javascript/debugging-utag-code.png" alt="utag breakpoint" title="utag breakpoint" /></li>
+<li>Find the line with <code>return this.track(</code> and click the line number to set a breakpoint:<br />
+<img src="/images/platforms/javascript/debugging-utag-code.png" alt="utag breakpoint" title="utag breakpoint" /></li>
 <li>Return to the main window and perform an action to invoke one of the tracking calls. When a tracking call is made one of the breakpoints will stop the action and you can inspect the code.</li>
 <li>In the right-hand side of the developer tool there is a section called <strong>Watch Expressions</strong>. Click the plus sign <strong>+</strong> to add a watch expression. Type <code>a</code> and hit <strong>Enter</strong> to add a watch exppression for this variable.</li>
 <li>Expand the object that is contained in parameter <code>a</code> to show the data was passed to the tracking call. This is the data that you have to work with in extensions, load rules and mappings. </li>
@@ -329,31 +330,31 @@ var utag_data = {
 <p>Below is a breakdown of the different output results you see. This is not a comprehensive list as the output will be specific to your implementation. The log output may change at any time due to updates and enhancements.</p>
 
 <ul>
-<li><strong>Pre-INIT</strong><br>
+<li><strong>Pre-INIT</strong><br />
 Pre Loader scoped extensions are now running.</li>
-<li><strong>utag.loader.RD</strong> <br>
+<li><strong>utag.loader.RD</strong><br />
 The library begins to read data such as the UDO, Meta Data, DOM data and more.</li>
-<li><strong>utag.load.INIT</strong><br>
+<li><strong>utag.load.INIT</strong><br />
 The standard utag.js file logic is initiated.</li>
-<li><strong>All Tags EXTENSIONS</strong><br>
+<li><strong>All Tags EXTENSIONS</strong><br />
 All Tags scoped extensions are now running.</li>
-<li><strong>utag.loader.INIT: waiting 1</strong><br>
+<li><strong>utag.loader.INIT: waiting 1</strong><br />
 Tags waiting for DOM Ready.</li>
-<li><strong>READY</strong><br>
+<li><strong>READY</strong><br />
 The library is ready for DOM Ready to occur.</li>
-<li><strong>WQ</strong><br>
+<li><strong>WQ</strong><br />
 Indicates how many tags are set to wait, e.g. the services-dang/tiq-as profile has 4 tags enabled and all 4 are set to wait.</li>
-<li><strong>Attach to head</strong><br>
+<li><strong>Attach to head</strong><br />
 Tag script is added into the source code.</li>
-<li><strong>utag.loader.WAIT</strong><br>
+<li><strong>utag.loader.WAIT</strong><br />
 The specified tag is loaded into the browser but to wait until DOM Ready to fire the Tags.</li>
-<li><strong>utag.loader.LOAD</strong><br>
+<li><strong>utag.loader.LOAD</strong><br />
 The tag&rsquo;s u.send function runs, sending data to the tag.</li>
-<li><strong>Sending: 1</strong><br>
+<li><strong>Sending: 1</strong><br />
 The tag is triggering the call to the vendor.</li>
-<li><strong>SETFORCE:WAIT</strong><br>
+<li><strong>SETFORCE:WAIT</strong><br />
 Tags are about fire due do DOM Ready.</li>
-<li><strong>trigger:view</strong><br>
+<li><strong>trigger:view</strong><br />
 A tracking call was made.</li>
 </ul>
 
@@ -961,6 +962,13 @@ A tracking call was made.</li>
               Function Definitions
             </a>
           </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/react-native/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
         </ul>
       </li>
       
@@ -1183,7 +1191,7 @@ A tracking call was made.</li>
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: February 12, 2019</p>
+<p> This page was last updated: September 10, 2019</p>
 
       
 
