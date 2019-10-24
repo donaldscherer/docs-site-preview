@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.54.0" />
+     <meta name="generator" content="Hugo 0.58.3" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -234,7 +234,8 @@ var utag_data = {
 
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">In this article:</p>
-      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#how-it-works">How It Works</a></li>
+      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#web">Web</a></li>
+              <li><a href="#mobile">Mobile</a></li>
               <ul class="toc-h3"><li><a href="#benefits">Benefits</a></li>
               <li><a href="#considerations">Considerations</a></li>
               </ul><li><a href="#use-cases">Use Cases</a></li>
@@ -278,9 +279,17 @@ var utag_data = {
 
 
 
-<p>The client-side solution uses a hidden webview to load a special HTML file for mobile devices. This HTML file contains settings to control SDK behavior and it loads the Universal Tag (<code>utag.js</code>) to execute the configuration of the corresponding mobile iQ profile.</p>
+<h2 id="web">Web</h2>
 
-<h2 id="how-it-works">How It Works</h2>
+<p>iQ Tag Management is a client-side solution that, without an application server, provides all the tag configuration logic from a static JavaScript file that can be processed solely by the browser.</p>
+
+<p>In iQ Tag Management, your vendor tag configuration and business logic is represented in JavaScript code that resides inside the main client-side library called Universal Tag (<code>utag.js</code>). As visitors browse your site, this file is loaded and, within the browser itself, determines which additional vendor tags to load and how to send their data. Once these files have been retrieved by the browser they are cached for subsequent page views to optimize network traffic and page performance.</p>
+
+<p><a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/How-does-iQ-Tag-Management-work/ta-p/15893">Learn more</a> about how iQ Tag Management works.</p>
+
+<h2 id="mobile">Mobile</h2>
+
+<p>The client-side solution uses a hidden webview to load a special HTML file for mobile devices. This HTML file contains settings to control SDK behavior and it loads the Universal Tag (<code>utag.js</code>) to execute the configuration of the corresponding mobile iQ profile.</p>
 
 <p>When you <a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/Creating-a-Mobile-Profile/ta-p/16328#publish_settings">activate a mobile profile</a> in Tealium iQ, a file named <code>mobile.html</code> is published to the following path on the CDN:</p>
 
@@ -361,9 +370,11 @@ The more tags you deploy to your app, the more network traffic is generated due 
 <p>The following platforms support the Tag Management client-side solution:</p>
 
 <ul>
-<li><a href="/platforms/android/">Tealium for Android</a></li>
+<li><a href="/platforms/amp/">Tealium for AMP</a></li>
+<li><a href="/platforms/android-java/">Tealium for Android</a></li>
 <li><a href="/platforms/cordova/">Tealium for Cordova</a></li>
-<li><a href="/platforms/ios/">Tealium for iOS</a></li>
+<li><a href="/platforms/ios-swift/">Tealium for iOS</a></li>
+<li><a href="/platforms/javascript/">Tealium for JavaScript</a></li>
 <li><a href="/platforms/react-native/">Tealium for React Native</a></li>
 <li><a href="/platforms/xamarin/">Tealium for Xamarin</a></li>
 </ul>
@@ -498,7 +509,14 @@ The more tags you deploy to your app, the more network traffic is generated due 
           <li class="fw4">
             
             
-            <a href="/platforms/amp/data-layer-variables/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/amp/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/amp/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Data Layer
             </a>
           </li>
@@ -507,118 +525,83 @@ The more tags you deploy to your app, the more network traffic is generated due 
       
       
       <li class="w-100 hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".android">Android</a>
-        <ul class="android desktopmenu animated fadeIn list pl0 dn">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".android-java">Android (Java)</a>
+        <ul class="android-java desktopmenu animated fadeIn list pl0 dn">
           <li class="fw4">
             
             
-            <a href="/platforms/android/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/android-java/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Overview
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/android/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/android-java/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Install
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/android/consent-manager/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Consent Manager
+            <a href="/platforms/android-java/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/android/data-layer-variables/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/android-java/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Data Layer
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/android/adid-module/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module: Ad Identifier
+            <a href="/platforms/android-java/data-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Management
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/android/crash-reporter-module/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module: Crash Reporter
+            <a href="/platforms/android-java/consent-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Consent Management
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/android/lifecycle-tracking-module/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module: Lifecycle Tracking
+            <a href="/platforms/android-java/module-list/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Module List
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/android/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/android-java/tv/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Android TV
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/android-java/wear/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Android Wear
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/android-java/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/android-java/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Release Notes
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/android/optimizely-x-tracking-module/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module: Optimizely X Tracking
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/android/referrer-module/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module: Install Referrer
-            </a>
-          </li>
-        </ul>
-      </li>
-      
-      
-      <li class="w-100 hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".android-tv">Android TV</a>
-        <ul class="android-tv desktopmenu animated fadeIn list pl0 dn">
-          <li class="fw4">
-            
-            
-            <a href="/platforms/android-tv/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Overview
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/android-tv/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Install
-            </a>
-          </li>
-        </ul>
-      </li>
-      
-      
-      <li class="w-100 hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".android-wear">Android Wear</a>
-        <ul class="android-wear desktopmenu animated fadeIn list pl0 dn">
-          <li class="fw4">
-            
-            
-            <a href="/platforms/android-wear/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Overview
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/android-wear/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Install
             </a>
           </li>
         </ul>
@@ -640,6 +623,20 @@ The more tags you deploy to your app, the more network traffic is generated due 
             
             <a href="/platforms/angular/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/angular/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/angular/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
             </a>
           </li>
         </ul>
@@ -666,8 +663,22 @@ The more tags you deploy to your app, the more network traffic is generated due 
           <li class="fw4">
             
             
-            <a href="/platforms/csharp/functions/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Function Definitions
+            <a href="/platforms/csharp/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/csharp/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/csharp/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
             </a>
           </li>
           <li class="fw4">
@@ -708,29 +719,29 @@ The more tags you deploy to your app, the more network traffic is generated due 
           <li class="fw4">
             
             
-            <a href="/platforms/cordova/functions/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Function Definitions
+            <a href="/platforms/cordova/data-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Management
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/cordova/module-adid/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module: Ad Identifier
+            <a href="/platforms/cordova/module-list/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Module List
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/cordova/module-crash-reporter/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module: Crash Reporter
+            <a href="/platforms/cordova/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/cordova/module-install-referrer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module: Install Referrer
+            <a href="/platforms/cordova/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
             </a>
           </li>
         </ul>
@@ -752,6 +763,34 @@ The more tags you deploy to your app, the more network traffic is generated due 
             
             <a href="/platforms/flutter/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/flutter/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/flutter/consent-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Consent Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/flutter/data-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/flutter/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
             </a>
           </li>
           <li class="fw4">
@@ -782,73 +821,192 @@ The more tags you deploy to your app, the more network traffic is generated due 
               Endpoint
             </a>
           </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/http-api/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer
+            </a>
+          </li>
         </ul>
       </li>
       
       
       <li class="w-100 hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".ios">iOS</a>
-        <ul class="ios desktopmenu animated fadeIn list pl0 dn">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".ios-objective-c">iOS (Objective-C)</a>
+        <ul class="ios-objective-c desktopmenu animated fadeIn list pl0 dn">
           <li class="fw4">
             
             
-            <a href="/platforms/ios/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/ios-objective-c/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Overview
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/ios/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/ios-objective-c/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Install
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/ios/consent-manager/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Consent Manager
+            <a href="/platforms/ios-objective-c/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/ios/data-layer-variables/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/ios-objective-c/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Data Layer
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/ios/tag-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/ios-objective-c/data-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-objective-c/consent-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Consent Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-objective-c/tag-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Tag Management
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/ios/lifecycle-tracking-module/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module: Lifecycle Tracking
+            <a href="/platforms/ios-objective-c/module-list/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Module List
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/ios/optimizely-x-tracking-module/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module: Optimizely X Tracking
+            <a href="/platforms/ios-objective-c/tvos/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              tvOs
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/ios/migrate-from-4x/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Migrate from 4.x
+            <a href="/platforms/ios-objective-c/watchos/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              watchOS
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/ios/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/ios-objective-c/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-objective-c/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".ios-swift">iOS (Swift)</a>
+        <ul class="ios-swift desktopmenu animated fadeIn list pl0 dn">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/data-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/consent-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Consent Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/modules/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Modules
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/module-list/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Module List
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/feature-comparison/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Feature Comparison
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/with-objective-c/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Working with Objective-C
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Release Notes
             </a>
           </li>
@@ -876,8 +1034,22 @@ The more tags you deploy to your app, the more network traffic is generated due 
           <li class="fw4">
             
             
-            <a href="/platforms/java/function-definitions/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Function Definitions
+            <a href="/platforms/java/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/java/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/java/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
             </a>
           </li>
         </ul>
@@ -904,22 +1076,36 @@ The more tags you deploy to your app, the more network traffic is generated due 
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/page-tracking/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Page Tracking
+            <a href="/platforms/javascript/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/event-tracking/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Event Tracking
+            <a href="/platforms/javascript/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/validate/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Validate
+            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer Object (b)
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Universal Data Object (utag_data)
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/javascript/universal-tag/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Universal Tag (utag.js)
             </a>
           </li>
           <li class="fw4">
@@ -932,36 +1118,8 @@ The more tags you deploy to your app, the more network traffic is generated due 
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/about-utag-js/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              About utag.js
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/javascript/about-utag-data/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              About utag_data
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/javascript/the-b-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              The b Object
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
             <a href="/platforms/javascript/debugging/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Debugging
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/javascript/built-in-variables/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Built-In Variables
             </a>
           </li>
           <li class="fw4">
@@ -992,6 +1150,20 @@ The more tags you deploy to your app, the more network traffic is generated due 
               Install
             </a>
           </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/node/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/node/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
         </ul>
       </li>
       
@@ -1011,6 +1183,20 @@ The more tags you deploy to your app, the more network traffic is generated due 
             
             <a href="/platforms/python/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/python/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Refereence
             </a>
           </li>
         </ul>
@@ -1037,8 +1223,15 @@ The more tags you deploy to your app, the more network traffic is generated due 
           <li class="fw4">
             
             
-            <a href="/platforms/react-native/functions/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Function Definitions
+            <a href="/platforms/react-native/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/react-native/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
             </a>
           </li>
           <li class="fw4">
@@ -1072,8 +1265,15 @@ The more tags you deploy to your app, the more network traffic is generated due 
           <li class="fw4">
             
             
-            <a href="/platforms/roku/functions/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Functions Definitions
+            <a href="/platforms/roku/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/roku/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
             </a>
           </li>
         </ul>
@@ -1097,130 +1297,18 @@ The more tags you deploy to your app, the more network traffic is generated due 
               Install
             </a>
           </li>
-        </ul>
-      </li>
-      
-      
-      <li class="w-100 hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".swift">Swift</a>
-        <ul class="swift desktopmenu animated fadeIn list pl0 dn">
           <li class="fw4">
             
             
-            <a href="/platforms/swift/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Overview
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/swift/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Install
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/swift/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/ruby/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Track
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/swift/class-definitions/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Class Definitions
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/swift/consent-manager/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Consent Manager
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/swift/modules/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Modules
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/swift/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Data Layer
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/swift/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Release Notes
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/swift/module-list/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module List
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/swift/feature-comparison/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Feature Comparison
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/swift/with-objective-c/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Working with Objective-C
-            </a>
-          </li>
-        </ul>
-      </li>
-      
-      
-      <li class="w-100 hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".tvos">tvOS</a>
-        <ul class="tvos desktopmenu animated fadeIn list pl0 dn">
-          <li class="fw4">
-            
-            
-            <a href="/platforms/tvos/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Overview
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/tvos/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Install
-            </a>
-          </li>
-        </ul>
-      </li>
-      
-      
-      <li class="w-100 hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".watchos">watchOS</a>
-        <ul class="watchos desktopmenu animated fadeIn list pl0 dn">
-          <li class="fw4">
-            
-            
-            <a href="/platforms/watchos/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Overview
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/watchos/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Install
+            <a href="/platforms/ruby/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
             </a>
           </li>
         </ul>
@@ -1242,6 +1330,34 @@ The more tags you deploy to your app, the more network traffic is generated due 
             
             <a href="/platforms/xamarin/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/xamarin/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/xamarin/data-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/xamarin/consent-mangagement/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Consent Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/xamarin/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
             </a>
           </li>
         </ul>
@@ -1270,7 +1386,7 @@ The more tags you deploy to your app, the more network traffic is generated due 
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 3, 2019</p>
+<p> This page was last updated: October 17, 2019</p>
 
       
 
@@ -1328,20 +1444,8 @@ The more tags you deploy to your app, the more network traffic is generated due 
     </li>
   
     <li  class="tl dib ma0 hover-bg-primary w-100">
-        <a href="/platforms/android/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
-          Android
-        </a>
-    </li>
-  
-    <li  class="tl dib ma0 hover-bg-primary w-100">
-        <a href="/platforms/android-tv/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
-          Android TV
-        </a>
-    </li>
-  
-    <li  class="tl dib ma0 hover-bg-primary w-100">
-        <a href="/platforms/android-wear/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
-          Android Wear
+        <a href="/platforms/android-java/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          Android (Java)
         </a>
     </li>
   
@@ -1376,8 +1480,14 @@ The more tags you deploy to your app, the more network traffic is generated due 
     </li>
   
     <li  class="tl dib ma0 hover-bg-primary w-100">
-        <a href="/platforms/ios/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
-          iOS
+        <a href="/platforms/ios-objective-c/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          iOS (Objective-C)
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="/platforms/ios-swift/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          iOS (Swift)
         </a>
     </li>
   
@@ -1420,24 +1530,6 @@ The more tags you deploy to your app, the more network traffic is generated due 
     <li  class="tl dib ma0 hover-bg-primary w-100">
         <a href="/platforms/ruby/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
           Ruby
-        </a>
-    </li>
-  
-    <li  class="tl dib ma0 hover-bg-primary w-100">
-        <a href="/platforms/swift/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
-          Swift
-        </a>
-    </li>
-  
-    <li  class="tl dib ma0 hover-bg-primary w-100">
-        <a href="/platforms/tvos/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
-          tvOS
-        </a>
-    </li>
-  
-    <li  class="tl dib ma0 hover-bg-primary w-100">
-        <a href="/platforms/watchos/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
-          watchOS
         </a>
     </li>
   

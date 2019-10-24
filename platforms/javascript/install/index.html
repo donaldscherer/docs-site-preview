@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.54.0" />
+     <meta name="generator" content="Hugo 0.58.3" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -234,9 +234,13 @@ var utag_data = {
 
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">In this article:</p>
-      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#universal-data-object-utag-data">Universal Data Object (utag_data)</a></li>
+      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#install">Install</a></li>
+              <ul class="toc-h3"><li><a href="#universal-data-object-utag-data">Universal Data Object (utag_data)</a></li>
               <li><a href="#universal-tag-utag-js">Universal Tag (utag.js)</a></li>
               <li><a href="#code-placement">Code Placement</a></li>
+              </ul><li><a href="#validate-installation">Validate Installation</a></li>
+              <ul class="toc-h3"><li><a href="#universal-tag-debugger">Universal Tag Debugger</a></li>
+              <li><a href="#web-companion">Web Companion</a></li>
               </nav>
   </aside></div>
 
@@ -259,7 +263,7 @@ var utag_data = {
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Add Tealium to your website to manage tags and track user activity.
+      Learn to install Tealium for JavaScript (Web).
     </div>
   
 
@@ -272,34 +276,76 @@ var utag_data = {
 
 
 
-<h2 id="universal-data-object-utag-data">Universal Data Object (utag_data)</h2>
+<h2 id="install">Install</h2>
 
-<p>The Universal Data Object (UDO) is a JavaScript object called <code>utag_data</code> in which dynamic data from your webpage is passed to the Tealium tag. The properties in this object are named using plain-English, vendor neutral terms that are specific to your business.  </p>
+<h3 id="universal-data-object-utag-data">Universal Data Object (<code>utag_data</code>)</h3>
 
-<p class="note">Define and populate <code>utag_data</code> <em>prior</em> to loading the Universal Tag.</p>
+<p>The Universal Data Object (UDO) is a JavaScript object called <a href="/platforms/javascript/about-utag-data/"><code>utag_data</code></a> in which dynamic data from your webpage is passed to the Tealium tag. The properties in this object are named using plain-English, vendor neutral terms that are specific to your business.  </p>
 
-
-<p>Example:</p>
+<p>The following example shows how to define and populate <code>utag_data</code>, which is done <em>prior</em> to loading the Universal Tag <a href="/platforms/javascript/about-utag-js/"><code>utag.js</code></a>:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#998;font-style:italic">&lt;!-- Tealium Universal Data Object --&gt;</span>
 &lt;<span style="color:#000080">script</span> <span style="color:#008080">type</span><span style="font-weight:bold">=</span><span style="color:#b84">&#34;text/javascript&#34;</span>&gt;
 <span style="font-weight:bold">var</span> utag_data<span style="font-weight:bold">=</span>{
-    <span style="color:#b84">&#34;page_type&#34;</span>     <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;section&#34;</span>,
-    <span style="color:#b84">&#34;site_section&#34;</span>  <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;men&#34;</span>,
-    <span style="color:#b84">&#34;page_name&#34;</span>     <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;Men&#39;s Fashion | Acme Inc.&#34;</span>,
-    <span style="color:#b84">&#34;country_code&#34;</span>  <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;US&#34;</span>,
-    <span style="color:#b84">&#34;currency_code&#34;</span> <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;USD&#34;</span>
+    <span style="color:#b84">&#34;page_type&#34;</span>     <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;PAGE_TYPE&#34;</span>,
+    <span style="color:#b84">&#34;site_section&#34;</span>  <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;SITE_SECTION&#34;</span>,
+    <span style="color:#b84">&#34;page_name&#34;</span>     <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;PAGE_NAME&#34;</span>,
+    <span style="color:#b84">&#34;country_code&#34;</span>  <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;COUNTRY_CODE&#34;</span>,
+    <span style="color:#b84">&#34;currency_code&#34;</span> <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;CURRENCY_CODE&#34;</span>
 };
 &lt;/<span style="color:#000080">script</span>&gt;</code></pre></div>
-<p>Additional Reading:</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
 
-<ul>
-<li><a href="/platforms/javascript/about-utag-data/">How the Universal Data Object Works</a></li>
-<li><a href="https://community.tealiumiq.com/t5/Data-Layer/How-the-Data-Layer-Works-for-Websites/ta-p/13618">How the Data Layer Works for Websites</a></li>
-</ul>
+<tbody>
+<tr>
+<td><code>page_type</code></td>
+<td><code>String</code></td>
+<td>The page type</td>
+<td><code>&quot;section&quot;</code></td>
+</tr>
 
-<h2 id="universal-tag-utag-js">Universal Tag (utag.js)</h2>
+<tr>
+<td><code>site_section</code></td>
+<td><code>String</code></td>
+<td>The site section</td>
+<td><code>&quot;Men&quot;</code></td>
+</tr>
 
-<p>The utag.js JavaScript library is Tealium&rsquo;s universal tag that replaces third-party tags with a single snippet of code. The utag.js file contains all of the generated code necessary to load third-party tags onto your site.</p>
+<tr>
+<td><code>page_name</code></td>
+<td><code>String</code></td>
+<td>The name of the screen</td>
+<td><code>&quot;Mens Fashion - Acme Inc.&quot;</code></td>
+</tr>
+
+<tr>
+<td><code>country_code</code></td>
+<td><code>String</code></td>
+<td>The country code</td>
+<td><code>&quot;US&quot;</code></td>
+</tr>
+
+<tr>
+<td><code>currency_code</code></td>
+<td><code>String</code></td>
+<td>The currency code</td>
+<td><code>&quot;USD&quot;</code></td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="https://community.tealiumiq.com/t5/Data-Layer/How-the-Data-Layer-Works-for-Websites/ta-p/13618">Learn more</a> about how the data layer works for websites.</p>
+
+<h3 id="universal-tag-utag-js">Universal Tag (<code>utag.js</code>)</h3>
+
+<p>The <code>utag.js</code> JavaScript library is Tealium&rsquo;s universal tag that replaces third-party tags with a single snippet of code. The <code>utag.js</code> file contains all of the generated code necessary to load third-party tags onto your site.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#998;font-style:italic">&lt;!-- Tealium Universal Tag --&gt;</span>
 &lt;<span style="color:#000080">script</span> <span style="color:#008080">type</span><span style="font-weight:bold">=</span><span style="color:#b84">&#34;text/javascript&#34;</span>&gt;
 (<span style="font-weight:bold">function</span>(a,b,c,d){
@@ -314,51 +360,86 @@ a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="c
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
+<th>Parameters</th>
+<th>Type</th>
 <th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>account</td>
-<td>Name of your account.</td>
+<td>ACCOUNT</td>
+<td><code>String</code></td>
+<td>Tealium account name</td>
+<td><code>&quot;companyXYZ&quot;</code></td>
 </tr>
 
 <tr>
-<td>profile</td>
-<td>Name of your profile.</td>
+<td>PROFILE</td>
+<td><code>String</code></td>
+<td>Tealium profile name</td>
+<td><code>&quot;main&quot;</code> </td>
 </tr>
 
 <tr>
-<td>environment</td>
-<td>One of &ldquo;dev&rdquo;, &ldquo;qa&rdquo; or &ldquo;prod&rdquo;.</td>
+<td>ENVIRONMENT</td>
+<td><code>String</code></td>
+<td>Tealium environment name</td>
+<td>[<code>&quot;dev&quot;</code>, <code>&quot;qa&quot;</code>, <code>&quot;prod&quot;</code>]</td>
 </tr>
 </tbody>
 </table>
 
-<p class="note">Your specific snippet can be retrieved from the <a href="https://community.tealiumiq.com/t5/Tealium-iQ/Code-Center/ta-p/13631">Code Center</a> of your account.</p>
+<p class="tip">Retrieve your specific snippet from the <a href="https://community.tealiumiq.com/t5/Tealium-iQ/Code-Center/ta-p/13631">Code Center</a> of your account.</p>
 
+<p><a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/Using-the-utag-sync-js-Script/ta-p/19175">Learn more</a> about <code>utag.sync.js</code>.</p>
 
-<p class="tip">Your specific snippet can be retrieved from the <a href="https://community.tealiumiq.com/t5/Tealium-iQ/Code-Center/ta-p/13631">Code Center</a> of your account.</p>
+<h3 id="code-placement">Code Placement</h3>
 
+<p>The Tealium code is designed to be placed after the opening <code>&lt;body&gt;</code> tag (as opposed to the <code>&lt;head&gt;</code> tag). This positioning provides the best compatibility with the greatest number of vendors and allows third-party tracking to complete before the visitor navigates to the next page.</p>
 
-<p>Additional Reading:</p>
+<p>Place the <code>utag.js</code> anywhere within the <code>&lt;body&gt;</code>, although the top is the preferred location. The sooner the page begins loading <code>utag.js</code> the sooner your tags are ready to run when the page has been rendered.</p>
 
-<ul>
-<li><a href="/platforms/javascript/about-utag-js/">How utag.js works</a></li>
-<li><a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/Using-utag-sync-js/ta-p/19175">Using utag.sync.js</a></li>
-</ul>
+<p><a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/Understanding-Order-of-Operations-utag-js/ta-p/326">Learn more</a> about the order of operations to understand how the Universal Tag <code>utag.js</code> loads.</p>
 
-<h2 id="code-placement">Code Placement</h2>
+<h2 id="validate-installation">Validate Installation</h2>
 
-<p>The Tealium code is designed to be placed after the opening <code>&lt;body&gt;</code> tag (as opposed to the <code>&lt;head&gt;</code> tag). This positioning provides the best compatibility with the greatest number of vendors and allows third-party tracking to complete before the visitor navigates to the next page. The utag.js code can be placed anywhere within the <code>&lt;body&gt;</code>, although the top is the preferred location. The sooner the page can begin loading utag.js the sooner your tags will be ready to run when the page has been rendered.</p>
+<p>Use the following tools to validate that your <code>utag.js</code> installation is working properly.</p>
 
-<p>Additional Reading:</p>
+<h3 id="universal-tag-debugger">Universal Tag Debugger</h3>
 
-<ul>
-<li><a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/Understanding-Order-of-Operations-utag-js/ta-p/326">Understanding Order of Operations (utag.js)</a></li>
-</ul>
+<p>The Universal Tag Debugger (or &ldquo;utag debugger&rdquo;) provides an easy way to validate your data layer and tracking calls in real-time as you navigate your site. It&rsquo;s similar to Web Companion, but is focused on the data captured by each tracking event within <code>utag.js</code>.</p>
+
+<p><img src="/images/platforms/javascript/utag-monitor.png" alt="UTAG Monitor" title="UTAG Monitor" /></p>
+
+<p>The tracking calls made by <code>utag.js</code> are displayed and updated in the tool as you navigate or trigger in-page events.  </p>
+
+<p><a href="https://community.tealiumiq.com/t5/Productivity-Tools/Tealium-Universal-Tag-Monitor/ta-p/15179">Learn more</a> about installing and using the Universal Tag Debugger</p>
+
+<h3 id="web-companion">Web Companion</h3>
+
+<p>Web Companion is a browser tool that allows you to audit your tag configuration, inspect data on your site, and create and test new configurations quickly and easily.  Launching this tool quickly verifies that the <code>utag.js</code> library is loading properly on your site. </p>
+
+<p><img src="/images/platforms/javascript/web-companion.png" alt="Web Companion" title="Web Companion" /></p>
+
+<p><strong>Account Information</strong><br />
+The current account, profile, version, and environment that the page is running is displayed under this tab. </p>
+
+<p><strong>Target Environment</strong><br />
+The environment detected in the page is outlined in orange. The currently viewed environment is highlighted in blue. You may view any of the three environments by clicking the desired button and reloading the page and relaunching Web Companion.<br />
+<p class="note">Allow the webpage to finish loading before restarting Web Companion.</p></p>
+
+<p><strong>Tags &amp; Extensions Tabs</strong><br />
+This tab shows which Tags loaded and whether they successfully sent requests. The Extensions that are successfully completed are also displayed.</p>
+
+<p><strong>Timers</strong><br />
+The load and send times of each Tealium JavaScript library are displayed at the bottom of the tab.</p>
+
+<p><strong>Saving Changes</strong><br />
+Changes applied to the profile through the Web Companion are queued at the bottom of the bookmarklet and are not committed until you click the <strong>Save&hellip;</strong> button. If you do not wish to commit a change, you may also remove that change from the queue by clicking on the <strong>X</strong> button next to the appropriate change.</p>
+
+<p><a href="https://community.tealiumiq.com/t5/Productivity-Tools/Web-Companion/ta-p/11947">Learn more</a> about installing and using Web Companion.</p>
 
 </div>
 
@@ -484,7 +565,14 @@ a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="c
           <li class="fw4">
             
             
-            <a href="/platforms/amp/data-layer-variables/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/amp/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/amp/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Data Layer
             </a>
           </li>
@@ -493,118 +581,83 @@ a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="c
       
       
       <li class="w-100 hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".android">Android</a>
-        <ul class="android desktopmenu animated fadeIn list pl0 dn">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".android-java">Android (Java)</a>
+        <ul class="android-java desktopmenu animated fadeIn list pl0 dn">
           <li class="fw4">
             
             
-            <a href="/platforms/android/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/android-java/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Overview
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/android/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/android-java/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Install
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/android/consent-manager/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Consent Manager
+            <a href="/platforms/android-java/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/android/data-layer-variables/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/android-java/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Data Layer
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/android/adid-module/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module: Ad Identifier
+            <a href="/platforms/android-java/data-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Management
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/android/crash-reporter-module/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module: Crash Reporter
+            <a href="/platforms/android-java/consent-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Consent Management
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/android/lifecycle-tracking-module/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module: Lifecycle Tracking
+            <a href="/platforms/android-java/module-list/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Module List
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/android/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/android-java/tv/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Android TV
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/android-java/wear/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Android Wear
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/android-java/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/android-java/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Release Notes
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/android/optimizely-x-tracking-module/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module: Optimizely X Tracking
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/android/referrer-module/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module: Install Referrer
-            </a>
-          </li>
-        </ul>
-      </li>
-      
-      
-      <li class="w-100 hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".android-tv">Android TV</a>
-        <ul class="android-tv desktopmenu animated fadeIn list pl0 dn">
-          <li class="fw4">
-            
-            
-            <a href="/platforms/android-tv/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Overview
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/android-tv/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Install
-            </a>
-          </li>
-        </ul>
-      </li>
-      
-      
-      <li class="w-100 hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".android-wear">Android Wear</a>
-        <ul class="android-wear desktopmenu animated fadeIn list pl0 dn">
-          <li class="fw4">
-            
-            
-            <a href="/platforms/android-wear/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Overview
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/android-wear/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Install
             </a>
           </li>
         </ul>
@@ -626,6 +679,20 @@ a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="c
             
             <a href="/platforms/angular/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/angular/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/angular/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
             </a>
           </li>
         </ul>
@@ -652,8 +719,22 @@ a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="c
           <li class="fw4">
             
             
-            <a href="/platforms/csharp/functions/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Function Definitions
+            <a href="/platforms/csharp/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/csharp/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/csharp/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
             </a>
           </li>
           <li class="fw4">
@@ -694,29 +775,29 @@ a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="c
           <li class="fw4">
             
             
-            <a href="/platforms/cordova/functions/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Function Definitions
+            <a href="/platforms/cordova/data-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Management
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/cordova/module-adid/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module: Ad Identifier
+            <a href="/platforms/cordova/module-list/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Module List
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/cordova/module-crash-reporter/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module: Crash Reporter
+            <a href="/platforms/cordova/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/cordova/module-install-referrer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module: Install Referrer
+            <a href="/platforms/cordova/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
             </a>
           </li>
         </ul>
@@ -738,6 +819,34 @@ a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="c
             
             <a href="/platforms/flutter/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/flutter/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/flutter/consent-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Consent Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/flutter/data-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/flutter/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
             </a>
           </li>
           <li class="fw4">
@@ -768,73 +877,192 @@ a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="c
               Endpoint
             </a>
           </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/http-api/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer
+            </a>
+          </li>
         </ul>
       </li>
       
       
       <li class="w-100 hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".ios">iOS</a>
-        <ul class="ios desktopmenu animated fadeIn list pl0 dn">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".ios-objective-c">iOS (Objective-C)</a>
+        <ul class="ios-objective-c desktopmenu animated fadeIn list pl0 dn">
           <li class="fw4">
             
             
-            <a href="/platforms/ios/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/ios-objective-c/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Overview
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/ios/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/ios-objective-c/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Install
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/ios/consent-manager/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Consent Manager
+            <a href="/platforms/ios-objective-c/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/ios/data-layer-variables/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/ios-objective-c/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Data Layer
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/ios/tag-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/ios-objective-c/data-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-objective-c/consent-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Consent Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-objective-c/tag-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Tag Management
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/ios/lifecycle-tracking-module/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module: Lifecycle Tracking
+            <a href="/platforms/ios-objective-c/module-list/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Module List
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/ios/optimizely-x-tracking-module/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module: Optimizely X Tracking
+            <a href="/platforms/ios-objective-c/tvos/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              tvOs
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/ios/migrate-from-4x/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Migrate from 4.x
+            <a href="/platforms/ios-objective-c/watchos/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              watchOS
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/ios/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/ios-objective-c/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-objective-c/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".ios-swift">iOS (Swift)</a>
+        <ul class="ios-swift desktopmenu animated fadeIn list pl0 dn">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/data-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/consent-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Consent Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/modules/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Modules
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/module-list/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Module List
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/feature-comparison/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Feature Comparison
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/with-objective-c/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Working with Objective-C
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Release Notes
             </a>
           </li>
@@ -862,8 +1090,22 @@ a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="c
           <li class="fw4">
             
             
-            <a href="/platforms/java/function-definitions/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Function Definitions
+            <a href="/platforms/java/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/java/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/java/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
             </a>
           </li>
         </ul>
@@ -890,22 +1132,36 @@ a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="c
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/page-tracking/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Page Tracking
+            <a href="/platforms/javascript/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/event-tracking/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Event Tracking
+            <a href="/platforms/javascript/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/validate/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Validate
+            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer Object (b)
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Universal Data Object (utag_data)
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/javascript/universal-tag/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Universal Tag (utag.js)
             </a>
           </li>
           <li class="fw4">
@@ -918,36 +1174,8 @@ a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="c
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/about-utag-js/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              About utag.js
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/javascript/about-utag-data/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              About utag_data
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/javascript/the-b-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              The b Object
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
             <a href="/platforms/javascript/debugging/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Debugging
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/javascript/built-in-variables/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Built-In Variables
             </a>
           </li>
           <li class="fw4">
@@ -978,6 +1206,20 @@ a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="c
               Install
             </a>
           </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/node/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/node/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
         </ul>
       </li>
       
@@ -997,6 +1239,20 @@ a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="c
             
             <a href="/platforms/python/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/python/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Refereence
             </a>
           </li>
         </ul>
@@ -1023,8 +1279,15 @@ a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="c
           <li class="fw4">
             
             
-            <a href="/platforms/react-native/functions/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Function Definitions
+            <a href="/platforms/react-native/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/react-native/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
             </a>
           </li>
           <li class="fw4">
@@ -1058,8 +1321,15 @@ a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="c
           <li class="fw4">
             
             
-            <a href="/platforms/roku/functions/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Functions Definitions
+            <a href="/platforms/roku/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/roku/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
             </a>
           </li>
         </ul>
@@ -1083,130 +1353,18 @@ a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="c
               Install
             </a>
           </li>
-        </ul>
-      </li>
-      
-      
-      <li class="w-100 hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".swift">Swift</a>
-        <ul class="swift desktopmenu animated fadeIn list pl0 dn">
           <li class="fw4">
             
             
-            <a href="/platforms/swift/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Overview
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/swift/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Install
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/swift/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/ruby/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Track
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/swift/class-definitions/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Class Definitions
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/swift/consent-manager/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Consent Manager
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/swift/modules/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Modules
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/swift/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Data Layer
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/swift/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Release Notes
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/swift/module-list/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Module List
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/swift/feature-comparison/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Feature Comparison
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/swift/with-objective-c/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Working with Objective-C
-            </a>
-          </li>
-        </ul>
-      </li>
-      
-      
-      <li class="w-100 hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".tvos">tvOS</a>
-        <ul class="tvos desktopmenu animated fadeIn list pl0 dn">
-          <li class="fw4">
-            
-            
-            <a href="/platforms/tvos/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Overview
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/tvos/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Install
-            </a>
-          </li>
-        </ul>
-      </li>
-      
-      
-      <li class="w-100 hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".watchos">watchOS</a>
-        <ul class="watchos desktopmenu animated fadeIn list pl0 dn">
-          <li class="fw4">
-            
-            
-            <a href="/platforms/watchos/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Overview
-            </a>
-          </li>
-          <li class="fw4">
-            
-            
-            <a href="/platforms/watchos/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Install
+            <a href="/platforms/ruby/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
             </a>
           </li>
         </ul>
@@ -1228,6 +1386,34 @@ a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="c
             
             <a href="/platforms/xamarin/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/xamarin/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/xamarin/data-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/xamarin/consent-mangagement/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Consent Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/xamarin/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
             </a>
           </li>
         </ul>
@@ -1256,7 +1442,7 @@ a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="c
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: September 10, 2019</p>
+<p> This page was last updated: October 24, 2019</p>
 
       
 
@@ -1314,20 +1500,8 @@ a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="c
     </li>
   
     <li  class="tl dib ma0 hover-bg-primary w-100">
-        <a href="/platforms/android/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
-          Android
-        </a>
-    </li>
-  
-    <li  class="tl dib ma0 hover-bg-primary w-100">
-        <a href="/platforms/android-tv/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
-          Android TV
-        </a>
-    </li>
-  
-    <li  class="tl dib ma0 hover-bg-primary w-100">
-        <a href="/platforms/android-wear/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
-          Android Wear
+        <a href="/platforms/android-java/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          Android (Java)
         </a>
     </li>
   
@@ -1362,8 +1536,14 @@ a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="c
     </li>
   
     <li  class="tl dib ma0 hover-bg-primary w-100">
-        <a href="/platforms/ios/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
-          iOS
+        <a href="/platforms/ios-objective-c/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          iOS (Objective-C)
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="/platforms/ios-swift/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          iOS (Swift)
         </a>
     </li>
   
@@ -1406,24 +1586,6 @@ a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="c
     <li  class="tl dib ma0 hover-bg-primary w-100">
         <a href="/platforms/ruby/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
           Ruby
-        </a>
-    </li>
-  
-    <li  class="tl dib ma0 hover-bg-primary w-100">
-        <a href="/platforms/swift/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
-          Swift
-        </a>
-    </li>
-  
-    <li  class="tl dib ma0 hover-bg-primary w-100">
-        <a href="/platforms/tvos/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
-          tvOS
-        </a>
-    </li>
-  
-    <li  class="tl dib ma0 hover-bg-primary w-100">
-        <a href="/platforms/watchos/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
-          watchOS
         </a>
     </li>
   
