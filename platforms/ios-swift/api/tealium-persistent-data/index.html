@@ -238,6 +238,7 @@ var utag_data = {
               <ul class="toc-h3"><li><a href="#add">add()</a></li>
               <li><a href="#deletealldata">deleteAllData()</a></li>
               <li><a href="#deletedata">deleteData()</a></li>
+              <li><a href="#getdata">getData()</a></li>
               </nav>
   </aside></div>
 
@@ -273,7 +274,7 @@ var utag_data = {
 
 
 
-<h2 id="class-tealiumpersistentdata">Class: TealiumPersistentData</h2>
+<h2 id="class-tealiumpersistentdata">Class: <code>TealiumPersistentData</code></h2>
 
 <p>The following summarizes the commonly used methods of the iOS (Swift) <code>TealiumPersistentData</code> class.</p>
 
@@ -288,17 +289,22 @@ var utag_data = {
 <tbody>
 <tr>
 <td><code>add()</code></td>
-<td>Add persistent data</td>
+<td>Adds additional persistent data that will be available to all track calls for lifetime of app. Values will overwrite any pre-existing values for a given ke</td>
 </tr>
 
 <tr>
 <td><code>deleteAllData()</code></td>
-<td>Deletes all custom persisted data for current library instance</td>
+<td>Deletes all data in the persistent data store</td>
 </tr>
 
 <tr>
 <td><code>deleteData()</code></td>
-<td>Deletes a saved value for a given key</td>
+<td>Deletes data for a specific set of known keys from the persistent data store</td>
+</tr>
+
+<tr>
+<td><code>getData()</code></td>
+<td>Gets data from the persistent data store</td>
 </tr>
 </tbody>
 </table>
@@ -306,7 +312,7 @@ var utag_data = {
 <h3 id="add"><code>add()</code></h3>
 
 <p>Adds additional persistent data that will be available to all track calls for lifetime of app. Values will overwrite any pre-existing values for a given key.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">add(data)</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">tealium?.persistentData()?.add(data: [<span style="color:#999">String</span>: <span style="color:#999">Any</span>])</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -329,12 +335,12 @@ var utag_data = {
 
 <h3 id="deletealldata"><code>deleteAllData()</code></h3>
 
-<p>Deletes all custom persisted data for current library instance.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">deleteAllData()</code></pre></div>
+<p>Deletes all data in the persistent data store.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">tealium?.persistentData()?.deleteAllData()</code></pre></div>
 <h3 id="deletedata"><code>deleteData()</code></h3>
 
-<p>Deletes a saved value for a given key.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">deleteData(forKeys)</code></pre></div>
+<p>Deletes data for a specific set of known keys from the persistent data store.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">tealium?.persistentData()?.deleteDate(forKeys: [<span style="color:#999">String</span>])</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -350,11 +356,15 @@ var utag_data = {
 <td><code>forKeys</code></td>
 <td><code>[String]</code></td>
 <td>Array of keys to remove</td>
-<td><code>forKeys: [&quot;a&quot;, &quot;b&quot;]</code></td>
+<td><code>forKeys: [&quot;customer_id&quot;]</code></td>
 </tr>
 </tbody>
 </table>
 
+<h3 id="getdata"><code>getData()</code></h3>
+
+<p>Gets data from the persistent data store.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">let</span> <span style="color:#008080">data</span> = tealium?.persistentData()?.getData()</code></pre></div>
 </div>
 
           
@@ -1166,7 +1176,7 @@ var utag_data = {
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1356,7 +1366,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 25, 2019</p>
 
       
 

@@ -234,7 +234,8 @@ var utag_data = {
 
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">In this article:</p>
-      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#track-events">Track Events</a></li>
+      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#track-views">Track Views</a></li>
+              <li><a href="#track-events">Track Events</a></li>
               </nav>
   </aside></div>
 
@@ -270,9 +271,55 @@ var utag_data = {
 
 
 
+<h2 id="track-views">Track Views</h2>
+
+<p>The <a href="/platforms/python/api/#trackevent"><code>trackEvent()</code></a> method is used to track views, as shown in the following example:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">trackEvent(<span style="color:#b84">&#34;SCREEN_NAME&#34;</span>, Tealium<span style="font-weight:bold">.</span>EVENT_TYPE_VIEW, data, callback)</code></pre></div>
+<p>The parameters <code>eventtype</code>, <code>data</code> and <code>callback</code> are optional.</p>
+
 <h2 id="track-events">Track Events</h2>
 
-<p>The <a href="/platforms/python/api/#trackevent"><code>trackEvent()</code></a> method is used to track events, as shown in the following example:</p>
+<p>The same <a href="/platforms/python/api/#trackevent"><code>trackEvent()</code></a> method is used to track events, as shown in the following example:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">trackEvent(<span style="color:#b84">&#34;EVENT_NAME&#34;</span>, eventtype, data, callback)</code></pre></div>
+<p>The parameters <code>eventtype</code>, <code>data</code> and <code>callback</code> are optional. The following lists the different event types for the <code>eventtype</code> parameter:</p>
+
+<table>
+<thead>
+<tr>
+<th>Event Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>Tealium.EVENT_TYPE_CONVERSION</code></td>
+<td>Conversion</td>
+</tr>
+
+<tr>
+<td><code>Tealium.EVENT_TYPE_DERIVED</code></td>
+<td>Derived</td>
+</tr>
+
+<tr>
+<td><code>Tealium.EVENT_TYPE_ACTIVITY</code></td>
+<td>Activity</td>
+</tr>
+
+<tr>
+<td><code>Tealium.EVENT_TYPE_VIEW</code></td>
+<td>View</td>
+</tr>
+
+<tr>
+<td><code>Tealium.EVENT_TYPE_INTERACTION</code></td>
+<td>Interaction</td>
+</tr>
+</tbody>
+</table>
+
+<p>The following example demonstrates an event with the optional data and callback arguments provided:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">def</span> <span style="color:#900;font-weight:bold">tealiumCallback</span>(info, success, error<span style="font-weight:bold">=</span>None):
     <span style="font-weight:bold">if</span> error <span style="font-weight:bold">is</span> <span style="font-weight:bold">not</span> None:
         <span style="font-weight:bold">print</span> (info, success, error)
@@ -1094,7 +1141,7 @@ teal<span style="font-weight:bold">.</span>trackEvent(<span style="color:#b84">&
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1284,7 +1331,7 @@ teal<span style="font-weight:bold">.</span>trackEvent(<span style="color:#b84">&
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

@@ -234,7 +234,8 @@ var utag_data = {
 
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">In this article:</p>
-      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#5-6-0-october-2019">5.6.0 (October 2019)</a></li>
+      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#5-6-1-october-2019">5.6.1 (October 2019)</a></li>
+              <li><a href="#5-6-0-october-2019">5.6.0 (October 2019)</a></li>
               <li><a href="#5-5-4-5-5-5-august-2019">5.5.4 - 5.5.5 (August 2019)</a></li>
               <li><a href="#5-5-3-july-2019">5.5.3 (July 2019)</a></li>
               <li><a href="#5-5-2-july-2019">5.5.2 (July 2019)</a></li>
@@ -278,18 +279,26 @@ var utag_data = {
 
 <p>Below is a complete list of changes for each release of the iOS library. See the <a href="https://github.com/Tealium/tealium-ios/blob/master/CHANGELOG.md">Change Log</a> for a complete list.</p>
 
+<h2 id="5-6-1-october-2019">5.6.1 (October 2019)</h2>
+
+<p><strong>Low Impact Changes</strong></p>
+
+<ul>
+<li>Removed the <code>DevicesOnly</code> frameworks folder that was preventing a successful Carthage install. <a href="https://github.com/Tealium/tealium-ios/issues/99#">#99</a></li>
+</ul>
+
 <h2 id="5-6-0-october-2019">5.6.0 (October 2019)</h2>
 
 <p><strong>High Impact Changes</strong></p>
 
 <ul>
-<li>Removed the UIWebView entirely to now only support WKWebView as Apple has deprecated UIWebView since iOS 8.0. We kept the support for the UIWebView for convenience, and to ensure visitor sessions and analytics history was left intact. However, per ITMS-90809: Deprecated API Usage - Apple will stop accepting submissions of apps that use UIWebView APIs. See <a href="https://developer.apple.com/documentation/uikit/uiwebview">UIWebView</a> for more information. We do have the <a href="https://developer.apple.com/documentation/webkit/wkhttpcookiestore">WKHTTPCookieStore</a> in place that will migrate the cookies used in UIWebView over to the WKWebView. This will ensure that the user IDs/visitor cookies will seamlessly transition to the new implementation.</li>
+<li>Removed the <code>UIWebView</code> entirely to now only support <code>WKWebView</code> as Apple has deprecated <code>UIWebView</code> since iOS 8.0. We kept the support for the <code>UIWebView</code> for convenience, and to ensure visitor sessions and analytics history was left intact. However, per ITMS-90809: Deprecated API Usage - Apple will stop accepting submissions of apps that use <code>UIWebView</code> APIs. <a href="https://developer.apple.com/documentation/uikit/uiwebview">Learn more</a> about <code>UIWebView</code>. We do have the <a href="https://developer.apple.com/documentation/webkit/wkhttpcookiestore">WKHTTPCookieStore</a> in place that will migrate the cookies used in <code>UIWebView</code> over to the <code>WKWebView</code>. This will ensure that the user IDs/visitor cookies will seamlessly transition to the new implementation.</li>
 </ul>
 
 <p><strong>Medium Impact Changes</strong></p>
 
 <ul>
-<li>Updated the device list to include the latest Apple devices (X, XR, XS, 11, etc). We also updated the implementation to load from a JSON file instead of hardcoding the device names. Lastly, we added two more variables with extra device detail: &ldquo;model_name&rdquo; (e.g. iPhone 8, iPhone XR Max, iPhone 11 Pro, etc) and &ldquo;model_variant&rdquo;. For example, &ldquo;GSM&rdquo;, &ldquo;WiFi&rdquo;, &ldquo;model A1457, A1518, A1528&rdquo;, etc. If no extra model information is available, the standard &ldquo;device&rdquo; variable will read something like: &ldquo;iPhone 10,0&rdquo;.</li>
+<li>Updated the device list to include the latest Apple devices (X, XR, XS, 11, etc). We also updated the implementation to load from a JSON file instead of hardcoding the device names. Lastly, we added two more variables with extra device detail: <code>model_name</code> (such as iPhone 8, iPhone XR Max, iPhone 11 Pro, etc) and <code>model_variant</code>&rdquo; For example, <code>&quot;GSM&quot;</code>, <code>&quot;WiFi&quot;</code>, <code>&quot;model A1457, A1518, A1528&quot;</code>, etc. If no extra model information is available, the standard <code>device</code> variable will read something like: <code>&quot;iPhone 10,0&quot;</code>.</li>
 </ul>
 
 <h2 id="5-5-4-5-5-5-august-2019">5.5.4 - 5.5.5 (August 2019)</h2>
@@ -1217,7 +1226,7 @@ var utag_data = {
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1407,7 +1416,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

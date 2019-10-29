@@ -334,7 +334,7 @@ var utag_data = {
 <li><code>Core</code>: Module responses removed from completion closure for simplicity</li>
 <li><code>TealiumConfig</code>: <code>TealiumModulesList</code> is no longer required if you are only importing the specific modules you require. It will, however, continue to function as expected if present.</li>
 <li><code>TagManagement</code> Module: With iOS 12, a memory leak has been introduced into the <code>UIWebView</code> API. This is out of Tealium&rsquo;s control and has been logged with Apple. Rest assured, this is a small leak, and does not impact your app in any significant way, but it  shows up when profiling your app with the &ldquo;Leaks&rdquo; instrument. The leak disappears with a future iOS update, once Apple has fixed the issue. <a href="https://stackoverflow.com/questions/53187305/ios-12-memory-leak-wkwebview-and-uiwebview/53187306">Learn more</a>. If you do not need the tag management feature, you may remove the <code>TagManagement</code> module from your build to not experience this leak.</li>
-<li>Remote Commands: Add remote Commands via the TealiumConfig instance, rather than the public API method exposed on the Tealium instance. For more information, see: <a href="/platforms/ios-swift/module-list/remote-commands/">Remote Commands Module</a>.</li>
+<li>Remote Commands: Add remote commands via the <code>TealiumConfig</code> instance, rather than the public API method exposed on the Tealium instance. <a href="/platforms/ios-swift/module-list/remote-commands/">Learn more</a> about the RemoteCommands module.</li>
 </ul>
 
 <p><strong>Low Impact Changes</strong></p>
@@ -362,7 +362,7 @@ var utag_data = {
 <p><strong>Low Impact Changes</strong></p>
 
 <ul>
-<li>Minor fix to make TealiumRemoteCommand class accessible when using CocoaPods/Carthage (access level changed from public to open).</li>
+<li>Minor fix to make <code>TealiumRemoteCommand</code> class accessible when using CocoaPods/Carthage (access level changed from public to open).</li>
 </ul>
 
 <h4 id="1-6-3-october-2018">1.6.3 (October 2018)</h4>
@@ -402,7 +402,7 @@ var utag_data = {
 <li><strong>High Impact Changes</strong>
 
 <ul>
-<li>Initial release of <a href="/platforms/ios-swift/module-list/consent-manager/">Consent Manager</a> module. This is enabled by default. If you do not require consent management, you must actively disable it, or tracking calls are not sent.</li>
+<li>Initial release of <a href="/platforms/ios-swift/consent-management/">Consent Manager</a> module. This is enabled by default. If you do not require consent management, you must actively disable it, or tracking calls are not sent.</li>
 </ul></li>
 <li><strong>Low Impact Changes</strong>
 
@@ -1556,7 +1556,7 @@ var utag_data = {
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1746,7 +1746,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 21, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

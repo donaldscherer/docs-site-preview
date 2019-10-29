@@ -262,7 +262,7 @@ var utag_data = {
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      How to install Tealium for iOS (Swift).
+      How to install the Tealium SDK for iOS (Swift).
     </div>
   
 
@@ -277,18 +277,23 @@ var utag_data = {
 
 <h2 id="sample-apps">Sample Apps</h2>
 
-<p>To help familiarize yourself with the Tealium library, tracking methods, and best practice implementation, it is recommended to download the <a href="https://github.com/Tealium/tealium-swift/tree/master/samples">Swift sample apps</a>.</p>
+<p>To help familiarize yourself with the Tealium library, tracking methods, and best practice implementation, it is recommended to download the Swift <a href="https://github.com/Tealium/tealium-swift/tree/master/samples">sample apps</a>.</p>
 
 <p>To abstract the Tealium implementation from the rest of your app, we recommend the use of the <a href="https://github.com/Tealium/tealium-swift/blob/master/samples/TealiumHelper.swift">sample helper class</a>. This gives you a single entry point from which to initialize and make tracking calls. It also allows you to update the code in your helper file, and not in every single ViewController or Swift file.</p>
 
 <h2 id="install">Install</h2>
 
+<p>Install the Tealium for iOS library with CocoaPods, Carthage or manually.</p>
+
 <h3 id="cocoapods">CocoaPods</h3>
 
-<p>To install Tealium for Swift library for your app using the CocoaPods dependency manager and follow these steps:</p>
+<p>To install the Tealium for iOS library with CocoaPods (recommended):</p>
 
 <ol>
-<li><p>Add the Tealium Swift pod <code>&quot;tealium-swift&quot;</code> to your <a href="#podfile">Podfile</a>.</p></li>
+<li><p>Add the Tealium Swift pod to your Podfile:</p>
+
+<pre><code>pod 'tealium-swift'
+</code></pre></li>
 
 <li><p>To install the pod, run the following command:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">pod install</code></pre></div>
@@ -302,7 +307,9 @@ var utag_data = {
 
 <h4 id="recommended-podfile">Recommended Podfile</h4>
 
-<p>The following is the recommended Podfile. To disable specific modules, comment them out in the Podfile.</p>
+<p>The following is the recommended Podfile:</p>
+
+<p class="tip">To disable specific modules from the Podfile, comment them out in the Podfile with <code>#</code>.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#998;font-style:italic"># Podfile</span>
 <span style="color:#998;font-style:italic"># replace CPodTest with your target</span>
 target <span style="color:#b84">&#39;CPodTest&#39;</span> <span style="font-weight:bold">do</span>
@@ -370,7 +377,7 @@ target <span style="color:#b84">&#39;CPodTest&#39;</span> <span style="font-weig
 end</code></pre></div>
 <h4 id="full-podfile">Full Podfile</h4>
 
-<p>The full Podfile imports the entire Tealium library, including all modules specified as optional.</p>
+<p>The full Podfile imports the entire Tealium for iOS (Swift) library, including all modules specified as optional:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#998;font-style:italic"># Uncomment the next line to define a global platform for your project</span>
 platform :ios, <span style="color:#b84">&#39;9.0&#39;</span>
 
@@ -387,26 +394,22 @@ end</code></pre></div>
 
 <h3 id="carthage">Carthage</h3>
 
-<p><a href="https://github.com/Carthage/Carthage">Carthage</a> is a popular decentralized dependency manager for the various Apple platforms (iOS, tvOS, watchOS, macOS).</p>
-
-<p><a href="https://github.com/Carthage/Carthage/releases">Install Carthage</a> manually or using <a href="https://brew.sh">Homebrew</a> (recommended). If using Homebrew, install Carthage with the following command:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">brew install carthage</code></pre></div>
-<p>To install Tealium for Swift library for your app using Carthage, follow these steps:</p>
+<p>To install Tealium for iOS (Swift) library with Carthage:</p>
 
 <ol>
-<li><p>Add the following entry to your <a href="https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile">Cartfile</a>:</p>
+<li><p>Add the following to your Cartfile:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">github <span style="color:#b84">&#34;tealium/tealium-swift&#34;</span></code></pre></div></li>
 
 <li><p>To produce frameworks for iOS, macOS, tvOS and watchOS, run the following command:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">carthage update</code></pre></div></li>
 
-<li><p>To build only for a particular platform such as ios, and to speed up sebsequent builds after the initial build, use Carthage&rsquo;s <code>--platform</code> argument as follows:</p>
+<li><p>To build only for a particular platform such as &ldquo;iOS&rdquo;, and to speed up subsequent builds after the initial build, use Carthage&rsquo;s <code>--platform</code> argument:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">carthage update <span style="font-weight:bold">--</span>platform ios <span style="font-weight:bold">--</span>cache<span style="font-weight:bold">-</span>builds</code></pre></div></li>
 
-<li><p>Drag the frameworks you require into your Xcode project&rsquo;s <strong>General &gt; Embedded Binaries</strong> section.
+<li><p>Drag the frameworks you require into your Xcode project&rsquo;s <strong>General &gt; Embedded Binaries</strong> section.<br />
 <p class="note">Make sure the Tealium frameworks have been added to the Embedded Binaries section in your project settings, otherwise your app crashes at launch.</p></p></li>
 
-<li><p>Follow the instructions listed in the Carthage <a href="https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos">Getting Started</a> documentation to add the relevant Build Phases scripts, to ensure you don&rsquo;t run into any issues when submitting your app.</p></li>
+<li><p>Follow the instructions listed in the Carthage <a href="https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos">Getting Started</a> documentation to add the relevant build phases scripts, to ensure you don&rsquo;t run into any issues when submitting your app.</p></li>
 </ol>
 
 <h4 id="about-modules-1-6-5">About Modules (1.6.5+)</h4>
@@ -433,7 +436,7 @@ end</code></pre></div>
 
 <h3 id="manual">Manual</h3>
 
-<p>To install Tealium for Swift library for your app manually, follow these steps:</p>
+<p>To install Tealium for iOS (Swift) library manually:</p>
 
 <ol>
 <li><p>Download <a href="https://github.com/Tealium/tealium-swift">Tealium for Swift</a> for the full source code, and copy it into your Xcode project.</p></li>
@@ -1273,7 +1276,7 @@ end</code></pre></div>
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1463,7 +1466,7 @@ end</code></pre></div>
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 23, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

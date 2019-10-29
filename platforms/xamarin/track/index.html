@@ -273,32 +273,30 @@ var utag_data = {
 
 <h2 id="track-views">Track Views</h2>
 
-<p>The <code>TrackView()</code> method is used to track page views, as shown in the following example:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#998;font-style:italic">// Get ITealium instance
-</span><span style="color:#998;font-style:italic"></span>ITealium tealium = instanceManager.GetExistingInstance(TealiumConsts.INSTANCE_ID);
+<p>The <code>TrackView()</code> method is used to track page views, as shown in the following examples:</p>
 
-<span style="color:#998;font-style:italic">// Track a Page View event with the title &#34;View Name&#34; but no extra event data.
-</span><span style="color:#998;font-style:italic"></span>tealium.TrackView(<span style="color:#b84">&#34;SCREEN_NAME&#34;</span>);
-
-<span style="color:#998;font-style:italic">// Track a Page View event with the title &#34;View Name&#34; along with the &#34;page_type&#34; event data.
-</span><span style="color:#998;font-style:italic"></span>tealium.TrackView(<span style="color:#b84">&#34;View Name&#34;</span>, <span style="font-weight:bold">new</span> Dictionary&lt;String, <span style="color:#458;font-weight:bold">object</span>&gt;(<span style="color:#099">1</span>){ {<span style="color:#b84">&#34;page_type&#34;</span>, <span style="color:#b84">&#34;product detail page&#34;</span>} });
-
-<span style="color:#998;font-style:italic">// Track a Page View event with the title &#34;View Name&#34; along with a single piece of event data.
-</span><span style="color:#998;font-style:italic">// (equivalent to the preceding track call)
-</span><span style="color:#998;font-style:italic"></span>tealium.TrackView(<span style="color:#b84">&#34;View Name&#34;</span>, <span style="color:#b84">&#34;page_type&#34;</span>, <span style="color:#b84">&#34;product detail page&#34;</span>);
+<p>First, get a tealium instance:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">ITealium tealium = instanceManager.GetExistingInstance(TealiumConsts.INSTANCE_ID);
+</code></pre></div>
+<p>Track page view event by title only:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">tealium.TrackView(<span style="color:#b84">&#34;SCREEN_NAME&#34;</span>);
+</code></pre></div>
+<p>Track a page View event with the title and page type.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">tealium.TrackView(<span style="color:#b84">&#34;SCREEN_NAME&#34;</span>, <span style="font-weight:bold">new</span> Dictionary&lt;String, <span style="color:#458;font-weight:bold">object</span>&gt;(<span style="color:#099">1</span>){ {<span style="color:#b84">&#34;PAGE_TYPE&#34;</span>, <span style="color:#b84">&#34;product detail page&#34;</span>} });
+</code></pre></div>
+<p>Track a page view event with the title and page type, along with a single piece of event data (equivalent to the prior example):</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">tealium.TrackView(<span style="color:#b84">&#34;SCREEN_NAME&#34;</span>, <span style="color:#b84">&#34;PAGE_TYPE&#34;</span>, <span style="color:#b84">&#34;product detail page&#34;</span>);
 </code></pre></div>
 <h2 id="track-events">Track Events</h2>
 
-<p>The <code>TrackEvent()</code> method is used to track non-view events, as shown in the following example:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#998;font-style:italic">// Get ITealium instance
-</span><span style="color:#998;font-style:italic"></span>ITealium tealium = instanceManager.GetExistingInstance(TealiumConsts.INSTANCE_ID);
+<p>The <code>TrackEvent()</code> method is used to track non-view events. The following example demonstrates how to track an event with 3 pieces of specific event data:</p>
 
-<span style="color:#998;font-style:italic">// The TrackEvent method has the same overloads as TrackView, so only one additional example is provided.
-</span><span style="color:#998;font-style:italic">// Track an Event with three pieces of specific Event Data.
-</span><span style="color:#998;font-style:italic"></span>tealium.TrackEvent(<span style="color:#b84">&#34;Event Name&#34;</span>, <span style="font-weight:bold">new</span> Dictionary&lt;String, <span style="color:#458;font-weight:bold">object</span>&gt;(<span style="color:#099">3</span>){
-    {<span style="color:#b84">&#34;event_category&#34;</span>, <span style="color:#b84">&#34;Menu&#34;</span>},
-    {<span style="color:#b84">&#34;event_action&#34;</span>, <span style="color:#b84">&#34;Button Click&#34;</span>},
-    {<span style="color:#b84">&#34;event_label&#34;</span>, <span style="color:#b84">&#34;Logo&#34;</span>}
+<p>First, get a tealium instance:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">ITealium tealium = instanceManager.GetExistingInstance(TealiumConsts.INSTANCE_ID);
+</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">tealium.TrackEvent(<span style="color:#b84">&#34;Event Name&#34;</span>, <span style="font-weight:bold">new</span> Dictionary&lt;String, <span style="color:#458;font-weight:bold">object</span>&gt;(<span style="color:#099">3</span>){
+    {<span style="color:#b84">&#34;event_category&#34;</span>, <span style="color:#b84">&#34;EVENT_CATEGORY&#34;</span>},
+    {<span style="color:#b84">&#34;event_action&#34;</span>, <span style="color:#b84">&#34;EVENT_NAME&#34;</span>},
+    {<span style="color:#b84">&#34;event_label&#34;</span>, <span style="color:#b84">&#34;EVENT_LABEL&#34;</span>}
 });
 </code></pre></div>
 </div>
@@ -1112,7 +1110,7 @@ var utag_data = {
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1302,7 +1300,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 25, 2019</p>
 
       
 

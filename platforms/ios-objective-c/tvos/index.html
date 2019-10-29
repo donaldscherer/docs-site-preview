@@ -240,7 +240,7 @@ var utag_data = {
               <li><a href="#initialize">Initialize</a></li>
               <li><a href="#track-views">Track Views</a></li>
               <li><a href="#track-events">Track Events</a></li>
-              <li><a href="#additional-resources">Additional Resources</a></li>
+              <li><a href="#api-reference">API Reference</a></li>
               </nav>
   </aside></div>
 
@@ -296,25 +296,23 @@ var utag_data = {
 
 <h2 id="install">Install</h2>
 
-<p>Tealium uses <a href="https://guides.cocoapods.org/using/index.html">CocoaPods</a> to install and manage dependencies. </p>
+<p>Install and manage Tealium dependencies for tvOS with CocoaPods. </p>
 
 <ol>
 <li><p>Add the following dependency to your Podfile:</p>
 
-<pre><code>pod &quot;TealiumTVOS&quot;
+<pre><code>pod 'TealiumTVOS'
 </code></pre></li>
 
 <li><p>Download and install the <a href="https://github.com/Tealium/tealium-tvos">Tealium for tvOS</a> library.
 <p class="tip">We recommend cloning the library (instead of downloading) to make it easier to update to future releases.</p></p></li>
 
-<li><p>Once the code is in place, embed the framework:</p>
+<li><p>Add <code>TealiumTVOS.framework</code> to your project&rsquo;s tvOS Extension target, and copy the framework to the project in the resulting dialog box.</p></li>
 
-<ul>
-<li>Add <code>TealiumTVOS.framework</code> to your project</li>
-<li>Copy framework to project in the resulting dialog box</li>
-<li>Go to the app target&rsquo;s <strong>General</strong> configuration page.</li>
-<li>In the <strong>Embedded Binaries</strong> section, add the <code>TealiumTVOS.framework</code> binary.</li>
-</ul></li>
+<li><p>In the target&rsquo;s <strong>General: Embedded Binaries</strong> section, add the framework:</p>
+
+<pre><code>TealiumTVOS.framework
+</code></pre></li>
 </ol>
 
 <h2 id="initialize">Initialize</h2>
@@ -432,12 +430,9 @@ Tealium <span style="font-weight:bold">*</span>tealiumInstance1 <span style="fon
 
 <p class="note">The event name is populated in the event data as <code>tealium_event</code>.</p>
 
-<h2 id="additional-resources">Additional Resources</h2>
+<h2 id="api-reference">API Reference</h2>
 
-<ul>
-<li><a href="https://github.com/Tealium/tealium-tvos/tree/master/Samples">Sample Apps</a></li>
-<li><a href="http://tealium.github.io/tealium-tvos/">API Documentation</a></li>
-</ul>
+<p>See the <a href="http://tealium.github.io/tealium-tvos/">TealiumTVOS Reference API</a> for a complete list of classes and methods.</p>
 
 </div>
 
@@ -1250,7 +1245,7 @@ Tealium <span style="font-weight:bold">*</span>tealiumInstance1 <span style="fon
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1440,7 +1435,7 @@ Tealium <span style="font-weight:bold">*</span>tealiumInstance1 <span style="fon
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

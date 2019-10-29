@@ -301,9 +301,11 @@ var utag_data = {
 
 <h2 id="install">Install</h2>
 
+<p>Install the Tealium SDK for iOS (Objective-C) with CocoaPods, Carthage, or manually.</p>
+
 <h3 id="cocoapods">CocoaPods</h3>
 
-<p>It is recommended to use <a href="https://guides.cocoapods.org/using/index.html">CocoaPods</a> to install the TealiumIOS framework</p>
+<p>To install Tealium for iOS (Objective-C) library for your app with CocoaPods (recommended):</p>
 
 <ol>
 <li><p>Add the following dependency to your Podfile:</p>
@@ -321,10 +323,10 @@ var utag_data = {
 
 <h3 id="carthage">Carthage</h3>
 
-<p>As an alternative, use <a href="https://github.com/Carthage/Carthage">Carthage</a> to install the TealiumIOS frameworks.</p>
+<p>To install Tealium for iOS (Objective-C) library for your app with Carthage:</p>
 
 <ol>
-<li><p>Add the following to your <a href="https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile">Cartfile</a>:</p>
+<li><p>Add the following to your Cartfile:</p>
 
 <pre><code>binary &quot;https://tags.tiqcdn.com/dle/tealiummobile/tealium-ios-carthage/tealium-carthage.json&quot;
 </code></pre></li>
@@ -336,12 +338,12 @@ var utag_data = {
 
 <li><p>For the required frameworks to be copied automatically at build-time, verify sure that Carthage is <a href="https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos">properly integrated</a> into your Xcode project. </p></li>
 
-<li><p>Remember to strip simulator support as necessary before submitting to the App Store. Avoid this step by using the &ldquo;DeviceOnly&rdquo; builds provided on the GitHub repo, which are also downloaded when using Carthage.</p></li>
+<li><p>Strip simulator support, as necessary, before submitting to the App Store. This step is avoidable if using the &ldquo;DeviceOnly&rdquo; builds provided on the GitHub repo, which are also downloaded when using Carthage.</p></li>
 </ol>
 
 <h3 id="manual">Manual</h3>
 
-<p>To add Tealium to your project manually, following these steps:</p>
+<p>To install Tealium for iOS (Objective-C) library for your app manually:</p>
 
 <ol>
 <li><p>Add <code>TealiumIOS.framework</code> to your project.</p></li>
@@ -1282,7 +1284,7 @@ tealConfig.logLevel = .prod</code></pre></div>
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1472,7 +1474,7 @@ tealConfig.logLevel = .prod</code></pre></div>
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 22, 2019</p>
+<p> This page was last updated: October 25, 2019</p>
 
       
 

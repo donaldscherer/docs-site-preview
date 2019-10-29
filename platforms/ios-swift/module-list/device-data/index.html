@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>DeviceData Module | Tealium for Swift Modules |Preview of Tealium Developer Docs</title>
+    <title>DeviceData Module | Modules |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -236,7 +236,7 @@ var utag_data = {
       <p class="b">In this article:</p>
       <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#usage">Usage</a></li>
               <li><a href="#requirements">Requirements</a></li>
-              <li><a href="#installation">Installation</a></li>
+              <li><a href="#install">Install</a></li>
               <ul class="toc-h3"><li><a href="#cocoapods">CocoaPods</a></li>
               <li><a href="#carthage">Carthage</a></li>
               </ul><li><a href="#data-layer">Data Layer</a></li>
@@ -299,19 +299,33 @@ var utag_data = {
 <li>WatchKit</li>
 </ul>
 
-<h2 id="installation">Installation</h2>
+<h2 id="install">Install</h2>
+
+<p>Install the DeviceData module with CocoaPods or Carthage.</p>
 
 <h3 id="cocoapods">CocoaPods</h3>
 
-<p><em>Framework is auto-instantiated, so long as the pod is installed. Depends on <code>TealiumCore</code> pod. No additional <code>import</code> statements necessary besides <code>import TealiumSwift</code>.</em></p>
+<p>To install the DeviceData module with CocoaPods, add the following pod to your Podfile:</p>
 
-<p><code>pod 'tealium-swift/TealiumDeviceData</code></p>
+<pre><code>pod 'tealium-swift/TealiumDeviceData'
+</code></pre>
+
+<p>The framework is auto-instantiated. It has a dependency on the <code>TealiumCore</code> pod. <a href="/platforms/ios-swift/install/#cocoapods">Learn more</a> about CocoaPods installation for iOS.</p>
 
 <h3 id="carthage">Carthage</h3>
 
-<p><em>Framework is auto-instantiated, so long as it is compiled into your app (included in &ldquo;Embedded Binaries&rdquo;). Depends on <code>TealiumCore</code>. No additional <code>import</code> statements necessary.</em></p>
+<p>To install the DeviceData module with Carthage, following these steps:</p>
 
-<p><code>TealiumDeviceData.framework</code></p>
+<ol>
+<li><p>Go to the app target&rsquo;s General configuration page in Xcode.</p></li>
+
+<li><p>Add the following framework to the <strong>Embedded Binaries</strong> section:</p>
+
+<pre><code>TealiumDeviceData.framework
+</code></pre></li>
+</ol>
+
+<p>The framework is auto-instantiated. It has a dependency on <code>TealiumCore</code>. No additional import statements are necessary. <a href="/platforms/ios-swift/install/#carthage">Learn more</a> about Carthage installation for iOS.</p>
 
 <h2 id="data-layer">Data Layer</h2>
 
@@ -512,28 +526,28 @@ var utag_data = {
 
 <tr>
 <td><code>network_mnc*</code></td>
-<td>Mobile network code (see <a href="https://en.wikipedia.org/wiki/Mobilecountrycode">https://en.wikipedia.org/wiki/Mobilecountrycode</a>)</td>
+<td>Mobile network code</td>
 <td><code>34</code></td>
 <td>iOS</td>
 </tr>
 
 <tr>
 <td><code>carrier_mnc</code></td>
-<td>Mobile network code (see <a href="https://en.wikipedia.org/wiki/Mobilecountrycode">https://en.wikipedia.org/wiki/Mobilecountrycode</a>)</td>
+<td>Mobile network code</td>
 <td><code>34</code></td>
 <td>iOS</td>
 </tr>
 
 <tr>
 <td><code>network_mcc*</code></td>
-<td>Mobile network Country Code (see <a href="https://en.wikipedia.org/wiki/Mobilecountrycode">https://en.wikipedia.org/wiki/Mobilecountrycode</a>)</td>
+<td>Mobile network <a href="https://en.wikipedia.org/wiki/Mobilecountrycode">Country Code</a></td>
 <td><code>234</code></td>
 <td>iOS</td>
 </tr>
 
 <tr>
 <td><code>carrier_mcc</code></td>
-<td>Mobile network Country Code (see <a href="https://en.wikipedia.org/wiki/Mobilecountrycode">https://en.wikipedia.org/wiki/Mobilecountrycode</a>)</td>
+<td>Mobile network <a href="https://en.wikipedia.org/wiki/Mobilecountrycode">Country Code</a></td>
 <td><code>234</code></td>
 <td>iOS</td>
 </tr>
@@ -629,7 +643,7 @@ var utag_data = {
 <p>1.6.6</p>
 
 <ul>
-<li>Made access to UIApplication.shared extension-safe</li>
+<li>Made access to <code>UIApplication.shared</code> extension-safe</li>
 </ul>
 
 <p>1.6.5</p>
@@ -650,9 +664,9 @@ var utag_data = {
 <li>Added charging state information.</li>
 <li>Fixed bug that caused battery to show as -100.</li>
 <li>Added granular device model. For example, iPhone 7 (GSM).</li>
-<li>&ldquo;device_build&rdquo; variable changed to &ldquo;device_os_build&rdquo; to be more descriptive. &ldquo;device_build&rdquo; is no longer sent. Mappings need to be updated if you were previously using this variable.</li>
-<li>&ldquo;device_orientation&rdquo; has been changed to simply Portrait or Landscape (same as Objective-C library), and a new variable. &ldquo;device_orientation_extended&rdquo; has been introduced to capture the z-axis orientation such as face up or face down.</li>
-<li>Support added for WatchKit device data (limited data available).</li>
+<li>&ldquo;device_build&rdquo; variable changed to <code>device_os_build</code> to be more descriptive. <code>device_build</code> is no longer sent. Mappings need to be updated if you were previously using this variable.</li>
+<li><code>device_orientation</code> has been changed to simply Portrait or Landscape (same as Objective-C library), and a new variable. <code>device_orientation_extended</code> has been introduced to capture the z-axis orientation such as face up or face down.</li>
+<li>Support added for <code>WatchKit</code> device data (limited data available).</li>
 </ul>
 
 </div>
@@ -1466,7 +1480,7 @@ var utag_data = {
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1656,7 +1670,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

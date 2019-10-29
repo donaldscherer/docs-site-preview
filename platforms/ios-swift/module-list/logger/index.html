@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>Logger Module | Tealium for Swift Modules |Preview of Tealium Developer Docs</title>
+    <title>Logger Module | Modules |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -235,7 +235,7 @@ var utag_data = {
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">In this article:</p>
       <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#usage">Usage</a></li>
-              <li><a href="#installation">Installation</a></li>
+              <li><a href="#install">Install</a></li>
               <ul class="toc-h3"><li><a href="#cocoapods">CocoaPods</a></li>
               <li><a href="#carthage">Carthage</a></li>
               </ul><li><a href="#data-layer">Data Layer</a></li>
@@ -292,19 +292,33 @@ var utag_data = {
 <li>macOS</li>
 </ul>
 
-<h2 id="installation">Installation</h2>
+<h2 id="install">Install</h2>
+
+<p>Install the Logger module with CocoaPods or Carthage.</p>
 
 <h3 id="cocoapods">CocoaPods</h3>
 
-<p><em>Framework is auto-instantiated, so long as the pod is installed. Depends on <code>TealiumCore</code> pod. No additional <code>import</code> statements necessary besides <code>import TealiumSwift</code>.</em></p>
+<p>To install the Logger module with CocoaPods, add the following pod to your Podfile:</p>
 
-<p><code>pod 'tealium-swift/TealiumLogger</code></p>
+<pre><code>pod 'tealium-swift/TealiumLogger'
+</code></pre>
+
+<p>The framework is auto-instantiated. It has a dependency on the <code>TealiumCore</code> pod. <a href="/platforms/ios-swift/install/#cocoapods">Learn more</a> about CocoaPods installation for iOS.</p>
 
 <h3 id="carthage">Carthage</h3>
 
-<p><em>Framework is auto-instantiated, so long as it is compiled into your app (included in &ldquo;Embedded Binaries&rdquo;). Depends on <code>TealiumCore</code>. No additional <code>import</code> statements necessary.</em></p>
+<p>To install the Logger module with Carthage, following these steps:</p>
 
-<p><code>TealiumLogger.framework</code></p>
+<ol>
+<li><p>Go to the app target&rsquo;s General configuration page in Xcode.</p></li>
+
+<li><p>Add the following framework to the <strong>Embedded Binaries</strong> section:</p>
+
+<pre><code>TealiumLogger.framework
+</code></pre></li>
+</ol>
+
+<p>The framework is auto-instantiated. It has a dependency on <code>TealiumCore</code>. No additional import statements are necessary. <a href="/platforms/ios-swift/install/#carthage">Learn more</a> about Carthage installation for iOS.</p>
 
 <h2 id="data-layer">Data Layer</h2>
 
@@ -312,7 +326,7 @@ var utag_data = {
 
 <h2 id="api-reference">API Reference</h2>
 
-<p>There are no public API methods for this module. Control the module by using the settings available in the TealiumConfig object.</p>
+<p>There are no public API methods for this module. Control the module by using the settings available in the <code>TealiumConfig</code> object.</p>
 
 <h2 id="log-levels">Log Levels</h2>
 
@@ -1173,7 +1187,7 @@ var utag_data = {
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1363,7 +1377,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>Tag Management Module | Tealium for Swift Modules |Preview of Tealium Developer Docs</title>
+    <title>TagManagement Module | Modules |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -236,7 +236,7 @@ var utag_data = {
       <p class="b">In this article:</p>
       <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#usage">Usage</a></li>
               <li><a href="#requirements">Requirements</a></li>
-              <li><a href="#installation">Installation</a></li>
+              <li><a href="#install">Install</a></li>
               <ul class="toc-h3"><li><a href="#cocoapods">CocoaPods</a></li>
               <li><a href="#carthage">Carthage</a></li>
               </ul><li><a href="#data-layer">Data Layer</a></li>
@@ -259,7 +259,7 @@ var utag_data = {
     
   
 
-  <h1 class="lh-title mb3 mv0 pt3">Tag Management Module</h1>
+  <h1 class="lh-title mb3 mv0 pt3">TagManagement Module</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
@@ -280,7 +280,7 @@ var utag_data = {
 
 <h2 id="usage">Usage</h2>
 
-<p>The Tag Management module is a client-side implementation of the Universal Tag (utag.js) which uses a non-rendered WKWebView instance to execute JavaScript. This module is required in apps that make use of iQ Tag Management. It is automatically included in Carthage and CocoaPods framework builds.</p>
+<p>The TagManagement module is a client-side implementation of the Universal Tag (<code>utag.js</code>) which uses a non-rendered <code>WKWebView</code> instance to execute JavaScript. This module is required in apps that make use of iQ Tag Management. It is automatically included in Carthage and CocoaPods framework builds.</p>
 
 <p>The following platforms are supported:</p>
 
@@ -294,19 +294,33 @@ var utag_data = {
 <li>UIKit (WKWebView)</li>
 </ul>
 
-<h2 id="installation">Installation</h2>
+<h2 id="install">Install</h2>
+
+<p>Install the TagManagement module with CocoaPods or Carthage.</p>
 
 <h3 id="cocoapods">CocoaPods</h3>
 
-<p>Framework is auto-instantiated, so long as the pod is installed. Depends on <code>TealiumCore</code> pod. No additional <code>import</code> statements necessary besides <code>import TealiumSwift</code>.</p>
+<p>To install the TagManagement module with CocoaPods, add the following pod to your Podfile:</p>
 
-<p><code>pod 'tealium-swift/TealiumTagManagement'</code></p>
+<pre><code>pod 'tealium-swift/TealiumTagManagement'
+</code></pre>
+
+<p>The framework is auto-instantiated. It has a dependency on the <code>TealiumCore</code> pod. <a href="/platforms/ios-swift/install/#cocoapods">Learn more</a> about CocoaPods installation for iOS.</p>
 
 <h3 id="carthage">Carthage</h3>
 
-<p>Framework is auto-instantiated, so long as it is compiled into your app (included in &ldquo;Embedded Binaries&rdquo;). Depends on <code>TealiumCore</code>. No additional <code>import</code> statements necessary.</p>
+<p>To install the TagManagement module with Carthage, following these steps:</p>
 
-<p><code>TealiumTagManagement.framework</code></p>
+<ol>
+<li><p>Go to the app target&rsquo;s General configuration page in Xcode.</p></li>
+
+<li><p>Add the following framework to the <strong>Embedded Binaries</strong> section:</p>
+
+<pre><code>TealiumTagManagement.framework
+</code></pre></li>
+</ol>
+
+<p>The framework is auto-instantiated. It has a dependency on <code>TealiumCore</code>. No additional import statements are necessary. <a href="/platforms/ios-swift/install/#carthage">Learn more</a> about Carthage installation for iOS.</p>
 
 <h2 id="data-layer">Data Layer</h2>
 
@@ -325,8 +339,8 @@ var utag_data = {
 <tbody>
 <tr>
 <td><code>dispatch_service</code></td>
-<td>Static string</td>
-<td>Indicates module the tracking call came from</td>
+<td><code>String</code></td>
+<td>Static string to indicate which module the tracking call came from</td>
 <td><code>&quot;tagmanagement&quot;</code></td>
 </tr>
 </tbody>
@@ -334,9 +348,10 @@ var utag_data = {
 
 <h2 id="public-api">Public API</h2>
 
-<p>The WKWebView protocols are accessible by adding another object conforming the WKWebView delegate to the module&rsquo;s multicast delegate:</p>
+<p>The WKWebView protocols are accessible by adding another object conforming the <code>WKWebView</code> delegate to the module&rsquo;s multicast delegate:</p>
 
-<p><code>tealium.tagManagement()?.delegates.add(MY_OBJECT)</code></p>
+<pre><code>tealium.tagManagement()?.delegates.add(MY_OBJECT)
+</code></pre>
 
 <h2 id="about-wkwebview">About WKWebView</h2>
 
@@ -346,7 +361,7 @@ var utag_data = {
 
 <p class="note">Release 1.7.1 significantly improves the auto-detection of views and removes the need to specify a view in most scenarios. But you must test this in your app to verify that tracking calls are sent correctly. See <a href="/platforms/ios-swift/release-notes">Release Notes</a> for full details.</p>
 
-<p>If your app jumps to a <code>UIViewController</code> upon receiving a push notification, and has a different view hierarchy than when Tealium was initialized, you must update the current UIView using the following API method.</p>
+<p>If your app jumps to a <code>UIViewController</code> upon receiving a push notification, and has a different view hierarchy than when Tealium was initialized, you must update the current <code>UIView</code> using the following API method.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">override</span> <span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">viewDidLoad</span>() {
     <span style="font-weight:bold">super</span>.viewDidLoad()
     <span style="color:#998;font-style:italic">// this view does not have a navigation controller</span>
@@ -1194,7 +1209,7 @@ var utag_data = {
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1384,7 +1399,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

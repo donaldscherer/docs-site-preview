@@ -240,11 +240,11 @@ var utag_data = {
               <li><a href="#install-npm">Install (NPM)</a></li>
               <ul class="toc-h3"><li><a href="#android">Android</a></li>
               <li><a href="#ios">iOS</a></li>
-              </ul><li><a href="#manual-install">Manual Install</a></li>
+              </ul><li><a href="#install-manual">Install (Manual)</a></li>
               <ul class="toc-h3"><li><a href="#android">Android</a></li>
               <li><a href="#ios">iOS</a></li>
-              <li><a href="#cocoapods">CocoaPods</a></li>
-              </ul><li><a href="#javascript">JavaScript</a></li>
+              </ul><li><a href="#install-cocoapods">Install (CocoaPods)</a></li>
+              <li><a href="#javascript">JavaScript</a></li>
               <li><a href="#initialize">Initialize</a></li>
               </nav>
   </aside></div>
@@ -302,13 +302,12 @@ var utag_data = {
 
 <ul>
 <li>Access to your native build environments.</li>
-<li><a href="https://github.com/Tealium/tealium-react-native/tree/master/ios">React Native and Tools</a> installed</li>
-<li><a href="https://developer.android.com/studio/">Android Studio</a></li>
-<li><a href="https://developer.apple.com/xcode/">Xcode</a></li>
+<li><a href="https://github.com/Tealium/tealium-react-native">React Native and Tools</a> installed</li>
+<li><a href="https://developer.android.com/studio/">Android Studio</a> or <a href="https://developer.apple.com/xcode/">Xcode</a></li>
 <li><a href="/platforms/android/">Tealium for Android</a> or <a href="/platforms/ios-swift/">Tealium for iOS</a></li>
 </ul>
 
-<p class="note">The Core library is required. If you want to track lifecycle events, then the lifecycle module is also needed. These are available from <a href="https://github.com/Tealium/tealium-ios">our GitHub repository for iOS</a>. There are two versions of each module: one for publishing to the App Store and one that includes the ability to run the app on a simulator (cannot be published to the App Store). When working on your own app with intent to publish to the App Store, make sure to use the frameworks in <a href="https://github.com/Tealium/tealium-ios/tree/master/DevicesOnly">devices only folder</a>.</p>
+<p class="note">The <code>TealiumCore</code> library is required. The <a href="/platforms/ios-swift/module-list/lifecycle/">Lifecycle module</a> is needed if you want to track lifecycle events. There are two versions of each module on <a href="https://github.com/Tealium/tealium-ios">GitHub</a>: one for publishing to the App Store and one that includes the ability to run the app on a simulator (cannot be published to the App Store).</p>
 
 <h2 id="sample-app">Sample App</h2>
 
@@ -316,7 +315,7 @@ var utag_data = {
 
 <h2 id="install-npm">Install (NPM)</h2>
 
-<p>To install Tealilum for React Native, follow these steps:</p>
+<p>To install the Tealium library for React Native with NPM:</p>
 
 <ol>
 <li><p>Navigate to the root of your React Native project.</p></li>
@@ -348,14 +347,14 @@ var utag_data = {
 
 <p class="note">If you&rsquo;re looking for <code>Libraries &gt; TealiumModule.xcodeproj &gt; Products &gt; libTealiumModule.a</code>. Under the <code>Build Phases</code> tab of your target, find the section <code>Link Binary With Libraries</code> and drag the <code>libTealiumModule.a</code> into it.  More information on linking libraries is found in the <a href="https://facebook.github.io/react-native/docs/linking-libraries-ios#step-2-1">React Native documentation</a>.</p>
 
-<h2 id="manual-install">Manual Install</h2>
+<h2 id="install-manual">Install (Manual)</h2>
 
 <h3 id="android-1">Android</h3>
 
 <p>For iOS apps, follow these manual installation steps:</p>
 
 <ol>
-<li><p>To integrate Tealium into your Android application, add this to your Tealium maven repository:</p></li>
+<li><p>To integrate Tealium into your Android application, add this to your Tealium Maven repository:</p></li>
 
 <li><p>In your project root <code>build.gradle</code>, add the Tealium Maven URL:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">allprojects <span style="font-weight:bold">{</span>
@@ -367,14 +366,14 @@ repositories <span style="font-weight:bold">{</span>
 <span style="font-weight:bold">}</span>
 <span style="font-weight:bold">}</span></code></pre></div></li>
 
-<li><p>Add the Tealium core library dependency to your project module <code>build.gradle</code> file. Also, add the Tealium lifecycle dependency here, if needed.</p>
+<li><p>Add the Tealium core library dependency to your project module <code>build.gradle</code> file. Also, add the Tealium lifecycle dependency (if needed):</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">dependencies <span style="font-weight:bold">{</span>
     compile <span style="color:#b84">&#39;com.tealium:library:5.5.2&#39;</span>
         compile <span style="color:#b84">&#39;com.tealium:lifecycle:1.1&#39;</span>
 <span style="font-weight:bold">}</span></code></pre></div></li>
 </ol>
 
-<p>To copy Bridging logic, follow these steps:</p>
+<p>To copy Bridging logic:</p>
 
 <ol>
 <li><p>From the Android folder, add <code>TealiumModule.java</code> and <code>TealiumPackage.java</code> into your project files.</p></li>
@@ -397,7 +396,7 @@ repositories <span style="font-weight:bold">{</span>
 
 <p>The sample app is for developer experimentation and not meant for publishing on the App Store, so it uses the modules <code>TealiumIOS.framework</code> and <code>TealiumIOSLifecycle.framework</code> (suitable for a simulator but not for publishing). When working on your own app with intent to publish to the App Store, make sure to use the frameworks in the <a href="https://github.com/Tealium/tealium-ios/tree/master/DevicesOnly">devices only folder</a>.</p>
 
-<h3 id="cocoapods">CocoaPods</h3>
+<h2 id="install-cocoapods">Install (CocoaPods)</h2>
 
 <p>CocoaPods is another way to perform the Installation. Our pod is named &ldquo;TealiumIOS&rdquo;. See the <a href="/platforms/ios/">Tealium for iOS guide</a> for full details. The command <code>create-react-native-app</code> does not create a Podfile so the sample app was built using manual installation. For complex production apps with many dependencies, CocoaPods is the recommended method.</p>
 
@@ -423,23 +422,23 @@ repositories <span style="font-weight:bold">{</span>
 
 <p>Once your app has been installed, initialize the <code>Tealium</code> instance with the <a href="/platforms/react-native/api/#initialize"><code>initialize()</code></a> method, as shown in the following examples:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">Tealium.initialize(<span style="color:#b84">&#34;ACCOUNT&#34;</span>,
-                   <span style="color:#b84">&#34;PROFILE&#34;</span><span style="color:#a61717;background-color:#e3d2d2">&#39;</span>
+                   <span style="color:#b84">&#34;PROFILE&#34;</span><span style="color:#a61717;background-color:#e3d2d2">&#39;</span>,
                    <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>,
                    <span style="color:#b84">&#34;IOS_DATA_SOURCE_KEY&#34;</span>,
                    <span style="color:#b84">&#34;ANDROID_DATA_SOURCE_KEY&#34;</span>)
 </code></pre></div>
 <p><strong>Consent Management</strong><br />
-To use Consent Management, initialize with the method <code>initializeWithConsentManager()</code> using the same parameters.</p>
+To use Consent Management, initialize with the method <a href="/platforms/react-native/api/#initializewithconsentmanager"><code>initializeWithConsentManager()</code></a> using the same parameters.</p>
 
 <p>Learn more:</p>
 
 <ul>
-<li><a href="/platforms/android-java/consent-manager/">Consent Manager for Android</a></li>
-<li><a href="/platforms/ios-swift/consent-manager/">Consent Manager for iOS</a></li>
+<li><a href="/platforms/android-java/consent-management/">Consent Manager for Android</a></li>
+<li><a href="/platforms/ios-swift/consent-management/">Consent Manager for iOS</a></li>
 </ul>
 
 <p><strong>Custom Initialization</strong><br />
-All initialization options are available with the method <code>initializeCustom()</code>.</p>
+All initialization options are available with the method <a href="/platforms/react-native/api/#initializecustom"><code>initializeCustom()</code></a>.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">Tealium.initializeCustom(<span style="color:#b84">&#39;ACCOUNT&#39;</span>,
                          <span style="color:#b84">&#39;PROFILE&#39;</span>,
                          <span style="color:#b84">&#39;ENVIRONMENT&#39;</span>,
@@ -1265,7 +1264,7 @@ All initialization options are available with the method <code>initializeCustom(
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1455,7 +1454,7 @@ All initialization options are available with the method <code>initializeCustom(
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 23, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

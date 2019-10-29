@@ -300,9 +300,9 @@ var utag_data = {
 
 <h2 id="complete-api">Complete API</h2>
 
-<p>See the <a href="https://tealium.github.io/tealium-android/">Tealium SDK for Android API Javadocs</a> for a complete reference of classes and methods.</p>
+<p>See the Tealium SDK for Android <a href="https://tealium.github.io/tealium-android/">Javadocs</a> for a complete API reference of classes and methods.</p>
 
-<h2 id="class-consentmanager">Class: ConsentManager</h2>
+<h2 id="class-consentmanager">Class: <code>ConsentManager</code></h2>
 
 <p>The following summarizes the commonly used methods of the <code>ConsentManager</code> class.</p>
 
@@ -517,7 +517,7 @@ MISC
 
 <p>Sets the user&rsquo;s consent status. Call this method from your consent management preferences screen in your app when the user opts in or opts out of tracking. If <code>true</code>, automatically enables all categories.  If <code>false</code>, all categories automatically disabled.</p>
 
-<p>If the user&rsquo;s status is set to <code>CONSENTED</code> using this method, the consent manager automatically subscribes the user to ALL available consent categories (subset of categories not allowed).</p>
+<p>If the user&rsquo;s status is set to <code>CONSENTED</code> using this method, the Consent Manager automatically subscribes the user to ALL available consent categories (subset of categories not allowed).</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">tealiumInstance.<span style="color:#008080">getConsentManager</span>().<span style="color:#008080">setUserConsentStatus</span>(status);</code></pre></div>
 <table>
 <thead>
@@ -547,13 +547,13 @@ UNKNOWN
 </code></pre>
 
 <p><strong><code>UNKNOWN</code></strong><br />
-The <code>UNKNOWN</code> status is the default setting for the consent manager. In this state, the consent manager queues events locally until an affirmative <code>CONSENTED/NOT_CONSENTED</code> status is provided.</p>
+The <code>UNKNOWN</code> status is the default setting for the Consent Manager. In this state, the Consent Manager queues events locally until an affirmative <code>CONSENTED/NOT_CONSENTED</code> status is provided.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">tealiumInstance.<span style="color:#008080">getConsentManager</span>().<span style="color:#008080">setUserConsentStatus</span>(ConsentManager.<span style="color:#008080">ConsentStatus</span>.<span style="color:#008080">UNKNOWN</span>);</code></pre></div>
 <p><strong><code>CONSENTED</code></strong><br />
-The <code>CONSENTED</code> status is set when the user has consented to tracking. In this status, the consent manager dequeues any previously-queued track calls and allow all subsequent tracking calls to continue as normal.</p>
+The <code>CONSENTED</code> status is set when the user has consented to tracking. In this status, the Consent Manager dequeues any previously-queued track calls and allow all subsequent tracking calls to continue as normal.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">tealiumInstance.<span style="color:#008080">getConsentManager</span>().<span style="color:#008080">setUserConsentStatus</span>(ConsentManager.<span style="color:#008080">ConsentStatus</span>.<span style="color:#008080">CONSENTED</span>);</code></pre></div>
 <p><strong><code>NOT_CONSENTED</code></strong><br />
-The <code>NOT_CONSENTED</code> status is set when the user has declined tracking. In this state, the consent manager purges any previously-queued track calls and drops all subsequent tracking calls from being further processed by the SDK.</p>
+The <code>NOT_CONSENTED</code> status is set when the user has declined tracking. In this state, the Consent Manager purges any previously-queued track calls and drops all subsequent tracking calls from being further processed by the SDK.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">tealiumInstance.<span style="color:#008080">getConsentManager</span>().<span style="color:#008080">setUserConsentStatus</span>(ConsentManager.<span style="color:#008080">ConsentStatus</span>.<span style="color:#008080">NOT_CONSENTED</span>);</code></pre></div>
 <h3 id="setuserconsentstatuswithcategories"><code>setUserConsentStatusWithCategories()</code></h3>
 
@@ -588,7 +588,7 @@ The <code>NOT_CONSENTED</code> status is set when the user has declined tracking
 
 <p>See <code>setUserConsentStatus()</code> and <code>setUserConsentCategories()</code> for a list of constant supported.</p>
 
-<h2 id="class-datasources">Class: DataSources</h2>
+<h2 id="class-datasources">Class: <code>DataSources</code></h2>
 
 <p>The following summarizes the commonly used methods of the <code>DataSources</code> class.</p>
 
@@ -678,7 +678,7 @@ The <code>NOT_CONSENTED</code> status is set when the user has declined tracking
 </tbody>
 </table>
 
-<h2 id="class-lifecycle">Class: LifeCycle</h2>
+<h2 id="class-lifecycle">Class: <code>LifeCycle</code></h2>
 
 <p>The following summarizes the commonly used methods of the <code>Tealium</code> class.</p>
 
@@ -736,7 +736,7 @@ The <code>NOT_CONSENTED</code> status is set when the user has declined tracking
 </tbody>
 </table>
 
-<h2 id="class-tealium">Class: Tealium</h2>
+<h2 id="class-tealium">Class: <code>Tealium</code></h2>
 
 <p>The following summarizes the commonly used methods of the <code>Tealium</code> class.</p>
 
@@ -756,12 +756,12 @@ The <code>NOT_CONSENTED</code> status is set when the user has declined tracking
 
 <tr>
 <td><code>disableConsentManager()</code></td>
-<td>Disables consent manager</td>
+<td>Disables Consent Manager</td>
 </tr>
 
 <tr>
 <td><code>getConsentManager()</code></td>
-<td>Returns the instance of consent manager if enabled</td>
+<td>Returns the instance of Consent Manager if enabled</td>
 </tr>
 
 <tr>
@@ -825,7 +825,7 @@ The <code>NOT_CONSENTED</code> status is set when the user has declined tracking
 
 <h3 id="getconsentmanager"><code>getConsentManager()</code></h3>
 
-<p>Returns the instance of consent manager if enabled.</p>
+<p>Returns the instance of Consent Manager if enabled.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="font-weight:bold">final</span> <span style="color:#900;font-weight:bold">Tealium</span> tealiumInstance <span style="font-weight:bold">=</span> Tealium.<span style="color:#008080">createInstance</span>(TEALIUM_MAIN, config);
 
 ConsentManager <span style="color:#900;font-weight:bold">consentManager</span> <span style="font-weight:bold">=</span> tealiumInstance.<span style="color:#008080">getConsentManager</span>();</code></pre></div>
@@ -839,7 +839,7 @@ ConsentManager <span style="color:#900;font-weight:bold">consentManager</span> <
 
 <tbody>
 <tr>
-<td>Consent manager</td>
+<td>Consent Manager</td>
 <td><code>ConsentManager</code></td>
 </tr>
 </tbody>
@@ -847,7 +847,7 @@ ConsentManager <span style="color:#900;font-weight:bold">consentManager</span> <
 
 <h3 id="disableconsentmanager"><code>disableConsentManager()</code></h3>
 
-<p>Disables consent manager. Use this method to disable consent manager after Tealium is fully initialized.</p>
+<p>Disables Consent Manager. Use this method to disable Consent Manager after Tealium is fully initialized.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="font-weight:bold">final</span> <span style="color:#900;font-weight:bold">Tealium</span> tealiumInstance <span style="font-weight:bold">=</span> Tealium.<span style="color:#008080">createInstance</span>(TEALIUM_MAIN, config);
 
 tealiumInstance.<span style="color:#008080">disableConsentManager</span>();</code></pre></div>
@@ -917,7 +917,7 @@ Tealium.<span style="color:#008080">getInstance</span>(<span style="color:#b84">
 </tbody>
 </table>
 
-<h2 id="class-tealium-config">Class: Tealium.Config</h2>
+<h2 id="class-tealium-config">Class: <code>Tealium.Config</code></h2>
 
 <p>The following summarizes the commonly used methods of the <code>Tealium.Config</code> class.</p>
 
@@ -937,12 +937,12 @@ Tealium.<span style="color:#008080">getInstance</span>(<span style="color:#b84">
 
 <tr>
 <td><code>enableConsentManager()</code></td>
-<td>Enable consent manager</td>
+<td>Enable Consent Manager</td>
 </tr>
 
 <tr>
 <td><code>isConsentManagerEnabled()</code></td>
-<td>Checks if consent manager is enabled</td>
+<td>Checks if Consent Manager is enabled</td>
 </tr>
 
 <tr>
@@ -1010,7 +1010,7 @@ Tealium.<span style="color:#008080">getInstance</span>(<span style="color:#b84">
 
 <h3 id="enableconsentmanager"><code>enableConsentManager()</code></h3>
 
-<p>Enable consent manager. This method is to be used before Tealium initialization.</p>
+<p>Enable Consent Manager. This method is to be used before Tealium initialization.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="font-weight:bold">public</span> <span style="color:#900;font-weight:bold">final</span> String <span style="color:#900;font-weight:bold">TEALIUM_INSTANCE</span> <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;main&#34;</span>;
 <span style="font-weight:bold">final</span> <span style="color:#900;font-weight:bold">Tealium</span>.<span style="color:#008080">Config</span> config <span style="font-weight:bold">=</span> Tealium.<span style="color:#008080">Config</span>.<span style="color:#008080">create</span>(...);
 config.<span style="color:#008080">enableConsentManager</span>(TEALIUM_INSTANCE);</code></pre></div>
@@ -1036,7 +1036,7 @@ config.<span style="color:#008080">enableConsentManager</span>(TEALIUM_INSTANCE)
 
 <h3 id="isconsentmanagerenabled"><code>isConsentManagerEnabled()</code></h3>
 
-<p>Checks if consent manager is enabled.</p>
+<p>Checks if Consent Manager is enabled.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">config.<span style="color:#008080">isConsentMangerEnabled</span>()</code></pre></div>
 <h3 id="setdatasourceid"><code>setDatasourceId()</code></h3>
 
@@ -1910,7 +1910,7 @@ config.<span style="color:#008080">enableConsentManager</span>(TEALIUM_INSTANCE)
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -2100,7 +2100,7 @@ config.<span style="color:#008080">enableConsentManager</span>(TEALIUM_INSTANCE)
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

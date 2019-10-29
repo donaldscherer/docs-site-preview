@@ -279,7 +279,7 @@ var utag_data = {
 <h2 id="requirements">Requirements</h2>
 
 <ul>
-<li>AndroidWear app with <a href="/platforms/android/">Tealium for Android</a></li>
+<li>AndroidWear app with <a href="/platforms/android-java/">Tealium for Android</a></li>
 <li>Android (KitKat/4.4+ / API Level 20+ for Android Wear)</li>
 <li><a href="https://community.tealiumiq.com/t5/Universal-Data-Hub/tkb-p/udh">Universal Data Hub account</a></li>
 </ul>
@@ -296,7 +296,7 @@ var utag_data = {
 
 <h2 id="install">Install</h2>
 
-<p>To add Tealium to your project, following these steps:</p>
+<p>Install the Tealium library for your Android Wear app:</p>
 
 <ol>
 <li><p>Download and install <a href="https://github.com/Tealium/tealium-android/tree/master/Modules/AndroidWear">Tealium for Android Wear</a>.</p></li>
@@ -304,7 +304,7 @@ var utag_data = {
 <li><p>Add <code>tealium.mobile-5.x.x.aar</code> to your application&rsquo;s dependencies.
 <p class="note">For non-wearable Android applications, no additional code is necessary.</p></p></li>
 
-<li><p>Create a subclass of the <code>Application</code> class, and add the <code>TealiumWear</code>&rsquo;s initialization code in it&rsquo;s overridden <code>onCreate()</code> method.</p>
+<li><p>Create a subclass of the <code>Application</code> class, and add the <code>TealiumWear</code>&rsquo;s initialization code in the app&rsquo;s <code>onCreate()</code> method, as shown in the following example:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="font-weight:bold">public</span> <span style="color:#900;font-weight:bold">class</span> WearApp <span style="color:#900;font-weight:bold">extends</span> Application {
 
 <span style="color:#998;font-style:italic">// Instance name from main app
@@ -319,7 +319,7 @@ var utag_data = {
  }
 }</code></pre></div></li>
 
-<li><p>The value of <code>TEALIUM_MAIN</code> must match the instance name used in the initialization of the main application, for example:</p>
+<li><p>The value of <code>TEALIUM_MAIN</code> must match the instance name used in the initialization of the main application, as shown in the following example:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// Main application initialization
 </span><span style="color:#998;font-style:italic"></span>Tealium.<span style="color:#008080">createInstance</span>(<span style="color:#b84">&#34;INSTANCE_NAME&#34;</span>, config);
 
@@ -1158,7 +1158,7 @@ var utag_data = {
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1348,7 +1348,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

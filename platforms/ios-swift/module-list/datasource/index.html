@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>DataSource Module | Tealium for Swift Modules |Preview of Tealium Developer Docs</title>
+    <title>DataSource Module | Modules |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -235,7 +235,7 @@ var utag_data = {
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">In this article:</p>
       <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#usage">Usage</a></li>
-              <li><a href="#installation">Installation</a></li>
+              <li><a href="#install">Install</a></li>
               <ul class="toc-h3"><li><a href="#cocoapods">CocoaPods</a></li>
               <li><a href="#carthage">Carthage</a></li>
               </ul><li><a href="#data-layer">Data Layer</a></li>
@@ -278,7 +278,7 @@ var utag_data = {
 
 <h2 id="usage">Usage</h2>
 
-<p>The DatSource Module Adds the data source variable to each dispatch.</p>
+<p>The DataSource Module adds the data source variable to each dispatch.</p>
 
 <p>Usage of this module is recommended if you are using the UDH. Generate a data source key via the UDH user interface. If you are using Tag Management only, it currently doesn&rsquo;t have any effect, apart from adding a new variable to each dispatch. <a href="https://community.tealiumiq.com/t5/Universal-Data-Hub/Data-Sources/ta-p/17933">Learn more</a> about Data Sources.</p>
 
@@ -291,20 +291,36 @@ var utag_data = {
 <li>macOS</li>
 </ul>
 
-<h2 id="installation">Installation</h2>
+<h2 id="install">Install</h2>
+
+<p>Install the DataSource module with CocoaPods or Carthage.</p>
 
 <h3 id="cocoapods">CocoaPods</h3>
 
-<p><em>Framework is auto-instantiated, so long as the pod is installed. Depends on <code>TealiumCore</code> pod. No additional <code>import</code> statements necessary besides <code>import TealiumSwift</code>.</em></p>
+<p>To install the DataSource module with CocoaPods, add the following pod to your Podfile:</p>
 
-<p><code>pod 'tealium-swift/TealiumDataSource</code></p>
+<pre><code>pod 'tealium-swift/TealiumDataSource'
+</code></pre>
+
+<p>The framework is auto-instantiated. It has a dependency on the <code>TealiumCore</code> pod. <a href="/platforms/ios-swift/install/#cocoapods">Learn more</a> about CocoaPods installation for iOS.</p>
 
 <h3 id="carthage">Carthage</h3>
 
-<p><em>Framework is auto-instantiated, so long as it is compiled into your app (included in &ldquo;Embedded Binaries&rdquo;). Depends on <code>TealiumCore</code>.</em></p>
+<p>To install the DataSource module with Carthage, following these steps:</p>
 
-<p><code>TealiumDataSource.framework</code>
-<code>import TealiumDataSource // allows datasource param to be set on the TealiumConfig class instance</code></p>
+<ol>
+<li><p>Go to the app target&rsquo;s General configuration page in Xcode.</p></li>
+
+<li><p>Add the following framework to the <strong>Embedded Binaries</strong> section:</p>
+
+<pre><code>TealiumDataSource.framework
+</code></pre></li>
+
+<li><p>To allow the datasource parameter to be set on the <code>TealiumConfig</code> class instance, add the following required import statement to your project:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">import</span> <span style="color:#458;font-weight:bold">TealiumDataSource</span></code></pre></div></li>
+</ol>
+
+<p>The framework is auto-instantiated. It has a dependency on <code>TealiumCore</code>. No additional import statements are necessary. <a href="/platforms/ios-swift/install/#carthage">Learn more</a> about Carthage installation for iOS.</p>
 
 <h2 id="data-layer">Data Layer</h2>
 
@@ -314,6 +330,7 @@ var utag_data = {
 <thead>
 <tr>
 <th>Variable</th>
+<th>Type</th>
 <th>Description</th>
 <th>Example</th>
 </tr>
@@ -322,6 +339,7 @@ var utag_data = {
 <tbody>
 <tr>
 <td><code>tealium_datasource</code></td>
+<td><code>String</code></td>
 <td>Specifies the data source name. Added to every dispatch.</td>
 <td><code>&quot;abc123&quot;</code></td>
 </tr>
@@ -1151,7 +1169,7 @@ var utag_data = {
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1341,7 +1359,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

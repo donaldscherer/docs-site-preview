@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>DefaultStorage Module | Tealium for Swift Modules |Preview of Tealium Developer Docs</title>
+    <title>DefaultStorage Module | Modules |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -235,7 +235,7 @@ var utag_data = {
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">In this article:</p>
       <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#usage">Usage</a></li>
-              <li><a href="#installation">Installation</a></li>
+              <li><a href="#install">Install</a></li>
               <ul class="toc-h3"><li><a href="#cocoapods">CocoaPods</a></li>
               <li><a href="#carthage">Carthage</a></li>
               </ul><li><a href="#data-layer">Data Layer</a></li>
@@ -278,7 +278,7 @@ var utag_data = {
 
 <h2 id="usage">Usage</h2>
 
-<p>The DefaultStorage Module provides persistent data storage, backed by UserDefaults. This module must be used in conjunction with the [Swift Module: <a href="/platforms/ios-swift/module-list/persistent-data/">PersistentData</a>.</p>
+<p>The DefaultStorage Module provides persistent data storage, backed by UserDefaults. This module must be used in conjunction with the Swift Module: <a href="/platforms/ios-swift/module-list/persistent-data/">PersistentData</a>.</p>
 
 <p>If you are using the Persistent Data module (recommended), you must also use either the Defaults Storage or File Storage module to make the data persist across app launches. Whether you choose Defaults Storage over File Storage is personal choice. If both FileStorage and DefaultsStorage are included and enabled, FileStorage take precedence and DefaultsStorage effectively becomes inactive.</p>
 
@@ -291,20 +291,36 @@ var utag_data = {
 <li>macOS</li>
 </ul>
 
-<h2 id="installation">Installation</h2>
+<h2 id="install">Install</h2>
+
+<p>Install the DefaultStorage module with CocoaPods or Carthage.</p>
 
 <h3 id="cocoapods">CocoaPods</h3>
 
-<p><em>Framework is auto-instantiated, so long as the pod is installed. Depends on <code>TealiumCore</code> pod. No additional <code>import</code> statements necessary.Also bundles PersistentData module.</em></p>
+<p>To install the DefaultStorage module with CocoaPods, add the following pod to your Podfile:</p>
 
-<p><code>pod 'tealium-swift/TealiumDefaultsStorage</code></p>
+<pre><code>pod 'tealium-swift/TealiumDefaultsStorage'
+</code></pre>
+
+<p>The framework is auto-instantiated. It has a dependency on the <code>TealiumCore</code> pod. It also bundles the PersistentData module. <a href="/platforms/ios-swift/install/#cocoapods">Learn more</a> about CocoaPods installation for iOS.</p>
 
 <h3 id="carthage">Carthage</h3>
 
-<p><em>Framework is auto-instantiated, so long as it is compiled into your app (included in &ldquo;Embedded Binaries&rdquo;). Depends on <code>TealiumCore</code>. Also bundles PersistentData module.</em></p>
+<p>To install the DefaultStorage module with Carthage, following these steps:</p>
 
-<p><code>TealiumDefaultsStorage.framework</code>
-<code>import TealiumDefaultsStorage // required to access the persistentData API on the Tealium instance</code></p>
+<ol>
+<li><p>Go to the app target&rsquo;s General configuration page in Xcode.</p></li>
+
+<li><p>Add the following framework to the <strong>Embedded Binaries</strong> section:</p>
+
+<pre><code>TealiumDefaultsStorage.framework
+</code></pre></li>
+
+<li><p>To access the persistentData API on the <code>Tealium</code> instance, add the following required import statement to your project:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">import</span> <span style="color:#458;font-weight:bold">TealiumDefaultsStorage</span></code></pre></div></li>
+</ol>
+
+<p>The framework is auto-instantiated. It has a dependency on <code>TealiumCore</code>. It also bundles the PersistentData module. No additional import statements are necessary. <a href="/platforms/ios-swift/install/#carthage">Learn more</a> about Carthage installation for iOS.</p>
 
 <h2 id="data-layer">Data Layer</h2>
 
@@ -1133,7 +1149,7 @@ var utag_data = {
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1323,7 +1339,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

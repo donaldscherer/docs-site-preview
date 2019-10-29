@@ -236,13 +236,14 @@ var utag_data = {
       <p class="b">In this article:</p>
       <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#module-list">Module List</a></li>
               <li><a href="#recommended-modules">Recommended Modules</a></li>
-              <ul class="toc-h3"><li><a href="#tag-management">Tag Management</a></li>
+              <ul class="toc-h3"><li><a href="#base-implementation">Base Implementation</a></li>
+              <li><a href="#tag-management">Tag Management</a></li>
               <li><a href="#eventstream-audiencestream">EventStream/AudienceStream</a></li>
-              </ul><li><a href="#install">Install</a></li>
-              <ul class="toc-h3"><li><a href="#cocoapods-install">CocoaPods Install</a></li>
-              <li><a href="#carthage-install">Carthage Install</a></li>
+              </ul><li><a href="#install-modules">Install Modules</a></li>
+              <ul class="toc-h3"><li><a href="#cocoapods">CocoaPods</a></li>
+              <li><a href="#carthage">Carthage</a></li>
               <li><a href="#manual">Manual</a></li>
-              <li><a href="#disabling-modules">Disabling Modules</a></li>
+              </ul><li><a href="#disable-modules">Disable Modules</a></li>
               </nav>
   </aside></div>
 
@@ -278,8 +279,9 @@ var utag_data = {
 
 
 
-<p>The Tealium Swift library is designed around a modular architecture. Modules instantiate themselves automatically if they are present, and retrieve their configuration from the TealiumConfig object you create at initialization time.
-All modules have a dependency on TealiumCore. This means installing any of the optional modules installs TealiumCore.</p>
+<p>The Tealium Swift library is designed around a modular architecture. Modules are automatically instantiated if they are present, and retrieve their configuration from the <code>TealiumConfig</code> instance.</p>
+
+<p>All modules have a dependency on <code>TealiumCore</code>. This means installing any of the optional modules installs <code>TealiumCore</code>.</p>
 
 <h2 id="module-list">Module List</h2>
 
@@ -299,33 +301,33 @@ All modules have a dependency on TealiumCore. This means installing any of the o
 <tr>
 <td><a href="/platforms/ios-swift/module-list/appdata/">AppData</a></td>
 <td><code>appdata</code></td>
-<td>Adds <code>app_uuid</code> to track data.</td>
+<td>Adds <code>app_uuid</code> to track data</td>
 <td>iOS, macOS, tvOS, watchOS</td>
 </tr>
 
 <tr>
 <td><a href="/platforms/ios-swift/module-list/attribution/">Attribution</a></td>
 <td><code>attribution</code></td>
-<td>Adds IDFA to track data.</td>
+<td>Adds IDFA to track data</td>
 <td>iOS</td>
 </tr>
 
 <tr>
 <td><a href="/platforms/ios-swift/module-list/autotracking/">AutoTracking</a></td>
 <td><code>autotracking</code></td>
-<td>Prepares &amp; sends dispatches for most UI, including viewDidAppear, events.</td>
+<td>Prepares &amp; sends dispatches for most UI, including <code>viewDidAppear</code> events</td>
 <td>iOS, tvOS</td>
 </tr>
 
 <tr>
 <td><a href="/platforms/ios-swift/module-list/collect/">Collect</a></td>
 <td><code>collect</code></td>
-<td>Packages and delivers track call to Tealium Collect or other custom URL endpoint.</td>
+<td>Packages and delivers track call to Tealium Collect or other custom URL endpoint</td>
 <td>iOS, macOS, tvOS, watchOS</td>
 </tr>
 
 <tr>
-<td><a href="/platforms/ios-swift/consent-manager">ConsentManager</a></td>
+<td><a href="/platforms/ios-swift/consent-management">ConsentManager</a></td>
 <td><code>consentmanager</code></td>
 <td>Aids GDPR/privacy compliance</td>
 <td>iOS, macOS, tvOS, watchOS</td>
@@ -334,7 +336,7 @@ All modules have a dependency on TealiumCore. This means installing any of the o
 <tr>
 <td><a href="/platforms/ios-swift/module-list/connectivity/">Connectivity</a></td>
 <td>connectivity</td>
-<td>Adds ability to flag track messages for delayed delivery due to connectivity loss.</td>
+<td>Adds ability to flag track messages for delayed delivery due to connectivity loss</td>
 <td>iOS, macOS, tvOS</td>
 </tr>
 
@@ -348,28 +350,28 @@ All modules have a dependency on TealiumCore. This means installing any of the o
 <tr>
 <td><a href="/platforms/ios-swift/module-list/datasource/">DataSource</a></td>
 <td><code>datasource</code></td>
-<td>Adds an additional config init option for datasource ids.</td>
+<td>Adds an additional config init option for datasource IDs.</td>
 <td>iOS, macOS, tvOS, watchOS</td>
 </tr>
 
 <tr>
 <td><a href="/platforms/ios-swift/module-list/defaults-storage/">DefaultsStorage</a></td>
 <td><code>defaultsstorage</code></td>
-<td>Adds general persistence capability for any module. Backed by UserDefaults</td>
+<td>Adds general persistence capability for any module (backed by <code>UserDefaults</code>)</td>
 <td>iOS, tvOS, watchOS, macOS</td>
 </tr>
 
 <tr>
 <td><a href="/platforms/ios-swift/module-list/delegate/">Delegate</a></td>
 <td><code>delegate</code></td>
-<td>Adds multicast delegates to monitor or suppress track dispatches.</td>
+<td>Adds multicast delegates to monitor or suppress track dispatches</td>
 <td>iOS, macOS, tvOS, watchOS</td>
 </tr>
 
 <tr>
 <td><a href="/platforms/ios-swift/module-list/device-data/">DeviceData</a></td>
 <td><code>devicedata</code></td>
-<td>Add as additional device info to all track data.</td>
+<td>Add as additional device info to all track data</td>
 <td>iOS</td>
 </tr>
 
@@ -383,14 +385,14 @@ All modules have a dependency on TealiumCore. This means installing any of the o
 <tr>
 <td><a href="/platforms/ios-swift/module-list/file-storage/">FileStorage</a></td>
 <td><code>filestorage</code></td>
-<td>Adds general persistence capability for any module. Replaces the Defaults Storage module. Backed by NSKeyedArchiver</td>
+<td>Adds general persistence capability for any module - replaces the Defaults Storage module (backed by <code>NSKeyedArchiver</code>)</td>
 <td>iOS, macOS, watchOS, tvOS</td>
 </tr>
 
 <tr>
 <td><a href="/platforms/ios-swift/module-list/lifecycle/">Lifecycle</a></td>
 <td><code>lifecycle</code></td>
-<td>Tracks launches, wakes, sleeps, and crash instances. Auto or manually.</td>
+<td>Tracks launches, wakes, sleeps, and crash instances (Auto or manually)</td>
 <td>iOS, tvOS, watchOS</td>
 </tr>
 
@@ -404,34 +406,38 @@ All modules have a dependency on TealiumCore. This means installing any of the o
 <tr>
 <td><a href="/platforms/ios-swift/module-list/persistent-data/">PersistentData</a></td>
 <td><code>persistentdata</code></td>
-<td>Adds ability to add persistent data to all track data.</td>
+<td>Adds ability to add persistent data to all track data</td>
 <td>iOS, macOS, tvOS, watchOS</td>
 </tr>
 
 <tr>
 <td><a href="/platforms/ios-swift/module-list/remote-commands/">RemoteCommands</a></td>
 <td><code>remotecommands</code></td>
-<td>Permits configurable remote code block execution via URLScheme, UIWebView, or TagManagement.</td>
+<td>Permits configurable remote code block execution via <code>URLScheme</code>, <code>UIWebView</code>, or <code>TagManagement</code></td>
 <td>iOS</td>
 </tr>
 
 <tr>
 <td><a href="/platforms/ios-swift/module-list/tag-management/">TagManagement</a></td>
 <td><code>tagmanagement</code></td>
-<td>UIWebview based dispatch service that permits library to run TIQ/utag.js.</td>
+<td><code>UIWebview</code> based dispatch service that permits library to run TIQ/<code>utag.js</code></td>
 <td>iOS</td>
 </tr>
 
 <tr>
 <td><a href="/platforms/ios-swift/module-list/volatile-data/">Volatile Data</a></td>
 <td><code>volatiledata</code></td>
-<td>Adds ability to add session persistent data to all track data - clears upon app termination/close.</td>
+<td>Adds ability to add session persistent data to all track data (clears upon app termination/close)</td>
 <td>iOS, macOS, tvOS, watchOS</td>
 </tr>
 </tbody>
 </table>
 
 <h2 id="recommended-modules">Recommended Modules</h2>
+
+<p>The following sections lists the recommended modules.</p>
+
+<h3 id="base-implementation">Base Implementation</h3>
 
 <p>This is the recommended list of modules for a base implementation.</p>
 
@@ -470,13 +476,15 @@ All modules have a dependency on TealiumCore. This means installing any of the o
 <li>Consent Manager</li>
 </ul>
 
-<h2 id="install">Install</h2>
+<h2 id="install-modules">Install Modules</h2>
 
-<h3 id="cocoapods-install">CocoaPods Install</h3>
+<p>Install the modules with CocoaPods, Carthage, or manually.</p>
+
+<h3 id="cocoapods">CocoaPods</h3>
 
 <p>See <a href="/platforms/ios-swift/install/#cocoapods">Install with CocoaPods</a> for instructions on including/excluding specific modules.</p>
 
-<h3 id="carthage-install">Carthage Install</h3>
+<h3 id="carthage">Carthage</h3>
 
 <p>When you install with Carthage, you must explicitly import the modules you require. You may import all modules if you prefer, and use the module list, as described earlier, but your app is lighter if you only import the modules you need. See <a href="/platforms/ios-swift/install/#carthage">Install with Carthage</a> for instructions on including/excluding specific modules.</p>
 
@@ -484,13 +492,13 @@ All modules have a dependency on TealiumCore. This means installing any of the o
 
 <p>If you are installing the library manually, you may completely remove unwanted modules from your project, and they are not invoked.</p>
 
-<h3 id="disabling-modules">Disabling Modules</h3>
+<h2 id="disable-modules">Disable Modules</h2>
 
 <p>Prior to version 1.6.5 of the Tealium Swift SDK, the only way to disable unneeded modules if you were using CocoaPods or Carthage was via the <a href="/platforms/ios-swift/api/tealium-config/">TealiumConfig</a> object, by setting an array of enabled/disabled modules (whitelist/blacklist). In this scenario, all the code was still compiled into your final app bundle, but any disabled modules were deactivated.</p>
 
-<p>This method is still supported, but we recommend migrating to one of the other methods below to take advantage of the performance gains associated with compiling less code into your app bundle. Safely leave the module list enabled on the TealiumConfig object, and simultaneously remove unneeded modules. In the case where you attempt to enable a module, but the code is not present in your app bundle, it does not cause any undesired consequences, and simply has no effect.</p>
+<p>This method is still supported, but we recommend migrating to one of the other methods below to take advantage of the performance gains associated with compiling less code into your app bundle. Safely leave the module list enabled on the <code>TealiumConfig</code> object, and simultaneously remove unneeded modules. In the case where you attempt to enable a module, but the code is not present in your app bundle, it does not cause any undesired consequences, and simply has no effect.</p>
 
-<p>The following example blacklists the autotracking module:</p>
+<p>The following example blacklists the auto-tracking module:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">let</span> <span style="color:#008080">modulesList</span> = TealiumModulesList(isWhitelist: <span style="font-weight:bold">false</span>, moduleNames: [<span style="color:#b84">&#34;autotracking&#34;</span>])
 config.setModulesList(modulesList)</code></pre></div>
 </div>
@@ -1304,7 +1312,7 @@ config.setModulesList(modulesList)</code></pre></div>
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1494,7 +1502,7 @@ config.setModulesList(modulesList)</code></pre></div>
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

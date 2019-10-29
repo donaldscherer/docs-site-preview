@@ -284,15 +284,17 @@ var utag_data = {
 
 <p>The <code>AddPersistentDataSources()</code> method adds persistent data, as shown in the following example:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">tealium.AddPersistentDataSources(<span style="font-weight:bold">new</span> Dictionary&lt;<span style="color:#458;font-weight:bold">string</span>, <span style="color:#458;font-weight:bold">object</span>&gt;(<span style="color:#099">1</span>) {
-  {<span style="color:#b84">&#34;PersistentDataTest&#34;</span>, <span style="color:#b84">&#34;VALUE&#34;</span>}});
+  {<span style="color:#b84">&#34;KEY&#34;</span>, <span style="color:#b84">&#34;VALUE&#34;</span>}
+});
 </code></pre></div>
 <h2 id="volatile-data">Volatile Data</h2>
 
 <p>Volatile data is merged into your data dictionary on every tracking call, but once the application is closed, volatile data is lost is not present on the next launch.</p>
 
 <p>The <code>AddVolatileDataSources()</code> method adds volatile data, as shown in the following example:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">tealium.AddVolatileDataSources(<span style="font-weight:bold">new</span> Dictionary&lt;<span style="color:#458;font-weight:bold">string</span>, <span style="color:#458;font-weight:bold">object</span>&gt;(<span style="color:#099">1</span>) {}
-   {<span style="color:#b84">&#34;VolatileDataTest&#34;</span>, <span style="color:#b84">&#34;VALUE.&#34;</span>}});
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">tealium.AddVolatileDataSources(<span style="font-weight:bold">new</span> Dictionary&lt;<span style="color:#458;font-weight:bold">string</span>, <span style="color:#458;font-weight:bold">object</span>&gt;(<span style="color:#099">1</span>) {
+   {<span style="color:#b84">&#34;KEY&#34;</span>, <span style="color:#b84">&#34;VALUE&#34;</span>}
+});
 </code></pre></div>
 </div>
 
@@ -1105,7 +1107,7 @@ var utag_data = {
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1295,7 +1297,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 25, 2019</p>
 
       
 

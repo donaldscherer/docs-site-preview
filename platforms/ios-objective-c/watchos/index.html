@@ -299,14 +299,18 @@ var utag_data = {
 
 <h2 id="install">Install</h2>
 
-<p>Tealium for watchOS is intended to be used in a watchOS extension application where <code>TealiumIOS.framework</code> has been implemented in the host application. 
-To install:</p>
+<p>Install Tealium for watchOS as an extension application where <code>TealiumIOS.framework</code> has been implemented in the host application. </p>
 
 <ol>
-<li>Add <code>TealiumWATCHOSExtension.framework</code> to your project&rsquo;s watchOS Extension target.</li>
-<li>Copy or reference the framework to the project in the resulting dialog box.</li>
+<li><p>Add <code>TealiumWATCHOSExtension.framework</code> to your project&rsquo;s watchOS Extension target, and copy the framework to the project in the resulting dialog box.</p></li>
 
-<li><p>In the Target&rsquo;s <strong>General: Embedded Binaries: Options</strong> add <code>TealiumWATCHOSExtension.framework</code><p class="note">For Swift projects, add <code>&lt;TealiumWATCHOSExtension/TEALWKExtension.h&gt;</code> to your bridging header file.</p></p></li>
+<li><p>In the target&rsquo;s <strong>General: Embedded Binaries</strong> section, add the framework:</p>
+
+<pre><code>TealiumWATCHOSExtension.framework
+</code></pre>
+
+<p class="note">For Swift projects, add <code>&lt;TealiumWATCHOSExtension/TEALWKExtension.h&gt;</code> to your bridging header file.</p>
+  </li>
 
 <li><p>Make sure all paths are as expected under <strong>Projects: Target: Build Settings</strong>. </p></li>
 </ol>
@@ -1193,7 +1197,7 @@ config.logLevel <span style="font-weight:bold">=</span> TEALLogLevelDev;
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1383,7 +1387,7 @@ config.logLevel <span style="font-weight:bold">=</span> TEALLogLevelDev;
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

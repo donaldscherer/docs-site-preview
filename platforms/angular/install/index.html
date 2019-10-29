@@ -291,19 +291,26 @@ var utag_data = {
 
 <p>The installation only requires one file to be added to your application. This service takes care of loading the Tealium <code>utag.js</code> library for your account and handling the tracking calls.</p>
 
-<p>To add Tealium to your project, following these steps:</p>
+<p>To install the Tealium library for Angular:</p>
 
 <ol>
 <li><p>Create the directory <code>./src/app/tealium</code> in your Angular application.</p></li>
 
 <li><p>Copy the file <a href="https://github.com/Tealium/integration-angular/tree/master/example/src/app/tealium">utag.service.ts</a> into your application&rsquo;s path <code>./src/app/tealium/</code>.</p></li>
 
-<li><p>Use the example found in the sample app&rsquo;s <code>./example/src/app/app.compontent.ts</code> file to define and invoke the Tealium service in your app.</p></li>
+<li><p>Follow the example found in the sample app&rsquo;s <a href="https://github.com/Tealium/integration-angular/blob/master/example/src/app/app.component.ts"><code>app.compontent.ts</code></a> file to define and invoke the Tealium service in your app.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">import { <span style="color:#008080">Component</span>, <span style="color:#008080">OnInit</span> } from <span style="color:#b84">&#39;@angular/core&#39;</span>;
+import { <span style="color:#008080">TealiumUtagService</span> } from <span style="color:#b84">&#39;./tealium/utag.service&#39;</span>;
+
+@Component({
+<span style="color:#b84">selector</span>: <span style="color:#b84">&#39;app-root&#39;</span>,
+<span style="color:#b84">providers</span>: <span style="font-weight:bold">[</span><span style="color:#008080">TealiumUtagService</span><span style="font-weight:bold">]</span>,
+<span style="color:#b84">templateUrl</span>: <span style="color:#b84">&#39;./app.component.html&#39;</span>,
+<span style="color:#b84">styleUrls</span>: <span style="font-weight:bold">[</span><span style="color:#b84">&#39;./app.component.css&#39;</span><span style="font-weight:bold">]</span>
+})</code></pre></div></li>
 </ol>
 
 <h2 id="initialize">Initialize</h2>
-
-<p>The installation adds a new class to your application called <code>TealiumUtagService</code> which is now available by registering it as a provider to a component.</p>
 
 <p>The <a href="/platforms/angular/api/#setconfig"><code>setConfig()</code></a> method initializes Tealium and builds the path to the <code>utag.js</code> file, as shown in the following example:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">constructor(<span style="font-weight:bold">private</span> tealium<span style="font-weight:bold">:</span> TealiumUtagService) {
@@ -314,6 +321,8 @@ var utag_data = {
     });
 }
 </code></pre></div>
+<p>The installation adds a new class to your application called <code>TealiumUtagService</code> which available by registering it as a provider to a component.</p>
+
 <h2 id="example">Example</h2>
 
 <p>The following is a full example of importing the Tealium service to your application, <a href="https://github.com/Tealium/integration-angular/blob/master/example/src/app/app.component.ts"><code>app.component.ts</code></a>.</p>
@@ -1154,7 +1163,7 @@ var utag_data = {
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1344,7 +1353,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 23, 2019</p>
+<p> This page was last updated: October 25, 2019</p>
 
       
 

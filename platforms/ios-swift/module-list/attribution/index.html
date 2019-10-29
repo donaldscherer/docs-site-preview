@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>Attribution Module | Tealium for Swift Modules |Preview of Tealium Developer Docs</title>
+    <title>Attribution Module | Modules |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -236,7 +236,7 @@ var utag_data = {
       <p class="b">In this article:</p>
       <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#usage">Usage</a></li>
               <li><a href="#requirements">Requirements</a></li>
-              <li><a href="#installation">Installation</a></li>
+              <li><a href="#install">Install</a></li>
               <ul class="toc-h3"><li><a href="#cocoapods">CocoaPods</a></li>
               <li><a href="#carthage">Carthage</a></li>
               </ul><li><a href="#data-layer">Data Layer</a></li>
@@ -263,7 +263,7 @@ var utag_data = {
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Adds the user-resettable advertising identifier (IDFA) to each tracking call and optionally implements the Apple Search Ads API to gather attribution information.
+      Adds the user-resettable advertising identifier (IDFA) to each tracking call and, optionally, implements the Apple Search Ads API to gather attribution information.
     </div>
   
 
@@ -278,9 +278,9 @@ var utag_data = {
 
 <h2 id="usage">Usage</h2>
 
-<p>The Attribution module adds the user-resettable advertising identifier (IDFA) to each tracking call and optionally implements the Apple Search Ads API to gather attribution information. <a href="https://searchads.apple.com/v/advanced/help/pdf/attribution-api.pdf for details">Learn more</a> about Apple Search Ads.</p>
+<p>The Attribution module adds the user-resettable advertising identifier (IDFA) to each tracking call and, optionally, implements the Apple Search Ads API to gather attribution information. <a href="https://searchads.apple.com/v/advanced/help/pdf/attribution-api.pdf for details">Learn more</a> about Apple Search Ads.</p>
 
-<p>Usage of this module is optional. Take the time to read about its functionality and decide if you need it, as it introduces additional dependencies. You are required to explain to Apple why you are using IDFA when you submit your app. If you do not state that you are using IDFA, Apple rejects your app (reference: <a href="https://developer.apple.com/app-store/review/rejections/">IDFA Usage</a>).</p>
+<p>Usage of this module is optional. Take the time to read about its functionality and decide if you need it, as it introduces additional dependencies. You are required to explain to Apple why you are using IDFA when you submit your app. If you do not state that you are using IDFA, Apple rejects your app. <a href="https://developer.apple.com/app-store/review/rejections/">Learn more</a> about IDFA usage and rejections.</p>
 
 <p>The following platforms are supported:</p>
 
@@ -296,19 +296,33 @@ var utag_data = {
 <li>iAd</li>
 </ul>
 
-<h2 id="installation">Installation</h2>
+<h2 id="install">Install</h2>
+
+<p>Install the Attribution module with CocoaPods or Carthage.</p>
 
 <h3 id="cocoapods">CocoaPods</h3>
 
-<p><em>Framework is auto-instantiated, so long as the pod is installed. Depends on <code>TealiumCore</code> pod. No additional <code>import</code> statements necessary besides <code>import TealiumSwift</code>.</em></p>
+<p>To install the Attribution module with CocoaPods, add the following pod to your Podfile:</p>
 
-<p><code>pod 'tealium-swift/TealiumAttribution'</code></p>
+<pre><code>pod 'tealium-swift/TealiumAttribution'
+</code></pre>
+
+<p>The framework is auto-instantiated. It has a dependency on the <code>TealiumCore</code> pod. <a href="/platforms/ios-swift/install/#cocoapods">Learn more</a> about CocoaPods installation for iOS.</p>
 
 <h3 id="carthage">Carthage</h3>
 
-<p><em>Framework is auto-instantiated, so long as it is compiled into your app (included in &ldquo;Embedded Binaries&rdquo;). Depends on <code>TealiumCore</code>. No additional <code>import</code> statements necessary.</em></p>
+<p>To install the Attribution module with Carthage, following these steps:</p>
 
-<p><code>TealiumAttribution.framework</code></p>
+<ol>
+<li><p>Go to the app target&rsquo;s General configuration page in Xcode.</p></li>
+
+<li><p>Add the following framework to the <strong>Embedded Binaries</strong> section:</p>
+
+<pre><code>TealiumAttribution.framework
+</code></pre></li>
+</ol>
+
+<p>The framework is auto-instantiated. It has a dependency on <code>TealiumCore</code>. No additional import statements are necessary. <a href="/platforms/ios-swift/install/#carthage">Learn more</a> about Carthage installation for iOS.</p>
 
 <h2 id="data-layer">Data Layer</h2>
 
@@ -331,19 +345,19 @@ var utag_data = {
 </tr>
 
 <tr>
-<td><code>device_advertising_vendor_id</code></td>
+<td><code>device_advertising_ vendor_id</code></td>
 <td>Unique ID guaranteed to be the same across all apps on the same device from a single vendor (apps with the same 1st 2 parts of the RDNS bundle identifier. For example, com.tealium or com.acme).</td>
 <td><code>&quot;6D92078A-8246-4BA4-AE5B-76104861E7DC&quot;</code></td>
 </tr>
 
 <tr>
-<td>device_advertising_enabled</td>
+<td><code>device_advertising_ enabled</code></td>
 <td>Boolean to indicate whether the user has allowed ad tracking. True if ad tracking enabled, otherwise false. Note: if false, the advertising ID appears as a string of zeroes</td>
 <td>[<code>&quot;true&quot;</code>, <code>&quot;false&quot;</code>]</td>
 </tr>
 
 <tr>
-<td><code>ad_user_clicked_last_30_days*</code></td>
+<td><code>ad_user_clicked_last _30_days*</code></td>
 <td>True if user clicked on a Search Ads impression within 30 days prior to app download.</td>
 <td>[<code>&quot;true&quot;</code>, <code>&quot;false&quot;</code>]</td>
 </tr>
@@ -398,9 +412,7 @@ var utag_data = {
 </tbody>
 </table>
 
-<ul>
-<li>Note: these variables are only enabled if Search Ads has been explicitly enabled in the <a href="/platforms/ios-swift/class-definitions/tealium-config/">TealiumConfig</a> object. These variables are only retrieved from Apple&rsquo;s servers once during the app&rsquo;s lifetime, but they are stored as persistent variables so they are available on future app launches.</li>
-</ul>
+<p class="note">These variables are only enabled if Search Ads has been explicitly enabled in the <a href="/platforms/ios-swift/class-definitions/tealium-config/">TealiumConfig</a> object. These variables are only retrieved from Apple&rsquo;s servers once during the app&rsquo;s lifetime, but they are stored as persistent variables so they are available on future app launches.</p>
 
 <h2 id="release-notes">Release Notes</h2>
 
@@ -413,14 +425,15 @@ var utag_data = {
 <p>1.6.5</p>
 
 <ul>
-<li>No functional changes. Minor code change to import TealiumCore module for Carthage builds.</li>
+<li>No functional changes.</li>
+<li>Minor code change to import <code>TealiumCore</code> module for Carthage builds.</li>
 <li>Removed unnecessary code for Swift versions &lt;4.0 (no longer supported due to Xcode deprecation of Swift 3).</li>
 </ul>
 
 <p>1.4.0</p>
 
 <ul>
-<li>&ldquo;device_advertising_id&rdquo; has been changed from Identifier for Vendor (IDFV) to Identifier for Advertisers (IDFA). A new variable &ldquo;device_advertising_vendor_id&rdquo; has been added, which contains the IDFV.</li>
+<li><code>device_advertising_id</code> has been changed from Identifier for Vendor (IDFV) to Identifier for Advertisers (IDFA). A new variable <code>device_advertising_vendor_id</code> has been added, which contains the IDFV.</li>
 <li>Added support for Apple Search Ads API. If this module is implemented, Tealium collects attribution information from the Apple Search Ads API.</li>
 </ul>
 
@@ -1235,7 +1248,7 @@ var utag_data = {
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1425,7 +1438,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

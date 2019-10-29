@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>CrashReporter Module | Tealium for Swift Modules |Preview of Tealium Developer Docs</title>
+    <title>CrashReporter Module | Modules |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -236,14 +236,15 @@ var utag_data = {
       <p class="b">In this article:</p>
       <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#usage">Usage</a></li>
               <li><a href="#requirements">Requirements</a></li>
-              <li><a href="#installation">Installation</a></li>
+              <li><a href="#install">Install</a></li>
               <ul class="toc-h3"><li><a href="#cocoapods">CocoaPods</a></li>
               <li><a href="#carthage">Carthage</a></li>
               <li><a href="#manual">Manual</a></li>
               </ul><li><a href="#data-layer">Data Layer</a></li>
-              <li><a href="#initialization">Initialization</a></li>
+              <li><a href="#invoke-a-crash">Invoke a Crash</a></li>
               <li><a href="#api-reference">API Reference</a></li>
-              <li><a href="#release-notes">Release Notes</a></li>
+              <ul class="toc-h3"><li><a href="#invokecrash">invokeCrash()</a></li>
+              </ul><li><a href="#release-notes">Release Notes</a></li>
               </nav>
   </aside></div>
 
@@ -281,7 +282,7 @@ var utag_data = {
 
 <h2 id="usage">Usage</h2>
 
-<p>The CrashReport module automatically tracks crashes in your app. Once the module is enabled and the accompanying frameworks are installed, a crash event is triggered if a crash occurs in your app.</p>
+<p>The CrashReporter module automatically tracks crashes in your app. Once the module is enabled and the accompanying frameworks are installed, a crash event is triggered if a crash occurs in your app.</p>
 
 <p>Usage of this framework is recommended to get vital information regarding your app&rsquo;s crashes.</p>
 
@@ -297,27 +298,31 @@ var utag_data = {
 <li><code>TealiumCrashReporteriOS</code></li>
 </ul>
 
-<h2 id="installation">Installation</h2>
+<h2 id="install">Install</h2>
 
-<p>There are three ways to add <code>TealiumCrashReporteriOS.framework</code> to your app.</p>
+<p>Install the CrashReporter module with CocoaPods, Carthage, or manually.</p>
 
 <h3 id="cocoapods">CocoaPods</h3>
 
-<p>Framework is auto-instantiated, so long as the pod is installed. Depends on <code>TealiumCore</code> and <code>TealiumCrashReporteriOS</code> pod. No additional <code>import</code> statements necessary.</p>
+<p>To install the CrashReporter module with CocoaPods:</p>
 
 <ol>
-<li>Use the following entry in your Podfile (see  <a href="/platforms/ios-swift/install/#cocoapods">Swift CocoaPods Installation</a>):
-<code>pod tealium-swift/Crash</code></li>
-<li>Run <code>pod install</code> in your terminal window
+<li><p>Add the following pod to your Podfile:</p>
 
-<ul>
-<li>This automatically installs the external <code>TealiumCrashReporteriOS</code> dependency, along with <code>TealiumAppData</code>, <code>TealiumDeviceData</code>, and <code>Core</code> modules.</li>
-</ul></li>
+<pre><code>pod 'tealium-swift/Crash'
+</code></pre></li>
+
+<li><p>To automatically install the external <code>TealiumCrashReporteriOS</code> dependency, along with <code>TealiumAppData</code>, <code>TealiumDeviceData</code>, and <code>Core</code> modules, run the following command:</p>
+
+<pre><code>pod install
+</code></pre></li>
 </ol>
+
+<p>The framework is auto-instantiated. It has a dependency on the pods <code>TealiumCore</code> and <code>TealiumCrashReporteriOS</code>. <a href="/platforms/ios-swift/install/#cocoapods">Learn more</a> about CocoaPods installation for iOS.</p>
 
 <h3 id="carthage">Carthage</h3>
 
-<p>The following video shows how to setup Crash Reporter with Carthage:</p>
+<p>The following video demonstrates how to setup the CrashReporter module with Carthage:</p>
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
@@ -328,22 +333,24 @@ var utag_data = {
 <p>Framework is auto-instantiated, so long as it is compiled into your app (included in &ldquo;Embedded Binaries&rdquo;). Depends on <code>TealiumCore</code> and <code>TealiumCrashReporteriOS</code> (external dependency).</p>
 
 <ol>
-<li>Follow the steps outlined in <a href="/platforms/ios-swift/install/#carthage">Swift Carthage Installation</a></li>
-<li>Run <code>carthage update --platform iOS</code> in your terminal window. Include the resulting frameworks in your app:
+<li><p>Follow the steps outlined in the <a href="/platforms/ios-swift/install/#carthage">Swift Carthage Installation</a>.</p></li>
+
+<li><p>Run the command <code>carthage update --platform iOS</code> and include the resulting frameworks in your app:</p>
 
 <ul>
 <li><code>TealiumCore.framework</code> + all standard Tealium frameworks</li>
 <li><code>TealiumCrash.framework</code></li>
 <li><code>TealiumCrashReporteriOS.framework</code></li>
 </ul></li>
-<li>Follow the instructions in the <a href="https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos">Carthage Getting Started</a> guide to add the relevant Build Phases scripts for submitting your app to the App Store.</li>
+
+<li><p>Follow the instructions in the <a href="https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos">Carthage Getting Started</a> guide to add the relevant Build Phases scripts for submitting your app to the App Store.</p></li>
 </ol>
 
 <h3 id="manual">Manual</h3>
 
 <ol>
-<li>Follow the steps outlined in <a href="/platforms/ios-swift/install/#manual">Swift Manual Installation</a>.</li>
-<li>Download the <code>TealiumCrashReporteriOS.framework</code> from our <a href="https://github.com/Tealium/plcrashreporter">Github repo</a>.</li>
+<li>Follow the Swift <a href="/platforms/ios-swift/install/#manual">manual installation</a> steps.</li>
+<li>Download the <a href="https://github.com/Tealium/plcrashreporter"><code>TealiumCrashReporteriOS.framework</code></a>.</li>
 <li>Build the <code>Tealium</code> and <code>TealiumCrash</code> scheme.</li>
 <li>Drag and drop the following to the Embedded Binaries section within Xcode:
 
@@ -478,22 +485,42 @@ var utag_data = {
 <li>These variables are duplicated for backward-compatibility with previous releases</li>
 </ul>
 
-<h2 id="initialization">Initialization</h2>
+<h2 id="invoke-a-crash">Invoke a Crash</h2>
 
-<p>Once <code>TealiumCrashReporteriOS.framework</code> is added to your project, you don&rsquo;t have to do anything else. As long as the crash module is enabled and the Tealium SDK is initialized, when a crash is exhibited in your app, crash data automatically becomes part of the tracking call.</p>
+<p>Once <code>TealiumCrashReporteriOS.framework</code> is added to your project, no additional initialization steps are needed. As long as the crash module is enabled and the Tealium SDK is initialized, when a crash is exhibited in your app, crash data automatically becomes part of the tracking call.</p>
 
 <h2 id="api-reference">API Reference</h2>
 
-<pre><code>// import area
-// For Cocoapods
-import TealiumSwift
+<h3 id="invokecrash"><code>invokeCrash()</code></h3>
 
-// For Carthage or Manual installation
-import TealiumCrash
+<p>Invokes a crash for the CrashReporter module.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">TealiumCrashReporter.invokeCrash(name, reason)</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
 
-// Invoke a crash
-TealiumCrashReporter.invokeCrash(name: &quot;TEST_CRASH_NAME&quot;, reason: &quot;TEST_CRASH_REASON&quot;)
-</code></pre>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>String</code></td>
+<td>Name of the crash</td>
+<td><code>&quot;TEST_CRASH_NAME&quot;</code></td>
+</tr>
+
+<tr>
+<td><code>reason</code></td>
+<td><code>String</code></td>
+<td>Reason for crash</td>
+<td><code>&quot;TEST_CRASH_REASON&quot;</code></td>
+</tr>
+</tbody>
+</table>
 
 <h2 id="release-notes">Release Notes</h2>
 
@@ -1332,7 +1359,7 @@ TealiumCrashReporter.invokeCrash(name: &quot;TEST_CRASH_NAME&quot;, reason: &quo
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1522,7 +1549,7 @@ TealiumCrashReporter.invokeCrash(name: &quot;TEST_CRASH_NAME&quot;, reason: &quo
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

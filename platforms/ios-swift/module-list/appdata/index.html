@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>AppData Module | Tealium for Swift Modules |Preview of Tealium Developer Docs</title>
+    <title>AppData Module | Modules |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -235,7 +235,7 @@ var utag_data = {
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">In this article:</p>
       <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#usage">Usage</a></li>
-              <li><a href="#installation">Installation</a></li>
+              <li><a href="#install">Install</a></li>
               <ul class="toc-h3"><li><a href="#cocoapods">CocoaPods</a></li>
               <li><a href="#carthage">Carthage</a></li>
               </ul><li><a href="#data-layer">Data Layer</a></li>
@@ -277,7 +277,7 @@ var utag_data = {
 
 <h2 id="usage">Usage</h2>
 
-<p>The AppData module gathers important information about the app bundle. Usage of this module is recommended, but not mandatory. If you choose to exclude it, the variables listed below are not included in tracking calls.</p>
+<p>The AppData module gathers important information about the app bundle. Usage of this module is recommended, but not mandatory. If you choose to exclude it, the data layer variables are not included in tracking calls.</p>
 
 <p>The following platforms are supported:</p>
 
@@ -288,19 +288,33 @@ var utag_data = {
 <li>tvOS</li>
 </ul>
 
-<h2 id="installation">Installation</h2>
+<h2 id="install">Install</h2>
+
+<p>Install the AppData module with CocoaPods or Carthage.</p>
 
 <h3 id="cocoapods">CocoaPods</h3>
 
-<p><em>Framework is auto-instantiated, so long as the pod is installed. Depends on <code>TealiumCore</code> pod. No additional <code>import</code> statements necessary besides <code>import TealiumSwift</code>.</em></p>
+<p>To install the AppData module with CocoaPods, add the following pod to your Podfile:</p>
 
-<p><code>pod 'tealium-swift/TealiumAppData'</code></p>
+<pre><code>pod 'tealium-swift/TealiumAppData'
+</code></pre>
+
+<p>The framework is auto-instantiated. It has a dependency on the <code>TealiumCore</code> pod. <a href="/platforms/ios-swift/install/#cocoapods">Learn more</a> about CocoaPods installation for iOS.</p>
 
 <h3 id="carthage">Carthage</h3>
 
-<p><em>Framework is auto-instantiated, so long as it is compiled into your app (included in &ldquo;Embedded Binaries&rdquo;). Depends on <code>TealiumCore</code>. No additional <code>import</code> statements necessary.</em></p>
+<p>To install the AppData module with Carthage, following these steps:</p>
 
-<p><code>TealiumAppData.framework</code></p>
+<ol>
+<li><p>Go to the app target&rsquo;s General configuration page in Xcode.</p></li>
+
+<li><p>Add the following framework to the <strong>Embedded Binaries</strong> section:</p>
+
+<pre><code>TealiumAppData.framework
+</code></pre></li>
+</ol>
+
+<p>The framework is auto-instantiated. It has a dependency on <code>TealiumCore</code>. No additional import statements are necessary. <a href="/platforms/ios-swift/install/#carthage">Learn more</a> about Carthage installation for iOS.</p>
 
 <h2 id="data-layer">Data Layer</h2>
 
@@ -359,13 +373,14 @@ var utag_data = {
 <p>1.6.5</p>
 
 <ul>
-<li>No functional changes. Minor code change to import TealiumCore module for Carthage builds.</li>
+<li>No functional changes.</li>
+<li>Minor code change to import <code>TealiumCore</code> module for Carthage builds.</li>
 </ul>
 
 <p>1.4.0</p>
 
 <ul>
-<li>Removed deprecated &ldquo;tealium_vid&rdquo; variable</li>
+<li>Removed the deprecated <code>tealium_vid</code> variable</li>
 </ul>
 
 </div>
@@ -1179,7 +1194,7 @@ var utag_data = {
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1369,7 +1384,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

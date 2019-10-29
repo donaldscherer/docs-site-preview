@@ -304,7 +304,7 @@ var utag_data = {
 
 
 
-<h2 id="class-tealiumconfig">Class: TealiumConfig</h2>
+<h2 id="class-tealiumconfig">Class: <code>TealiumConfig</code></h2>
 
 <p>The following summarizes the commonly used methods of the iOS (Swift) <code>TealiumConfig</code> class.</p>
 
@@ -616,9 +616,7 @@ config.addRemoteCommand(remoteCommand)
 <h3 id="enableremotehttpcommand"><code>enableRemoteHTTPCommand()</code></h3>
 
 <p>Enables the built-in remote HTTP command (see <a href="/platforms/ios-swift/module-list/remote-commands/">Swift Module: RemoteCommands</a>).</p>
-
-<p><code>enableRemoteHTTPCommand()</code></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">config.enableRemoteHTTPCommand()</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">enableRemoteHTTPCommand()</code></pre></div>
 <h3 id="getinitialuserconsentcategories"><code>getInitialUserConsentCategories()</code></h3>
 
 <p>Returns the consent categories initially set on the config object. May not match the consent categories set in the consentManager if the user has changed their preferences since the library launched.</p>
@@ -986,13 +984,13 @@ config.setDispatchQueue(dispatchQ)</code></pre></div>
 <p>The following define the different types of Tealium consent statuses from the <code>TealiumConsentStatus</code> enum.</p>
 
 <p><strong>.unknown</strong><br />
-The <code>unknown</code> status is the default setting for the consent manager. In this state, the consent manager queues events locally until an affirmative <code>consented</code>/<code>notConsented</code> status is provided.</p>
+The <code>unknown</code> status is the default setting for the Consent Manager. In this state, the Consent Manager queues events locally until an affirmative <code>consented</code>/<code>notConsented</code> status is provided.</p>
 
 <p><strong>.consented</strong><br />
-The <code>consented</code> status is set when the user has consented to tracking. In this state, the consent manager allow all tracking calls to continue as normal.</p>
+The <code>consented</code> status is set when the user has consented to tracking. In this state, the Consent Manager allow all tracking calls to continue as normal.</p>
 
 <p><strong>.notConsented</strong><br />
-The <code>notConsented</code> status is set when the user has declined tracking. In this state, the consent manager drops all tracking calls and halt further processing by the SDK.</p>
+The <code>notConsented</code> status is set when the user has declined tracking. In this state, the Consent Manager drops all tracking calls and halt further processing by the SDK.</p>
 
 <h3 id="setlegacydispatchmethod"><code>setLegacyDispatchMethod()</code></h3>
 
@@ -1073,7 +1071,7 @@ config.setLogLevel(logLevel: newLogLevel)</code></pre></div>
 
 <h3 id="setmoduleslist"><code>setModulesList()</code></h3>
 
-<p>Set a net modules list (See <a href="/platforms/ios-swift/modules/">Modules List</a>).</p>
+<p>Set a net modules list (see <a href="/platforms/ios-swift/modules/">Modules List</a>).</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">setModulesList(list)</code></pre></div>
 <table>
 <thead>
@@ -2176,7 +2174,7 @@ Allows certain default behavior to be overridden at init time. Generally, it is 
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -2366,7 +2364,7 @@ Allows certain default behavior to be overridden at init time. Generally, it is 
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>Collect Module | Tealium for Swift Modules |Preview of Tealium Developer Docs</title>
+    <title>Collect Module | Modules |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -235,7 +235,7 @@ var utag_data = {
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">In this article:</p>
       <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#usage">Usage</a></li>
-              <li><a href="#installation">Installation</a></li>
+              <li><a href="#install">Install</a></li>
               <ul class="toc-h3"><li><a href="#cocoapods">CocoaPods</a></li>
               <li><a href="#carthage">Carthage</a></li>
               </ul><li><a href="#data-layer">Data Layer</a></li>
@@ -278,9 +278,9 @@ var utag_data = {
 
 <h2 id="usage">Usage</h2>
 
-<p>The Collect module dispatches tracking calls to Tealium&rsquo;s Universal Data Hub (UDH).</p>
+<p>The Collect module dispatches tracking calls to Tealium&rsquo;s Universal Data Hub (UDH). Usage of this module is strongly recommended if you are using Tealium&rsquo;s UDH.</p>
 
-<p>Usage of this module is strongly recommended if you are using Tealium&rsquo;s UDH. As an alternative, if you are using the Tag Management module, you may instead use the Collect tag via Tealium iQ. This may give greater control over the data and events dispatched to the UDH, as you may then use load rules and extensions to manipulate the data prior to dispatch. If you are using the Collect tag via Tealium iQ, ensure that the Collect module is <strong>disabled</strong> to avoid duplicate tracking requests.</p>
+<p>As an alternative, if you are using the Tag Management module, you may instead use the Collect tag via Tealium iQ. This may give greater control over the data and events dispatched to the UDH, as you may then use load rules and extensions to manipulate the data prior to dispatch. If you are using the Collect tag via Tealium iQ, ensure that the Collect module is <em>disabled</em> to avoid duplicate tracking requests.</p>
 
 <p>The following platforms are supported:</p>
 
@@ -291,21 +291,35 @@ var utag_data = {
 <li>macOS</li>
 </ul>
 
-<h2 id="installation">Installation</h2>
+<h2 id="install">Install</h2>
 
-<p class="note">In the Objective-C library (<a href="https://github.com/tealium/tealium-ios">GitHub:tealium-ios</a>), the Collect module dispatched events to the <code>main</code> profile by default, unless overridden. By contrast, the Swift Collect module sends data to the profile passed in the TealiumConfig object.</p>
+<p class="note">In the Tealium <a href="https://github.com/tealium/tealium-ios">iOS Objective-C library</a>, the Collect module dispatched events to the <code>main</code> profile by default, unless overridden. By contrast, the Swift Collect module sends data to the profile passed in the TealiumConfig object.</p>
+
+<p>Install the Collect module with CocoaPods or Carthage.</p>
 
 <h3 id="cocoapods">CocoaPods</h3>
 
-<p><em>Framework is auto-instantiated, so long as the pod is installed. Depends on <code>TealiumCore</code> pod. No additional <code>import</code> statements necessary besides <code>import TealiumSwift</code>.</em></p>
+<p>To install the Collect module with CocoaPods, add the following pod to your Podfile:</p>
 
-<p><code>pod 'tealium-swift/TealiumCollect</code></p>
+<pre><code>pod 'tealium-swift/TealiumCollect'
+</code></pre>
+
+<p>The framework is auto-instantiated. It has a dependency on the <code>TealiumCore</code> pod. <a href="/platforms/ios-swift/install/#cocoapods">Learn more</a> about CocoaPods installation for iOS.</p>
 
 <h3 id="carthage">Carthage</h3>
 
-<p><em>Framework is auto-instantiated, so long as it is compiled into your app (included in &ldquo;Embedded Binaries&rdquo;). Depends on <code>TealiumCore</code>. No additional <code>import</code> statements necessary.</em></p>
+<p>To install the AutoTracking module with Carthage, following these steps:</p>
 
-<p><code>TealiumCollect.framework</code></p>
+<ol>
+<li><p>Go to the app target&rsquo;s General configuration page in Xcode.</p></li>
+
+<li><p>Add the following framework to the <strong>Embedded Binaries</strong> section:</p>
+
+<pre><code>TealiumCollect.framework
+</code></pre></li>
+</ol>
+
+<p>The framework is auto-instantiated. It has a dependency on <code>TealiumCore</code>. No additional import statements are necessary. <a href="/platforms/ios-swift/install/#carthage">Learn more</a> about Carthage installation for iOS.</p>
 
 <h2 id="data-layer">Data Layer</h2>
 
@@ -338,13 +352,13 @@ var utag_data = {
 <p>1.6.5</p>
 
 <ul>
-<li>Minor code change to import TealiumCore module for Carthage builds.</li>
+<li>Minor code change to import <code>TealiumCore</code> module for Carthage builds.</li>
 <li>Switch to POST request by default.</li>
-<li>Added TealiumConfig method to switch back to legacy &ldquo;vdata&rdquo; dispatch method.</li>
+<li>Added <code>TealiumConfig</code> method to switch back to legacy <code>vdata</code> dispatch method.</li>
 <li>Improved URL override methods to give greater flexibility.</li>
 </ul>
 
-<p>Build 1.4.0</p>
+<p>1.4.0</p>
 
 <ul>
 <li>Added config method to override collect URL</li>
@@ -353,7 +367,7 @@ var utag_data = {
 <p>Build 1</p>
 
 <ul>
-<li>Send dispatches to vdata endpoint</li>
+<li>Send dispatches to <code>vdata</code> endpoint</li>
 </ul>
 
 </div>
@@ -1167,7 +1181,7 @@ var utag_data = {
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1357,7 +1371,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

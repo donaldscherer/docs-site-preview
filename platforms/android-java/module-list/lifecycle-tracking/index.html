@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>Lifecycle Tracking Module | Tealium for Android Modules |Preview of Tealium Developer Docs</title>
+    <title>Lifecycle Tracking Module | Modules |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -240,7 +240,7 @@ var utag_data = {
               </ul><li><a href="#auto-tracked-events">Auto-Tracked Events</a></li>
               <li><a href="#manually-tracked-events">Manually Tracked Events</a></li>
               <li><a href="#crash-detection">Crash Detection</a></li>
-              <li><a href="#data-layer-variables">Data Layer Variables</a></li>
+              <li><a href="#data-layer">Data Layer</a></li>
               <li><a href="#api-reference">API Reference</a></li>
               </nav>
   </aside></div>
@@ -279,9 +279,11 @@ var utag_data = {
 
 <h2 id="install">Install</h2>
 
+<p>Install the Lifecycle Tracking module with Maven or manually.</p>
+
 <h3 id="maven">Maven</h3>
 
-<p>To install the Lifecycle Tracking module using Maven, following these steps:</p>
+<p>To install the Lifecycle Tracking module using Maven:</p>
 
 <ol>
 <li><p>In your project&rsquo;s top-level <code>build.gradle</code> file, add the following Maven repository:</p>
@@ -334,17 +336,17 @@ implementation<span style="font-weight:bold">(</span>name:<span style="color:#b8
 
 <tbody>
 <tr>
-<td><a href="https://github.com/Tealium/tealium-android/tree/master/Support/Lifecycle#launch-event">launch</a></td>
+<td><code>launch</code></td>
 <td>Generated on the first <code>onActivityResumed</code> to occur. If <code>onActivityPaused</code> is called before <code>onActivityResumed</code> (when the library is initialized in the middle of the <code>Activity</code> lifecycle), then the module creation time is used to generate a <code>launch</code> event.</td>
 </tr>
 
 <tr>
-<td><a href="https://github.com/Tealium/tealium-android/tree/master/Support/Lifecycle#sleep-event">sleep</a></td>
+<td><code>sleep</code></td>
 <td>Generated 5 seconds after <code>onActivityPaused</code> is called and <code>onActivityResumed</code> was not called. This indicates that the application has been backgrounded because a new view has not been presented.</td>
 </tr>
 
 <tr>
-<td><a href="https://github.com/Tealium/tealium-android/tree/master/Support/Lifecycle#wake-event">wake</a></td>
+<td><code>wake</code></td>
 <td>Generated during <code>onActivityResumed</code> when more than 5 seconds has elapsed since the last <code>onActivityPaused</code>. This indicates that <code>onActivityResumed</code> is called because the app is foregrounding and not because of a view change.</td>
 </tr>
 </tbody>
@@ -358,7 +360,7 @@ implementation<span style="font-weight:bold">(</span>name:<span style="color:#b8
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Tealium.<span style="color:#008080">Config</span> <span style="color:#900;font-weight:bold">config</span> <span style="font-weight:bold">=</span> Tealium.<span style="color:#008080">Config</span>.<span style="color:#008080">create</span>(application, <span style="color:#b84">&#34;ACCOUNT&#34;</span>, <span style="color:#b84">&#34;PROFILE&#34;</span>, <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>);
 <span style="color:#458;font-weight:bold">boolean</span> <span style="color:#900;font-weight:bold">isAutoTracking</span> <span style="font-weight:bold">=</span> <span style="font-weight:bold">true</span>;
 
-<span style="color:#998;font-style:italic">// Additional instance for Lifecycle tracking
+<span style="color:#998;font-style:italic">// Additional instance for Lifecycle Tracking
 </span><span style="color:#998;font-style:italic"></span>LifeCycle.<span style="color:#008080">setupInstance</span>(<span style="color:#b84">&#34;INSTANCE_NAME&#34;</span>, config, isAutoTracking);
 <span style="color:#998;font-style:italic">// Standard Tealium instance
 </span><span style="color:#998;font-style:italic"></span>Tealium.<span style="color:#008080">createInstance</span>(<span style="color:#b84">&#34;INSTANCE_NAME&#34;</span>, config);</code></pre></div>
@@ -366,7 +368,7 @@ implementation<span style="font-weight:bold">(</span>name:<span style="color:#b8
 
 <p>Available for specific lifecycle paradigms and unconventional lifecycle tracking. This approach is not recommended for most implementations. To allow manual lifecycle tracking update your lifecycle initiation code to set <code>isAutoTracking</code> to <code>false</code>.</p>
 
-<p>To manually track a launch event, call the <code>trackLaunchEvent()</code> method:</p>
+<p>To manually track a <code>launch</code> event, call the <code>trackLaunchEvent()</code> method:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">LifeCycle <span style="color:#900;font-weight:bold">lifeCycle</span> <span style="font-weight:bold">=</span> LifeCycle.<span style="color:#008080">getInstance</span>(TEALIUM_INSTANCE_ID);
 
 <span style="font-weight:bold">if</span>(lifeCycle <span style="font-weight:bold">!=</span> <span style="font-weight:bold">null</span>) {
@@ -377,7 +379,7 @@ implementation<span style="font-weight:bold">(</span>name:<span style="color:#b8
 
     lifeCycle.<span style="color:#008080">trackLaunchEvent</span>(data);
 }</code></pre></div>
-<p>To manually track a sleep event, call the <code>trackSleepEvent()</code> method:</p>
+<p>To manually track a <code>sleep</code> event, call the <code>trackSleepEvent()</code> method:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">LifeCycle <span style="color:#900;font-weight:bold">lifeCycle</span> <span style="font-weight:bold">=</span> LifeCycle.<span style="color:#008080">getInstance</span>(TEALIUM_INSTANCE_ID);
 
 <span style="font-weight:bold">if</span>(lifeCycle <span style="font-weight:bold">!=</span> <span style="font-weight:bold">null</span>) {
@@ -388,7 +390,7 @@ implementation<span style="font-weight:bold">(</span>name:<span style="color:#b8
 
     lifeCycle.<span style="color:#008080">trackSleepEvent</span>(data);
 }</code></pre></div>
-<p>To manually track a wake event, call the <code>trackWakeEvent()</code> method:</p>
+<p>To manually track a <code>wake</code> event, call the <code>trackWakeEvent()</code> method:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">LifeCycle <span style="color:#900;font-weight:bold">lifeCycle</span> <span style="font-weight:bold">=</span> LifeCycle.<span style="color:#008080">getInstance</span>(TEALIUM_INSTANCE_ID);
 
 <span style="font-weight:bold">if</span>(lifeCycle <span style="font-weight:bold">!=</span> <span style="font-weight:bold">null</span>) {
@@ -412,9 +414,9 @@ implementation<span style="font-weight:bold">(</span>name:<span style="color:#b8
     <span style="color:#998;font-style:italic">//...
 </span><span style="color:#998;font-style:italic"></span>}
 </code></pre></div>
-<h2 id="data-layer-variables">Data Layer Variables</h2>
+<h2 id="data-layer">Data Layer</h2>
 
-<p>The Lifecycle Tracking module adds the following additional variables for the listed lifecycle event types (launch, wake, sleep):</p>
+<p>The Lifecycle Tracking module adds the following additional variables for the listed lifecycle event types (<code>launch</code>, <code>wake</code>, <code>sleep</code>):</p>
 
 <table>
 <thead>
@@ -463,7 +465,7 @@ implementation<span style="font-weight:bold">(</span>name:<span style="color:#b8
 <tr>
 <td><code>lifecycle_ diddetectcrash</code></td>
 <td><code>Boolean</code></td>
-<td>Crash inferred from missing prior sleep event (nly present if a launch event follows a wake event)</td>
+<td>Crash inferred from missing prior sleep event (only present if a launch event follows a wake event)</td>
 <td>[<code>true</code>, <code>false</code>]</td>
 <td>launch</td>
 </tr>
@@ -584,7 +586,7 @@ implementation<span style="font-weight:bold">(</span>name:<span style="color:#b8
 <td><code>lifecycle_ totalsleepcount</code></td>
 <td><code>Number</code></td>
 <td>Total number of times your app has gone into the background since app install (only reset if app deleted)</td>
-<td> <code>&quot;400&quot;</code></td>
+<td> <code>400</code></td>
 <td> all</td>
 </tr>
 
@@ -599,8 +601,8 @@ implementation<span style="font-weight:bold">(</span>name:<span style="color:#b8
 <tr>
 <td><code>lifecycle_type</code></td>
 <td><code>String</code></td>
-<td>Type of lifecycle call [initial, launch, wake, sleep, terminate]</td>
-<td><code>&quot;launch&quot;</code></td>
+<td>Type of lifecycle call</td>
+<td>[<code>&quot;initial&quot;</code>, <code>&quot;launch&quot;</code>, <code>&quot;wake&quot;</code>, <code>&quot;sleep&quot;</code>, <code>&quot;terminate&quot;</code>]</td>
 <td> all</td>
 </tr>
 
@@ -1437,7 +1439,7 @@ implementation<span style="font-weight:bold">(</span>name:<span style="color:#b8
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1627,7 +1629,7 @@ implementation<span style="font-weight:bold">(</span>name:<span style="color:#b8
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

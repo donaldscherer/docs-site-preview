@@ -235,11 +235,12 @@ var utag_data = {
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">In this article:</p>
       <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#install">Install</a></li>
-              <ul class="toc-h3"><li><a href="#cocoapods">Cocoapods</a></li>
+              <ul class="toc-h3"><li><a href="#cocoapods">CocoaPods</a></li>
               <li><a href="#manual">Manual</a></li>
               </ul><li><a href="#track">Track</a></li>
               <ul class="toc-h3"><li><a href="#automatic-tracking">Automatic Tracking</a></li>
-              </ul><li><a href="#data-layer-variables">Data Layer Variables</a></li>
+              <li><a href="#manual-tracking">Manual Tracking</a></li>
+              </ul><li><a href="#data-layer">Data Layer</a></li>
               </nav>
   </aside></div>
 
@@ -277,13 +278,15 @@ var utag_data = {
 
 <h2 id="install">Install</h2>
 
-<p>The Lifecycle Tracking module must be added to your app. Install the module through Cocoapods or manually similar to the Tealium for IOS library.  In any abstraction class (like <code>TealiumHelper.h</code>) replace any <code>@import TealiumIOS</code> with <code>@import TealiumIOSLifecycle</code>.</p>
+<p>The Lifecycle Tracking module must be added to your app. Install the module with CocoaPods or manually similar to the Tealium for iOS library.</p>
 
-<h3 id="cocoapods">Cocoapods</h3>
+<p>In any abstraction class (like <code>TealiumHelper.h</code>) replace any <code>@import TealiumIOS</code> with <code>@import TealiumIOSLifecycle</code>.</p>
 
-<p>To install the Lifecycle Tracking module using Cocoapods, add the following to your Podfile:</p>
+<h3 id="cocoapods">CocoaPods</h3>
 
-<pre><code>pod &quot;TealiumIOSLifecycle&quot;
+<p>To install the Lifecycle Tracking module with CocoaPods, add the following to your Podfile:</p>
+
+<pre><code>pod 'TealiumIOSLifecycle'
 </code></pre>
 
 <h3 id="manual">Manual</h3>
@@ -291,7 +294,7 @@ var utag_data = {
 <p>To install the Lifecycle Tracking module manually, following these steps:</p>
 
 <ol>
-<li><p>Download the <a href="https://github.com/Tealium/tealium-ios/tree/master/TealiumIOSLifecycle.framework">Lifecycle tracking module</a>.</p></li>
+<li><p>Download the <a href="https://github.com/Tealium/tealium-ios/tree/master/TealiumIOSLifecycle.framework">Lifecycle Tracking module</a>.</p></li>
 
 <li><p>Add the <code>TealiumIOSLifecycle.framework</code> file to your project (in the Embedded Binaries section).</p></li>
 </ol>
@@ -300,12 +303,36 @@ var utag_data = {
 
 <p>The module tracks the following lifecycle events:</p>
 
-<ul>
-<li><code>launch</code></li>
-<li><code>sleep</code></li>
-<li><code>wake</code></li>
-<li><code>none</code> (for data added to events but not associated with a lifecycle event)</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Lifecycle Event</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>launch</code></td>
+<td>App is launched</td>
+</tr>
+
+<tr>
+<td><code>sleep</code></td>
+<td>App sent to background</td>
+</tr>
+
+<tr>
+<td><code>wake</code></td>
+<td>App sent to foreground</td>
+</tr>
+
+<tr>
+<td><code>none</code></td>
+<td>For data added to events but not associated with a lifecycle event</td>
+</tr>
+</tbody>
+</table>
 
 <p>These values are indicated in the <code>lifecycle_type</code> variable.</p>
 
@@ -324,8 +351,9 @@ Generated on detection of <code>UIApplicationWillResignActiveNotification</code>
 <p><strong>Wake Event</strong><br />
 Generated on detection of <code>UIApplicationWillEnterForegroundNotification</code>.</p>
 
-<p><strong>Manual Tracking</strong><br />
-Available for specific lifecycle paradigms and non-conventional lifecycle tracking. In order to manually track lifecycle events, disable lifecycle auto-tracking by setting <code>setLifecycleAutotrackingIsEnabled</code> to <code>NO</code>.</p>
+<h3 id="manual-tracking">Manual Tracking</h3>
+
+<p>Available for specific lifecycle paradigms and non-conventional lifecycle tracking. In order to manually track lifecycle events, disable lifecycle auto-tracking by setting <code>setLifecycleAutotrackingIsEnabled</code> to <code>NO</code>.</p>
 
 <p><strong>Launch Event</strong><br />
 To manually track a <code>launch</code> event, call:</p>
@@ -336,7 +364,7 @@ To manually track a <code>sleep</code> event, call:</p>
 <p><strong>Wake Event</strong><br />
 To manually track a <code>wake</code> event, call:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">[[Tealium instanceForKey:<span style="color:#b84">@&#34;(uniqueInstanceId)&#34;</span>] wake];</code></pre></div>
-<h2 id="data-layer-variables">Data Layer Variables</h2>
+<h2 id="data-layer">Data Layer</h2>
 
 <p>The Lifecycle Tracking module adds the following data layer variables:</p>
 
@@ -1357,7 +1385,7 @@ To manually track a <code>wake</code> event, call:</p>
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1547,7 +1575,7 @@ To manually track a <code>wake</code> event, call:</p>
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>PersistentData Module | Tealium for Swift Modules |Preview of Tealium Developer Docs</title>
+    <title>PersistentData Module | Modules |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -235,16 +235,12 @@ var utag_data = {
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">In this article:</p>
       <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#usage">Usage</a></li>
-              <li><a href="#installation">Installation</a></li>
+              <li><a href="#install">Install</a></li>
               <ul class="toc-h3"><li><a href="#cocoapods">CocoaPods</a></li>
               <li><a href="#carthage">Carthage</a></li>
               </ul><li><a href="#data-layer">Data Layer</a></li>
               <li><a href="#api-reference">API Reference</a></li>
-              <ul class="toc-h3"><li><a href="#add">add()</a></li>
-              <li><a href="#getdata">getData()</a></li>
-              <li><a href="#deletedata">deleteData()</a></li>
-              <li><a href="#deletealldata">deleteAllData()</a></li>
-              </ul><li><a href="#release-notes">Release Notes</a></li>
+              <li><a href="#release-notes">Release Notes</a></li>
               </nav>
   </aside></div>
 
@@ -295,22 +291,48 @@ var utag_data = {
 <li>macOS</li>
 </ul>
 
-<h2 id="installation">Installation</h2>
+<h2 id="install">Install</h2>
 
-<p><em>The PersistentData module is bundled with both the FileStorage and DefaultsStorage modules. Only one of these modules is needed.</em></p>
+<p>Install the PersistentData module with CocoaPods or Carthage. It is bundled with both the <code>FileStorage</code> and <code>DefaultsStorage</code> modules. Only one of these modules is needed.</p>
 
 <h3 id="cocoapods">CocoaPods</h3>
 
-<p><em>Framework is auto-instantiated, so long as the pod is installed. Depends on <code>TealiumCore</code> pod. No additional <code>import</code> statements necessary besides <code>import TealiumSwift</code>.</em></p>
+<p>To install the PersistentData module with CocoaPods, add either of the following pods to your Podfile:</p>
 
-<p><code>pod 'tealium-swift/TealiumFileStorage</code> OR <code>pod 'tealium-swift/TealiumDefaultsStorage</code> as required</p>
+<pre><code>pod 'tealium-swift/TealiumFileStorage'
+</code></pre>
+
+<p>Or</p>
+
+<pre><code>pod 'tealium-swift/TealiumDefaultsStorage'
+</code></pre>
+
+<p>The framework is auto-instantiated. It has a dependency on the <code>TealiumCore</code> pod. <a href="/platforms/ios-swift/install/#cocoapods">Learn more</a> about CocoaPods installation for iOS.</p>
 
 <h3 id="carthage">Carthage</h3>
 
-<p><em>Framework is auto-instantiated, so long as it is compiled into your app (included in &ldquo;Embedded Binaries&rdquo;). Depends on <code>TealiumCore</code>.</em></p>
+<p>To install the PersistentData module with Carthage, following these steps:</p>
 
-<p><code>TealiumFileStorage.framework</code> OR <code>TealiumDefaultsStorage.framework</code>
-<code>import TealiumFileStorage</code> OR <code>import TealiumDefaultsStorage</code> <code>// required if you need to store persistent data</code></p>
+<ol>
+<li><p>Go to the app target&rsquo;s General configuration page in Xcode.</p></li>
+
+<li><p>Add either of the following frameworks to the <strong>Embedded Binaries</strong> section:</p>
+
+<pre><code>TealiumFileStorage.framework
+</code></pre>
+
+<p>or</p>
+
+<pre><code>TealiumDefaultsStorage.framework
+</code></pre></li>
+
+<li><p>Add either of the respective import statement to your project:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">import</span> <span style="color:#458;font-weight:bold">TealiumFileStorage</span></code></pre></div>
+<p>or</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">import</span> <span style="color:#458;font-weight:bold">TealiumDefaultsStorage</span></code></pre></div></li>
+</ol>
+
+<p>The framework is auto-instantiated. It has a dependency on <code>TealiumCore</code>. No additional import statements are necessary. <a href="/platforms/ios-swift/install/#carthage">Learn more</a> about Carthage installation for iOS.</p>
 
 <h2 id="data-layer">Data Layer</h2>
 
@@ -318,64 +340,8 @@ var utag_data = {
 
 <h2 id="api-reference">API Reference</h2>
 
-<h3 id="add"><code>add()</code></h3>
+<p>See the <a href="/platforms/ios-swift/api/tealium-persistent-data/"><code>TealiumPersistentData</code></a> class in the iOS (Swift) API.</p>
 
-<p>Adds variables to the persistent data store.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">add(data:[<span style="color:#999">String</span>:<span style="color:#999">Any</span>])</code></pre></div>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>data</code></td>
-<td>Dictionary of key-value pairs to add to persistent data</td>
-<td><code>[&quot;somekey&quot;: &quot;somevalue&quot;]</code></td>
-</tr>
-</tbody>
-</table>
-
-<p>The following is a usage example:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">tealium?.persistentData()?.add(data: [<span style="color:#b84">&#34;customer_id&#34;</span>:<span style="color:#b84">&#34;1234567890-a&#34;</span>])</code></pre></div>
-<h3 id="getdata"><code>getData()</code></h3>
-
-<p>Adds variables to the persistent data store.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">getData()</code></pre></div>
-<p>The following is a usage example:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">let</span> <span style="color:#008080">data</span> = tealium?.persistentData()?.getData()</code></pre></div>
-<h3 id="deletedata"><code>deleteData()</code></h3>
-
-<p>Deletes data for a specific set of known keys from the persistent data store.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">deleteData(forKeys:[<span style="color:#999">String</span>])</code></pre></div>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>forKeys</code></td>
-<td>[String] array of keys to delete.</td>
-<td><code>[&quot;somekey&quot;, &quot;someotherkey&quot;]</code></td>
-</tr>
-</tbody>
-</table>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">tealium?.persistentData()?.deleteDate(forKeys: [<span style="color:#b84">&#34;customer_id&#34;</span>])</code></pre></div>
-<h3 id="deletealldata"><code>deleteAllData()</code></h3>
-
-<p>Deletes all data in the persistent data store.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">deleteAllData()</code></pre></div>
-<p>The following is a usage example:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">tealium?.persistentData()?.deleteAllData()</code></pre></div>
 <h2 id="release-notes">Release Notes</h2>
 
 <p>1.6.5</p>
@@ -1202,7 +1168,7 @@ var utag_data = {
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1392,7 +1358,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

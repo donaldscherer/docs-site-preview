@@ -237,7 +237,7 @@ var utag_data = {
       <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#introduction">Introduction</a></li>
               <li><a href="#components">Components</a></li>
               <ul class="toc-h3"><li><a href="#native-code">Native Code</a></li>
-              <li><a href="#tagbridge-custom-command-tag">TagBridge Custom Command Tag</a></li>
+              <li><a href="#custom-remote-command-tag">Custom Remote Command Tag</a></li>
               </ul><li><a href="#vendor-integrations">Vendor Integrations</a></li>
               <ul class="toc-h3"><li><a href="#native-code">Native Code</a></li>
               <li><a href="#remote-command-tag">Remote Command Tag</a></li>
@@ -281,13 +281,13 @@ var utag_data = {
 <p>Use remote commands in two ways:</p>
 
 <ul>
-<li><strong>Vendor Integrations</strong> - solutions pre-built for a vendor SDK using a native remote command module that implements the vendor API and a matching vendor tag in iQ Tag Management. (See <a href="/platforms/remote-commands/integrations/">List of Remote Commands Integrations</a>)</li>
-<li><strong>Custom Commands</strong> - your own custom commands defined in native code and configured in iQ Tag Management with the TagBridge Custom Command tag.</li>
+<li><strong>Vendor Integrations</strong> - Solutions pre-built for a vendor SDK using a native remote command module that implements the vendor API and a matching vendor tag in iQ Tag Management. <a href="/platforms/remote-commands/integrations/">Learn more</a> about Remote Commands Integrations.</li>
+<li><strong>Custom Commands</strong> - Your own custom commands defined in native code and configured in iQ Tag Management with the Custom Remote Command tag.</li>
 </ul>
 
 <h2 id="introduction">Introduction</h2>
 
-<p>Remote Commands (also known as TagBridge/Dynamic Triggers) provide the ability to trigger native code blocks from within the Tealium iQ non-rendered web view. For this reason, Remote Commands are available if you have implemented or explicitely enabled the Tag Management feature/module in your app, since Tealium iQ cannot execute arbitrary code on the device.</p>
+<p>Remote Commands (also known as Custom Remote Command/Dynamic Triggers) provide the ability to trigger native code blocks from within the Tealium iQ non-rendered web view. For this reason, Remote Commands are available if you have implemented or explicitly enabled the Tag Management feature/module in your app, since Tealium iQ cannot execute arbitrary code on the device.</p>
 
 <p>This feature is primarily used for cases where data held inside the non-rendered web view needs to be passed back to the native code for further processing. For example, you may need to access a value stored in a cookie or localStorage inside the Tealium iQ web view. Another use for this feature would be to personalize parts of your app, for example, you may wish to trigger a survey in the app once the user has been through a particular journey, such as making a purchase.</p>
 
@@ -296,7 +296,7 @@ var utag_data = {
 <ol>
 <li>Create some generic native code capable of triggering a local notification on the device, which prompts the user to take a survey.</li>
 <li>Register this block of code as a Remote Command with the Tealium API.</li>
-<li>In Tealium iQ, create a new &ldquo;TagBridge Custom Command&rdquo; tag, and make sure the command ID matches the command ID you used to register the command in the native code.</li>
+<li>In Tealium iQ, create a new &ldquo;Custom Remote Command&rdquo; tag, and make sure the command ID matches the command ID you used to register the command in the native code.</li>
 <li>Mappings can be set up to pass specific data variables back to the app. For example, you might wish to pass a customized survey message back to the app such as &ldquo;Thank you for making a purchase. Would you mind taking a short survey?&rdquo;. You might also pass back a specific URL to open when the user clicks the notification, so that you can pass the user through to a specific web-hosted survey using your survey tool of choice.</li>
 <li>In the app, the native code will look for specific variables passed back in the response such as <code>survey_url</code> and <code>survey_title</code>, display the message in the notification, and launch a web view or the native browser when the user clicks the notification.</li>
 <li>If you wish to change the survey URL, or the message displayed to the user, you can now control this through Tealium iQ extensions, without needing to re-deploy your app. You can also disable the survey at-will, or change the trigger that leads to the survey being displayed. For example, display on the home screen instead of the order confirmation screen.</li>
@@ -326,9 +326,9 @@ var utag_data = {
         }
     }
 )</code></pre></div>
-<h3 id="tagbridge-custom-command-tag">TagBridge Custom Command Tag</h3>
+<h3 id="custom-remote-command-tag">Custom Remote Command Tag</h3>
 
-<p>In iQ Tag Management, a remote command is set up as an instance of the TagBridge Custom Command tag with the following settings:</p>
+<p>In iQ Tag Management, a remote command is set up as an instance of the Custom Remote Command tag with the following settings:</p>
 
 <ul>
 <li><strong>Command ID</strong><br />
@@ -1202,7 +1202,7 @@ pod &quot;TealiumVendorXYZ&quot;
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1392,7 +1392,7 @@ pod &quot;TealiumVendorXYZ&quot;
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 21, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

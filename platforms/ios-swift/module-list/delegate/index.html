@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>Delegate Module | Tealium for Swift Modules |Preview of Tealium Developer Docs</title>
+    <title>Delegate Module | Modules |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -235,7 +235,7 @@ var utag_data = {
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">In this article:</p>
       <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#usage">Usage</a></li>
-              <li><a href="#installation">Installation</a></li>
+              <li><a href="#install">Install</a></li>
               <ul class="toc-h3"><li><a href="#cocoapods">CocoaPods</a></li>
               <li><a href="#carthage">Carthage</a></li>
               </ul><li><a href="#data-layer">Data Layer</a></li>
@@ -294,20 +294,36 @@ var utag_data = {
 <li>macOS</li>
 </ul>
 
-<h2 id="installation">Installation</h2>
+<h2 id="install">Install</h2>
+
+<p>Install the Delegate module with CocoaPods or Carthage.</p>
 
 <h3 id="cocoapods">CocoaPods</h3>
 
-<p><em>Framework is auto-instantiated, so long as the pod is installed. Depends on <code>TealiumCore</code> pod. No additional <code>import</code> statements necessary besides <code>import TealiumSwift</code>.</em></p>
+<p>To install the Delegate module with CocoaPods, add the following pod to your Podfile:</p>
 
-<p><code>pod 'tealium-swift/TealiumDelegate</code></p>
+<pre><code>pod 'tealium-swift/TealiumDelegate'
+</code></pre>
+
+<p>The framework is auto-instantiated. It has a dependency on the <code>TealiumCore</code> pod. <a href="/platforms/ios-swift/install/#cocoapods">Learn more</a> about CocoaPods installation for iOS.</p>
 
 <h3 id="carthage">Carthage</h3>
 
-<p><em>Framework is auto-instantiated, so long as it is compiled into your app (included in &ldquo;Embedded Binaries&rdquo;). Depends on <code>TealiumCore</code>.</em></p>
+<p>To install the Delegate module with Carthage, following these steps:</p>
 
-<p><code>TealiumDelegate.framework</code>
-<code>import TealiumDelegate // required if you need to set up a tracking delegate</code></p>
+<ol>
+<li><p>Go to the app target&rsquo;s General configuration page in Xcode.</p></li>
+
+<li><p>Add the following framework to the <strong>Embedded Binaries</strong> section:</p>
+
+<pre><code>TealiumDelegate.framework
+</code></pre></li>
+
+<li><p>To setup a tracking delegate, add the following required import statement to your project:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">import</span> <span style="color:#458;font-weight:bold">TealiumDelegate</span></code></pre></div></li>
+</ol>
+
+<p>The framework is auto-instantiated. It has a dependency on <code>TealiumCore</code>. No additional import statements are necessary. <a href="/platforms/ios-swift/install/#carthage">Learn more</a> about Carthage installation for iOS.</p>
 
 <h2 id="data-layer">Data Layer</h2>
 
@@ -317,60 +333,56 @@ var utag_data = {
 
 <h3 id="add"><code>add()</code></h3>
 
-<p>Adds a weak pointer to a class instance conforming to the TealiumDelegate protocol.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">add(delegate: TealiumDelegate)</code></pre></div>
+<p>Adds a weak pointer to a class instance conforming to the <code>TealiumDelegate</code> protocol.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">add(delegate)</code></pre></div>
 <table>
 <thead>
 <tr>
 <th>Parameters</th>
 <th>Type</th>
 <th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>delegate</code></td>
-<td>TealiumDelegate</td>
-<td>Any class conforming to the TealiumDelegate protocol.</td>
+<td><code>TealiumDelegate</code></td>
+<td>Any class conforming to the TealiumDelegate protocol</td>
+<td><code>delegate:self</code></td>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">someSetupMethod</span> {
-    tealium.delegates().add(delegate:<span style="font-weight:bold">self</span>)
-}</code></pre></div>
+
 <h3 id="remove"><code>remove()</code></h3>
 
-<p>Removes the weak pointer reference to the given class conforming to the TealiumDelegate protocol.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">remove(delegate: TealiumDelegate)</code></pre></div>
+<p>Removes the weak pointer reference to the given class conforming to the <code>TealiumDelegate</code> protocol.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">remove(delegate)</code></pre></div>
 <table>
 <thead>
 <tr>
 <th>Parameters</th>
 <th>Type</th>
 <th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>delegate</code></td>
-<td>TealiumDelegate</td>
-<td>Any class conforming to the TealiumDelegate protocol.</td>
+<td><code>TealiumDelegate</code></td>
+<td>Any class conforming to the TealiumDelegate protocol</td>
+<td><code>delegate:self</code></td>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">someSetupMethod</span> {
 
-    <span style="color:#998;font-style:italic">// Assuming &#39;tealium&#39; was initialized earlier and &#34;self&#34; conforms to TealiumDelegate protocol</span>
-    tealium.delegates().remove(delegate:<span style="font-weight:bold">self</span>)
-}</code></pre></div>
 <h3 id="removeall"><code>removeAll()</code></h3>
 
 <p>Removes all weak pointers from tracking.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">removeAll()</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">someSetupMethod</span> {
-    tealium.delegates().removeAll()
-}</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">removeAll()</code></pre></div>
 <h3 id="tealiumshouldtrack"><code>tealiumShouldTrack()</code></h3>
 
 <p>If method returns <code>true</code>, the tracking call is allowed to complete. If method returns false, tracking call is canceled.</p>
@@ -380,81 +392,63 @@ var utag_data = {
 <tr>
 <th>Parameters</th>
 <th>Description</th>
-<th>Example Value</th>
+<th>Example</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>data</code></td>
-<td>[String:Any] dictionary of data.</td>
+<td><code>[String:Any]</code></td>
 <td><code>[&quot;somekey&quot; : &quot;somevalue&quot;]</code></td>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">class</span> <span style="color:#458;font-weight:bold">SomeClass</span> {
-    <span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">someSetupMethod</span> {
-        <span style="color:#998;font-style:italic">// Presuming &#39;tealium&#39; initialized earlier</span>
-        tealium.delegates().add(delegate:<span style="font-weight:bold">self</span>)
-    }
-}
 
-<span style="font-weight:bold">extension</span> <span style="color:#458;font-weight:bold">SomeClass</span> : TealiumDelegate {
-    <span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">tealiumShouldTrack</span>(data:[<span style="color:#999">String</span>:<span style="color:#999">Any</span>]) -&gt; <span style="color:#999">Bool</span> {
-        <span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span>
-    }
-}</code></pre></div>
 <h3 id="tealiumtrackcompleted"><code>tealiumTrackCompleted()</code></h3>
 
-<p>Allows monitoring of completed track calls and handling of any errors</p>
+<p>Allows monitoring of completed track calls and handling of any errors.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">tealiumTrackCompleted(success: <span style="color:#999">Bool</span>, info: [<span style="color:#999">String</span>:<span style="color:#999">Any</span>]?, error: Error?)</code></pre></div>
 <table>
 <thead>
 <tr>
 <th>Parameters</th>
+<th>Type</th>
 <th>Description</th>
-<th>Example Value</th>
+<th>Example</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>success</code></td>
-<td>Boolean if dispatch completed acceptably.</td>
-<td><code>true</code></td>
+<td><code>Bool</code></td>
+<td>If dispatch completed acceptably</td>
+<td>[<code>&quot;true&quot;</code>, <code>&quot;false&quot;</code>]</td>
 </tr>
 
 <tr>
 <td><code>info</code></td>
-<td>Dictionary of the original payload and any other returned data regarding dispatch.</td>
-<td>[&ldquo;somekey&rdquo; : &ldquo;somevalue&rdquo;]</td>
+<td><code>[String:Any]</code></td>
+<td>Dictionary of the original payload and any other returned data regarding dispatch</td>
+<td><code>[&quot;somekey&quot; : &quot;somevalue&quot;]</code></td>
 </tr>
 
 <tr>
 <td><code>error</code></td>
-<td>Error, if any, encountered during dispatch processing.</td>
-<td>Error from a module. For example, TealiumCollectError.xErrorDetected</td>
+<td><code>Error</code></td>
+<td>Error, if any, encountered during dispatch processing</td>
+<td><code>TealiumCollectError.xErrorDetected</code></td>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">class</span> <span style="color:#458;font-weight:bold">SomeClass</span> {
-    <span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">someSetupMethod</span> {
-        <span style="color:#998;font-style:italic">// Presuming &#39;tealium&#39; initialized earlier</span>
-        tealium.delegates().add(delegate:<span style="font-weight:bold">self</span>)
-    }
-}
 
-<span style="font-weight:bold">extension</span> <span style="color:#458;font-weight:bold">SomeClass</span> : TealiumDelegate {
-    <span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">tealiumTrackCompleted</span>(success: <span style="color:#999">Bool</span>, info: [<span style="color:#999">String</span>:<span style="color:#999">Any</span>]?, error: Error?) {
-        <span style="color:#998;font-style:italic">// Checks if successful, response info, and if any errors occurred.</span>
-    }
-}</code></pre></div>
 <h2 id="release-notes">Release Notes</h2>
 
 <p>1.6.5</p>
 
 <ul>
-<li><code>Tealium</code> completion handler moved to TealiumCore framework.</li>
+<li><code>Tealium</code> completion handler moved to <code>TealiumCore</code> framework.</li>
 </ul>
 
 <p>Build 1</p>
@@ -1274,7 +1268,7 @@ var utag_data = {
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1464,7 +1458,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

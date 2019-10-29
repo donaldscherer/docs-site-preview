@@ -406,18 +406,18 @@ This code shows how to enable Consent Management on Tealium initialization.</p>
 
 <span style="font-weight:bold">@end</span></code></pre></div>
 <p><strong><code>enable</code></strong><br />
-Enable consent manager. This method enables consent manager at a later time and not on Tealium initialization.</p>
+Enable Consent Manager. This method enables Consent Manager at a later time and not on Tealium initialization.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">[_tealium.consentManager enable];</code></pre></div>
-<p>The recommended approach is to enable consent manager on Tealium initialization.  </p>
+<p>The recommended approach is to enable Consent Manager on Tealium initialization.  </p>
 
 <p><strong><code>isEnabled</code></strong><br />
-Checks if consent manager is enabled.</p>
+Checks if Consent Manager is enabled.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">[_tealium.consentManager isEnabled];</code></pre></div>
 <p><strong><code>disable</code></strong><br />
-Disables consent manager. This method disables consent manager after Tealium is fully initialized.</p>
+Disables Consent Manager. This method disables Consent Manager after Tealium is fully initialized.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">[_tealium.consentManager disable];</code></pre></div>
 <p><strong><code>isDisabled</code></strong><br />
-Checks if the consent manager is disabled.</p>
+Checks if the Consent Manager is disabled.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">[_tealium.consentManager isDisabled];</code></pre></div>
 <p><strong><code>consentManagerDelegate</code></strong><br />
 Registers a specific class conforming to the TEALConsentManagerDelegate protocol.</p>
@@ -589,16 +589,16 @@ Sets the user&rsquo;s initial consent categories when the library starts up for 
 <h3 id="tealconsentmanagerdelegate">TEALConsentManagerDelegate</h3>
 
 <p><strong><code>consentManagerDidChangeWithState</code></strong><br />
-This method is called whenever the consent manager user consent status is changed. For example, the user consented or declined tracking.</p>
+This method is called whenever the Consent Manager user consent status is changed. For example, the user consented or declined tracking.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">- (<span style="color:#458;font-weight:bold">void</span>)<span style="color:#900;font-weight:bold">consentManagerDidChangeWithState:</span>(TEALConsentStatus)<span style="color:#008080">consentStatus</span>;</code></pre></div>
 <p><strong><code>consentManagerDidUpdateConsentCategories</code></strong><br />
-This method is called whenever the consent manager user consent categories are updated.</p>
+This method is called whenever the Consent Manager user consent categories are updated.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">-(<span style="color:#458;font-weight:bold">void</span>)<span style="color:#900;font-weight:bold">consentManagerDidUpdateConsentCategories:</span>(NSArray <span style="font-weight:bold">*</span> <span style="color:#a61717;background-color:#e3d2d2">\</span>_Nullable)<span style="color:#008080">categories</span>;</code></pre></div>
 <p><strong><code>consentManagerWillDropDispatch</code></strong><br />
-This method is called whenever the consent manager is going to drop a tracking call. For example, the user declined tracking.</p>
+This method is called whenever the Consent Manager is going to drop a tracking call. For example, the user declined tracking.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">- (<span style="color:#458;font-weight:bold">void</span>)<span style="color:#900;font-weight:bold">consentManagerWillDropDispatch:</span>(TEALDispatch <span style="font-weight:bold">*</span> <span style="color:#a61717;background-color:#e3d2d2">\</span>_Nullable)<span style="color:#008080">dispatch</span>;</code></pre></div>
 <p><strong><code>consentManagerWillQueueDispatch</code></strong><br />
-This method is called whenever the consent manager is in the <code>Unknown</code> state. Tracking calls are being queued locally until the user grants or declines consent.</p>
+This method is called whenever the Consent Manager is in the <code>Unknown</code> state. Tracking calls are being queued locally until the user grants or declines consent.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">- (<span style="color:#458;font-weight:bold">void</span>)<span style="color:#900;font-weight:bold">consentManagerWillQueueDispatch:</span>(TEALDispatch <span style="font-weight:bold">*</span> <span style="color:#a61717;background-color:#e3d2d2">\</span>_Nullable)<span style="color:#008080">dispatch</span>;</code></pre></div>
 <h2 id="consent-categories">Consent Categories</h2>
 
@@ -625,13 +625,13 @@ This method is called whenever the consent manager is in the <code>Unknown</code
 <h2 id="tealconsentstatus">TEALConsentStatus</h2>
 
 <p><strong><code>Unknown</code></strong><br />
-The <code>Unknown</code> status is the default setting for the consent manager. In this state, the consent manager queues events locally until an affirmative <code>Consented</code> / <code>NotConsented</code> status is provided.</p>
+The <code>Unknown</code> status is the default setting for the Consent Manager. In this state, the Consent Manager queues events locally until an affirmative <code>Consented</code> / <code>NotConsented</code> status is provided.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#999">self</span>.tealium.consentManager.userConsentStatus <span style="font-weight:bold">=</span> Unknown</code></pre></div>
 <p><strong><code>Consented</code></strong><br />
-The <code>Consented</code> status is set when the user has consented to tracking. In this state, the consent manager allows all tracking calls to continue as normal.</p>
+The <code>Consented</code> status is set when the user has consented to tracking. In this state, the Consent Manager allows all tracking calls to continue as normal.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#999">self</span>.tealium.consentManager.userConsentStatus <span style="font-weight:bold">=</span> Consented</code></pre></div>
 <p><strong><code>NotConsented</code></strong><br />
-The <code>NotConsented</code> status is set when the user has declined tracking. In this state, the consent manager drops all tracking calls and halt further processing by the SDK.</p>
+The <code>NotConsented</code> status is set when the user has declined tracking. In this state, the Consent Manager drops all tracking calls and halt further processing by the SDK.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#999">self</span>.tealium.consentManager.userConsentStatus <span style="font-weight:bold">=</span> NotConsented</code></pre></div>
 </div>
 
@@ -1444,7 +1444,7 @@ The <code>NotConsented</code> status is set when the user has declined tracking.
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1634,7 +1634,7 @@ The <code>NotConsented</code> status is set when the user has declined tracking.
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

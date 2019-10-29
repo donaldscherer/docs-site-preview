@@ -234,7 +234,8 @@ var utag_data = {
 
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">In this article:</p>
-      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#track-events-views">Track Events/Views</a></li>
+      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#track-views">Track Views</a></li>
+              <li><a href="#track-events">Track Events</a></li>
               </nav>
   </aside></div>
 
@@ -270,9 +271,9 @@ var utag_data = {
 
 
 
-<h2 id="track-events-views">Track Events/Views</h2>
+<h2 id="track-views">Track Views</h2>
 
-<p>Track events and views with the <a href="/platforms/java/api/#track"><code>track()</code></a> method, as shown in the following example:</p>
+<p>Track views with the <a href="/platforms/java/api/#track"><code>track()</code></a> method, as shown in the following examples:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// Set event attributes
 </span><span style="color:#998;font-style:italic"></span>Udo <span style="color:#900;font-weight:bold">data</span> <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> Udo();
 data.<span style="color:#008080">put</span>(<span style="color:#b84">&#34;KEY&#34;</span>, <span style="color:#b84">&#34;VALUE&#34;</span>);
@@ -283,7 +284,42 @@ data.<span style="color:#008080">put</span>(<span style="color:#b84">&#34;KEY&#3
        <span style="color:#998;font-style:italic">// Callback handling
 </span><span style="color:#998;font-style:italic"></span>       System.<span style="color:#008080">out</span>.<span style="color:#008080">println</span>(<span style="color:#b84">&#34;Dispatch successful: &#34;</span> <span style="font-weight:bold">+</span> String.<span style="color:#008080">valueOf</span>(success));    
    }
-}</code></pre></div>
+}
+tealium.<span style="color:#008080">track</span>(<span style="color:#b84">&#34;EVENT_NAME&#34;</span>, data, callback);</code></pre></div>
+<p>The following example tracks a page view:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">tealium.<span style="color:#008080">track</span>(<span style="color:#b84">&#34;SCREEN_VIEW&#34;</span>, data, callback);</code></pre></div>
+<p>The data and callback arguments are optional.</p>
+
+<h2 id="track-events">Track Events</h2>
+
+<p>Track events with the same <a href="/platforms/java/api/#track"><code>track()</code></a> method used to track views, as shown in the following example:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// Set event attributes
+</span><span style="color:#998;font-style:italic"></span>Udo <span style="color:#900;font-weight:bold">data</span> <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> Udo();
+data.<span style="color:#008080">put</span>(<span style="color:#b84">&#34;KEY&#34;</span>, <span style="color:#b84">&#34;VALUE&#34;</span>);
+
+<span style="color:#998;font-style:italic">// With optional callback
+</span><span style="color:#998;font-style:italic"></span>DispatchCallBack <span style="color:#900;font-weight:bold">callback</span> <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> DispatchCallBack() {
+    <span style="font-weight:bold">public</span> <span style="color:#900;font-weight:bold">void</span> dispatchComplete(<span style="color:#458;font-weight:bold">boolean</span> <span style="color:#900;font-weight:bold">success</span>, String <span style="color:#900;font-weight:bold">encodedURLString</span>, String <span style="color:#900;font-weight:bold">error</span>){
+       <span style="color:#998;font-style:italic">// Callback handling
+</span><span style="color:#998;font-style:italic"></span>       System.<span style="color:#008080">out</span>.<span style="color:#008080">println</span>(<span style="color:#b84">&#34;Dispatch successful: &#34;</span> <span style="font-weight:bold">+</span> String.<span style="color:#008080">valueOf</span>(success));    
+   }
+}
+tealium.<span style="color:#008080">track</span>(<span style="color:#b84">&#34;EVENT_NAME&#34;</span>, data, callback);</code></pre></div>
+<p>The following example tracks a user login:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// Event attributes
+</span><span style="color:#998;font-style:italic"></span>Udo <span style="color:#900;font-weight:bold">data</span> <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> Udo();
+data.<span style="color:#008080">put</span>(<span style="color:#b84">&#34;user_id&#34;</span>, <span style="color:#b84">&#34;0123456789&#34;</span>);
+data.<span style="color:#008080">put</span>(<span style="color:#b84">&#34;email_address&#34;</span>, <span style="color:#b84">&#34;user@example.com&#34;</span>);
+
+<span style="color:#998;font-style:italic">// With optional callback
+</span><span style="color:#998;font-style:italic"></span>DispatchCallBack <span style="color:#900;font-weight:bold">callBack</span> <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> DispatchCallBack(){    
+    <span style="font-weight:bold">public</span> <span style="color:#900;font-weight:bold">void</span> dispatchComplete(<span style="color:#458;font-weight:bold">boolean</span> <span style="color:#900;font-weight:bold">success</span>, String <span style="color:#900;font-weight:bold">error</span>) {        
+        <span style="color:#998;font-style:italic">// Callback handling  
+</span><span style="color:#998;font-style:italic"></span>    }
+}
+tealium.<span style="color:#008080">track</span>(<span style="color:#b84">&#34;user_login&#34;</span>, data, callback);</code></pre></div>
+<p>The data and callback arguments are optional.</p>
+
 </div>
 
           
@@ -1095,7 +1131,7 @@ data.<span style="color:#008080">put</span>(<span style="color:#b84">&#34;KEY&#3
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1285,7 +1321,7 @@ data.<span style="color:#008080">put</span>(<span style="color:#b84">&#34;KEY&#3
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 23, 2019</p>
+<p> This page was last updated: October 29, 2019</p>
 
       
 

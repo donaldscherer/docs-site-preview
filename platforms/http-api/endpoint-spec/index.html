@@ -375,18 +375,14 @@ https://collect.tealiumiq.com/event</code></pre></div>
 <p>The <code>400 Bad Request</code> status code occurs when at least of the following is true:</p>
 
 <ul>
-<li>The JSON key contains a period</li>
-<li>Bad or invalid JSON</li>
-<li>JSON data exceeds 1MB</li>
+<li>The JSON key contains a period, is invalid, or exceeds 1MB in size</li>
 <li>The file-type parameter contains a value other than &ldquo;json&rdquo; or &ldquo;javascript&rdquo;</li>
-<li>The combination of account, profile, and <code>datalayer_id</code> exceeds 250 characters</li>
-<li>The <code>datalayer_id</code> contains restricted characters</li>
-<li>There is a typographical error in the <code>tealium_account</code> or <code>tealium_profile</code> name</li>
-<li>One of the required params, <code>tealium_account</code> or <code>tealium_profile</code>, is missing</li>
+<li>The combination of <code>account</code>, <code>profile</code>, and <code>datalayer_id</code> exceeds 250 characters in length, or contains restricted characters</li>
+<li><code>tealium_account</code> or <code>tealium_profile</code> is missing, or contains typographical errors</li>
 <li>The request body is empty</li>
 </ul>
 
-<p>The following is an example of a <code>400 Bad Request</code> response, shown in the X-Error header, when the required <code>tealium_account</code> or <code>tealium_profile</code> parameter values are missing:</p>
+<p>The following is an example of a <code>400 Bad Request</code> response, shown in the <code>X-Error</code> header, when the required <code>tealium_account</code> or <code>tealium_profile</code> parameter values are missing:</p>
 
 <pre><code>&gt; GET /event?tealium_account=jentest-as&amp;tealium_profile=&amp;tealium_visitor_id=sendgeteventhttps@testing.com&amp;tealium_datasource=utc2cj&amp;customer_city=Honolulu&amp;customer_state=Hawaii&amp;Flag=true&amp;Number=45&amp;String=ascent&amp;String_Array=[hello,howareyou,whatsup,yoyoyo]&amp;Number_Array=[2.222,3.000,19.12,28.3]&amp;Flag_Array=[true,false,false,true]&amp;Combo_Array=[1,salutations,2324,world,22jjfssl]&amp;Array_of_Array=[[1,2,3],heyworld]&amp;myvariable=unicorns HTTP/1.1
 &gt; Host: qa21-collect.tealiumiq.com
@@ -1246,7 +1242,7 @@ xhr.send(JSON.stringify(event));
             
             
             <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              API Refereence
+              API Reference
             </a>
           </li>
         </ul>
@@ -1436,7 +1432,7 @@ xhr.send(JSON.stringify(event));
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p> This page was last updated: October 24, 2019</p>
+<p> This page was last updated: October 25, 2019</p>
 
       
 
