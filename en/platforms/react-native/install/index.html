@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.typekit.net/ilp4lxb.css">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+     
+    <title>Install | Tealium for React Native |Preview of Tealium Developer Docs</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+     <meta name="generator" content="Hugo 0.58.3" />
+
+      
+        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+      
+
+    <link href='/dist/css/app.css' rel='stylesheet' type="text/css" />
+
+  </head>
+  <body class="sidebar ma0 sans-serif bg-primary-color-light">
+      
+        
+<script>
+var utag_data = {
+    category_name : "React Native",
+    site_section  : "platforms",
+    site_language : "en",
+    tealium_event : "page_view"
+}
+</script>
+
+<script>
+ (function(a,b,c,d){
+    a='//tags.tiqcdn.com/utag/tealium\/docs/qa/utag.js';
+    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+  })();
+</script>
+
+      
+
+    
+<nav class="bg-primary-color-dark pv2 w-100 sticky-t" role="navigation">
+
+  <div class="center flex-ns flex-wrap items-center justify-start mw9">
+
+    <h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+      <a href="http://docs-preview.tealium.com/"><img src="/images/icons/tealdevdocs_logo_white.svg" width="180" height="41"/></a>
+    </h1>
+    <ul class="list ma0 pa0 dn dib-l">
+      
+            
+        <li class="f5 dib mr4 active" role="menuitem">
+            
+          <a href="http://docs-preview.tealium.com/platforms/" class="dim link">Platforms</a>
+        </li>
+      
+            
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="https://community.tealiumiq.com/t5/Developers/bd-p/mobile" class="dim link">Forum</a>
+        </li>
+      
+    </ul>
+    
+    <div class="db dib-ns pl3"><form id="site-search-form" action="" role="search">
+  <fieldset class="bn ma0 pa0">
+    <label class="clip" for="search-input">Search</label>
+    <input type="search" id="search-input" class="needs-js bg-left bn f5 input-reset lh-solid mt3 mt0-ns pl4 pv2 w5 white"
+           placeholder="Search the docs" name="search-input" value=""
+           style="background: transparent url('/images/icons/icon-search-white.png') no-repeat 2px 10px /16px 16px;">
+  </fieldset>
+</form>
+</div>
+    
+  </div>
+
+
+<div id="mainAppInner" class="padd-54">
+    <div id="leftFrame">
+        <div class="main-nav-container">
+            <ul class="menu-group flex-0 mb-3">
+                <li class="js-toggle-leftframe">
+                    <a href="#" class="menu-list-item top-level tooltip-right">
+                        <span class="menu-large-icon is-logo"> <img src="/images/icons/tealium_logo_color_sat.svg" class="as-main-icon"> </span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="flex-1">
+                <ul id="navCategoryHome" class="menu-group as-main-navigation">
+                    <li class="js-main-nav-section" data-section="home">
+                        <a href="https://community.tealiumiq.com/" class="menu-list-item top-level tooltip-right" title="Tearlium Learnig Center Home">
+                          <span class="menu-large-icon">
+                              <span class="as-platform-image square-xxxs is-rounded bg-transparent">
+                                  <span class="inner-image UDH-icon">TLC</span>
+                              </span>
+                          </span>
+                          <span class="menu-context supportLinks_buttonTitle">Tealium Learning Center</span>
+                        </a>
+                          <span class="tooltiptext">Tealium Learning <br>Community</span>
+                    </li>
+                    <li class="menu-divider"></li>
+                    <li class="js-main-nav-section">
+                        <a href="https://community.tealiumiq.com/t5/Forums/ct-p/tealiumlearningcommunity" class="menu-list-item top-level tooltip-right" title="Community Forums">
+                            <span class="menu-large-icon">
+                                <i class="fa fa-comments"></i>
+                            </span>
+                            <span class="menu-context supportLinks_buttonTitle">Forums</span>
+                        </a>
+                          <span class="tooltiptext">Forums</span>
+                    </li>
+                    <li class="menu-divider"></li>
+                    <li class="js-main-nav-section">
+                        <a href="https://community.tealiumiq.com/t5/tkb/communitypage" class="menu-list-item top-level tooltip-right" title="Product Guides">
+                            <span class="menu-large-icon">
+                                <i class="fa fa-book"></i>
+                            </span>
+                            <span class="menu-context supportLinks_buttonTitle">Product Guides</span>
+                        </a>
+                          <span class="tooltiptext">Product Guides</span>
+                    </li>
+                    <li class="menu-divider"></li>
+                    <li class="js-main-nav-section active">
+                        <a href="https://docs.tealium.com/" class="menu-list-item top-level tooltip-right" title="Developer Documentation">
+                            <span class="menu-large-icon">
+                                <i class="fa fa-code"></i>
+                            </span>
+                            <span class="menu-context supportLinks_buttonTitle">Developer Docs</span>
+                        </a>
+                          <span class="tooltiptext">Developer Docs</span>
+                    </li>
+                    <li class="menu-divider"></li>
+                    <li class="js-main-nav-section">
+                        <a href="https://community.tealiumiq.com/t5/Product-Ideas/idb-p/product-ideas" class="menu-list-item top-level tooltip-right" title="Product Ideas">
+                            <span class="menu-large-icon">
+                                <i class="fa fa-lightbulb-o"></i>
+                            </span>
+                            <span class="menu-context supportLinks_buttonTitle">Product Ideas</span>
+                        </a>
+                          <span class="tooltiptext">Product Ideas</span>
+                    </li>
+                    <li class="menu-divider"></li>
+                    <li class="js-main-nav-section">
+                        <a href="https://community.tealiumiq.com/t5/Education/ct-p/education" class="menu-list-item top-level tooltip-right" title="Education">
+                            <span class="menu-large-icon">
+                                <i class="fa fa-graduation-cap"></i>
+                            </span>
+                            <span class="menu-context supportLinks_buttonTitle">Education</span>
+                        </a>
+                          <span class="tooltiptext">Education</span>
+                    </li>
+                    <li class="menu-divider"></li>
+                    <li class="js-main-nav-section">
+                        <a href="https://community.tealiumiq.com/t5/TLC-Blog/bg-p/TLC-Blog" class="menu-list-item top-level tooltip-right" title="TLC Blog">
+                            <span class="menu-large-icon">
+                                <i class="fa fa-newspaper-o"></i>
+                            </span>
+                            <span class="menu-context supportLinks_buttonTitle">TLC Blog</span>
+                        </a>
+                          <span class="tooltiptext">TLC Blog</span>
+                    </li>
+                    <li class="menu-divider"></li>
+                    <li class="js-main-nav-section">
+                        <a  href="https://support.tealiumiq.com" target="_blank" class="menu-list-item top-level tooltip-right" title="Tealium Support Desk">
+                          <span class="menu-large-icon">
+                            <i class="fa fa-life-ring"></i>
+                          </span>
+                          <span class="menu-context supportLinks_buttonTitle">Support Desk</span>
+                        </a>
+                          <span class="tooltiptext">Support Desk</span>
+                    </li>
+                </ul>
+            </div>
+            <ul class="menu-group as-main-navigation flex-0 bottom-align">
+              <li class="menu-divider"></li>
+              <li class="js-main-nav-section">
+                <a href="https://my.tealiumiq.com/" class="menu-list-item top-level tooltip-right" title="Universal Data Hub">
+                    <span class="menu-large-icon">
+                        <span class="as-platform-image square-xxxs is-rounded bg-transparent">
+                            <span class="inner-image UDH-icon">UDH</span>
+                        </span>
+                    </span>
+                    <span class="menu-context supportLinks_buttonTitle">Universal Data Hub</span>
+                </a>
+                          <span class="tooltiptext">Universal Data Hub</span>
+              </li>
+              <li class="menu-divider"></li>
+              <li class="js-toggle-leftframe">
+                <a href="#" class="menu-list-item top-level d-flex justify-content-end" title="Expand/Collapse">
+                    <span class="menu-large-icon d-flex align-items-center justify-content-center mr-0">
+                        <span class="as-platform-image square-xxxs is-rounded bg-transparent d-flex align-items-center justify-content-center">
+                            <i class="fa as-caret"></i>
+                        </span>
+                    </span>
+                </a>
+              </li>
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+
+
+</nav>
+
+    
+    <main role="main" class="content-with-sidebar pb7 pb0-ns">
+      
+  <article class="w-100 ph4 pb2 pb2-ns pt1 pt4-ns">
+    <div class="flex-l">
+
+      <div class="order-2 w-100 w-20-l ph4-m ph0-l mb4 sticky-r">
+
+
+
+
+  <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
+      <p class="b">Table of Contents</p>
+      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#how-it-works">How It Works</a></li>
+              <li><a href="#prerequisites">Prerequisites</a></li>
+              <li><a href="#sample-app">Sample App</a></li>
+              <li><a href="#install-npm">Install (NPM)</a></li>
+              <ul class="toc-h3"><li><a href="#android">Android</a></li>
+              <li><a href="#ios">iOS</a></li>
+              </ul><li><a href="#install-manual">Install (Manual)</a></li>
+              <ul class="toc-h3"><li><a href="#android">Android</a></li>
+              <li><a href="#ios">iOS</a></li>
+              </ul><li><a href="#install-cocoapods">Install (CocoaPods)</a></li>
+              <li><a href="#javascript">JavaScript</a></li>
+              <li><a href="#initialize">Initialize</a></li>
+              </nav>
+  </aside></div>
+
+      <div class="order-1 ph0 ph4-ns mid-gray nested-copy-line-height no-underline nested-links nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
+        <div class="documentation-copy center measure-wide-l">
+          <div id="readout" class="fixed right-0 bottom-0">
+          </div>
+          <header class="flex-none w-100">
+  
+    
+      <a href="/platforms/react-native" class="f6 fw8 mb0 link mid-gray dim mr3">
+        REACT NATIVE
+      </a>
+    
+  
+
+  <h1 class="lh-title mb3 mv0 pt3">Install</h1>
+</header>
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+  
+    <div class="f4 fw4 lh-copy">
+      Learn to install Tealium for React Native.
+    </div>
+  
+
+  
+</aside>
+
+
+
+<div class="prose" id="prose">
+
+
+
+<p>Tealium for React Native allows you to use the Tealium native mobile libraries (iOS, Android) in your React Native application.</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/kSwYoVOmOrk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<h2 id="how-it-works">How It Works</h2>
+
+<p>Tealium mobile libraries are integrated into your React Native application using one of the following two methods:</p>
+
+<ul>
+<li>NPM package (recommended)</li>
+<li>Manual via <a href="https://github.com/Tealium/tealium-react-native">GitHub</a></li>
+</ul>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+<li>Access to your native build environments.</li>
+<li><a href="https://github.com/Tealium/tealium-react-native">React Native and Tools</a> installed</li>
+<li><a href="https://developer.android.com/studio/">Android Studio</a> or <a href="https://developer.apple.com/xcode/">Xcode</a></li>
+<li><a href="/platforms/android/">Tealium for Android</a> or <a href="/platforms/ios-swift/">Tealium for iOS</a></li>
+</ul>
+
+<p class="note">The <code>TealiumCore</code> library is required. The <a href="/platforms/ios-swift/module-list/lifecycle/">Lifecycle module</a> is needed if you want to track lifecycle events. There are two versions of each module on <a href="https://github.com/Tealium/tealium-ios">GitHub</a>: one for publishing to the App Store and one that includes the ability to run the app on a simulator (cannot be published to the App Store).</p>
+
+<h2 id="sample-app">Sample App</h2>
+
+<p>To help familiarize yourself with our library, the tracking methods, and best practice implementation, it is recommended to download the <a href="https://github.com/Tealium/tealium-react-native/tree/master/TealiumSampleApp">React Native sample app</a>.</p>
+
+<h2 id="install-npm">Install (NPM)</h2>
+
+<p>To install the Tealium library for React Native with NPM:</p>
+
+<ol>
+<li><p>Navigate to the root of your React Native project.</p></li>
+
+<li><p>Download and install the <code>tealium-react-native</code> package with the following command:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install tealium-react-native</code></pre></div></li>
+
+<li><p>To link the native dependencies within the module to your main React Native app so that it builds against the module, run the following command:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">react-native link</code></pre></div></li>
+</ol>
+
+<h3 id="android">Android</h3>
+
+<p>For Android apps, it is recommended to build your app using the IDE. However, apps are started from the command-line interface (CLI).</p>
+
+<h3 id="ios">iOS</h3>
+
+<p>For iOS apps, follow these installation steps:</p>
+
+<ol>
+<li><p>Download the two libraries: <code>TealiumIOS.framework</code> and <code>TealiumIOSLifecycle.framework</code>.</p></li>
+
+<li><p>Drag the frameworks into the <strong>Libraries</strong> folder in your Xcode project.</p></li>
+
+<li><p>Then drag them into the <strong>Embedded Binaries</strong> section under the <strong>General</strong> tab of your app target.</p></li>
+
+<li><p>Under <strong>Libraries</strong> find <code>TealiumModule.xcodeproj</code> and within it is a <strong>Products</strong> folder containing a <code>libTealiumModule.a</code> file.</p></li>
+</ol>
+
+<p class="note">If you&rsquo;re looking for <code>Libraries &gt; TealiumModule.xcodeproj &gt; Products &gt; libTealiumModule.a</code>. Under the <code>Build Phases</code> tab of your target, find the section <code>Link Binary With Libraries</code> and drag the <code>libTealiumModule.a</code> into it.  More information on linking libraries is found in the <a href="https://facebook.github.io/react-native/docs/linking-libraries-ios#step-2-1">React Native documentation</a>.</p>
+
+<h2 id="install-manual">Install (Manual)</h2>
+
+<h3 id="android-1">Android</h3>
+
+<p>For iOS apps, follow these manual installation steps:</p>
+
+<ol>
+<li><p>To integrate Tealium into your Android application, add this to your Tealium Maven repository:</p></li>
+
+<li><p>In your project root <code>build.gradle</code>, add the Tealium Maven URL:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">allprojects <span style="font-weight:bold">{</span>
+repositories <span style="font-weight:bold">{</span>
+    jcenter<span style="font-weight:bold">()</span>
+        maven <span style="font-weight:bold">{</span>
+            url <span style="color:#b84">&#34;http://maven.tealiumiq.com/android/releases/&#34;</span>
+        <span style="font-weight:bold">}</span>
+<span style="font-weight:bold">}</span>
+<span style="font-weight:bold">}</span></code></pre></div></li>
+
+<li><p>Add the Tealium core library dependency to your project module <code>build.gradle</code> file. Also, add the Tealium lifecycle dependency (if needed):</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">dependencies <span style="font-weight:bold">{</span>
+    compile <span style="color:#b84">&#39;com.tealium:library:5.5.2&#39;</span>
+        compile <span style="color:#b84">&#39;com.tealium:lifecycle:1.1&#39;</span>
+<span style="font-weight:bold">}</span></code></pre></div></li>
+</ol>
+
+<p>To copy Bridging logic:</p>
+
+<ol>
+<li><p>From the Android folder, add <code>TealiumModule.java</code> and <code>TealiumPackage.java</code> into your project files.</p></li>
+
+<li><p>Include <code>TealiumPackage</code> into the <code>getPackages()</code> method of your <code>MainApplication.java</code> file.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@Override
+<span style="font-weight:bold">protected</span> <span style="color:#900;font-weight:bold">List</span> getPackages() {
+<span style="font-weight:bold">return</span> Arrays.<span style="color:#008080">asList</span>(
+    <span style="font-weight:bold">new</span> MainReactPackage(),
+    <span style="font-weight:bold">new</span> TealiumPackage()    <span style="color:#998;font-style:italic">// &lt;--- Add TealiumPackage
+</span><span style="color:#998;font-style:italic"></span>);
+}</code></pre></div></li>
+</ol>
+
+<h3 id="ios-1">iOS</h3>
+
+<p>Adding Tealium for iOS to a React Native project requires the same steps for a non-React Native application (with the exception of the bridging files), so reference <a href="/platforms/ios/">Adding Tealium to Your iOS App</a> for complete details.</p>
+
+<p>The Core library is required and optional modules are added as needed. These are available from <a href="https://github.com/Tealium/tealium-ios">our GitHub repository for iOS</a>.</p>
+
+<p>The sample app is for developer experimentation and not meant for publishing on the App Store, so it uses the modules <code>TealiumIOS.framework</code> and <code>TealiumIOSLifecycle.framework</code> (suitable for a simulator but not for publishing). When working on your own app with intent to publish to the App Store, make sure to use the frameworks in the <a href="https://github.com/Tealium/tealium-ios/tree/master/DevicesOnly">devices only folder</a>.</p>
+
+<h2 id="install-cocoapods">Install (CocoaPods)</h2>
+
+<p>CocoaPods is another way to perform the Installation. Our pod is named &ldquo;TealiumIOS&rdquo;. See the <a href="/platforms/ios/">Tealium for iOS guide</a> for full details. The command <code>create-react-native-app</code> does not create a Podfile so the sample app was built using manual installation. For complex production apps with many dependencies, CocoaPods is the recommended method.</p>
+
+<h4 id="copy-bridging-logic">Copy Bridging Logic</h4>
+
+<p>In the <a href="https://github.com/Tealium/tealium-react-native/tree/master/ios">GitHub repository</a>, there are two files that provide the bridging between the Tealium native iOS SDK and the Javascript in your React Native app: <code>TealiumModule.m</code> and <code>TealiumModule.h</code>.</p>
+
+<p>Copy these two files into your app&rsquo;s main project.</p>
+
+<h2 id="javascript">JavaScript</h2>
+
+<p>The method for importing the module into your app depends on how you installed.</p>
+
+<p>If you installed via NPM, add this line to your code:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">import</span> Tealium from <span style="color:#b84">&#39;tealium-react-native&#39;</span>;
+</code></pre></div>
+<p>If you installed manually, then in the  <code>npm-package</code> folder of the <a href="https://github.com/Tealium/tealium-react-native">GitHub repository</a>, find the file <code>index.js</code>, rename it to <code>TealiumModule.js</code> and copy it into your React Native JavaScript Project.</p>
+
+<p>Next, add this line to your code to import the Tealium JavaScript module:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">import</span> Tealium from <span style="color:#b84">&#39;./TealiumModule&#39;</span>;
+</code></pre></div>
+<h2 id="initialize">Initialize</h2>
+
+<p>Once your app has been installed, initialize the <code>Tealium</code> instance with the <a href="/platforms/react-native/api/#initialize"><code>initialize()</code></a> method, as shown in the following examples:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">Tealium.initialize(<span style="color:#b84">&#34;ACCOUNT&#34;</span>,
+                   <span style="color:#b84">&#34;PROFILE&#34;</span><span style="color:#a61717;background-color:#e3d2d2">&#39;</span>,
+                   <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>,
+                   <span style="color:#b84">&#34;IOS_DATA_SOURCE_KEY&#34;</span>,
+                   <span style="color:#b84">&#34;ANDROID_DATA_SOURCE_KEY&#34;</span>)
+</code></pre></div>
+<p><strong>Consent Management</strong><br />
+To use Consent Management, initialize with the method <a href="/platforms/react-native/api/#initializewithconsentmanager"><code>initializeWithConsentManager()</code></a> using the same parameters.</p>
+
+<p>Learn more:</p>
+
+<ul>
+<li><a href="/platforms/android-java/consent-management/">Consent Manager for Android</a></li>
+<li><a href="/platforms/ios-swift/consent-management/">Consent Manager for iOS</a></li>
+</ul>
+
+<p><strong>Custom Initialization</strong><br />
+All initialization options are available with the method <a href="/platforms/react-native/api/#initializecustom"><code>initializeCustom()</code></a>.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">Tealium.initializeCustom(<span style="color:#b84">&#39;ACCOUNT&#39;</span>,
+                         <span style="color:#b84">&#39;PROFILE&#39;</span>,
+                         <span style="color:#b84">&#39;ENVIRONMENT&#39;</span>,
+                         <span style="color:#b84">&#39;IOS_DATA_SOURCE_KEY&#39;</span>,
+                         <span style="color:#b84">&#39;ANDROID_DATA_SOURCE_KEY&#39;</span>,
+                         <span style="color:#b84">&#39;INSTANCE&#39;</span>,
+                         ENABLE_LIFECYCLE,        <span style="color:#998;font-style:italic">// enable lifecycle tracking
+</span><span style="color:#998;font-style:italic"></span>                         <span style="color:#b84">&#39;PUBLISH_SETTINGS_URL&#39;</span>,  <span style="color:#998;font-style:italic">// custom publish settings URL
+</span><span style="color:#998;font-style:italic"></span>                         <span style="color:#b84">&#39;TAG_MANAGEMENT_URL&#39;</span>,    <span style="color:#998;font-style:italic">// custom tag management URL
+</span><span style="color:#998;font-style:italic"></span>                         USE_COLLECT_ENDPOINT,    <span style="color:#998;font-style:italic">// toggle between data endpoints, true: Tealium Collect, false: Visitor Data
+</span><span style="color:#998;font-style:italic"></span>                         ENABLE_CONSENT_MANAGER); <span style="color:#998;font-style:italic">// enable Consent Management
+</span></code></pre></div>
+<p>See the <a href="/platforms/react-native/api/">API Reference</a> for more information.</p>
+
+</div>
+
+          
+
+
+        </div>
+      </div>
+      <div class="order-0 w-20 dn db-l pl3 sticky-l">
+        
+<nav class="side-nav f6" role="navigation">
+  <ul class="list pa0 nl2">
+    
+      
+      
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".getting-started">Getting Started</a>
+        <ul class="getting-started desktopmenu animated fadeIn list pl0 dn">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/getting-started/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/getting-started/mobile-concepts/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Mobile Concepts
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/getting-started/client-side/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Client-Side
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/getting-started/server-side/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Server-Side
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/getting-started/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/getting-started/consent-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Consent Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/getting-started/feature-comparison/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Feature Comparison
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/getting-started/troubleshooting/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Troubleshooting
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      <li class="w-100 hover-accent-color-light fw8 mb1 bb b--moon-gray">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".remote-commands">Remote Commands</a>
+        <ul class="remote-commands desktopmenu animated fadeIn list pl0 dn">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/remote-commands/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/remote-commands/how-it-works/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              How It Works
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/remote-commands/integrations/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Integrations
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".amp">AMP</a>
+        <ul class="amp desktopmenu animated fadeIn list pl0 dn">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/amp/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/amp/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/amp/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/amp/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".android-java">Android (Java)</a>
+        <ul class="android-java desktopmenu animated fadeIn list pl0 dn">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/android-java/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/android-java/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/android-java/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/android-java/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/android-java/data-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/android-java/consent-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Consent Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/android-java/module-list/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Module List
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/android-java/tv/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Android TV
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/android-java/wear/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Android Wear
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/android-java/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/android-java/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".angular">Angular</a>
+        <ul class="angular desktopmenu animated fadeIn list pl0 dn">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/angular/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/angular/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/angular/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/angular/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".csharp">C#</a>
+        <ul class="csharp desktopmenu animated fadeIn list pl0 dn">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/csharp/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/csharp/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/csharp/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/csharp/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/csharp/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/csharp/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".cordova">Cordova</a>
+        <ul class="cordova desktopmenu animated fadeIn list pl0 dn">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/cordova/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/cordova/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/cordova/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/cordova/data-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/cordova/module-list/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Module List
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/cordova/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/cordova/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".flutter">Flutter</a>
+        <ul class="flutter desktopmenu animated fadeIn list pl0 dn">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/flutter/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/flutter/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/flutter/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/flutter/consent-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Consent Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/flutter/data-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/flutter/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/flutter/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".http-api">HTTP API</a>
+        <ul class="http-api desktopmenu animated fadeIn list pl0 dn">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/http-api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/http-api/endpoint-spec/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Endpoint
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/http-api/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".ios-objective-c">iOS (Objective-C)</a>
+        <ul class="ios-objective-c desktopmenu animated fadeIn list pl0 dn">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-objective-c/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-objective-c/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-objective-c/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-objective-c/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-objective-c/data-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-objective-c/consent-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Consent Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-objective-c/tag-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Tag Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-objective-c/module-list/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Module List
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-objective-c/tvos/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              tvOs
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-objective-c/watchos/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              watchOS
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-objective-c/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-objective-c/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".ios-swift">iOS (Swift)</a>
+        <ul class="ios-swift desktopmenu animated fadeIn list pl0 dn">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/data-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/consent-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Consent Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/modules/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Modules
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/module-list/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Module List
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/feature-comparison/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Feature Comparison
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/with-objective-c/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Working with Objective-C
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".java">Java</a>
+        <ul class="java desktopmenu animated fadeIn list pl0 dn">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/java/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/java/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/java/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/java/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/java/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".javascript">JavaScript (Web)</a>
+        <ul class="javascript desktopmenu animated fadeIn list pl0 dn">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/javascript/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/javascript/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/javascript/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/javascript/data-layer/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer Object (b)
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Universal Data Object (utag_data)
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/javascript/universal-tag/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Universal Tag (utag.js)
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/javascript/settings/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Settings
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/javascript/debugging/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Debugging
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/javascript/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".node">Node</a>
+        <ul class="node desktopmenu animated fadeIn list pl0 dn">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/node/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/node/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/node/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/node/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".python">Python</a>
+        <ul class="python desktopmenu animated fadeIn list pl0 dn">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/python/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/python/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/python/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/python/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      <li class="w-100 hover-accent-color-light fw8 active">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".react-native">React Native</a>
+        <ul class="react-native desktopmenu animated fadeIn list pl0 db">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/react-native/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/react-native/install/" class="db link pl3 pr2 pv1 bg-secondary white">
+              Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/react-native/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/react-native/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/react-native/release-notes/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Release Notes
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".roku">Roku</a>
+        <ul class="roku desktopmenu animated fadeIn list pl0 dn">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/roku/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/roku/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/roku/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/roku/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".ruby">Ruby</a>
+        <ul class="ruby desktopmenu animated fadeIn list pl0 dn">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ruby/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ruby/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ruby/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ruby/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".xamarin">Xamarin</a>
+        <ul class="xamarin desktopmenu animated fadeIn list pl0 dn">
+          <li class="fw4">
+            
+            
+            <a href="/platforms/xamarin/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Overview
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/xamarin/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Install
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/xamarin/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Track
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/xamarin/data-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/xamarin/consent-mangagement/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Consent Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/xamarin/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              API Reference
+            </a>
+          </li>
+        </ul>
+      </li>
+  </ul>
+</nav>
+
+      </div>
+
+    </div>
+  </article>
+
+  <div class="w-100 bg-light-gray">
+    <div class="mw7 pa2 ph0 ph6-ns center nested-lh-copy lh-copy">
+      <div class="feedback_form">
+  <span>
+	  <p style="display:inline">Was this article helpful?</p>
+		<button enabled id="feedback_yes" class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-green link">Yes</button>
+	  <button enabled id="feedback_no" class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-green link">No</button>
+  </span>
+	<span id="feedback_comment">
+		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="70"></textarea>
+		<button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button>
+  </span>
+  <span id="feedback_thank_you" style="display: none;">
+     <em>Thank you for your feedback!</em>
+  </span>
+</div>
+<p>This page was last updated:  October 29, 2019 </p>
+
+      
+
+
+    </div>
+  </div>
+
+    </main>
+
+    <footer class="bg-primary-color-dark ph1-ns relative w-100" role="contentinfo">
+    <div class="center flex-ns flex-wrap justify-between mw9 w-90">
+    </div>
+
+    <div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 w-100"><div  class="globalmenu mobilemenu dn pl5">
+    
+
+<ul class="list hidden dib ph0 ma0 scrolling-touch tc">
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="http://docs-preview.tealium.com/platforms/" class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+          Platforms
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="https://community.tealiumiq.com/t5/Developers/bd-p/mobile" class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+          Forum
+        </a>
+    </li>
+  
+</ul>
+
+</div>
+<div  class="docsmenu mobilemenu dn pl5">
+    
+
+<ul class="list dib ph0 ma0 scrolling-touch tc">
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="http://docs-preview.tealium.com/platforms/getting-started/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          Getting Started
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100 mb2 bb b--mid-gray">
+        <a href="http://docs-preview.tealium.com/platforms/remote-commands/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          Remote Commands
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="http://docs-preview.tealium.com/platforms/amp/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          AMP
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="http://docs-preview.tealium.com/platforms/android-java/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          Android (Java)
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="http://docs-preview.tealium.com/platforms/angular/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          Angular
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="http://docs-preview.tealium.com/platforms/csharp/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          C#
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="http://docs-preview.tealium.com/platforms/cordova/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          Cordova
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="http://docs-preview.tealium.com/platforms/flutter/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          Flutter
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="http://docs-preview.tealium.com/platforms/http-api/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          HTTP API
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="http://docs-preview.tealium.com/platforms/ios-objective-c/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          iOS (Objective-C)
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="http://docs-preview.tealium.com/platforms/ios-swift/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          iOS (Swift)
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="http://docs-preview.tealium.com/platforms/java/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          Java
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="http://docs-preview.tealium.com/platforms/javascript/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          JavaScript (Web)
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="http://docs-preview.tealium.com/platforms/node/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          Node
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="http://docs-preview.tealium.com/platforms/python/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          Python
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="http://docs-preview.tealium.com/platforms/react-native/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          React Native
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="http://docs-preview.tealium.com/platforms/roku/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          Roku
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="http://docs-preview.tealium.com/platforms/ruby/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          Ruby
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="http://docs-preview.tealium.com/platforms/xamarin/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          Xamarin
+        </a>
+    </li>
+  
+</ul>
+
+</div>
+
+<div class="flex dn-l justify-between pl5">
+  <button class="js-toggle flex-auto dib dn-l f6 tc db mt3 ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".globalmenu">Menu</button>
+
+  <button class="js-toggle flex-auto dib dn-l f6 tc db mt3 ph3 pv2 link white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".docsmenu">Platforms</button>
+</div>
+</div>
+</footer>
+
+    <script src="/dist/js/app.js"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script src="https://use.fontawesome.com/0757c63fa2.js"></script>
+
+
+    
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript">
+docsearch({
+  apiKey: 'b909cfb6051533a37a6c253ac1ab02c9',
+  indexName: 'tealium',
+  inputSelector: 'input#search-input',
+  debug: "true" 
+});
+</script>
+
+    
+
+  </body>
+</html>
