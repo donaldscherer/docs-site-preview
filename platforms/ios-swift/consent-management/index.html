@@ -347,10 +347,10 @@ var utag_data = {
 <h3 id="simple-opt-in">Simple Opt-in</h3>
 
 <p>This example shows you how to give your users a simple &ldquo;Opt-in/Opt-out&rdquo; option. If the user consents, they are automatically opted-in to all tracking categories. If they revoke their consent, no categories remain active, and no tracking calls are sent.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">setConsentStatusSimple</span>(<span style="font-weight:bold">_</span> consented: <span style="color:#999">Bool</span>) {
-        <span style="font-weight:bold">let</span> <span style="color:#008080">status</span>: TealiumConsentStatus = consented ? .consented: .notConsented
-        <span style="font-weight:bold">self</span>.tealium?.consentManager()?.setUserConsentStatus(status)
-    }</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">setConsentStatusSimple</span>(<span style="font-weight:bold">_</span> consented: <span style="color:#999">Bool</span>) {
+    <span style="font-weight:bold">let</span> <span style="color:#008080">status</span>: TealiumConsentStatus = consented ? .consented: .notConsented
+    <span style="font-weight:bold">self</span>.tealium?.consentManager()?.setUserConsentStatus(status)
+}</code></pre></div>
 <p>Define and call the following method in your Tealium Helper class when your app user consents to or declines tracking. If the user consents to tracking, the Consent Manager automatically opts them in to all tracking categories.</p>
 
 <p><img src="https://zjzhh79394.i.lithium.com/t5/image/serverpage/image-id/6590i5637771715807D9A/image-size/original?v=1.0&amp;px=-1" alt="Simple Consent" title="Simple Consent" /></p>
@@ -925,7 +925,7 @@ var utag_data = {
             
             
             <a href="/platforms/ios-objective-c/tvos/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              tvOs
+              tvOS
             </a>
           </li>
           <li class="fw4">
@@ -1120,15 +1120,15 @@ var utag_data = {
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Data Layer Object (b)
+            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Universal Data Object (utag_data)
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Universal Data Object (utag_data)
+            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer Object (b)
             </a>
           </li>
           <li class="fw4">
@@ -1416,7 +1416,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p>This page was last updated:  October 21, 2019 </p>
+<p>This page was last updated:  October 31, 2019 </p>
 
       
 

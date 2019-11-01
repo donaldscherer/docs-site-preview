@@ -271,12 +271,11 @@ var utag_data = {
 
 <p>The following is an example declaration of <code>utag_data</code>:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#000080">script</span> <span style="color:#008080">type</span><span style="font-weight:bold">=</span><span style="color:#b84">&#34;text/javascript&#34;</span>&gt;
-<span style="font-weight:bold">var</span> utag_data<span style="font-weight:bold">=</span>{
-    <span style="color:#b84">&#34;tealium_event&#34;</span>  <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;search&#34;</span>,
-    <span style="color:#b84">&#34;page_name&#34;</span>      <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;Search Results&#34;</span>,
-    <span style="color:#b84">&#34;search_results&#34;</span> <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;42&#34;</span>,
-    <span style="color:#b84">&#34;search_keyword&#34;</span> <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;Tealium shirt&#34;</span>
-};
+  <span style="font-weight:bold">var</span> utag_data<span style="font-weight:bold">=</span>{
+      <span style="color:#b84">&#34;tealium_event&#34;</span>  <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;search&#34;</span>,
+      <span style="color:#b84">&#34;page_name&#34;</span>      <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;Search Results&#34;</span>,
+      <span style="color:#b84">&#34;search_results&#34;</span> <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;42&#34;</span>,
+      <span style="color:#b84">&#34;search_keyword&#34;</span> <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;Tealium shirt&#34;</span>};
 &lt;/<span style="color:#000080">script</span>&gt;</code></pre></div>
 <p class="note">Define and populate the <code>utag_data</code> object variable prior to loading the Universal Tag (<code>utag.js</code>).</p>
 
@@ -322,23 +321,21 @@ Do not add extra code to the UDO script block. If any code in the same script bl
     <span style="color:#b84">&#34;product_quantity&#34;</span>   <span style="font-weight:bold">:</span> [<span style="color:#b84">&#34;1&#34;</span>, <span style="color:#b84">&#34;2&#34;</span>],    
     <span style="color:#b84">&#34;product_unit_price&#34;</span> <span style="font-weight:bold">:</span> [<span style="color:#b84">&#34;65.00&#34;</span>, <span style="color:#b84">&#34;4.75&#34;</span>],    
     <span style="color:#b84">&#34;cart_total_items&#34;</span>   <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;3&#34;</span>,    
-    <span style="color:#b84">&#34;cart_subtotal&#34;</span>      <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;74.00&#34;</span>    
-  };
+    <span style="color:#b84">&#34;cart_subtotal&#34;</span>      <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;74.00&#34;</span>};
 &lt;/<span style="color:#000080">script</span>&gt;</code></pre></div>
 <p>If needed, update the UDO with additional values outside of the declaration block, as long as the data gets set prior to loading <code>utag.js</code>. UDO variables set after loading <code>utag.js</code> are ignored.  </p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#000080">script</span> <span style="color:#008080">type</span><span style="font-weight:bold">=</span><span style="color:#b84">&#34;text/javascript&#34;</span>&gt;
-    utag_data[<span style="color:#b84">&#34;page_name&#34;</span>] <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;View Cart&#34;</span>;
+  utag_data[<span style="color:#b84">&#34;page_name&#34;</span>] <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;View Cart&#34;</span>;
 &lt;/<span style="color:#000080">script</span>&gt;</code></pre></div>
 <h3 id="page-specific-data">Page Specific Data</h3>
 
 <p>When populating the UDO, only include variables pertinent to the current page type. This reduces clutter in the page code and eliminates confusion about what data is expected. Below is an example of a search page UDO that omits unnecessary items such as product and order data.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#000080">script</span> <span style="color:#008080">type</span><span style="font-weight:bold">=</span><span style="color:#b84">&#34;text/javascript&#34;</span>&gt;
-<span style="font-weight:bold">var</span> utag_data<span style="font-weight:bold">=</span>{
-    <span style="color:#b84">&#34;page_name&#34;</span>      <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;Search Results&#34;</span>,
-    <span style="color:#b84">&#34;page_type&#34;</span>      <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;search&#34;</span>,
-    <span style="color:#b84">&#34;search_results&#34;</span> <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;42&#34;</span>,
-    <span style="color:#b84">&#34;search_keyword&#34;</span> <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;tennis shoes&#34;</span>
-};
+  <span style="font-weight:bold">var</span> utag_data<span style="font-weight:bold">=</span>{
+      <span style="color:#b84">&#34;page_name&#34;</span>      <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;Search Results&#34;</span>,
+      <span style="color:#b84">&#34;page_type&#34;</span>      <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;search&#34;</span>,
+      <span style="color:#b84">&#34;search_results&#34;</span> <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;42&#34;</span>,
+      <span style="color:#b84">&#34;search_keyword&#34;</span> <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;tennis shoes&#34;</span>};
 &lt;/<span style="color:#000080">script</span>&gt;</code></pre></div>
 <h3 id="product-arrays">Product Arrays</h3>
 
@@ -877,7 +874,7 @@ utag_data[<span style="color:#b84">&#34;product_quantity&#34;</span>] <span styl
             
             
             <a href="/platforms/ios-objective-c/tvos/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              tvOs
+              tvOS
             </a>
           </li>
           <li class="fw4">
@@ -1072,15 +1069,15 @@ utag_data[<span style="color:#b84">&#34;product_quantity&#34;</span>] <span styl
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Data Layer Object (b)
+            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 bg-secondary white">
+              Universal Data Object (utag_data)
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 bg-secondary white">
-              Universal Data Object (utag_data)
+            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer Object (b)
             </a>
           </li>
           <li class="fw4">
@@ -1368,7 +1365,7 @@ utag_data[<span style="color:#b84">&#34;product_quantity&#34;</span>] <span styl
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p>This page was last updated:  October 24, 2019 </p>
+<p>This page was last updated:  October 31, 2019 </p>
 
       
 

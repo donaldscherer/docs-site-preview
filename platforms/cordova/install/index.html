@@ -310,17 +310,16 @@ cordova build &lt;PLATFORM&gt;</code></pre></div>
 
 <p>The <a href="/platforms/cordova/api/#init"><code>init()</code></a> method initializes the Tealium Cordova plugin, as shown in the following example:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">tealium.init({
-    account                  <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;ACCOUNT&#34;</span>
-    , profile                <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;PROFILE&#34;</span>
-    , environment            <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>
-    , datasource             <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;DATASOURCE&#34;</span>
-    , instance               <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;INSTANCE&#34;</span>
-    , isLifecycleEnabled     <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;TRUE_OR_FALSE&#34;</span>
-    , isCrashReporterEnabled <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;TRUE_OR_FALSE&#34;</span>
-    , logLevel               <span style="font-weight:bold">:</span> tealium.logLevels.DEV
-    , collectDispatchProfile <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;DISPATCH_PROFILE&#34;</span>
-    , collectDispatchURL     <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;DISPATCH_URL&#34;</span>
-});
+    account                <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;ACCOUNT&#34;</span>,
+    profile                <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;PROFILE&#34;</span>,
+    environment            <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>,
+    datasource             <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;DATASOURCE&#34;</span>,
+    instance               <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;INSTANCE&#34;</span>,
+    isLifecycleEnabled     <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;TRUE_OR_FALSE&#34;</span>,
+    isCrashReporterEnabled <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;TRUE_OR_FALSE&#34;</span>,
+    logLevel               <span style="font-weight:bold">:</span> tealium.logLevels.DEV,
+    collectDispatchProfile <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;DISPATCH_PROFILE&#34;</span>,
+    collectDispatchURL     <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;DISPATCH_URL&#34;</span>});
 </code></pre></div>
 <p>By default, the core iOS and Android libraries send Tealium Collect data to the &ldquo;main&rdquo; profile of your account. To direct Tealium Collect to a different endpoint, either override the profile or the endpoint URL.</p>
 
@@ -330,8 +329,7 @@ cordova build &lt;PLATFORM&gt;</code></pre></div>
     profile                <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;PROFILE&#34;</span>,
     environment            <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>,
     instance               <span style="font-weight:bold">:</span> <span style="color:#999">window</span>.tealium_instance,
-    collectDispatchProfile <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;PROFILE&#34;</span>
-});
+    collectDispatchProfile <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;PROFILE&#34;</span>});
 </code></pre></div>
 <p>Override Endpoint URL example:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">tealium.init({
@@ -339,8 +337,7 @@ cordova build &lt;PLATFORM&gt;</code></pre></div>
     profile            <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;PROFILE&#34;</span>,
     environment        <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>,
     instance           <span style="font-weight:bold">:</span> <span style="color:#999">window</span>.tealium_instance,
-    collectDispatchURL <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;https://collect.tealiumiq.com/vdata/i.gif?tealium_account=ACCOUNT&amp;tealium_profile=PROFILE&#34;</span>
-});
+    collectDispatchURL <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;https://collect.tealiumiq.com/vdata/i.gif?tealium_account=ACCOUNT&amp;tealium_profile=PROFILE&#34;</span>});
 </code></pre></div>
 <h2 id="build-tips">Build Tips</h2>
 
@@ -874,7 +871,7 @@ cordova platform add PLATFORM</code></pre></div>
             
             
             <a href="/platforms/ios-objective-c/tvos/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              tvOs
+              tvOS
             </a>
           </li>
           <li class="fw4">
@@ -1069,15 +1066,15 @@ cordova platform add PLATFORM</code></pre></div>
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Data Layer Object (b)
+            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Universal Data Object (utag_data)
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Universal Data Object (utag_data)
+            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer Object (b)
             </a>
           </li>
           <li class="fw4">
@@ -1365,7 +1362,7 @@ cordova platform add PLATFORM</code></pre></div>
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p>This page was last updated:  October 29, 2019 </p>
+<p>This page was last updated:  October 31, 2019 </p>
 
       
 

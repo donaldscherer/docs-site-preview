@@ -278,9 +278,7 @@ var utag_data = {
 <li>Delete the <code>placeholder.m</code> file from the project and notice a new file called <code>&lt;ProjectName&gt;-Bridging-Header.h</code></li>
 
 <li><p>Add the following import statement to the new Bridging Header:</p>
-
-<pre><code>@import TealiumIOS;
-</code></pre></li>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">@import TealiumIOS;</code></pre></div></li>
 </ol>
 
 <p>Next, to call the Objective-C code from Swift:</p>
@@ -302,9 +300,7 @@ However, by using an intermediate helper class, it is possible to call the Swift
 <li>In your Objective-C project, create a new Swift file. You are prompted to add a bridging header if you don&rsquo;t already have one. Accept this prompt. Name the new Swift file &ldquo;TealiumHelper.swift&rdquo;.</li>
 
 <li><p>Import the new Swift header (<code>&lt;ProjectName&gt;-Swift.h</code>) into files that need to call the new helper.</p>
-
-<pre><code>#import &quot;ProjectName-Swift.h&quot;
-</code></pre></li>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#999;font-weight:bold">#import &#34;ProjectName-Swift.h&#34;</span></code></pre></div></li>
 </ol>
 
 <p>The methods in the helper file are now be available to use in your Objective-C code. We recommend making the helper a singleton.</p>
@@ -836,7 +832,7 @@ However, by using an intermediate helper class, it is possible to call the Swift
             
             
             <a href="/platforms/ios-objective-c/tvos/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              tvOs
+              tvOS
             </a>
           </li>
           <li class="fw4">
@@ -1031,15 +1027,15 @@ However, by using an intermediate helper class, it is possible to call the Swift
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Data Layer Object (b)
+            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Universal Data Object (utag_data)
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Universal Data Object (utag_data)
+            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer Object (b)
             </a>
           </li>
           <li class="fw4">
@@ -1327,7 +1323,7 @@ However, by using an intermediate helper class, it is possible to call the Swift
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p>This page was last updated:  October 24, 2019 </p>
+<p>This page was last updated:  October 31, 2019 </p>
 
       
 

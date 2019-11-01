@@ -272,62 +272,14 @@ var utag_data = {
 <p>The following example shows how to define and populate <code>utag_data</code>, which is done <em>prior</em> to loading the Universal Tag <a href="/platforms/javascript/about-utag-js/"><code>utag.js</code></a>:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#998;font-style:italic">&lt;!-- Tealium Universal Data Object --&gt;</span>
 &lt;<span style="color:#000080">script</span> <span style="color:#008080">type</span><span style="font-weight:bold">=</span><span style="color:#b84">&#34;text/javascript&#34;</span>&gt;
-<span style="font-weight:bold">var</span> utag_data<span style="font-weight:bold">=</span>{
-    <span style="color:#b84">&#34;page_type&#34;</span>     <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;PAGE_TYPE&#34;</span>,
-    <span style="color:#b84">&#34;site_section&#34;</span>  <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;SITE_SECTION&#34;</span>,
-    <span style="color:#b84">&#34;page_name&#34;</span>     <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;PAGE_NAME&#34;</span>,
-    <span style="color:#b84">&#34;country_code&#34;</span>  <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;COUNTRY_CODE&#34;</span>,
-    <span style="color:#b84">&#34;currency_code&#34;</span> <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;CURRENCY_CODE&#34;</span>
-};
+  <span style="font-weight:bold">var</span> utag_data<span style="font-weight:bold">=</span>{
+      <span style="color:#b84">&#34;page_type&#34;</span>     <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;section&#34;</span>,
+      <span style="color:#b84">&#34;site_section&#34;</span>  <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;men&#34;</span>,
+      <span style="color:#b84">&#34;page_name&#34;</span>     <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;Men&#39;s Fashion | Acme Inc.&#34;</span>,
+      <span style="color:#b84">&#34;country_code&#34;</span>  <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;US&#34;</span>,
+      <span style="color:#b84">&#34;currency_code&#34;</span> <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;USD&#34;</span>
+  };
 &lt;/<span style="color:#000080">script</span>&gt;</code></pre></div>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Type</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>page_type</code></td>
-<td><code>String</code></td>
-<td>The page type</td>
-<td><code>&quot;section&quot;</code></td>
-</tr>
-
-<tr>
-<td><code>site_section</code></td>
-<td><code>String</code></td>
-<td>The site section</td>
-<td><code>&quot;Men&quot;</code></td>
-</tr>
-
-<tr>
-<td><code>page_name</code></td>
-<td><code>String</code></td>
-<td>The name of the screen</td>
-<td><code>&quot;Mens Fashion - Acme Inc.&quot;</code></td>
-</tr>
-
-<tr>
-<td><code>country_code</code></td>
-<td><code>String</code></td>
-<td>The country code</td>
-<td><code>&quot;US&quot;</code></td>
-</tr>
-
-<tr>
-<td><code>currency_code</code></td>
-<td><code>String</code></td>
-<td>The currency code</td>
-<td><code>&quot;USD&quot;</code></td>
-</tr>
-</tbody>
-</table>
-
 <p><a href="https://community.tealiumiq.com/t5/Data-Layer/How-the-Data-Layer-Works-for-Websites/ta-p/13618">Learn more</a> about how the data layer works for websites.</p>
 
 <h3 id="universal-tag-utag-js">Universal Tag (<code>utag.js</code>)</h3>
@@ -335,49 +287,13 @@ var utag_data = {
 <p>The <code>utag.js</code> JavaScript library is Tealium&rsquo;s universal tag that replaces third-party tags with a single snippet of code. The <code>utag.js</code> file contains all of the generated code necessary to load third-party tags onto your site.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#998;font-style:italic">&lt;!-- Tealium Universal Tag --&gt;</span>
 &lt;<span style="color:#000080">script</span> <span style="color:#008080">type</span><span style="font-weight:bold">=</span><span style="color:#b84">&#34;text/javascript&#34;</span>&gt;
-(<span style="font-weight:bold">function</span>(a,b,c,d){
-a<span style="font-weight:bold">=</span><span style="color:#b84">&#39;//tags.tiqcdn.com/utag/ACCOUNT/PROFILE/ENVIRONMENT/utag.js&#39;</span>;
-b<span style="font-weight:bold">=</span><span style="color:#999">document</span>;c<span style="font-weight:bold">=</span><span style="color:#b84">&#39;script&#39;</span>;d<span style="font-weight:bold">=</span>b.createElement(c);d.src<span style="font-weight:bold">=</span>a;
-d.type<span style="font-weight:bold">=</span><span style="color:#b84">&#39;text/java&#39;</span><span style="font-weight:bold">+</span>c;d.<span style="font-weight:bold">async</span><span style="font-weight:bold">=</span><span style="font-weight:bold">true</span>;
-a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="color:#099">0</span>];a.parentNode.insertBefore(d,a)
-})();
+  (<span style="font-weight:bold">function</span>(a,b,c,d) {
+      a<span style="font-weight:bold">=</span><span style="color:#b84">&#39;//tags.tiqcdn.com/utag/ACCOUNT/PROFILE/ENVIRONMENT/utag.js&#39;</span>;
+      b<span style="font-weight:bold">=</span><span style="color:#999">document</span>;c<span style="font-weight:bold">=</span><span style="color:#b84">&#39;script&#39;</span>;d<span style="font-weight:bold">=</span>b.createElement(c);d.src<span style="font-weight:bold">=</span>a;
+      d.type<span style="font-weight:bold">=</span><span style="color:#b84">&#39;text/java&#39;</span><span style="font-weight:bold">+</span>c;d.<span style="font-weight:bold">async</span><span style="font-weight:bold">=</span><span style="font-weight:bold">true</span>;
+      a<span style="font-weight:bold">=</span>b.getElementsByTagName(c)[<span style="color:#099">0</span>];a.parentNode.insertBefore(d,a)
+  })();
 &lt;/<span style="color:#000080">script</span>&gt;</code></pre></div>
-<p>The path to the file comprises the following attributes:</p>
-
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Type</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>ACCOUNT</td>
-<td><code>String</code></td>
-<td>Tealium account name</td>
-<td><code>&quot;companyXYZ&quot;</code></td>
-</tr>
-
-<tr>
-<td>PROFILE</td>
-<td><code>String</code></td>
-<td>Tealium profile name</td>
-<td><code>&quot;main&quot;</code> </td>
-</tr>
-
-<tr>
-<td>ENVIRONMENT</td>
-<td><code>String</code></td>
-<td>Tealium environment name</td>
-<td>[<code>&quot;dev&quot;</code>, <code>&quot;qa&quot;</code>, <code>&quot;prod&quot;</code>]</td>
-</tr>
-</tbody>
-</table>
-
 <p class="tip">Retrieve your specific snippet from the <a href="https://community.tealiumiq.com/t5/Tealium-iQ/Code-Center/ta-p/13631">Code Center</a> of your account.</p>
 
 <p><a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/Using-the-utag-sync-js-Script/ta-p/19175">Learn more</a> about <code>utag.sync.js</code>.</p>
@@ -939,7 +855,7 @@ Changes applied to the profile through the Web Companion are queued at the botto
             
             
             <a href="/platforms/ios-objective-c/tvos/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              tvOs
+              tvOS
             </a>
           </li>
           <li class="fw4">
@@ -1134,15 +1050,15 @@ Changes applied to the profile through the Web Companion are queued at the botto
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Data Layer Object (b)
+            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Universal Data Object (utag_data)
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Universal Data Object (utag_data)
+            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer Object (b)
             </a>
           </li>
           <li class="fw4">
@@ -1430,7 +1346,7 @@ Changes applied to the profile through the Web Companion are queued at the botto
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p>This page was last updated:  October 30, 2019 </p>
+<p>This page was last updated:  October 31, 2019 </p>
 
       
 

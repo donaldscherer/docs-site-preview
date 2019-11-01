@@ -284,9 +284,9 @@ var utag_data = {
 
 <p>If your app has a complex view hierarchy, set the <code>TEALConfiguration</code> instance with a view to attach to in <code>viewDidLoad</code>, <code>viewWillAppear:</code>, or <code>viewDidAppear:</code>.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-obj-c" data-lang="obj-c">TEALConfiguration <span style="font-weight:bold">*</span>tealConfig <span style="font-weight:bold">=</span> [TEALConfiguration configurationWithAccount:<span style="color:#b84">@&#34;ACCOUNT&#34;</span>
-                                                                    profile:<span style="color:#b84">@&#34;PROFILE&#34;</span>
-                                                                environment:<span style="color:#b84">@&#34;ENVIRONMENT&#34;</span>
-                                                                 datasource:<span style="color:#b84">@&#34;DATASOURCE&#34;</span>];
+                                              profile:<span style="color:#b84">@&#34;PROFILE&#34;</span>
+                                              environment:<span style="color:#b84">@&#34;ENVIRONMENT&#34;</span>
+                                              datasource:<span style="color:#b84">@&#34;DATASOURCE&#34;</span>];
 tealConfig.view <span style="font-weight:bold">=</span> <span style="font-weight:bold">&lt;</span>UIVIEW<span style="font-weight:bold">&gt;</span>; <span style="color:#998;font-style:italic">// For example, self.view in a UIViewController subclass
 </span><span style="color:#998;font-style:italic">// Initialize with a unique key for this instance
 </span><span style="color:#998;font-style:italic"></span>Tealium <span style="font-weight:bold">*</span>tealium <span style="font-weight:bold">=</span> [Tealium newInstanceForKey:<span style="color:#b84">@&#34;INSTANCE&#34;</span> configuration:tealConfig]; </code></pre></div>
@@ -366,10 +366,10 @@ tealConfig.view <span style="font-weight:bold">=</span> <span style="font-weight
 <ol>
 <li><p>Set the <code>webViewType</code> in the <code>TEALConfiguration</code> instance:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-obj-c" data-lang="obj-c">TEALConfiguration <span style="font-weight:bold">*</span>tealConfig <span style="font-weight:bold">=</span> [TEALConfiguration
-         configurationWithAccount:<span style="color:#b84">@&#34;ACCOUNT&#34;</span>
-                          profile:<span style="color:#b84">@&#34;PROFILE&#34;</span>
-                      environment:<span style="color:#b84">@&#34;prod&#34;</span>
-                       datasource:<span style="color:#b84">@&#34;DATASOURCE&#34;</span>];</code></pre></div></li>
+        configurationWithAccount:<span style="color:#b84">@&#34;ACCOUNT&#34;</span>
+        profile:<span style="color:#b84">@&#34;PROFILE&#34;</span>
+        environment:<span style="color:#b84">@&#34;prod&#34;</span>
+        datasource:<span style="color:#b84">@&#34;DATASOURCE&#34;</span>];</code></pre></div></li>
 
 <li><p>Set the web view type to use <code>UIWebView</code>:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-obj-c" data-lang="obj-c">tealConfig.webViewType <span style="font-weight:bold">=</span> TEALUIWebView;</code></pre></div></li>
@@ -889,7 +889,7 @@ tealConfig.view <span style="font-weight:bold">=</span> <span style="font-weight
             
             
             <a href="/platforms/ios-objective-c/tvos/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              tvOs
+              tvOS
             </a>
           </li>
           <li class="fw4">
@@ -1084,15 +1084,15 @@ tealConfig.view <span style="font-weight:bold">=</span> <span style="font-weight
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Data Layer Object (b)
+            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Universal Data Object (utag_data)
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Universal Data Object (utag_data)
+            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer Object (b)
             </a>
           </li>
           <li class="fw4">
@@ -1380,7 +1380,7 @@ tealConfig.view <span style="font-weight:bold">=</span> <span style="font-weight
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p>This page was last updated:  October 29, 2019 </p>
+<p>This page was last updated:  October 31, 2019 </p>
 
       
 

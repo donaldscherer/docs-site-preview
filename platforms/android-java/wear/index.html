@@ -294,17 +294,18 @@ var utag_data = {
 <li><p>Create a subclass of the <code>Application</code> class, and add the <code>TealiumWear</code>&rsquo;s initialization code in the app&rsquo;s <code>onCreate()</code> method, as shown in the following example:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="font-weight:bold">public</span> <span style="color:#900;font-weight:bold">class</span> WearApp <span style="color:#900;font-weight:bold">extends</span> Application {
 
-<span style="color:#998;font-style:italic">// Instance name from main app
-</span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">public</span> <span style="color:#900;font-weight:bold">static</span> <span style="font-weight:bold">final</span> <span style="color:#900;font-weight:bold">String</span> TEALIUM_MAIN <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;INSTANCE_NAME&#34;</span>;
+   <span style="color:#998;font-style:italic">// Instance name from main app
+</span><span style="color:#998;font-style:italic"></span>   <span style="font-weight:bold">public</span> <span style="color:#900;font-weight:bold">static</span> <span style="font-weight:bold">final</span> <span style="color:#900;font-weight:bold">String</span> TEALIUM_MAIN <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;INSTANCE_NAME&#34;</span>;
 
-@Override
-<span style="font-weight:bold">public</span> <span style="color:#900;font-weight:bold">void</span> onCreate() {
- <span style="font-weight:bold">super</span>.<span style="color:#008080">onCreate</span>();
- TealiumWear.<span style="color:#008080">createInstance</span>(TEALIUM_MAIN,
-   TealiumWear.<span style="color:#008080">Config</span>.<span style="color:#008080">create</span>(<span style="font-weight:bold">this</span>)
-   .<span style="color:#008080">setLogLevel</span>(Log.<span style="color:#008080">VERBOSE</span>));
- }
-}</code></pre></div></li>
+   @Override
+   <span style="font-weight:bold">public</span> <span style="color:#900;font-weight:bold">void</span> onCreate() {
+     <span style="font-weight:bold">super</span>.<span style="color:#008080">onCreate</span>();
+     TealiumWear.<span style="color:#008080">createInstance</span>(TEALIUM_MAIN,
+         TealiumWear.<span style="color:#008080">Config</span>.<span style="color:#008080">create</span>(<span style="font-weight:bold">this</span>)
+         .<span style="color:#008080">setLogLevel</span>(Log.<span style="color:#008080">VERBOSE</span>));
+   }
+<span style="color:#998;font-style:italic">//...
+</span><span style="color:#998;font-style:italic"></span>}</code></pre></div></li>
 
 <li><p>The value of <code>TEALIUM_MAIN</code> must match the instance name used in the initialization of the main application, as shown in the following example:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// Main application initialization
@@ -321,16 +322,14 @@ var utag_data = {
 <p>Tracking on the wearable is similar to the handheld side. The only difference is in how to pass custom data to the tracking calls. The wearable side uses a <a href="https://developers.google.com/android/reference/com/google/android/gms/wearable/DataMap"><code>DataMap</code></a> object, rather than a <code>Map</code>:</p>
 
 <p>The <a href="/platforms/android-java/api/#trackview"><code>trackView()</code></a> method tracks screen views, as shown in the following example:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">java
-<span style="color:#900;font-weight:bold">final</span> DataMap <span style="color:#900;font-weight:bold">data</span> <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> DataMap();
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="font-weight:bold">final</span> <span style="color:#900;font-weight:bold">DataMap</span> data <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> DataMap();
 <span style="color:#998;font-style:italic">// ...
 </span><span style="color:#998;font-style:italic"></span>TealiumWear.<span style="color:#008080">getInstance</span>(WearApp.<span style="color:#008080">TEALIUM_MAIN</span>)
     .<span style="color:#008080">trackView</span>(<span style="color:#b84">&#34;SCREEN_NAME&#34;</span>, data);</code></pre></div>
 <h3 id="track-events">Track Events</h3>
 
 <p>The <a href="/platforms/android-java/api/#trackevent"><code>trackEvent()</code></a> method tracks non-view events, as shown in the following example:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">java
-<span style="color:#900;font-weight:bold">final</span> DataMap <span style="color:#900;font-weight:bold">data</span> <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> DataMap();
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="font-weight:bold">final</span> <span style="color:#900;font-weight:bold">DataMap</span> data <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> DataMap();
 <span style="color:#998;font-style:italic">// ...
 </span><span style="color:#998;font-style:italic"></span>TealiumWear.<span style="color:#008080">getInstance</span>(WearApp.<span style="color:#008080">TEALIUM_MAIN</span>)
     .<span style="color:#008080">trackEvent</span>(<span style="color:#b84">&#34;EVENT_NAME&#34;</span>, data);</code></pre></div>
@@ -845,7 +844,7 @@ var utag_data = {
             
             
             <a href="/platforms/ios-objective-c/tvos/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              tvOs
+              tvOS
             </a>
           </li>
           <li class="fw4">
@@ -1040,15 +1039,15 @@ var utag_data = {
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Data Layer Object (b)
+            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Universal Data Object (utag_data)
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Universal Data Object (utag_data)
+            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer Object (b)
             </a>
           </li>
           <li class="fw4">
@@ -1336,7 +1335,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p>This page was last updated:  October 29, 2019 </p>
+<p>This page was last updated:  October 31, 2019 </p>
 
       
 

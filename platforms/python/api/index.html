@@ -367,7 +367,7 @@ var utag_data = {
 <h3 id="trackevent"><code>trackEvent()</code></h3>
 
 <p>Track events with optional parameters for data and a callback.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">trackEvent(title, eventtype, data, callback)</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">trackEvent(title, data, callback)</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -387,13 +387,6 @@ var utag_data = {
 </tr>
 
 <tr>
-<td><code>eventtype</code></td>
-<td><code>String</code></td>
-<td>(Optional) Type of event enum (see below)</td>
-<td><code>Tealium.EVENT_TYPE_VIEW</code></td>
-</tr>
-
-<tr>
 <td><code>data</code></td>
 <td><code>Dictionary</code></td>
 <td>(Optional) Object with event data as key-value pairs</td>
@@ -405,44 +398,6 @@ var utag_data = {
 <td><code>Dictionary</code></td>
 <td>(Optional) Object with a function assigned to the &ldquo;callback&rdquo; key</td>
 <td><code>callback = self.tealiumCallback</code></td>
-</tr>
-</tbody>
-</table>
-
-<p>The following lists the different event types for the <code>eventtype</code> parameter:</p>
-
-<table>
-<thead>
-<tr>
-<th>Event Type</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>Tealium.EVENT_TYPE_CONVERSION</code></td>
-<td>Conversion</td>
-</tr>
-
-<tr>
-<td><code>Tealium.EVENT_TYPE_DERIVED</code></td>
-<td>Derived</td>
-</tr>
-
-<tr>
-<td><code>Tealium.EVENT_TYPE_ACTIVITY</code></td>
-<td>Activity</td>
-</tr>
-
-<tr>
-<td><code>Tealium.EVENT_TYPE_VIEW</code></td>
-<td>View</td>
-</tr>
-
-<tr>
-<td><code>Tealium.EVENT_TYPE_INTERACTION</code></td>
-<td>Interaction</td>
 </tr>
 </tbody>
 </table>
@@ -958,7 +913,7 @@ var utag_data = {
             
             
             <a href="/platforms/ios-objective-c/tvos/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              tvOs
+              tvOS
             </a>
           </li>
           <li class="fw4">
@@ -1153,15 +1108,15 @@ var utag_data = {
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Data Layer Object (b)
+            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Universal Data Object (utag_data)
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Universal Data Object (utag_data)
+            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer Object (b)
             </a>
           </li>
           <li class="fw4">
@@ -1449,7 +1404,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p>This page was last updated:  October 29, 2019 </p>
+<p>This page was last updated:  October 31, 2019 </p>
 
       
 

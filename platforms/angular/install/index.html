@@ -290,55 +290,51 @@ var utag_data = {
 import { <span style="color:#008080">TealiumUtagService</span> } from <span style="color:#b84">&#39;./tealium/utag.service&#39;</span>;
 
 @Component({
-<span style="color:#b84">selector</span>: <span style="color:#b84">&#39;app-root&#39;</span>,
-<span style="color:#b84">providers</span>: <span style="font-weight:bold">[</span><span style="color:#008080">TealiumUtagService</span><span style="font-weight:bold">]</span>,
-<span style="color:#b84">templateUrl</span>: <span style="color:#b84">&#39;./app.component.html&#39;</span>,
-<span style="color:#b84">styleUrls</span>: <span style="font-weight:bold">[</span><span style="color:#b84">&#39;./app.component.css&#39;</span><span style="font-weight:bold">]</span>
+  <span style="color:#b84">selector</span>: <span style="color:#b84">&#39;app-root&#39;</span>,
+  <span style="color:#b84">providers</span>: <span style="font-weight:bold">[</span><span style="color:#008080">TealiumUtagService</span><span style="font-weight:bold">]</span>,
+  <span style="color:#b84">templateUrl</span>: <span style="color:#b84">&#39;./app.component.html&#39;</span>,
+  <span style="color:#b84">styleUrls</span>: <span style="font-weight:bold">[</span><span style="color:#b84">&#39;./app.component.css&#39;</span><span style="font-weight:bold">]</span>
 })</code></pre></div></li>
 </ol>
 
 <h2 id="initialize">Initialize</h2>
 
 <p>The <a href="/platforms/angular/api/#setconfig"><code>setConfig()</code></a> method initializes Tealium and builds the path to the <code>utag.js</code> file, as shown in the following example:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">constructor(<span style="font-weight:bold">private</span> tealium<span style="font-weight:bold">:</span> TealiumUtagService) {
-    <span style="font-weight:bold">this</span>.tealium.setConfig({
-        <span style="color:#b84">&#34;account&#34;</span>     <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;ACCOUNT&#34;</span>,
-        <span style="color:#b84">&#34;profile&#34;</span>     <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;PROFILE&#34;</span>,
-        <span style="color:#b84">&#34;environment&#34;</span> <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>
-    });
-}
-</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">constructor(<span style="font-weight:bold">private</span> <span style="color:#b84">tealium</span>: <span style="color:#008080">TealiumUtagService</span>) {
+    this<span style="font-weight:bold">.</span>tealium<span style="font-weight:bold">.</span>setConfig({
+        <span style="color:#b84">&#34;account&#34;</span>     : <span style="color:#b84">&#34;ACCOUNT&#34;</span>,
+        <span style="color:#b84">&#34;profile&#34;</span>     : <span style="color:#b84">&#34;PROFILE&#34;</span>,
+        <span style="color:#b84">&#34;environment&#34;</span> : <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>});
+}</code></pre></div>
 <p>The installation adds a new class to your application called <code>TealiumUtagService</code> which available by registering it as a provider to a component.</p>
 
 <h2 id="example">Example</h2>
 
 <p>The following is a full example of importing the Tealium service to your application, <a href="https://github.com/Tealium/integration-angular/blob/master/example/src/app/app.component.ts"><code>app.component.ts</code></a>.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="font-weight:bold">import</span> { Component, OnInit } from <span style="color:#b84">&#39;@angular/core&#39;</span>;
-<span style="font-weight:bold">import</span> { TealiumUtagService } from <span style="color:#b84">&#39;./tealium/utag.service&#39;</span>;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">import { <span style="color:#008080">Component</span>, <span style="color:#008080">OnInit</span> } from <span style="color:#b84">&#39;@angular/core&#39;</span>;
+import { <span style="color:#008080">TealiumUtagService</span> } from <span style="color:#b84">&#39;./tealium/utag.service&#39;</span>;
 
-<span style="color:#a61717;background-color:#e3d2d2">@</span>Component({
-  selector<span style="font-weight:bold">:</span> <span style="color:#b84">&#39;app-root&#39;</span>,
-  providers<span style="font-weight:bold">:</span> [TealiumUtagService],
-  templateUrl<span style="font-weight:bold">:</span> <span style="color:#b84">&#39;./app.component.html&#39;</span>,
-  styleUrls<span style="font-weight:bold">:</span> [<span style="color:#b84">&#39;./app.component.css&#39;</span>]
-  })
+@Component({
+  <span style="color:#b84">selector</span>: <span style="color:#b84">&#39;app-root&#39;</span>,
+  <span style="color:#b84">providers</span>: <span style="font-weight:bold">[</span><span style="color:#008080">TealiumUtagService</span><span style="font-weight:bold">]</span>,
+  <span style="color:#b84">templateUrl</span>: <span style="color:#b84">&#39;./app.component.html&#39;</span>,
+  <span style="color:#b84">styleUrls</span>: <span style="font-weight:bold">[</span><span style="color:#b84">&#39;./app.component.css&#39;</span><span style="font-weight:bold">]</span>})
 
-  <span style="font-weight:bold">export</span> <span style="font-weight:bold">class</span> AppComponent <span style="font-weight:bold">implements</span> OnInit {
+export <span style="font-weight:bold">class</span> <span style="color:#458;font-weight:bold">AppComponent</span> implements <span style="color:#008080">OnInit</span> {
+
   title <span style="font-weight:bold">=</span> <span style="color:#b84">&#39;Testing App&#39;</span>;
 
-  constructor(<span style="font-weight:bold">private</span> tealium<span style="font-weight:bold">:</span> TealiumUtagService) {
-    <span style="font-weight:bold">this</span>.tealium.setConfig({ account<span style="font-weight:bold">:</span> <span style="color:#b84">&#39;##TEALIUM_ACCOUNT##&#39;</span>, profile<span style="font-weight:bold">:</span> <span style="color:#b84">&#39;##TEALIUM_PROFILE##&#39;</span>, environment<span style="font-weight:bold">:</span> <span style="color:#b84">&#39;prod&#39;</span> });
+  constructor(<span style="font-weight:bold">private</span> <span style="color:#b84">tealium</span>: <span style="color:#008080">TealiumUtagService</span>) {
+    this<span style="font-weight:bold">.</span>tealium<span style="font-weight:bold">.</span>setConfig({ <span style="color:#b84">account</span>: <span style="color:#b84">&#39;##TEALIUM_ACCOUNT##&#39;</span>, <span style="color:#b84">profile</span>: <span style="color:#b84">&#39;##TEALIUM_PROFILE##&#39;</span>, <span style="color:#b84">environment</span>: <span style="color:#b84">&#39;prod&#39;</span> });
   }
 
-  ngOnInit()<span style="font-weight:bold">:</span> <span style="font-weight:bold">void</span> {
-    <span style="color:#998;font-style:italic">// The tealium.view function will call the tealium.track function with &#39;view&#39; as first param
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#998;font-style:italic">// Most tags support the &#39;view&#39; event and many analytics tags also support the &#39;link&#39; event
-</span><span style="color:#998;font-style:italic"></span>    <span style="font-weight:bold">this</span>.tealium.view({event_name<span style="font-weight:bold">:</span> <span style="color:#b84">&#39;init&#39;</span>});
-    <span style="color:#998;font-style:italic">//this.tealium.track(&#39;view&#39;, {&#39;event_name&#39; : &#39;init&#39;});
-</span><span style="color:#998;font-style:italic"></span>  }
-
-}
-</code></pre></div>
+  ngOnInit(): void {
+    <span style="color:#808000">//</span> <span style="color:#008080">The</span> tealium<span style="font-weight:bold">.</span>view function will call the tealium<span style="font-weight:bold">.</span>track function with <span style="color:#b84">&#39;view&#39;</span> as first param
+    <span style="color:#808000">//</span> <span style="color:#008080">Most</span> tags support the <span style="color:#b84">&#39;view&#39;</span> event <span style="font-weight:bold">and</span> many analytics tags also support the <span style="color:#b84">&#39;link&#39;</span> event
+    this<span style="font-weight:bold">.</span>tealium<span style="font-weight:bold">.</span>view({<span style="color:#b84">event_name</span>: <span style="color:#b84">&#39;init&#39;</span>});
+    <span style="color:#808000">//</span>this<span style="font-weight:bold">.</span>tealium<span style="font-weight:bold">.</span>track(<span style="color:#b84">&#39;view&#39;</span>, {<span style="color:#b84">&#39;event_name&#39;</span> : <span style="color:#b84">&#39;init&#39;</span>});
+  }
+}</code></pre></div>
 </div>
 
           
@@ -850,7 +846,7 @@ import { <span style="color:#008080">TealiumUtagService</span> } from <span styl
             
             
             <a href="/platforms/ios-objective-c/tvos/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              tvOs
+              tvOS
             </a>
           </li>
           <li class="fw4">
@@ -1045,15 +1041,15 @@ import { <span style="color:#008080">TealiumUtagService</span> } from <span styl
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Data Layer Object (b)
+            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Universal Data Object (utag_data)
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Universal Data Object (utag_data)
+            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer Object (b)
             </a>
           </li>
           <li class="fw4">
@@ -1341,7 +1337,7 @@ import { <span style="color:#008080">TealiumUtagService</span> } from <span styl
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p>This page was last updated:  October 25, 2019 </p>
+<p>This page was last updated:  October 31, 2019 </p>
 
       
 

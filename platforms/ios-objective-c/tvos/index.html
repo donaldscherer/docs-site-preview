@@ -287,9 +287,7 @@ var utag_data = {
 
 <ol>
 <li><p>Add the following dependency to your Podfile:</p>
-
-<pre><code>pod 'TealiumTVOS'
-</code></pre></li>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">pod <span style="color:#b84">&#39;TealiumTVOS&#39;</span></code></pre></div></li>
 
 <li><p>Download and install the <a href="https://github.com/Tealium/tealium-tvos">Tealium for tvOS</a> library.
 <p class="tip">We recommend cloning the library (instead of downloading) to make it easier to update to future releases.</p></p></li>
@@ -297,9 +295,7 @@ var utag_data = {
 <li><p>Add <code>TealiumTVOS.framework</code> to your project&rsquo;s tvOS Extension target, and copy the framework to the project in the resulting dialog box.</p></li>
 
 <li><p>In the target&rsquo;s <strong>General: Embedded Binaries</strong> section, add the framework:</p>
-
-<pre><code>TealiumTVOS.framework
-</code></pre></li>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">TealiumTVOS<span style="font-weight:bold">.</span>framework</code></pre></div></li>
 </ol>
 
 <h2 id="initialize">Initialize</h2>
@@ -311,9 +307,9 @@ var utag_data = {
   <div class="tab-content">
 <div class="tab-pane" data-lang="Swift" title="Swift">
   <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">let</span> <span style="color:#008080">config</span> = TEALConfiguration.<span style="font-weight:bold">init</span>(account: <span style="color:#b84">&#34;ACCOUNT&#34;</span>,
-                                    profile: <span style="color:#b84">&#34;PROFILE&#34;</span>,
-                                environment: <span style="color:#b84">&#34;ENV&#34;</span>,
-                                 datasource: <span style="color:#b84">&#34;DATASOURCE&#34;</span>)
+                      profile: <span style="color:#b84">&#34;PROFILE&#34;</span>,
+                      environment: <span style="color:#b84">&#34;ENV&#34;</span>,
+                      datasource: <span style="color:#b84">&#34;DATASOURCE&#34;</span>)
 
 <span style="font-weight:bold">guard</span> <span style="font-weight:bold">let</span> <span style="color:#008080">tealium</span> = Tealium.newInstanceForKey(<span style="color:#b84">&#34;uniqueInstanceKey&#34;</span>, configuration: config) <span style="font-weight:bold">else</span> {
     <span style="color:#998;font-style:italic">// Any additional failure response here</span>
@@ -322,10 +318,11 @@ var utag_data = {
 </div>
 
 <div class="tab-pane" data-lang="Objective-C" title="Objective-C">
-  <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">TEALConfiguration <span style="font-weight:bold">*</span>configuration <span style="font-weight:bold">=</span> [TEALConfiguration configurationWithAccount:<span style="color:#b84">@&#34;ACCOUNT&#34;</span>
-                                                                       profile:<span style="color:#b84">@&#34;PROFILE&#34;</span>
-                                                                   environment:<span style="color:#b84">@&#34;ENV&#34;</span>,
-                                                                    datasource:<span style="color:#b84">@&#34;DATASOURCE&#34;</span>];
+  <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">TEALConfiguration <span style="font-weight:bold">*</span>configuration <span style="font-weight:bold">=</span> [TEALConfiguration
+                      configurationWithAccount:<span style="color:#b84">@&#34;ACCOUNT&#34;</span>
+                      profile:<span style="color:#b84">@&#34;PROFILE&#34;</span>
+                      environment:<span style="color:#b84">@&#34;ENV&#34;</span>,
+                      datasource:<span style="color:#b84">@&#34;DATASOURCE&#34;</span>];
 
 Tealium <span style="font-weight:bold">*</span>tealiumInstance1 <span style="font-weight:bold">=</span> [Tealium newInstanceForKey:<span style="color:#b84">@&#34;INSTANCE&#34;</span> configuration:configuration]; </code></pre></div>
 </div>
@@ -932,7 +929,7 @@ Tealium <span style="font-weight:bold">*</span>tealiumInstance1 <span style="fon
             
             
             <a href="/platforms/ios-objective-c/tvos/" class="db link pl3 pr2 pv1 bg-secondary white">
-              tvOs
+              tvOS
             </a>
           </li>
           <li class="fw4">
@@ -1127,15 +1124,15 @@ Tealium <span style="font-weight:bold">*</span>tealiumInstance1 <span style="fon
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Data Layer Object (b)
+            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Universal Data Object (utag_data)
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/universal-data-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Universal Data Object (utag_data)
+            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer Object (b)
             </a>
           </li>
           <li class="fw4">
@@ -1423,7 +1420,7 @@ Tealium <span style="font-weight:bold">*</span>tealiumInstance1 <span style="fon
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p>This page was last updated:  October 29, 2019 </p>
+<p>This page was last updated:  October 31, 2019 </p>
 
       
 
