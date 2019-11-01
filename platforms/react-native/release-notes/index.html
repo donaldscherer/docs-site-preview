@@ -280,13 +280,13 @@ var utag_data = {
 <h2 id="1-0-7-november-2019">1.0.7 (November 2019)</h2>
 
 <p><strong>High Impact Changes</strong>
-* Support for ReactNative Autolinking in 0.60 and above
+* Support for ReactNative Autolinking in 0.60+
 * Better support for nested event data specifically for Android platform
 * Underlying Tealium libraries updated to versions 5.5.5 (Android) and 5.6.3 (iOS)
 * Bug Fixes
-    * Corrected method signature for Tealium.getPersistentData(key, callback)
-    * Build errors in iOS relating to Vdata/Event enums have been fixed
-    * Fixed crashes on some iPad versions (only when using TealiumIOS pod v5.6.0/5.6.1)</p>
+    * Corrected method signature for <code>Tealium.getPersistentData(key, callback)</code>
+    * Build errors in iOS relating to <code>Vdata</code>/<code>Event</code> enums have been fixed
+    * Fixed crashes on some iPad versions (only when using <code>TealiumIOS</code> pod v5.6.0/5.6.1)</p>
 
 <h2 id="1-0-5-1-0-6-september-2019">1.0.5 - 1.0.6 (September 2019)</h2>
 
@@ -303,7 +303,7 @@ var utag_data = {
 <p><strong>Low Impact Changes</strong></p>
 
 <ul>
-<li>Null activity handling, as well as extra instance null checks for Consent Manager methods.</li>
+<li><code>null</code> activity handling, as well as extra instance null checks for Consent Manager methods.</li>
 <li>Gradle updates to target latest Android version.</li>
 </ul>
 
@@ -312,7 +312,7 @@ var utag_data = {
 <p><strong>Low Impact Changes</strong></p>
 
 <ul>
-<li>Bug Fix - Fixed public trackEvent to call trackEvent on Tealium instance for Android</li>
+<li>Bug Fix - Fixed public <code>trackEvent()</code> to call <code>trackEvent()</code> on <code>Tealium</code> instance for Android</li>
 </ul>
 
 <h2 id="1-0-1-february-2019">1.0.1 (February 2019)</h2>
@@ -332,7 +332,7 @@ var utag_data = {
 <li><a href="/platforms/react-native/functions/">VisitorID</a> - Retrieve the Visitor ID for the current Tealium instance, or for any other instance specified.</li>
 </ul></li>
 <li>Multiple instances of Tealium are now supported.</li>
-<li>New <a href="/platforms/react-native/functions/">configuration options</a> have been added that include the enablement of Consent Management, Lifecycle, and a Datasource Id.</li>
+<li>New <a href="/platforms/react-native/functions/">configuration options</a> have been added that include the enablement of Consent Management, Lifecycle, and a Datasource ID.</li>
 </ul>
 
 <h2 id="1-0-0-august-2018">1.0.0 (August 2018)</h2>
@@ -1056,15 +1056,15 @@ var utag_data = {
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Data Layer Object (b)
+            <a href="/platforms/javascript/universal-tag/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Universal Tag (utag.js)
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/universal-tag/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Universal Tag (utag.js)
+            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer Object (b)
             </a>
           </li>
           <li class="fw4">

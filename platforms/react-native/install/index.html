@@ -321,19 +321,30 @@ var utag_data = {
 <li><p>Download and install the <code>tealium-react-native</code> package with the following command:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn install tealium-react-native</code></pre></div></li>
 
-<li><p>React Native Autolinking is enabled in version 1.0.7 of the npm package so you should no longer need to run <code>react-native link</code> if using version 0.60 and above of React Native.</p></li>
+<li><p>React Native Autolinking is enabled in version 1.0.7 of the NPM package and is no longer needed to run <code>react-native link</code> if using version 0.60+ of React Native.</p></li>
 </ol>
 
 <h3 id="android">Android</h3>
 
-<p>You will need to add a reference to our Maven repository in your project root <code>build.gradle</code> as described <a href="https://docs.tealium.com/platforms/android/install/#maven-install">here</a> on our main Android documentation. The project dependencies should be automatically handled by the Autolinking process.</p>
+<p>Add a reference to Tealium&rsquo;s Maven repository in your project root <code>build.gradle</code> as described in the <a href="https://docs.tealium.com/platforms/android/install/#maven-install">Android Maven Install</a> documentation. The project dependencies are automatically handled by the Autolinking process.</p>
 
 <h3 id="ios">iOS</h3>
 
-<p>The Autolinking feature of React Native 0.60+ should automatically add the required cocoapods dependencies into your iOS application workspace, all you should need to do is install the pods.</p>
+<p>The Autolinking feature of React Native 0.60+ automatically adds the required CocoaPods dependencies into your iOS application workspace.</p>
+
+<p>To install the pods, run the following commands:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">// From your React Native application folder:
 <span style="color:#999">cd</span> ios <span style="font-weight:bold">&amp;&amp;</span> pod install</code></pre></div>
-<p class="note">In some cases it is necessary to enable the following Clang parameter in the <code>tealium-react-native</code> development pod: <code>CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;</code> You can find this through XCode by opening your app&rsquo;s <code>.xcworkspace</code> file and selecting your <code>Pods</code> from the navigator. Under <code>Targets</code> select the <code>tealium-react-native</code> target, and choose the <code>Build Settings</code> tab - you should be able to find the required setting under <code>Apple Clang - Language - Modules -&gt; Allow Non-modular Includes In Framework Modules</code></p>
+<p>In some cases, it&rsquo;s necessary to enable the Clang parameter to allow non-modular includes in the framework modules. To enable the Clang paramter:</p>
+
+<ol>
+<li><p>In Xcode, open the app&rsquo;s <code>.xcworkspace</code> file and selecting your <code>Pods</code> from the navigator.</p></li>
+
+<li><p>Under <strong>Targets</strong> select the <strong>tealium-react-native</strong> target, and click the <strong>Build Settings</strong> tab.</p></li>
+
+<li><p>Find and update the following setting under &ldquo;Apple Clang - Language - Modules&rdquo; &gt; &ldquo;Allow Non-modular Includes In Framework Modules&rdquo;:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES <span style="font-weight:bold">=</span> YES<span style="font-weight:bold">;</span></code></pre></div></li>
+</ol>
 
 <h2 id="install-manual">Install (Manual)</h2>
 
@@ -1154,15 +1165,15 @@ All initialization options are available with the method <a href="/platforms/rea
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Data Layer Object (b)
+            <a href="/platforms/javascript/universal-tag/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Universal Tag (utag.js)
             </a>
           </li>
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/universal-tag/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
-              Universal Tag (utag.js)
+            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Data Layer Object (b)
             </a>
           </li>
           <li class="fw4">
