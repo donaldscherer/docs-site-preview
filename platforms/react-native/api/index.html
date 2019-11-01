@@ -235,7 +235,9 @@ var utag_data = {
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">Table of Contents</p>
       <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#class-tealium">Class: Tealium</a></li>
-              <ul class="toc-h3"><li><a href="#getuserconsentcategories">getUserConsentCategories()</a></li>
+              <ul class="toc-h3"><li><a href="#getpersistentdata">getPersistentData()</a></li>
+              <li><a href="#getpersistentdataforinstancename">getPersistentDataForInstanceName()</a></li>
+              <li><a href="#getuserconsentcategories">getUserConsentCategories()</a></li>
               <li><a href="#getuserconsentcatgoriesforinstancename">getUserConsentCatgoriesForInstanceName()</a></li>
               <li><a href="#getuserconsentstatus">getUserConsentStatus()</a></li>
               <li><a href="#getuserconsentstatusforinstancename">getUserConsentStatusForInstanceName()</a></li>
@@ -316,6 +318,16 @@ var utag_data = {
 </thead>
 
 <tbody>
+<tr>
+<td><code>getPersistentData()</code></td>
+<td>Gets the value for the key passed in</td>
+</tr>
+
+<tr>
+<td><code>getPersistentDataForInstanceName()</code></td>
+<td>Get a persistent data value, for a specific Tealium instance and key</td>
+</tr>
+
 <tr>
 <td><code>getUserConsentCategories()</code></td>
 <td>Gets the consent categories of a user</td>
@@ -479,6 +491,77 @@ var utag_data = {
 <tr>
 <td><code>trackViewForInstanceName()</code></td>
 <td>Track a view when you have multiple instances of Tealium in your app, for a specific Tealium instance</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="getpersistentdata"><code>getPersistentData()</code></h3>
+
+<p>Gets the value for the key passed in.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">Tealium.getPersistentData(key, value);
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>key</code></td>
+<td><code>String</code></td>
+<td>Key name of value</td>
+<td><code>&quot;foo&quot;</code></td>
+</tr>
+
+<tr>
+<td><code>value</code></td>
+<td><code>Object</code></td>
+<td>JSON object of key-value pairs</td>
+<td><code>function(value) {console.log(&quot;get persistent: &quot; + value);}</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="getpersistentdataforinstancename"><code>getPersistentDataForInstanceName()</code></h3>
+
+<p>Get a persistent data value, for a specific Tealium instance and key. For use if you have multiple instances of Tealium in your app.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">Tealium.getPersistentDataForInstanceName(instanceName, key, value);
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>String</code></td>
+<td>Instance name</td>
+<td><code>&quot;instance-2&quot;</code></td>
+</tr>
+
+<tr>
+<td><code>key</code></td>
+<td><code>String</code></td>
+<td>Key name of value</td>
+<td><code>&quot;foo&quot;</code></td>
+</tr>
+
+<tr>
+<td><code>data</code></td>
+<td><code>Object</code></td>
+<td>JSON object of key-value pairs</td>
+<td><code>function(value) {console.log(&quot;get volatile: &quot; + value);}</code></td>
 </tr>
 </tbody>
 </table>
@@ -2669,7 +2752,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p>This page was last updated:  October 25, 2019 </p>
+<p>This page was last updated:  November 1, 2019 </p>
 
       
 

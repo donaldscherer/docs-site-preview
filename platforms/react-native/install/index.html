@@ -237,7 +237,7 @@ var utag_data = {
       <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#how-it-works">How It Works</a></li>
               <li><a href="#prerequisites">Prerequisites</a></li>
               <li><a href="#sample-app">Sample App</a></li>
-              <li><a href="#install-npm">Install (NPM)</a></li>
+              <li><a href="#install-npm-yarn">Install (NPM/YARN)</a></li>
               <ul class="toc-h3"><li><a href="#android">Android</a></li>
               <li><a href="#ios">iOS</a></li>
               </ul><li><a href="#install-manual">Install (Manual)</a></li>
@@ -307,13 +307,11 @@ var utag_data = {
 <li><a href="/platforms/android/">Tealium for Android</a> or <a href="/platforms/ios-swift/">Tealium for iOS</a></li>
 </ul>
 
-<p class="note">The <code>TealiumCore</code> library is required. The <a href="/platforms/ios-swift/module-list/lifecycle/">Lifecycle module</a> is needed if you want to track lifecycle events. There are two versions of each module on <a href="https://github.com/Tealium/tealium-ios">GitHub</a>: one for publishing to the App Store and one that includes the ability to run the app on a simulator (cannot be published to the App Store).</p>
-
 <h2 id="sample-app">Sample App</h2>
 
 <p>To help familiarize yourself with our library, the tracking methods, and best practice implementation, it is recommended to download the <a href="https://github.com/Tealium/tealium-react-native/tree/master/TealiumSampleApp">React Native sample app</a>.</p>
 
-<h2 id="install-npm">Install (NPM)</h2>
+<h2 id="install-npm-yarn">Install (NPM/YARN)</h2>
 
 <p>To install the Tealium library for React Native with NPM:</p>
 
@@ -321,31 +319,21 @@ var utag_data = {
 <li><p>Navigate to the root of your React Native project.</p></li>
 
 <li><p>Download and install the <code>tealium-react-native</code> package with the following command:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install tealium-react-native</code></pre></div></li>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn install tealium-react-native</code></pre></div></li>
 
-<li><p>To link the native dependencies within the module to your main React Native app so that it builds against the module, run the following command:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">react-native link</code></pre></div></li>
+<li><p>React Native Autolinking is enabled in version 1.0.7 of the npm package so you should no longer need to run <code>react-native link</code> if using version 0.60 and above of React Native.</p></li>
 </ol>
 
 <h3 id="android">Android</h3>
 
-<p>For Android apps, it is recommended to build your app using the IDE. However, apps are started from the command-line interface (CLI).</p>
+<p>You will need to add a reference to our Maven repository in your project root <code>build.gradle</code> as described <a href="https://docs.tealium.com/platforms/android/install/#maven-install">here</a> on our main Android documentation. The project dependencies should be automatically handled by the Autolinking process.</p>
 
 <h3 id="ios">iOS</h3>
 
-<p>For iOS apps, follow these installation steps:</p>
-
-<ol>
-<li><p>Download the two libraries: <code>TealiumIOS.framework</code> and <code>TealiumIOSLifecycle.framework</code>.</p></li>
-
-<li><p>Drag the frameworks into the <strong>Libraries</strong> folder in your Xcode project.</p></li>
-
-<li><p>Then drag them into the <strong>Embedded Binaries</strong> section under the <strong>General</strong> tab of your app target.</p></li>
-
-<li><p>Under <strong>Libraries</strong> find <code>TealiumModule.xcodeproj</code> and within it is a <strong>Products</strong> folder containing a <code>libTealiumModule.a</code> file.</p></li>
-</ol>
-
-<p class="note">If you&rsquo;re looking for <code>Libraries &gt; TealiumModule.xcodeproj &gt; Products &gt; libTealiumModule.a</code>. Under the <code>Build Phases</code> tab of your target, find the section <code>Link Binary With Libraries</code> and drag the <code>libTealiumModule.a</code> into it.  More information on linking libraries is found in the <a href="https://facebook.github.io/react-native/docs/linking-libraries-ios#step-2-1">React Native documentation</a>.</p>
+<p>The Autolinking feature of React Native 0.60+ should automatically add the required cocoapods dependencies into your iOS application workspace, all you should need to do is install the pods.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">// From your React Native application folder:
+<span style="color:#999">cd</span> ios <span style="font-weight:bold">&amp;&amp;</span> pod install</code></pre></div>
+<p class="note">In some cases it is necessary to enable the following Clang parameter in the <code>tealium-react-native</code> development pod: <code>CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;</code> You can find this through XCode by opening your app&rsquo;s <code>.xcworkspace</code> file and selecting your <code>Pods</code> from the navigator. Under <code>Targets</code> select the <code>tealium-react-native</code> target, and choose the <code>Build Settings</code> tab - you should be able to find the required setting under <code>Apple Clang - Language - Modules -&gt; Allow Non-modular Includes In Framework Modules</code></p>
 
 <h2 id="install-manual">Install (Manual)</h2>
 
@@ -1455,7 +1443,7 @@ All initialization options are available with the method <a href="/platforms/rea
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p>This page was last updated:  October 31, 2019 </p>
+<p>This page was last updated:  November 1, 2019 </p>
 
       
 
