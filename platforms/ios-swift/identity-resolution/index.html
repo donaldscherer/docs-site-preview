@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>Data Layer Object (b) | Tealium for JavaScript (utag.js) |Preview of Tealium Developer Docs</title>
+    <title>Identity Resolution | Tealium for iOS (Swift) |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -25,7 +25,7 @@
         
 <script>
 var utag_data = {
-    category_name : "JavaScript (Web)",
+    category_name : "iOS (Swift)",
     site_section  : "platforms",
     site_language : "en",
     tealium_event : "page_view"
@@ -234,14 +234,7 @@ var utag_data = {
 
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">Table of Contents</p>
-      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#what-is-the-b-object">What is the b Object?</a></li>
-              <li><a href="#why-do-we-have-a-b-object">Why Do We Have a b Object?</a></li>
-              <li><a href="#variable-types">Variable Types</a></li>
-              <ul class="toc-h3"><li><a href="#data-layer">Data Layer</a></li>
-              <li><a href="#javascript-page-variable">JavaScript Page Variable</a></li>
-              <li><a href="#query-string-parameters">Query String Parameters</a></li>
-              <li><a href="#cookie-values">Cookie Values</a></li>
-              </ul><li><a href="#additional-considerations">Additional Considerations</a></li>
+      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#how-it-works">How it Works</a></li>
               </nav>
   </aside></div>
 
@@ -252,19 +245,19 @@ var utag_data = {
           <header class="flex-none w-100">
   
     
-      <a href="/platforms/javascript" class="f6 fw8 mb0 link mid-gray dim mr3">
-        JAVASCRIPT
+      <a href="/platforms/ios-swift" class="f6 fw8 mb0 link mid-gray dim mr3">
+        IOS SWIFT
       </a>
     
   
 
-  <h1 class="lh-title mb3 mv0 pt3">Data Layer Object (b)</h1>
+  <h1 class="lh-title mb3 mv0 pt3">Identity Resolution</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Learn to use the alias to the Data Layer Object (<code>b</code>).
+      Learn about identity resolution.
     </div>
   
 
@@ -277,84 +270,28 @@ var utag_data = {
 
 
 
-<h2 id="what-is-the-b-object">What is the <code>b</code> Object?</h2>
+<h2 id="how-it-works">How it Works</h2>
 
-<p>The <code>b</code> object is a JavaScript variable containing the most recent copy of the data layer object. Depending on when it&rsquo;s referenced, the <code>b</code> object is either an alias or a local copy of the <code>utag.data</code> object. So what is the <code>utag.data</code> object? The <code>utag.data</code> object is a collection of all the data on your page:</p>
+<p>The Tealium Swift library generates a randomized and unique persistent visitor ID the first time it is launched with the <a href="/platforms/ios-swift/api/tealium/#getvisitorid"><code>getVisitorId()</code></a> method. This value is included in each tracked event as the attribute <code>tealium_visitor_id</code>. This value is the primary visitor ID used in AudienceStream. You can include secondary visitor ID attributes as needed by adding them to the persistent data storage.</p>
 
-<ul>
-<li>Data Layer Variables</li>
-<li>JavaScript Page Variables</li>
-<li>Meta Tags</li>
-<li>DOM Attributes</li>
-<li>Cookies</li>
-</ul>
+<p>If you are using Tealium AudienceStream, this will become the main first-party visitor ID that&rsquo;s associated with this visitor. You may provide additional known visitor IDs as needed, by sending them as variables in your tracking calls.</p>
 
-<p>So, in essence, the <code>b</code> object is a copy of your page&rsquo;s data layer.</p>
+<p><a href="https://community.tealiumiq.com/t5/Getting-Started-with/Visitor-Stitching-Visitor-ID/ta-p/25790">Learn more</a> about configuring visitor IDs in AudienceStream.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">class</span> <span style="color:#458;font-weight:bold">TealiumHelper</span> {
+	<span style="font-weight:bold">var</span> <span style="color:#008080">tealium</span>: Tealium?
+	<span style="color:#998;font-style:italic">// ...</span>
 
-<h2 id="why-do-we-have-a-b-object">Why Do We Have a <code>b</code> Object?</h2>
+	<span style="color:#998;font-style:italic">// Retrieve Tealium&#39;s first party visitor ID, if needed</span>
+	<span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">getVisitorId</span>() -&gt; <span style="color:#999">String</span>? {
+		<span style="font-weight:bold">return</span> <span style="font-weight:bold">self</span>.tealium?.getVisitorId()
+	}
 
-<p>Using the <code>b</code> object provides a couple benefits:</p>
+	<span style="color:#998;font-style:italic">// adds a known visitor ID (such as an email address) to the persistent data store</span>
+	<span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">setKnownVisitorId</span>(<span style="font-weight:bold">_</span> id: <span style="color:#999">String</span>) {
+		<span style="font-weight:bold">self</span>.tealium?.persistentData()?.addPersistentData([<span style="color:#b84">&#34;customer_id&#34;</span>: id])
+	}
 
-<ul>
-<li><strong>As an alias with a shorter name</strong><br />
-This shorter name improves performance loading Tealium. If you had to reference <code>utag.data</code> a hundred times, then you are adding 900 characters to the size of your files. That&rsquo;s 900 more characters the browser has to parse through when loading these files which results in a negative affect on visitor load times. Referring to it as <code>b</code> means only 1 character to add to the file for each reference, which if you referenced a hundred times  results in only 100 characters for the browser to parse through. </li>
-<li><strong>As a copy that leaves the original untouched</strong><br />
-By creating a local copy of <code>utag.data</code>, you can customize the values needed for each tag without affecting the original data object.   </li>
-</ul>
-
-<h2 id="variable-types">Variable Types</h2>
-
-<p>To reference a variable in the <code>b</code> object directly in a tag template or extension, you must consider the type of variable you&rsquo;re trying to reference; the syntax differs slightly. </p>
-
-<h3 id="data-layer">Data Layer</h3>
-
-<p>For variables contained in the <code>utag_data</code> object, use the following syntax:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">b[<span style="color:#b84">&#39;var_name&#39;</span>]
-</code></pre></div>
-<h3 id="javascript-page-variable">JavaScript Page Variable</h3>
-
-<p>To reference variables defined as JavaScript Page variables, use the following syntax:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">b[<span style="color:#b84">&#39;js_page.var_name&#39;</span>]
-</code></pre></div>
-<h3 id="query-string-parameters">Query String Parameters</h3>
-
-<p>To reference a query string parameter, use the following syntax:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">b[<span style="color:#b84">&#39;qp.var_name&#39;</span>]
-</code></pre></div>
-<h3 id="cookie-values">Cookie Values</h3>
-
-<p>Tealium has two ways to store cookie values. The syntax to reference these two types varies slightly. <a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/Tealium-Cookies/ta-p/138">Learn more</a> about working with cookies in Tealium iQ.</p>
-
-<ol>
-<li><p><strong><code>utag_main</code> Cookie Values</strong> - to reference a cookie value contained in the <code>utag_main</code> cookie, use the following syntax: </p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">b[<span style="color:#b84">&#39;cp.utag_main_var_name&#39;</span>]
-</code></pre></div></li>
-
-<li><p><strong>Standard Cookie Values</strong> - to reference a cookie value that is not contained in the <code>utag_main</code> cookie, use the following syntax:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">b[<span style="color:#b84">&#39;cp.var_name&#39;</span>]
-</code></pre></div></li>
-</ol>
-
-<h2 id="additional-considerations">Additional Considerations</h2>
-
-<p><strong>The <code>b</code> object is not global</strong></p>
-
-<ul>
-<li>The <code>b</code> object is a locally scoped variable, only available in <strong>All Tags</strong> and <strong>Tag Scoped</strong> extensions. </li>
-<li>Extensions scoped to <strong>Pre Loader</strong> run before the <code>b</code> object has been created.</li>
-<li>Extensions scoped to <strong>DOM Ready</strong> run independently from the main order of operations, so the <code>b</code> object cannot be referenced in this scope either.<br /></li>
-<li><a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/Extensions/ta-p/13649">Learn more</a> about how to reference the data object variable in extensions.<br /></li>
-</ul>
-
-<p><strong>The <code>b</code> object in tracking calls</strong></p>
-
-<ul>
-<li>During a standard page load, the <code>b</code> object becomes a copy of the <code>utag_data</code> object. However, on manual tracking calls, the <code>b</code> object is a copy of the object passed to <code>utag.view()</code> or <code>utag.link()</code> and does not contain variables from the original <code>utag_data</code> object. </li>
-<li>To preserve data from <code>utag_data</code> in tracking calls (per page load) use the <a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/Publish-Configuration/ta-p/13632#implementation">Base Variables setting in the publish settings</a>.<br /></li>
-</ul>
-
-<p class="note">For profiles loading version 4.39 or older, the content of the <code>b</code> object during tracking calls is a complete copy of <code>utag.data</code>. <a href="/platforms/javascript/release-notes/">Learn more</a> about this update in release history <code>utag.js</code> 4.40.</p>
-
+}</code></pre></div>
 </div>
 
           
@@ -894,9 +831,9 @@ By creating a local copy of <code>utag.data</code>, you can customize the valu
       </li>
       
       
-      <li class="w-100 hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".ios-swift">iOS (Swift)</a>
-        <ul class="ios-swift desktopmenu animated fadeIn list pl0 dn">
+      <li class="w-100 hover-accent-color-light fw8 active">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".ios-swift">iOS (Swift)</a>
+        <ul class="ios-swift desktopmenu animated fadeIn list pl0 db">
           <li class="fw4">
             
             
@@ -942,7 +879,7 @@ By creating a local copy of <code>utag.data</code>, you can customize the valu
           <li class="fw4">
             
             
-            <a href="/platforms/ios-swift/identity-resolution/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/ios-swift/identity-resolution/" class="db link pl3 pr2 pv1 bg-secondary white">
               Identity Resolution
             </a>
           </li>
@@ -1041,9 +978,9 @@ By creating a local copy of <code>utag.data</code>, you can customize the valu
       </li>
       
       
-      <li class="w-100 hover-accent-color-light fw8 active">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".javascript">JavaScript (Web)</a>
-        <ul class="javascript desktopmenu animated fadeIn list pl0 db">
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".javascript">JavaScript (Web)</a>
+        <ul class="javascript desktopmenu animated fadeIn list pl0 dn">
           <li class="fw4">
             
             
@@ -1089,7 +1026,7 @@ By creating a local copy of <code>utag.data</code>, you can customize the valu
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 bg-secondary white">
+            <a href="/platforms/javascript/data-layer-object/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Data Layer Object (b)
             </a>
           </li>
@@ -1371,7 +1308,7 @@ By creating a local copy of <code>utag.data</code>, you can customize the valu
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p>This page was last updated:  November 1, 2019 </p>
+<p>This page was last updated:  November 19, 2019 </p>
 
       
 

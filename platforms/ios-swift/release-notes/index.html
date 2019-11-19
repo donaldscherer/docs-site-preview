@@ -234,7 +234,7 @@ var utag_data = {
 
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">Table of Contents</p>
-      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#1-70-1-1-1-2019">1.70-1.1.1 (2019)</a></li>
+      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#1-70-1-8-0-2019">1.70-1.8.0 (2019)</a></li>
               <li><a href="#1-50-1-6-7-2018">1.50-1.6.7 (2018)</a></li>
               <li><a href="#1-1-3-1-4-0-2017">1.1.3-1.4.0 (2017)</a></li>
               <li><a href="#1-0-0-1-1-2-2016">1.0.0-1.1.2 (2016)</a></li>
@@ -275,7 +275,73 @@ var utag_data = {
 
 <p>Below is a complete list of changes for each release of the Swift library.</p>
 
-<h2 id="1-70-1-1-1-2019">1.70-1.1.1 (2019)</h2>
+<h2 id="1-70-1-8-0-2019">1.70-1.8.0 (2019)</h2>
+
+<h4 id="1-8-0-november-2019">1.8.0 (November 2019)</h4>
+
+<p><strong>New Features</strong></p>
+
+<ul>
+<li>Event batching
+
+<ul>
+<li>Send up to 10 events in a single hit to the Tealium UDH
+
+<ul>
+<li>For Tag Management, events are dispatched to the <code>WKWebView</code> instance in a batch and are processed individually by JavaScript tags in your profile.</li>
+<li>For EventStream/AudienceStream/Event Data Framework products, events are dispatched in a single HTTP request when using the Collect module. Requests are Gzipped. Once the event limit is reached (max 10 events), they are dispatched immediately, if a connection is available.</li>
+</ul></li>
+<li>To disable event batching, set the batch size to 1</li>
+</ul></li>
+<li>Optional Visitor Service module (requires AudienceStream CDP). Retrieve visitor profiles in real-time as soon as the profile changes.</li>
+<li>New variable <code>&quot;device_type&quot;</code> that captures the internal device identifier, for example iPhone8,4.</li>
+<li>Additional header docs for Visitor Service and Event Batching (DispatchQueue module).</li>
+<li>Added ability to override both the URL and profile for the Visitor Service module</li>
+<li>Fixed a possible crash on iOS 12.0 devices in the DeviceData module, which was due to a known bug in the iOS 12.0 network subscriber information API. Bumped version check to iOS 12.1 where the bug was fixed, and fall back to older API for iOS 12.0</li>
+<li>Added some additional hints for the compiler inside complex closures to allow the project to be built on Xcode 10.3.</li>
+<li>Added remote_api call for future Remote Command compatibility. This triggers an additional call to the Tag Management webview (if module enabled). Disabled by default. Config option to enable: <code>config.setIsRemoteAPIEnbled(true)</code></li>
+<li>Added method to retrieve visitor ID</li>
+</ul>
+
+<p><strong>High Impact Changes</strong></p>
+
+<ul>
+<li>Persistent Storage has now moved from UserDefaults to JSON-based file storage. Data is stored by default in the caches directory on the device, but this is overridable through config.</li>
+<li>Where possible, all processing is now performed on a background queue. If you are using the Tag Management module, a limited amount of processing is performed on the main thread, as this is a requirement for WKWebView.</li>
+<li>The following modules have been removed:
+
+<ul>
+<li>FileStorage (superseded by DiskStorage, which is part of Core)</li>
+<li>DefaultsStorage (superseded by DiskStorage, which is part of Core)</li>
+<li>DataSource (incorporated into VolatileData module)</li>
+</ul></li>
+<li>Tag Management Optimizations (Webview)</li>
+<li><code>UIWebView</code> has been removed. Default is now <code>WKWebView</code> (only if using the Tag Management module). Due to bugs in the <code>WKWebView</code> API for iOS versions &lt;11, cookies may not be persisted on these devices when upgrading to 1.8.0 from earlier tealium-swift versions.</li>
+<li><code>vdata</code> dispatcher removed. All Collect module requests are now sent as POST requests to the <code>/event</code> endpoint, or <code>/bulk-event</code> in the case of batched requests</li>
+<li>Connectivity checks improved.</li>
+<li>Connectivity crash fixed (<code>TealiumRepeatingTimer</code> deinit)</li>
+<li>Updated project to work with Xcode11</li>
+<li>Crash reporter dependency fixed (currently using a binary build of PLCrashReporter until a fix is available)</li>
+</ul>
+
+<p><strong>Low Impact Changes</strong></p>
+
+<ul>
+<li>Attribution module updated to include additional data points provided by the Apple Search Ads API</li>
+<li>DeviceData module device names updated to include latest Apple devices</li>
+<li>Logging improvements</li>
+<li>Swiftdoc improvements; all public methods now have quick help available in Xcode</li>
+</ul>
+
+<h4 id="1-7-3-november-2019">1.7.3 (November 2019)</h4>
+
+<p><strong>Low Impact Changes</strong>
+* Fix for PLCrashReporter dependency with Xcode 11. Now uses a pre-built framework instead of building from source.</p>
+
+<h4 id="1-7-2-august-2019">1.7.2 (August 2019)</h4>
+
+<p><strong>Low Impact Changes</strong>
+* Minor internal change to support unit testing for Remote Commands.</p>
 
 <h4 id="1-7-1-july-2019">1.7.1 (July 2019)</h4>
 
@@ -1325,6 +1391,20 @@ var utag_data = {
           <li class="fw4">
             
             
+            <a href="/platforms/ios-swift/app-extensions/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              App Extensions
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/ios-swift/identity-resolution/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Identity Resolution
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
             <a href="/platforms/ios-swift/consent-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Consent Management
             </a>
@@ -1747,7 +1827,7 @@ var utag_data = {
      <em>Thank you for your feedback!</em>
   </span>
 </div>
-<p>This page was last updated:  October 29, 2019 </p>
+<p>This page was last updated:  November 14, 2019 </p>
 
       
 
