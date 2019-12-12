@@ -342,8 +342,8 @@ var utag_data = {
   <span style="font-weight:bold">guard</span> <span style="font-weight:bold">let</span> <span style="color:#008080">remoteCommands</span> = <span style="font-weight:bold">self</span>.tealium?.remoteCommands() <span style="font-weight:bold">else</span> {
       <span style="font-weight:bold">return</span>
   }
-  <span style="font-weight:bold">let</span> <span style="color:#008080">firebaseCommandRunner</span> = FirebaseCommandRunner()
-  <span style="font-weight:bold">let</span> <span style="color:#008080">firebaseCommand</span> = FirebaseCommand(firebaseCommandRunner: FirebaseCommandRunner)
+  <span style="font-weight:bold">let</span> <span style="color:#008080">firebaseTracker</span> = FirebaseTracker()
+  <span style="font-weight:bold">let</span> <span style="color:#008080">firebaseCommand</span> = FirebaseCommand(firebaseTracker: FirebaseTracker)
   <span style="font-weight:bold">let</span> <span style="color:#008080">firebaseRemoteCommand</span> = firebaseCommand.remoteCommand()
   remoteCommands.add(firebaseRemoteCommand)
 }</code></pre></div></li>
@@ -357,8 +357,8 @@ var utag_data = {
 
 <div class="tab-pane" data-lang="Swift" title="Swift">
   <p>Add the remote command to the <code>TealiumHelper.swift</code> file as shown in the following example:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">let</span> <span style="color:#008080">firebaseCommandRunner</span> = FirebaseCommandRunner()
-<span style="font-weight:bold">let</span> <span style="color:#008080">firebaseCommand</span> = FirebaseCommand(firebaseCommandRunner: firebaseCommandRunner)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">let</span> <span style="color:#008080">firebaseTracker</span> = FirebaseTracker()
+<span style="font-weight:bold">let</span> <span style="color:#008080">firebaseCommand</span> = FirebaseCommand(firebaseTracker: firebaseTracker)
 <span style="font-weight:bold">let</span> <span style="color:#008080">firebaseRemoteCommand</span> = firebaseCommand.remoteCommand()
 tealium.addRemoteCommandID(<span style="color:#b84">&#34;firebase&#34;</span>,
                            description: <span style="font-weight:bold">nil</span>,
@@ -374,8 +374,8 @@ tealium.addRemoteCommandID(<span style="color:#b84">&#34;firebase&#34;</span>,
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">#<span style="font-weight:bold">import</span> <span style="color:#b84">&#34;TealiumRemoteCommandObjcApp-Swift.h&#34;</span></code></pre></div></li>
 
 <li><p>Initialize the remote command:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Objective-C" data-lang="Objective-C">FirebaseCommandRunner <span style="font-weight:bold">*</span>firebaseCommandRunner <span style="font-weight:bold">=</span> [[FirebaseCommandRunner alloc] init];
-FirebaseCommand <span style="font-weight:bold">*</span>firebaseCommand <span style="font-weight:bold">=</span> [[FirebaseCommand alloc] initWithFirebaseCommandRunner:firebaseCommandRunner];
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Objective-C" data-lang="Objective-C">FirebaseTracker <span style="font-weight:bold">*</span>firebaseTracker <span style="font-weight:bold">=</span> [[FirebaseTracker alloc] init];
+FirebaseCommand <span style="font-weight:bold">*</span>firebaseCommand <span style="font-weight:bold">=</span> [[FirebaseCommand alloc] initWithFirebaseTracker: firebaseTracker];
 TEALRemoteCommandResponseBlock firebaseRemoteCommand <span style="font-weight:bold">=</span> [firebaseCommand remoteCommand];
 [[Tealium instanceForKey:<span style="color:#b84">@&#34;MY_INSTANCE&#34;</span>] addRemoteCommandID:<span style="color:#b84">@&#34;firebase&#34;</span>
                                 description:<span style="color:#b84">@&#34;Firebase Remote Command&#34;</span>
@@ -415,8 +415,8 @@ teal = Tealium(config: config) { responses <span style="font-weight:bold">in</sp
   <span style="font-weight:bold">guard</span> <span style="font-weight:bold">let</span> <span style="color:#008080">remoteCommands</span> = <span style="font-weight:bold">self</span>.tealium?.remoteCommands() <span style="font-weight:bold">else</span> {
         <span style="font-weight:bold">return</span>
   }
-  <span style="font-weight:bold">let</span> <span style="color:#008080">firebaseCommandRunner</span> = FirebaseCommandRunner()
-  <span style="font-weight:bold">let</span> <span style="color:#008080">firebaseCommand</span> = FirebaseCommand(firebaseCommandRunner: firebaseCommandRunner)
+  <span style="font-weight:bold">let</span> <span style="color:#008080">firebaseTracker</span> = FirebaseTracker()
+  <span style="font-weight:bold">let</span> <span style="color:#008080">firebaseCommand</span> = FirebaseCommand(firebaseTracker: firebaseTracker)
   <span style="font-weight:bold">let</span> <span style="color:#008080">firebaseRemoteCommand</span> = firebaseCommand.remoteCommand()
       remoteCommands.add(firebaseRemoteCommand)
 }</code></pre></div>
@@ -430,8 +430,8 @@ teal = Tealium(config: config) { responses <span style="font-weight:bold">in</sp
                                datasource: <span style="color:#b84">&#34;DATASOURCE&#34;</span>)
 let teal <span style="font-weight:bold">=</span> Tealium.newInstance(forKey: <span style="color:#b84">&#34;teal&#34;</span>, configuration: config)
 
-let firebaseCommandRunner <span style="font-weight:bold">=</span> FirebaseCommandRunner()
-let firebaseCommand <span style="font-weight:bold">=</span> FirebaseCommand(firebaseCommandRunner: firebaseCommandRunner)
+let firebaseTracker <span style="font-weight:bold">=</span> FirebaseTracker()
+let firebaseCommand <span style="font-weight:bold">=</span> FirebaseCommand(firebaseTracker: firebaseTracker)
 let firebaseRemoteCommand <span style="font-weight:bold">=</span> firebaseCommand.remoteCommand()
 teal.addRemoteCommandID(<span style="color:#b84">&#34;firebase&#34;</span>, description: <span style="color:#999">nil</span>, targetQueue: DispatchQueue.main, responseBlock: firebaseRemoteCommand)</code></pre></div>
 </div>
@@ -441,7 +441,7 @@ teal.addRemoteCommandID(<span style="color:#b84">&#34;firebase&#34;</span>, desc
 
 <h2 id="track">Track</h2>
 
-<p>Events triggered by basic interactions with your app are tracked automatically.</p>
+<p>Events triggered by basic interactions with your app are tracked automatically. For more information see: <a href="https://support.google.com/firebase/answer/6317485?hl=en">Firebase automatically collected events</a></p>
 
 </div>
 
@@ -1471,7 +1471,7 @@ teal.addRemoteCommandID(<span style="color:#b84">&#34;firebase&#34;</span>, desc
   </span>
 	<span id="feedback_comment">
 		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="70"></textarea>
-    <span>This page was last updated:  December 3, 2019 
+    <span>This page was last updated:  December 11, 2019 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
   </span>
