@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>Endpoint Specification | Tealium Collect HTTP API |Preview of Tealium Developer Docs</title>
+    <title>API Reference | Tealium for JavaScript (utag.js) |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -25,7 +25,7 @@
         
 <script>
 var utag_data = {
-    category_name : "HTTP API",
+    category_name : "JavaScript (Web)",
     site_section  : "platforms",
     site_language : "en",
     tealium_event : "page_view"
@@ -234,16 +234,16 @@ var utag_data = {
 
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">Table of Contents</p>
-      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#tealium-collect-url">Tealium Collect URL</a></li>
-              <li><a href="#visitor-id">Visitor ID</a></li>
-              <ul class="toc-h3"><li><a href="#primary-visitor-id">Primary Visitor ID</a></li>
-              </ul><li><a href="#methods">Methods</a></li>
-              <ul class="toc-h3"><li><a href="#get">GET</a></li>
-              <li><a href="#post">POST</a></li>
-              </ul><li><a href="#status-codes">Status Codes</a></li>
-              <li><a href="#examples">Examples</a></li>
-              <ul class="toc-h3"><li><a href="#html-example">HTML Example</a></li>
-              <li><a href="#javascript-example">JavaScript Example</a></li>
+      <nav id="TableOfContents"><ul class="toc-h3"><li><a href="#decode">decode()</a></li>
+              <li><a href="#encode">encode()</a></li>
+              <li><a href="#flatten">flatten()</a></li>
+              <li><a href="#hasown">hasOwn()</a></li>
+              <li><a href="#isempty">isEmpty()</a></li>
+              <li><a href="#isemptyobject">isEmptyObject()</a></li>
+              <li><a href="#loader">loader()</a></li>
+              <li><a href="#merge">merge()</a></li>
+              <li><a href="#pad">pad()</a></li>
+              <li><a href="#typeof">typeOf()</a></li>
               </nav>
   </aside></div>
 
@@ -254,19 +254,19 @@ var utag_data = {
           <header class="flex-none w-100">
   
     
-      <a href="/platforms/http-api" class="f6 fw8 mb0 link mid-gray dim mr3">
-        HTTP API
+      <a href="/platforms/javascript" class="f6 fw8 mb0 link mid-gray dim mr3">
+        JAVASCRIPT
       </a>
     
   
 
-  <h1 class="lh-title mb3 mv0 pt3">Endpoint Specification</h1>
+  <h1 class="lh-title mb3 mv0 pt3">API Reference</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Learn to send data to the Universal Data Hub using the HTTP API for events.
+      Reference guide for classes and methods provided by Tealium for JavaScript (Web).
     </div>
   
 
@@ -279,168 +279,462 @@ var utag_data = {
 <div class="prose" id="prose">
   
 
-<p>This article provides the specification for the direct HTTP endpoint, which is used in any application that sends HTTP requests.</p>
-
-<h2 id="tealium-collect-url">Tealium Collect URL</h2>
-
-<p>Tealium Collect is located at the following root URL: </p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://collect.tealiumiq.com/event</code></pre></div>
-<h2 id="visitor-id">Visitor ID</h2>
-
-<p>If you are using AudienceStream you must pass a known visitor ID attribute (secondary ID) with each tracking call, such as <code>email_address</code> or <code>login_id</code>.</p>
-
-<p>If the events do not contain a visitor ID then each event generates a new visit and visitor, making stitching not possible. This is important if using the Collect API on a web platform where you might be tracking anonymous users.</p>
-
-<p>A visitor ID is also needed if you are using EventStream and need to provide an ID to a vendor connector.</p>
-
-<p><a href="https://community.tealiumiq.com/t5/Universal-Data-Hub/Visitor-ID-Attribute/ta-p/12060">Learn more</a> about the visitor ID  attribute.</p>
-
-<h3 id="primary-visitor-id">Primary Visitor ID</h3>
-
-<p>The <code>tealium_visitor_id</code> attribute is an anonymous ID used by AudienceStream to associate a visitor between events and visits.  Depending on your usage of the Collect API, use one of the following approaches:</p>
-
-<p><strong>Known Visitors</strong><br />
-(Required for AudienceStream, recommended for EventStream)<br />
-When tracking events for a known visitor (when a value exists for a Visitor ID attribute such as <code>email_address</code>), include the known visitor ID attribute and a hash of that value in the <code>tealium_visitor_id</code> parameter.</p>
-
-<p>The following example shows the MD5 hash of the user&rsquo;s email address, set to the <code>tealium_visitor_id</code> parameter:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
-    <span style="color:#b84">&#34;tealium_account&#34;</span>    <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;ACCOUNT&#34;</span>,
-    <span style="color:#b84">&#34;tealium_profile&#34;</span>    <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;PROFILE&#34;</span>,
-    <span style="color:#b84">&#34;tealium_event&#34;</span>      <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;EVENT_NAME&#34;</span>,
-    <span style="color:#b84">&#34;email_address&#34;</span>      <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;EMAIL_ADDRESS&#34;</span>,
-    <span style="color:#b84">&#34;tealium_visitor_id&#34;</span> <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;VISITOR_ID&#34;</span>
-}
-</code></pre></div>
-<p><strong>Anonymous Visitors</strong><br />
-(Required for AudienceStream)<br />
-When tracking events for an anonymous visitor from a website (without a known ID), then the value of the <code>tealium_visitor_id</code>  needs to match the value in the <code>utag_main_v_id</code> cookie.</p>
-
-<p><a href="/platforms/javascript/data-layer/">Learn more</a> about the built-in variables from <code>utag.js</code>.</p>
-
-<h2 id="methods">Methods</h2>
-
-<h3 id="get">GET</h3>
-
-<p>The GET method is used to request data from a specified resource. It passes data using key-value pairs in the query string of the endpoint, and returns a 1x1 transparent GIF to make it compatible with HTML-based implementations.</p>
-
-<p>Example using curl:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -i -X GET <span style="color:#b84">&#34;https://collect.tealiumiq.com/event?tealium_account={ACCOUNT}&amp;tealium_profile={PROFILE}&amp;tealium_event=user_login&amp;email_address=user@example.com&#34;</span> </code></pre></div>
-<h3 id="post">POST</h3>
-
-<p>The POST method is used to send data to a server to create/update a resource. It supports JSON payloads where the request header must be set to <code>Content-Type: application/json</code> and the payload must be formatted as a valid JSON string. </p>
-
-<p>Example of <code>user_login</code> event:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
-    <span style="color:#b84">&#34;tealium_account&#34;</span>   <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;ACCOUNT&#34;</span>,
-    <span style="color:#b84">&#34;tealium_profile&#34;</span>   <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;PROFILE&#34;</span>,
-    <span style="color:#b84">&#34;tealium_event&#34;</span>     <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;EVENT_NAME&#34;</span>,
-    <span style="color:#b84">&#34;email_address&#34;</span>     <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;EMAIL_ADDRESS&#34;</span>
-}
-</code></pre></div>
-<p>Example using curl:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -X POST -H <span style="color:#b84">&#39;Content-type: application/json&#39;</span>
---data <span style="color:#b84">&#39;{&#34;tealium_account&#34;:&#34;{ACCOUNT}&#34;,&#34;tealium_profile&#34;:&#34;{PROFILE}&#34;,&#34;tealium_event&#34;:&#34;user_login&#34;,&#34;email_address&#34;:&#34;user@example.com&#34;}&#39;</span>
-https://collect.tealiumiq.com/event</code></pre></div>
-<h2 id="status-codes">Status Codes</h2>
-
-<p>The following table summarizes Tealium&rsquo;s HTTP response status codes:</p>
+<p>The following <code>utag.ut</code> functions are available:</p>
 
 <table>
 <thead>
 <tr>
-<th>Status Code</th>
+<th>Function</th>
 <th>Description</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>200 Status OK</code></td>
-<td>The request succeeded</td>
+<td><code>decode()</code></td>
+<td>Returns the decoded value of an encoded URI component or <code>String</code></td>
 </tr>
 
 <tr>
-<td><code>400 Bad Request</code></td>
-<td>The server does not understand the request</td>
+<td><code>encode()</code></td>
+<td>Returns the encoded value of a decoded URI component or <code>String</code></td>
 </tr>
 
 <tr>
-<td><code>401 Unauthorized</code></td>
-<td>The user does not have permissions</td>
+<td><code>flatten()</code></td>
+<td>Returns the flattened value of an object argument</td>
+</tr>
+
+<tr>
+<td><code>hasOwn()</code></td>
+<td>Returns a boolean indicating whether the object has the specified property as its own property</td>
+</tr>
+
+<tr>
+<td><code>isEmpty()</code></td>
+<td>Returns a boolean <code>true</code> indicating the argument is empty, or boolean <code>false</code> if not empty</td>
+</tr>
+
+<tr>
+<td><code>isEmptyObject()</code></td>
+<td>Returns a boolean <code>true</code> indicating the object argument is empty, or boolean <code>false</code> if not empty</td>
+</tr>
+
+<tr>
+<td><code>loader()</code></td>
+<td>Tealium’s tag templates uses this function to load tags (loads iframes, images, scripts and allows for callbacks when a script is loaded)</td>
+</tr>
+
+<tr>
+<td><code>merge()</code></td>
+<td>Merges the properties from one object into another object</td>
+</tr>
+
+<tr>
+<td><code>pad()</code></td>
+<td>Pads a string by adding zeros</td>
+</tr>
+
+<tr>
+<td><code>typeOf()</code></td>
+<td>Returns a variables type as a string</td>
 </tr>
 </tbody>
 </table>
 
-<p>The <code>400 Bad Request</code> status code occurs when at least of the following is true:</p>
+<h3 id="decode"><code>decode()</code></h3>
 
-<ul>
-<li>The JSON key contains a period, is invalid, or exceeds 1MB in size</li>
-<li>The file-type parameter contains a value other than &ldquo;json&rdquo; or &ldquo;javascript&rdquo;</li>
-<li>The combination of <code>account</code>, <code>profile</code>, and <code>datalayer_id</code> exceeds 250 characters in length, or contains restricted characters</li>
-<li><code>tealium_account</code> or <code>tealium_profile</code> is missing, or contains typographical errors</li>
-<li>The request body is empty</li>
-</ul>
-
-<p>The following is an example of a <code>400 Bad Request</code> response, shown in the <code>X-Error</code> header, when the required <code>tealium_account</code> or <code>tealium_profile</code> parameter values are missing:</p>
-
-<pre><code>&gt; GET /event?tealium_account=jentest-as&amp;tealium_profile=&amp;tealium_visitor_id=sendgeteventhttps@testing.com&amp;tealium_datasource=utc2cj&amp;customer_city=Honolulu&amp;customer_state=Hawaii&amp;Flag=true&amp;Number=45&amp;String=ascent&amp;String_Array=[hello,howareyou,whatsup,yoyoyo]&amp;Number_Array=[2.222,3.000,19.12,28.3]&amp;Flag_Array=[true,false,false,true]&amp;Combo_Array=[1,salutations,2324,world,22jjfssl]&amp;Array_of_Array=[[1,2,3],heyworld]&amp;myvariable=unicorns HTTP/1.1
-&gt; Host: qa21-collect.tealiumiq.com
-&gt; User-Agent: curl/7.54.0
-&gt; Accept: */*
-&gt;
-&lt; HTTP/1.1 400 Bad Request
-&lt; Cache-Control: no-transform,private,no-cache,no-store,max-age=0,s-maxage=0
-&lt; Content-Type: application/json
-&lt; Date: Wed, 23 Oct 2019 17:10:51 GMT
-&lt; Expires: Wed, 23 Oct 2019 17:10:51 GMT
-&lt; P3P: policyref=&quot;/w3c/p3p.xml&quot;, CP=&quot;NOI DSP COR NID CUR ADM DEV OUR BUS&quot;
-&lt; Pragma: no-cache
-&lt; Vary: Origin
-&lt; X-Error: Missing required tealium_account or tealium_profile param value
-&lt; X-Region: us-east-1
-&lt; X-ServerID: uconnect_i-9a157d19
-&lt; X-ULVer: 1.0.331-SNAPSHOT
-&lt; X-UUID: d4fc78d1-8204-412c-a6cb-57869d2370a7
-&lt; Content-Length: 0
-&lt; Connection: keep-alive
-</code></pre>
-
-<h2 id="examples">Examples</h2>
-
-<h3 id="html-example">HTML Example</h3>
-
-<p>Tealium Collect is referenced in an <code>&lt;img&gt;</code> tag within your HTML. Due to browser caching it&rsquo;s important to include a cache buster, an additional parameter that contains a randomly generated value, as shown in the following example:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> cb<span style="font-weight:bold">=</span><span style="color:#999">Math</span>.random()<span style="font-weight:bold">*</span><span style="color:#099">100000000000</span>;
+<p>Returns the decoded value of an encoded URI component or <code>String</code>. This function wraps around the standard JavaScript functions <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent"><code>decodeURIComponent()</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/unescape"><code>unescape()</code></a>.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">utag.ut.decode(encodedStr)
 </code></pre></div>
-<p>This variable is added to the query string of the Tealium Collect pixel:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#000080">img</span> <span style="color:#008080">height</span><span style="font-weight:bold">=</span><span style="color:#b84">&#34;1&#34;</span> <span style="color:#008080">width</span><span style="font-weight:bold">=</span><span style="color:#b84">&#34;1&#34;</span> <span style="color:#008080">style</span><span style="font-weight:bold">=</span><span style="color:#b84">&#34;display:none&#34;</span> <span style="color:#008080">src</span><span style="font-weight:bold">=</span><span style="color:#b84">&#34;//collect.tealiumiq.com/event?tealium_account={ACCOUNT}&amp;tealium_profile={PROFILE}&amp;tealium_event=user_login&amp;email_address=user@example.com&amp;cb=&#39; + cb + &#39;&#34;</span>/&gt;</code></pre></div>
-<h3 id="javascript-example">JavaScript Example</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
 
-<p>Tealium Collect supports cross-domain requests, allowing you to send a POST from your website to our domain, as shown in the following example:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> event <span style="font-weight:bold">=</span> {
-    <span style="color:#b84">&#34;tealium_account&#34;</span> <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;ACCOUNT&#34;</span>,
-    <span style="color:#b84">&#34;tealium_profile&#34;</span> <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;PROFILE&#34;</span>,
-    <span style="color:#b84">&#34;tealium_event&#34;</span>   <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;EVENT_NAME&#34;</span>,
-    <span style="color:#b84">&#34;email_address&#34;</span>   <span style="font-weight:bold">:</span> <span style="color:#b84">&#34;EMAIL_ADDRESS&#34;</span>};
-<span style="font-weight:bold">var</span> xhr <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> XMLHttpRequest();
-xhr.open(<span style="color:#b84">&#34;POST&#34;</span>, <span style="color:#b84">&#34;https://collect.tealiumiq.com/event&#34;</span>);
-xhr.send(JSON.stringify(event));
+<tbody>
+<tr>
+<td><code>encodedStr</code></td>
+<td><code>String</code></td>
+<td>The encoded string to be decoded</td>
+</tr>
+</tbody>
+</table>
+
+<p>Examples:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">utag.ut.decode(<span style="color:#b84">&#34;Tealium%20Developer%20Docs!&#34;</span>);     <span style="color:#998;font-style:italic">// &#34;Tealium Developer Docs!&#34;
+</span><span style="color:#998;font-style:italic"></span>utag.ut.decode(<span style="color:#b84">&#34;https%3A%2F%2Fdocs.tealium.com&#34;</span>);  <span style="color:#998;font-style:italic">// &#34;https://docs.tealium.com&#34;
+</span></code></pre></div>
+<h3 id="encode"><code>encode()</code></h3>
+
+<p>Returns the encoded value of a decoded URI component or string. This function wraps around the standard JavaScript functions <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent"><code>encodeURIComponent()</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/escape"><code>escape()</code></a>.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">utag.ut.encode(decodedStr)
 </code></pre></div>
-<p>The Response Headers include the following:  </p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">Access<span style="font-weight:bold">-</span>Control<span style="font-weight:bold">-</span>Allow<span style="font-weight:bold">-</span>Origin<span style="font-weight:bold">:</span> [http<span style="font-weight:bold">:</span><span style="color:#998;font-style:italic">//your_domain.com](http://your_domain.com)
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>decodedStr</code></td>
+<td><code>String</code></td>
+<td>The decoded string to be encoded</td>
+</tr>
+</tbody>
+</table>
+
+<p>Examples:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">utag.ut.encode(<span style="color:#b84">&#34;Tealium Developer Docs!&#34;</span>);   <span style="color:#998;font-style:italic">// &#34;Tealium%20Developer%20Docs!&#34;
+</span><span style="color:#998;font-style:italic"></span>utag.ut.encode(<span style="color:#b84">&#34;https://docs.tealium.com&#34;</span>);  <span style="color:#998;font-style:italic">// &#34;https%3A%2F%2Fdocs.tealium.com&#34;
+</span></code></pre></div>
+<h3 id="flatten"><code>flatten()</code></h3>
+
+<p>Returns the flattened value of an object argument, delimited by a <code>.</code> character. This method assumes that the object passed is only 1 level deep. The function stops when arriving at a string, array, boolean, or number (float or integer). Do not use this function for multilevel objects or arrays of objects.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">utag.ut.flatten(obj)
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>obj</code></td>
+<td><code>Object</code></td>
+<td>The object to be flattened</td>
+</tr>
+</tbody>
+</table>
+
+<p>Example:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">utag.ut.flatten({<span style="color:#b84">&#34;order_id&#34;</span><span style="font-weight:bold">:</span> <span style="color:#b84">&#34;0123567&#34;</span>, <span style="color:#b84">&#34;cart&#34;</span><span style="font-weight:bold">:</span> {<span style="color:#b84">&#34;total_items&#34;</span><span style="font-weight:bold">:</span> <span style="color:#099">3</span>, <span style="color:#b84">&#34;total_amount&#34;</span><span style="font-weight:bold">:</span> <span style="color:#099">123.45</span>},<span style="color:#b84">&#34;order_tax&#34;</span><span style="font-weight:bold">:</span> <span style="color:#099">9.97</span>});
+<span style="color:#998;font-style:italic">// {order_id: &#34;0123567&#34;, cart.total_items: 3, cart.total_amount: 123.45, order_tax: 9.97}
+</span></code></pre></div>
+<h3 id="hasown"><code>hasOwn()</code></h3>
+
+<p>Returns a boolean indicating whether the object has the specified property as its own property (as opposed to inheriting it). The function performs a <code>null</code> check and wraps the JavaScript function <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty"><code>hasOwnProperty()</code></a>.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">utag.ut.hasOwn(obj)
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>obj</code></td>
+<td><code>Object</code></td>
+<td>The object to test</td>
+</tr>
+</tbody>
+</table>
+
+<p>Examples:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="font-weight:bold">var</span> obj <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> <span style="color:#999">Object</span>();     <span style="color:#998;font-style:italic">// Create an object
+</span><span style="color:#998;font-style:italic"></span>obj.x <span style="font-weight:bold">=</span> <span style="color:#099">3.14</span>;               <span style="color:#998;font-style:italic">// Define a non-inherited local property
+</span><span style="color:#998;font-style:italic"></span>
+utag.ut.hasOwn(x);          <span style="color:#998;font-style:italic">// true - x is a local property of obj
+</span><span style="color:#998;font-style:italic"></span>utag.ut.hasOwn(y);          <span style="color:#998;font-style:italic">// false - obj doesn&#39;t have a property y
+</span><span style="color:#998;font-style:italic"></span>utag.ut.hasOwn(<span style="color:#b84">&#34;toString&#34;</span>); <span style="color:#998;font-style:italic">// false - toString property is inherited from Object
+</span></code></pre></div>
+<h3 id="isempty"><code>isEmpty()</code></h3>
+
+<p>Returns a boolean <code>true</code> indicating the argument is empty, or boolean <code>false</code> if not empty.  It first determines the data type by using the <code>utag.ut.typeOf()</code> function, and returns the following based on the type:</p>
+
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Return value description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>number</code></td>
+<td>Returns the value of the JavaScript function <code>isNaN()</code></td>
+</tr>
+
+<tr>
+<td><code>boolean</code></td>
+<td>Returns <code>false</code></td>
+</tr>
+
+<tr>
+<td><code>String</code></td>
+<td>Returns <code>true</code> if the string object&rsquo;s <code>.length</code> field is 0</td>
+</tr>
+
+<tr>
+<td><code>Object</code></td>
+<td>returns the value of the <code>utag.ut.isEmptyObject()</code> function</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">utag.ut.isEmpty(arg)
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>arg</code></td>
+<td>[<code>number</code>, <code>boolean</code>, <code>String</code>, <code>Object</code>]</td>
+<td>The argument to test if empty</td>
+</tr>
+</tbody>
+</table>
+
+<p>Examples:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">utag.ut.isEmpty(<span style="color:#099">5</span>);         <span style="color:#998;font-style:italic">// false
+</span><span style="color:#998;font-style:italic"></span>utag.ut.isEmpty(<span style="font-weight:bold">NaN</span>);       <span style="color:#998;font-style:italic">// true
+</span><span style="color:#998;font-style:italic"></span>utag.ut.isEmpty(<span style="font-weight:bold">undefined</span>); <span style="color:#998;font-style:italic">// true
+</span><span style="color:#998;font-style:italic"></span>utag.ut.isEmpty(<span style="font-weight:bold">true</span>);      <span style="color:#998;font-style:italic">// false
+</span><span style="color:#998;font-style:italic"></span>utag.ut.isEmpty(<span style="font-weight:bold">false</span>);     <span style="color:#998;font-style:italic">// false
+</span><span style="color:#998;font-style:italic"></span>utag.ut.isEmpty(<span style="color:#b84">&#34;Tealium&#34;</span>); <span style="color:#998;font-style:italic">// false
+</span><span style="color:#998;font-style:italic"></span>utag.ut.isEmpty(<span style="color:#b84">&#34;&#34;</span>);        <span style="color:#998;font-style:italic">// true
+</span></code></pre></div>
+<h3 id="isemptyobject"><code>isEmptyObject()</code></h3>
+
+<p>Returns a boolean <code>true</code> indicating the object argument is empty, or boolean <code>false</code> if not empty.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">utag.ut.isEmptyObject(obj)
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>obj</code></td>
+<td><code>Object</code></td>
+<td>The object to test if empty</td>
+</tr>
+</tbody>
+</table>
+
+<p>Examples:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">utag.ut.isEmptyObject({});              <span style="color:#998;font-style:italic">// true
+</span><span style="color:#998;font-style:italic"></span>utag.ut.isEmptyObject({ foo<span style="font-weight:bold">:</span> <span style="color:#b84">&#34;bar&#34;</span> });  <span style="color:#998;font-style:italic">// false
+</span></code></pre></div>
+<h3 id="loader"><code>loader()</code></h3>
+
+<p>Tealium’s tag templates uses this function to load tags. It loads iframes, images, scripts and allows for callbacks when a script is loaded. The function only accepts one object argument.</p>
+
+<p>If a file is loaded as an iframe with the same ID as an existing iframe, the function removes the existing element before adding it to avoid impacting browser history and to maintain a cleaner DOM.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">utag.ut.loader(object)
+</code></pre></div>
+<p>The <code>object</code> can have the following parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>src</code></td>
+<td>URL of the file to load</td>
+</tr>
+
+<tr>
+<td><code>type</code></td>
+<td>The type of tag to load: &ldquo;iframe&rdquo;, &ldquo;img&rdquo;, or &ldquo;script&rdquo; (default)</td>
+</tr>
+
+<tr>
+<td><code>id</code></td>
+<td>(Optional) The element ID</td>
+</tr>
+
+<tr>
+<td><code>cb</code></td>
+<td>(Optional) A callback function</td>
+</tr>
+
+<tr>
+<td><code>attrs</code></td>
+<td>(Optional) An object of additional HTML element attributes</td>
+</tr>
+</tbody>
+</table>
+
+<p>Example:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">utag.ut.loader({
+  type<span style="font-weight:bold">:</span> <span style="color:#b84">&#34;iframe&#34;</span>,
+  src<span style="font-weight:bold">:</span> <span style="color:#b84">&#34;https://example.com/path/file.js&#34;</span>,
+  id<span style="font-weight:bold">:</span> <span style="color:#b84">&#34;teal-tag1&#34;</span>,
+  cb<span style="font-weight:bold">:</span> <span style="font-weight:bold">function</span>() {},
+  attrs<span style="font-weight:bold">:</span> {<span style="color:#b84">&#34;async&#34;</span><span style="font-weight:bold">:</span><span style="color:#b84">&#34;true&#34;</span>}})
+<span style="color:#998;font-style:italic">// Results in the following HTML element:
+</span><span style="color:#998;font-style:italic">// &lt;iframe id=&#34;teal-tag1&#34;  async=&#34;true&#34; height=&#34;1&#34; width=&#34;1&#34; style=&#34;display:none&#34;
+</span><span style="color:#998;font-style:italic">//   src=&#34;https://example.com/path/file.js&#34;&gt; &lt;/iframe&gt;
+</span></code></pre></div>
+<h3 id="merge"><code>merge()</code></h3>
+
+<p>Merges the properties from one object into another object. This function does not handle multilevel objects. First flatten the objects before attempting to merge them. This function creates references if used on an array.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">utag.ut.merge(obj1, obj2, flag)
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>obj1</code></td>
+<td>Object</td>
+<td>The first key-value pair object to merge</td>
+</tr>
+
+<tr>
+<td><code>obj2</code></td>
+<td>Object</td>
+<td>The second key-value pair object to merge</td>
+</tr>
+
+<tr>
+<td><code>overwrite</code></td>
+<td>number</td>
+<td>A flag, <code>0</code> (no) or <code>1</code> (yes), to overwrite the property value in <code>obj1</code> from the property value of <code>obj2</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>Examples:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">foo <span style="font-weight:bold">=</span> { <span style="color:#b84">&#34;key1&#34;</span><span style="font-weight:bold">:</span><span style="color:#b84">&#34;value1&#34;</span>, <span style="color:#b84">&#34;key2&#34;</span><span style="font-weight:bold">:</span><span style="color:#b84">&#34;value2&#34;</span> }
+bar <span style="font-weight:bold">=</span> { <span style="color:#b84">&#34;key1&#34;</span><span style="font-weight:bold">:</span><span style="color:#b84">&#34;value4&#34;</span>, <span style="color:#b84">&#34;key3&#34;</span><span style="font-weight:bold">:</span><span style="color:#b84">&#34;value3&#34;</span> }
+utag.ut.merge(foo, bar, <span style="color:#099">0</span>)
+<span style="color:#998;font-style:italic">// foo: {key1: &#34;value1&#34;, key2: &#34;value2&#34;, key3: &#34;value3&#34;}
+</span><span style="color:#998;font-style:italic">// bar: {key1: &#34;value4&#34;, key3: &#34;value3&#34;}
+</span><span style="color:#998;font-style:italic"></span>
+foo <span style="font-weight:bold">=</span> { <span style="color:#b84">&#34;key1&#34;</span><span style="font-weight:bold">:</span><span style="color:#b84">&#34;value1&#34;</span>, <span style="color:#b84">&#34;key2&#34;</span><span style="font-weight:bold">:</span><span style="color:#b84">&#34;value2&#34;</span> }
+bar <span style="font-weight:bold">=</span> { <span style="color:#b84">&#34;key1&#34;</span><span style="font-weight:bold">:</span><span style="color:#b84">&#34;value4&#34;</span>, <span style="color:#b84">&#34;key3&#34;</span><span style="font-weight:bold">:</span><span style="color:#b84">&#34;value3&#34;</span> }
+utag.ut.merge(foo, bar, <span style="color:#099">1</span>)
+<span style="color:#998;font-style:italic">// foo: {key1: &#34;value4&#34;, key2: &#34;value2&#34;, key3: &#34;value3&#34;}
+</span><span style="color:#998;font-style:italic">// bar: {key1: &#34;value4&#34;, key3: &#34;value3&#34;}
+</span></code></pre></div>
+<h3 id="pad"><code>pad()</code></h3>
+
+<p>Returns a number padded with zeros (<code>0</code>).</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">utag.ut.pad(a, b)
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>a</code></td>
+<td><code>string</code></td>
+<td>The string that you want to pad</td>
+</tr>
+
+<tr>
+<td><code>b</code></td>
+<td><code>number</code></td>
+<td>The total integer length of the string desired after the padding</td>
+</tr>
+</tbody>
+</table>
+
+<p>Example:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">utag.ut.pad(<span style="color:#b84">&#34;Tealium&#34;</span>, <span style="color:#099">10</span>);   <span style="color:#998;font-style:italic">// 000Tealium
+</span></code></pre></div>
+<h3 id="typeof"><code>typeOf()</code></h3>
+
+<p>Returns an argument variables type as a <code>String</code>.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">utag.ut.typeOf(arg)
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>arg</code></td>
+<td>Any type</td>
+<td>The argument to determine the type of</td>
+</tr>
+</tbody>
+</table>
+
+<p>Examples:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">utag.ut.typeOf(<span style="color:#099">5</span>);         <span style="color:#998;font-style:italic">// &#34;number&#34;
+</span><span style="color:#998;font-style:italic"></span>utag.ut.typeOf(<span style="color:#b84">&#34;Tealium&#34;</span>); <span style="color:#998;font-style:italic">// &#34;string&#34;
+</span><span style="color:#998;font-style:italic"></span>utag.ut.typeOf(imgObj);    <span style="color:#998;font-style:italic">// &#34;htmlimagelement&#34;
+</span><span style="color:#998;font-style:italic"></span>utag.ut.typeOf(obj);       <span style="color:#998;font-style:italic">// &#34;object&#34;
+</span><span style="color:#998;font-style:italic"></span>utag.ut.typeOf(<span style="font-weight:bold">null</span>);      <span style="color:#998;font-style:italic">// &#34;null&#34;
+</span><span style="color:#998;font-style:italic"></span>utag.ut.typeOf(<span style="font-weight:bold">undefined</span>); <span style="color:#998;font-style:italic">// &#34;undefined&#34;
+</span><span style="color:#998;font-style:italic"></span>utag.ut.typeOf(obj.cb);    <span style="color:#998;font-style:italic">// &#34;function&#34;
 </span></code></pre></div>
 </div>
 
 <b class="pv1 br2 dib tc mv3 link">
+
+	<div date-pref class="white">
+		
+			<a href="http://docs-preview.tealium.com/platforms/javascript/debugging/" title="Debugging "><svg class="fill-current" height="18px" viewBox="0 0 18 18" width="18px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+ Debugging </a>
+		
+
+	</div>
+
 </b>
 <b style="position: absolute; right:0px;" class="pv1 br2 dib tc mv3 link">
 
 	<div date-pref class="white">
 
 		
-			<a href="http://docs-preview.tealium.com/platforms/http-api/data-layer/" title="Data Layer">
-			Data Layer <svg class="fill-current" height="18px" viewBox="0 0 18 18" width="18px" xmlns="http://www.w3.org/2000/svg"> <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path> <path d="M0 0h24v24H0z" fill="none"></path> </svg>
+			<a href="http://docs-preview.tealium.com/platforms/javascript/release-notes/" title="Release Notes">
+			Release Notes <svg class="fill-current" height="18px" viewBox="0 0 18 18" width="18px" xmlns="http://www.w3.org/2000/svg"> <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path> <path d="M0 0h24v24H0z" fill="none"></path> </svg>
 
 			</a>
 		
@@ -867,9 +1161,9 @@ xhr.send(JSON.stringify(event));
       </li>
       
       
-      <li class="w-100 hover-accent-color-light fw8 active">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".http-api">HTTP API</a>
-        <ul class="http-api desktopmenu animated fadeIn list pl0 db">
+      <li class="w-100 hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".http-api">HTTP API</a>
+        <ul class="http-api desktopmenu animated fadeIn list pl0 dn">
           <li class="fw4">
             
             
@@ -880,7 +1174,7 @@ xhr.send(JSON.stringify(event));
           <li class="fw4">
             
             
-            <a href="/platforms/http-api/endpoint-spec/" class="db link pl3 pr2 pv1 bg-secondary white">
+            <a href="/platforms/http-api/endpoint-spec/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Endpoint
             </a>
           </li>
@@ -1133,9 +1427,9 @@ xhr.send(JSON.stringify(event));
       </li>
       
       
-      <li class="w-100 hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".javascript">JavaScript (Web)</a>
-        <ul class="javascript desktopmenu animated fadeIn list pl0 dn">
+      <li class="w-100 hover-accent-color-light fw8 active">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".javascript">JavaScript (Web)</a>
+        <ul class="javascript desktopmenu animated fadeIn list pl0 db">
           <li class="fw4">
             
             
@@ -1202,7 +1496,7 @@ xhr.send(JSON.stringify(event));
           <li class="fw4">
             
             
-            <a href="/platforms/javascript/api-reference/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/javascript/api-reference/" class="db link pl3 pr2 pv1 bg-secondary white">
               API Reference
             </a>
           </li>
@@ -1471,7 +1765,7 @@ xhr.send(JSON.stringify(event));
   </span>
 	<span id="feedback_comment">
 		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="70"></textarea>
-    <span>This page was last updated:  October 31, 2019 
+    <span>This page was last updated:  December 12, 2019 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
   </span>
