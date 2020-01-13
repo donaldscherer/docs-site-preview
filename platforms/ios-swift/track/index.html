@@ -306,7 +306,9 @@ tealium?.track(title: <span style="color:#b84">&#34;EVENT_TITLE&#34;</span>,
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">tealium?.track(title: <span style="color:#b84">&#34;EVENT_NAME&#34;</span>, data: [<span style="color:#b84">&#34;KEY&#34;</span> : [<span style="color:#b84">&#34;VALUE1&#34;</span>]], completion: <span style="font-weight:bold">nil</span>)</code></pre></div>
 <h2 id="event-batching">Event Batching</h2>
 
-<p>For optimal network performance enable event batching to deliver multiple events as single compressed requests. <a href="/platforms/ios-swift/api/tealium-config/">Learn more</a> about the different batch options in the <code>TealiumConfig</code> API.</p>
+<p>All event batching configurations must be performed when the SDK is initialized, since Swift does not currently use the Mobile Publish Settings from Tealium iQ.</p>
+
+<p>The following example enable event batching to deliver multiple events as single compressed requests.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">import</span> <span style="color:#458;font-weight:bold">TealiumDispatchQueue</span> <span style="color:#998;font-style:italic">// required for event batching options</span>
 <span style="color:#458;font-weight:bold">class</span> <span style="color:#458;font-weight:bold">TealiumHelper</span> {
 	<span style="font-weight:bold">var</span> <span style="color:#008080">tealium</span>: Tealium?
@@ -317,23 +319,76 @@ tealium?.track(title: <span style="color:#b84">&#34;EVENT_TITLE&#34;</span>,
  	       		                 profile: <span style="color:#b84">&#34;PROFILE&#34;</span>,
         	   	                 environment: <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>,
            		                 datasource: <span style="color:#b84">&#34;DATASOURCE&#34;</span>)
-		<span style="color:#998;font-style:italic">// Enables batching (disabled by default)</span>
-		config.setIsEventBatchingEnabled(<span style="font-weight:bold">true</span>)
-
-		<span style="color:#998;font-style:italic">// Amount of tracking calls to combine into a single request. Maximum 10.</span>
-		config.setBatchSize(<span style="color:#099">10</span>)
-
-		<span style="color:#998;font-style:italic">// Number of events after which to automatically flush the queue</span>
+		config.setIsEventBatchingEnabled(<span style="font-weight:bold">true</span>)      <span style="color:#998;font-style:italic">// enable batching</span>
+		config.setBatchSize(<span style="color:#099">10</span>)                     <span style="color:#998;font-style:italic">// size of batch</span>
 		config.setDispatchAfter(numberOfEvents: <span style="color:#099">25</span>) <span style="color:#998;font-style:italic">// flush after every 25 events</span>
-
-		<span style="color:#998;font-style:italic">// Maximum number of queued events. If this limit is reached, and the device has not made a connection to the internet, the oldest events are deleted</span>
-		config.setMaxQueueSize(<span style="color:#099">100</span>) <span style="color:#998;font-style:italic">// 100 events</span>
-
-		<span style="color:#998;font-style:italic">// Expiration in days for events stored offline. If the device has not made a successful connection to the internet before this time, events older than this will be deleted.</span>
-		setBatchExpirationDays
+		config.setMaxQueueSize(<span style="color:#099">100</span>)                 <span style="color:#998;font-style:italic">// 100 max queued events</span>
+		config.setBatchExpirationDays(<span style="color:#099">5</span>)            <span style="color:#998;font-style:italic">// events expire/delete after 5 days</span>
 		<span style="color:#998;font-style:italic">// ...</span>
 	}
 }</code></pre></div>
+<p>The following are commonly used options available to customize event batching. <a href="/platforms/ios-swift/api/tealium-config/">Learn more</a> about the different batch options in the <code>TealiumConfig</code> API.</p>
+
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><a href="/platforms/ios-swift/api/tealium-config/#setbatchexpirationdays"><code>setBatchExpirationDays()</code></a></td>
+<td>Sets the batch expiration in days. If the device is offline for an extended period, events older than this will be deleted</td>
+</tr>
+
+<tr>
+<td><a href="/platforms/ios-swift/api/tealium-config/#setbatchsize"><code>setBatchSize()</code></a></td>
+<td>Sets the amount of events to combine into a single batch request (max: 10)</td>
+</tr>
+
+<tr>
+<td><a href="/platforms/ios-swift/api/tealium-config/#setdispatchafter"><code>setDispatchAfter()</code></a></td>
+<td>Sets the number of events after which the queue will be flushed</td>
+</tr>
+
+<tr>
+<td><a href="/platforms/ios-swift/api/tealium-config/#setiseventbatchingenabled"><code>setIsEventBatchingEnabled()</code></a></td>
+<td>Enables (<code>true</code>) or disables (<code>false</code>) event batching (default: <code>false</code>)</td>
+</tr>
+
+<tr>
+<td><a href="/platforms/ios-swift/api/tealium-config/#setmaxqueuesize"><code>setMaxQueueSize()</code></a></td>
+<td>Sets the maximum number of queued events. If this number is reached, and the queue has not been flushed, the oldest events will be deleted.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Event batching takes place if any of the following conditions are met:</p>
+
+<ul>
+<li>Batching is <em>enabled</em>.</li>
+<li>If the device has no internet connection, events are stored until the connection is stable again.</li>
+<li>If the user has not selected any Consent Manager preferences, then events are batched offline until a preference is selected.</li>
+</ul>
+
+<p>Batched events are sent as follows:</p>
+
+<ul>
+<li>The app is sent to the background:<br />
+
+<ul>
+<li>If the lifecycle module is enabled, the lifecycle <code>“sleep”</code> event is sent.</li>
+<li>Any events generated prior to the app being backgrounded are sent immediately (assuming a connection is available).</li>
+</ul></li>
+<li>The app is sent to foreground:
+
+<ul>
+<li>Any events in the queue, plus the lifecycle <code>“wake”</code> event are sent when the app is woken up.</li>
+</ul></li>
+</ul>
+
 <h3 id="tag-management">Tag Management</h3>
 
 <p>With Tag Management and event batching enabled, tracking calls are dispatched as individual JavaScript calls to the hidden webview.</p>
@@ -460,6 +515,13 @@ tealium?.track(title: <span style="color:#b84">&#34;EVENT_TITLE&#34;</span>,
             
             <a href="/platforms/getting-started/consent-management/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Consent Management
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
+            <a href="/platforms/getting-started/event-batching/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Event Batching
             </a>
           </li>
           <li class="fw4">
@@ -1144,6 +1206,13 @@ tealium?.track(title: <span style="color:#b84">&#34;EVENT_TITLE&#34;</span>,
           <li class="fw4">
             
             
+            <a href="/platforms/javascript/single-page-applications/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+              Single-Page Applications
+            </a>
+          </li>
+          <li class="fw4">
+            
+            
             <a href="/platforms/javascript/settings/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Settings
             </a>
@@ -1427,7 +1496,7 @@ tealium?.track(title: <span style="color:#b84">&#34;EVENT_TITLE&#34;</span>,
   </span>
 	<span id="feedback_comment">
 		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="70"></textarea>
-    <span>This page was last updated:  November 19, 2019 
+    <span>This page was last updated:  December 6, 2019 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
   </span>
