@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.59.1" />
+     <meta name="generator" content="Hugo 0.59.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -231,7 +231,16 @@ var utag_data = {
 
 
 
-</div>
+
+  <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
+      <p class="b">Table of Contents</p>
+      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#batch-vs-queue">Batch vs. Queue</a></li>
+              <li><a href="#data-layer-optimization">Data Layer Optimization</a></li>
+              <li><a href="#payload-compression">Payload Compression</a></li>
+              <li><a href="#benefits">Benefits</a></li>
+              <li><a href="#supported-platforms">Supported platforms</a></li>
+              </nav>
+  </aside></div>
 
       <div class="order-1 ph0 ph4-ns mid-gray nested-copy-line-height no-underline nested-links nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
         <div class="documentation-copy center measure-wide-l">
@@ -267,32 +276,35 @@ var utag_data = {
 
 <p>Event batching is a feature of the Tealium Collect module that optimizes the transmission of data between a mobile device and Tealium by <em>sending multiple events in a single HTTP request</em>. Event batching works with a new data collection endpoint that is optimized to eliminate repetitive data layer variables and to accept payloads compressed with gzip.</p>
 
-<h4 id="batch-vs-queue">Batch vs. Queue</h4>
+<h2 id="batch-vs-queue">Batch vs. Queue</h2>
 
-<p>Event batching refers to how data is transmitted across the network. The event queue refers to how event data is stored on the device temporarily before it is dispatched. The event queue is often used when a device is offline. Tracking calls will be stored in the queue until the device regains a connection, at which point the queue is processed.</p>
+<p>Event <em>batching</em> refers to how data is transmitted across the network. The event <em>queue</em> refers to how event data is stored temporarily on the device  before it is dispatched. Event batching combines multiple events into a single network request as opposed to each tracked event in its own request. The event queue is used when a device is offline so that tracking calls can be stored until the device regains a connection, at which point the queue is processed. Event batching works with the event queue by processing multiple events at once until the queue is empty.</p>
 
-<p>Event batching works with the event queue by processing batches of events until the queue is empty. For example, if a device is offline and the event queue contains 25 events, when the device is online the queue will be processed in batches of 10 until the queue is empty. In this case, 3 network requests will be sent: two each with 10 events batches together and one with the remaining 5 events from the queue, for a total of 25.</p>
+<p>For example, if a device is offline and the event queue grows to contain 25 events, once the device comes online the queue is processed in batches of 10 events until the queue is empty. In this case, two batched requests with 10 events each and one batch for the remaining 5 events are sent, for a total of 25 tracked events using only 3 network requests.</p>
 
-<h4 id="data-layer-optimization">Data Layer Optimization</h4>
+<p class="note">Currently, the batch size maximum is 10.</p>
 
-<p>The Tealium mobile libraries add a lot of <a href="/platforms/getting-started/data-layer/">device information to the data layer</a>, such as app name, screen resolution, and OS version to name a few. These variables are included in every tracking request, even though their values do not change from one event to the next. Event batching optimizes the data layer so that these common variables, whose values are unchanging, are only sent once per batch of events.</p>
+<h2 id="data-layer-optimization">Data Layer Optimization</h2>
 
-<h4 id="payload-compression">Payload Compression</h4>
+<p>The Tealium mobile libraries contribute a lot of <a href="/platforms/getting-started/data-layer/">device information to the data layer</a>, such as app name, screen resolution, and OS version. These variables are included in every network request even though their values do not change between events. Event batching optimizes the data layer so that these common variables are <em>only sent once per batch</em>.</p>
 
-<p>The batched event payload is compressed with gzip to minimize the size of the HTTP request. This compression reduces the size of each network request by up to 90%.</p>
+<h2 id="payload-compression">Payload Compression</h2>
 
-<h4 id="benefits">Benefits</h4>
+<p>The event batch payload is compressed with gzip to minimize the size of the HTTP request. This compression reduces the size of each network request by up to 90%.</p>
+
+<h2 id="benefits">Benefits</h2>
 
 <p>The benefits of event batching include:</p>
 
 <ul>
-<li>Reduced network traffic for the same number of events tracked.</li>
+<li>Reduced size of total transmitted data.</li>
+<li>Fewer network requests for the same number of events.</li>
 <li>Improved battery performance on the device.</li>
 </ul>
 
 <p class="note">Event batching is not available for Tag Management.</p>
 
-<h4 id="supported-platforms">Supported platforms</h4>
+<h2 id="supported-platforms">Supported platforms</h2>
 
 <p>The following platforms support event batching:</p>
 
@@ -1368,7 +1380,7 @@ var utag_data = {
   </span>
 	<span id="feedback_comment">
 		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="70"></textarea>
-    <span>This page was last updated:  December 24, 2019 
+    <span>This page was last updated:  January 17, 2020 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
   </span>
