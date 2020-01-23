@@ -295,7 +295,7 @@ var utag_data = {
 
 <h4 id="option-1-tealium-collect-tag">Option 1 - Tealium Collect Tag</h4>
 
-<p>Add the Tealium Collect tag from the tag marketplace. In the Advanced Settings of the tag, toggle off the QA and Prod environments to avoid publishing the tag to production and incurring usage charges. Requests are sent out from the app as encoded JSON data in a POST request, so this is more difficult to use in conjunction with Charles Proxy, but the advantage is that you are able to see all data from the webview, including cookie data and variables modified by extensions. If you do not enter a specific profile in the tag config, data is sent to the same profile the app is targeting. If you wish to send data to a specific profile, see the <a href="https://community.tealiumiq.com/t5/Universal-Data-Hub/Tealium-Collect-Tag-Setup-Guide/ta-p/11923">Tealium collect tag setup guide</a>.</p>
+<p>Add the Tealium Collect tag from the tag marketplace. In the Advanced Settings of the tag, toggle off the QA and Prod environments to avoid publishing the tag to production and incurring usage charges. Requests are sent out from the app as encoded JSON data in a POST request, so this is more difficult to use in conjunction with Charles Proxy, but the advantage is that you are able to see all data from the webview, including cookie data and variables modified by extensions. If you do not enter a specific profile in the tag config, data is sent to the same profile the app is targeting. If you wish to send data to a specific profile, see the <a href="https://community.tealiumiq.com/t5/Customer-Data-Hub/Tealium-Collect-Tag-Setup-Guide/ta-p/11923">Tealium collect tag setup guide</a>.</p>
 
 <h4 id="option-2-tealium-collect-module">Option 2 - Tealium Collect Module</h4>
 
@@ -319,7 +319,7 @@ var utag_data = {
 
 <p>Once you have configured one of the collection methods above, log in to EventStream and go to Live Events to see the incoming events.</p>
 
-<p><a href="https://community.tealiumiq.com/t5/Universal-Data-Hub/Live-Events-and-Feeds/ta-p/11805">Learn more</a> about using Live Events.</p>
+<p><a href="https://community.tealiumiq.com/t5/Customer-Data-Hub/Live-Events-and-Feeds/ta-p/11805">Learn more</a> about using Live Events.</p>
 
 <h2 id="charles-proxy">Charles Proxy</h2>
 
@@ -386,7 +386,7 @@ var utag_data = {
 
 <h2 id="trace">Trace</h2>
 
-<p><a href="https://community.tealiumiq.com/t5/Universal-Data-Hub/Trace/ta-p/12058">Trace</a> is a testing and inspection tool for your EventStream and AudienceStream configuration. Use Trace to capture a visitor workflow and watch how events and customer data is processed in real-time.</p>
+<p><a href="https://community.tealiumiq.com/t5/Customer-Data-Hub/Trace/ta-p/12058">Trace</a> is a testing and inspection tool for your EventStream and AudienceStream configuration. Use Trace to capture a visitor workflow and watch how events and customer data is processed in real-time.</p>
 
 <h4 id="requirements">Requirements</h4>
 
@@ -503,7 +503,7 @@ data.put(&quot;cp.trace_id&quot;, &quot;TRACE_ID&quot;);
 
 <p>Open the application on your device to trigger tracking activity. Then return to the <strong>Live Events</strong> screen to observe activity in the chart. Click on one of the events to open the details.</p>
 
-<p>Locate the <code>app_uuid</code> parameter (or <code>uuid</code>, depending on which version of the Tealium SDK you are using) and copy the value. Ensure that this event is coming from the device you are testing. Follow <a href="https://community.tealiumiq.com/t5/Universal-Data-Hub/Trace/ta-p/12058#toc-hId--2045791565">these</a> instructions to generate a Trace ID and start a new Trace.</p>
+<p>Locate the <code>app_uuid</code> parameter (or <code>uuid</code>, depending on which version of the Tealium SDK you are using) and copy the value. Ensure that this event is coming from the device you are testing. Follow <a href="https://community.tealiumiq.com/t5/Customer-Data-Hub/Trace/ta-p/12058#toc-hId--2045791565">these</a> instructions to generate a Trace ID and start a new Trace.</p>
 
 <p>Once you have a new trace ID, open a new browser tab and go to the Tealium iQ profile for your mobile app. From the <strong>Data Layer</strong> tab click add a new variable with the source set to <code>trace_id</code> and type to &ldquo;First Party Cookie&rdquo;.</p>
 
@@ -1737,7 +1737,7 @@ data.put(&quot;cp.trace_id&quot;, &quot;TRACE_ID&quot;);
   </span>
 	<span id="feedback_comment">
 		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="70"></textarea>
-    <span>This page was last updated:  October 29, 2019 
+    <span>This page was last updated:  January 23, 2020 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
   </span>

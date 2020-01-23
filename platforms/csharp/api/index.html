@@ -356,7 +356,7 @@ var utag_data = {
 <tr>
 <td><code>dataSourceKey</code></td>
 <td><code>string</code></td>
-<td>(Optional) Tealium data source key from CDH</td>
+<td>(Optional) Tealium data source key from Customer Data Hub</td>
 <td></td>
 </tr>
 
@@ -445,7 +445,7 @@ var utag_data = {
 </code></pre></div>
 <h3 id="jointrace"><code>JoinTrace()</code></h3>
 
-<p>Join a trace identified by the <code>traceId</code> parameter. <code>traceId</code> will be sent on all subsequent events as the key, allowing you to debug your events, until the <code>LeaveTrace()</code> method is called.  The <code>traceId</code> parameter should be generated in advance within the Tealium CDH.</p>
+<p>Join a trace identified by the <code>traceId</code> parameter. <code>traceId</code> will be sent on all subsequent events as the key, allowing you to debug your events, until the <code>LeaveTrace()</code> method is called.  The <code>traceId</code> parameter should be generated in advance within the Tealium Customer Data Hub.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">tealium.JoinTrace(traceId);
 </code></pre></div>
 <table>
@@ -470,7 +470,7 @@ var utag_data = {
 
 <h3 id="killtracesession"><code>KillTraceSession()</code></h3>
 
-<p>Kill a trace. Issues a specific event that kills the trace visitor session at the server. This is useful for testing end-of-session behavior in the CDH.</p>
+<p>Kill a trace. Issues a specific event that kills the trace visitor session at the server. This is useful for testing end-of-session behavior in the Customer Data Hub.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">tealiumObj.KillTraceSession();
 </code></pre></div>
 <h3 id="leavetrace"><code>LeaveTrace()</code></h3>
@@ -1638,7 +1638,7 @@ var utag_data = {
   </span>
 	<span id="feedback_comment">
 		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="70"></textarea>
-    <span>This page was last updated:  January 16, 2020 
+    <span>This page was last updated:  January 23, 2020 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
   </span>

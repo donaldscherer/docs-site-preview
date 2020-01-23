@@ -297,7 +297,7 @@ var utag_data = {
 <li>Event batching
 
 <ul>
-<li>Send up to 10 events in a single hit to the Tealium CDH
+<li>Send up to 10 events in a single hit to the Tealium Customer Data Hub
 
 <ul>
 <li>For Tag Management, events are dispatched to the <code>WKWebView</code> instance in a batch and are processed individually by JavaScript tags in your profile.</li>
@@ -514,7 +514,7 @@ var utag_data = {
 
 <ul>
 <li>Removed deprecated track method with <code>TealiumTrackType</code>. Should now call trackView or trackEvent methods instead to differentiate between track call types.</li>
-<li><code>tealium_event_type</code> has been removed from all outgoing track calls, as it is now derived in CDH Event Specs and does not need to be sent</li>
+<li><code>tealium_event_type</code> has been removed from all outgoing track calls, as it is now derived in Customer Data Hub Event Specs and does not need to be sent</li>
 <li>Lifecycle module changed to use same <code>NSNotifications</code> as Objective-C library (<code>UIApplicationDidBecomeActive</code> and <code>UIApplicationWillResignActive</code>). This ensures lifecycle events are captured as quickly as possible.</li>
 <li><code>device_orientation</code> has been changed to simply Portrait or Landscape (same as Objective-C library), and a new variable <code>device_orientation_full</code> has been introduced to capture the z-axis orientation such as face up or face down.</li>
 <li><code>device_build</code> variable changed to <code>device_os_build</code> to be more descriptive. <code>device_build</code> is no longer sent. Mappings need to be updated if you were previously using this variable.</li>
@@ -1887,7 +1887,7 @@ var utag_data = {
   </span>
 	<span id="feedback_comment">
 		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="70"></textarea>
-    <span>This page was last updated:  January 16, 2020 
+    <span>This page was last updated:  January 23, 2020 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
   </span>
