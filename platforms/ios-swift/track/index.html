@@ -285,30 +285,30 @@ var utag_data = {
 <p>The <a href="/platforms/ios-swift/api/tealium/#trackview"><code>trackView()</code></a> method tracks a screen view with associated data and, optionally, triggers a callback function.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">let</span> <span style="color:#008080">mydata</span> = [<span style="color:#b84">&#34;KEY&#34;</span>: <span style="color:#b84">&#34;VALUE&#34;</span>]
 <span style="color:#998;font-style:italic">// track call with type specified and completion block</span>
-tealium?.trackView(title: <span style="color:#b84">&#34;SCREEN_TITLE&#34;</span>,
+tealium?.trackView(title: <span style="color:#b84">&#34;EVENT_NAME&#34;</span>,
       data: mydata,
       completion: { (success: <span style="color:#999">Bool</span>, info: [<span style="color:#999">String</span>:<span style="color:#999">Any</span>]?, error: Error?) <span style="font-weight:bold">in</span>
 <span style="color:#998;font-style:italic">//...</span>
 })</code></pre></div>
-<p>The following example tracks a screen view on the home screen, passing a <code>Dictionary</code> containing two key-value pairs, the first representing the customer ID, and the second, an array of product IDs purchased in this transaction (in this instance, containing 1 product only).</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">tealium?.trackView(title: <span style="color:#b84">&#34;SCREEN_NAME&#34;</span>, data: [<span style="color:#b84">&#34;KEY&#34;</span> : <span style="color:#b84">&#34;VALUE&#34;</span>], completion: <span style="font-weight:bold">nil</span>)</code></pre></div>
+<p class="note">The value passed to <code>title</code> will appear in the data layer as the variable <code>tealium_event</code>.</p>
+
 <h3 id="track-events">Track Events</h3>
 
 <p>The <a href="/platforms/ios-swift/api/tealium/#track"><code>track()</code></a> method tracks an event with associated data and, optionally, triggers a callback function.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">let</span> <span style="color:#008080">mydata</span> = [<span style="color:#b84">&#34;KEY&#34;</span>: <span style="color:#b84">&#34;VALUE&#34;</span>]
 <span style="color:#998;font-style:italic">// track call with type specified and completion block</span>
-tealium?.track(title: <span style="color:#b84">&#34;EVENT_TITLE&#34;</span>,
+tealium?.track(title: <span style="color:#b84">&#34;EVENT_NAME&#34;</span>,
       data: mydata,
       completion: { (success: <span style="color:#999">Bool</span>, info: [<span style="color:#999">String</span>:<span style="color:#999">Any</span>]?, error: Error?) <span style="font-weight:bold">in</span>
  <span style="color:#998;font-style:italic">//...</span>
 })</code></pre></div>
-<p>The following example tracks a button click on <strong>Buy Now</strong>, passing a <code>Dictionary</code> containing a single key-value pair, representing the customer ID.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">tealium?.track(title: <span style="color:#b84">&#34;EVENT_NAME&#34;</span>, data: [<span style="color:#b84">&#34;KEY&#34;</span> : [<span style="color:#b84">&#34;VALUE1&#34;</span>]], completion: <span style="font-weight:bold">nil</span>)</code></pre></div>
+<p class="note">The value passed to <code>title</code> will appear in the data layer as the variable <code>tealium_event</code>.</p>
+
 <h2 id="event-batching">Event Batching</h2>
 
-<p>All event batching configurations must be performed when the SDK is initialized, since Swift does not currently use the Mobile Publish Settings from Tealium iQ.</p>
+<p>Swift does not currently use the Mobile Publish Settings, so event batching must be enabled and configured when the SDK is initialized.</p>
 
-<p>The following example enable event batching to deliver multiple events as single compressed requests.</p>
+<p>This example enables event batching and sets the batch size and queue size.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">import</span> <span style="color:#458;font-weight:bold">TealiumDispatchQueue</span> <span style="color:#998;font-style:italic">// required for event batching options</span>
 <span style="color:#458;font-weight:bold">class</span> <span style="color:#458;font-weight:bold">TealiumHelper</span> {
 	<span style="font-weight:bold">var</span> <span style="color:#008080">tealium</span>: Tealium?
@@ -316,9 +316,9 @@ tealium?.track(title: <span style="color:#b84">&#34;EVENT_TITLE&#34;</span>,
 
 	<span style="font-weight:bold">private</span> <span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">initTealium</span>() {
 		<span style="font-weight:bold">let</span> <span style="color:#008080">config</span> = TealiumConfig(account: <span style="color:#b84">&#34;ACCOUNT&#34;</span>,
- 	       		                 profile: <span style="color:#b84">&#34;PROFILE&#34;</span>,
-        	   	                 environment: <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>,
-           		                 datasource: <span style="color:#b84">&#34;DATASOURCE&#34;</span>)
+ 	       		                   profile: <span style="color:#b84">&#34;PROFILE&#34;</span>,
+                               environment: <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>,
+                               datasource: <span style="color:#b84">&#34;DATASOURCE&#34;</span>)
 		config.setIsEventBatchingEnabled(<span style="font-weight:bold">true</span>)      <span style="color:#998;font-style:italic">// enable batching</span>
 		config.setBatchSize(<span style="color:#099">10</span>)                     <span style="color:#998;font-style:italic">// size of batch</span>
 		config.setDispatchAfter(numberOfEvents: <span style="color:#099">25</span>) <span style="color:#998;font-style:italic">// flush after every 25 events</span>
@@ -327,7 +327,7 @@ tealium?.track(title: <span style="color:#b84">&#34;EVENT_TITLE&#34;</span>,
 		<span style="color:#998;font-style:italic">// ...</span>
 	}
 }</code></pre></div>
-<p>The following are commonly used options available to customize event batching. <a href="/platforms/ios-swift/api/tealium-config/">Learn more</a> about the different batch options in the <code>TealiumConfig</code> API.</p>
+<p>The following options are available to customize event batching.</p>
 
 <table>
 <thead>
@@ -340,22 +340,22 @@ tealium?.track(title: <span style="color:#b84">&#34;EVENT_TITLE&#34;</span>,
 <tbody>
 <tr>
 <td><a href="/platforms/ios-swift/api/tealium-config/#setbatchexpirationdays"><code>setBatchExpirationDays()</code></a></td>
-<td>Sets the batch expiration in days. If the device is offline for an extended period, events older than this will be deleted</td>
+<td>Sets the batch expiration in days. If the device is offline for an extended period, events older than this will be deleted.</td>
 </tr>
 
 <tr>
 <td><a href="/platforms/ios-swift/api/tealium-config/#setbatchsize"><code>setBatchSize()</code></a></td>
-<td>Sets the amount of events to combine into a single batch request (max: 10)</td>
+<td>Sets the amount of events to combine into a single batch request (max: 10).</td>
 </tr>
 
 <tr>
 <td><a href="/platforms/ios-swift/api/tealium-config/#setdispatchafter"><code>setDispatchAfter()</code></a></td>
-<td>Sets the number of events after which the queue will be flushed</td>
+<td>Sets the number of events after which the queue will be flushed.</td>
 </tr>
 
 <tr>
 <td><a href="/platforms/ios-swift/api/tealium-config/#setiseventbatchingenabled"><code>setIsEventBatchingEnabled()</code></a></td>
-<td>Enables (<code>true</code>) or disables (<code>false</code>) event batching (default: <code>false</code>)</td>
+<td>Enables or disables event batching (default: <code>false</code>).</td>
 </tr>
 
 <tr>
@@ -364,30 +364,6 @@ tealium?.track(title: <span style="color:#b84">&#34;EVENT_TITLE&#34;</span>,
 </tr>
 </tbody>
 </table>
-
-<p>Event batching takes place if any of the following conditions are met:</p>
-
-<ul>
-<li>Batching is <em>enabled</em>.</li>
-<li>If the device has no internet connection, events are stored until the connection is stable again.</li>
-<li>If the user has not selected any Consent Manager preferences, then events are batched offline until a preference is selected.</li>
-</ul>
-
-<p>Batched events are sent as follows:</p>
-
-<ul>
-<li>The app is sent to the background:<br />
-
-<ul>
-<li>If the lifecycle module is enabled, the lifecycle <code>“sleep”</code> event is sent.</li>
-<li>Any events generated prior to the app being backgrounded are sent immediately (assuming a connection is available).</li>
-</ul></li>
-<li>The app is sent to foreground:
-
-<ul>
-<li>Any events in the queue, plus the lifecycle <code>“wake”</code> event are sent when the app is woken up.</li>
-</ul></li>
-</ul>
 
 <h3 id="tag-management">Tag Management</h3>
 
