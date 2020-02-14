@@ -241,7 +241,10 @@ var utag_data = {
               <li><a href="#cocoapods">CocoaPods</a></li>
               <li><a href="#carthage">Carthage</a></li>
               </ul><li><a href="#initialize">Initialize</a></li>
-              <ul class="toc-h3"><li><a href="#logging">Logging</a></li>
+              <li><a href="#event-batching">Event Batching</a></li>
+              <ul class="toc-h3"><li><a href="#tag-management">Tag Management</a></li>
+              <li><a href="#tealium-collect">Tealium Collect</a></li>
+              <li><a href="#logging">Logging</a></li>
               </nav>
   </aside></div>
 
@@ -519,6 +522,77 @@ target <span style="color:#b84">&#39;CPodTest&#39;</span> <span style="font-weig
 	}
 }</code></pre></div>
 <p class="note">In version 1.9.0+, Mobile Publish Settings are enabled by default, and must be disabled if you don’t wish to use them. Configure the Mobile Publish Settings in iQ Tag Management, or disable it using <code>config.shouldUseRemotePublishSettings = false</code>.</p>
+
+<h2 id="event-batching">Event Batching</h2>
+
+<p>Prior to version 1.9.0, the Tealium Swift library did not use <a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/Creating-a-Mobile-Profile/ta-p/16328">Mobile Publish Settings</a> (MPS). Therefore, event batching must be enabled and configured when the SDK is initialized. Version 1.9.0+ provides MPS support, allowing event batching to be configured remotely.</p>
+
+<p>This example enables event batching and sets the batch size and queue size.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">import</span> <span style="color:#458;font-weight:bold">TealiumDispatchQueue</span> <span style="color:#998;font-style:italic">// required for event batching options</span>
+<span style="color:#458;font-weight:bold">class</span> <span style="color:#458;font-weight:bold">TealiumHelper</span> {
+	<span style="font-weight:bold">var</span> <span style="color:#008080">tealium</span>: Tealium?
+	<span style="color:#998;font-style:italic">// ...</span>
+
+	<span style="font-weight:bold">private</span> <span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">initTealium</span>() {
+		<span style="font-weight:bold">let</span> <span style="color:#008080">config</span> = TealiumConfig(account: <span style="color:#b84">&#34;ACCOUNT&#34;</span>,
+ 	       		                   profile: <span style="color:#b84">&#34;PROFILE&#34;</span>,
+                               environment: <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>,
+                               datasource: <span style="color:#b84">&#34;DATASOURCE&#34;</span>)
+		config.batchingEnabled = <span style="font-weight:bold">true</span>            <span style="color:#998;font-style:italic">// enable batching</span>
+		config.batchSize = <span style="color:#099">10</span>                    <span style="color:#998;font-style:italic">// size of batch</span>
+		config.dispatchAfter = <span style="color:#099">25</span>                <span style="color:#998;font-style:italic">// flush after every 25 events</span>
+		config.dispatchQueueLimit = <span style="color:#099">100</span>          <span style="color:#998;font-style:italic">// 100 max queued events</span>
+		config.dispatchExpiration = <span style="color:#099">5</span>            <span style="color:#998;font-style:italic">// events expire/delete after 5 days</span>
+		<span style="color:#998;font-style:italic">// ...</span>
+	}
+}</code></pre></div>
+<p>The following options are available to customize event batching.</p>
+
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><a href="/platforms/ios-swift/api/tealium-config/#batchingenabled"><code>batchingEnabled</code></a></td>
+<td>Enables or disables event batching (default: <code>false</code>).</td>
+</tr>
+
+<tr>
+<td><a href="/platforms/ios-swift/api/tealium-config/#batchsize"><code>batchSize</code></a></td>
+<td>Sets the amount of events to combine into a single batch request (max: 10).</td>
+</tr>
+
+<tr>
+<td><a href="/platforms/ios-swift/api/tealium-config/#dispatchafter"><code>dispatchAfter</code></a></td>
+<td>Sets the number of events after which the queue will be flushed.</td>
+</tr>
+
+<tr>
+<td><a href="/platforms/ios-swift/api/tealium-config/#dispatchexpiration"><code>dispatchExpiration</code></a></td>
+<td>Sets the batch expiration in days. If the device is offline for an extended period, events older than this will be deleted.</td>
+</tr>
+
+<tr>
+<td><a href="/platforms/ios-swift/api/tealium-config/#dispatchqueuelimit"><code>dispatchQueueLimit</code></a></td>
+<td>Sets the maximum number of queued events. If this number is reached, and the queue has not been flushed, the oldest events will be deleted.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="tag-management">Tag Management</h3>
+
+<p>With Tag Management and event batching enabled, tracking calls are dispatched as individual JavaScript calls to the hidden webview.</p>
+
+<p>Configured tags are triggered individually, resulting in multiple requests per event leaving the device. This improves device performance by waking up the device less frequently than sending real-time events.</p>
+
+<h3 id="tealium-collect">Tealium Collect</h3>
+
+<p>This endpoint can currently only accept batch data generated by the Tealium SDK, in a proprietary batch format.</p>
 
 <h3 id="logging">Logging</h3>
 
