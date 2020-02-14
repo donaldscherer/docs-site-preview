@@ -290,10 +290,10 @@ var utag_data = {
 
 <ul>
 <li>Adds the ability to remotely change certain configuration options, such as event batch size, from the Tealium iQ Mobile Publish Settings interface.</li>
-<li>This matches the functionality already present in Tealium iOS (Objective-C) and Tealium Android libraries. <a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/Creating-a-Mobile-Profile/ta-p/16328">Learn More</a></li>
+<li>This matches the functionality already present in Tealium iOS (Objective-C) and Tealium Android libraries. <a href="https://community.tealiumiq.com/t5/iQ-Tag-Management/Creating-a-Mobile-Profile/ta-p/16328">Learn more</a>.</li>
 </ul></li>
 
-<li><p>Swift Package Manager (SPM) support. <a href="/platforms/ios-swift/install">Learn More</a></p></li>
+<li><p>Swift Package Manager support. <a href="/platforms/ios-swift/install">Learn more</a>.</p></li>
 
 <li><p>Swift 5 support</p>
 
@@ -308,9 +308,9 @@ var utag_data = {
 <li>Supports iOS apps that are enabled to run on macOS Catalina (10.15+)</li>
 </ul></li>
 
-<li><p>Lifecycle tracking methods are now available as part of the public API. <a href="https://docs.tealium.com/platforms/ios-swift/module-list/lifecycle/">Learn More</a></p></li>
+<li><p>Lifecycle tracking methods are now available as part of the public API. <a href="https://docs.tealium.com/platforms/ios-swift/module-list/lifecycle/">Learn more</a>.</p></li>
 
-<li><p><em>Optional</em> location tracking module. <a href="/platforms/ios-swift/module-list/location">Learn More</a></p></li>
+<li><p><em>Optional</em> location tracking module. <a href="/platforms/ios-swift/module-list/location">Learn more</a>.</p></li>
 
 <li><p>List of enabled modules now added to each track request. For example, <code>enabled_modules=[&quot;attribution&quot;,&quot;tagmanagement&quot;]</code>.</p></li>
 </ul>
@@ -318,9 +318,9 @@ var utag_data = {
 <p><strong>Low Impact Changes</strong></p>
 
 <ul>
-<li>Bug fix: Attempt to fix an un-reproducible bug in the Lifecycle module that occasionally causes crashes in low memory scenarios. <a href="https://github.com/Tealium/tealium-swift/issues/120">https://github.com/Tealium/tealium-swift/issues/120</a></li>
-<li>Lifecycle auto-tracking may now be disabled. This option suppresses automatically-generated app lifecycle events. <a href="/platforms/ios-swift/api/tealium-config/">Learn More</a></li>
-<li>Removed dependency on Objective-C <code>NSError</code> for the <code>Core</code> module. Required for SPM support. Also fixes <a href="https://github.com/Tealium/tealium-swift/issues/125">https://github.com/Tealium/tealium-swift/issues/125</a></li>
+<li>Bug fix: Attempt to fix an un-reproducible bug in the Lifecycle module that occasionally causes crashes in low memory scenarios. <a href="https://github.com/Tealium/tealium-swift/issues/120">120</a></li>
+<li>Lifecycle auto-tracking may now be disabled. This option suppresses automatically-generated app lifecycle events. <a href="/platforms/ios-swift/api/tealium-config/">Learn more</a></li>
+<li>Removed dependency on Objective-C <code>NSError</code> for the <code>Core</code> module. Required for Swift Package Manager support. Also fixes implicit import of bridging header issue. <a href="https://github.com/Tealium/tealium-swift/issues/125">125</a></li>
 <li>Optimized <code>Tealium.update</code> method. Modules are no longer deinitialized and reinitialized when the <code>update</code> method is called to change the <code>TealiumConfig</code> settings</li>
 </ul>
 
@@ -339,7 +339,7 @@ var utag_data = {
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#099">2020</span><span style="font-weight:bold">-</span><span style="color:#099">01</span><span style="font-weight:bold">-</span><span style="color:#099">23</span> <span style="color:#099">11</span>:<span style="color:#099">48</span>:<span style="color:#099">37.219410</span><span style="font-weight:bold">+</span><span style="color:#099">0000</span> TestApp[<span style="color:#099">853</span>:<span style="color:#099">82765</span>] [<span style="color:#999">Process</span>] kill() returned unexpected error <span style="color:#099">1</span></code></pre></div></li>
 </ul>
 
-<p>This error appears if you are using the Tag Management module, until Apple fixes the issue in the WebKit library. <a href="https://forums.developer.apple.com/thread/126930">Learn More</a></p>
+<p>This error appears if you are using the Tag Management module, until Apple fixes the issue in the WebKit library. <a href="https://forums.developer.apple.com/thread/126930">Learn more</a>.</p>
 
 <h2 id="version-1-70-1-8-2-2019">Version 1.70 - 1.8.2 (2019)</h2>
 
