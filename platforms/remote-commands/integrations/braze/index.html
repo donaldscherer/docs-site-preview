@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>Remote Command: Braze (Beta) | Integrations |Preview of Tealium Developer Docs</title>
+    <title>Remote Command: Braze | Integrations |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -266,7 +266,7 @@ var utag_data = {
     
   
 
-  <h1 class="lh-title mb3 mv0 pt3">Remote Command: Braze (Beta)</h1>
+  <h1 class="lh-title mb3 mv0 pt3">Remote Command: Braze</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
@@ -303,38 +303,73 @@ var utag_data = {
 
 <h3 id="dependency-manager">Dependency Manager</h3>
 
-<p>Install options are available for the following dependency managers. This is the recommended install method.</p>
+<p>We recommend using one of the following dependency managers for installation:</p>
+
+<p class="note">If you are using the Tealium iOS (Objective-C) library, use the manual installation method. The CocoaPods and Carthage options are only available if you are using the Tealium iOS (Swift) library.</p>
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
   <div class="tab-content">
 <div class="tab-pane" data-lang="CocoaPods" title="CocoaPods">
-  <p>Add the following dependency to your Podfile:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">pod <span style="color:#b84">&#34;TealiumBraze&#34;</span></code></pre></div>
-<p>In addition, you must remove the line <code>pod &quot;Appboy-iOS-SDK&quot;</code>, if it exists in your Podfile.</p>
+  <p>To install Braze remote commands for iOS using CocoaPods:</p>
 
-<p class="note">TealiumBraze already has a dependency on <code>tealium-swift</code>, so if <code>tealium-swift</code> was previously in your Podfile, you need to remove it.</p>
+<ol>
+<li><p>Remove <code>tealium-swift</code> and <code>pod &quot;Appboy-iOS-SDK&quot;</code> if they already exist your Podfile. The dependency for <code>tealium-swift</code> is already included in the <code>TealiumBraze</code> framework.</p></li>
+
+<li><p>Add the following dependency to your Podfile:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">pod <span style="color:#b84">&#34;TealiumBraze&#34;</span></code></pre></div>
+<p>The <code>TealiumBraze</code> pod includes the following <code>TealiumSwift</code> dependencies:</p>
+
+<pre><code>'tealium-swift/Core'
+'tealium-swift/TealiumDelegate'
+'tealium-swift/TealiumRemoteCommands'
+'tealium-swift/TealiumTagManagement'
+</code></pre></li>
+
+<li><p>Add any other required modules manually to your Podfile, such as the following:</p>
+
+<pre><code>'tealium-swift/TealiumLogger'
+'tealium-swift/TealiumLifecycle'
+'tealium-swift/TealiumAppData'
+</code></pre>
+
+<p>Learn more about the <a href="https://docs.tealium.com/platforms/ios-swift/modules/">recommended modules</a> for iOS.</p></li>
+
+<li><p>Import the modules <code>TealiumSwift</code> and <code>TealiumBraze</code> in your <code>TealiumHelper</code> file, and any other files that access the <code>Tealium</code> class, or the Braze Remote Command.</p></li>
+</ol>
 
 </div>
 
 <div class="tab-pane" data-lang="Carthage" title="Carthage">
-  <p>Add the following dependency to your Cartfile:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">github <span style="color:#b84">&#34;tealium/tealium-ios-braze-remote-command&#34;</span></code></pre></div>
-<p>In addition, you must remove the line <code>github &quot;Appboy/Appboy-iOS-SDK&quot;</code>, if it exists in your Cartfile.</p>
+  <p>To install Braze remote commands for iOS using Carthage:</p>
 
-<p class="note"><p>TealiumBraze already has a dependency on <code>tealium-swift</code>, so if <code>tealium-swift</code> was previously in your Cartfile, you need to remove it.</p>
+<ol>
+<li><p>Remove <code>tealium-swift</code> from your Cartfile. The dependency for <code>tealium-swift</code> is already included in the <code>TealiumBraze</code> framework.</p></li>
 
-<p>If you are using version 1.6.5 or later of the Tealium for Swift SDK, the <strong>TealiumDelegate</strong> module needs to be included as well with your installation.</p>
-</p>
+<li><p>Remove the following line if it exists in your Cartfile:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">github <span style="color:#b84">&#34;Appboy/Appboy-iOS-SDK&#34;</span></code></pre></div></li>
+
+<li><p>Add the following dependency to your Cartfile:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">github <span style="color:#b84">&#34;tealium/tealium-ios-braze-remote-command&#34;</span></code></pre></div></li>
+</ol>
+
+<p class="note">Tealium for Swift SDK (version 1.6.5+) requires the <code>TealiumDelegate</code> module to be included with your installation.</p>
 
 </div>
 
 <div class="tab-pane" data-lang="Maven" title="Maven">
-  <p>After installing Tealium&rsquo;s <a href="/platforms/android-java/install/">Android SDK</a>, add the following dependencies in the <code>build.gradle</code> file to import both the Braze SDK and Tealium-Braze RemoteCommand:</p>
+  <p>To install Braze remote commands for Android using Maven:</p>
+
+<ol>
+<li><p>Install Tealium&rsquo;s <a href="/platforms/android-java/install/">Android SDK</a>, if you haven&rsquo;t done so already.</p></li>
+
+<li><p>Import both the Braze SDK and Tealium-Braze remote commands by adding the following dependencies in your app project&rsquo;s <code>build.gradle</code> file:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">dependencies <span style="font-weight:bold">{</span>
-    implementation <span style="color:#b84">&#39;com.tealium.remotecommands:braze:0.0.3&#39;</span>
-    implementation <span style="color:#b84">&#39;com.appboy:android-sdk-ui:3.8.0&#39;</span>
-<span style="font-weight:bold">}</span></code></pre></div>
+  implementation <span style="color:#b84">&#39;com.tealium.remotecommands:braze:0.0.3&#39;</span>
+  implementation <span style="color:#b84">&#39;com.appboy:android-sdk-ui:3.8.0&#39;</span>
+<span style="font-weight:bold">}</span></code></pre></div></li>
+</ol>
+
 </div>
 
 <p></div>
@@ -342,50 +377,40 @@ var utag_data = {
 
 <h3 id="manual-for-ios">Manual for iOS</h3>
 
-<p>To manually install the Braze remote command for your Objective-C or Swift project, use the following repo:</p>
+<p>The manually installation for Braze remote commands requires one of the following iOS libraries to be installed:</p>
 
 <ul>
-<li><a href="https://github.com/tealium/tealium-ios-braze-remote-command">Tealium iOS Braze Remote Command</a></li>
+<li><a href="https://docs.tealium.com/platforms/ios-swift/">Tealium for Swift</a></li>
+<li><a href="https://docs.tealium.com/platforms/ios-objective-c/">Tealium for Objective-C</a></li>
 </ul>
 
-<p>To include the remote command files in your own project, clone this repo and drag the files within the <code>Sources</code> folder into your project.</p>
+<p>To install the Braze remote commands for your iOS project:</p>
 
-<p class="note">This assumes you have <a href="/platforms/ios-swift/install/">Tealium Swift</a> and <a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/initial_sdk_setup/">Braze</a> installed already.</p>
+<ol>
+<li><p>Install the <a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/initial_sdk_setup/">Braze SDK</a>, if you haven&rsquo;t already done so.</p></li>
 
-<p>When initializing the Tealium SDK, in the completion handler:</p>
+<li><p>Clone the <a href="https://github.com/tealium/tealium-ios-braze-remote-command">Tealium iOS Braze remote command</a> repo and drag the files within the <code>Sources</code> folder into your project.</p></li>
+
+<li><p>When initializing the Tealium SDK, update the completion handler as follows:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">tealium = Tealium(config: config) { responses <span style="font-weight:bold">in</span>
-  <span style="font-weight:bold">guard</span> <span style="font-weight:bold">let</span> <span style="color:#008080">remoteCommands</span> = <span style="font-weight:bold">self</span>.tealium?.remoteCommands() <span style="font-weight:bold">else</span> {
-      <span style="font-weight:bold">return</span>
-  }
-  <span style="font-weight:bold">let</span> <span style="color:#008080">brazeTracker</span> = BrazeTracker()
-  <span style="font-weight:bold">let</span> <span style="color:#008080">brazeCommand</span> = BrazeCommand(brazeTracker: brazeTracker)
-  <span style="font-weight:bold">let</span> <span style="color:#008080">brazeRemoteCommand</span> = brazeCommand.remoteCommand()
-  remoteCommands.add(brazeRemoteCommand)
-}</code></pre></div>
-<p>Manual install options are available for the following platforms:</p>
+<span style="font-weight:bold">guard</span> <span style="font-weight:bold">let</span> <span style="color:#008080">remoteCommands</span> = <span style="font-weight:bold">self</span>.tealium?.remoteCommands() <span style="font-weight:bold">else</span> {
+  <span style="font-weight:bold">return</span>
+}
+<span style="font-weight:bold">let</span> <span style="color:#008080">brazeTracker</span> = BrazeTracker()
+<span style="font-weight:bold">let</span> <span style="color:#008080">brazeCommand</span> = BrazeCommand(brazeTracker: brazeTracker)
+<span style="font-weight:bold">let</span> <span style="color:#008080">brazeRemoteCommand</span> = brazeCommand.remoteCommand()
+remoteCommands.add(brazeRemoteCommand)
+}</code></pre></div></li>
+
+<li><p>Add the remote command for Swift or Objective-C:</p></li>
+</ol>
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
   <div class="tab-content">
-<div class="tab-pane" data-lang="Objective-C" title="Objective-C">
-  <p>First, clone the repo and drag the files from the <code>Objective-C</code> folder into your project.</p>
-
-<p>Then, in <code>TealiumHelper.m</code>, add this line to import the Swift code:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">#<span style="font-weight:bold">import</span> <span style="color:#b84">&#34;TealiumRemoteCommandObjcApp-Swift.h&#34;</span></code></pre></div>
-<p><a href="https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_swift_into_objective-c">Learn more</a> about importing Swift into Objective-C.</p>
-
-<p>Then initialize the remote command:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Objective-C" data-lang="Objective-C">BrazeTracker <span style="font-weight:bold">*</span>brazeTracker <span style="font-weight:bold">=</span> [[BrazeTracker alloc] init];
-BrazeCommand <span style="font-weight:bold">*</span>brazeCommand <span style="font-weight:bold">=</span> [[BrazeCommand alloc] initWithBrazeTracker:brazeTracker];
-TEALRemoteCommandResponseBlock brazeRemoteCommand <span style="font-weight:bold">=</span> [brazeCommand remoteCommand];
-[[Tealium instanceForKey:<span style="color:#b84">@&#34;MY_INSTANCE&#34;</span>] addRemoteCommandID:<span style="color:#b84">@&#34;braze&#34;</span>
-                                    description:<span style="color:#b84">@&#34;Braze Remote Command&#34;</span>
-                                    targetQueue:dispatch_get_main_queue()
-                                    responseBlock:brazeRemoteCommand];</code></pre></div>
-</div>
 
 <div class="tab-pane" data-lang="Swift" title="Swift">
-  <p>In your <code>TealiumHelper.swift</code>, add the remote command as follows:</p>
+  <p>Add the remote command in the <code>TealiumHelper.swift</code> file as follows:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">let</span> <span style="color:#008080">brazeTracker</span> = BrazeTracker()
 <span style="font-weight:bold">let</span> <span style="color:#008080">brazeCommand</span> = BrazeCommand(brazeTracker: brazeTracker)
 <span style="font-weight:bold">let</span> <span style="color:#008080">brazeRemoteCommand</span> = brazeCommand.remoteCommand()
@@ -393,6 +418,23 @@ tealium.addRemoteCommandID(<span style="color:#b84">&#34;braze&#34;</span>,
                            description: <span style="font-weight:bold">nil</span>,
                            targetQueue: DispatchQueue.main,
                            responseBlock: brazeRemoteCommand)</code></pre></div>
+</div>
+
+<div class="tab-pane" data-lang="Objective-C" title="Objective-C">
+  <p>Import the remote command in the <code>TealiumHelper.m</code> file as follows:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">#<span style="font-weight:bold">import</span> <span style="color:#b84">&#34;TealiumRemoteCommandObjcApp-Swift.h&#34;</span></code></pre></div>
+<p class="note">The Swift bridging header for your target is named ending with <code>-Swift.h</code>. Find this by filtering for &ldquo;Module Name&rdquo; in your target&rsquo;s build settings.</p>
+
+<p>Learn more in the <a href="https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_swift_into_objective-c">Apple Developer Documentation: Importing Swift Into Objective-C</a>.</p>
+
+<p>Initialize the remote command as follows:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Objective-C" data-lang="Objective-C">BrazeTracker <span style="font-weight:bold">*</span>brazeTracker <span style="font-weight:bold">=</span> [[BrazeTracker alloc] init];
+BrazeCommand <span style="font-weight:bold">*</span>brazeCommand <span style="font-weight:bold">=</span> [[BrazeCommand alloc] initWithBrazeTracker:brazeTracker];
+TEALRemoteCommandResponseBlock brazeRemoteCommand <span style="font-weight:bold">=</span> [brazeCommand remoteCommand];
+[[Tealium instanceForKey:<span style="color:#b84">@&#34;MY_INSTANCE&#34;</span>] addRemoteCommandID:<span style="color:#b84">@&#34;braze&#34;</span>
+                                    description:<span style="color:#b84">@&#34;Braze Remote Command&#34;</span>
+                                    targetQueue:dispatch_get_main_queue()
+                                    responseBlock:brazeRemoteCommand];</code></pre></div>
 </div>
 
 <p></div>
@@ -470,7 +512,7 @@ teal = Tealium(config: config) { responses <span style="font-weight:bold">in</sp
   <span style="font-weight:bold">let</span> <span style="color:#008080">brazeTracker</span> = BrazeTracker()
   <span style="font-weight:bold">let</span> <span style="color:#008080">brazeCommand</span> = BrazeCommand(brazeTracker: brazeTracker)
   <span style="font-weight:bold">let</span> <span style="color:#008080">brazeRemoteCommand</span> = brazeCommand.remoteCommand()
-      remoteCommands.add(brazeRemoteCommand)
+  remoteCommands.add(brazeRemoteCommand)
 }</code></pre></div>
 </div>
 
@@ -2728,7 +2770,7 @@ teal = Tealium(config: config) { responses <span style="font-weight:bold">in</sp
   </span>
 	<span id="feedback_comment">
 		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="70"></textarea>
-    <span>This page was last updated:  February 20, 2020 
+    <span>This page was last updated:  March 11, 2020 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
   </span>
