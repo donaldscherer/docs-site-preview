@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>Event Batching | Getting Started |Preview of Tealium Developer Docs</title>
+    <title>ConsentManager | API Reference |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -25,7 +25,7 @@
         
 <script>
 var utag_data = {
-    category_name : "Getting Started",
+    category_name : "Android (Java)",
     site_section  : "platforms",
     site_language : "en",
     tealium_event : "page_view"
@@ -234,11 +234,16 @@ var utag_data = {
 
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">Table of Contents</p>
-      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#batch-vs-queue">Batch vs. Queue</a></li>
-              <li><a href="#data-layer-optimization">Data Layer Optimization</a></li>
-              <li><a href="#payload-compression">Payload Compression</a></li>
-              <li><a href="#benefits">Benefits</a></li>
-              <li><a href="#supported-platforms">Supported Platforms</a></li>
+      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#class-consentmanager">Class: ConsentManager</a></li>
+              <ul class="toc-h3"><li><a href="#getpolicy">getPolicy()</a></li>
+              <li><a href="#getuserconsentcategories">getUserConsentCategories()</a></li>
+              <li><a href="#getuserconsentpreferences">getUserConsentPreferences()</a></li>
+              <li><a href="#getuserconsentstatus">getUserConsentStatus()</a></li>
+              <li><a href="#resetuserconsentpreferences">resetUserConsentPreferences()</a></li>
+              <li><a href="#setpolicy">setPolicy()</a></li>
+              <li><a href="#setuserconsentcategories">setUserConsentCategories()</a></li>
+              <li><a href="#setuserconsentstatus">setUserConsentStatus()</a></li>
+              <li><a href="#setuserconsentstatuswithcategories">setUserConsentStatusWithCategories()</a></li>
               </nav>
   </aside></div>
 
@@ -249,19 +254,19 @@ var utag_data = {
           <header class="flex-none w-100">
   
     
-      <a href="/platforms/getting-started" class="f6 fw8 mb0 link mid-gray dim mr3">
-        GETTING STARTED
+      <a href="/platforms/android-java" class="f6 fw8 mb0 link mid-gray dim mr3">
+        ANDROID JAVA
       </a>
     
   
 
-  <h1 class="lh-title mb3 mv0 pt3">Event Batching</h1>
+  <h1 class="lh-title mb3 mv0 pt3">ConsentManager</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Learn about the event batching feature for mobile.
+      Reference guide for ConsentManager class and methods provided by Tealium for Android.
     </div>
   
 
@@ -274,68 +279,303 @@ var utag_data = {
 <div class="prose" id="prose">
   
 
-<p>Event batching is a feature of the Tealium Collect module that optimizes the transmission of data between a mobile device and Tealium by <em>sending multiple events in a single HTTP request</em>. Event batching works with a new data collection endpoint that is optimized to eliminate repetitive data layer variables and to accept payloads compressed with gzip.</p>
+<h2 id="class-consentmanager">Class: <code>ConsentManager</code></h2>
 
-<h2 id="batch-vs-queue">Batch vs. Queue</h2>
+<p>The following summarizes the commonly used methods of the <code>ConsentManager</code> class.</p>
 
-<p>Event <em>batching</em> refers to how data is transmitted across the network. The event <em>queue</em> refers to how event data is stored temporarily on the device  before it is dispatched. Event batching combines multiple events into a single network request as opposed to each tracked event in its own request. The event queue is used when a device is offline so that tracking calls can be stored until the device regains a connection, at which point the queue is processed. Event batching works with the event queue by processing multiple events at once until the queue is empty.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
 
-<p>For example, if a device is offline and the event queue grows to contain 25 events, once the device comes online the queue is processed in batches of 10 events until the queue is empty. In this case, two batched requests with 10 events each and one batch for the remaining 5 events are sent, for a total of 25 tracked events using only 3 network requests.</p>
+<tbody>
+<tr>
+<td><code>getPolicy()</code></td>
+<td>Returns the current policy</td>
+</tr>
 
-<p class="note">Currently, the batch size maximum is 10.</p>
+<tr>
+<td><code>getUserConsentCategories()</code></td>
+<td>Returns the current consent categories of the user</td>
+</tr>
 
-<h2 id="data-layer-optimization">Data Layer Optimization</h2>
+<tr>
+<td><code>getUserConsentPreferences()</code></td>
+<td>Returns the UserConsentPreferences object</td>
+</tr>
 
-<p>The Tealium mobile libraries contribute a lot of <a href="/platforms/getting-started/data-layer/">device information to the data layer</a>, such as app name, screen resolution, and OS version. These variables are included in every network request even though their values do not change between events. Event batching optimizes the data layer so that these common variables are <em>only sent once per batch</em>.</p>
+<tr>
+<td><code>getUserConsentStatus()</code></td>
+<td>Returns the current consent status of the user</td>
+</tr>
 
-<h2 id="payload-compression">Payload Compression</h2>
+<tr>
+<td><code>resetUserConsentPreferences()</code></td>
+<td>Resets user consent consent preferences</td>
+</tr>
 
-<p>The event batch payload is compressed with gzip to minimize the size of the HTTP request. This compression reduces the size of each network request by up to 90%.</p>
+<tr>
+<td><code>setPolicy()</code></td>
+<td>Overrides the default policy parameter (default: gdpr)</td>
+</tr>
 
-<h2 id="benefits">Benefits</h2>
+<tr>
+<td><code>setUserConsentCategories()</code></td>
+<td>Sets the user&rsquo;s consent status and categories</td>
+</tr>
 
-<p>The benefits of event batching include:</p>
+<tr>
+<td><code>setUserConsentStatus()</code></td>
+<td>Sets the user&rsquo;s consent status</td>
+</tr>
 
-<ul>
-<li>Reduced size of total transmitted data.</li>
-<li>Fewer network requests for the same number of events.</li>
-<li>Improved battery performance on the device.</li>
-</ul>
+<tr>
+<td><code>setUserConsentStatusWithCategories()</code></td>
+<td>Sets the consent status and categories in a single call</td>
+</tr>
+</tbody>
+</table>
 
-<p class="note">Event batching is not available for Tealium iQ Tag Management.</p>
+<h3 id="getpolicy"><code>getPolicy()</code></h3>
 
-<h2 id="supported-platforms">Supported Platforms</h2>
+<p>Returns the current policy.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a61717;background-color:#e3d2d2">final String </span>currentPolicy <span style="font-weight:bold">=</span> tealiumInstance.<span style="color:#008080">getConsentManager</span>().<span style="color:#008080">getPolicy</span>();</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Return Type</th>
+</tr>
+</thead>
 
-<p>The following platforms support event batching:</p>
+<tbody>
+<tr>
+<td>User&rsquo;s current policy</td>
+<td><code>String</code></td>
+</tr>
+</tbody>
+</table>
 
-<ul>
-<li><a href="/platforms/android-java/install/#event-batching">Android</a></li>
-<li><a href="/platforms/ios-swift/install/#event-batching">iOS</a></li>
-</ul>
+<h3 id="getuserconsentcategories"><code>getUserConsentCategories()</code></h3>
+
+<p>Returns the current consent categories of the user.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a61717;background-color:#e3d2d2">final String</span>[] userCategories <span style="font-weight:bold">=</span> tealiumInstance.<span style="color:#008080">getConsentManager</span>().<span style="color:#008080">getUserConsentCategories</span>();</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Return Type</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>User&rsquo;s current consent categories</td>
+<td><code>String[]</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="getuserconsentpreferences"><code>getUserConsentPreferences()</code></h3>
+
+<p>Returns the user&rsquo;s consent preferences.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a61717;background-color:#e3d2d2">final UserConsentPreferences </span>userPreferences <span style="font-weight:bold">=</span> tealiumInstance.<span style="color:#008080">getConsentManager</span>().<span style="color:#008080">getUserConsentPreferences</span>();</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Return Type</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>User&rsquo;s consent preferences</td>
+<td><code>UserConsentPreferences</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="getuserconsentstatus"><code>getUserConsentStatus()</code></h3>
+
+<p>Returns the current consent status of the user.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a61717;background-color:#e3d2d2">final String </span>userStatus <span style="font-weight:bold">=</span> tealiumInstance.<span style="color:#008080">getConsentManager</span>().<span style="color:#008080">getUserConsentStatus</span>();</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Return Type</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>User&rsquo;s current consent status</td>
+<td><code>String</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="resetuserconsentpreferences"><code>resetUserConsentPreferences()</code></h3>
+
+<p>Clears stored consent preferences, resets user preferences to defaults, and sets consent status to <code>UNKNOWN</code> with no categories.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">tealiumInstance.<span style="color:#008080">getConsentManager</span>().<span style="color:#008080">resetUserConsentPreferences</span>();</code></pre></div>
+<h3 id="setpolicy"><code>setPolicy()</code></h3>
+
+<p>Overrides the default policy parameter. Default is <code>gdpr</code>.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">tealiumInstance.<span style="color:#008080">getConsentManager</span>().<span style="color:#008080">setPolicy</span>(policy);</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>policy</code></td>
+<td><code>String</code></td>
+<td>Policy to set</td>
+<td><code>&quot;custompolicy&quot;</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="setuserconsentcategories"><code>setUserConsentCategories()</code></h3>
+
+<p>Sets the user&rsquo;s consent status and categories. Call this method from your consent management preferences screen in your app. This method automatically sets the user&rsquo;s consent status to <code>CONSENTED</code> if any number of categories are set.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">tealiumInstance.<span style="color:#008080">getConsentManager</span>().<span style="color:#008080">setUserConsentCategories</span>(categories);</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>categories</code></td>
+<td><code>[String]</code></td>
+<td>Categories to set</td>
+<td><code>String[]</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>The following static constants are the complete list of supported consent categories:</p>
+
+<pre><code>AFFILIATES
+ANALYTICS
+BIG_DATA
+CDP
+COOKIEMATCH
+CRM
+DISPLAY_ADS
+EMAIL
+ENGAGEMENT
+MOBILE
+MONITORING
+PERSONALIZATION
+SEARCH
+SOCIAL
+MISC
+</code></pre>
+
+<h3 id="setuserconsentstatus"><code>setUserConsentStatus()</code></h3>
+
+<p>Sets the user&rsquo;s consent status. Call this method from your consent management preferences screen in your app when the user opts in or opts out of tracking. If <code>true</code>, automatically enables all categories.  If <code>false</code>, all categories automatically disabled.</p>
+
+<p>If the user&rsquo;s status is set to <code>CONSENTED</code> using this method, the Consent Manager automatically subscribes the user to ALL available consent categories (subset of categories not allowed).</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">tealiumInstance.<span style="color:#008080">getConsentManager</span>().<span style="color:#008080">setUserConsentStatus</span>(status);</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>status</code></td>
+<td><code>String</code></td>
+<td>Status to set the user&rsquo;s consent</td>
+<td>[<code>ConsentManager.ConsentStatus.CONSENTED</code>, <code>ConsentManager.ConsentStatus.NOT_CONSENTED</code>]</td>
+</tr>
+</tbody>
+</table>
+
+<p>These static constants are the complete list of supported consent statuses.</p>
+
+<pre><code>CONSENTED
+NOT_CONSENTED
+UNKNOWN
+</code></pre>
+
+<p><strong><code>UNKNOWN</code></strong><br />
+The <code>UNKNOWN</code> status is the default setting for the Consent Manager. In this state, the Consent Manager queues events locally until an affirmative <code>CONSENTED/NOT_CONSENTED</code> status is provided.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">tealiumInstance.<span style="color:#008080">getConsentManager</span>().<span style="color:#008080">setUserConsentStatus</span>(ConsentManager.<span style="color:#008080">ConsentStatus</span>.<span style="color:#008080">UNKNOWN</span>);</code></pre></div>
+<p><strong><code>CONSENTED</code></strong><br />
+The <code>CONSENTED</code> status is set when the user has consented to tracking. In this status, the Consent Manager dequeues any previously-queued track calls and allow all subsequent tracking calls to continue as normal.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">tealiumInstance.<span style="color:#008080">getConsentManager</span>().<span style="color:#008080">setUserConsentStatus</span>(ConsentManager.<span style="color:#008080">ConsentStatus</span>.<span style="color:#008080">CONSENTED</span>);</code></pre></div>
+<p><strong><code>NOT_CONSENTED</code></strong><br />
+The <code>NOT_CONSENTED</code> status is set when the user has declined tracking. In this state, the Consent Manager purges any previously-queued track calls and drops all subsequent tracking calls from being further processed by the SDK.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">tealiumInstance.<span style="color:#008080">getConsentManager</span>().<span style="color:#008080">setUserConsentStatus</span>(ConsentManager.<span style="color:#008080">ConsentStatus</span>.<span style="color:#008080">NOT_CONSENTED</span>);</code></pre></div>
+<h3 id="setuserconsentstatuswithcategories"><code>setUserConsentStatusWithCategories()</code></h3>
+
+<p>Sets the consent status and categories in a single call.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">tealiumInstance.<span style="color:#008080">getConsentManager</span>().<span style="color:#008080">setUserConsentStatusWithCategories</span>(status, categories);</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>status</code></td>
+<td><code>String</code></td>
+<td>Status to set the user&rsquo;s consent</td>
+<td>[<code>ConsentManager.ConsentStatus.CONSENTED</code>, <code>ConsentManager.ConsentStatus.NOT_CONSENTED</code>]</td>
+</tr>
+
+<tr>
+<td><code>categories</code></td>
+<td><code>[String]</code></td>
+<td>Categories to set</td>
+<td><code>new String[]{ConsentManager.ConsentCategory.ANALYTICS, ConsentManager.ConsentCategory.BIG_DATA}</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>See <code>setUserConsentStatus()</code> and <code>setUserConsentCategories()</code> for a list of constant supported.</p>
 
 </div>
 
 <b class="pv1 br2 dib tc mv3 link">
-
-	<div date-pref class="white">
-		
-			<a href="http://docs-preview.tealium.com/platforms/getting-started/consent-management/" title="Consent Management "><svg class="fill-current" height="18px" viewBox="0 0 18 18" width="18px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
- Consent Management </a>
-		
-
-	</div>
-
 </b>
 <b style="position: absolute; right:0px;" class="pv1 br2 dib tc mv3 link">
 
 	<div date-pref class="white">
 
 		
-			<a href="http://docs-preview.tealium.com/platforms/getting-started/location/" title="User Location and Geofencing">
-			User Location and Geofencing <svg class="fill-current" height="18px" viewBox="0 0 18 18" width="18px" xmlns="http://www.w3.org/2000/svg"> <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path> <path d="M0 0h24v24H0z" fill="none"></path> </svg>
+			<a href="http://docs-preview.tealium.com/platforms/android-java/api/data-sources/" title="DataSources">
+			DataSources <svg class="fill-current" height="18px" viewBox="0 0 18 18" width="18px" xmlns="http://www.w3.org/2000/svg"> <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path> <path d="M0 0h24v24H0z" fill="none"></path> </svg>
 
 			</a>
 		
@@ -362,9 +602,9 @@ var utag_data = {
       </li>
       
       
-      <li class="w-100 hover-accent-color-light fw8 active pl2">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".getting-started">Getting Started</a>
-        <ul class="getting-started desktopmenu animated fadeIn list pl0 db">
+      <li class="w-100 hover-accent-color-light fw8 pl2">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".getting-started">Getting Started</a>
+        <ul class="getting-started desktopmenu animated fadeIn list pl0 dn">
           <li class="fw4">
             
             
@@ -410,7 +650,7 @@ var utag_data = {
           <li class="fw4">
             
             
-            <a href="/platforms/getting-started/event-batching/" class="db link pl3 pr2 pv1 bg-secondary white">
+            <a href="/platforms/getting-started/event-batching/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Event Batching
             </a>
           </li>
@@ -467,9 +707,9 @@ var utag_data = {
       </li>
       
       
-      <li class="w-100 hover-accent-color-light fw8 pl2">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".android-java">Android (Java)</a>
-        <ul class="android-java desktopmenu animated fadeIn list pl0 dn">
+      <li class="w-100 hover-accent-color-light fw8 active pl2">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".android-java">Android (Java)</a>
+        <ul class="android-java desktopmenu animated fadeIn list pl0 db">
           <li class="fw4">
             
             
@@ -536,7 +776,7 @@ var utag_data = {
           <li class="fw4">
             
             
-            <a href="/platforms/android-java/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/android-java/api/" class="db link pl3 pr2 pv1 bg-secondary white">
               API Reference
             </a>
           </li>
@@ -1438,7 +1678,7 @@ var utag_data = {
   </span>
 	<span id="feedback_comment">
 		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="70"></textarea>
-    <span>This page was last updated:  March 20, 2020 
+    <span>This page was last updated:  March 18, 2020 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
   </span>

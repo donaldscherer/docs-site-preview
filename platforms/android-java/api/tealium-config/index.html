@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>Event Batching | Getting Started |Preview of Tealium Developer Docs</title>
+    <title>Tealium.Config | API Reference |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -25,7 +25,7 @@
         
 <script>
 var utag_data = {
-    category_name : "Getting Started",
+    category_name : "Android (Java)",
     site_section  : "platforms",
     site_language : "en",
     tealium_event : "page_view"
@@ -234,11 +234,15 @@ var utag_data = {
 
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">Table of Contents</p>
-      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#batch-vs-queue">Batch vs. Queue</a></li>
-              <li><a href="#data-layer-optimization">Data Layer Optimization</a></li>
-              <li><a href="#payload-compression">Payload Compression</a></li>
-              <li><a href="#benefits">Benefits</a></li>
-              <li><a href="#supported-platforms">Supported Platforms</a></li>
+      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#class-tealium-config">Class: Tealium.Config</a></li>
+              <ul class="toc-h3"><li><a href="#create">create()</a></li>
+              <li><a href="#enableconsentmanager">enableConsentManager()</a></li>
+              <li><a href="#isconsentmanagerenabled">isConsentManagerEnabled()</a></li>
+              <li><a href="#setdatasourceid">setDatasourceId()</a></li>
+              <li><a href="#setforceoverrideloglevel">setForceOverrideLogLevel()</a></li>
+              <li><a href="#setoverridecollectdispatchurl">setOverrideCollectDispatchUrl()</a></li>
+              <li><a href="#setoverridevisitorservicedomain">setOverrideVisitorServiceDomain()</a></li>
+              <li><a href="#setsecondsbeforebatchtimeout">setSecondsBeforeBatchTimeout()</a></li>
               </nav>
   </aside></div>
 
@@ -249,19 +253,19 @@ var utag_data = {
           <header class="flex-none w-100">
   
     
-      <a href="/platforms/getting-started" class="f6 fw8 mb0 link mid-gray dim mr3">
-        GETTING STARTED
+      <a href="/platforms/android-java" class="f6 fw8 mb0 link mid-gray dim mr3">
+        ANDROID JAVA
       </a>
     
   
 
-  <h1 class="lh-title mb3 mv0 pt3">Event Batching</h1>
+  <h1 class="lh-title mb3 mv0 pt3">Tealium.Config</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Learn about the event batching feature for mobile.
+      Reference guide for Tealium.Config class and methods provided by Tealium for Android.
     </div>
   
 
@@ -274,44 +278,276 @@ var utag_data = {
 <div class="prose" id="prose">
   
 
-<p>Event batching is a feature of the Tealium Collect module that optimizes the transmission of data between a mobile device and Tealium by <em>sending multiple events in a single HTTP request</em>. Event batching works with a new data collection endpoint that is optimized to eliminate repetitive data layer variables and to accept payloads compressed with gzip.</p>
+<h2 id="class-tealium-config">Class: <code>Tealium.Config</code></h2>
 
-<h2 id="batch-vs-queue">Batch vs. Queue</h2>
+<p>The following summarizes the commonly used methods of the <code>Tealium.Config</code> class.</p>
 
-<p>Event <em>batching</em> refers to how data is transmitted across the network. The event <em>queue</em> refers to how event data is stored temporarily on the device  before it is dispatched. Event batching combines multiple events into a single network request as opposed to each tracked event in its own request. The event queue is used when a device is offline so that tracking calls can be stored until the device regains a connection, at which point the queue is processed. Event batching works with the event queue by processing multiple events at once until the queue is empty.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
 
-<p>For example, if a device is offline and the event queue grows to contain 25 events, once the device comes online the queue is processed in batches of 10 events until the queue is empty. In this case, two batched requests with 10 events each and one batch for the remaining 5 events are sent, for a total of 25 tracked events using only 3 network requests.</p>
+<tbody>
+<tr>
+<td><code>create()</code></td>
+<td>Create instance of the Config object</td>
+</tr>
 
-<p class="note">Currently, the batch size maximum is 10.</p>
+<tr>
+<td><code>enableConsentManager()</code></td>
+<td>Enable Consent Manager</td>
+</tr>
 
-<h2 id="data-layer-optimization">Data Layer Optimization</h2>
+<tr>
+<td><code>isConsentManagerEnabled()</code></td>
+<td>Checks if Consent Manager is enabled</td>
+</tr>
 
-<p>The Tealium mobile libraries contribute a lot of <a href="/platforms/getting-started/data-layer/">device information to the data layer</a>, such as app name, screen resolution, and OS version. These variables are included in every network request even though their values do not change between events. Event batching optimizes the data layer so that these common variables are <em>only sent once per batch</em>.</p>
+<tr>
+<td><code>setDatasourceId()</code></td>
+<td>Sets the data source key</td>
+</tr>
 
-<h2 id="payload-compression">Payload Compression</h2>
+<tr>
+<td><code>setForceOverrideLogLevel()</code></td>
+<td>Set to force a specific log level at init time</td>
+</tr>
 
-<p>The event batch payload is compressed with gzip to minimize the size of the HTTP request. This compression reduces the size of each network request by up to 90%.</p>
+<tr>
+<td><code>setOverrideCollectDispatchUrl()</code></td>
+<td>Overrides the Tealium Collect URL</td>
+</tr>
 
-<h2 id="benefits">Benefits</h2>
+<tr>
+<td><code>setOverrideVisitorServiceDomain()</code></td>
+<td>Overrides the Tealium Collect visitor service domain</td>
+</tr>
 
-<p>The benefits of event batching include:</p>
+<tr>
+<td><code>setSecondsBeforeBatchTimeout()</code></td>
+<td>Sets the number of seconds before batch timeout</td>
+</tr>
+</tbody>
+</table>
 
-<ul>
-<li>Reduced size of total transmitted data.</li>
-<li>Fewer network requests for the same number of events.</li>
-<li>Improved battery performance on the device.</li>
-</ul>
+<h3 id="create"><code>create()</code></h3>
 
-<p class="note">Event batching is not available for Tealium iQ Tag Management.</p>
+<p>Create instance of the Config object.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a61717;background-color:#e3d2d2">Tealium.Config config </span><span style="font-weight:bold">=</span> Tealium.<span style="color:#008080">Config</span>.<span style="color:#008080">create</span>(
+      application,
+      account,
+      profile,
+      environment);</code></pre></div>
+<p>The Tealium <code>Config</code> instance is configured with the following parameters:</p>
 
-<h2 id="supported-platforms">Supported Platforms</h2>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
 
-<p>The following platforms support event batching:</p>
+<tbody>
+<tr>
+<td><code>application</code></td>
+<td><code>Application</code></td>
+<td>The application instance</td>
+<td><code>applicationObj</code></td>
+</tr>
 
-<ul>
-<li><a href="/platforms/android-java/install/#event-batching">Android</a></li>
-<li><a href="/platforms/ios-swift/install/#event-batching">iOS</a></li>
-</ul>
+<tr>
+<td><code>account</code></td>
+<td><code>String</code></td>
+<td>Tealium account name</td>
+<td><code>&quot;companyXYZ&quot;</code></td>
+</tr>
+
+<tr>
+<td><code>profile</code></td>
+<td><code>String</code></td>
+<td>Tealium profile name</td>
+<td><code>&quot;main&quot;</code></td>
+</tr>
+
+<tr>
+<td><code>environment</code></td>
+<td><code>String</code></td>
+<td>Tealium environment name</td>
+<td>[<code>&quot;dev&quot;</code>, <code>&quot;qa&quot;</code>, <code>&quot;prod&quot;</code>]</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="enableconsentmanager"><code>enableConsentManager()</code></h3>
+
+<p>Enable Consent Manager. This method is to be used before Tealium initialization.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a61717;background-color:#e3d2d2">public final String TEALIUM_INSTANCE </span><span style="font-weight:bold">=</span> <span style="color:#b84">&#34;main&#34;</span>;
+<span style="color:#a61717;background-color:#e3d2d2">final Tealium</span>.<span style="color:#008080">Config</span> config <span style="font-weight:bold">=</span> Tealium.<span style="color:#008080">Config</span>.<span style="color:#008080">create</span>(...);
+config.<span style="color:#008080">enableConsentManager</span>(TEALIUM_INSTANCE);</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>instance</code></td>
+<td><code>String</code></td>
+<td>Tealium instance name</td>
+<td><code>&quot;main&quot;</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="isconsentmanagerenabled"><code>isConsentManagerEnabled()</code></h3>
+
+<p>Checks if Consent Manager is enabled.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">config.<span style="color:#008080">isConsentMangerEnabled</span>()</code></pre></div>
+<h3 id="setdatasourceid"><code>setDatasourceId()</code></h3>
+
+<p>Sets the data source key.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">config.<span style="color:#008080">setDataSourceId</span>(dataSourceId);</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>dataSourceId</code></td>
+<td><code>String</code></td>
+<td>Data source key (Set to <code>null</code> if none)</td>
+<td><code>&quot;abc123&quot;</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="setforceoverrideloglevel"><code>setForceOverrideLogLevel()</code></h3>
+
+<p>Set to force a specific log level at init time. Returns instance of the config object for method chaining.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">config.<span style="color:#008080">setForceOverrideLogLevel</span>(forceOverrideLogLevel);</code></pre></div>
+<p>The following <code>String</code> options are available for <code>forceOverrideLogLevel</code>:</p>
+
+<table>
+<thead>
+<tr>
+<th>Log Level</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>&quot;dev&quot;</code></td>
+<td>Activity, Info, Warnings, and Errors</td>
+</tr>
+
+<tr>
+<td><code>&quot;qa&quot;</code></td>
+<td>Info, Warnings, and Errors</td>
+</tr>
+
+<tr>
+<td><code>&quot;prod&quot;</code></td>
+<td>Errors</td>
+</tr>
+
+<tr>
+<td><code>&quot;silent&quot;</code></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="setoverridecollectdispatchurl"><code>setOverrideCollectDispatchUrl()</code></h3>
+
+<p>Overrides the Tealium Collect dispatch URL to send data to a different endpoint.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">config.<span style="color:#008080">setOverrideCollectDispatchUrl</span>(url);</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>url</code></td>
+<td><code>String</code></td>
+<td>The URL to override</td>
+</tr>
+</tbody>
+</table>
+
+<p>The default URL is:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://collect.tealiumiq.com/event/</code></pre></div>
+<p>The default URL with event batching is:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://collect.tealiumiq.com/bulk-event/</code></pre></div>
+<p>The method is typically used to set a custom hostname, or to set a specific region hostname. The following example sets the Tealium Collect base URL to stay within the EU Central region:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">config.<span style="color:#008080">setOverrideCollectDispatchUrl</span>(<span style="color:#b84">&#34;https://collect-eu-central-1.tealiumiq.com/event/&#34;</span>);</code></pre></div>
+<h3 id="setoverridevisitorservicedomain"><code>setOverrideVisitorServiceDomain()</code></h3>
+
+<p>Overrides the Tealium Collect visitor service domain to send data to a different domain.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">config.<span style="color:#008080">setOverrideVisitorServiceDomain</span>(domain);</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>domain</code></td>
+<td><code>String</code></td>
+<td>The visitor service domain to override</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="setsecondsbeforebatchtimeout"><code>setSecondsBeforeBatchTimeout()</code></h3>
+
+<p>Sets the number of seconds before batch timeout. If the batch size limit has not been reached before reaching the timeout, the queued events are dispatched.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">config.<span style="color:#008080">setSecondsBeforeBatchTimeout</span>(timeout);</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>timeout</code></td>
+<td><code>int</code></td>
+<td>The timeout, in seconds, for the batch to be sent.</td>
+<td><code>30</code></td>
+</tr>
+</tbody>
+</table>
 
 </div>
 
@@ -319,11 +555,11 @@ var utag_data = {
 
 	<div date-pref class="white">
 		
-			<a href="http://docs-preview.tealium.com/platforms/getting-started/consent-management/" title="Consent Management "><svg class="fill-current" height="18px" viewBox="0 0 18 18" width="18px" xmlns="http://www.w3.org/2000/svg">
+			<a href="http://docs-preview.tealium.com/platforms/android-java/api/tealium/" title="Tealium "><svg class="fill-current" height="18px" viewBox="0 0 18 18" width="18px" xmlns="http://www.w3.org/2000/svg">
     <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
 </svg>
- Consent Management </a>
+ Tealium </a>
 		
 
 	</div>
@@ -334,8 +570,8 @@ var utag_data = {
 	<div date-pref class="white">
 
 		
-			<a href="http://docs-preview.tealium.com/platforms/getting-started/location/" title="User Location and Geofencing">
-			User Location and Geofencing <svg class="fill-current" height="18px" viewBox="0 0 18 18" width="18px" xmlns="http://www.w3.org/2000/svg"> <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path> <path d="M0 0h24v24H0z" fill="none"></path> </svg>
+			<a href="http://docs-preview.tealium.com/platforms/android-java/api/tealium-location/" title="TealiumLocation">
+			TealiumLocation <svg class="fill-current" height="18px" viewBox="0 0 18 18" width="18px" xmlns="http://www.w3.org/2000/svg"> <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path> <path d="M0 0h24v24H0z" fill="none"></path> </svg>
 
 			</a>
 		
@@ -362,9 +598,9 @@ var utag_data = {
       </li>
       
       
-      <li class="w-100 hover-accent-color-light fw8 active pl2">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".getting-started">Getting Started</a>
-        <ul class="getting-started desktopmenu animated fadeIn list pl0 db">
+      <li class="w-100 hover-accent-color-light fw8 pl2">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".getting-started">Getting Started</a>
+        <ul class="getting-started desktopmenu animated fadeIn list pl0 dn">
           <li class="fw4">
             
             
@@ -410,7 +646,7 @@ var utag_data = {
           <li class="fw4">
             
             
-            <a href="/platforms/getting-started/event-batching/" class="db link pl3 pr2 pv1 bg-secondary white">
+            <a href="/platforms/getting-started/event-batching/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
               Event Batching
             </a>
           </li>
@@ -467,9 +703,9 @@ var utag_data = {
       </li>
       
       
-      <li class="w-100 hover-accent-color-light fw8 pl2">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".android-java">Android (Java)</a>
-        <ul class="android-java desktopmenu animated fadeIn list pl0 dn">
+      <li class="w-100 hover-accent-color-light fw8 active pl2">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".android-java">Android (Java)</a>
+        <ul class="android-java desktopmenu animated fadeIn list pl0 db">
           <li class="fw4">
             
             
@@ -536,7 +772,7 @@ var utag_data = {
           <li class="fw4">
             
             
-            <a href="/platforms/android-java/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary ">
+            <a href="/platforms/android-java/api/" class="db link pl3 pr2 pv1 bg-secondary white">
               API Reference
             </a>
           </li>
@@ -1438,7 +1674,7 @@ var utag_data = {
   </span>
 	<span id="feedback_comment">
 		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="70"></textarea>
-    <span>This page was last updated:  March 20, 2020 
+    <span>This page was last updated:  March 23, 2020 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
   </span>
