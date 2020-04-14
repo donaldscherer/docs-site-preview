@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>Remote Command: Facebook | Integrations |Preview of Tealium Developer Docs</title>
+    <title>Remote Command: Contentsquare | Integrations |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -239,19 +239,16 @@ var utag_data = {
               <li><a href="#install">Install</a></li>
               <ul class="toc-h3"><li><a href="#dependency-manager">Dependency Manager</a></li>
               <li><a href="#manual-for-ios">Manual for iOS</a></li>
-              <li><a href="#manual-install-for-android">Manual Install for Android</a></li>
               </ul><li><a href="#initialize">Initialize</a></li>
-              <li><a href="#push-message-tracking">Push Message Tracking</a></li>
               <li><a href="#supported-methods">Supported Methods</a></li>
-              <ul class="toc-h3"><li><a href="#standard-event-names">Standard Event Names</a></li>
-              <li><a href="#set-user">Set User</a></li>
-              <li><a href="#update-user-value">Update User Value</a></li>
-              <li><a href="#log-product-item">Log Product Item</a></li>
-              <li><a href="#log-purchase">Log Purchase</a></li>
-              <li><a href="#flush">Flush</a></li>
-              <li><a href="#log-event">Log Event</a></li>
-              <li><a href="#handle-push">Handle Push</a></li>
-              <li><a href="#opened-app-from-push">Opened App From Push</a></li>
+              <ul class="toc-h3"><li><a href="#sdk-setup">SDK Setup</a></li>
+              <li><a href="#track-screens">Track Screens</a></li>
+              <li><a href="#track-transactions">Track Transactions</a></li>
+              <li><a href="#track-dynamic-variables">Track Dynamic Variables</a></li>
+              <li><a href="#stop-resume-tracking">Stop / Resume Tracking</a></li>
+              <li><a href="#opt-in">Opt In</a></li>
+              <li><a href="#opt-out">Opt Out</a></li>
+              <li><a href="#forget-me">Forget Me</a></li>
               </nav>
   </aside></div>
 
@@ -268,13 +265,13 @@ var utag_data = {
     
   
 
-  <h1 class="lh-title mb3 mv0 pt3">Remote Command: Facebook</h1>
+  <h1 class="lh-title mb3 mv0 pt3">Remote Command: Contentsquare</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Tealium remote command integration for Facebook on Android and Swift/iOS.
+      Tealium remote command integration for Contentsquare on Android and Swift/iOS.
     </div>
   
 
@@ -291,71 +288,14 @@ var utag_data = {
 
 <ul>
 <li><a href="/platforms/android-java/">Tealium for Android</a> or <a href="/platforms/ios-swift/">Tealium for iOS</a> in your app</li>
-<li>Facebook Remote Command Tag in Tealium iQ Tag Management</li>
+<li>Contentsquare Remote Commands tag in Tealium iQ Tag Management</li>
 </ul>
-
-<p>The following are requirements for iOS and Android:</p>
-
-<div class="code-tabs">
-  <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" data-lang="Android" title="Android">
-  <p>The following AndroidManifest.xml keys are required for Android:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#000080">&lt;string</span> <span style="color:#008080">name=</span><span style="color:#b84">&#34;facebook_app_id&#34;</span><span style="color:#000080">&gt;</span>[APP_ID]<span style="color:#000080">&lt;/string&gt;</span>
-<span style="color:#000080">&lt;string</span> <span style="color:#008080">name=</span><span style="color:#b84">&#34;fb_login_protocol_scheme&#34;</span><span style="color:#000080">&gt;</span>fb[APP_ID]<span style="color:#000080">&lt;/string&gt;</span></code></pre></div>
-<p>Learn more: <a href="https://developers.facebook.com/docs/app-events/getting-started-app-events-android">Facebook Android Getting Started - Integrate the Facebook SDK in Your Android App</a></p>
-
-</div>
-
-<div class="tab-pane" data-lang="iOS" title="iOS">
-  <p>The following keys are required in the <code>.plist</code> file for iOS:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#000080">&lt;key&gt;</span>CFBundleURLTypes<span style="color:#000080">&lt;/key&gt;</span>
-<span style="color:#000080">&lt;array&gt;</span>
-  <span style="color:#000080">&lt;dict&gt;</span>
-  <span style="color:#000080">&lt;key&gt;</span>CFBundleURLSchemes<span style="color:#000080">&lt;/key&gt;</span>
-  <span style="color:#000080">&lt;array&gt;</span>
-    <span style="color:#000080">&lt;string&gt;</span>fb[APP_ID]<span style="color:#000080">&lt;/string&gt;</span>
-  <span style="color:#000080">&lt;/array&gt;</span>
-  <span style="color:#000080">&lt;/dict&gt;</span>
-<span style="color:#000080">&lt;/array&gt;</span>
-<span style="color:#000080">&lt;key&gt;</span>FacebookAppID<span style="color:#000080">&lt;/key&gt;</span>
-<span style="color:#000080">&lt;string&gt;</span>[APP_ID]<span style="color:#000080">&lt;/string&gt;</span>
-<span style="color:#000080">&lt;key&gt;</span>FacebookDisplayName<span style="color:#000080">&lt;/key&gt;</span>
-<span style="color:#000080">&lt;string&gt;</span>[APP_NAME]<span style="color:#000080">&lt;/string&gt;</span></code></pre></div>
-<p>Learn more: <a href="https://developers.facebook.com/docs/app-events/getting-started-app-events-ios/#plist-config">Facebook iOS Getting Started - Configure Your Property List</a></p>
-
-<p>Update the <code>AppDelegate</code> code as follows:</p>
-
-<ol>
-<li>Import <code>FBSDKCoreKit</code></li>
-
-<li><p>In the <code>didFinishLaunchingWithOptions</code> method add the following:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">FBSDKApplicationDelegate.sharedInstance().application(
-  application,
-  didFinishLaunchingWithOptions: launchOptions)</code></pre></div></li>
-
-<li><p>Add the following function in your <code>AppDelegate.swift</code> (or Objective-C equivalent)</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">application</span>(
-   <span style="font-weight:bold">_</span> app: UIApplication,
-  open url: URL,
-  options: [UIApplicationOpenURLOptionsKey : <span style="color:#999">Any</span>] = [:]) -&gt; <span style="color:#999">Bool</span> {
-<span style="font-weight:bold">let</span> <span style="color:#008080">handled</span> = FBSDKApplicationDelegate.sharedInstance().application(
-  app,
-  open: url,
-  options: options)</code></pre></div>
-<p>Learn more: <a href="https://developers.facebook.com/docs/app-events/getting-started-app-events-ios/#dev-env-setup">Facebook iOS Getting Started - Set Up Your Development Environment</a></p></li>
-</ol>
-
-</div>
-
-<p></div>
-</div></p>
 
 <h2 id="how-it-works">How It Works</h2>
 
-<p>The integration with Facebook uses the native Facebook SDK, a remote commands module that wraps the Facebook methods, and the Facebook Remote Commands tag that translates event tracking into native Facebook calls. This solution leverages the convenience of tag management to configure a native Facebook implementation without having to add vendor-specific code to your app.</p>
+<p>The Contentsquare integration uses the native Contentsquare SDK, a remote command module that wraps the Contentsquare methods, and the Contentsquare Remote Commands tag that translates event tracking into native Contentsquare calls. This solution leverages the convenience of iQ Tag Management to configure a native Contentsquare implementation without having to add vendor-specific code to your app.</p>
 
-<p>Adding the Facebook remote command module to your app build automatically installs and builds the required Facebook libraries. If you are using a dependency manager installation, there is no need to install the Facebook SDK separately.</p>
+<p>Adding the Contentsquare remote command module to your app build automatically installs and builds the required Contentsquare libraries. If you are using a dependency manager installation, there is no need to install the Contentsquare SDK separately.</p>
 
 <h2 id="install">Install</h2>
 
@@ -369,14 +309,14 @@ var utag_data = {
   <ul class="nav nav-tabs"></ul>
   <div class="tab-content">
 <div class="tab-pane" data-lang="CocoaPods" title="CocoaPods">
-  <p>To install Facebook remote commands for iOS using CocoaPods:</p>
+  <p>To install Contentsquare remote commands for iOS using CocoaPods:</p>
 
 <ol>
-<li><p>Remove <code>tealium-swift</code> and <code>pod &quot;FBSDKCoreKit&quot;</code> if they already exist your Podfile. The dependency for <code>tealium-swift</code> is already included in the <code>TealiumFacebook</code> framework.</p></li>
+<li><p>Remove <code>tealium-swift</code> and <code>pod &quot;CS_iOS_SDK&quot;</code> if they already exist your Podfile. The dependency for <code>tealium-swift</code> is already included in the <code>TealiumContentsquare</code> framework.</p></li>
 
 <li><p>Add the following dependency to your Podfile:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">pod <span style="color:#b84">&#34;TealiumFacebook&#34;</span></code></pre></div>
-<p>The <code>TealiumFacebook</code> pod includes the following <code>TealiumSwift</code> dependencies:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">pod <span style="color:#b84">&#34;TealiumContentsquare&#34;</span></code></pre></div>
+<p>The <code>TealiumContentsquare</code> pod includes the following <code>TealiumSwift</code> dependencies:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b84">&#39;tealium-swift/Core&#39;</span>
 <span style="color:#b84">&#39;tealium-swift/TealiumDelegate&#39;</span>
 <span style="color:#b84">&#39;tealium-swift/TealiumRemoteCommands&#39;</span>
@@ -388,22 +328,22 @@ var utag_data = {
 <span style="color:#b84">&#39;tealium-swift/TealiumAppData&#39;</span></code></pre></div>
 <p>Learn more about the <a href="https://docs.tealium.com/platforms/ios-swift/modules/">recommended modules</a> for iOS.</p></li>
 
-<li><p>Import the modules <code>TealiumSwift</code> and <code>TealiumFacebook</code> in your <code>TealiumHelper</code> file, and any other files that access the <code>Tealium</code> class, or the Facebook Remote Command.</p></li>
+<li><p>Import the modules <code>TealiumSwift</code> and <code>TealiumContentsquare</code> in your <code>TealiumHelper</code> file, and any other files that access the <code>Tealium</code> class, or the Contentsquare Remote Command.</p></li>
 </ol>
 
 </div>
 
 <div class="tab-pane" data-lang="Carthage" title="Carthage">
-  <p>To install Facebook remote commands for iOS using Carthage:</p>
+  <p>To install Contentsquare remote commands for iOS using Carthage:</p>
 
 <ol>
-<li><p>Remove <code>tealium-swift</code> from your Cartfile. The dependency for <code>tealium-swift</code> is already included in the <code>TealiumFacebook</code> framework.</p></li>
+<li><p>Remove <code>tealium-swift</code> from your Cartfile. The dependency for <code>tealium-swift</code> is already included in the <code>TealiumContentsquare</code> framework.</p></li>
 
 <li><p>Remove the following line if it exists in your Cartfile:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">github <span style="color:#b84">&#34;facebook/facebook-ios-sdk&#34;</span></code></pre></div></li>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">github <span style="color:#b84">&#34;ContentSquare/CS_iOS_SDK&#34;</span></code></pre></div></li>
 
 <li><p>Add the following dependency to your Cartfile:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">github <span style="color:#b84">&#34;tealium/tealium-ios-facebook-remote-command&#34;</span></code></pre></div></li>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">github <span style="color:#b84">&#34;tealium/tealium-ios-contentsquare-remote-command&#34;</span></code></pre></div></li>
 </ol>
 
 <p class="note">Tealium for Swift SDK (version 1.6.5+) requires the <code>TealiumDelegate</code> module to be included with your installation.</p>
@@ -411,24 +351,14 @@ var utag_data = {
 </div>
 
 <div class="tab-pane" data-lang="Maven" title="Maven">
-  <p>To install Facebook remote commands for Android using Maven:</p>
+  <p>To install Contentsquare remote commands for Android using Maven:</p>
 
 <ol>
 <li><p>Install Tealium&rsquo;s <a href="/platforms/android-java/install/">Android SDK</a>, if you haven&rsquo;t done so already.</p></li>
 
-<li><p>Add the Tealium Maven URL to your project&rsquo;s top-level <code>build.gradle</code> file:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">allprojects <span style="font-weight:bold">{</span>
-repositories <span style="font-weight:bold">{</span>
-jcenter<span style="font-weight:bold">()</span>
-maven <span style="font-weight:bold">{</span>
-  url <span style="color:#b84">&#34;https://maven.tealiumiq.com/android/releases/&#34;</span>
-<span style="font-weight:bold">}</span>
-<span style="font-weight:bold">}</span>
-<span style="font-weight:bold">}</span></code></pre></div></li>
-
-<li><p>Import both the Facebook SDK and Tealium-Facebook remote commands by adding the following dependencies in your app project&rsquo;s <code>build.gradle</code> file:</p>
+<li><p>Import both the Contentquare SDK and Tealium-Contentsquare remote commands by adding the following dependencies in your app project&rsquo;s <code>build.gradle</code> file:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">dependencies <span style="font-weight:bold">{</span>
-  implementation <span style="color:#b84">&#39;com.tealium.remotecommands:facebook:1.0.0&#39;</span>
+  implementation <span style="color:#b84">&#39;com.tealium.remotecommands:contentsquare:0.0.1&#39;</span>
 <span style="font-weight:bold">}</span></code></pre></div></li>
 </ol>
 
@@ -439,27 +369,29 @@ maven <span style="font-weight:bold">{</span>
 
 <h3 id="manual-for-ios">Manual for iOS</h3>
 
-<p>The manual installation for Facebook remote commands requires one of the following iOS libraries to be installed:</p>
+<p>The manual installation for Contentsquare remote commands requires one of the following iOS libraries to be installed:</p>
 
 <ul>
 <li><a href="https://docs.tealium.com/platforms/ios-swift/">Tealium for Swift</a></li>
 <li><a href="https://docs.tealium.com/platforms/ios-objective-c/">Tealium for Objective-C</a></li>
 </ul>
 
-<p>To install the Facebook remote commands for your iOS project:</p>
+<p>To install the Contentsquare remote commands for your iOS project:</p>
 
 <ol>
-<li><p>Install the <a href="https://github.com/facebook/facebook-ios-sdk/tree/master/FBSDKCoreKit">Facebook SDK</a>, if you haven&rsquo;t already done so.</p></li>
+<li><p>Install the <a href="https://docs.contentsquare.com/ios/#how-to-include-it">Contentsquare SDK</a>, if you haven&rsquo;t already done so.</p></li>
 
-<li><p>Clone the <a href="https://github.com/tealium/tealium-ios-facebook-remote-command">Tealium iOS Facebook remote command</a> repo and drag the files within the <code>Sources</code> folder into your project.</p></li>
+<li><p>Clone the <a href="https://github.com/tealium/tealium-ios-contentsquare-remote-command">Tealium iOS Contentsquare remote command</a> repo and drag the files within the <code>Sources</code> folder into your project.</p></li>
 
 <li><p>When initializing the Tealium Swift SDK, in the completion handler:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">tealium = Tealium(config: config) { responses <span style="font-weight:bold">in</span>
-  <span style="font-weight:bold">guard</span> <span style="font-weight:bold">let</span> <span style="color:#008080">remoteCommands</span> = <span style="font-weight:bold">self</span>.tealium?.remoteCommands() <span style="font-weight:bold">else</span> {
-    <span style="font-weight:bold">return</span>
-  }
-  <span style="font-weight:bold">let</span> <span style="color:#008080">facebookRemoteCommand</span> = FacebookRemoteCommand().remoteCommand()
-  remoteCommands.add(facebookRemoteCommand)
+<span style="font-weight:bold">guard</span> <span style="font-weight:bold">let</span> <span style="color:#008080">remoteCommands</span> = <span style="font-weight:bold">self</span>.tealium?.remoteCommands() <span style="font-weight:bold">else</span> {
+  <span style="font-weight:bold">return</span>
+}
+<span style="font-weight:bold">let</span> <span style="color:#008080">contentsquareTracker</span> = ContentsquareTracker()
+<span style="font-weight:bold">let</span> <span style="color:#008080">contentsquareCommand</span> = ContentsquareCommand(ContentsquareTracker: contentsquareTracker)
+<span style="font-weight:bold">let</span> <span style="color:#008080">contentsquareRemoteCommand</span> = ContentsquareCommand.remoteCommand()
+remoteCommands.add(contentsquareRemoteCommand)
 }</code></pre></div></li>
 
 <li><p>If you are using the TealiumIOS, add the following code:</p></li>
@@ -468,14 +400,16 @@ maven <span style="font-weight:bold">{</span>
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
   <div class="tab-content">
+
 <div class="tab-pane" data-lang="Swift" title="Swift">
   <p>Add the remote command in the <code>TealiumHelper.swift</code> file as follows:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">let</span> <span style="color:#008080">facebookTracker</span> = FacebookTracker()
-<span style="font-weight:bold">let</span> <span style="color:#008080">facebookRemoteCommand</span> = FacebookRemoteCommand(facebookTracker: facebookTracker).remoteCommand()
-tealium.addRemoteCommandID(<span style="color:#b84">&#34;facebook&#34;</span>,
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">let</span> <span style="color:#008080">contentsquareTracker</span> = ContentsquareTracker()
+<span style="font-weight:bold">let</span> <span style="color:#008080">contentsquareCommand</span> = ContentsquareCommand(contentsquareTracker: contentsquareTracker)
+<span style="font-weight:bold">let</span> <span style="color:#008080">contentsquareRemoteCommand</span> = contentsquareCommand.remoteCommand()
+tealium.addRemoteCommandID(<span style="color:#b84">&#34;contentsquare&#34;</span>,
                            description: <span style="font-weight:bold">nil</span>,
                            targetQueue: DispatchQueue.main,
-                           responseBlock: facebookRemoteCommand)</code></pre></div>
+                           responseBlock: contentsquareRemoteCommand)</code></pre></div>
 </div>
 
 <div class="tab-pane" data-lang="Objective-C" title="Objective-C">
@@ -486,75 +420,56 @@ tealium.addRemoteCommandID(<span style="color:#b84">&#34;facebook&#34;</span>,
 <p>Learn more about <a href="(https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_swift_into_objective-c)">importing Swift into Objective-C</a>.</p>
 
 <p>Initialize the remote command as follows:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Objective-C" data-lang="Objective-C">FacebookTracker <span style="font-weight:bold">*</span>facebookTracker <span style="font-weight:bold">=</span> [[FacebookTracker alloc] init];
-FacebookRemoteCommand <span style="font-weight:bold">*</span>facebookRemoteCommand <span style="font-weight:bold">=</span> [[FacebookRemoteCommand alloc] initWithFacebookTracker: facebookTracker];
-TEALRemoteCommandResponseBlock facebookRemoteCommandResponse <span style="font-weight:bold">=</span> [facebookRemoteCommand remoteCommand];
-[[Tealium instanceForKey:<span style="color:#b84">@&#34;MY_INSTANCE&#34;</span>] addRemoteCommandID:<span style="color:#b84">@&#34;facebook&#34;</span>
-                                    description:<span style="color:#b84">@&#34;Facebook Remote Command&#34;</span>
-                                    targetQueue:dispatch_get_main_queue()
-                                    responseBlock: facebookRemoteCommandResponse];</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Objective-C" data-lang="Objective-C">ContentsquareTracker <span style="font-weight:bold">*</span>contentsquareTracker <span style="font-weight:bold">=</span> [[ContentsquareTracker alloc] init];
+ContentsquareCommand <span style="font-weight:bold">*</span>contentsquareCommand <span style="font-weight:bold">=</span> [[ContentsquareCommand alloc] initWithContentsquareTracker:contentsquareTracker];
+TEALRemoteCommandResponseBlock contentsquareRemoteCommand <span style="font-weight:bold">=</span> [contentsquareCommand remoteCommand];
+[[Tealium instanceForKey:<span style="color:#b84">@&#34;MY_INSTANCE&#34;</span>] addRemoteCommandID:<span style="color:#b84">@&#34;contentsquare&#34;</span>
+                                                description:<span style="color:#b84">@&#34;An example remote command block&#34;</span>
+                                                targetQueue:dispatch_get_main_queue()  
+                                              responseBlock:contentsquareRemoteCommand];</code></pre></div>
 </div>
 
 <p></div>
 </div></p>
 
-<h3 id="manual-install-for-android">Manual Install for Android</h3>
-
-<p>The manual installation for Facebook remote commands requires the following Android library to be installed:</p>
-
-<ul>
-<li><a href="https://docs.tealium.com/platforms/android-java/">Tealium for Android</a></li>
-</ul>
-
-<p>To install the Facebook remote commands for your Android project:</p>
-
-<ol>
-<li><p>Add <code>flatDir</code> to your project root <code>build.gradle</code> file:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">allprojects <span style="font-weight:bold">{</span>
-  repositories <span style="font-weight:bold">{</span>
-     jcenter<span style="font-weight:bold">()</span>
-     flatDir <span style="font-weight:bold">{</span>
-         dirs <span style="color:#b84">&#39;libs&#39;</span>
-     <span style="font-weight:bold">}</span>
-  <span style="font-weight:bold">}</span>
-<span style="font-weight:bold">}</span></code></pre></div></li>
-
-<li><p>Add <code>tealium-facebook.aar</code> to <code>&lt;PROJECT_ROOT&gt;/&lt;MODULE&gt;/libs</code>.</p></li>
-
-<li><p>Add the Tealium library dependency to your <code>build.gradle</code> file:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">dependencies <span style="font-weight:bold">{</span>
-  implementation<span style="font-weight:bold">(</span>name:<span style="color:#b84">&#39;tealium-facebook&#39;</span><span style="font-weight:bold">,</span> ext:<span style="color:#b84">&#39;aar&#39;</span><span style="font-weight:bold">)</span>
-<span style="font-weight:bold">}</span></code></pre></div></li>
-</ol>
-
 <h2 id="initialize">Initialize</h2>
 
-<p>For all Tealium libraries, register the Facebook Remote Command when you initialize.</p>
+<p>For all Tealium libraries, register the Contentsquare remote commands when you initialize.</p>
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
   <div class="tab-content">
 <div class="tab-pane" data-lang="Android" title="Android">
   <p>The following code is designed for use with Tealium&rsquo;s Android library.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a61717;background-color:#e3d2d2">import com</span>.<span style="color:#008080">tealium</span>.<span style="color:#008080">remotecommands</span>.<span style="color:#008080">facebook</span>.<span style="color:#008080">FacebookRemoteCommand</span>;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a61717;background-color:#e3d2d2">import com</span>.<span style="color:#008080">tealium</span>.<span style="color:#008080">remotecommands</span>.<span style="color:#008080">contentsquare</span>.<span style="color:#008080">ContentsquareRemoteCommand</span>;
 
 <span style="color:#a61717;background-color:#e3d2d2">Tealium.Config config </span><span style="font-weight:bold">=</span> Tealium.<span style="color:#008080">Config</span>.<span style="color:#008080">create</span>(application, <span style="color:#b84">&#34;ACCOUNT&#34;</span>, <span style="color:#b84">&#34;PROFILE&#34;</span>, <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>);
 <span style="color:#a61717;background-color:#e3d2d2">Tealium teal </span><span style="font-weight:bold">=</span> Tealium.<span style="color:#008080">createInstance</span>(TEALIUM_MAIN, config);
 
-<span style="color:#a61717;background-color:#e3d2d2">FacebookRemoteCommand facebook </span><span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> FacebookRemoteCommand(<span style="font-weight:bold">this</span>);
+<span style="color:#998;font-style:italic">// Initialize with `Application` in order to take advantage of consent management and other
+</span><span style="color:#998;font-style:italic">// advanced features
+</span><span style="color:#998;font-style:italic"></span><span style="color:#a61717;background-color:#e3d2d2">ContentsquareRemoteCommand contentsquare </span><span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> ContentsquareRemoteCommand(<span style="font-weight:bold">this</span>);
+
+<span style="color:#998;font-style:italic">// Or for simple tracking, you can initialize without `Application`
+</span><span style="color:#998;font-style:italic"></span><span style="color:#a61717;background-color:#e3d2d2">ContentsquareRemoteCommand contentsquare </span><span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> ContentsquareRemoteCommand();
 
 <span style="color:#998;font-style:italic">// register the command
-</span><span style="color:#998;font-style:italic"></span>teal.<span style="color:#008080">addRemoteCommand</span>(facebook);</code></pre></div>
+</span><span style="color:#998;font-style:italic"></span>teal.<span style="color:#008080">addRemoteCommand</span>(contentsquare);</code></pre></div>
 </div>
 
 <div class="tab-pane" data-lang="Kotlin" title="Kotlin">
   <p>The following code is designed for use with Tealium&rsquo;s Android library.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="font-weight:bold">import</span> <span style="color:#555">com.tealium.remotecommands.facebook.FacebookRemoteCommand</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="font-weight:bold">import</span> <span style="color:#555">com.tealium.remotecommands.contentsquare.ContentsquareRemoteCommand</span>
 
 <span style="font-weight:bold">val</span> config = Tealium.Config.create(<span style="font-weight:bold">this</span>, <span style="color:#b84">&#34;ACCOUNT&#34;</span>, <span style="color:#b84">&#34;PROFILE&#34;</span>, <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>)
 tealium = Tealium.createInstance(TealiumHelper.instanceName, config)
 
-<span style="font-weight:bold">val</span> facebook = FacebookRemoteCommand(<span style="font-weight:bold">this</span>)
+<span style="color:#998;font-style:italic">// Initialize with `Application` in order to take advantage of consent management and other
+</span><span style="color:#998;font-style:italic">// advanced features
+</span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">val</span> facebook = ContentsquareRemoteCommand(<span style="font-weight:bold">this</span>)
+
+<span style="color:#998;font-style:italic">// Or for simple tracking, you can initialize without `Application`
+</span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">val</span> facebook = ContentsquareRemoteCommand()
 
 <span style="color:#998;font-style:italic">// register the command
 </span><span style="color:#998;font-style:italic"></span>tealium.addRemoteCommand(facebook)</code></pre></div>
@@ -562,781 +477,358 @@ tealium = Tealium.createInstance(TealiumHelper.instanceName, config)
 
 <div class="tab-pane" data-lang="Objective-C" title="Objective-C">
   <p>The following code is designed for use with Tealium&rsquo;s Objective-C library for iOS, although it is written in Swift. A Bridging Header is required in your Xcode project for this code to work correctly.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let config <span style="font-weight:bold">=</span> TEALConfiguration(account: <span style="color:#b84">&#34;your_account&#34;</span>,
-                               profile: <span style="color:#b84">&#34;your_profile&#34;</span>,
-                               environment: <span style="color:#b84">&#34;dev&#34;</span>,
-                               datasource: <span style="color:#b84">&#34;abc123&#34;</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let config <span style="font-weight:bold">=</span> TEALConfiguration(account: <span style="color:#b84">&#34;ACCOUNT&#34;</span>,
+                               profile: <span style="color:#b84">&#34;PROFILE&#34;</span>,
+                               environment: <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>,
+                               datasource: <span style="color:#b84">&#34;DATASOURCE&#34;</span>)
 let teal <span style="font-weight:bold">=</span> Tealium.newInstance(forKey: <span style="color:#b84">&#34;teal&#34;</span>, configuration: config)
 
-let facebookRemoteCommand <span style="font-weight:bold">=</span> FacebookRemoteCommand().remoteCommand()
-teal.addRemoteCommandID(<span style="color:#b84">&#34;facebook&#34;</span>, description: <span style="color:#999">nil</span>, targetQueue: DispatchQueue.main, responseBlock: facebookRemoteCommand)</code></pre></div>
+let contentsquareTracker <span style="font-weight:bold">=</span> ContentsquareTracker()
+let contentsquareCommand <span style="font-weight:bold">=</span> ContentsquareCommand(ContentsquareTracker: contentsquareTracker)
+let contentsquareRemoteCommand <span style="font-weight:bold">=</span> contentsquareCommand.remoteCommand()
+teal.addRemoteCommandID(<span style="color:#b84">&#34;contentsquare&#34;</span>, description: <span style="color:#999">nil</span>, targetQueue: DispatchQueue.main, responseBlock: contentsquareRemoteCommand)</code></pre></div>
 </div>
 
 <div class="tab-pane" data-lang="Swift" title="Swift">
   <p>The following code is designed for use with Tealium&rsquo;s Swift library for iOS.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">var</span> <span style="color:#008080">teal</span> : Tealium?
-<span style="font-weight:bold">let</span> <span style="color:#008080">config</span> = TealiumConfig(account: <span style="color:#b84">&#34;your_account&#34;</span>,
-                           profile: <span style="color:#b84">&#34;your_profile&#34;</span>,
-                           environment: <span style="color:#b84">&#34;dev&#34;</span>,
-                           datasource: <span style="color:#b84">&#34;abc123&#34;</span>,
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">var</span> <span style="color:#008080">teal</span>: Tealium?
+<span style="font-weight:bold">let</span> <span style="color:#008080">config</span> = TealiumConfig(account: <span style="color:#b84">&#34;ACCOUNT&#34;</span>,
+                           profile: <span style="color:#b84">&#34;PROFILE&#34;</span>,
+                           environment: <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>,
+                           datasource: <span style="color:#b84">&#34;DATASOURCE&#34;</span>,
                            optionalData: <span style="font-weight:bold">nil</span>)
 
 teal = Tealium(config: config) { responses <span style="font-weight:bold">in</span>
   <span style="font-weight:bold">guard</span> <span style="font-weight:bold">let</span> <span style="color:#008080">remoteCommands</span> = <span style="font-weight:bold">self</span>.tealium?.remoteCommands() <span style="font-weight:bold">else</span> {
         <span style="font-weight:bold">return</span>
   }
-  <span style="font-weight:bold">let</span> <span style="color:#008080">facebookRemoteCommand</span> = FacebookRemoteCommand().remoteCommand()
-  remoteCommands.add(facebookRemoteCommand)
+  <span style="font-weight:bold">let</span> <span style="color:#008080">contentsquareTracker</span> = ContentsquareTracker()
+  <span style="font-weight:bold">let</span> <span style="color:#008080">contentsquareCommand</span> = ContentsquareCommand(ContentsquareTracker: contentsquareTracker)
+  <span style="font-weight:bold">let</span> <span style="color:#008080">contentsquareRemoteCommand</span> = ContentsquareCommand.remoteCommand()
+      remoteCommands.add(contentsquareRemoteCommand)
 }</code></pre></div>
 </div>
 
 <p></div>
 </div></p>
 
-<h2 id="push-message-tracking">Push Message Tracking</h2>
-
-<p>The <a href="https://github.com/Tealium/tealium-swift/blob/master/tealium/remotecommands/TealiumRegistration.swift">Tealium Swift library</a> includes a <code>TealiumRegistration</code> protocol for handling push message tracking via Tealium and the Facebook Remote Command. We conform to this protocol in <code>FacebookTracker</code> and is used to send push message authorization events, push message open events, and to uninstall tracking. We recommend taking advantage of the push message tracking capability.</p>
-
-<p>The following steps integrate push message tracking for your iOS project:</p>
-
-<ol>
-<li><p>In the <code>TealiumHelper.swift</code> file, initialize an empty array of objects that conform to the <code>TealiumRegistration</code> protocol. For example:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">var</span> <span style="color:#008080">pushMessagingTrackers</span> = [TealiumRegistration]()</code></pre></div></li>
-
-<li><p>Initialize the <code>FacebookTracker</code> before the <code>FacebookRemoteCommand</code></p></li>
-
-<li><p>Append the <code>FacebookTracker</code> to the array described above</p></li>
-</ol>
-
-<p>The following is full example of the push message tracking integration:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">var</span> <span style="color:#008080">pushMessagingTrackers</span> = [TealiumRegistration]()
-<span style="color:#998;font-style:italic">//...</span>
-teal = Tealium(config: config) { responses <span style="font-weight:bold">in</span>
-  <span style="font-weight:bold">guard</span> <span style="font-weight:bold">let</span> <span style="color:#008080">remoteCommands</span> = <span style="font-weight:bold">self</span>.tealium?.remoteCommands() <span style="font-weight:bold">else</span> {
-        <span style="font-weight:bold">return</span>
-  }
-  <span style="font-weight:bold">let</span> <span style="color:#008080">facebookTracker</span> = FacebookTracker()
-  <span style="font-weight:bold">let</span> <span style="color:#008080">facebookRemoteCommand</span> = FacebookRemoteCommand(facebookTracker: facebookTracker).remoteCommand()
-  remoteCommands.add(facebookRemoteCommand)
-  <span style="font-weight:bold">self</span>.pushMessagingTrackers.append(facebookTracker)
-}</code></pre></div>
-<p>To see the entire <code>TealiumHelper.swift</code> file, explore the <a href="https://github.com/Tealium/tealium-ios-facebook-remote-command/tree/master/Examples">Facebook Remote Command sample apps</a>. To send an event to Facebook once a user has registered for notifications, opened a push message, or uninstalled the app, see the file <code>AppDelegate.swift</code>.</p>
-
 <h2 id="supported-methods">Supported Methods</h2>
 
-<p>The following Facebook methods are triggered using a data mapping in the Facebook Remote Command tag using these Tealium commands:</p>
+<p>The following Contentsquare methods are triggered using a data mapping in the Contentsquare Remote Command tag using the following Tealium commands:</p>
 
 <table>
 <thead>
 <tr>
 <th>Remote Command</th>
-<th>Facebook Method</th>
+<th>Contentsquare Method</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>setUser</code></td>
-<td><code>setUser()</code></td>
+<td><code>sendscreenview</code></td>
+<td><code>send()</code></td>
 </tr>
 
 <tr>
-<td><code>updateUserValue</code></td>
-<td><code>updateUserValue()</code></td>
+<td><code>sendtransaction</code></td>
+<td><code>send()</code></td>
 </tr>
 
 <tr>
-<td>Any of the below event names</td>
-<td><code>trackEvent()</code></td>
+<td><code>senddynamicvar</code></td>
+<td><code>send()</code></td>
 </tr>
 
 <tr>
-<td>logProductItem</td>
-<td><code>logProductItem()</code></td>
+<td><code>stoptracking</code></td>
+<td><code>stopTracking()</code></td>
 </tr>
 
 <tr>
-<td><code>logPurchase</code></td>
-<td><code>logPurchase()</code></td>
+<td><code>resumeTracking</code></td>
+<td><code>resumeTracking()</code></td>
 </tr>
 
 <tr>
-<td><code>flush</code></td>
-<td><code>flush()</code></td>
+<td><code>forgetme</code></td>
+<td><code>forgetMe()</code></td>
 </tr>
 
 <tr>
-<td>Manually called in <code>AppDelegate</code> within <code>didReceiveRemoteNotification</code></td>
-<td><code>setPushNotificationsDeviceToken()</code></td>
+<td><code>optin</code></td>
+<td><code>optIn()</code></td>
 </tr>
 
 <tr>
-<td>Manually called in <code>AppDelegate</code> within <code>didRegisterForRemoteNotificationsWithDeviceToken</code></td>
-<td><code>registerPushToken()</code></td>
+<td><code>optout</code></td>
+<td><code>optOut()</code></td>
 </tr>
 </tbody>
 </table>
 
-<p>Push notifications are currently supported only for the iOS remote command.</p>
+<p class="note">Since the Contentsquare SDK is installed alongside the Tealium SDK, trigger any native Contentsquare functionality given the corresponding tag configuration.</p>
+
+<h3 id="sdk-setup">SDK Setup</h3>
+
+<h4 id="initialize-1">Initialize</h4>
+
+<p>The Contentsquare SDK is initialized automatically upon launch.</p>
+
+<p>Contentsquare Developer Guide: Initial SDK Setup</p>
 
 <ul>
-<li><a href="https://developers.facebook.com/docs/app-events/uninstalls">iOS setPushNotificationsDeviceToken</a> - used for uninstall tracking</li>
-<li><a href="https://github.com/facebook/facebook-objc-sdk/blob/1a223fd53b96c6a9078dacb1005e03035db3a0ff/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L627">iOS logPushNotificationOpen</a></li>
+<li><a href="https://docs.contentsquare.com/android/#add-contentsquare-to-your-app">Android</a></li>
+<li><a href="https://docs.contentsquare.com/ios/#get-started">iOS</a></li>
 </ul>
 
-<h3 id="standard-event-names">Standard Event Names</h3>
-
-<p>The following is a list of standard event names supported with the <code>logEvent</code> method. If any of the below command names are sent, they are automatically triggered in the Facebook SDK. This is assuming all the required variables are also mapped and defined for that particular event. Learn about <a href="https://developers.facebook.com/docs/app-events/getting-started-app-events-ios/#manually-log-events">recording in-app events</a>.</p>
+<h3 id="track-screens">Track Screens</h3>
 
 <table>
 <thead>
 <tr>
-<th align="left">Remote Command</th>
-<th align="left">Facebook Event Name</th>
+<th>Remote Command</th>
+<th>Contentsquare Method</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td align="left"><code>achievedLevel</code></td>
-<td align="left"><code>FBSDKAppEventNameAchievedLevel</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>addPaymentInfo</code></td>
-<td align="left"><code>FBSDKAppEventNameAddedPaymentInfo</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>addToCart</code></td>
-<td align="left"><code>FBSDKAppEventNameAddedToCart</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>addToWishlist</code></td>
-<td align="left"><code>FBSDKAppEventNameAddedToWishlist</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>completeRegistration</code></td>
-<td align="left"><code>FBSDKAppEventNameCompletedRegistration</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>completeTutorial</code></td>
-<td align="left"><code>FBSDKAppEventNameCompletedTutorial</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>initiateCheckout</code></td>
-<td align="left"><code>FBSDKAppEventNameInitiatedCheckout</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>purchase</code></td>
-<td align="left"><code>FBSDKAppEventNamePurchased</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>subscribe</code></td>
-<td align="left"><code>FBSDKAppEventNameSubscribe</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>startTrial</code></td>
-<td align="left"><code>FBSDKAppEventNameStartTrial</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>rated</code></td>
-<td align="left"><code>FBSDKAppEventNameRated</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>searched</code></td>
-<td align="left"><code>FBSDKAppEventNameSearched</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>spentCredits</code></td>
-<td align="left"><code>FBSDKAppEventNameSpentCredits</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>unlockAchievement</code></td>
-<td align="left"><code>FBSDKAppEventNameUnlockedAchievement</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>contentView</code></td>
-<td align="left"><code>FBSDKAppEventNameViewedContent</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>logContact</code></td>
-<td align="left"><code>FBSDKAppEventNameContact</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>initiateCheckout</code></td>
-<td align="left"><code>FBSDKAppEventNameInitiatedCheckout</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>spentCredits</code></td>
-<td align="left"><code>FBSDKAppEventNameSpentCredits</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>customizeProduct</code></td>
-<td align="left"><code>FBSDKAppEventNameCustomizeProduct</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>donate</code></td>
-<td align="left"><code>FBSDKAppEventNameDonate</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>findLocation</code></td>
-<td align="left"><code>FBSDKAppEventNameFindLocation</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>schedule</code></td>
-<td align="left"><code>FBSDKAppEventNameSchedule</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>submitApplication</code></td>
-<td align="left"><code>FBSDKAppEventNameSubmitApplication</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>adImpression</code></td>
-<td align="left"><code>FBSDKAppEventNameAdImpression</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>adClick</code></td>
-<td align="left"><code>FBSDKAppEventNameAdClick</code></td>
+<td><code>sendscreenview</code></td>
+<td><code>send</code></td>
 </tr>
 </tbody>
 </table>
 
-<p class="note">Since the Facebook SDK is installed alongside the Tealium SDK, you are able to trigger any native Facebook functionality given the corresponding tag configuration.</p>
-
-<h3 id="set-user">Set User</h3>
-
-<p>Sets custom user data to associate with all app events. All user data is hashed and used to match Facebook users from this instance of an application. The user data is persisted between application instances.</p>
-
 <table>
 <thead>
 <tr>
-<th>Event Name</th>
-<th>Required</th>
-<th>Optional</th>
+<th>Parameter</th>
 <th>Type</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>setUser</code></td>
-<td><code>user</code></td>
-<td></td>
-<td><code>[String: Any]</code></td>
+<td><code>screen_name</code> (required)</td>
+<td><code>String</code></td>
 </tr>
 </tbody>
 </table>
 
+<p>Contentsquare Developer Guide: Analytics User IDs</p>
+
+<ul>
+<li><a href="https://docs.contentsquare.com/android/#track-screens">Android</a></li>
+<li><a href="https://docs.contentsquare.com/ios/#track-screens">iOS</a></li>
+</ul>
+
+<h3 id="track-transactions">Track Transactions</h3>
+
 <table>
 <thead>
 <tr>
-<th>User Dictionary Properties</th>
-<th>Optional</th>
+<th>Remote Command</th>
+<th>Contentsquare Method</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>em</code></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td><code>fn</code></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td><code>ln</code></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td><code>dob</code></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td><code>ge</code></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td><code>ct</code></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td><code>st</code></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td><code>zp</code></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td><code>country</code></td>
-<td><code>String</code></td>
+<td><code>sendtransaction</code></td>
+<td><code>send</code></td>
 </tr>
 </tbody>
 </table>
 
-<ul>
-<li><a href="https://github.com/facebook/facebook-objc-sdk/blob/1a223fd53b96c6a9078dacb1005e03035db3a0ff/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L764">Facebook iOS SDK setUser</a></li>
-<li><a href="https://github.com/facebook/facebook-android-sdk/blob/8cc5dbb133d49f736845f999a30bfb30cf39e282/facebook-core/src/main/java/com/facebook/appevents/AppEventsLogger.java#L674">Facebook Android SDK Integration - setUserData</a></li>
-</ul>
-
-<h3 id="update-user-value">Update User Value</h3>
-
-<p>Updates a user value for a type/key. All user data is hashed and used to match Facebook users from this instance of an application. The user data is persisted between application instances.</p>
-
 <table>
 <thead>
 <tr>
-<th>Event Name</th>
-<th>Required</th>
-<th>Optional</th>
+<th>Parameter</th>
 <th>Type</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>updateUserValue</code></td>
-<td><code>fb_user_value</code></td>
-<td></td>
-<td><code>String</code></td>
+<td><code>price</code> (required)</td>
+<td><code>Double or Float</code></td>
 </tr>
 
 <tr>
-<td></td>
-<td><code>fb_user_key</code></td>
-<td></td>
+<td><code>currency</code> (required)</td>
+<td><code>Int</code></td>
+</tr>
+
+<tr>
+<td><code>transaction_id</code> (optional)</td>
 <td><code>String</code></td>
 </tr>
 </tbody>
 </table>
 
+<p>Contentsquare Developer Guide: Track Transactions</p>
+
 <ul>
-<li><a href="https://github.com/facebook/facebook-objc-sdk/blob/1a223fd53b96c6a9078dacb1005e03035db3a0ff/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L803">Facebook iOS SDK Integration - setUserData</a></li>
-<li><a href="https://github.com/facebook/facebook-android-sdk/blob/8cc5dbb133d49f736845f999a30bfb30cf39e282/facebook-core/src/main/java/com/facebook/appevents/AppEventsLogger.java#L712">Facebook Android SDK Integration - updateUserProperties</a></li>
+<li><a href="https://docs.contentsquare.com/android/#track-transactions">Android</a></li>
+<li><a href="https://docs.contentsquare.com/ios/#track-transactions">iOS</a></li>
 </ul>
 
-<h3 id="log-product-item">Log Product Item</h3>
-
-<p>Uploads product catalog product item as an app event.</p>
+<h3 id="track-dynamic-variables">Track Dynamic Variables</h3>
 
 <table>
 <thead>
 <tr>
-<th>Event Name</th>
-<th>Required</th>
-<th>Optional</th>
+<th>Remote Command</th>
+<th>Contentsquare Method</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>sendtransaction</code></td>
+<td><code>send</code></td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
 <th>Type</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>logProductItem</code></td>
-<td><code>fb_product_item_id</code></td>
-<td></td>
-<td><code>String</code></td>
+<td><code>price</code> (required)</td>
+<td><code>Double or Float</code></td>
 </tr>
 
 <tr>
-<td></td>
-<td><code>fb_product_availability</code></td>
-<td></td>
-<td><code>Int</code> (See lookup below)</td>
+<td><code>currency</code> (required)</td>
+<td><code>Int</code></td>
 </tr>
 
 <tr>
-<td></td>
-<td><code>fb_product_condition</code></td>
-<td></td>
-<td><code>Int</code> (See lookup below)</td>
-</tr>
-
-<tr>
-<td></td>
-<td><code>fb_product_description</code></td>
-<td></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td></td>
-<td><code>fb_product_image_link</code></td>
-<td></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td></td>
-<td><code>fb_product_link</code></td>
-<td></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td></td>
-<td><code>fb_product_title</code></td>
-<td></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td></td>
-<td><code>fb_product_price_amount</code></td>
-<td></td>
-<td><code>Double/Decimal</code></td>
-</tr>
-
-<tr>
-<td></td>
-<td><code>fb_product_price_currency</code></td>
-<td></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td></td>
-<td><code>fb_product_parameters</code></td>
-<td></td>
-<td><code>[String: Any]</code> - JavaScript Object if in TiQ</td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td><code>fb_product_gtin</code></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td><code>fb_product_mpn</code></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td><code>fb_product_brand</code></td>
+<td><code>transaction_id</code> (optional)</td>
 <td><code>String</code></td>
 </tr>
 </tbody>
 </table>
 
-<p class="note">Either <code>gtin</code>, <code>mpn</code> or <code>brand</code> is required. Product parameters are optional fields for deep link specification.</p>
+<p>Contentsquare Developer Guide: Track Dynamic Variables</p>
+
+<ul>
+<li><a href="https://docs.contentsquare.com/android/#track-dynamic-variables">Android</a></li>
+<li><a href="https://docs.contentsquare.com/ios/#track-transactions">iOS</a></li>
+</ul>
+
+<h3 id="stop-resume-tracking">Stop / Resume Tracking</h3>
 
 <table>
 <thead>
 <tr>
-<th>Product Availability Input</th>
-<th>Product Availability Lookup</th>
+<th>Remote Command</th>
+<th>Contentsquare Method</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>0</code></td>
-<td>In Stock - Item ships immediately</td>
+<td><code>stoptracking</code></td>
+<td><code>stopTracking</code></td>
 </tr>
 
 <tr>
-<td><code>1</code></td>
-<td>Out of stock - No plan to restock</td>
-</tr>
-
-<tr>
-<td><code>2</code></td>
-<td>Preorder - Available in future</td>
-</tr>
-
-<tr>
-<td><code>3</code></td>
-<td>Available for order - Ships in 1-2 weeks</td>
-</tr>
-
-<tr>
-<td><code>4</code></td>
-<td>Discontinued - Discontinued</td>
+<td><code>resumetracking</code></td>
+<td><code>resumeTracking</code></td>
 </tr>
 </tbody>
 </table>
 
+<p>Contentsquare Developer Guide: Stop / Resume Tracking</p>
+
+<ul>
+<li><a href="https://docs.contentsquare.com/android/#stop-resume-tracking">Android</a></li>
+<li><a href="https://docs.contentsquare.com/ios/#stop-resume-tracking">iOS</a></li>
+</ul>
+
+<h3 id="opt-in">Opt In</h3>
+
 <table>
 <thead>
 <tr>
-<th>Product Condition Input</th>
-<th>Product Condition Lookup</th>
+<th>Remote Command</th>
+<th>Contentsquare Method</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>0</code></td>
-<td>New</td>
-</tr>
-
-<tr>
-<td><code>1</code></td>
-<td>Refurbished</td>
-</tr>
-
-<tr>
-<td><code>2</code></td>
-<td>Used</td>
+<td><code>optin</code></td>
+<td><code>optIn</code></td>
 </tr>
 </tbody>
 </table>
 
+<p>Contentsquare Developer Guide: Opt In</p>
+
 <ul>
-<li><a href="https://github.com/facebook/facebook-objc-sdk/blob/1a223fd53b96c6a9078dacb1005e03035db3a0ff/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L642">Facebook iOS SDK Integration - logProductItem</a></li>
-<li><a href="https://github.com/facebook/facebook-android-sdk/blob/8cc5dbb133d49f736845f999a30bfb30cf39e282/facebook-core/src/main/java/com/facebook/appevents/AppEventsLogger.java#L524">Facebook Android SDK Integration - logProductItem</a></li>
+<li><a href="https://docs.contentsquare.com/android/#opt-in">Android</a></li>
+<li><a href="https://docs.contentsquare.com/ios/#opt-in">iOS</a></li>
 </ul>
 
-<h3 id="log-purchase">Log Purchase</h3>
-
-<p>Log a purchase of the specified amount, in the specified currency, also optionally providing a set of additional characteristics describing the purchase.</p>
-
-<p>Arbitrary parameter dictionary of characteristics. The keys to this dictionary must
- be <code>NSString</code>&rsquo;s, and the values are expected to be <code>NSString</code> or <code>NSNumber</code>.  Limitations on the number of
- parameters and name construction are given in the <a href="https://developers.facebook.com/docs/app-events/getting-started-app-events-ios#event-names">FBSDKAppEvents</a> documentation.  Commonly used parameter names
- are provided in <a href="https://developers.facebook.com/docs/app-events/getting-started-app-events-ios#event-params">FBSDKAppEventParameterName</a> constants.</p>
+<h3 id="opt-out">Opt Out</h3>
 
 <table>
 <thead>
 <tr>
-<th>Event Name</th>
-<th>Required</th>
-<th>Optional</th>
-<th>Type</th>
+<th>Remote Command</th>
+<th>Contentsquare Method</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>logPurchase</code></td>
-<td><code>fb_purchase_amount</code></td>
-<td></td>
-<td><code>Decimal/Double</code> (iOS) / <code>Double</code> (Android)</td>
-</tr>
-
-<tr>
-<td></td>
-<td><code>fb_purchase_currency</code></td>
-<td></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td><code>fb_purchase_parameters</code></td>
-<td><code>[String: Any]</code> - Javascript object in TiQ</td>
+<td><code>optout</code></td>
+<td><code>optOut</code></td>
 </tr>
 </tbody>
 </table>
 
+<p>Contentsquare Developer Guide: Opt Out</p>
+
 <ul>
-<li><a href="https://github.com/facebook/facebook-objc-sdk/blob/1a223fd53b96c6a9078dacb1005e03035db3a0ff/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L547">Facebook iOS SDK Integration - logPurchase</a></li>
-<li><a href="https://github.com/facebook/facebook-android-sdk/blob/8cc5dbb133d49f736845f999a30bfb30cf39e282/facebook-core/src/main/java/com/facebook/appevents/AppEventsLogger.java#L440">Facebook Android SDK Integration - logPurchase</a></li>
+<li><a href="https://docs.contentsquare.com/android/#opt-out">Android</a></li>
+<li><a href="https://docs.contentsquare.com/ios/#opt-out">iOS</a></li>
 </ul>
 
-<h3 id="flush">Flush</h3>
-
-<p>Explicitly kick off flushing of events to Facebook.  This is an asynchronous method, but it does initiate an immediate kick off.  Server failures are reported through the NotificationCenter with notification ID <code>FBSDKAppEventsLoggingResultNotification</code>.</p>
+<h3 id="forget-me">Forget Me</h3>
 
 <table>
 <thead>
 <tr>
-<th>Event Name</th>
-<th>Required</th>
-<th>Optional</th>
-<th>Type</th>
+<th>Remote Command</th>
+<th>Contentsquare Method</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>flush</code></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>forgetme</code></td>
+<td><code>forgetMe</code></td>
 </tr>
 </tbody>
 </table>
 
-<ul>
-<li><a href="https://github.com/facebook/facebook-objc-sdk/blob/1a223fd53b96c6a9078dacb1005e03035db3a0ff/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L730">Facebook iOS SDK Integration - flush</a></li>
-<li><a href="https://github.com/facebook/facebook-android-sdk/blob/8cc5dbb133d49f736845f999a30bfb30cf39e282/facebook-core/src/main/java/com/facebook/appevents/AppEventsLogger.java#L560">Facebook Android SDK Integration - flush</a></li>
-</ul>
-
-<h3 id="log-event">Log Event</h3>
-
-<p>The following are <a href="https://github.com/facebook/facebook-ios-sdk/blob/9909ff8215c2ca41b2b1985563a4edd057111017/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L118">Facebook Standard Events</a> and accept a number of optional <a href="https://github.com/facebook/facebook-ios-sdk/blob/9909ff8215c2ca41b2b1985563a4edd057111017/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L195">parameters</a> in the payload.</p>
+<p>Contentsquare Developer Guide: Forget Me</p>
 
 <ul>
-<li><code>achieveLevel</code></li>
-<li><code>adClick</code></li>
-<li><code>adImpression</code></li>
-<li><code>addPaymentInfo</code></li>
-<li><code>addToCart</code></li>
-<li><code>addToWishlist</code></li>
-<li><code>completeRegistration</code></li>
-<li><code>completeTutorial</code></li>
-<li><code>logContact</code></li>
-<li><code>viewedContent</code></li>
-<li><code>search</code></li>
-<li><code>rate</code></li>
-<li><code>customizeProduct</code></li>
-<li><code>donate</code></li>
-<li><code>findLocation</code></li>
-<li><code>schedule</code></li>
-<li><code>startTrial</code></li>
-<li><code>submitApplication</code></li>
-<li><code>subscribe</code></li>
-<li><code>subscriptionHeartbeat</code></li>
-<li><code>initiateCheckout</code></li>
-<li><code>purchase</code></li>
-<li><code>unlockAchievement</code></li>
-<li><code>spentCredits</code></li>
+<li><a href="https://docs.contentsquare.com/android/#forget-me">Android</a></li>
+<li><a href="https://docs.contentsquare.com/ios/#forget-me">iOS</a></li>
 </ul>
-
-<p class="note">Because the Facebook SDK is installed alongside the Tealium SDK, all native Facebook functionality is available.</p>
-
-<p>Arbitrary parameter dictionary of characteristics. The keys to this dictionary must
-be <code>NSString</code>&rsquo;s, and the values are expected to be <code>NSString</code> or <code>NSNumber</code>.  Limitations on the number of
-parameters and name construction are given in the <a href="https://github.com/facebook/facebook-ios-sdk/blob/9909ff8215c2ca41b2b1985563a4edd057111017/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L118s">FBSDKAppEvents</a> documentation.  Commonly used parameter names
-are provided in <a href="https://github.com/facebook/facebook-ios-sdk/blob/9909ff8215c2ca41b2b1985563a4edd057111017/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L195">FBSDKAppEventParameterName</a> constants.</p>
-
-<table>
-<thead>
-<tr>
-<th>Event Name</th>
-<th>Required</th>
-<th>Optional</th>
-<th>Type</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td></td>
-<td><code>command_name</code> (one of the event names listed above)</td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td>Any of the event names listed above</td>
-<td></td>
-<td><a href="https://github.com/facebook/facebook-ios-sdk/blob/9909ff8215c2ca41b2b1985563a4edd057111017/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L195">See parameters list</a></td>
-<td>Multiple</td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td><code>fb_value_to_sum</code></td>
-<td><code>Double/Decimal</code> (iOS) / <code>Double</code> (Android)</td>
-</tr>
-</tbody>
-</table>
-
-<ul>
-<li><a href="https://github.com/facebook/facebook-objc-sdk/blob/1a223fd53b96c6a9078dacb1005e03035db3a0ff/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L456">Facebook iOS SDK Integration - logEvent</a></li>
-<li><a href="https://github.com/facebook/facebook-android-sdk/blob/8cc5dbb133d49f736845f999a30bfb30cf39e282/facebook-core/src/main/java/com/facebook/appevents/AppEventsLogger.java#L362">Facebook Android SDK Integration - logEvent</a></li>
-</ul>
-
-<h3 id="handle-push">Handle Push</h3>
-
-<p>Used to measure app uninstalls.</p>
-
-<table>
-<thead>
-<tr>
-<th>Event Name</th>
-<th>Required</th>
-<th>Optional</th>
-<th>Type</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>setPushNotificationsDeviceToken</code></td>
-<td><code>deviceToken</code></td>
-<td></td>
-<td><code>Data</code></td>
-</tr>
-</tbody>
-</table>
-
-<ul>
-<li><a href="https://developers.facebook.com/docs/app-events/uninstalls">Facebook iOS SDK Integration - setPushNotificationsDeviceToken</a></li>
-</ul>
-
-<p class="note">If using the Tealium Swift library, see <a href="/platforms/remote-commands/integrations/facebook/#push-message-tracking">push message tracking</a> to see how to have this handled for you. You also have the option to call this method yourself. This feature is support in the iOS remote command only.</p>
-
-<h3 id="opened-app-from-push">Opened App From Push</h3>
-
-<p>Tracks an event when the user has opened the app from a push notification.</p>
-
-<table>
-<thead>
-<tr>
-<th>Event Name</th>
-<th>Required</th>
-<th>Optional</th>
-<th>Type</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>logPushNotificationOpen</code></td>
-<td><code>payload</code> (userInfo)</td>
-<td></td>
-<td><code>[String: Any]</code></td>
-</tr>
-</tbody>
-</table>
-
-<ul>
-<li><a href="https://github.com/facebook/facebook-objc-sdk/blob/1a223fd53b96c6a9078dacb1005e03035db3a0ff/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L627">Facebook iOS SDK Integration - logPushNotificationOpen</a></li>
-</ul>
-
-<p class="note">If using the Tealium Swift library, see <a href="/platforms/remote-commands/integrations/facebook/#push-message-tracking">push message tracking</a> to see how to have this handled for you. You also have the option to call this method yourself. This feature is support in the iOS remote command only.</p>
 
 </div>
 
@@ -1344,11 +836,11 @@ are provided in <a href="https://github.com/facebook/facebook-ios-sdk/blob/9909f
 
 	<div date-pref class="white">
 		
-			<a href="http://docs-preview.tealium.com/platforms/remote-commands/integrations/contentsquare/" title="Remote Command: Contentsquare "><svg class="fill-current" height="18px" viewBox="0 0 18 18" width="18px" xmlns="http://www.w3.org/2000/svg">
+			<a href="http://docs-preview.tealium.com/platforms/remote-commands/integrations/braze/" title="Remote Command: Braze "><svg class="fill-current" height="18px" viewBox="0 0 18 18" width="18px" xmlns="http://www.w3.org/2000/svg">
     <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
 </svg>
- Remote Command: Contentsquare </a>
+ Remote Command: Braze </a>
 		
 
 	</div>
@@ -1359,8 +851,8 @@ are provided in <a href="https://github.com/facebook/facebook-ios-sdk/blob/9909f
 	<div date-pref class="white">
 
 		
-			<a href="http://docs-preview.tealium.com/platforms/remote-commands/integrations/firebase/" title="Remote Command: Firebase">
-			Remote Command: Firebase <svg class="fill-current" height="18px" viewBox="0 0 18 18" width="18px" xmlns="http://www.w3.org/2000/svg"> <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path> <path d="M0 0h24v24H0z" fill="none"></path> </svg>
+			<a href="http://docs-preview.tealium.com/platforms/remote-commands/integrations/facebook/" title="Remote Command: Facebook">
+			Remote Command: Facebook <svg class="fill-current" height="18px" viewBox="0 0 18 18" width="18px" xmlns="http://www.w3.org/2000/svg"> <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path> <path d="M0 0h24v24H0z" fill="none"></path> </svg>
 
 			</a>
 		
@@ -2463,7 +1955,7 @@ are provided in <a href="https://github.com/facebook/facebook-ios-sdk/blob/9909f
   </span>
 	<span id="feedback_comment">
 		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="70"></textarea>
-    <span>This page was last updated:  April 8, 2020 
+    <span>This page was last updated:  April 14, 2020 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
   </span>
