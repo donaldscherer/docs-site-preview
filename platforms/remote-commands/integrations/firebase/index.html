@@ -288,7 +288,7 @@ var utag_data = {
 
 <p>The Firebase integration uses the native Firebase SDK, a remote command module that wraps the Firebase methods, and the Firebase Remote Command tag that translates event tracking into native Firebase calls. This solution leverages the convenience of Tealium iQ Tag Management to configure a native Firebase implementation without having to add vendor-specific code to your app.</p>
 
-<p>Adding the Firebase remote command module to your app build automatically installs and builds the required Firebase libraries. There is no need to install the Firebase SDK separately.</p>
+<p>Adding the Firebase remote command module to your app build automatically installs and builds the required Firebase libraries. If you are using a dependency manager installation, there is no need to install the Firebase SDK separately.</p>
 
 <h2 id="install">Install</h2>
 
@@ -432,13 +432,13 @@ TEALRemoteCommandResponseBlock firebaseRemoteCommand <span style="font-weight:bo
   <ul class="nav nav-tabs"></ul>
   <div class="tab-content">
 <div class="tab-pane" data-lang="Android" title="Android">
-  <p>To add the Firebase mobile remote commands, add the following new code:</p>
+  <p>The following code is designed for use with Tealium&rsquo;s Android library.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a61717;background-color:#e3d2d2">RemoteCommand firebase </span><span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> FirebaseRemoteCommand(application);
 teal.<span style="color:#008080">addRemoteCommand</span>(firebase);</code></pre></div>
 </div>
 
 <div class="tab-pane" data-lang="Swift" title="Swift">
-  <p>The following code, already located in your iOS (Swift) app, sets up a <code>Tealium</code> config instance:</p>
+  <p>The following code is designed for use with Tealium&rsquo;s Swift library for iOS.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">var</span> <span style="color:#008080">teal</span> : Tealium?
 <span style="font-weight:bold">let</span> <span style="color:#008080">config</span> = TealiumConfig(account: <span style="color:#b84">&#34;ACCOUNT&#34;</span>,
                            profile: <span style="color:#b84">&#34;PROFILE&#34;</span>,
@@ -457,7 +457,7 @@ teal = Tealium(config: config) { responses <span style="font-weight:bold">in</sp
 </div>
 
 <div class="tab-pane" data-lang="Objective-C" title="Objective-C">
-  <p>The following code, that you already have in your iOS (Objective-C) app, sets up a <code>Tealium</code> config instance.  It needs a Bridging Header in your Xcode project to work properly.</p>
+  <p>The following code is designed for use with Tealium&rsquo;s Objective-C library for iOS, although it is written in Swift. A Bridging Header is required in your Xcode project for this code to work correctly.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let config <span style="font-weight:bold">=</span> TEALConfiguration(account: <span style="color:#b84">&#34;ACCOUNT&#34;</span>,
                                profile: <span style="color:#b84">&#34;PROFILE&#34;</span>,
                                environment: <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>,
@@ -484,11 +484,11 @@ teal.addRemoteCommandID(<span style="color:#b84">&#34;firebase&#34;</span>, desc
 
 	<div date-pref class="white">
 		
-			<a href="http://docs-preview.tealium.com/platforms/remote-commands/integrations/braze/" title="Remote Command: Braze "><svg class="fill-current" height="18px" viewBox="0 0 18 18" width="18px" xmlns="http://www.w3.org/2000/svg">
+			<a href="http://docs-preview.tealium.com/platforms/remote-commands/integrations/facebook/" title="Remote Command: Facebook "><svg class="fill-current" height="18px" viewBox="0 0 18 18" width="18px" xmlns="http://www.w3.org/2000/svg">
     <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
 </svg>
- Remote Command: Braze </a>
+ Remote Command: Facebook </a>
 		
 
 	</div>
@@ -1603,7 +1603,7 @@ teal.addRemoteCommandID(<span style="color:#b84">&#34;firebase&#34;</span>, desc
   </span>
 	<span id="feedback_comment">
 		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="70"></textarea>
-    <span>This page was last updated:  March 27, 2020 
+    <span>This page was last updated:  April 7, 2020 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
   </span>

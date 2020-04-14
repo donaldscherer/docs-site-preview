@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>Remote Command: Braze | Integrations |Preview of Tealium Developer Docs</title>
+    <title>Remote Command: Facebook | Integrations |Preview of Tealium Developer Docs</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -238,18 +238,20 @@ var utag_data = {
               <li><a href="#how-it-works">How It Works</a></li>
               <li><a href="#install">Install</a></li>
               <ul class="toc-h3"><li><a href="#dependency-manager">Dependency Manager</a></li>
-              <li><a href="#manual-ios">Manual (iOS)</a></li>
+              <li><a href="#manual-for-ios">Manual for iOS</a></li>
+              <li><a href="#manual-install-for-android">Manual Install for Android</a></li>
               </ul><li><a href="#initialize">Initialize</a></li>
+              <li><a href="#push-message-tracking">Push Message Tracking</a></li>
               <li><a href="#supported-methods">Supported Methods</a></li>
-              <ul class="toc-h3"><li><a href="#sdk-setup">SDK Setup</a></li>
-              <li><a href="#user-tracking">User Tracking</a></li>
-              <li><a href="#user-attributes">User Attributes</a></li>
-              <li><a href="#social-data-tracking">Social Data Tracking</a></li>
-              <li><a href="#custom-event-tracking">Custom Event Tracking</a></li>
-              <li><a href="#notifications">Notifications</a></li>
-              <li><a href="#purchase-tracking">Purchase Tracking</a></li>
-              <li><a href="#location-tracking">Location Tracking</a></li>
-              <li><a href="#data-privacy">Data Privacy</a></li>
+              <ul class="toc-h3"><li><a href="#standard-event-names">Standard Event Names</a></li>
+              <li><a href="#set-user">Set User</a></li>
+              <li><a href="#update-user-value">Update User Value</a></li>
+              <li><a href="#log-product-item">Log Product Item</a></li>
+              <li><a href="#log-purchase">Log Purchase</a></li>
+              <li><a href="#flush">Flush</a></li>
+              <li><a href="#log-event">Log Event</a></li>
+              <li><a href="#handle-push">Handle Push</a></li>
+              <li><a href="#opened-app-from-push">Opened App From Push</a></li>
               </nav>
   </aside></div>
 
@@ -266,13 +268,13 @@ var utag_data = {
     
   
 
-  <h1 class="lh-title mb3 mv0 pt3">Remote Command: Braze</h1>
+  <h1 class="lh-title mb3 mv0 pt3">Remote Command: Facebook</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Tealium remote command integration for Braze on Android and Swift/iOS.
+      Tealium remote command integration for Facebook on Android and Swift/iOS.
     </div>
   
 
@@ -288,16 +290,72 @@ var utag_data = {
 <h2 id="requirements">Requirements</h2>
 
 <ul>
-<li>Braze API key</li>
 <li><a href="/platforms/android-java/">Tealium for Android</a> or <a href="/platforms/ios-swift/">Tealium for iOS</a> in your app</li>
-<li>Braze Remote Command tag in Tealium iQ Tag Management</li>
+<li>Facebook Remote Command Tag in Tealium iQ Tag Management</li>
 </ul>
+
+<p>The following are requirements for iOS and Android:</p>
+
+<div class="code-tabs">
+  <ul class="nav nav-tabs"></ul>
+  <div class="tab-content">
+<div class="tab-pane" data-lang="Android" title="Android">
+  <p>The following AndroidManifest.xml keys are required for Android:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#000080">&lt;string</span> <span style="color:#008080">name=</span><span style="color:#b84">&#34;facebook_app_id&#34;</span><span style="color:#000080">&gt;</span>[APP_ID]<span style="color:#000080">&lt;/string&gt;</span>
+<span style="color:#000080">&lt;string</span> <span style="color:#008080">name=</span><span style="color:#b84">&#34;fb_login_protocol_scheme&#34;</span><span style="color:#000080">&gt;</span>fb[APP_ID]<span style="color:#000080">&lt;/string&gt;</span></code></pre></div>
+<p>Learn more: <a href="https://developers.facebook.com/docs/app-events/getting-started-app-events-android">Facebook Android Getting Started - Integrate the Facebook SDK in Your Android App</a></p>
+
+</div>
+
+<div class="tab-pane" data-lang="iOS" title="iOS">
+  <p>The following keys are required in the <code>.plist</code> file for iOS:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#000080">&lt;key&gt;</span>CFBundleURLTypes<span style="color:#000080">&lt;/key&gt;</span>
+<span style="color:#000080">&lt;array&gt;</span>
+  <span style="color:#000080">&lt;dict&gt;</span>
+  <span style="color:#000080">&lt;key&gt;</span>CFBundleURLSchemes<span style="color:#000080">&lt;/key&gt;</span>
+  <span style="color:#000080">&lt;array&gt;</span>
+    <span style="color:#000080">&lt;string&gt;</span>fb[APP_ID]<span style="color:#000080">&lt;/string&gt;</span>
+  <span style="color:#000080">&lt;/array&gt;</span>
+  <span style="color:#000080">&lt;/dict&gt;</span>
+<span style="color:#000080">&lt;/array&gt;</span>
+<span style="color:#000080">&lt;key&gt;</span>FacebookAppID<span style="color:#000080">&lt;/key&gt;</span>
+<span style="color:#000080">&lt;string&gt;</span>[APP_ID]<span style="color:#000080">&lt;/string&gt;</span>
+<span style="color:#000080">&lt;key&gt;</span>FacebookDisplayName<span style="color:#000080">&lt;/key&gt;</span>
+<span style="color:#000080">&lt;string&gt;</span>[APP_NAME]<span style="color:#000080">&lt;/string&gt;</span></code></pre></div>
+<p>Learn more: <a href="https://developers.facebook.com/docs/app-events/getting-started-app-events-ios/#plist-config">Facebook iOS Getting Started - Configure Your Property List</a></p>
+
+<p>Update the <code>AppDelegate</code> code as follows:</p>
+
+<ol>
+<li>Import <code>FBSDKCoreKit</code></li>
+
+<li><p>In the <code>didFinishLaunchingWithOptions</code> method add the following:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">FBSDKApplicationDelegate.sharedInstance().application(
+  application,
+  didFinishLaunchingWithOptions: launchOptions)</code></pre></div></li>
+
+<li><p>Add the following function in your <code>AppDelegate.swift</code> (or Objective-C equivalent)</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">application</span>(
+   <span style="font-weight:bold">_</span> app: UIApplication,
+  open url: URL,
+  options: [UIApplicationOpenURLOptionsKey : <span style="color:#999">Any</span>] = [:]) -&gt; <span style="color:#999">Bool</span> {
+<span style="font-weight:bold">let</span> <span style="color:#008080">handled</span> = FBSDKApplicationDelegate.sharedInstance().application(
+  app,
+  open: url,
+  options: options)</code></pre></div>
+<p>Learn more: <a href="https://developers.facebook.com/docs/app-events/getting-started-app-events-ios/#dev-env-setup">Facebook iOS Getting Started - Set Up Your Development Environment</a></p></li>
+</ol>
+
+</div>
+
+<p></div>
+</div></p>
 
 <h2 id="how-it-works">How It Works</h2>
 
-<p>The Braze integration uses the native Braze SDK, a remote command module that wraps the Braze methods, and the Braze Remote Command tag that translates event tracking into native Braze calls. This solution leverages the convenience of Tealium iQ Tag Management to configure a native Braze implementation without having to add vendor-specific code to your app.</p>
+<p>The integration with Facebook uses the native Facebook SDK, a remote commands module that wraps the Facebook methods, and the Facebook Remote Commands tag that translates event tracking into native Facebook calls. This solution leverages the convenience of tag management to configure a native Facebook implementation without having to add vendor-specific code to your app.</p>
 
-<p>Adding the Braze remote command module to your app build automatically installs and builds the required Braze libraries. If you are using a dependency manager installation, there is no need to install the Braze SDK separately.</p>
+<p>Adding the Facebook remote command module to your app build automatically installs and builds the required Facebook libraries. If you are using a dependency manager installation, there is no need to install the Facebook SDK separately.</p>
 
 <h2 id="install">Install</h2>
 
@@ -311,14 +369,14 @@ var utag_data = {
   <ul class="nav nav-tabs"></ul>
   <div class="tab-content">
 <div class="tab-pane" data-lang="CocoaPods" title="CocoaPods">
-  <p>To install Braze remote commands for iOS using CocoaPods:</p>
+  <p>To install Facebook remote commands for iOS using CocoaPods:</p>
 
 <ol>
-<li><p>Remove <code>tealium-swift</code> and <code>pod &quot;Appboy-iOS-SDK&quot;</code> if they exist in your Podfile. The dependency for <code>tealium-swift</code> is already included in the <code>TealiumBraze</code> framework.</p></li>
+<li><p>Remove <code>tealium-swift</code> and <code>pod &quot;FBSDKCoreKit&quot;</code> if they already exist your Podfile. The dependency for <code>tealium-swift</code> is already included in the <code>TealiumFacebook</code> framework.</p></li>
 
 <li><p>Add the following dependency to your Podfile:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">pod <span style="color:#b84">&#34;TealiumBraze&#34;</span></code></pre></div>
-<p>The <code>TealiumBraze</code> pod includes the following <code>TealiumSwift</code> dependencies:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">pod <span style="color:#b84">&#34;TealiumFacebook&#34;</span></code></pre></div>
+<p>The <code>TealiumFacebook</code> pod includes the following <code>TealiumSwift</code> dependencies:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#b84">&#39;tealium-swift/Core&#39;</span>
 <span style="color:#b84">&#39;tealium-swift/TealiumDelegate&#39;</span>
 <span style="color:#b84">&#39;tealium-swift/TealiumRemoteCommands&#39;</span>
@@ -330,22 +388,22 @@ var utag_data = {
 <span style="color:#b84">&#39;tealium-swift/TealiumAppData&#39;</span></code></pre></div>
 <p>Learn more about the <a href="https://docs.tealium.com/platforms/ios-swift/modules/">recommended modules</a> for iOS.</p></li>
 
-<li><p>Import the modules <code>TealiumSwift</code> and <code>TealiumBraze</code> in your <code>TealiumHelper</code> file, and any other files that access the <code>Tealium</code> class, or the Braze remote command.</p></li>
+<li><p>Import the modules <code>TealiumSwift</code> and <code>TealiumFacebook</code> in your <code>TealiumHelper</code> file, and any other files that access the <code>Tealium</code> class, or the Facebook Remote Command.</p></li>
 </ol>
 
 </div>
 
 <div class="tab-pane" data-lang="Carthage" title="Carthage">
-  <p>To install Braze remote commands for iOS using Carthage:</p>
+  <p>To install Facebook remote commands for iOS using Carthage:</p>
 
 <ol>
-<li><p>Remove <code>tealium-swift</code> from your Cartfile. The dependency for <code>tealium-swift</code> is already included in the <code>TealiumBraze</code> framework.</p></li>
+<li><p>Remove <code>tealium-swift</code> from your Cartfile. The dependency for <code>tealium-swift</code> is already included in the <code>TealiumFacebook</code> framework.</p></li>
 
 <li><p>Remove the following line if it exists in your Cartfile:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">github <span style="color:#b84">&#34;Appboy/Appboy-iOS-SDK&#34;</span></code></pre></div></li>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">github <span style="color:#b84">&#34;facebook/facebook-ios-sdk&#34;</span></code></pre></div></li>
 
 <li><p>Add the following dependency to your Cartfile:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">github <span style="color:#b84">&#34;tealium/tealium-ios-braze-remote-command&#34;</span></code></pre></div></li>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">github <span style="color:#b84">&#34;tealium/tealium-ios-facebook-remote-command&#34;</span></code></pre></div></li>
 </ol>
 
 <p class="note">Tealium for Swift SDK (version 1.6.5+) requires the <code>TealiumDelegate</code> module to be included with your installation.</p>
@@ -353,15 +411,24 @@ var utag_data = {
 </div>
 
 <div class="tab-pane" data-lang="Maven" title="Maven">
-  <p>To install Braze remote commands for Android using Maven:</p>
+  <p>To install Facebook remote commands for Android using Maven:</p>
 
 <ol>
 <li><p>Install Tealium&rsquo;s <a href="/platforms/android-java/install/">Android SDK</a>, if you haven&rsquo;t done so already.</p></li>
 
-<li><p>Import both the Braze SDK and Tealium-Braze remote commands by adding the following dependencies in your app project&rsquo;s <code>build.gradle</code> file:</p>
+<li><p>Add the Tealium Maven URL to your project&rsquo;s top-level <code>build.gradle</code> file:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">allprojects <span style="font-weight:bold">{</span>
+repositories <span style="font-weight:bold">{</span>
+jcenter<span style="font-weight:bold">()</span>
+maven <span style="font-weight:bold">{</span>
+  url <span style="color:#b84">&#34;https://maven.tealiumiq.com/android/releases/&#34;</span>
+<span style="font-weight:bold">}</span>
+<span style="font-weight:bold">}</span>
+<span style="font-weight:bold">}</span></code></pre></div></li>
+
+<li><p>Import both the Facebook SDK and Tealium-Facebook remote commands by adding the following dependencies in your app project&rsquo;s <code>build.gradle</code> file:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">dependencies <span style="font-weight:bold">{</span>
-  implementation <span style="color:#b84">&#39;com.tealium.remotecommands:braze:0.0.3&#39;</span>
-  implementation <span style="color:#b84">&#39;com.appboy:android-sdk-ui:3.8.0&#39;</span>
+  implementation <span style="color:#b84">&#39;com.tealium.remotecommands:facebook:1.0.0&#39;</span>
 <span style="font-weight:bold">}</span></code></pre></div></li>
 </ol>
 
@@ -370,49 +437,45 @@ var utag_data = {
 <p></div>
 </div></p>
 
-<h3 id="manual-ios">Manual (iOS)</h3>
+<h3 id="manual-for-ios">Manual for iOS</h3>
 
-<p>The manual installation for Braze remote commands requires one of the following iOS libraries to be installed:</p>
+<p>The manual installation for Facebook remote commands requires one of the following iOS libraries to be installed:</p>
 
 <ul>
 <li><a href="https://docs.tealium.com/platforms/ios-swift/">Tealium for Swift</a></li>
 <li><a href="https://docs.tealium.com/platforms/ios-objective-c/">Tealium for Objective-C</a></li>
 </ul>
 
-<p>To install the Braze remote commands for your iOS project:</p>
+<p>To install the Facebook remote commands for your iOS project:</p>
 
 <ol>
-<li><p>Install the <a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/initial_sdk_setup/">Braze SDK</a>, if you haven&rsquo;t already done so.</p></li>
+<li><p>Install the <a href="https://github.com/facebook/facebook-ios-sdk/tree/master/FBSDKCoreKit">Facebook SDK</a>, if you haven&rsquo;t already done so.</p></li>
 
-<li><p>Clone the <a href="https://github.com/tealium/tealium-ios-braze-remote-command">Tealium iOS Braze remote command</a> repo and drag the files within the <code>Sources</code> folder into your project.</p></li>
+<li><p>Clone the <a href="https://github.com/tealium/tealium-ios-facebook-remote-command">Tealium iOS Facebook remote command</a> repo and drag the files within the <code>Sources</code> folder into your project.</p></li>
 
-<li><p>When initializing the Tealium SDK, update the completion handler as follows:</p>
+<li><p>When initializing the Tealium Swift SDK, in the completion handler:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">tealium = Tealium(config: config) { responses <span style="font-weight:bold">in</span>
-<span style="font-weight:bold">guard</span> <span style="font-weight:bold">let</span> <span style="color:#008080">remoteCommands</span> = <span style="font-weight:bold">self</span>.tealium?.remoteCommands() <span style="font-weight:bold">else</span> {
-  <span style="font-weight:bold">return</span>
-}
-<span style="font-weight:bold">let</span> <span style="color:#008080">brazeTracker</span> = BrazeTracker()
-<span style="font-weight:bold">let</span> <span style="color:#008080">brazeCommand</span> = BrazeCommand(brazeTracker: brazeTracker)
-<span style="font-weight:bold">let</span> <span style="color:#008080">brazeRemoteCommand</span> = brazeCommand.remoteCommand()
-remoteCommands.add(brazeRemoteCommand)
+  <span style="font-weight:bold">guard</span> <span style="font-weight:bold">let</span> <span style="color:#008080">remoteCommands</span> = <span style="font-weight:bold">self</span>.tealium?.remoteCommands() <span style="font-weight:bold">else</span> {
+    <span style="font-weight:bold">return</span>
+  }
+  <span style="font-weight:bold">let</span> <span style="color:#008080">facebookRemoteCommand</span> = FacebookRemoteCommand().remoteCommand()
+  remoteCommands.add(facebookRemoteCommand)
 }</code></pre></div></li>
 
-<li><p>Add the remote command for Swift or Objective-C:</p></li>
+<li><p>If you are using the TealiumIOS, add the following code:</p></li>
 </ol>
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
   <div class="tab-content">
-
 <div class="tab-pane" data-lang="Swift" title="Swift">
   <p>Add the remote command in the <code>TealiumHelper.swift</code> file as follows:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">let</span> <span style="color:#008080">brazeTracker</span> = BrazeTracker()
-<span style="font-weight:bold">let</span> <span style="color:#008080">brazeCommand</span> = BrazeCommand(brazeTracker: brazeTracker)
-<span style="font-weight:bold">let</span> <span style="color:#008080">brazeRemoteCommand</span> = brazeCommand.remoteCommand()
-tealium.addRemoteCommandID(<span style="color:#b84">&#34;braze&#34;</span>,
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">let</span> <span style="color:#008080">facebookTracker</span> = FacebookTracker()
+<span style="font-weight:bold">let</span> <span style="color:#008080">facebookRemoteCommand</span> = FacebookRemoteCommand(facebookTracker: facebookTracker).remoteCommand()
+tealium.addRemoteCommandID(<span style="color:#b84">&#34;facebook&#34;</span>,
                            description: <span style="font-weight:bold">nil</span>,
                            targetQueue: DispatchQueue.main,
-                           responseBlock: brazeRemoteCommand)</code></pre></div>
+                           responseBlock: facebookRemoteCommand)</code></pre></div>
 </div>
 
 <div class="tab-pane" data-lang="Objective-C" title="Objective-C">
@@ -420,370 +483,369 @@ tealium.addRemoteCommandID(<span style="color:#b84">&#34;braze&#34;</span>,
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">#<span style="font-weight:bold">import</span> <span style="color:#b84">&#34;TealiumRemoteCommandObjcApp-Swift.h&#34;</span></code></pre></div>
 <p class="note">The Swift bridging header for your target is named ending with <code>-Swift.h</code>. Find this by filtering for &ldquo;Module Name&rdquo; in your target&rsquo;s build settings.</p>
 
-<p>Learn more in the <a href="https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_swift_into_objective-c">Apple Developer Documentation: Importing Swift Into Objective-C</a>.</p>
+<p>Learn more about <a href="(https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_swift_into_objective-c)">importing Swift into Objective-C</a>.</p>
 
 <p>Initialize the remote command as follows:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Objective-C" data-lang="Objective-C">BrazeTracker <span style="font-weight:bold">*</span>brazeTracker <span style="font-weight:bold">=</span> [[BrazeTracker alloc] init];
-BrazeCommand <span style="font-weight:bold">*</span>brazeCommand <span style="font-weight:bold">=</span> [[BrazeCommand alloc] initWithBrazeTracker:brazeTracker];
-TEALRemoteCommandResponseBlock brazeRemoteCommand <span style="font-weight:bold">=</span> [brazeCommand remoteCommand];
-[[Tealium instanceForKey:<span style="color:#b84">@&#34;MY_INSTANCE&#34;</span>] addRemoteCommandID:<span style="color:#b84">@&#34;braze&#34;</span>
-                                    description:<span style="color:#b84">@&#34;Braze Remote Command&#34;</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Objective-C" data-lang="Objective-C">FacebookTracker <span style="font-weight:bold">*</span>facebookTracker <span style="font-weight:bold">=</span> [[FacebookTracker alloc] init];
+FacebookRemoteCommand <span style="font-weight:bold">*</span>facebookRemoteCommand <span style="font-weight:bold">=</span> [[FacebookRemoteCommand alloc] initWithFacebookTracker: facebookTracker];
+TEALRemoteCommandResponseBlock facebookRemoteCommandResponse <span style="font-weight:bold">=</span> [facebookRemoteCommand remoteCommand];
+[[Tealium instanceForKey:<span style="color:#b84">@&#34;MY_INSTANCE&#34;</span>] addRemoteCommandID:<span style="color:#b84">@&#34;facebook&#34;</span>
+                                    description:<span style="color:#b84">@&#34;Facebook Remote Command&#34;</span>
                                     targetQueue:dispatch_get_main_queue()
-                                    responseBlock:brazeRemoteCommand];</code></pre></div>
+                                    responseBlock: facebookRemoteCommandResponse];</code></pre></div>
 </div>
 
 <p></div>
 </div></p>
 
+<h3 id="manual-install-for-android">Manual Install for Android</h3>
+
+<p>The manual installation for Facebook remote commands requires the following Android library to be installed:</p>
+
+<ul>
+<li><a href="https://docs.tealium.com/platforms/android-java/">Tealium for Android</a></li>
+</ul>
+
+<p>To install the Facebook remote commands for your Android project:</p>
+
+<ol>
+<li><p>Add <code>flatDir</code> to your project root <code>build.gradle</code> file:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">allprojects <span style="font-weight:bold">{</span>
+  repositories <span style="font-weight:bold">{</span>
+     jcenter<span style="font-weight:bold">()</span>
+     flatDir <span style="font-weight:bold">{</span>
+         dirs <span style="color:#b84">&#39;libs&#39;</span>
+     <span style="font-weight:bold">}</span>
+  <span style="font-weight:bold">}</span>
+<span style="font-weight:bold">}</span></code></pre></div></li>
+
+<li><p>Add <code>tealium-facebook.aar</code> to <code>&lt;PROJECT_ROOT&gt;/&lt;MODULE&gt;/libs</code>.</p></li>
+
+<li><p>Add the Tealium library dependency to your <code>build.gradle</code> file:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">dependencies <span style="font-weight:bold">{</span>
+  implementation<span style="font-weight:bold">(</span>name:<span style="color:#b84">&#39;tealium-facebook&#39;</span><span style="font-weight:bold">,</span> ext:<span style="color:#b84">&#39;aar&#39;</span><span style="font-weight:bold">)</span>
+<span style="font-weight:bold">}</span></code></pre></div></li>
+</ol>
+
 <h2 id="initialize">Initialize</h2>
 
-<p>For all Tealium libraries, you need to register the Braze remote command when you initialize.</p>
+<p>For all Tealium libraries, register the Facebook Remote Command when you initialize.</p>
 
 <div class="code-tabs">
   <ul class="nav nav-tabs"></ul>
   <div class="tab-content">
 <div class="tab-pane" data-lang="Android" title="Android">
   <p>The following code is designed for use with Tealium&rsquo;s Android library.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a61717;background-color:#e3d2d2">import com</span>.<span style="color:#008080">tealium</span>.<span style="color:#008080">remotecommands</span>.<span style="color:#008080">BrazeRemoteCommand</span>;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a61717;background-color:#e3d2d2">import com</span>.<span style="color:#008080">tealium</span>.<span style="color:#008080">remotecommands</span>.<span style="color:#008080">facebook</span>.<span style="color:#008080">FacebookRemoteCommand</span>;
 
 <span style="color:#a61717;background-color:#e3d2d2">Tealium.Config config </span><span style="font-weight:bold">=</span> Tealium.<span style="color:#008080">Config</span>.<span style="color:#008080">create</span>(application, <span style="color:#b84">&#34;ACCOUNT&#34;</span>, <span style="color:#b84">&#34;PROFILE&#34;</span>, <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>);
 <span style="color:#a61717;background-color:#e3d2d2">Tealium teal </span><span style="font-weight:bold">=</span> Tealium.<span style="color:#008080">createInstance</span>(TEALIUM_MAIN, config);
 
-<span style="color:#a61717;background-color:#e3d2d2">BrazeRemoteCommand braze</span>;
-<span style="color:#998;font-style:italic">// Initialize with default configuration options.
-</span><span style="color:#998;font-style:italic"></span>braze <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> BrazeRemoteCommand(config);
-
-<span style="color:#998;font-style:italic">// Or alternatively initialize with some additional config options:
-</span><span style="color:#998;font-style:italic"></span><span style="color:#a61717;background-color:#e3d2d2">Set&lt;Class&gt; sessionHandlingBlacklist </span><span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> HashSet<span style="font-weight:bold">&lt;&gt;</span>();
-<span style="color:#a61717;background-color:#e3d2d2">Set&lt;Class&gt; inAppMessageBlacklist </span><span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> HashSet<span style="font-weight:bold">&lt;&gt;</span>();
-<span style="color:#998;font-style:italic">// sessionHandlingBlacklist.add(MainActivity.class);
-</span><span style="color:#998;font-style:italic">// inAppMessageBlacklist.add(UserActivity.class);
-</span><span style="color:#998;font-style:italic"></span>braze <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> BrazeRemoteCommand(config,
-        <span style="font-weight:bold">true</span>,                     <span style="color:#998;font-style:italic">// sessiongHandlingEnabled
-</span><span style="color:#998;font-style:italic"></span>        sessionHandlingBlacklist, <span style="color:#998;font-style:italic">// sessionHandlingBlacklist
-</span><span style="color:#998;font-style:italic"></span>        <span style="font-weight:bold">true</span>,                     <span style="color:#998;font-style:italic">// registerInAppMessageManager
-</span><span style="color:#998;font-style:italic"></span>        inAppMessageBlacklist);   <span style="color:#998;font-style:italic">// inAppMessageBlackList
-</span><span style="color:#998;font-style:italic"></span>
-<span style="color:#998;font-style:italic">// Optional: Set config options that may not be supported yet by the Tag in Tealium IQ
-</span><span style="color:#998;font-style:italic">//              or simply to override settings locally.
-</span><span style="color:#998;font-style:italic"></span>braze.<span style="color:#008080">registerConfigOverride</span>(<span style="font-weight:bold">new</span> BrazeRemoteCommand.<span style="color:#008080">ConfigOverrider</span>() {
-    @Override
-    <span style="color:#a61717;background-color:#e3d2d2">public void </span>onOverride(<span style="color:#a61717;background-color:#e3d2d2">AppboyConfig.Builder b</span>) {
-        b.<span style="color:#008080">setPushDeepLinkBackStackActivityEnabled</span>(<span style="font-weight:bold">true</span>);
-        b.<span style="color:#008080">setPushDeepLinkBackStackActivityClass</span>(UserActivity.<span style="color:#008080">class</span>);
-    }
-});
+<span style="color:#a61717;background-color:#e3d2d2">FacebookRemoteCommand facebook </span><span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> FacebookRemoteCommand(<span style="font-weight:bold">this</span>);
 
 <span style="color:#998;font-style:italic">// register the command
-</span><span style="color:#998;font-style:italic"></span>teal.<span style="color:#008080">addRemoteCommand</span>(braze);</code></pre></div>
+</span><span style="color:#998;font-style:italic"></span>teal.<span style="color:#008080">addRemoteCommand</span>(facebook);</code></pre></div>
+</div>
+
+<div class="tab-pane" data-lang="Kotlin" title="Kotlin">
+  <p>The following code is designed for use with Tealium&rsquo;s Android library.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="font-weight:bold">import</span> <span style="color:#555">com.tealium.remotecommands.facebook.FacebookRemoteCommand</span>
+
+<span style="font-weight:bold">val</span> config = Tealium.Config.create(<span style="font-weight:bold">this</span>, <span style="color:#b84">&#34;ACCOUNT&#34;</span>, <span style="color:#b84">&#34;PROFILE&#34;</span>, <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>)
+tealium = Tealium.createInstance(TealiumHelper.instanceName, config)
+
+<span style="font-weight:bold">val</span> facebook = FacebookRemoteCommand(<span style="font-weight:bold">this</span>)
+
+<span style="color:#998;font-style:italic">// register the command
+</span><span style="color:#998;font-style:italic"></span>tealium.addRemoteCommand(facebook)</code></pre></div>
 </div>
 
 <div class="tab-pane" data-lang="Objective-C" title="Objective-C">
   <p>The following code is designed for use with Tealium&rsquo;s Objective-C library for iOS, although it is written in Swift. A Bridging Header is required in your Xcode project for this code to work correctly.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let config <span style="font-weight:bold">=</span> TEALConfiguration(account: <span style="color:#b84">&#34;ACCOUNT&#34;</span>,
-                               profile: <span style="color:#b84">&#34;PROFILE&#34;</span>,
-                               environment: <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>,
-                               datasource: <span style="color:#b84">&#34;DATASOURCE&#34;</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let config <span style="font-weight:bold">=</span> TEALConfiguration(account: <span style="color:#b84">&#34;your_account&#34;</span>,
+                               profile: <span style="color:#b84">&#34;your_profile&#34;</span>,
+                               environment: <span style="color:#b84">&#34;dev&#34;</span>,
+                               datasource: <span style="color:#b84">&#34;abc123&#34;</span>)
 let teal <span style="font-weight:bold">=</span> Tealium.newInstance(forKey: <span style="color:#b84">&#34;teal&#34;</span>, configuration: config)
 
-let brazeTracker <span style="font-weight:bold">=</span> BrazeTracker()
-let brazeCommand <span style="font-weight:bold">=</span> BrazeCommand(brazeTracker: brazeTracker)
-let brazeRemoteCommand <span style="font-weight:bold">=</span> brazeCommand.remoteCommand()
-teal.addRemoteCommandID(<span style="color:#b84">&#34;braze&#34;</span>, description: <span style="color:#999">nil</span>, targetQueue: DispatchQueue.main, responseBlock: brazeRemoteCommand)</code></pre></div>
+let facebookRemoteCommand <span style="font-weight:bold">=</span> FacebookRemoteCommand().remoteCommand()
+teal.addRemoteCommandID(<span style="color:#b84">&#34;facebook&#34;</span>, description: <span style="color:#999">nil</span>, targetQueue: DispatchQueue.main, responseBlock: facebookRemoteCommand)</code></pre></div>
 </div>
 
 <div class="tab-pane" data-lang="Swift" title="Swift">
   <p>The following code is designed for use with Tealium&rsquo;s Swift library for iOS.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">var</span> <span style="color:#008080">teal</span> : Tealium?
-<span style="font-weight:bold">let</span> <span style="color:#008080">config</span> = TealiumConfig(account: <span style="color:#b84">&#34;ACCOUNT&#34;</span>,
-                           profile: <span style="color:#b84">&#34;PROFILE&#34;</span>,
-                           environment: <span style="color:#b84">&#34;ENVIRONMENT&#34;</span>,
-                           datasource: <span style="color:#b84">&#34;DATASOURCE&#34;</span>,
+<span style="font-weight:bold">let</span> <span style="color:#008080">config</span> = TealiumConfig(account: <span style="color:#b84">&#34;your_account&#34;</span>,
+                           profile: <span style="color:#b84">&#34;your_profile&#34;</span>,
+                           environment: <span style="color:#b84">&#34;dev&#34;</span>,
+                           datasource: <span style="color:#b84">&#34;abc123&#34;</span>,
                            optionalData: <span style="font-weight:bold">nil</span>)
 
 teal = Tealium(config: config) { responses <span style="font-weight:bold">in</span>
   <span style="font-weight:bold">guard</span> <span style="font-weight:bold">let</span> <span style="color:#008080">remoteCommands</span> = <span style="font-weight:bold">self</span>.tealium?.remoteCommands() <span style="font-weight:bold">else</span> {
         <span style="font-weight:bold">return</span>
   }
-  <span style="font-weight:bold">let</span> <span style="color:#008080">brazeTracker</span> = BrazeTracker()
-  <span style="font-weight:bold">let</span> <span style="color:#008080">brazeCommand</span> = BrazeCommand(brazeTracker: brazeTracker)
-  <span style="font-weight:bold">let</span> <span style="color:#008080">brazeRemoteCommand</span> = brazeCommand.remoteCommand()
-  remoteCommands.add(brazeRemoteCommand)
+  <span style="font-weight:bold">let</span> <span style="color:#008080">facebookRemoteCommand</span> = FacebookRemoteCommand().remoteCommand()
+  remoteCommands.add(facebookRemoteCommand)
 }</code></pre></div>
 </div>
 
 <p></div>
 </div></p>
 
+<h2 id="push-message-tracking">Push Message Tracking</h2>
+
+<p>The <a href="https://github.com/Tealium/tealium-swift/blob/master/tealium/remotecommands/TealiumRegistration.swift">Tealium Swift library</a> includes a <code>TealiumRegistration</code> protocol for handling push message tracking via Tealium and the Facebook Remote Command. We conform to this protocol in <code>FacebookTracker</code> and is used to send push message authorization events, push message open events, and to uninstall tracking. We recommend taking advantage of the push message tracking capability.</p>
+
+<p>The following steps integrate push message tracking for your iOS project:</p>
+
+<ol>
+<li><p>In the <code>TealiumHelper.swift</code> file, initialize an empty array of objects that conform to the <code>TealiumRegistration</code> protocol. For example:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">var</span> <span style="color:#008080">pushMessagingTrackers</span> = [TealiumRegistration]()</code></pre></div></li>
+
+<li><p>Initialize the <code>FacebookTracker</code> before the <code>FacebookRemoteCommand</code></p></li>
+
+<li><p>Append the <code>FacebookTracker</code> to the array described above</p></li>
+</ol>
+
+<p>The following is full example of the push message tracking integration:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">var</span> <span style="color:#008080">pushMessagingTrackers</span> = [TealiumRegistration]()
+<span style="color:#998;font-style:italic">//...</span>
+teal = Tealium(config: config) { responses <span style="font-weight:bold">in</span>
+  <span style="font-weight:bold">guard</span> <span style="font-weight:bold">let</span> <span style="color:#008080">remoteCommands</span> = <span style="font-weight:bold">self</span>.tealium?.remoteCommands() <span style="font-weight:bold">else</span> {
+        <span style="font-weight:bold">return</span>
+  }
+  <span style="font-weight:bold">let</span> <span style="color:#008080">facebookTracker</span> = FacebookTracker()
+  <span style="font-weight:bold">let</span> <span style="color:#008080">facebookRemoteCommand</span> = FacebookRemoteCommand(facebookTracker: facebookTracker).remoteCommand()
+  remoteCommands.add(facebookRemoteCommand)
+  <span style="font-weight:bold">self</span>.pushMessagingTrackers.append(facebookTracker)
+}</code></pre></div>
+<p>To see the entire <code>TealiumHelper.swift</code> file, explore the <a href="https://github.com/Tealium/tealium-ios-facebook-remote-command/tree/master/Examples">Facebook Remote Command sample apps</a>. To send an event to Facebook once a user has registered for notifications, opened a push message, or uninstalled the app, see the file <code>AppDelegate.swift</code>.</p>
+
 <h2 id="supported-methods">Supported Methods</h2>
 
-<p>The following Braze methods are triggered using a data mapping in the Braze Remote Command tag using the following Tealium commands:</p>
+<p>The following Facebook methods are triggered using a data mapping in the Facebook Remote Command tag using these Tealium commands:</p>
 
 <table>
 <thead>
 <tr>
 <th>Remote Command</th>
-<th>Braze Method</th>
+<th>Facebook Method</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>appendcustomarrayattribute</code></td>
-<td><code>addToCustomAttributeArrayWithKey()</code></td>
+<td><code>setUser</code></td>
+<td><code>setUser()</code></td>
 </tr>
 
 <tr>
-<td><code>emailnotification</code></td>
-<td><code>setEmailNotificationSubscriptionType()</code></td>
+<td><code>updateUserValue</code></td>
+<td><code>updateUserValue()</code></td>
 </tr>
 
 <tr>
-<td><code>facebookuser</code></td>
-<td><code>facebookUser()</code></td>
+<td>Any of the below event names</td>
+<td><code>trackEvent()</code></td>
 </tr>
 
 <tr>
-<td><code>incrementcustomattribute</code></td>
-<td><code>incrementCustomUserAttribute()</code></td>
+<td>logProductItem</td>
+<td><code>logProductItem()</code></td>
 </tr>
 
 <tr>
-<td><code>initialize</code></td>
-<td><code>startWithApiKey()</code></td>
-</tr>
-
-<tr>
-<td><code>logcustomevent</code></td>
-<td><code>logCustomEvent()</code></td>
-</tr>
-
-<tr>
-<td><code>logpurchase</code></td>
+<td><code>logPurchase</code></td>
 <td><code>logPurchase()</code></td>
 </tr>
 
 <tr>
-<td><code>pushnotification</code></td>
-<td><code>setPushNotificationSubscriptionType()</code></td>
+<td><code>flush</code></td>
+<td><code>flush()</code></td>
 </tr>
 
 <tr>
-<td><code>removecustomarrayattribute</code></td>
-<td><code>removeFromCustomAttributeArrayWithKey()</code></td>
+<td>Manually called in <code>AppDelegate</code> within <code>didReceiveRemoteNotification</code></td>
+<td><code>setPushNotificationsDeviceToken()</code></td>
 </tr>
 
 <tr>
-<td><code>setcustomattribute</code></td>
-<td><code>setCustomAttributeWithKey()</code></td>
-</tr>
-
-<tr>
-<td><code>setcustomarrayattribute</code></td>
-<td><code>setCustomAttributeArrayWithKey()</code></td>
-</tr>
-
-<tr>
-<td><code>setlastknownlocation</code></td>
-<td><code>setLastKnownLocationWithLatitude()</code></td>
-</tr>
-
-<tr>
-<td><code>twitteruser</code></td>
-<td><code>twitterUser()</code></td>
-</tr>
-
-<tr>
-<td><code>unsetcustomattribute</code></td>
-<td><code>unsetCustomAttributeWithKey()</code></td>
-</tr>
-
-<tr>
-<td><code>useralias</code></td>
-<td><code>addAlias()</code></td>
-</tr>
-
-<tr>
-<td><code>userattribute</code></td>
-<td><code>ABKUser()</code></td>
-</tr>
-
-<tr>
-<td><code>useridentifier</code></td>
-<td><code>changeUser()</code></td>
+<td>Manually called in <code>AppDelegate</code> within <code>didRegisterForRemoteNotificationsWithDeviceToken</code></td>
+<td><code>registerPushToken()</code></td>
 </tr>
 </tbody>
 </table>
 
-<p class="note">Since the Braze SDK is installed alongside the Tealium SDK, trigger any native Braze functionality given the corresponding tag configuration.</p>
-
-<h3 id="sdk-setup">SDK Setup</h3>
-
-<h4 id="initialize-1">Initialize</h4>
-
-<p>The Braze SDK is initialized automatically upon launch. The Braze API key is set in the tag configuration.</p>
-
-<table>
-<thead>
-<tr>
-<th>Remote Command</th>
-<th>Braze Method (iOS)</th>
-<th>Braze Method (Android)</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>initialize</code></td>
-<td><code>startWithApiKey()</code></td>
-<td><code>configure()</code></td>
-</tr>
-</tbody>
-</table>
-
-<p>The following mappings are used to set launch options.</p>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>custom_endpoint</code></td>
-<td><code>String</code></td>
-<td>Sets a custom API endpoint. This gets sent in the format <code>sdk.api.braze.eu</code></td>
-</tr>
-
-<tr>
-<td><code>device_options</code></td>
-<td><code>Int</code></td>
-<td>Key to specify a whitelist for device fields that are collected by the Braze SDK (default all fields are collected)</td>
-</tr>
-
-<tr>
-<td><code>disable_location</code></td>
-<td><code>Int</code></td>
-<td>Disable automatic location data collection (<code>1</code> or <code>0</code>)</td>
-</tr>
-
-<tr>
-<td><code>enable_geofences</code></td>
-<td><code>Int</code></td>
-<td>Enable automatic collection of geofences (<code>1</code> or <code>0</code>)</td>
-</tr>
-
-<tr>
-<td><code>flush_interval</code></td>
-<td><code>Double</code></td>
-<td>Sets the data flush interval (in seconds). Values are converted into NSTimeIntervals and must be greater than <code>1.0</code></td>
-</tr>
-
-<tr>
-<td><code>push_story_identifier</code></td>
-<td><code>String</code></td>
-<td>This key is set to a string value representing the app group name for the Push Story Notification Content extension.</td>
-</tr>
-
-<tr>
-<td><code>request_processing_policy</code></td>
-<td><code>Int</code></td>
-<td>Possible values for the SDK&rsquo;s request processing (default ABKAutomaticRequestProcessing)</td>
-</tr>
-
-<tr>
-<td><code>session_timeout</code></td>
-<td><code>Int</code> (seconds)</td>
-<td>The session timeout in seconds (default: <code>30</code> seconds)</td>
-</tr>
-
-<tr>
-<td><code>trigger_interval_seconds</code></td>
-<td><code>Int</code> (seconds)</td>
-<td>Override the minimum interval between in-app message triggers (default: <code>30</code> seconds)</td>
-</tr>
-</tbody>
-</table>
-
-<p>Android</p>
+<p>Push notifications are currently supported only for the iOS remote command.</p>
 
 <ul>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/android/initial_sdk_setup/android_sdk_integration/">Braze Developer Guide: Initial SDK Setup</a></li>
+<li><a href="https://developers.facebook.com/docs/app-events/uninstalls">iOS setPushNotificationsDeviceToken</a> - used for uninstall tracking</li>
+<li><a href="https://github.com/facebook/facebook-objc-sdk/blob/1a223fd53b96c6a9078dacb1005e03035db3a0ff/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L627">iOS logPushNotificationOpen</a></li>
 </ul>
 
-<p>iOS</p>
+<h3 id="standard-event-names">Standard Event Names</h3>
 
-<ul>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/#customizing-braze-on-startup">Braze Developer Guide: Initial SDK Setup</a><br /></li>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/advanced_use_cases/fine_network_traffic_control/">Braze Developer Guide: Fine Network Traffic Control</a><br /></li>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/advanced_use_cases/locations_and_geofences/">Braze Developer Guide: Locations and Geofences</a><br /></li>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/push_story/">Braze Developer Guide: Push Story Setup</a><br /></li>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/analytics/tracking_sessions/">Braze Developer Guide: Tracking Sessions</a></li>
-</ul>
-
-<h3 id="user-tracking">User Tracking</h3>
-
-<h4 id="assigning-a-user-id">Assigning a User ID</h4>
+<p>The following is a list of standard event names supported with the <code>logEvent</code> method. If any of the below command names are sent, they are automatically triggered in the Facebook SDK. This is assuming all the required variables are also mapped and defined for that particular event. Learn about <a href="https://developers.facebook.com/docs/app-events/getting-started-app-events-ios/#manually-log-events">recording in-app events</a>.</p>
 
 <table>
 <thead>
 <tr>
-<th>Remote Command</th>
-<th>Braze Method</th>
+<th align="left">Remote Command</th>
+<th align="left">Facebook Event Name</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>useridentifier</code></td>
-<td><code>changeUser</code></td>
+<td align="left"><code>achievedLevel</code></td>
+<td align="left"><code>FBSDKAppEventNameAchievedLevel</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>addPaymentInfo</code></td>
+<td align="left"><code>FBSDKAppEventNameAddedPaymentInfo</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>addToCart</code></td>
+<td align="left"><code>FBSDKAppEventNameAddedToCart</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>addToWishlist</code></td>
+<td align="left"><code>FBSDKAppEventNameAddedToWishlist</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>completeRegistration</code></td>
+<td align="left"><code>FBSDKAppEventNameCompletedRegistration</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>completeTutorial</code></td>
+<td align="left"><code>FBSDKAppEventNameCompletedTutorial</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>initiateCheckout</code></td>
+<td align="left"><code>FBSDKAppEventNameInitiatedCheckout</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>purchase</code></td>
+<td align="left"><code>FBSDKAppEventNamePurchased</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>subscribe</code></td>
+<td align="left"><code>FBSDKAppEventNameSubscribe</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>startTrial</code></td>
+<td align="left"><code>FBSDKAppEventNameStartTrial</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>rated</code></td>
+<td align="left"><code>FBSDKAppEventNameRated</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>searched</code></td>
+<td align="left"><code>FBSDKAppEventNameSearched</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>spentCredits</code></td>
+<td align="left"><code>FBSDKAppEventNameSpentCredits</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>unlockAchievement</code></td>
+<td align="left"><code>FBSDKAppEventNameUnlockedAchievement</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>contentView</code></td>
+<td align="left"><code>FBSDKAppEventNameViewedContent</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>logContact</code></td>
+<td align="left"><code>FBSDKAppEventNameContact</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>initiateCheckout</code></td>
+<td align="left"><code>FBSDKAppEventNameInitiatedCheckout</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>spentCredits</code></td>
+<td align="left"><code>FBSDKAppEventNameSpentCredits</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>customizeProduct</code></td>
+<td align="left"><code>FBSDKAppEventNameCustomizeProduct</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>donate</code></td>
+<td align="left"><code>FBSDKAppEventNameDonate</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>findLocation</code></td>
+<td align="left"><code>FBSDKAppEventNameFindLocation</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>schedule</code></td>
+<td align="left"><code>FBSDKAppEventNameSchedule</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>submitApplication</code></td>
+<td align="left"><code>FBSDKAppEventNameSubmitApplication</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>adImpression</code></td>
+<td align="left"><code>FBSDKAppEventNameAdImpression</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>adClick</code></td>
+<td align="left"><code>FBSDKAppEventNameAdClick</code></td>
 </tr>
 </tbody>
 </table>
 
+<p class="note">Since the Facebook SDK is installed alongside the Tealium SDK, you are able to trigger any native Facebook functionality given the corresponding tag configuration.</p>
+
+<h3 id="set-user">Set User</h3>
+
+<p>Sets custom user data to associate with all app events. All user data is hashed and used to match Facebook users from this instance of an application. The user data is persisted between application instances.</p>
+
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
+<th>Event Name</th>
+<th>Required</th>
+<th>Optional</th>
 <th>Type</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>user_id</code> (required)</td>
-<td><code>String</code></td>
-</tr>
-</tbody>
-</table>
-
-<ul>
-<li>Braze Developer Guide: Analytics User IDs<br />
-
-<ul>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/analytics/setting_user_ids/">iOS</a></li>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/android/analytics/setting_user_ids/#assigning-a-user-id">Android</a></li>
-</ul></li>
-</ul>
-
-<h4 id="aliasing-users">Aliasing Users</h4>
-
-<table>
-<thead>
-<tr>
-<th>Remote Command</th>
-<th>Braze Method</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>useralias</code></td>
-<td><code>addAlias</code></td>
+<td><code>setUser</code></td>
+<td><code>user</code></td>
+<td></td>
+<td><code>[String: Any]</code></td>
 </tr>
 </tbody>
 </table>
@@ -791,79 +853,49 @@ teal = Tealium(config: config) { responses <span style="font-weight:bold">in</sp
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th>User Dictionary Properties</th>
+<th>Optional</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>user_alias</code> (required)</td>
+<td><code>em</code></td>
 <td><code>String</code></td>
 </tr>
 
 <tr>
-<td><code>alias_label</code> (required)</td>
-<td><code>String</code></td>
-</tr>
-</tbody>
-</table>
-
-<ul>
-<li>Braze Developer Guide: Analytics Alias Users<br />
-
-<ul>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/analytics/setting_user_ids/#aliasing-users">iOS</a></li>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/android/analytics/setting_user_ids/#aliasing-users">Android</a></li>
-</ul></li>
-</ul>
-
-<h3 id="user-attributes">User Attributes</h3>
-
-<h4 id="standard-attributes">Standard Attributes</h4>
-
-<table>
-<thead>
-<tr>
-<th>Event</th>
-<th>Braze Method</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>userattribute</td>
-<td>Set fields on the <code>ABKUser/AppboyUser</code> object</td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>first_name</code></td>
+<td><code>fn</code></td>
 <td><code>String</code></td>
 </tr>
 
 <tr>
-<td><code>last_name</code></td>
+<td><code>ln</code></td>
 <td><code>String</code></td>
 </tr>
 
 <tr>
-<td><code>email</code></td>
+<td><code>dob</code></td>
 <td><code>String</code></td>
 </tr>
 
 <tr>
-<td><code>date_of_birth</code></td>
+<td><code>ge</code></td>
+<td><code>String</code></td>
+</tr>
+
+<tr>
+<td><code>ct</code></td>
+<td><code>String</code></td>
+</tr>
+
+<tr>
+<td><code>st</code></td>
+<td><code>String</code></td>
+</tr>
+
+<tr>
+<td><code>zp</code></td>
 <td><code>String</code></td>
 </tr>
 
@@ -871,193 +903,192 @@ teal = Tealium(config: config) { responses <span style="font-weight:bold">in</sp
 <td><code>country</code></td>
 <td><code>String</code></td>
 </tr>
-
-<tr>
-<td><code>language</code></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td><code>home_city</code></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td><code>phone</code></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td><code>avatar_image_url</code></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td><code>gender</code></td>
-<td><code>String</code></td>
-</tr>
 </tbody>
 </table>
 
 <ul>
-<li>Braze Developer Guide: Analytics User Attributes
-
-<ul>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/analytics/setting_custom_attributes/#assigning-standard-user-attributes">iOS</a></li>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/android/analytics/setting_custom_attributes/#assigning-standard-user-attributes">Android</a></li>
-</ul></li>
-<li><a href="https://www.braze.com/docs/api/endpoints/user_data/?redirected=true#user-attributes-object-specification">Braze Developer Guide: User Data API</a></li>
+<li><a href="https://github.com/facebook/facebook-objc-sdk/blob/1a223fd53b96c6a9078dacb1005e03035db3a0ff/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L764">Facebook iOS SDK setUser</a></li>
+<li><a href="https://github.com/facebook/facebook-android-sdk/blob/8cc5dbb133d49f736845f999a30bfb30cf39e282/facebook-core/src/main/java/com/facebook/appevents/AppEventsLogger.java#L674">Facebook Android SDK Integration - setUserData</a></li>
 </ul>
 
-<h4 id="set-custom-attribute">Set Custom Attribute</h4>
+<h3 id="update-user-value">Update User Value</h3>
+
+<p>Updates a user value for a type/key. All user data is hashed and used to match Facebook users from this instance of an application. The user data is persisted between application instances.</p>
 
 <table>
 <thead>
 <tr>
-<th>Remote Command</th>
-<th>Braze Method (iOS)</th>
-<th>Braze Method (Android)</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>setcustomattribute</code></td>
-<td><code>setCustomAttributeWithKey</code></td>
-<td><code>setCustomUserAttribute</code></td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
+<th>Event Name</th>
+<th>Required</th>
+<th>Optional</th>
 <th>Type</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>set_custom_attribute.PROPERTY</code></td>
-<td><code>[String: Any]</code> / <code>JSONObject</code></td>
+<td><code>updateUserValue</code></td>
+<td><code>fb_user_value</code></td>
+<td></td>
+<td><code>String</code></td>
 </tr>
-</tbody>
-</table>
 
-<ul>
-<li>Braze Developer Guide: Analytics Custom Attributes<br />
-
-<ul>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/analytics/setting_custom_attributes/#assigning-custom-user-attributes">iOS</a></li>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/android/analytics/setting_custom_attributes/#assigning-custom-user-attributes">Android</a></li>
-</ul></li>
-</ul>
-
-<h4 id="unset-custom-attribute">Unset Custom Attribute</h4>
-
-<table>
-<thead>
 <tr>
-<th>Remote Command</th>
-<th>Braze Method (iOS)</th>
-<th>Braze Method (Android)</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>setcustomattribute</code></td>
-<td><code>unsetCustomAttributeWithKey</code></td>
-<td><code>unsetCustomUserAttribute</code></td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>set_custom_attribute.PROPERTY</code></td>
+<td></td>
+<td><code>fb_user_key</code></td>
+<td></td>
 <td><code>String</code></td>
 </tr>
 </tbody>
 </table>
 
 <ul>
-<li>Braze Developer Guide: Analytics Custom Attributes<br />
-
-<ul>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/analytics/setting_custom_attributes/#unsetting-a-custom-attribute">iOS</a></li>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/android/analytics/setting_custom_attributes/#assigning-custom-user-attributes">Android</a></li>
-</ul></li>
+<li><a href="https://github.com/facebook/facebook-objc-sdk/blob/1a223fd53b96c6a9078dacb1005e03035db3a0ff/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L803">Facebook iOS SDK Integration - setUserData</a></li>
+<li><a href="https://github.com/facebook/facebook-android-sdk/blob/8cc5dbb133d49f736845f999a30bfb30cf39e282/facebook-core/src/main/java/com/facebook/appevents/AppEventsLogger.java#L712">Facebook Android SDK Integration - updateUserProperties</a></li>
 </ul>
 
-<h4 id="increment-custom-attribute">Increment Custom Attribute</h4>
+<h3 id="log-product-item">Log Product Item</h3>
+
+<p>Uploads product catalog product item as an app event.</p>
 
 <table>
 <thead>
 <tr>
-<th>Remote Command</th>
-<th>Braze Method</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>incrementcustomattribute</code></td>
-<td><code>incrementCustomUserAttribute</code></td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
+<th>Event Name</th>
+<th>Required</th>
+<th>Optional</th>
 <th>Type</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>increment_custom_attribute.PROPERTY</code></td>
+<td><code>logProductItem</code></td>
+<td><code>fb_product_item_id</code></td>
+<td></td>
+<td><code>String</code></td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>fb_product_availability</code></td>
+<td></td>
+<td><code>Int</code> (See lookup below)</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>fb_product_condition</code></td>
+<td></td>
+<td><code>Int</code> (See lookup below)</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>fb_product_description</code></td>
+<td></td>
+<td><code>String</code></td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>fb_product_image_link</code></td>
+<td></td>
+<td><code>String</code></td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>fb_product_link</code></td>
+<td></td>
+<td><code>String</code></td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>fb_product_title</code></td>
+<td></td>
+<td><code>String</code></td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>fb_product_price_amount</code></td>
+<td></td>
+<td><code>Double/Decimal</code></td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>fb_product_price_currency</code></td>
+<td></td>
+<td><code>String</code></td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>fb_product_parameters</code></td>
+<td></td>
+<td><code>[String: Any]</code> - JavaScript Object if in TiQ</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td><code>fb_product_gtin</code></td>
+<td><code>String</code></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td><code>fb_product_mpn</code></td>
+<td><code>String</code></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td><code>fb_product_brand</code></td>
 <td><code>String</code></td>
 </tr>
 </tbody>
 </table>
 
-<ul>
-<li>Braze Developer Guide: Analytics Incrementing Attributes
-
-<ul>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/analytics/setting_custom_attributes/#incrementingdecrementing-custom-attributes">iOS</a></li>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/android/analytics/setting_custom_attributes/#assigning-custom-user-attributes">Android</a></li>
-</ul></li>
-</ul>
-
-<h4 id="set-custom-array-attribute">Set Custom Array Attribute</h4>
+<p class="note">Either <code>gtin</code>, <code>mpn</code> or <code>brand</code> is required. Product parameters are optional fields for deep link specification.</p>
 
 <table>
 <thead>
 <tr>
-<th>Remote Command</th>
-<th>Braze Method (iOS)</th>
-<th>Braze Method (Android)</th>
+<th>Product Availability Input</th>
+<th>Product Availability Lookup</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>setcustomarrayattribute</td>
-<td><code>setCustomAttributeArrayWithKey</code></td>
-<td><code>setCustomAttributeArray</code></td>
+<td><code>0</code></td>
+<td>In Stock - Item ships immediately</td>
+</tr>
+
+<tr>
+<td><code>1</code></td>
+<td>Out of stock - No plan to restock</td>
+</tr>
+
+<tr>
+<td><code>2</code></td>
+<td>Preorder - Available in future</td>
+</tr>
+
+<tr>
+<td><code>3</code></td>
+<td>Available for order - Ships in 1-2 weeks</td>
+</tr>
+
+<tr>
+<td><code>4</code></td>
+<td>Discontinued - Discontinued</td>
 </tr>
 </tbody>
 </table>
@@ -1065,605 +1096,271 @@ teal = Tealium(config: config) { responses <span style="font-weight:bold">in</sp
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
+<th>Product Condition Input</th>
+<th>Product Condition Lookup</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td>New</td>
+</tr>
+
+<tr>
+<td><code>1</code></td>
+<td>Refurbished</td>
+</tr>
+
+<tr>
+<td><code>2</code></td>
+<td>Used</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li><a href="https://github.com/facebook/facebook-objc-sdk/blob/1a223fd53b96c6a9078dacb1005e03035db3a0ff/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L642">Facebook iOS SDK Integration - logProductItem</a></li>
+<li><a href="https://github.com/facebook/facebook-android-sdk/blob/8cc5dbb133d49f736845f999a30bfb30cf39e282/facebook-core/src/main/java/com/facebook/appevents/AppEventsLogger.java#L524">Facebook Android SDK Integration - logProductItem</a></li>
+</ul>
+
+<h3 id="log-purchase">Log Purchase</h3>
+
+<p>Log a purchase of the specified amount, in the specified currency, also optionally providing a set of additional characteristics describing the purchase.</p>
+
+<p>Arbitrary parameter dictionary of characteristics. The keys to this dictionary must
+ be <code>NSString</code>&rsquo;s, and the values are expected to be <code>NSString</code> or <code>NSNumber</code>.  Limitations on the number of
+ parameters and name construction are given in the <a href="https://developers.facebook.com/docs/app-events/getting-started-app-events-ios#event-names">FBSDKAppEvents</a> documentation.  Commonly used parameter names
+ are provided in <a href="https://developers.facebook.com/docs/app-events/getting-started-app-events-ios#event-params">FBSDKAppEventParameterName</a> constants.</p>
+
+<table>
+<thead>
+<tr>
+<th>Event Name</th>
+<th>Required</th>
+<th>Optional</th>
 <th>Type</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>set_custom_array_attribute.PROPERTY</code></td>
-<td><code>[String: [Any]]</code> / <code>JSONObject</code></td>
-</tr>
-</tbody>
-</table>
-
-<ul>
-<li>Braze Developer Guide: Analytics Array Attributes<br />
-
-<ul>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/analytics/setting_custom_attributes/#custom-attribute-with-an-array-value">iOS</a></li>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/android/analytics/setting_custom_attributes/#assigning-custom-user-attributes">Android</a></li>
-</ul></li>
-</ul>
-
-<h4 id="append-custom-array-attribute">Append Custom Array Attribute</h4>
-
-<table>
-<thead>
-<tr>
-<th>Remote Command</th>
-<th>Braze Method (iOS)</th>
-<th>Braze Method (Android)</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>appendcustomarrayattribute</code></td>
-<td><code>addToCustomAttributeArrayWithKey</code></td>
-<td><code>addToCustomAttributeArray</code></td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>append_custom_array_attribute.PROPERTY</code></td>
-<td><code>[String: String]</code> / <code>JSONObject</code></td>
-</tr>
-</tbody>
-</table>
-
-<ul>
-<li>Braze Developer Guide: Analytics Array Attributes<br />
-
-<ul>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/analytics/setting_custom_attributes/#custom-attribute-with-an-array-value">iOS</a></li>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/android/analytics/setting_custom_attributes/#assigning-custom-user-attributes">Android</a></li>
-</ul></li>
-</ul>
-
-<h4 id="remove-custom-array-attribute">Remove Custom Array Attribute</h4>
-
-<table>
-<thead>
-<tr>
-<th>Remote Command</th>
-<th>Braze Method (iOS)</th>
-<th>Braze Method (Android)</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>removecustomarrayattribute</td>
-<td><code>removeFromCustomAttributeArrayWithKey</code></td>
-<td><code>removeFromCustomAttributeArray</code></td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>remove_custom_array_attribute.PROPERTY</code></td>
-<td><code>[String: String]</code> / <code>JSONObject</code></td>
-</tr>
-</tbody>
-</table>
-
-<ul>
-<li>Braze Developer Guide: Analytics Array Attributes<br />
-
-<ul>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/analytics/setting_custom_attributes/#custom-attribute-with-an-array-value">iOS</a></li>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/android/analytics/setting_custom_attributes/#assigning-custom-user-attributes">Android</a></li>
-</ul></li>
-</ul>
-
-<h3 id="social-data-tracking">Social Data Tracking</h3>
-
-<h4 id="facebook">Facebook</h4>
-
-<table>
-<thead>
-<tr>
-<th>Remote Command</th>
-<th>Braze Method</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>facebookuser</code></td>
-<td>Initialize an <code>ABKFacebookUser/FacebookUser</code> object</td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>facebook_id</code></td>
-<td><code>[String: Any]</code> / <code>String</code></td>
-</tr>
-
-<tr>
-<td><code>friends_count</code></td>
-<td><code>Int</code></td>
-</tr>
-
-<tr>
-<td><code>likes</code></td>
-<td><code>[Any]</code> / <code>String[]</code></td>
-</tr>
-</tbody>
-</table>
-
-<ul>
-<li>Braze Developer Guide: Social Data<br />
-
-<ul>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/analytics/social_data_tracking/">iOS</a></li>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/android/analytics/social_data_tracking/">Android</a></li>
-</ul></li>
-</ul>
-
-<h4 id="twitter">Twitter</h4>
-
-<table>
-<thead>
-<tr>
-<th>Remote Command</th>
-<th>Braze Method</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>twitteruser</code></td>
-<td>Initialize a <code>ABKTwitterUser/TwitterUser</code> object</td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>description</code></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td><code>twitter_name</code></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td><code>profile_image_url</code></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td><code>screen_name</code></td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td><code>followers_count</code></td>
-<td><code>Int</code></td>
-</tr>
-
-<tr>
-<td><code>friends_count</code></td>
-<td><code>Int</code></td>
-</tr>
-
-<tr>
-<td><code>statuses_count</code></td>
-<td><code>Int</code></td>
-</tr>
-
-<tr>
-<td><code>twitter_id</code></td>
-<td><code>Int</code></td>
-</tr>
-</tbody>
-</table>
-
-<ul>
-<li>Braze Developer Guide: Social Data<br />
-
-<ul>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/analytics/social_data_tracking/">iOS</a></li>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/android/analytics/social_data_tracking/">Android</a></li>
-</ul></li>
-</ul>
-
-<h3 id="custom-event-tracking">Custom Event Tracking</h3>
-
-<h4 id="custom-event">Custom Event</h4>
-
-<table>
-<thead>
-<tr>
-<th>Remote Command</th>
-<th>Braze Method</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>logcustomevent</code></td>
-<td><code>logCustomEvent</code></td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>event_name</code> (required)</td>
-<td><code>String</code></td>
-</tr>
-
-<tr>
-<td><code>event_properties</code></td>
-<td><code>[String: Any]</code> / <code>JSONObject</code></td>
-</tr>
-</tbody>
-</table>
-
-<ul>
-<li>Braze Developer Guide: Analytics Custom Events
-
-<ul>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/analytics/tracking_custom_events/">iOS</a></li>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/android/analytics/tracking_custom_events/">Android</a></li>
-</ul></li>
-</ul>
-
-<h3 id="notifications">Notifications</h3>
-
-<h4 id="email-notifications">Email Notifications</h4>
-
-<table>
-<thead>
-<tr>
-<th>Remote Command</th>
-<th>Braze Method</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>emailnotification</code></td>
-<td><code>setEmailNotificationSubscriptionType</code></td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Example</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>email_notification</code></td>
-<td><code>String</code></td>
-<td>[<code>&quot;optedin&quot;</code>, <code>&quot;subscribed&quot;</code>, <code>&quot;unsubscribed&quot;</code>]</td>
-</tr>
-</tbody>
-</table>
-
-<ul>
-<li>Braze Developer Guide: Analytics Email Subscriptions<br />
-
-<ul>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/analytics/setting_custom_attributes/#setting-email-subscriptions">iOS</a></li>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/android/analytics/setting_custom_attributes/#setting-up-user-subscriptions">Android</a></li>
-</ul></li>
-</ul>
-
-<h4 id="push-notifications">Push Notifications</h4>
-
-<table>
-<thead>
-<tr>
-<th>Remote Command</th>
-<th>Braze Method</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>pushnotification</td>
-<td><code>setPushNotificationSubscriptionType</code></td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Example</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>push_notification</code></td>
-<td><code>String</code></td>
-<td>[<code>&quot;optedin&quot;</code>, <code>&quot;subscribed&quot;</code>, <code>&quot;unsubscribed&quot;</code>]</td>
-</tr>
-</tbody>
-</table>
-
-<ul>
-<li>Braze Developer Guide: Analytics Push Notifications<br />
-
-<ul>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/analytics/setting_custom_attributes/#setting-up-user-subscriptions">iOS</a></li>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/android/analytics/setting_custom_attributes/#setting-up-user-subscriptions">Android</a></li>
-</ul></li>
-</ul>
-
-<h3 id="purchase-tracking">Purchase Tracking</h3>
-
-<h4 id="log-purchase">Log Purchase</h4>
-
-<table>
-<thead>
-<tr>
-<th>Remote Command</th>
-<th>Braze Method</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>logpurchase</td>
 <td><code>logPurchase</code></td>
+<td><code>fb_purchase_amount</code></td>
+<td></td>
+<td><code>Decimal/Double</code> (iOS) / <code>Double</code> (Android)</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>fb_purchase_currency</code></td>
+<td></td>
+<td><code>String</code></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td><code>fb_purchase_parameters</code></td>
+<td><code>[String: Any]</code> - Javascript object in TiQ</td>
 </tr>
 </tbody>
 </table>
 
+<ul>
+<li><a href="https://github.com/facebook/facebook-objc-sdk/blob/1a223fd53b96c6a9078dacb1005e03035db3a0ff/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L547">Facebook iOS SDK Integration - logPurchase</a></li>
+<li><a href="https://github.com/facebook/facebook-android-sdk/blob/8cc5dbb133d49f736845f999a30bfb30cf39e282/facebook-core/src/main/java/com/facebook/appevents/AppEventsLogger.java#L440">Facebook Android SDK Integration - logPurchase</a></li>
+</ul>
+
+<h3 id="flush">Flush</h3>
+
+<p>Explicitly kick off flushing of events to Facebook.  This is an asynchronous method, but it does initiate an immediate kick off.  Server failures are reported through the NotificationCenter with notification ID <code>FBSDKAppEventsLoggingResultNotification</code>.</p>
+
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
+<th>Event Name</th>
+<th>Required</th>
+<th>Optional</th>
 <th>Type</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>product_id</code> (required)</td>
-<td><code>[String]</code> / <code>String[]</code></td>
-</tr>
-
-<tr>
-<td><code>currency</code> (required)</td>
-<td><code>String</code> / <code>String</code></td>
-</tr>
-
-<tr>
-<td><code>price</code> (required)</td>
-<td><code>[Double]</code> / <code>Double[]</code></td>
-</tr>
-
-<tr>
-<td><code>quantity</code></td>
-<td><code>[Int]</code> / <code>Int[]</code></td>
-</tr>
-
-<tr>
-<td><code>purchase_properties</code></td>
-<td><code>[AnyHashable: Any]</code> / <code>JSONObject</code></td>
+<td><code>flush</code></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
 <ul>
-<li>Braze Developer Guide: Analytics Purchase Events<br />
-
-<ul>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/analytics/logging_purchases/">iOS</a></li>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/android/analytics/logging_purchases/">Android</a></li>
-</ul></li>
+<li><a href="https://github.com/facebook/facebook-objc-sdk/blob/1a223fd53b96c6a9078dacb1005e03035db3a0ff/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L730">Facebook iOS SDK Integration - flush</a></li>
+<li><a href="https://github.com/facebook/facebook-android-sdk/blob/8cc5dbb133d49f736845f999a30bfb30cf39e282/facebook-core/src/main/java/com/facebook/appevents/AppEventsLogger.java#L560">Facebook Android SDK Integration - flush</a></li>
 </ul>
 
-<h3 id="location-tracking">Location Tracking</h3>
+<h3 id="log-event">Log Event</h3>
 
-<h4 id="set-user-s-last-known-location">Set User&rsquo;s Last Known Location</h4>
+<p>The following are <a href="https://github.com/facebook/facebook-ios-sdk/blob/9909ff8215c2ca41b2b1985563a4edd057111017/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L118">Facebook Standard Events</a> and accept a number of optional <a href="https://github.com/facebook/facebook-ios-sdk/blob/9909ff8215c2ca41b2b1985563a4edd057111017/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L195">parameters</a> in the payload.</p>
+
+<ul>
+<li><code>achieveLevel</code></li>
+<li><code>adClick</code></li>
+<li><code>adImpression</code></li>
+<li><code>addPaymentInfo</code></li>
+<li><code>addToCart</code></li>
+<li><code>addToWishlist</code></li>
+<li><code>completeRegistration</code></li>
+<li><code>completeTutorial</code></li>
+<li><code>logContact</code></li>
+<li><code>viewedContent</code></li>
+<li><code>search</code></li>
+<li><code>rate</code></li>
+<li><code>customizeProduct</code></li>
+<li><code>donate</code></li>
+<li><code>findLocation</code></li>
+<li><code>schedule</code></li>
+<li><code>startTrial</code></li>
+<li><code>submitApplication</code></li>
+<li><code>subscribe</code></li>
+<li><code>subscriptionHeartbeat</code></li>
+<li><code>initiateCheckout</code></li>
+<li><code>purchase</code></li>
+<li><code>unlockAchievement</code></li>
+<li><code>spentCredits</code></li>
+</ul>
+
+<p class="note">Because the Facebook SDK is installed alongside the Tealium SDK, all native Facebook functionality is available.</p>
+
+<p>Arbitrary parameter dictionary of characteristics. The keys to this dictionary must
+be <code>NSString</code>&rsquo;s, and the values are expected to be <code>NSString</code> or <code>NSNumber</code>.  Limitations on the number of
+parameters and name construction are given in the <a href="https://github.com/facebook/facebook-ios-sdk/blob/9909ff8215c2ca41b2b1985563a4edd057111017/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L118s">FBSDKAppEvents</a> documentation.  Commonly used parameter names
+are provided in <a href="https://github.com/facebook/facebook-ios-sdk/blob/9909ff8215c2ca41b2b1985563a4edd057111017/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L195">FBSDKAppEventParameterName</a> constants.</p>
 
 <table>
 <thead>
 <tr>
-<th>Remote Command</th>
-<th>Braze Method</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>setlastknownlocation</code></td>
-<td><code>setLastKnownLocationWithLatitude</code></td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
+<th>Event Name</th>
+<th>Required</th>
+<th>Optional</th>
 <th>Type</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>latitude</code> (required)</td>
-<td><code>Double</code></td>
+<td></td>
+<td><code>command_name</code> (one of the event names listed above)</td>
+<td></td>
+<td></td>
 </tr>
 
 <tr>
-<td><code>longitude</code> (required)</td>
-<td><code>Double</code></td>
+<td>Any of the event names listed above</td>
+<td></td>
+<td><a href="https://github.com/facebook/facebook-ios-sdk/blob/9909ff8215c2ca41b2b1985563a4edd057111017/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L195">See parameters list</a></td>
+<td>Multiple</td>
 </tr>
 
 <tr>
-<td><code>horizontalAccuracy</code> (required)</td>
-<td><code>Double</code></td>
-</tr>
-
-<tr>
-<td><code>altitude</code></td>
-<td><code>Double</code></td>
-</tr>
-
-<tr>
-<td><code>verticalAccuracy</code></td>
-<td><code>Double</code></td>
+<td></td>
+<td></td>
+<td><code>fb_value_to_sum</code></td>
+<td><code>Double/Decimal</code> (iOS) / <code>Double</code> (Android)</td>
 </tr>
 </tbody>
 </table>
 
 <ul>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/analytics/location_tracking/#enabling-automatic-location-tracking">Braze Developer Guide: Analytics Location Tracking</a></li>
+<li><a href="https://github.com/facebook/facebook-objc-sdk/blob/1a223fd53b96c6a9078dacb1005e03035db3a0ff/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L456">Facebook iOS SDK Integration - logEvent</a></li>
+<li><a href="https://github.com/facebook/facebook-android-sdk/blob/8cc5dbb133d49f736845f999a30bfb30cf39e282/facebook-core/src/main/java/com/facebook/appevents/AppEventsLogger.java#L362">Facebook Android SDK Integration - logEvent</a></li>
 </ul>
 
-<h3 id="data-privacy">Data Privacy</h3>
+<h3 id="handle-push">Handle Push</h3>
 
-<h4 id="enable-sdk">Enable SDK</h4>
-
-<table>
-<thead>
-<tr>
-<th>Remote Command</th>
-<th>Braze Method (iOS)</th>
-<th>Braze Method (Android)</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>enable_sdk</code></td>
-<td><code>enableSDK</code></td>
-<td><code>enableSdk/disableSdk</code></td>
-</tr>
-</tbody>
-</table>
+<p>Used to measure app uninstalls.</p>
 
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
+<th>Event Name</th>
+<th>Required</th>
+<th>Optional</th>
 <th>Type</th>
-<th>Example</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>enable_sdk</code></td>
-<td><code>Boolean</code></td>
-<td><code>true / false</code></td>
+<td><code>setPushNotificationsDeviceToken</code></td>
+<td><code>deviceToken</code></td>
+<td></td>
+<td><code>Data</code></td>
 </tr>
 </tbody>
 </table>
 
 <ul>
-<li>Braze Developer Guide: Analytics Disabling<br />
-
-<ul>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/analytics/disabling_tracking/">iOS</a></li>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/android/analytics/disabling_tracking/">Android</a></li>
-</ul></li>
+<li><a href="https://developers.facebook.com/docs/app-events/uninstalls">Facebook iOS SDK Integration - setPushNotificationsDeviceToken</a></li>
 </ul>
 
-<h4 id="wipe-data">Wipe Data</h4>
+<p class="note">If using the Tealium Swift library, see <a href="/platforms/remote-commands/integrations/facebook/#push-message-tracking">push message tracking</a> to see how to have this handled for you. You also have the option to call this method yourself. This feature is support in the iOS remote command only.</p>
+
+<h3 id="opened-app-from-push">Opened App From Push</h3>
+
+<p>Tracks an event when the user has opened the app from a push notification.</p>
 
 <table>
 <thead>
 <tr>
-<th>Remote Command</th>
-<th>Braze Method</th>
+<th>Event Name</th>
+<th>Required</th>
+<th>Optional</th>
+<th>Type</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>wipe_data</code></td>
-<td><code>wipeData</code></td>
+<td><code>logPushNotificationOpen</code></td>
+<td><code>payload</code> (userInfo)</td>
+<td></td>
+<td><code>[String: Any]</code></td>
 </tr>
 </tbody>
 </table>
 
 <ul>
-<li>Braze Developer Guide: Analytics Disabling<br />
-
-<ul>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/analytics/disabling_tracking/">iOS</a></li>
-<li><a href="https://www.braze.com/docs/developer_guide/platform_integration_guides/android/analytics/disabling_tracking/">Android</a></li>
-</ul></li>
+<li><a href="https://github.com/facebook/facebook-objc-sdk/blob/1a223fd53b96c6a9078dacb1005e03035db3a0ff/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L627">Facebook iOS SDK Integration - logPushNotificationOpen</a></li>
 </ul>
+
+<p class="note">If using the Tealium Swift library, see <a href="/platforms/remote-commands/integrations/facebook/#push-message-tracking">push message tracking</a> to see how to have this handled for you. You also have the option to call this method yourself. This feature is support in the iOS remote command only.</p>
 
 </div>
 
 <b class="pv1 br2 dib tc mv3 link">
+
+	<div date-pref class="white">
+		
+			<a href="http://docs-preview.tealium.com/platforms/remote-commands/integrations/braze/" title="Remote Command: Braze "><svg class="fill-current" height="18px" viewBox="0 0 18 18" width="18px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+ Remote Command: Braze </a>
+		
+
+	</div>
+
 </b>
 <b style="position: absolute; right:0px;" class="pv1 br2 dib tc mv3 link">
 
 	<div date-pref class="white">
 
 		
-			<a href="http://docs-preview.tealium.com/platforms/remote-commands/integrations/facebook/" title="Remote Command: Facebook">
-			Remote Command: Facebook <svg class="fill-current" height="18px" viewBox="0 0 18 18" width="18px" xmlns="http://www.w3.org/2000/svg"> <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path> <path d="M0 0h24v24H0z" fill="none"></path> </svg>
+			<a href="http://docs-preview.tealium.com/platforms/remote-commands/integrations/firebase/" title="Remote Command: Firebase">
+			Remote Command: Firebase <svg class="fill-current" height="18px" viewBox="0 0 18 18" width="18px" xmlns="http://www.w3.org/2000/svg"> <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path> <path d="M0 0h24v24H0z" fill="none"></path> </svg>
 
 			</a>
 		
@@ -2766,7 +2463,7 @@ teal = Tealium(config: config) { responses <span style="font-weight:bold">in</sp
   </span>
 	<span id="feedback_comment">
 		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="70"></textarea>
-    <span>This page was last updated:  April 7, 2020 
+    <span>This page was last updated:  April 8, 2020 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
   </span>
