@@ -418,6 +418,7 @@ img { max-width: 100%; }
 
 */
 .br2 {        border-radius: .25rem; }
+.br3 {        border-radius: .5rem; }
 .br-100 {     border-radius: 100%; }
 /*
 
@@ -552,7 +553,7 @@ img { max-width: 100%; }
   This will set table to full width and then
   all cells will be equal width
 */
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 45em) {
   .db-ns {              display: block; }
   .dib-ns {             display: inline-block; }
 }
@@ -588,13 +589,14 @@ img { max-width: 100%; }
 .items-center   { -ms-flex-align: center; align-items: center; }
 .items-stretch  { -ms-flex-align: stretch; align-items: stretch; }
 .justify-start   { -ms-flex-pack: start; justify-content: flex-start; }
+.justify-center  { -ms-flex-pack: center; justify-content: center; }
 .justify-between { -ms-flex-pack: justify; justify-content: space-between; }
 .order-0 { -ms-flex-order: 0; order: 0; }
 .order-1 { -ms-flex-order: 1; order: 1; }
 .order-2 { -ms-flex-order: 2; order: 2; }
 .flex-grow-0 { -ms-flex-positive: 0; flex-grow: 0; }
 .flex-shrink-0 { -ms-flex-negative: 0; flex-shrink: 0; }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 45em) {
   .flex-ns { display: -ms-flexbox; display: flex; }
 }
 @media screen and (min-width: 60em) {
@@ -625,6 +627,8 @@ img { max-width: 100%; }
      -l  = large
 
 */
+.fl { float: left;  _display: inline; }
+.fr { float: right; _display: inline; }
 .fn { float: none; }
 /*@import 'tachyons/src/_font-family';*/
 /*
@@ -867,13 +871,13 @@ img { max-width: 100%; }
 .w-90 {  width:  90%; }
 .w-100 { width: 100%; }
 .w-auto { width: auto; }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 45em) {
   .w4-ns {  width: 8rem; }
   .w-30-ns { width:  30%; }
   .w-50-ns { width:  50%; }
   .w-90-ns { width:  90%; }
 }
-@media screen and (min-width: 30em) and (max-width: 60em) {
+@media screen and (min-width: 45em) and (max-width: 60em) {
   .w-50-m { width:  50%; }
 }
 @media screen and (min-width: 60em) {
@@ -1059,6 +1063,7 @@ img { max-width: 100%; }
 }
 .ma0  {  margin: 0; }
 .ml0  {  margin-left: 0; }
+.ml3  {  margin-left: 1rem; }
 .ml4  {  margin-left: 2rem; }
 .ml6 {  margin-left: 8rem; }
 .mr0  {  margin-right: 0; }
@@ -1083,7 +1088,7 @@ img { max-width: 100%; }
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 45em) {
   .pa4-ns  {  padding: 2rem; }
   .pl4-ns  {  padding-left: 2rem; }
 
@@ -1125,7 +1130,7 @@ img { max-width: 100%; }
   .mt0-ns  {  margin-top: 0; }
 
 }
-@media screen and (min-width: 30em) and (max-width: 60em) {
+@media screen and (min-width: 45em) and (max-width: 60em) {
   .ph4-m {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -1220,7 +1225,7 @@ img { max-width: 100%; }
 .tl  { text-align: left; }
 .tr  { text-align: right; }
 .tc  { text-align: center; }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 45em) {
   .tl-ns  { text-align: left; }
   .tr-ns  { text-align: right; }
   .tc-ns  { text-align: center; }
@@ -1284,7 +1289,7 @@ img { max-width: 100%; }
 .f5 { font-size: 1rem; }
 .f6 { font-size: .875rem; }
 /* Small and hard to read for many people so use with extreme caution */
-@media screen and (min-width: 30em){
+@media screen and (min-width: 45em){
   .f2-ns { font-size: 2.25rem; }
   .f3-ns { font-size: 1.5rem; }
 }
@@ -1318,7 +1323,7 @@ img { max-width: 100%; }
 }
 @media screen and (min-width: 60em) {
   .measure-wide-l {
-    max-width: 34em;
+    max-width: 40em;
   }
 }
 /*
@@ -1551,6 +1556,7 @@ img { max-width: 100%; }
 
 */
 /* Media Queries */
+/* @custom-media --breakpoint-not-small screen and (min-width: 30em); */
 /* Debugging */
 /*@import 'tachyons/src/_debug-children';
 @import 'tachyons/src/_debug-grid';*/
@@ -2009,9 +2015,6 @@ nav.side-nav>ul>li.active{
 .bg-subtle {
   background-color: #F6FAFF;
 }
-.bg-secondary {
-  background-color: #62ADF2;
-}
 .w-45 {
   min-width: 45%;
 }
@@ -2019,7 +2022,7 @@ nav.side-nav>ul>li.active{
   -ms-flex: 1 1;
       flex: 1 1;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 45em) {
   #leftFrame > .main-nav-container {
     overflow-y: hidden;
     overflow-x: hidden;
@@ -2317,7 +2320,7 @@ ul.menu-group > li:hover .tooltiptext::before {
     position: sticky;
   }
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 45em) {
   
   /* Sticky Top ----------------------------- */
   [data-scrolldir="down"] .sticky-t,
