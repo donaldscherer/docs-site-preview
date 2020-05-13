@@ -880,7 +880,6 @@ img { max-width: 100%; }
   .w-10-l {    width:  10%; }
   .w-20-l {    width:  20%; }
   .w-25-l {    width:  25%; }
-  .w-40-l {    width:  40%; }
   .w-60-l {    width:  60%; }
   .w-80-l {    width:  80%; }
   .w-90-l {    width:  90%; }
@@ -1925,7 +1924,7 @@ code, .code, pre code, .highlight pre  {
 /*@import '_hljs';*/
 /* overrides */
 .link,.link:active,.link:focus,.link:hover,.link:link,.link:visited {
-    transition: none;
+  transition: none;
 }
 .ba-link:hover {
   border-color: #3BB9F0;
@@ -2006,6 +2005,19 @@ nav.side-nav>ul>li.active{
   background: rgba(0, 0, 0, .26);
 }
 .sticky-l::-webkit-scrollbar-corner {
+}
+.bg-subtle {
+  background-color: #F6FAFF;
+}
+.bg-secondary {
+  background-color: #62ADF2;
+}
+.w-45 {
+  min-width: 45%;
+}
+.flex-1 {
+  -ms-flex: 1 1;
+      flex: 1 1;
 }
 @media screen and (min-width: 30em) {
   #leftFrame > .main-nav-container {
