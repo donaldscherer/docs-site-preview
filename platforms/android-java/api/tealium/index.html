@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.59.1" />
+     <meta name="generator" content="Hugo 0.59.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -380,15 +380,15 @@ var utag_data = {
 <h3 id="disableconsentmanager"><code>disableConsentManager()</code></h3>
 
 <p>Disables Consent Manager. Call this method after Tealium is fully initialized to disable Consent Manager.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a61717;background-color:#e3d2d2">final Tealium </span>tealiumInstance <span style="font-weight:bold">=</span> Tealium.<span style="color:#008080">createInstance</span>(TEALIUM_MAIN, config);
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="font-weight:bold">final</span> <span style="color:#900;font-weight:bold">Tealium</span> tealiumInstance <span style="font-weight:bold">=</span> Tealium.<span style="color:#008080">createInstance</span>(TEALIUM_MAIN, config);
 
 tealiumInstance.<span style="color:#008080">disableConsentManager</span>();</code></pre></div>
 <h3 id="getconsentmanager"><code>getConsentManager()</code></h3>
 
 <p>Returns the instance of Consent Manager if enabled.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a61717;background-color:#e3d2d2">final Tealium </span>tealiumInstance <span style="font-weight:bold">=</span> Tealium.<span style="color:#008080">createInstance</span>(TEALIUM_MAIN, config);
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="font-weight:bold">final</span> <span style="color:#900;font-weight:bold">Tealium</span> tealiumInstance <span style="font-weight:bold">=</span> Tealium.<span style="color:#008080">createInstance</span>(TEALIUM_MAIN, config);
 
-<span style="color:#a61717;background-color:#e3d2d2">ConsentManager consentManager </span><span style="font-weight:bold">=</span> tealiumInstance.<span style="color:#008080">getConsentManager</span>();</code></pre></div>
+ConsentManager <span style="color:#900;font-weight:bold">consentManager</span> <span style="font-weight:bold">=</span> tealiumInstance.<span style="color:#008080">getConsentManager</span>();</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -408,12 +408,12 @@ tealiumInstance.<span style="color:#008080">disableConsentManager</span>();</cod
 <h3 id="requestflush"><code>requestFlush()</code></h3>
 
 <p>Request to dispatch a batch queue of events when the batch limit has not been reached. If all other dispatching checks are okay (online, consent management, dispatch validators), the queue is dispatched.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a61717;background-color:#e3d2d2">Tealium instance </span><span style="font-weight:bold">=</span> Tealium.<span style="color:#008080">getInstance</span>(<span style="color:#b84">&#34;my_instance_name&#34;</span>);
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Tealium <span style="color:#900;font-weight:bold">instance</span> <span style="font-weight:bold">=</span> Tealium.<span style="color:#008080">getInstance</span>(<span style="color:#b84">&#34;my_instance_name&#34;</span>);
 instance.<span style="color:#008080">requestFlush</span>();</code></pre></div>
 <h3 id="trackevent"><code>trackEvent()</code></h3>
 
 <p>Track a non-view event.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Map<span style="font-weight:bold">&lt;</span>String, <span style="color:#a61717;background-color:#e3d2d2">Object&gt; data </span><span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> HashMap<span style="font-weight:bold">&lt;&gt;</span>(1);
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Map<span style="font-weight:bold">&lt;</span>String, Object<span style="font-weight:bold">&gt;</span> <span style="color:#900;font-weight:bold">data</span> <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> HashMap<span style="font-weight:bold">&lt;&gt;</span>(1);
 data.<span style="color:#008080">put</span>(<span style="color:#b84">&#34;KEY&#34;</span>, <span style="color:#b84">&#34;VALUE&#34;</span>);
 Tealium.<span style="color:#008080">getInstance</span>(<span style="color:#b84">&#34;INSTANCE KEY&#34;</span>).<span style="color:#008080">trackEvent</span>(eventName, data);</code></pre></div>
 <table>
@@ -446,7 +446,7 @@ Tealium.<span style="color:#008080">getInstance</span>(<span style="color:#b84">
 <h3 id="trackview"><code>trackView()</code></h3>
 
 <p>Track a presented view.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Map<span style="font-weight:bold">&lt;</span>String, <span style="color:#a61717;background-color:#e3d2d2">Object&gt; data </span><span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> HashMap<span style="font-weight:bold">&lt;&gt;</span>(1);
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Map<span style="font-weight:bold">&lt;</span>String, Object<span style="font-weight:bold">&gt;</span> <span style="color:#900;font-weight:bold">data</span> <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> HashMap<span style="font-weight:bold">&lt;&gt;</span>(1);
 data.<span style="color:#008080">put</span>(<span style="color:#b84">&#34;KEY&#34;</span>, <span style="color:#b84">&#34;VALUE&#34;</span>);
 Tealium.<span style="color:#008080">getInstance</span>(<span style="color:#b84">&#34;INSTANCE KEY&#34;</span>).<span style="color:#008080">trackView</span>(screenName, data);</code></pre></div>
 <table>
