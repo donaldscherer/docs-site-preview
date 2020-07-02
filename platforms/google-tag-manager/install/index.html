@@ -324,50 +324,17 @@ var utag_data = {
 <li>Click the <strong>New</strong> button.</li>
 <li>Click &ldquo;Tag Configuration&rdquo; to choose a tag type. Search and select &ldquo;Tealium Collect Tag (Beta)&rdquo; from the list.</li>
 <li>Provide a name for the tag to replace the text &ldquo;Untitled Tag&rdquo;.</li>
-<li>Set the following settings in <strong>Tag Configuration</strong>, leaving optional fields blank if the value is unknown:</li>
 </ol>
 
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
+<p>After adding the Tag, configure the following settings. Leave optional fields blank if the value is unknown.</p>
 
-<tbody>
-<tr>
-<td><code>Tealium Account</code></td>
-<td>Tealium account name</td>
-<td><code>&quot;companyXYZ&quot;</code></td>
-</tr>
-
-<tr>
-<td><code>Tealium Profile</code></td>
-<td>Tealium profile name</td>
-<td><code>&quot;main&quot;</code> </td>
-</tr>
-
-<tr>
-<td><code>Tealium Data Source Key</code></td>
-<td>(Optional) The data source key from your server-side Tealium configuration</td>
-<td><code>&quot;abc123&quot;</code></td>
-</tr>
-
-<tr>
-<td><code>Data Collection Endpoint</code></td>
-<td>(Optional) Override the Tealium Collect endpoint with your first-party data collection endpoint</td>
-<td><code>https://collect.example.co.uk/event</code></td>
-</tr>
-
-<tr>
-<td><code>Data Object</code></td>
-<td>(Optional) The custom JavaScript variable to use instead of the global dataLayer object</td>
-<td><code>{{myObject}}</code> </td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><strong>Tealium Account</strong> (required): The Tealium account name. For example, <code>companyXYZ</code>.<br /></li>
+<li><strong>Tealium Profile</strong> (required): The Tealium profile name. For example, <code>main</code>.<br /></li>
+<li><strong>Tealium Data Source Key</strong> (optional): The data source key from your server-side Tealium configuration. For example, <code>abc123</code>.<br /></li>
+<li><strong>Data Collection Endpoint</strong> (optional): Override the Tealium Collect endpoint with your first-party data collection endpoint. For example, <code>https://collect.example.co.uk/event</code>.<br /></li>
+<li><strong>Data Object</strong> (optional): The custom JavaScript variable to use instead of the global dataLayer object. For example, <code>{{myObject}}</code>.</li>
+</ul>
 
 <h3 id="triggers">Triggers</h3>
 
@@ -1540,7 +1507,7 @@ var utag_data = {
   </span>
 	<span id="feedback_comment">
 		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="70"></textarea>
-    <span>This page was last updated:  July 1, 2020 
+    <span>This page was last updated:  July 2, 2020 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
   </span>
