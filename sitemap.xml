@@ -128,6 +128,11 @@
   </url>
   
   <url>
+    <loc>https://docs-preview.tealium.com/platforms/google-tag-manager/</loc>
+    <lastmod>2020-06-05T14:24:19-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs-preview.tealium.com/platforms/java/</loc>
     <lastmod>2020-01-24T10:14:42-08:00</lastmod>
     <xhtml:link
@@ -478,21 +483,6 @@
   </url>
   
   <url>
-    <loc>https://docs-preview.tealium.com/platforms/javascript/install/</loc>
-    <lastmod>2019-11-01T11:31:01-07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/platforms/javascript/install/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs-preview.tealium.com/platforms/javascript/install/"
-                />
-  </url>
-  
-  <url>
     <loc>https://docs-preview.tealium.com/platforms/node/install/</loc>
     <lastmod>2020-02-20T11:20:19-08:00</lastmod>
     <xhtml:link
@@ -648,6 +638,11 @@
   </url>
   
   <url>
+    <loc>https://docs-preview.tealium.com/platforms/google-tag-manager/install/</loc>
+    <lastmod>2020-07-01T16:26:20-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs-preview.tealium.com/platforms/amp/data-layer/</loc>
     <lastmod>2020-01-23T15:54:07-08:00</lastmod>
   </url>
@@ -798,6 +793,11 @@
   </url>
   
   <url>
+    <loc>https://docs-preview.tealium.com/platforms/google-tag-manager/data-layer/</loc>
+    <lastmod>2020-06-30T15:28:49-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs-preview.tealium.com/platforms/csharp/data-layer/</loc>
     <lastmod>2020-01-23T15:54:07-08:00</lastmod>
   </url>
@@ -855,6 +855,21 @@
   <url>
     <loc>https://docs-preview.tealium.com/platforms/cordova/data-management/</loc>
     <lastmod>2019-10-31T16:00:36-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/javascript/install/</loc>
+    <lastmod>2020-06-05T14:24:19-07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://docs-preview.tealium.co.jp/platforms/javascript/install/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs-preview.tealium.com/platforms/javascript/install/"
+                />
   </url>
   
   <url>
