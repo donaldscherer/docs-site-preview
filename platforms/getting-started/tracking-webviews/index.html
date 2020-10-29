@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.59.1" />
+     <meta name="generator" content="Hugo 0.59.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -362,15 +362,15 @@ This native code uses a JavaScript interface to receive the messages containing 
   <div class="tab-content">
 <div class="tab-pane" data-lang="Android" title="Android">
   <p>To invoke native Android code from JavaScript, implement a class with methods marked <a href="https://developer.android.com/reference/android/webkit/JavascriptInterface"><code>@JavaScriptInterface</code></a>:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a61717;background-color:#e3d2d2">public class </span>WebViewInterface {
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="font-weight:bold">public</span> <span style="color:#900;font-weight:bold">class</span> WebViewInterface {
 
     @JavascriptInterface
-    <span style="color:#a61717;background-color:#e3d2d2">public void </span>trackView(<span style="color:#a61717;background-color:#e3d2d2">String eventName</span>, <span style="color:#a61717;background-color:#e3d2d2">String data</span>) <span style="color:#a61717;background-color:#e3d2d2">throws JSONException </span>{
+    <span style="font-weight:bold">public</span> <span style="color:#900;font-weight:bold">void</span> trackView(String <span style="color:#900;font-weight:bold">eventName</span>, String <span style="color:#900;font-weight:bold">data</span>) <span style="font-weight:bold">throws</span> <span style="color:#900;font-weight:bold">JSONException</span> {
         TealiumHelper.<span style="color:#008080">trackView</span>(eventName, <span style="font-weight:bold">new</span> JSONObject(data));
     }
 
     @JavascriptInterface
-    <span style="color:#a61717;background-color:#e3d2d2">public void </span>trackEvent(<span style="color:#a61717;background-color:#e3d2d2">String eventName</span>, <span style="color:#a61717;background-color:#e3d2d2">String data</span>) <span style="color:#a61717;background-color:#e3d2d2">throws JSONException </span>{
+    <span style="font-weight:bold">public</span> <span style="color:#900;font-weight:bold">void</span> trackEvent(String <span style="color:#900;font-weight:bold">eventName</span>, String <span style="color:#900;font-weight:bold">data</span>) <span style="font-weight:bold">throws</span> <span style="color:#900;font-weight:bold">JSONException</span> {
         TealiumHelper.<span style="color:#008080">trackEvent</span>(eventName, <span style="font-weight:bold">new</span> JSONObject(data));
     }
 }</code></pre></div>
