@@ -203,6 +203,11 @@
   </url>
   
   <url>
+    <loc>https://docs-preview.tealium.com/platforms/nativescript/</loc>
+    <lastmod>2021-01-11T17:51:44+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs-preview.tealium.com/platforms/react-native/</loc>
     <lastmod>2021-01-27T14:25:32-08:00</lastmod>
     <xhtml:link
@@ -603,6 +608,11 @@
   </url>
   
   <url>
+    <loc>https://docs-preview.tealium.com/platforms/nativescript/api/tealium/</loc>
+    <lastmod>2021-01-28T07:40:24-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs-preview.tealium.com/platforms/ios-swift-v1/api/tealium-config/</loc>
     <lastmod>2020-07-23T16:42:41-07:00</lastmod>
   </url>
@@ -928,6 +938,11 @@
   </url>
   
   <url>
+    <loc>https://docs-preview.tealium.com/platforms/nativescript/install/</loc>
+    <lastmod>2021-01-28T07:40:24-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs-preview.tealium.com/platforms/python/install/</loc>
     <lastmod>2020-02-20T11:20:19-08:00</lastmod>
     <xhtml:link
@@ -990,6 +1005,11 @@
                 hreflang="en"
                 href="https://docs-preview.tealium.com/platforms/ios-swift/api/tealium-config/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/nativescript/api/tealium-config/</loc>
+    <lastmod>2021-01-27T11:56:24-08:00</lastmod>
   </url>
   
   <url>
@@ -1408,6 +1428,11 @@
   </url>
   
   <url>
+    <loc>https://docs-preview.tealium.com/platforms/nativescript/track/</loc>
+    <lastmod>2021-01-27T11:56:24-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs-preview.tealium.com/platforms/python/track/</loc>
     <lastmod>2019-10-31T16:00:36-07:00</lastmod>
     <xhtml:link
@@ -1700,6 +1725,11 @@
                 hreflang="en"
                 href="https://docs-preview.tealium.com/platforms/angular/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/nativescript/api/</loc>
+    <lastmod>2021-01-22T09:54:54-08:00</lastmod>
   </url>
   
   <url>
@@ -2080,6 +2110,11 @@
   <url>
     <loc>https://docs-preview.tealium.com/platforms/android-kotlin/api/lifecycle/</loc>
     <lastmod>2020-08-12T15:19:51-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/nativescript/release-notes/</loc>
+    <lastmod>2021-01-20T10:57:54-08:00</lastmod>
   </url>
   
   <url>
