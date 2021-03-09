@@ -275,46 +275,21 @@
   <url>
     <loc>https://docs-preview.tealium.com/guides/eventstream/</loc>
     <lastmod>2020-05-05T13:07:26-07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/guides/eventstream/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs-preview.tealium.com/guides/eventstream/"
-                />
   </url>
   
   <url>
     <loc>https://docs-preview.tealium.com/guides/iq-tag-management/</loc>
     <lastmod>2020-05-05T13:07:26-07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/guides/iq-tag-management/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs-preview.tealium.com/guides/iq-tag-management/"
-                />
   </url>
   
   <url>
     <loc>https://docs-preview.tealium.com/guides/audiencestream/</loc>
     <lastmod>2020-05-13T16:16:08-07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/guides/audiencestream/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs-preview.tealium.com/guides/audiencestream/"
-                />
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/guides/predict/</loc>
+    <lastmod>2021-03-02T21:23:44-08:00</lastmod>
   </url>
   
   <url>
@@ -484,7 +459,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/partners/data-sources/</loc>
-    <lastmod>2021-01-27T12:53:17-08:00</lastmod>
+    <lastmod>2021-02-24T06:44:02-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -589,7 +564,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/getting-started-web/quick-start/</loc>
-    <lastmod>2021-02-02T13:27:30-08:00</lastmod>
+    <lastmod>2021-03-05T10:58:22-08:00</lastmod>
   </url>
   
   <url>
@@ -619,7 +594,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/partners/cmp-plugins/</loc>
-    <lastmod>2021-02-22T15:23:22-08:00</lastmod>
+    <lastmod>2021-02-24T06:44:02-08:00</lastmod>
   </url>
   
   <url>
@@ -834,7 +809,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/partners/cms-plugins/</loc>
-    <lastmod>2021-02-22T15:23:22-08:00</lastmod>
+    <lastmod>2021-02-24T06:44:02-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -944,7 +919,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/nativescript/install/</loc>
-    <lastmod>2021-01-28T07:40:24-08:00</lastmod>
+    <lastmod>2021-03-04T11:04:38-08:00</lastmod>
   </url>
   
   <url>
@@ -1344,7 +1319,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/partners/tags/</loc>
-    <lastmod>2020-05-21T13:15:14-07:00</lastmod>
+    <lastmod>2021-02-24T06:44:02-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -1754,7 +1729,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/unity/api/</loc>
-    <lastmod>2020-02-07T16:26:31-08:00</lastmod>
+    <lastmod>2021-03-01T11:58:10+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -1834,7 +1809,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/partners/mobile/</loc>
-    <lastmod>2020-05-21T13:15:14-07:00</lastmod>
+    <lastmod>2021-02-24T06:44:02-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -1934,7 +1909,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/java/release-notes/</loc>
-    <lastmod>2019-12-04T15:06:16-08:00</lastmod>
+    <lastmod>2021-03-02T14:30:32-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -1954,7 +1929,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/react-native/release-notes/</loc>
-    <lastmod>2021-01-19T16:24:57-08:00</lastmod>
+    <lastmod>2021-03-08T14:32:38-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -1969,7 +1944,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/android-java/data-management/</loc>
-    <lastmod>2020-07-29T14:51:02-07:00</lastmod>
+    <lastmod>2021-02-25T09:54:47+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -2054,7 +2029,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/partners/connectors/</loc>
-    <lastmod>2020-05-21T13:15:14-07:00</lastmod>
+    <lastmod>2021-02-24T06:44:02-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
