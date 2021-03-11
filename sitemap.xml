@@ -153,11 +153,6 @@
   </url>
   
   <url>
-    <loc>https://docs-preview.tealium.com/platforms/google-tag-manager/</loc>
-    <lastmod>2020-06-05T14:24:19-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs-preview.tealium.com/platforms/java/</loc>
     <lastmod>2020-01-24T10:14:42-08:00</lastmod>
     <xhtml:link
@@ -313,6 +308,11 @@
   </url>
   
   <url>
+    <loc>https://docs-preview.tealium.com/platforms/google-tag-manager/</loc>
+    <lastmod>2021-03-11T12:33:21-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs-preview.tealium.com/guides/eventstream/getting-started/</loc>
     <lastmod>2021-03-10T08:41:21-08:00</lastmod>
     <xhtml:link
@@ -373,21 +373,6 @@
   </url>
   
   <url>
-    <loc>https://docs-preview.tealium.com/platforms/javascript/install/</loc>
-    <lastmod>2021-01-26T10:08:49-08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/platforms/javascript/install/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs-preview.tealium.com/platforms/javascript/install/"
-                />
-  </url>
-  
-  <url>
     <loc>https://docs-preview.tealium.com/platforms/ios-objective-c/module-list/lifecycle-tracking/</loc>
     <lastmod>2019-11-22T08:41:33-08:00</lastmod>
     <xhtml:link
@@ -399,6 +384,51 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://docs-preview.tealium.com/platforms/ios-objective-c/module-list/lifecycle-tracking/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/amp/</loc>
+    <lastmod>2021-03-11T12:33:21-08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://docs-preview.tealium.co.jp/platforms/amp/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs-preview.tealium.com/platforms/amp/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/angular/</loc>
+    <lastmod>2021-03-11T12:33:21-08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://docs-preview.tealium.co.jp/platforms/angular/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs-preview.tealium.com/platforms/angular/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/javascript/</loc>
+    <lastmod>2021-03-11T12:33:21-08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://docs-preview.tealium.co.jp/platforms/javascript/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs-preview.tealium.com/platforms/javascript/"
                 />
   </url>
   
@@ -494,21 +524,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://docs-preview.tealium.com/guides/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://docs-preview.tealium.com/platforms/amp/install/</loc>
-    <lastmod>2020-02-20T11:20:19-08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/platforms/amp/install/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs-preview.tealium.com/platforms/amp/install/"
                 />
   </url>
   
@@ -703,6 +718,21 @@
   </url>
   
   <url>
+    <loc>https://docs-preview.tealium.com/platforms/javascript/install/</loc>
+    <lastmod>2021-03-11T12:33:21-08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://docs-preview.tealium.co.jp/platforms/javascript/install/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs-preview.tealium.com/platforms/javascript/install/"
+                />
+  </url>
+  
+  <url>
     <loc>https://docs-preview.tealium.com/platforms/node/install/</loc>
     <lastmod>2020-02-20T11:20:19-08:00</lastmod>
     <xhtml:link
@@ -749,21 +779,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://docs-preview.tealium.com/platforms/ruby/install/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://docs-preview.tealium.com/platforms/javascript/track/</loc>
-    <lastmod>2021-01-27T17:37:23-08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/platforms/javascript/track/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs-preview.tealium.com/platforms/javascript/track/"
                 />
   </url>
   
@@ -859,6 +874,21 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://docs-preview.tealium.com/platforms/remote-commands/how-it-works/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/amp/install/</loc>
+    <lastmod>2021-03-11T12:33:21-08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://docs-preview.tealium.co.jp/platforms/amp/install/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs-preview.tealium.com/platforms/amp/install/"
                 />
   </url>
   
@@ -993,21 +1023,6 @@
   </url>
   
   <url>
-    <loc>https://docs-preview.tealium.com/platforms/amp/track/</loc>
-    <lastmod>2020-01-23T16:57:00-08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/platforms/amp/track/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs-preview.tealium.com/platforms/amp/track/"
-                />
-  </url>
-  
-  <url>
     <loc>https://docs-preview.tealium.com/platforms/ios-swift/track/</loc>
     <lastmod>2020-12-09T11:48:33-08:00</lastmod>
     <xhtml:link
@@ -1033,23 +1048,18 @@
   </url>
   
   <url>
+    <loc>https://docs-preview.tealium.com/platforms/google-tag-manager/data-layer/</loc>
+    <lastmod>2021-03-11T12:33:21-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs-preview.tealium.com/platforms/android-kotlin/module-list/install-referrer/</loc>
     <lastmod>2021-01-28T08:12:26-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs-preview.tealium.com/platforms/amp/data-layer/</loc>
-    <lastmod>2020-01-23T15:54:07-08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/platforms/amp/data-layer/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs-preview.tealium.com/platforms/amp/data-layer/"
-                />
+    <loc>https://docs-preview.tealium.com/platforms/google-tag-manager/install/</loc>
+    <lastmod>2021-03-11T12:33:21-08:00</lastmod>
   </url>
   
   <url>
@@ -1094,21 +1104,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://docs-preview.tealium.com/platforms/cordova/module-list/install-referrer/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://docs-preview.tealium.com/platforms/amp/</loc>
-    <lastmod>2021-01-26T10:08:49-08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/platforms/amp/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs-preview.tealium.com/platforms/amp/"
                 />
   </url>
   
@@ -1169,6 +1164,21 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://docs-preview.tealium.com/platforms/java/track/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/javascript/track/</loc>
+    <lastmod>2021-03-11T12:33:21-08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://docs-preview.tealium.co.jp/platforms/javascript/track/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs-preview.tealium.com/platforms/javascript/track/"
                 />
   </url>
   
@@ -1348,6 +1358,21 @@
   </url>
   
   <url>
+    <loc>https://docs-preview.tealium.com/platforms/amp/track/</loc>
+    <lastmod>2021-03-11T12:33:21-08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://docs-preview.tealium.co.jp/platforms/amp/track/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs-preview.tealium.com/platforms/amp/track/"
+                />
+  </url>
+  
+  <url>
     <loc>https://docs-preview.tealium.com/platforms/android-java/track/</loc>
     <lastmod>2020-07-29T14:51:02-07:00</lastmod>
     <xhtml:link
@@ -1473,11 +1498,6 @@
   </url>
   
   <url>
-    <loc>https://docs-preview.tealium.com/platforms/google-tag-manager/data-layer/</loc>
-    <lastmod>2020-06-30T15:28:49-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs-preview.tealium.com/platforms/android-kotlin/module-list/lifecycle-tracking/</loc>
     <lastmod>2021-01-28T08:12:26-08:00</lastmod>
   </url>
@@ -1494,6 +1514,21 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://docs-preview.tealium.com/platforms/csharp/data-layer/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/amp/data-layer/</loc>
+    <lastmod>2021-03-11T12:33:21-08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://docs-preview.tealium.co.jp/platforms/amp/data-layer/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs-preview.tealium.com/platforms/amp/data-layer/"
                 />
   </url>
   
@@ -1688,21 +1723,6 @@
   </url>
   
   <url>
-    <loc>https://docs-preview.tealium.com/platforms/angular/</loc>
-    <lastmod>2021-01-26T10:08:49-08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/platforms/angular/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs-preview.tealium.com/platforms/angular/"
-                />
-  </url>
-  
-  <url>
     <loc>https://docs-preview.tealium.com/platforms/nativescript/api/</loc>
     <lastmod>2021-01-22T09:54:54-08:00</lastmod>
   </url>
@@ -1868,11 +1888,6 @@
   </url>
   
   <url>
-    <loc>https://docs-preview.tealium.com/platforms/google-tag-manager/install/</loc>
-    <lastmod>2021-01-27T14:25:32-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs-preview.tealium.com/platforms/android-java/module-list/location/</loc>
     <lastmod>2020-08-17T11:10:48-07:00</lastmod>
     <xhtml:link
@@ -2000,6 +2015,21 @@
   <url>
     <loc>https://docs-preview.tealium.com/platforms/ios-swift-v1/data-management/</loc>
     <lastmod>2020-07-23T16:42:41-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/javascript/universal-data-object/</loc>
+    <lastmod>2021-03-11T12:33:21-08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://docs-preview.tealium.co.jp/platforms/javascript/universal-data-object/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs-preview.tealium.com/platforms/javascript/universal-data-object/"
+                />
   </url>
   
   <url>
@@ -2253,32 +2283,17 @@
   </url>
   
   <url>
-    <loc>https://docs-preview.tealium.com/platforms/javascript/</loc>
-    <lastmod>2021-01-26T10:08:49-08:00</lastmod>
+    <loc>https://docs-preview.tealium.com/platforms/javascript/universal-tag/</loc>
+    <lastmod>2021-03-11T12:33:21-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/platforms/javascript/"
+                href="https://docs-preview.tealium.co.jp/platforms/javascript/universal-tag/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs-preview.tealium.com/platforms/javascript/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://docs-preview.tealium.com/platforms/javascript/universal-data-object/</loc>
-    <lastmod>2020-09-11T10:16:05-07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/platforms/javascript/universal-data-object/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs-preview.tealium.com/platforms/javascript/universal-data-object/"
+                href="https://docs-preview.tealium.com/platforms/javascript/universal-tag/"
                 />
   </url>
   
@@ -2413,6 +2428,21 @@
   </url>
   
   <url>
+    <loc>https://docs-preview.tealium.com/platforms/javascript/data-layer-object/</loc>
+    <lastmod>2021-03-11T12:33:21-08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://docs-preview.tealium.co.jp/platforms/javascript/data-layer-object/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs-preview.tealium.com/platforms/javascript/data-layer-object/"
+                />
+  </url>
+  
+  <url>
     <loc>https://docs-preview.tealium.com/platforms/ios-swift-v1/modules/</loc>
     <lastmod>2020-07-23T16:42:41-07:00</lastmod>
   </url>
@@ -2459,21 +2489,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://docs-preview.tealium.com/platforms/xamarin/release-notes/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://docs-preview.tealium.com/platforms/javascript/universal-tag/</loc>
-    <lastmod>2020-05-12T13:18:41-07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/platforms/javascript/universal-tag/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs-preview.tealium.com/platforms/javascript/universal-tag/"
                 />
   </url>
   
@@ -2528,8 +2543,18 @@
   </url>
   
   <url>
+    <loc>https://docs-preview.tealium.com/platforms/remote-commands/integrations/kochava/</loc>
+    <lastmod>2021-03-10T08:41:21-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/android-kotlin/tv/</loc>
+    <lastmod>2020-08-11T13:02:56-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs-preview.tealium.com/platforms/javascript/single-page-applications/</loc>
-    <lastmod>2021-01-21T15:06:24-08:00</lastmod>
+    <lastmod>2021-03-11T12:33:21-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -2540,31 +2565,6 @@
                 hreflang="en"
                 href="https://docs-preview.tealium.com/platforms/javascript/single-page-applications/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs-preview.tealium.com/platforms/javascript/data-layer-object/</loc>
-    <lastmod>2020-05-05T13:07:26-07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/platforms/javascript/data-layer-object/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs-preview.tealium.com/platforms/javascript/data-layer-object/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://docs-preview.tealium.com/platforms/remote-commands/integrations/kochava/</loc>
-    <lastmod>2021-03-10T08:41:21-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs-preview.tealium.com/platforms/android-kotlin/tv/</loc>
-    <lastmod>2020-08-11T13:02:56-07:00</lastmod>
   </url>
   
   <url>
@@ -2614,21 +2614,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://docs-preview.tealium.com/platforms/ios-swift/module-list/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://docs-preview.tealium.com/platforms/javascript/settings/</loc>
-    <lastmod>2020-09-10T14:52:59-07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/platforms/javascript/settings/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs-preview.tealium.com/platforms/javascript/settings/"
                 />
   </url>
   
@@ -2708,21 +2693,6 @@
   </url>
   
   <url>
-    <loc>https://docs-preview.tealium.com/platforms/javascript/debugging/</loc>
-    <lastmod>2020-06-29T14:02:54-07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/platforms/javascript/debugging/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs-preview.tealium.com/platforms/javascript/debugging/"
-                />
-  </url>
-  
-  <url>
     <loc>https://docs-preview.tealium.com/platforms/getting-started/deep-linking/</loc>
     <lastmod>2020-10-20T13:22:20-07:00</lastmod>
   </url>
@@ -2730,6 +2700,21 @@
   <url>
     <loc>https://docs-preview.tealium.com/platforms/ios-swift-v1/feature-comparison/</loc>
     <lastmod>2020-07-23T16:42:41-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/javascript/settings/</loc>
+    <lastmod>2021-03-11T12:33:21-08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://docs-preview.tealium.co.jp/platforms/javascript/settings/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs-preview.tealium.com/platforms/javascript/settings/"
+                />
   </url>
   
   <url>
@@ -2793,6 +2778,21 @@
   </url>
   
   <url>
+    <loc>https://docs-preview.tealium.com/platforms/javascript/debugging/</loc>
+    <lastmod>2021-03-11T12:33:21-08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://docs-preview.tealium.co.jp/platforms/javascript/debugging/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs-preview.tealium.com/platforms/javascript/debugging/"
+                />
+  </url>
+  
+  <url>
     <loc>https://docs-preview.tealium.com/platforms/ios-objective-c/watchos/</loc>
     <lastmod>2020-02-20T11:20:19-08:00</lastmod>
     <xhtml:link
@@ -2848,11 +2848,6 @@
   </url>
   
   <url>
-    <loc>https://docs-preview.tealium.com/platforms/javascript/api/</loc>
-    <lastmod>2020-07-16T09:35:14-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs-preview.tealium.com/platforms/ios-swift-v1/module-list/dispatch-queue/</loc>
     <lastmod>2020-09-18T13:53:59-07:00</lastmod>
   </url>
@@ -2903,21 +2898,6 @@
   </url>
   
   <url>
-    <loc>https://docs-preview.tealium.com/platforms/javascript/release-notes/</loc>
-    <lastmod>2021-01-13T16:05:53-08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/platforms/javascript/release-notes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs-preview.tealium.com/platforms/javascript/release-notes/"
-                />
-  </url>
-  
-  <url>
     <loc>https://docs-preview.tealium.com/platforms/ios-objective-c/api/</loc>
     <lastmod>2020-02-20T11:58:50-08:00</lastmod>
     <xhtml:link
@@ -2930,6 +2910,11 @@
                 hreflang="en"
                 href="https://docs-preview.tealium.com/platforms/ios-objective-c/api/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/javascript/api/</loc>
+    <lastmod>2021-03-11T12:33:21-08:00</lastmod>
   </url>
   
   <url>
@@ -2984,6 +2969,21 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://docs-preview.tealium.com/platforms/ios-objective-c/release-notes/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/javascript/release-notes/</loc>
+    <lastmod>2021-03-11T12:33:21-08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://docs-preview.tealium.co.jp/platforms/javascript/release-notes/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs-preview.tealium.com/platforms/javascript/release-notes/"
                 />
   </url>
   
