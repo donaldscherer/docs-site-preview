@@ -608,6 +608,11 @@
   </url>
   
   <url>
+    <loc>https://docs-preview.tealium.com/platforms/google-tag-manager/install/</loc>
+    <lastmod>2021-03-11T12:38:14-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs-preview.tealium.com/platforms/android-java/module-list/crash-reporter/</loc>
     <lastmod>2020-08-17T11:10:48-07:00</lastmod>
     <xhtml:link
@@ -1055,11 +1060,6 @@
   <url>
     <loc>https://docs-preview.tealium.com/platforms/android-kotlin/module-list/install-referrer/</loc>
     <lastmod>2021-01-28T08:12:26-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs-preview.tealium.com/platforms/google-tag-manager/install/</loc>
-    <lastmod>2021-03-11T12:33:21-08:00</lastmod>
   </url>
   
   <url>
