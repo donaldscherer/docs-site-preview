@@ -402,7 +402,7 @@ This native code uses a JavaScript interface to receive the messages containing 
 <div class="tab-pane" data-lang="iOS" title="iOS">
   <p>Add the following message handler to the WebView&rsquo;s user <a href="https://developer.apple.com/documentation/webkit/wkusercontentcontroller">content controller</a>:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">webView.configuration.userContentController.add(<span style="font-weight:bold">self</span>, name: <span style="color:#b84">&#34;tealium&#34;</span>)</code></pre></div>
-<p>To invoke native iOS code from JavaScript, create a message handler class conforming to the <a href="https://developer.apple.com/documentation/webkit/wkscriptmessagehandler">WKScriptMessageHandler</a> protocol. For tracking, call <a href="https://docs.tealium.com/platforms/ios-swift/track/">Tealium.track</a> inside the <a href="https://developer.apple.com/documentation/webkit/wkscriptmessagehandler/1396222-usercontentcontroller">userContentController:didReceive:</a> callback:</p>
+<p>To invoke native iOS code from JavaScript, create a message handler class conforming to the <a href="https://developer.apple.com/documentation/webkit/wkscriptmessagehandler">WKScriptMessageHandler</a> protocol. For tracking, call <a href="/platforms/ios-swift/track/">Tealium.track</a> inside the <a href="https://developer.apple.com/documentation/webkit/wkscriptmessagehandler/1396222-usercontentcontroller">userContentController:didReceive:</a> callback:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">userContentController</span>(<span style="font-weight:bold">_</span> userContentController: WKUserContentController,
                           didReceive message: WKScriptMessage) {
 
@@ -6605,7 +6605,7 @@ This native code uses a JavaScript interface to receive the messages containing 
   </span>
 	<span id="feedback_comment">
 		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="70"></textarea>
-    <span>This page was last updated:  October 20, 2020 
+    <span>This page was last updated:  March 10, 2021 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
   </span>
