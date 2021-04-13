@@ -559,7 +559,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/adobe-launch/</loc>
-    <lastmod>2021-03-18T07:32:48-07:00</lastmod>
+    <lastmod>2021-04-13T12:42:37-07:00</lastmod>
   </url>
   
   <url>
@@ -793,13 +793,18 @@
   </url>
   
   <url>
+    <loc>https://docs-preview.tealium.com/platforms/getting-started-web/data-layer/an-introduction-to-the-data-layer/</loc>
+    <lastmod>2021-04-13T12:25:46-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs-preview.tealium.com/platforms/ios-swift-v1/module-list/attribution/</loc>
     <lastmod>2020-09-28T08:37:19-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/ios-swift/module-list/attribution/</loc>
-    <lastmod>2020-10-30T10:47:12-07:00</lastmod>
+    <lastmod>2021-04-13T10:37:16-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -889,7 +894,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/adobe-launch/install/</loc>
-    <lastmod>2021-03-18T07:32:48-07:00</lastmod>
+    <lastmod>2021-04-13T12:42:37-07:00</lastmod>
   </url>
   
   <url>
@@ -1264,7 +1269,12 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/adobe-launch/data-layer/</loc>
-    <lastmod>2021-03-18T07:32:48-07:00</lastmod>
+    <lastmod>2021-04-13T12:42:37-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/getting-started-web/data-layer/</loc>
+    <lastmod>2021-04-13T12:25:46-07:00</lastmod>
   </url>
   
   <url>
@@ -1280,6 +1290,11 @@
                 hreflang="en"
                 href="https://docs-preview.tealium.com/platforms/ios-swift/data-layer/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/getting-started-web/data-layer/how-the-data-layer-works-for-websites/</loc>
+    <lastmod>2021-04-13T12:25:46-07:00</lastmod>
   </url>
   
   <url>
@@ -1815,6 +1830,11 @@
   <url>
     <loc>https://docs-preview.tealium.com/platforms/android-kotlin/data-layer/</loc>
     <lastmod>2021-04-01T11:08:23-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/getting-started-web/data-layer/data-layer-best-practices/</loc>
+    <lastmod>2021-04-13T12:25:46-07:00</lastmod>
   </url>
   
   <url>
@@ -2848,6 +2868,11 @@
   </url>
   
   <url>
+    <loc>https://docs-preview.tealium.com/platforms/getting-started-web/data-layer/definitions/</loc>
+    <lastmod>2021-04-13T12:25:46-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs-preview.tealium.com/platforms/ios-swift-v1/module-list/dispatch-queue/</loc>
     <lastmod>2020-09-18T13:53:59-07:00</lastmod>
   </url>
@@ -3008,6 +3033,11 @@
   </url>
   
   <url>
+    <loc>https://docs-preview.tealium.com/platforms/getting-started-web/data-layer/definitions/retail/</loc>
+    <lastmod>2021-04-13T12:25:46-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs-preview.tealium.com/platforms/getting-started/troubleshooting/</loc>
     <lastmod>2020-11-09T09:37:07-08:00</lastmod>
     <xhtml:link
@@ -3048,6 +3078,16 @@
   </url>
   
   <url>
+    <loc>https://docs-preview.tealium.com/platforms/getting-started-web/data-layer/definitions/publisher/</loc>
+    <lastmod>2021-04-13T12:25:46-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/getting-started-web/data-layer/definitions/hotel/</loc>
+    <lastmod>2021-04-13T12:25:46-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs-preview.tealium.com/platforms/ios-swift-v1/module-list/persistent-data/</loc>
     <lastmod>2020-07-29T11:00:52-07:00</lastmod>
   </url>
@@ -3070,6 +3110,16 @@
                 hreflang="en"
                 href="https://docs-preview.tealium.com/platforms/ios-swift/module-list/remote-commands/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/getting-started-web/data-layer/definitions/travel/</loc>
+    <lastmod>2021-04-13T12:25:46-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/getting-started-web/data-layer/definitions/basic-video-tracking/</loc>
+    <lastmod>2021-04-13T12:25:46-07:00</lastmod>
   </url>
   
   <url>
