@@ -252,8 +252,8 @@ var utag_data = {
       <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#tealiumconfig">TealiumConfig</a></li>
               <ul class="toc-h3"><li><a href="#collectors">Collectors</a></li>
               <li><a href="#consentpolicy">ConsentPolicy</a></li>
+              <li><a href="#consentexpiry">ConsentExpiry</a></li>
               <li><a href="#dispatchers">Dispatchers</a></li>
-              <li><a href="#expiry">Expiry</a></li>
               <li><a href="#loglevel">LogLevel</a></li>
               <li><a href="#tealiumenvironment">TealiumEnvironment</a></li>
               <li><a href="#visitorprofile">VisitorProfile</a></li>
@@ -326,9 +326,9 @@ var utag_data = {
 
 <tr>
 <td><code>consentExpiry</code></td>
-<td><a href="#expiry"><code>Expiry</code></a></td>
+<td><a href="#consentexpiry"><code>ConsentExpiry</code></a></td>
 <td>Sets the expiration of the user&rsquo;s consent preferences. (default is dependent upon policy)</td>
-<td><code>ConsentExpiry(90, TimeUnit.days)</code></td>
+<td><code>new ConsentExpiry(90, TimeUnit.days)</code></td>
 </tr>
 
 <tr>
@@ -536,6 +536,76 @@ var utag_data = {
 </tbody>
 </table>
 
+<h3 id="consentexpiry"><code>ConsentExpiry</code></h3>
+
+<p>Defines user consent preferences expiration.</p>
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>time</code></td>
+<td><code>Number</code></td>
+<td>The amount of time before expiration</td>
+<td><code>90</code></td>
+</tr>
+
+<tr>
+<td><code>unit</code></td>
+<td><code>TimeUnit</code></td>
+<td>The unit of time before expiration</td>
+<td><code>TimeUnit.days</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>Example:</p>
+
+<p><code>new ConsentExpiry(90, TimeUnit.days)</code></p>
+
+<h4 id="timeunit">TimeUnit</h4>
+
+<p>The following time units are available:</p>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>.minutes</code></td>
+<td>Minutes</td>
+</tr>
+
+<tr>
+<td><code>.hours</code></td>
+<td>Hours</td>
+</tr>
+
+<tr>
+<td><code>.days</code></td>
+<td>Days</td>
+</tr>
+
+<tr>
+<td><code>.months</code></td>
+<td>Months</td>
+</tr>
+</tbody>
+</table>
+
 <h3 id="dispatchers"><code>Dispatchers</code></h3>
 
 <p>Dispatchers are modules that send the data from your data layer to a Tealium endpoint. The following dispatchers are currently available:</p>
@@ -567,38 +637,6 @@ var utag_data = {
 </table>
 
 <p class="note">At least one dispatcher is required. If no dispatchers are specified, no tracking occurs.</p>
-
-<h3 id="expiry"><code>Expiry</code></h3>
-
-<p>Defines the expiration time for setting a property that expires.</p>
-
-<p>The following expiry options are available:</p>
-
-<table>
-<thead>
-<tr>
-<th align="left">Value</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="left"><code>Expiry.session</code> (default)</td>
-<td align="left">Expires at the end of the current session</td>
-</tr>
-
-<tr>
-<td align="left"><code>Expiry.forever</code></td>
-<td align="left">Never expires while the app is installed</td>
-</tr>
-
-<tr>
-<td align="left"><code>Expiry.untilRestart</code></td>
-<td align="left">Expires when device is restarted</td>
-</tr>
-</tbody>
-</table>
 
 <h3 id="loglevel"><code>LogLevel</code></h3>
 
@@ -6920,7 +6958,7 @@ var utag_data = {
   </span>
 	<span id="feedback_comment">
 		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="70"></textarea>
-    <span>This page was last updated:  January 27, 2021 
+    <span>This page was last updated:  March 24, 2021 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
   </span>

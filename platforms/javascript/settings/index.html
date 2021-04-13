@@ -308,6 +308,7 @@ var utag_data = {
 
 <p>Many of the behaviors of <code>utag.js</code> are controlled with settings set in the <code>utag.cfg</code> object. The default behaviors controlled by these settings are overridden using a new object called <code>utag_cfg_ovrd</code>. To use this object, set it in your page code prior to loading <code>utag.js</code> or within a <a href="https://community.tealiumiq.com/t5/Tealium-iQ-Tag-Management/JavaScript-Code-Extension/ta-p/11925">JavaScript Code Extension</a> scoped to <strong>Pre Loader</strong> with the following:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#999">window</span>.utag_cfg_ovrd <span style="font-weight:bold">=</span> <span style="color:#999">window</span>.utag_cfg_ovrd <span style="font-weight:bold">||</span> {};
+<span style="color:#999">window</span>.utag_cfg_ovrd.secure_cookie <span style="font-weight:bold">=</span> <span style="font-weight:bold">true</span>;
 </code></pre></div>
 <h2 id="settings">Settings</h2>
 
@@ -6672,7 +6673,7 @@ Sets how long to wait (in milliseconds) after the DOM Ready event before loading
   </span>
 	<span id="feedback_comment">
 		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="70"></textarea>
-    <span>This page was last updated:  March 11, 2021 
+    <span>This page was last updated:  April 5, 2021 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
   </span>
