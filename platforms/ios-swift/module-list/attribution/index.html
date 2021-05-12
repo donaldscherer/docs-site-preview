@@ -380,9 +380,7 @@ var utag_data = {
 <h3 id="skadnetwork">SKAdNetwork</h3>
 
 <p>Tealium automatically calls <code>SKAdNetwork.registerAppForAdNetworkAttribution()</code> on launch if <code>config.skAdAttributionEnabled</code> is set to <code>true</code>. This permits advertising networks to anonymously validate app installs. If the <code>config.skAdConversionKeys</code> dictionary is defined, then <code>SKAdNetwork.updateConversionValue()</code> is automatically called on the specified event and sent the value of the specified conversion key.</p>
-
-<p>Example:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">config.skAdConversionKeys = [<span style="color:#b84">&#34;purchase&#34;</span>: <span style="color:#b84">&#34;order_subtotal&#34;</span>]</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">config.skAdConversionKeys = [<span style="color:#b84">&#34;EVENT_NAME&#34;</span>: <span style="color:#b84">&#34;DATA_LAYER_VARIABLE&#34;</span>]</code></pre></div>
 <p>The conversion value must be an <code>Int</code> with a value between <code>0</code> and <code>63</code>. If the conversion value is a decimal, it must be converted to an integer before calling the conversion event.</p>
 
 <p>Example:</p>
@@ -7144,7 +7142,7 @@ tealium?.track(<span style="color:#b84">&#34;purchase&#34;</span>, dataLayer: [<
   </span>
 	<span id="feedback_comment">
 		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="70"></textarea>
-    <span>This page was last updated:  April 13, 2021 
+    <span>This page was last updated:  May 12, 2021 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
   </span>
