@@ -383,7 +383,7 @@ var utag_data = {
 
 <tr>
 <td align="left"><a href="#ping"><code>ping()</code></a></td>
-<td align="left">Sends a heartbeat event to the data layer.</td>
+<td align="left">Sends an interval event to the data layer.</td>
 </tr>
 
 <tr>
@@ -551,7 +551,7 @@ var utag_data = {
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">mediaSession.pause()</code></pre></div>
 <h3 id="ping"><code>ping()</code></h3>
 
-<p>Sends a heartbeat event to the data layer. This method is called automatically every 10 seconds if the tracking type for the <code>MediaContent</code> object is set to <code>heartbeat</code> or <code>heartbeatMilestone</code>.</p>
+<p>Sends an interval event to the data layer. This method is called automatically every 10 seconds if the tracking type for the <code>MediaContent</code> object is set to <code>interval</code> or <code>intervalMilestone</code>.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">mediaSession.ping()</code></pre></div>
 <p>Learn more about <a href="/platforms/getting-started/media/#trackingtype">media tracking types</a>.</p>
 
@@ -611,7 +611,7 @@ var utag_data = {
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">mediaSession.resumeSession()</code></pre></div>
 <h3 id="sendmilestone"><code>sendMilestone()</code></h3>
 
-<p>Sends a milestone event to the data layer. This method is called automatically, based on the percent of content played, the tracking type for the <code>MediaContent</code> object is set to <code>milestone</code> or <code>heartbeatMilestone</code>.</p>
+<p>Sends a milestone event to the data layer. This method is called automatically, based on the percent of content played, the tracking type for the <code>MediaContent</code> object is set to <code>milestone</code> or <code>intervalMilestone</code>.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">mediaSession.sendMilestone(<span style="font-weight:bold">_</span> milestone: Milestone)</code></pre></div>
 <table>
 <thead>
@@ -871,7 +871,7 @@ mediaSession.startChapter(chapterOne)</code></pre></div>
 <tr>
 <td align="left"><code>trackingType</code></td>
 <td align="left"><a href="/platforms/getting-started/media/#trackingtype"><code>TrackingType</code></a></td>
-<td align="left">The level of event tracking. (default: <code>.significant</code>)</td>
+<td align="left">The level of event tracking. (default: <code>.fullPlayback</code>)</td>
 <td align="left">Yes</td>
 </tr>
 
@@ -5856,7 +5856,109 @@ mediaSession.startChapter(chapterOne)</code></pre></div>
       
       
       <li class="w-100 hover-accent-color-light fw8 " data-level="1">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link pv2 mid-gray hover-accent-color-light pl2 pr2  " data-target=".unity">Unity</a>
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link pv2 mid-gray hover-accent-color-light pl2 pr2  " data-target=".unity-v1">Unity 1.x</a>
+        <ul class="unity-v1 desktopmenu animated fadeIn list pl0 dn">
+            
+
+  
+  
+  
+  
+  
+  
+    
+      
+      
+      
+      <li class="w-100 hover-accent-color-light fw4 f6" data-level="2">
+        <a href="/platforms/unity-v1/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary " data-target=".unity-v1-overview">Overview</a>
+      </li>
+      
+    
+  
+  
+
+            
+
+  
+  
+  
+  
+  
+  
+    
+      
+      
+      
+      <li class="w-100 hover-accent-color-light fw4 f6" data-level="2">
+        <a href="/platforms/unity-v1/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary " data-target=".unity-v1-install">Install</a>
+      </li>
+      
+    
+  
+  
+
+            
+
+  
+  
+  
+  
+  
+  
+    
+      
+      
+      
+      <li class="w-100 hover-accent-color-light fw4 f6" data-level="2">
+        <a href="/platforms/unity-v1/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary " data-target=".unity-v1-track">Track</a>
+      </li>
+      
+    
+  
+  
+
+            
+
+  
+  
+  
+  
+  
+  
+    
+      
+      
+      
+      <li class="w-100 hover-accent-color-light fw4 f6" data-level="2">
+        <a href="/platforms/unity-v1/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary " data-target=".unity-v1-api">API Reference</a>
+      </li>
+      
+    
+  
+  
+
+        </ul>
+      </li>
+      
+    
+  
+  
+
+      
+
+  
+  
+  
+  
+  
+  
+    
+      
+      
+      
+      <li class="w-100 hover-accent-color-light fw8 " data-level="1">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link pv2 mid-gray hover-accent-color-light pl2 pr2  " data-target=".unity">Unity 2.x</a>
         <ul class="unity desktopmenu animated fadeIn list pl0 dn">
             
 
@@ -7905,7 +8007,7 @@ mediaSession.startChapter(chapterOne)</code></pre></div>
   </span>
 	<span id="feedback_comment">
 		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="70"></textarea>
-    <span>This page was last updated:  June 14, 2021 
+    <span>This page was last updated:  June 22, 2021 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
   </span>
@@ -8042,8 +8144,14 @@ mediaSession.startChapter(chapterOne)</code></pre></div>
     </li>
   
     <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="https://docs-preview.tealium.com/platforms/unity-v1/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          Unity 1.x
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
         <a href="https://docs-preview.tealium.com/platforms/unity/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
-          Unity
+          Unity 2.x
         </a>
     </li>
   

@@ -426,13 +426,13 @@ session.endAdBreak()</code></pre></div>
 
 <span style="font-weight:bold">let</span> <span style="color:#008080">mediaSession</span> = tealium?.media?.createSession(from: MediaContent(
   name: <span style="color:#b84">&#34;What is the Tealium Customer Data Hub?&#34;</span>,
-  trackingType: .significant
+  trackingType: .fullPlayback
   streamType: .vod,
   mediaType: .video,
   qoe: qoe,
   duration: <span style="color:#099">114</span>
 ))
-                              
+
 mediaSession.startSession()
 <span style="font-weight:bold">let</span> <span style="color:#008080">adBreak</span> = AdBreak(<span style="color:#b84">&#34;Ad Break 1&#34;</span>)
 mediaSession.startAdBreak(adBreak)
@@ -479,7 +479,7 @@ mediaSession.endSession()  <span style="color:#998;font-style:italic">// end of 
 <p>The following example shows when the user abandons the session, the app is backgrounded and media stops playing. With the Media module enabled, the <a href="/platforms/ios-swift/api/media-session/#endsession"><code>endSession()</code></a> method is triggered after 1 minute before the session is terminated. When the user opens the app again, the media session resumes.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">let</span> <span style="color:#008080">media</span> = MediaContent(
   name: <span style="color:#b84">&#34;What is the Tealium Customer Data Hub?&#34;</span>,
-  trackingType: .significant
+  trackingType: .fullPlayback
   streamType: .vod,
   mediaType: .video,
   qoe: QoE(bitrate: <span style="color:#099">1500</span>),
@@ -5151,7 +5151,109 @@ mediaSession.endSession() <span style="color:#998;font-style:italic">// end of s
       
       
       <li class="w-100 hover-accent-color-light fw8 " data-level="1">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link pv2 mid-gray hover-accent-color-light pl2 pr2  " data-target=".unity">Unity</a>
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link pv2 mid-gray hover-accent-color-light pl2 pr2  " data-target=".unity-v1">Unity 1.x</a>
+        <ul class="unity-v1 desktopmenu animated fadeIn list pl0 dn">
+            
+
+  
+  
+  
+  
+  
+  
+    
+      
+      
+      
+      <li class="w-100 hover-accent-color-light fw4 f6" data-level="2">
+        <a href="/platforms/unity-v1/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary " data-target=".unity-v1-overview">Overview</a>
+      </li>
+      
+    
+  
+  
+
+            
+
+  
+  
+  
+  
+  
+  
+    
+      
+      
+      
+      <li class="w-100 hover-accent-color-light fw4 f6" data-level="2">
+        <a href="/platforms/unity-v1/install/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary " data-target=".unity-v1-install">Install</a>
+      </li>
+      
+    
+  
+  
+
+            
+
+  
+  
+  
+  
+  
+  
+    
+      
+      
+      
+      <li class="w-100 hover-accent-color-light fw4 f6" data-level="2">
+        <a href="/platforms/unity-v1/track/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary " data-target=".unity-v1-track">Track</a>
+      </li>
+      
+    
+  
+  
+
+            
+
+  
+  
+  
+  
+  
+  
+    
+      
+      
+      
+      <li class="w-100 hover-accent-color-light fw4 f6" data-level="2">
+        <a href="/platforms/unity-v1/api/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary " data-target=".unity-v1-api">API Reference</a>
+      </li>
+      
+    
+  
+  
+
+        </ul>
+      </li>
+      
+    
+  
+  
+
+      
+
+  
+  
+  
+  
+  
+  
+    
+      
+      
+      
+      <li class="w-100 hover-accent-color-light fw8 " data-level="1">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link pv2 mid-gray hover-accent-color-light pl2 pr2  " data-target=".unity">Unity 2.x</a>
         <ul class="unity desktopmenu animated fadeIn list pl0 dn">
             
 
@@ -7200,7 +7302,7 @@ mediaSession.endSession() <span style="color:#998;font-style:italic">// end of s
   </span>
 	<span id="feedback_comment">
 		<textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="70"></textarea>
-    <span>This page was last updated:  June 14, 2021 
+    <span>This page was last updated:  June 22, 2021 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
   </span>
@@ -7337,8 +7439,14 @@ mediaSession.endSession() <span style="color:#998;font-style:italic">// end of s
     </li>
   
     <li  class="tl dib ma0 hover-bg-primary w-100">
+        <a href="https://docs-preview.tealium.com/platforms/unity-v1/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
+          Unity 1.x
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-primary w-100">
         <a href="https://docs-preview.tealium.com/platforms/unity/" class="ttu f6 link primary-color-light  hover-white db brand-font ma0 w-100 pv2 ph4">
-          Unity
+          Unity 2.x
         </a>
     </li>
   
