@@ -318,6 +318,11 @@
   </url>
   
   <url>
+    <loc>https://docs-preview.tealium.com/platforms/android-kotlin/module-list/adobe-visitor-service/</loc>
+    <lastmod>2021-07-28T12:33:05-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs-preview.tealium.com/platforms/google-tag-manager/</loc>
     <lastmod>2021-03-11T12:33:21-08:00</lastmod>
   </url>
@@ -594,7 +599,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/ios-swift/api/tealium/</loc>
-    <lastmod>2021-01-13T14:41:52-08:00</lastmod>
+    <lastmod>2021-07-28T12:33:05-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -615,6 +620,11 @@
   <url>
     <loc>https://docs-preview.tealium.com/platforms/ios-swift-v1/api/tealium-config/</loc>
     <lastmod>2020-07-23T16:42:41-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/ios-swift/module-list/adobe-visitor-service/</loc>
+    <lastmod>2021-07-28T12:33:05-07:00</lastmod>
   </url>
   
   <url>
@@ -884,7 +894,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/remote-commands/how-it-works/</loc>
-    <lastmod>2021-01-21T15:45:54-08:00</lastmod>
+    <lastmod>2021-07-27T16:38:31-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -1034,7 +1044,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/ios-swift/api/tealium-config/</loc>
-    <lastmod>2021-05-14T08:44:41-07:00</lastmod>
+    <lastmod>2021-07-28T12:33:05-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -1080,6 +1090,11 @@
   <url>
     <loc>https://docs-preview.tealium.com/platforms/getting-started-web/web-concepts/</loc>
     <lastmod>2021-01-26T10:08:49-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/getting-started/adobe-visitor-service/</loc>
+    <lastmod>2021-07-28T12:33:05-07:00</lastmod>
   </url>
   
   <url>
@@ -2574,7 +2589,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/remote-commands/integrations/firebase/</loc>
-    <lastmod>2021-06-02T17:25:07-07:00</lastmod>
+    <lastmod>2021-07-27T16:38:31-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -2594,7 +2609,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/android-kotlin/api/tealium/</loc>
-    <lastmod>2020-12-09T16:06:49-08:00</lastmod>
+    <lastmod>2021-07-28T12:33:05-07:00</lastmod>
   </url>
   
   <url>
@@ -2709,7 +2724,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/android-kotlin/api/tealium-config/</loc>
-    <lastmod>2021-01-14T09:11:03-08:00</lastmod>
+    <lastmod>2021-07-28T12:33:05-07:00</lastmod>
   </url>
   
   <url>
