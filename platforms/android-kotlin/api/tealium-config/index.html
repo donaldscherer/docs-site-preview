@@ -607,7 +607,9 @@ Disable all automatic tracking (for debug or dev builds of your app).</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">hostedDataLayerEventMappings <span style="font-weight:bold">=</span> mapOf(<span style="color:#b84">&#34;pdp&#34;</span> to <span style="color:#b84">&#34;product_id&#34;</span>)</code></pre></div>
 <h3 id="loglevel"><code>logLevel</code></h3>
 
-<p>Sets the log level property, which controls how much information is logged, to one of the following values:</p>
+<p>Sets the log level property to control how much information is logged. Setting this property overrides the default value that comes from the <code>environment</code> property in <code>TealiumConfig</code>.</p>
+
+<p>Set log level to one of the following values:</p>
 
 <table>
 <thead>
@@ -639,8 +641,8 @@ Disable all automatic tracking (for debug or dev builds of your app).</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Logger.<span style="color:#008080">logLevel</span> <span style="font-weight:bold">=</span> LogLevel.<span style="color:#008080">DEV</span></code></pre></div>
-<p class="note">View your development logs in the Android Studio using LogCat. View your production logs with LogCat app by connecting your Android device.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">config.<span style="color:#008080">logLevel</span> <span style="font-weight:bold">=</span> LogLevel.<span style="color:#008080">DEV</span></code></pre></div>
+<p class="note">View your development logs in the Android Studio using LogCat. View your production logs with the LogCat app by connecting your Android device.</p>
 
 <h3 id="remoteapienabled"><code>remoteAPIEnabled</code></h3>
 
