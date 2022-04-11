@@ -384,6 +384,7 @@ img { max-width: 100%; }
 .b--moon-gray {    border-color: #ccc; }
 .b--light-gray {   border-color: #eee; }
 .b--white-40 {   border-color: rgba(255, 255, 255, .4); }
+.b--black-20 {   border-color: rgba(0, 0, 0, .2); }
 /*
 
    BORDER RADIUS
@@ -411,7 +412,6 @@ img { max-width: 100%; }
 */
 .br2 {        border-radius: .25rem; }
 .br3 {        border-radius: .5rem; }
-.br-100 {     border-radius: 100%; }
 /*
 
    BORDER STYLES
@@ -539,13 +539,14 @@ img { max-width: 100%; }
 
 */
 .dn {              display: none; }
+.di {              display: inline; }
 .db {              display: block; }
 .dib {             display: inline-block; }
 /*
   This will set table to full width and then
   all cells will be equal width
 */
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 45em) {
   .db-ns {              display: block; }
   .dib-ns {             display: inline-block; }
 }
@@ -565,6 +566,7 @@ img { max-width: 100%; }
 
 */
 .flex { display: -ms-flexbox; display: flex; }
+.inline-flex { display: -ms-inline-flexbox; display: inline-flex; }
 /* 1. Fix for Chrome 44 bug.
  * https://code.google.com/p/chromium/issues/detail?id=506893 */
 .flex-auto {
@@ -587,7 +589,7 @@ img { max-width: 100%; }
 .order-2 { -ms-flex-order: 2; order: 2; }
 .flex-grow-0 { -ms-flex-positive: 0; flex-grow: 0; }
 .flex-shrink-0 { -ms-flex-negative: 0; flex-shrink: 0; }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 45em) {
   .flex-ns { display: -ms-flexbox; display: flex; }
 }
 @media screen and (min-width: 60em) {
@@ -855,6 +857,7 @@ img { max-width: 100%; }
 
 */
 /* Width Scale */
+.w1 {    width: 1rem; }
 .w3 {    width: 4rem; }
 .w4 {    width: 8rem; }
 .w5 {    width: 16rem; }
@@ -863,12 +866,12 @@ img { max-width: 100%; }
 .w-90 {  width:  90%; }
 .w-100 { width: 100%; }
 .w-auto { width: auto; }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 45em) {
   .w4-ns {  width: 8rem; }
   .w-30-ns { width:  30%; }
   .w-90-ns { width:  90%; }
 }
-@media screen and (min-width: 30em) and (max-width: 60em) {
+@media screen and (min-width: 45em) and (max-width: 60em) {
   .w-50-m { width:  50%; }
 }
 @media screen and (min-width: 60em) {
@@ -947,14 +950,10 @@ img { max-width: 100%; }
    it is focused or hovered over.
  
  */
-.hover-black:hover, 
-.hover-black:focus { color: #000; }
 .hover-white:hover, 
 .hover-white:focus { color: #fff; }
 .hover-bg-black:hover, 
 .hover-bg-black:focus { background-color: #000; }
-.hover-bg-light-gray:hover, 
-.hover-bg-light-gray:focus { background-color: #eee; }
 .hover-blue:hover,
 .hover-blue:focus { color: #147DC0; }
 .hover-bg-green:hover,
@@ -1001,13 +1000,12 @@ img { max-width: 100%; }
 .pa3 { padding: 1rem; }
 .pa4 { padding: 2rem; }
 .pl0 { padding-left: 0; }
-.pl1 { padding-left: .25rem; }
 .pl2 { padding-left: .5rem; }
 .pl3 { padding-left: 1rem; }
 .pl4 { padding-left: 2rem; }
 .pl5 { padding-left: 4rem; }
-.pr1 { padding-right: .25rem; }
 .pr2 { padding-right: .5rem; }
+.pr3 { padding-right: 1rem; }
 .pb1 { padding-bottom: .25rem; }
 .pb2 { padding-bottom: .5rem; }
 .pb3 { padding-bottom: 1rem; }
@@ -1076,7 +1074,7 @@ img { max-width: 100%; }
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 45em) {
   .pa4-ns  {  padding: 2rem; }
   .pl4-ns  {  padding-left: 2rem; }
 
@@ -1118,7 +1116,7 @@ img { max-width: 100%; }
   .mt0-ns  {  margin-top: 0; }
 
 }
-@media screen and (min-width: 30em) and (max-width: 60em) {
+@media screen and (min-width: 45em) and (max-width: 60em) {
   .ph4-m {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -1212,7 +1210,7 @@ img { max-width: 100%; }
 .tl  { text-align: left; }
 .tr  { text-align: right; }
 .tc  { text-align: center; }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 45em) {
   .tl-ns  { text-align: left; }
   .tr-ns  { text-align: right; }
 }
@@ -1274,8 +1272,9 @@ img { max-width: 100%; }
 .f4 { font-size: 1.25rem; }
 .f5 { font-size: 1rem; }
 .f6 { font-size: .875rem; }
+.f7 { font-size: .75rem; }
 /* Small and hard to read for many people so use with extreme caution */
-@media screen and (min-width: 30em){
+@media screen and (min-width: 45em){
   .f3-ns { font-size: 1.5rem; }
 }
 @media screen and (min-width: 60em) {
@@ -1313,7 +1312,7 @@ img { max-width: 100%; }
 }
 @media screen and (min-width: 60em) {
   .measure-wide-l {
-    max-width: 34em;
+    max-width: 40em;
   }
 }
 /*
@@ -1546,6 +1545,7 @@ img { max-width: 100%; }
 
 */
 /* Media Queries */
+/* @custom-media --breakpoint-not-small screen and (min-width: 30em); */
 /* Debugging */
 /*@import 'tachyons/src/_debug-children';
 @import 'tachyons/src/_debug-grid';*/
@@ -1824,6 +1824,7 @@ button:disabled {
 .hover-accent-color-light:hover                   {color: #FF7595}
 .hover-bg-accent-color-light:hover    {background-color: #FF7595}
 .bg-accent-color-dark                 {background-color: #33ba91}
+.text-color-secondary  {color: #CCCCCC}
 .nested-links a {
   color: #147DC0;
   text-decoration: none;
@@ -2064,7 +2065,7 @@ nav.side-nav>ul>li.active{
   -ms-flex: 1 1;
       flex: 1 1;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 45em) {
   #leftFrame > .main-nav-container {
     overflow-y: hidden;
     overflow-x: hidden;
@@ -2362,7 +2363,7 @@ ul.menu-group > li:hover .tooltiptext::before {
     position: sticky;
   }
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 45em) {
   
   /* Sticky Top ----------------------------- */
   [data-scrolldir="down"] .sticky-t,

@@ -494,7 +494,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/partners/data-sources/</loc>
-    <lastmod>2022-03-04T13:58:56-07:00</lastmod>
+    <lastmod>2022-03-20T15:40:22-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -553,8 +553,13 @@
   </url>
   
   <url>
+    <loc>https://docs-preview.tealium.com/platforms/ios-swift/api/location-module/</loc>
+    <lastmod>2022-04-11T21:04:34+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs-preview.tealium.com/platforms/getting-started/mobile-concepts/</loc>
-    <lastmod>2021-04-09T09:58:47-07:00</lastmod>
+    <lastmod>2022-03-14T21:39:52+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -620,21 +625,6 @@
   <url>
     <loc>https://docs-preview.tealium.com/platforms/flutter/api/tealium/</loc>
     <lastmod>2021-05-13T09:20:52-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs-preview.tealium.com/platforms/ios-swift/api/tealium/</loc>
-    <lastmod>2021-12-03T07:29:15-08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/platforms/ios-swift/api/tealium/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs-preview.tealium.com/platforms/ios-swift/api/tealium/"
-                />
   </url>
   
   <url>
@@ -833,11 +823,6 @@
   </url>
   
   <url>
-    <loc>https://docs-preview.tealium.com/platforms/react-native/location/</loc>
-    <lastmod>2022-03-04T08:16:08-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs-preview.tealium.com/platforms/getting-started-web/data-layer/an-introduction-to-the-data-layer/</loc>
     <lastmod>2021-04-16T15:49:26-07:00</lastmod>
   </url>
@@ -959,7 +944,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/android-java/install/</loc>
-    <lastmod>2020-08-17T11:10:48-07:00</lastmod>
+    <lastmod>2022-03-14T21:39:52+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -974,7 +959,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/android-kotlin/install/</loc>
-    <lastmod>2021-12-15T11:43:14-08:00</lastmod>
+    <lastmod>2022-03-14T21:39:52+00:00</lastmod>
   </url>
   
   <url>
@@ -1088,23 +1073,13 @@
   </url>
   
   <url>
-    <loc>https://docs-preview.tealium.com/platforms/flutter/api/tealium-config/</loc>
-    <lastmod>2021-05-13T09:20:52-07:00</lastmod>
+    <loc>https://docs-preview.tealium.com/platforms/ios-swift/api/media-session/</loc>
+    <lastmod>2022-04-11T21:04:34+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs-preview.tealium.com/platforms/ios-swift/api/tealium-config/</loc>
-    <lastmod>2022-03-03T00:56:11+01:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/platforms/ios-swift/api/tealium-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs-preview.tealium.com/platforms/ios-swift/api/tealium-config/"
-                />
+    <loc>https://docs-preview.tealium.com/platforms/flutter/api/tealium-config/</loc>
+    <lastmod>2021-05-13T09:20:52-07:00</lastmod>
   </url>
   
   <url>
@@ -1443,17 +1418,17 @@
   </url>
   
   <url>
-    <loc>https://docs-preview.tealium.com/platforms/ios-swift/api/tealium-consent-categories/</loc>
-    <lastmod>2020-08-12T15:19:51-07:00</lastmod>
+    <loc>https://docs-preview.tealium.com/platforms/ios-swift/api/tealium/</loc>
+    <lastmod>2022-04-11T21:04:34+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/platforms/ios-swift/api/tealium-consent-categories/"
+                href="https://docs-preview.tealium.co.jp/platforms/ios-swift/api/tealium/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs-preview.tealium.com/platforms/ios-swift/api/tealium-consent-categories/"
+                href="https://docs-preview.tealium.com/platforms/ios-swift/api/tealium/"
                 />
   </url>
   
@@ -1738,21 +1713,6 @@
   </url>
   
   <url>
-    <loc>https://docs-preview.tealium.com/platforms/react-native/api/</loc>
-    <lastmod>2021-12-15T11:43:14-08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/platforms/react-native/api/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs-preview.tealium.com/platforms/react-native/api/"
-                />
-  </url>
-  
-  <url>
     <loc>https://docs-preview.tealium.com/platforms/roku/api/</loc>
     <lastmod>2020-02-14T13:27:26-08:00</lastmod>
     <xhtml:link
@@ -1850,6 +1810,11 @@
                 hreflang="en"
                 href="https://docs-preview.tealium.com/platforms/android-java/module-list/lifecycle-tracking/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/react-native/location/</loc>
+    <lastmod>2022-03-16T07:09:21-07:00</lastmod>
   </url>
   
   <url>
@@ -2018,23 +1983,23 @@
   </url>
   
   <url>
-    <loc>https://docs-preview.tealium.com/platforms/ios-swift-v1/api/tealium-consent-manager/</loc>
-    <lastmod>2020-07-23T16:42:41-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs-preview.tealium.com/platforms/ios-swift/api/tealium-consent-manager/</loc>
-    <lastmod>2021-01-13T14:41:52-08:00</lastmod>
+    <loc>https://docs-preview.tealium.com/platforms/ios-swift/api/tealium-config/</loc>
+    <lastmod>2022-04-11T21:04:34+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/platforms/ios-swift/api/tealium-consent-manager/"
+                href="https://docs-preview.tealium.co.jp/platforms/ios-swift/api/tealium-config/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs-preview.tealium.com/platforms/ios-swift/api/tealium-consent-manager/"
+                href="https://docs-preview.tealium.com/platforms/ios-swift/api/tealium-config/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/ios-swift-v1/api/tealium-consent-manager/</loc>
+    <lastmod>2020-07-23T16:42:41-07:00</lastmod>
   </url>
   
   <url>
@@ -2129,6 +2094,21 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://docs-preview.tealium.com/platforms/csharp/api/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/react-native/api/</loc>
+    <lastmod>2022-03-16T07:09:21-07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://docs-preview.tealium.co.jp/platforms/react-native/api/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs-preview.tealium.com/platforms/react-native/api/"
                 />
   </url>
   
@@ -2239,7 +2219,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/remote-commands/integrations/contentsquare/</loc>
-    <lastmod>2022-03-02T23:46:17+00:00</lastmod>
+    <lastmod>2022-03-16T06:18:28-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -2318,8 +2298,18 @@
   </url>
   
   <url>
-    <loc>https://docs-preview.tealium.com/platforms/ios-swift/api/tealium-data-layer/</loc>
-    <lastmod>2020-11-11T15:44:55-08:00</lastmod>
+    <loc>https://docs-preview.tealium.com/platforms/ios-swift/api/tealium-consent-categories/</loc>
+    <lastmod>2022-04-11T21:04:34+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://docs-preview.tealium.co.jp/platforms/ios-swift/api/tealium-consent-categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs-preview.tealium.com/platforms/ios-swift/api/tealium-consent-categories/"
+                />
   </url>
   
   <url>
@@ -2553,17 +2543,17 @@
   </url>
   
   <url>
-    <loc>https://docs-preview.tealium.com/platforms/ios-swift/api/tealium-instance-manager/</loc>
-    <lastmod>2020-10-23T17:12:58-07:00</lastmod>
+    <loc>https://docs-preview.tealium.com/platforms/ios-swift/api/tealium-consent-manager/</loc>
+    <lastmod>2022-04-11T21:04:34+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs-preview.tealium.co.jp/platforms/ios-swift/api/tealium-instance-manager/"
+                href="https://docs-preview.tealium.co.jp/platforms/ios-swift/api/tealium-consent-manager/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs-preview.tealium.com/platforms/ios-swift/api/tealium-instance-manager/"
+                href="https://docs-preview.tealium.com/platforms/ios-swift/api/tealium-consent-manager/"
                 />
   </url>
   
@@ -2704,7 +2694,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/remote-commands/integrations/firebase/</loc>
-    <lastmod>2022-03-07T12:41:59+00:00</lastmod>
+    <lastmod>2022-03-29T07:38:08-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -2715,11 +2705,6 @@
                 hreflang="en"
                 href="https://docs-preview.tealium.com/platforms/remote-commands/integrations/firebase/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs-preview.tealium.com/platforms/ios-swift/api/media-session/</loc>
-    <lastmod>2021-06-22T15:47:51-07:00</lastmod>
   </url>
   
   <url>
@@ -2745,6 +2730,11 @@
   <url>
     <loc>https://docs-preview.tealium.com/platforms/android-kotlin/api/tealium/</loc>
     <lastmod>2021-11-09T22:07:31+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/ios-swift/api/tealium-data-layer/</loc>
+    <lastmod>2022-04-11T21:04:34+01:00</lastmod>
   </url>
   
   <url>
@@ -2860,6 +2850,21 @@
   <url>
     <loc>https://docs-preview.tealium.com/platforms/android-kotlin/api/tealium-config/</loc>
     <lastmod>2022-03-04T10:14:30-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs-preview.tealium.com/platforms/ios-swift/api/tealium-instance-manager/</loc>
+    <lastmod>2022-04-11T21:04:34+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://docs-preview.tealium.co.jp/platforms/ios-swift/api/tealium-instance-manager/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs-preview.tealium.com/platforms/ios-swift/api/tealium-instance-manager/"
+                />
   </url>
   
   <url>
@@ -3189,7 +3194,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/ios-swift/release-notes/</loc>
-    <lastmod>2022-03-03T00:56:11+01:00</lastmod>
+    <lastmod>2022-04-11T21:04:34+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -3279,7 +3284,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/ios-swift/module-list/location/</loc>
-    <lastmod>2021-05-10T11:14:24-07:00</lastmod>
+    <lastmod>2022-04-11T21:04:34+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -3354,7 +3359,7 @@
   
   <url>
     <loc>https://docs-preview.tealium.com/platforms/ios-swift/module-list/tag-management/</loc>
-    <lastmod>2021-05-14T08:43:27-07:00</lastmod>
+    <lastmod>2022-03-08T11:04:25+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
