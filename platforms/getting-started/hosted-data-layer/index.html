@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.61.0" />
+     <meta name="generator" content="Hugo 0.98.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -292,8 +292,8 @@ var utag_data = {
       
       
       
-      <li class="w-100 hover-accent-color-light fw4 f6" data-level="2">
-        <a href="/platforms/getting-started/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary " data-target=".getting-started-overview">Overview</a>
+      <li class="w-100 hover-accent-color-light fw4 f6 active" data-level="2">
+        <a href="/platforms/getting-started/" class="db link pl3 pr2 pv1 bg-secondary white" data-target=".getting-started-overview">Overview</a>
       </li>
       
     
@@ -7556,12 +7556,12 @@ Export the offline product data into JSON files, which are named according to th
 </thead>
 <tbody>
 <tr>
-<td>Data layer <code>utag_data</code>|<code>{ &quot;page_type&quot;:&quot;product&quot;, &quot;product_id&quot;:[&quot;PRD123&quot;]}</code></td>
-<td></td>
+<td>Data layer <code>utag_data</code></td>
+<td><code>{ &quot;page_type&quot;:&quot;product&quot;, &quot;product_id&quot;:[&quot;PRD123&quot;]}</code></td>
 </tr>
 <tr>
-<td>Hosted data layer object <code>PRD123.js</code>|<code>{&quot;has_free_shipping&quot;:[&quot;0&quot;], &quot;has_instore_pickup&quot;:[&quot;1&quot;]}</code></td>
-<td></td>
+<td>Hosted data layer object <code>PRD123.js</code></td>
+<td><code>{&quot;has_free_shipping&quot;:[&quot;0&quot;], &quot;has_instore_pickup&quot;:[&quot;1&quot;]}</code></td>
 </tr>
 <tr>
 <td>Merged data layer</td>
@@ -7572,7 +7572,7 @@ Export the offline product data into JSON files, which are named according to th
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p>The following are troubleshooting tips:</p>
 <ul>
-<li>Be aware that track calls where the dispatch contains hosted data layer components may be sent out of order, due to the additional time required to retrieve items from the CDN. This doesn't apply if a valid cache exists for an item, since the CDN lookup isn't required.</li>
+<li>Be aware that track calls where the dispatch contains hosted data layer components may be sent out of order, due to the additional time required to retrieve items from the CDN. This doesn&rsquo;t apply if a valid cache exists for an item, since the CDN lookup isn&rsquo;t required.</li>
 <li>If there are any server or connectivity errors when the hosted data layer request is made, the request retries up to 5 times. After 5 failed attempts, the track call is sent without the hosted data layer data.</li>
 <li>If a valid record on the CDN is not found for an item, the track call is sent without the hosted data layer data.</li>
 <li>If there is no valid cache available for the hosted data layer item being requested, the first request is queued and only sent when the queue is flushed. This behavior is automatic when the maximum number of batched events is reached or if the app is in the background.</li>
@@ -7584,7 +7584,7 @@ Export the offline product data into JSON files, which are named according to th
 	<div class="di">
 		
 		
-		<a href="/platforms/getting-started/trace/"
+		<a href="https://docs-preview.tealium.com/platforms/getting-started/trace/"
 			class="inline-flex justify-between ba ba-link b--black-20 br2 pa2">
       <svg class="w1" data-icon="chevronLeft" viewBox="0 0 32 32" style="fill:currentcolor;height:100%">
 				<title>"Trace "</title>
@@ -7603,7 +7603,7 @@ Export the offline product data into JSON files, which are named according to th
 	<div class="fr">
 
 		
-		<a href="/platforms/getting-started/adobe-visitor-service/"
+		<a href="https://docs-preview.tealium.com/platforms/getting-started/adobe-visitor-service/"
       class="inline-flex justify-between ba ba-link b--black-20 br2 pa2">
 			<section class="tl pr3">
 				<div class="f7 text-color-secondary">Next</div>
@@ -7618,7 +7618,7 @@ Export the offline product data into JSON files, which are named according to th
 		
 	</div>
 
-</div>
+  </div>
 <br>&nbsp;</br>
 
           

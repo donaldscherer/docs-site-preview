@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.61.0" />
+     <meta name="generator" content="Hugo 0.98.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -5044,8 +5044,8 @@ var utag_data = {
       
       
       
-      <li class="w-100 hover-accent-color-light fw4 f6" data-level="2">
-        <a href="/platforms/react-native/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary " data-target=".react-native-overview">Overview</a>
+      <li class="w-100 hover-accent-color-light fw4 f6 active" data-level="2">
+        <a href="/platforms/react-native/" class="db link pl3 pr2 pv1 bg-secondary white" data-target=".react-native-overview">Overview</a>
       </li>
       
     
@@ -7538,7 +7538,7 @@ var utag_data = {
 <li>React Native Autolinking is enabled in version 1.0.7 of the NPM package and is no longer needed to run <code>react-native link</code> if using version 0.60+ of React Native.</li>
 </ol>
 <h3 id="android">Android</h3>
-<p>Add a reference to Tealium's Maven repository in your Android project's root <code>build.gradle</code> file as described in the <a href="/platforms/android/install/#maven-install">Android Maven Install</a> documentation. The project dependencies are automatically handled by the Autolinking process.</p>
+<p>Add a reference to Tealium&rsquo;s Maven repository in your Android project&rsquo;s root <code>build.gradle</code> file as described in the <a href="/platforms/android/install/#maven-install">Android Maven Install</a> documentation. The project dependencies are automatically handled by the Autolinking process.</p>
 <h3 id="ios">iOS</h3>
 <p>The Autolinking feature of React Native 0.60+ automatically adds the required CocoaPods dependencies into your iOS application workspace.</p>
 <p>To install the pods, run the following commands:</p>
@@ -7546,10 +7546,10 @@ var utag_data = {
 cd ios &amp;&amp; pod install
 </code></pre>
 <!-- raw HTML omitted -->
-<p>In some cases, it's necessary to enable the clang parameter to allow non-modular includes in the framework modules. To enable the clang parameter:</p>
+<p>In some cases, it&rsquo;s necessary to enable the clang parameter to allow non-modular includes in the framework modules. To enable the clang parameter:</p>
 <ol>
 <li>
-<p>In Xcode, open the app's <code>.xcworkspace</code> file and select your <code>Pods</code> from the navigator.</p>
+<p>In Xcode, open the app&rsquo;s <code>.xcworkspace</code> file and select your <code>Pods</code> from the navigator.</p>
 </li>
 <li>
 <p>Under <strong>Targets</strong> select the <strong>tealium-react-native</strong> target, and click the <strong>Build Settings</strong> tab.</p>
@@ -7576,7 +7576,7 @@ cd ios &amp;&amp; pod install
 <pre><code class="language-javascript">import Tealium from 'tealium-react-native';
 </code></pre>
 <p>If you installed manually, then in the  <code>npm-package</code> folder of the <a href="https://github.com/Tealium/tealium-react-native">GitHub repository</a>, find the file <code>index.js</code>, rename it to <code>TealiumModule.js</code> and copy it into your React Native JavaScript Project.</p>
-<p>After installation, import the Tealium module into your app's JavaScript code as follows:</p>
+<p>After installation, import the Tealium module into your app&rsquo;s JavaScript code as follows:</p>
 <pre><code class="language-javascript">import Tealium from 'tealium-react-native';
 import { TealiumConfig, TealiumView, TealiumEvent, ConsentCategories, Dispatchers, Collectors, ConsentPolicy, Expiry, ConsentExpiry, TimeUnit, ConsentStatus, TealiumEnvironment } from 'tealium-react-native/common';
 </code></pre>
@@ -7602,7 +7602,7 @@ Tealium.initialize(config);
 	<div class="fr">
 
 		
-		<a href="/platforms/react-native/track/"
+		<a href="https://docs-preview.tealium.com/platforms/react-native/track/"
       class="inline-flex justify-between ba ba-link b--black-20 br2 pa2">
 			<section class="tl pr3">
 				<div class="f7 text-color-secondary">Next</div>
@@ -7617,7 +7617,7 @@ Tealium.initialize(config);
 		
 	</div>
 
-</div>
+  </div>
 <br>&nbsp;</br>
 
           
@@ -7661,7 +7661,7 @@ Tealium.initialize(config);
       <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#how-it-works">How It Works</a></li>
               <li><a href="#requirements">Requirements</a></li>
               <li><a href="#sample-app">Sample App</a></li>
-              <li><a href="#install-npm-yarn">Install (NPM/YARN)</a></li>
+              <li><a href="#install-npmyarn">Install (NPM/YARN)</a></li>
               <ul class="toc-h3"><li><a href="#android">Android</a></li>
               <li><a href="#ios">iOS</a></li>
               </ul><li><a href="#javascript">JavaScript</a></li>

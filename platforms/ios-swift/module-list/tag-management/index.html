@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.61.0" />
+     <meta name="generator" content="Hugo 0.98.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -4032,8 +4032,8 @@ var utag_data = {
       
       
       
-      <li class="w-100 hover-accent-color-light fw4 f6" data-level="2">
-        <a href="/platforms/ios-swift/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary " data-target=".ios-swift-overview">Overview</a>
+      <li class="w-100 hover-accent-color-light fw4 f6 active" data-level="2">
+        <a href="/platforms/ios-swift/" class="db link pl3 pr2 pv1 bg-secondary white" data-target=".ios-swift-overview">Overview</a>
       </li>
       
     
@@ -7481,7 +7481,7 @@ var utag_data = {
   
     
       <a href="/platforms/ios-swift/module-list/" class="f6 fw8 mb0 link mid-gray dim mr3">
-        IOS SWIFT/MODULE LIST
+        IOS SWIFT MODULE LIST
       </a>
     
   
@@ -7534,7 +7534,7 @@ var utag_data = {
 <p>To install the TagManagement module with Carthage, following these steps:</p>
 <ol>
 <li>
-<p>Go to the app target's General configuration page in Xcode.</p>
+<p>Go to the app target&rsquo;s General configuration page in Xcode.</p>
 </li>
 <li>
 <p>Add the following framework to the <strong>Embedded Binaries</strong> section:</p>
@@ -7544,11 +7544,11 @@ var utag_data = {
 </code></pre>
 <p>Learn more about the <a href="/platforms/ios-swift/install/#carthage">Carthage installation for iOS</a>.</p>
 <h2 id="initialize">Initialize</h2>
-<p>To initialize the module, verify that it's specified on the <code>TealiumConfig</code> <a href="/platforms/ios-swift/api/tealium-config/#collectors"><code>collectors</code></a> property</p>
+<p>To initialize the module, verify that it&rsquo;s specified on the <code>TealiumConfig</code> <a href="/platforms/ios-swift/api/tealium-config/#collectors"><code>collectors</code></a> property</p>
 <p><code>config.dispatchers = [Dispatchers.TagManagement]</code></p>
 <h2 id="customizing-the-webview-settings">Customizing the WebView Settings</h2>
 <h3 id="app-bound-domains">App Bound Domains</h3>
-<p>If your app uses the <a href="https://webkit.org/blog/10882/app-bound-domains/">WKAppBoundDomains</a> feature to limit which domains webviews in your app can communicate with, you must pass a custom <code>WKWebViewConfiguration</code> and set its <code>limitsNavigationsToAppBoundDomains</code> property to <code>true</code>. Failing to do this will result in all tracking calls being dropped by the operating system. You must also include &ldquo;tags.tiqcdn.com&rdquo; in your <code>Info.plist</code>'s <code>WKAppBoundDomains</code> list, as well as the domains for any tags you have set up in Tealium iQ (for example &ldquo;google-analytics.com&rdquo;). Be aware that a maximum of 10 domains can be configured for the entire app, so if you use multiple client-side tags, you may easily exceed this.</p>
+<p>If your app uses the <a href="https://webkit.org/blog/10882/app-bound-domains/">WKAppBoundDomains</a> feature to limit which domains webviews in your app can communicate with, you must pass a custom <code>WKWebViewConfiguration</code> and set its <code>limitsNavigationsToAppBoundDomains</code> property to <code>true</code>. Failing to do this will result in all tracking calls being dropped by the operating system. You must also include &ldquo;tags.tiqcdn.com&rdquo; in your <code>Info.plist</code>&rsquo;s <code>WKAppBoundDomains</code> list, as well as the domains for any tags you have set up in Tealium iQ (for example &ldquo;google-analytics.com&rdquo;). Be aware that a maximum of 10 domains can be configured for the entire app, so if you use multiple client-side tags, you may easily exceed this.</p>
 <pre><code> let config = TealiumConfig(account: &quot;ACCOUNT&quot;,
                                profile: &quot;PROFILE&quot;,
                                environment: &quot;ENVIRONMENT&quot;,
@@ -7561,7 +7561,7 @@ var utag_data = {
         
 </code></pre>
 <h3 id="process-pool">Process Pool</h3>
-<p>If your app uses its own <code>WKWebView</code>, to avoid cookie synchronization issues, pass a singleton <code>WKProcessPool</code> instance to be used by the Tealium webview, or a custom <code>WkWebViewConfiguration</code> that's shared with other webviews in your app.</p>
+<p>If your app uses its own <code>WKWebView</code>, to avoid cookie synchronization issues, pass a singleton <code>WKProcessPool</code> instance to be used by the Tealium webview, or a custom <code>WkWebViewConfiguration</code> that&rsquo;s shared with other webviews in your app.</p>
 <p>Learn about <a href="/platforms/ios-swift/api/tealium-config/#webviewprocesspool">webviewProcessPool</a> and <a href="/platforms/ios-swift/api/tealium-config/#webviewconfig">webViewConfig</a>.</p>
 <h2 id="data-layer">Data Layer</h2>
 <p>The following variables are transmitted with each tracking call:</p>
@@ -7607,7 +7607,7 @@ var utag_data = {
 	<div class="di">
 		
 		
-		<a href="/platforms/ios-swift/module-list/remote-commands/"
+		<a href="https://docs-preview.tealium.com/platforms/ios-swift/module-list/remote-commands/"
 			class="inline-flex justify-between ba ba-link b--black-20 br2 pa2">
       <svg class="w1" data-icon="chevronLeft" viewBox="0 0 32 32" style="fill:currentcolor;height:100%">
 				<title>"RemoteCommands Module "</title>
@@ -7626,7 +7626,7 @@ var utag_data = {
 	<div class="fr">
 
 		
-		<a href="/platforms/ios-swift/module-list/visitor-service/"
+		<a href="https://docs-preview.tealium.com/platforms/ios-swift/module-list/visitor-service/"
       class="inline-flex justify-between ba ba-link b--black-20 br2 pa2">
 			<section class="tl pr3">
 				<div class="f7 text-color-secondary">Next</div>
@@ -7641,7 +7641,7 @@ var utag_data = {
 		
 	</div>
 
-</div>
+  </div>
 <br>&nbsp;</br>
 
           

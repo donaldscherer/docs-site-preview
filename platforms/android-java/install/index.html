@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.61.0" />
+     <meta name="generator" content="Hugo 0.98.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -938,8 +938,8 @@ var utag_data = {
       
       
       
-      <li class="w-100 hover-accent-color-light fw4 f6" data-level="2">
-        <a href="/platforms/android-java/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary " data-target=".android-java-overview">Overview</a>
+      <li class="w-100 hover-accent-color-light fw4 f6 active" data-level="2">
+        <a href="/platforms/android-java/" class="db link pl3 pr2 pv1 bg-secondary white" data-target=".android-java-overview">Overview</a>
       </li>
       
     
@@ -7522,7 +7522,7 @@ var utag_data = {
 <h3 id="maven">Maven</h3>
 <p>To install Tealium for Android library with Maven (recommended):</p>
 <ol>
-<li>Add the Tealium Maven URL to your project's top-level <code>build.gradle</code> file:</li>
+<li>Add the Tealium Maven URL to your project&rsquo;s top-level <code>build.gradle</code> file:</li>
 </ol>
 <pre><code class="language-groovy">allprojects {
       repositories {
@@ -7534,7 +7534,7 @@ var utag_data = {
 }
 </code></pre>
 <ol start="2">
-<li>In your project module's <code>build.gradle</code> file, add the following Maven dependency:</li>
+<li>In your project module&rsquo;s <code>build.gradle</code> file, add the following Maven dependency:</li>
 </ol>
 <pre><code class="language-groovy">dependencies {
       implementation 'com.tealium:library:5.8.0'
@@ -7567,7 +7567,7 @@ var utag_data = {
 }
 </code></pre>
 <h2 id="initialize">Initialize</h2>
-<p>To initialize, make the following changes in app's <code>onCreate()</code> method:</p>
+<p>To initialize, make the following changes in app&rsquo;s <code>onCreate()</code> method:</p>
 <ol>
 <li>Create instance of the <a href="/platforms/android-java/api/tealium-config/#class-tealium-config"><code>Tealium.Config</code></a> object:</li>
 </ol>
@@ -7583,7 +7583,7 @@ var utag_data = {
 <pre><code class="language-java">tealConfig.setDatasourceId(&quot;DATASOURCE_ID&quot;);
 </code></pre>
 <ol start="3">
-<li>Call the <a href="/platforms/android-java/api/life-cycle/#setupinstance"><code>setupInstance()</code></a> method to setup the app's lifecycle instance:</li>
+<li>Call the <a href="/platforms/android-java/api/life-cycle/#setupinstance"><code>setupInstance()</code></a> method to setup the app&rsquo;s lifecycle instance:</li>
 </ol>
 <pre><code class="language-java">LifeCycle.setupInstance(&quot;INSTANCE_NAME&quot;, config, true);
 </code></pre>
@@ -7629,7 +7629,7 @@ private static WebViewCreatedListener createCookieEnablerListener() {
 <!-- raw HTML omitted -->
 <h2 id="multiprocess-apps">Multiprocess Apps</h2>
 <h4 id="android-9-multiprocess-applications">Android 9+ Multiprocess Applications</h4>
-<p>Android 9 introduced a behavior change around <code>WebView</code> data directories in multiprocess applications. In this change, a <code>WebView</code> no longer shares a single data directory across multiple processes. Typically, you'll want to have all your Activities that use a <code>WebView</code> in the same process.</p>
+<p>Android 9 introduced a behavior change around <code>WebView</code> data directories in multiprocess applications. In this change, a <code>WebView</code> no longer shares a single data directory across multiple processes. Typically, you&rsquo;ll want to have all your Activities that use a <code>WebView</code> in the same process.</p>
 <p>If you use the Tag Management module and implement additional instances of <code>WebView</code>, we recommend calling <code>WebView.setDataDirectorySuffix()</code> before creating the Tealium instance to prevent the app from crashing.</p>
 <p>If you need to access cookies and web data from the Tag Management module, copy it between processes using the <code>CookieManager.getCookie()</code> and <code>CookieManager.setCookie()</code> methods.</p>
 <p>To learn more, see <a href="https://developer.android.com/about/versions/pie/android-9.0-changes-28#web-data-dirs">Web-based data directories separated by process</a>.</p>
@@ -7641,7 +7641,7 @@ private static WebViewCreatedListener createCookieEnablerListener() {
 	<div class="fr">
 
 		
-		<a href="/platforms/android-java/track/"
+		<a href="https://docs-preview.tealium.com/platforms/android-java/track/"
       class="inline-flex justify-between ba ba-link b--black-20 br2 pa2">
 			<section class="tl pr3">
 				<div class="f7 text-color-secondary">Next</div>
@@ -7656,7 +7656,7 @@ private static WebViewCreatedListener createCookieEnablerListener() {
 		
 	</div>
 
-</div>
+  </div>
 <br>&nbsp;</br>
 
           

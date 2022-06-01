@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.61.0" />
+     <meta name="generator" content="Hugo 0.98.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -2882,8 +2882,8 @@ var utag_data = {
       
       
       
-      <li class="w-100 hover-accent-color-light fw4 f6" data-level="2">
-        <a href="/platforms/ios-objective-c/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary " data-target=".ios-objective-c-overview">Overview</a>
+      <li class="w-100 hover-accent-color-light fw4 f6 active" data-level="2">
+        <a href="/platforms/ios-objective-c/" class="db link pl3 pr2 pv1 bg-secondary white" data-target=".ios-objective-c-overview">Overview</a>
       </li>
       
     
@@ -7514,9 +7514,9 @@ var utag_data = {
 </ul>
 <!-- raw HTML omitted -->
 <h3 id="sample">Sample</h3>
-<p>To better familiarize yourself with Tealium's <code>WKWebView</code>, explore the <a href="https://github.com/Tealium/tealium-ios/tree/master/Samples/iOS_WKWebView%2BTealium_Objc">WKWebView sample</a>.</p>
+<p>To better familiarize yourself with Tealium&rsquo;s <code>WKWebView</code>, explore the <a href="https://github.com/Tealium/tealium-ios/tree/master/Samples/iOS_WKWebView%2BTealium_Objc">WKWebView sample</a>.</p>
 <h3 id="usage">Usage</h3>
-<p><code>WKWebView</code> is required to be attached to a <code>UIView</code>, even if it is not rendered. To accommodate this the Tealium SDK attempts to attach the non-rendered <code>WKWebView</code> to the <code>rootViewController.view</code>, the most common scenario when your window's <code>rootViewController</code> is a subclass of <code>UIViewController</code> or one of Apple's container view controllers (<code>UINavigationController</code> or <code>UITabBarController</code>).</p>
+<p><code>WKWebView</code> is required to be attached to a <code>UIView</code>, even if it is not rendered. To accommodate this the Tealium SDK attempts to attach the non-rendered <code>WKWebView</code> to the <code>rootViewController.view</code>, the most common scenario when your window&rsquo;s <code>rootViewController</code> is a subclass of <code>UIViewController</code> or one of Apple&rsquo;s container view controllers (<code>UINavigationController</code> or <code>UITabBarController</code>).</p>
 <p>If your app has a complex view hierarchy, set the <code>TEALConfiguration</code> instance with a view to attach to in <code>viewDidLoad</code>, <code>viewWillAppear:</code>, or <code>viewDidAppear:</code>.</p>
 <pre><code class="language-obj-c">TEALConfiguration *tealConfig = [TEALConfiguration configurationWithAccount:@&quot;ACCOUNT&quot;
                                               profile:@&quot;PROFILE&quot;
@@ -7529,36 +7529,36 @@ Tealium *tealium = [Tealium newInstanceForKey:@&quot;INSTANCE&quot; configuratio
 <table>
 <thead>
 <tr>
-<th align="left">Parameters</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-<th align="left">Example</th>
+<th style="text-align:left">Parameters</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>account</code></td>
-<td align="left"><code>String</code></td>
-<td align="left">Tealium account name</td>
-<td align="left"><code>&quot;companyXYZ&quot;</code></td>
+<td style="text-align:left"><code>account</code></td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Tealium account name</td>
+<td style="text-align:left"><code>&quot;companyXYZ&quot;</code></td>
 </tr>
 <tr>
-<td align="left"><code>profile</code></td>
-<td align="left"><code>String</code></td>
-<td align="left">Tealium profile name</td>
-<td align="left"><code>&quot;main&quot; </code></td>
+<td style="text-align:left"><code>profile</code></td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Tealium profile name</td>
+<td style="text-align:left"><code>&quot;main&quot; </code></td>
 </tr>
 <tr>
-<td align="left"><code>environment</code></td>
-<td align="left"><code>String</code></td>
-<td align="left">Tealium environment name</td>
-<td align="left"><code>&quot;prod&quot;</code></td>
+<td style="text-align:left"><code>environment</code></td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Tealium environment name</td>
+<td style="text-align:left"><code>&quot;prod&quot;</code></td>
 </tr>
 <tr>
-<td align="left"><code>datasource</code></td>
-<td align="left"><code>String</code></td>
-<td align="left">(Optional) data source key (Set to <code>null</code> if none)</td>
-<td align="left"><code>&quot;abc123&quot;</code></td>
+<td style="text-align:left"><code>datasource</code></td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">(Optional) data source key (Set to <code>null</code> if none)</td>
+<td style="text-align:left"><code>&quot;abc123&quot;</code></td>
 </tr>
 </tbody>
 </table>
@@ -7617,7 +7617,7 @@ self.tealium = [Tealium newInstanceForKey:@&quot;INSTANCE_KEY&quot; configuratio
 	<div class="di">
 		
 		
-		<a href="/platforms/ios-objective-c/consent-management/"
+		<a href="https://docs-preview.tealium.com/platforms/ios-objective-c/consent-management/"
 			class="inline-flex justify-between ba ba-link b--black-20 br2 pa2">
       <svg class="w1" data-icon="chevronLeft" viewBox="0 0 32 32" style="fill:currentcolor;height:100%">
 				<title>"Consent Management "</title>
@@ -7636,7 +7636,7 @@ self.tealium = [Tealium newInstanceForKey:@&quot;INSTANCE_KEY&quot; configuratio
 	<div class="fr">
 
 		
-		<a href="/platforms/ios-objective-c/tvos/"
+		<a href="https://docs-preview.tealium.com/platforms/ios-objective-c/tvos/"
       class="inline-flex justify-between ba ba-link b--black-20 br2 pa2">
 			<section class="tl pr3">
 				<div class="f7 text-color-secondary">Next</div>
@@ -7651,7 +7651,7 @@ self.tealium = [Tealium newInstanceForKey:@&quot;INSTANCE_KEY&quot; configuratio
 		
 	</div>
 
-</div>
+  </div>
 <br>&nbsp;</br>
 
           

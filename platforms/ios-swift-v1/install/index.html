@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.61.0" />
+     <meta name="generator" content="Hugo 0.98.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -3166,8 +3166,8 @@ var utag_data = {
       
       
       
-      <li class="w-100 hover-accent-color-light fw4 f6" data-level="2">
-        <a href="/platforms/ios-swift-v1/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary " data-target=".ios-swift-v1-overview">Overview</a>
+      <li class="w-100 hover-accent-color-light fw4 f6 active" data-level="2">
+        <a href="/platforms/ios-swift-v1/" class="db link pl3 pr2 pv1 bg-secondary white" data-target=".ios-swift-v1-overview">Overview</a>
       </li>
       
     
@@ -7677,19 +7677,19 @@ end
 <pre><code class="language-ruby">carthage update
 </code></pre>
 <ol start="3">
-<li>To build only for a particular platform, such as iOS, and to speed up subsequent builds after the initial build, use Carthage's <code>--platform</code> argument:</li>
+<li>To build only for a particular platform, such as iOS, and to speed up subsequent builds after the initial build, use Carthage&rsquo;s <code>--platform</code> argument:</li>
 </ol>
 <pre><code class="language-ruby">carthage update --platform ios --cache-builds
 </code></pre>
 <ol start="4">
-<li>Drag the frameworks you require into your Xcode project's <strong>General &gt; Embedded Binaries</strong> section.</li>
+<li>Drag the frameworks you require into your Xcode project&rsquo;s <strong>General &gt; Embedded Binaries</strong> section.</li>
 </ol>
 <!-- raw HTML omitted -->
 <ol start="5">
-<li>Follow the instructions listed in the Carthage <a href="https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos">Getting Started</a> documentation to add the relevant build phases scripts, to ensure you don't run into any issues when submitting your app.</li>
+<li>Follow the instructions listed in the Carthage <a href="https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos">Getting Started</a> documentation to add the relevant build phases scripts, to ensure you don&rsquo;t run into any issues when submitting your app.</li>
 </ol>
 <h4 id="about-modules-165">About Modules (1.6.5+)</h4>
-<p>As of version 1.6.5, the Tealium Swift SDK has been split up into separate modules/frameworks. This means you need only import the specific frameworks for the modules you need to use, which helps to reduce the binary size and, ultimately, increase your app's performance.</p>
+<p>As of version 1.6.5, the Tealium Swift SDK has been split up into separate modules/frameworks. This means you need only import the specific frameworks for the modules you need to use, which helps to reduce the binary size and, ultimately, increase your app&rsquo;s performance.</p>
 <p><strong>Module import statements</strong></p>
 <pre><code class="language-swift">import TealiumCore              // required for Tealium, TealiumConfig, TealiumInstanceManager
 import TealiumVolatileData      // required if you wish to store volatile data through the Volatile Data API
@@ -7701,10 +7701,10 @@ import TealiumDelegate          // required if you need to set up a tracking del
                                 //     allow datasource param to be set on the TealiumConfig class instance
 import TealiumLifecycle         // only required if you need to manually call the Lifecycle API
 </code></pre>
-<p>Due to Carthage limitations, we had to choose between the convenience of importing the entire SDK, and the flexibility and performance gains of a fully modular install. The downside to this is that it's now necessary to add each module you wish to use individually.</p>
+<p>Due to Carthage limitations, we had to choose between the convenience of importing the entire SDK, and the flexibility and performance gains of a fully modular install. The downside to this is that it&rsquo;s now necessary to add each module you wish to use individually.</p>
 <ul>
 <li>Carthage builds <em>all</em> the modules and output the resulting <code>.framework</code> files into your Carthage build directory.</li>
-<li>Delete any modules you don't need, and drag the modules that you do need into Xcode.</li>
+<li>Delete any modules you don&rsquo;t need, and drag the modules that you do need into Xcode.</li>
 </ul>
 <p>See <a href="/platforms/ios-swift/modules/">Modules</a> for further details on recommended module lists.</p>
 <h2 id="initialize">Initialize</h2>
@@ -7811,7 +7811,7 @@ class TealiumHelper {
 	<div class="fr">
 
 		
-		<a href="/platforms/ios-swift-v1/track/"
+		<a href="https://docs-preview.tealium.com/platforms/ios-swift-v1/track/"
       class="inline-flex justify-between ba ba-link b--black-20 br2 pa2">
 			<section class="tl pr3">
 				<div class="f7 text-color-secondary">Next</div>
@@ -7826,7 +7826,7 @@ class TealiumHelper {
 		
 	</div>
 
-</div>
+  </div>
 <br>&nbsp;</br>
 
           

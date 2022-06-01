@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.61.0" />
+     <meta name="generator" content="Hugo 0.98.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -1424,8 +1424,8 @@ var utag_data = {
       
       
       
-      <li class="w-100 hover-accent-color-light fw4 f6" data-level="2">
-        <a href="/platforms/android-kotlin/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary " data-target=".android-kotlin-overview">Overview</a>
+      <li class="w-100 hover-accent-color-light fw4 f6 active" data-level="2">
+        <a href="/platforms/android-kotlin/" class="db link pl3 pr2 pv1 bg-secondary white" data-target=".android-kotlin-overview">Overview</a>
       </li>
       
     
@@ -7548,7 +7548,7 @@ config.overrideVisitorServiceProfile = &quot;main&quot;
 </code></pre>
 <h3 id="requestvisitorprofile"><code>requestVisitorProfile</code></h3>
 <p>Method to request that the VisitorProfile be updated. This happens after each dispatch, or batch of dispatches, has been sent to the Tealium Customer Data Hub.</p>
-<p>Use this method to request an update at any other point in time. It's a <code>suspend</code> function that needs to be called from a coroutine. As it makes a network request, your coroutine is not called on main thread.</p>
+<p>Use this method to request an update at any other point in time. It&rsquo;s a <code>suspend</code> function that needs to be called from a coroutine. As it makes a network request, your coroutine is not called on main thread.</p>
 <pre><code class="language-java">runBlocking(Dispatchers.IO) {
     tealium.visitorService?.requestVisitorProfile()
 }
@@ -7579,7 +7579,7 @@ config.visitorServiceRefreshInterval = TimeUnit.MINUTES.toSeconds(30) // 30 minu
 	<div class="di">
 		
 		
-		<a href="/platforms/android-kotlin/api/visitor-profile/"
+		<a href="https://docs-preview.tealium.com/platforms/android-kotlin/api/visitor-profile/"
 			class="inline-flex justify-between ba ba-link b--black-20 br2 pa2">
       <svg class="w1" data-icon="chevronLeft" viewBox="0 0 32 32" style="fill:currentcolor;height:100%">
 				<title>"VisitorProfile "</title>
@@ -7595,7 +7595,7 @@ config.visitorServiceRefreshInterval = TimeUnit.MINUTES.toSeconds(30) // 30 minu
 	</div>
 
 
-</div>
+  </div>
 <br>&nbsp;</br>
 
           

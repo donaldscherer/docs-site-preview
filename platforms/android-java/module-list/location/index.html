@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.61.0" />
+     <meta name="generator" content="Hugo 0.98.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -938,8 +938,8 @@ var utag_data = {
       
       
       
-      <li class="w-100 hover-accent-color-light fw4 f6" data-level="2">
-        <a href="/platforms/android-java/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary " data-target=".android-java-overview">Overview</a>
+      <li class="w-100 hover-accent-color-light fw4 f6 active" data-level="2">
+        <a href="/platforms/android-java/" class="db link pl3 pr2 pv1 bg-secondary white" data-target=".android-java-overview">Overview</a>
       </li>
       
     
@@ -7481,7 +7481,7 @@ var utag_data = {
   
     
       <a href="/platforms/android-java/module-list/" class="f6 fw8 mb0 link mid-gray dim mr3">
-        ANDROID JAVA/MODULE LIST
+        ANDROID JAVA MODULE LIST
       </a>
     
   
@@ -7528,14 +7528,14 @@ var utag_data = {
 <h3 id="maven">Maven</h3>
 <p>To install the module using Maven:</p>
 <ol>
-<li>In your project's top-level <code>build.gradle</code> file, add the following Maven repository:</li>
+<li>In your project&rsquo;s top-level <code>build.gradle</code> file, add the following Maven repository:</li>
 </ol>
 <pre><code class="language-groovy">maven {
       url &quot;https://maven.tealiumiq.com/android/releases/&quot;
 }
 </code></pre>
 <ol start="2">
-<li>In your project module's <code>build.gradle</code> file, add the Maven dependencies for the Tealium library, Location module, and Google Play Services Location API:</li>
+<li>In your project module&rsquo;s <code>build.gradle</code> file, add the Maven dependencies for the Tealium library, Location module, and Google Play Services Location API:</li>
 </ol>
 <pre><code class="language-groovy">dependencies {
       implementation 'com.tealium:library:5.8.0'
@@ -7566,7 +7566,7 @@ var utag_data = {
 </code></pre>
 <ol start="3">
 <li>
-<p>Copy the file <code>tealium.location-1.0.0.aar</code> into your project's <code>&lt;PROJECT_ROOT&gt;/&lt;MODULE&gt;/libs</code> directory.</p>
+<p>Copy the file <code>tealium.location-1.0.0.aar</code> into your project&rsquo;s <code>&lt;PROJECT_ROOT&gt;/&lt;MODULE&gt;/libs</code> directory.</p>
 </li>
 <li>
 <p>Add the Tealium library dependency to your project module’s <code>build.gradle</code> file:</p>
@@ -7608,7 +7608,7 @@ mInstance = TealiumLocation.setupInstance(this, tealiumInstances);
 <pre><code class="language-java">public static final int LOCATION_REQUEST_CODE = 101;
 </code></pre>
 <ol start="2">
-<li>Add the following method in your app's <code>MainActivity</code> class:</li>
+<li>Add the following method in your app&rsquo;s <code>MainActivity</code> class:</li>
 </ol>
 <pre><code class="language-java">public void requestLocationPermission() {
         if (ContextCompat.checkSelfPermission(getApplicationContext(),
@@ -7699,30 +7699,30 @@ Geofences are added and removed dynamically, using as few resources as possible.
 <table>
 <thead>
 <tr>
-<th align="left">Variable Name</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-<th align="left">Example</th>
+<th style="text-align:left">Variable Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>latitude</code></td>
-<td align="left"><code>String</code></td>
-<td align="left">The latitude of the user's most recently recorded location</td>
-<td align="left"><code>&quot;32.906119&quot;</code></td>
+<td style="text-align:left"><code>latitude</code></td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">The latitude of the user&rsquo;s most recently recorded location</td>
+<td style="text-align:left"><code>&quot;32.906119&quot;</code></td>
 </tr>
 <tr>
-<td align="left"><code>longitude</code></td>
-<td align="left"><code>String</code></td>
-<td align="left">The longitude of the user's most recently recorded location</td>
-<td align="left"><code>&quot;-117.2367&quot;</code></td>
+<td style="text-align:left"><code>longitude</code></td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">The longitude of the user&rsquo;s most recently recorded location</td>
+<td style="text-align:left"><code>&quot;-117.2367&quot;</code></td>
 </tr>
 <tr>
-<td align="left"><code>location_accuracy</code></td>
-<td align="left"><code>String</code></td>
-<td align="left">The accuracy setting for the location module, such as <code>&quot;high&quot;</code> or <code>&quot;low&quot;</code></td>
-<td align="left"><code>&quot;high&quot;</code></td>
+<td style="text-align:left"><code>location_accuracy</code></td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">The accuracy setting for the location module, such as <code>&quot;high&quot;</code> or <code>&quot;low&quot;</code></td>
+<td style="text-align:left"><code>&quot;high&quot;</code></td>
 </tr>
 </tbody>
 </table>
@@ -7731,30 +7731,30 @@ Geofences are added and removed dynamically, using as few resources as possible.
 <table>
 <thead>
 <tr>
-<th align="left">Variable Name</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-<th align="left">Example</th>
+<th style="text-align:left">Variable Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>tealium_event</code></td>
-<td align="left"><code>String</code></td>
-<td align="left">The Tealium tracked geofence event</td>
-<td align="left"><code>&quot;geofence_entered&quot;</code>, <code>&quot;geofence_exited&quot;</code>, or <code>&quot;geofence_dwell&quot;</code></td>
+<td style="text-align:left"><code>tealium_event</code></td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">The Tealium tracked geofence event</td>
+<td style="text-align:left"><code>&quot;geofence_entered&quot;</code>, <code>&quot;geofence_exited&quot;</code>, or <code>&quot;geofence_dwell&quot;</code></td>
 </tr>
 <tr>
-<td align="left"><code>geofence_name</code></td>
-<td align="left"><code>String</code></td>
-<td align="left">The name of the geofence region</td>
-<td align="left"><code>&quot;Tealium_San_Diego&quot;</code></td>
+<td style="text-align:left"><code>geofence_name</code></td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">The name of the geofence region</td>
+<td style="text-align:left"><code>&quot;Tealium_San_Diego&quot;</code></td>
 </tr>
 <tr>
-<td align="left"><code>geofence_transition_type</code></td>
-<td align="left"><code>String</code></td>
-<td align="left">The type of geofence transition event</td>
-<td align="left"><code>&quot;geofence_entered&quot;</code>, <code>&quot;geofence_exited&quot;</code>, or <code>&quot;geofence_dwell&quot;</code></td>
+<td style="text-align:left"><code>geofence_transition_type</code></td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">The type of geofence transition event</td>
+<td style="text-align:left"><code>&quot;geofence_entered&quot;</code>, <code>&quot;geofence_exited&quot;</code>, or <code>&quot;geofence_dwell&quot;</code></td>
 </tr>
 </tbody>
 </table>
@@ -7767,7 +7767,7 @@ Geofences are added and removed dynamically, using as few resources as possible.
 	<div class="di">
 		
 		
-		<a href="/platforms/android-java/module-list/lifecycle-tracking/"
+		<a href="https://docs-preview.tealium.com/platforms/android-java/module-list/lifecycle-tracking/"
 			class="inline-flex justify-between ba ba-link b--black-20 br2 pa2">
       <svg class="w1" data-icon="chevronLeft" viewBox="0 0 32 32" style="fill:currentcolor;height:100%">
 				<title>"Lifecycle Tracking Module "</title>
@@ -7786,7 +7786,7 @@ Geofences are added and removed dynamically, using as few resources as possible.
 	<div class="fr">
 
 		
-		<a href="/platforms/android-java/module-list/optimizely-x-tracking/"
+		<a href="https://docs-preview.tealium.com/platforms/android-java/module-list/optimizely-x-tracking/"
       class="inline-flex justify-between ba ba-link b--black-20 br2 pa2">
 			<section class="tl pr3">
 				<div class="f7 text-color-secondary">Next</div>
@@ -7801,7 +7801,7 @@ Geofences are added and removed dynamically, using as few resources as possible.
 		
 	</div>
 
-</div>
+  </div>
 <br>&nbsp;</br>
 
           

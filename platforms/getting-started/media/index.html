@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.61.0" />
+     <meta name="generator" content="Hugo 0.98.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -292,8 +292,8 @@ var utag_data = {
       
       
       
-      <li class="w-100 hover-accent-color-light fw4 f6" data-level="2">
-        <a href="/platforms/getting-started/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary " data-target=".getting-started-overview">Overview</a>
+      <li class="w-100 hover-accent-color-light fw4 f6 active" data-level="2">
+        <a href="/platforms/getting-started/" class="db link pl3 pr2 pv1 bg-secondary white" data-target=".getting-started-overview">Overview</a>
       </li>
       
     
@@ -7507,7 +7507,7 @@ var utag_data = {
 <div class="prose" id="prose">
   <p>Media tracking is the ability to track streaming media events (video or audio)  in apps. Streaming media events include sessions, chapters, advertisements (ads), and player events such as play, seek, and pause. Install the Media module to add this tracking capability to your iOS or Android app then implement the media tracking methods.</p>
 <h2 id="how-it-works">How It Works</h2>
-<p>The Media module supports the tracking of a user's entire streaming media experience. This includes the start and end of the session, the start and end of ad breaks, and every interaction with the media player such as play, pause, and seek.</p>
+<p>The Media module supports the tracking of a user&rsquo;s entire streaming media experience. This includes the start and end of the session, the start and end of ad breaks, and every interaction with the media player such as play, pause, and seek.</p>
 <p>The Media module structures the tracking in a hierarchy of the following elements:</p>
 <p><strong>Media Session</strong><br>
 A media session is a container for all of the other elements and it defines the general information about the streaming experience. A media session is a required element for tracking.</p>
@@ -7587,7 +7587,7 @@ An ad is an optional element that occurs within an ad break.</p>
 <!-- raw HTML omitted -->
 <h3 id="metadata">Metadata</h3>
 <p>Metadata is a parameter that sets additional information about an object.  When you pass metadata to the object, those key-value pairs are also set in the data layer. The following objects accept metadata: <code>MediaContent</code>, <code>Chapter</code>, <code>QoE</code>.</p>
-<p>Since metadata can be set in multiple objects, it's possible to set the same metadata key multiple times. To resolve conflicting metadata keys in the data layer, the metadata from multiple objects are merged into the data layer using the object hierarchy: <code>MediaContent</code> &gt; <code>Chapter</code> &gt; <code>QoE</code>.</p>
+<p>Since metadata can be set in multiple objects, it&rsquo;s possible to set the same metadata key multiple times. To resolve conflicting metadata keys in the data layer, the metadata from multiple objects are merged into the data layer using the object hierarchy: <code>MediaContent</code> &gt; <code>Chapter</code> &gt; <code>QoE</code>.</p>
 <p>For example, if you set <code>feed_type</code> in both <code>MediaContent</code> and <code>Chapter</code>, the  value from the <code>Chapter</code> metadata will override the value from the <code>MediaContent</code> metadata in the final data layer.</p>
 <p>Example of setting metadata:</p>
 <!-- raw HTML omitted -->
@@ -7600,74 +7600,74 @@ An ad is an optional element that occurs within an ad break.</p>
 <table>
 <thead>
 <tr>
-<th align="left">Variable</th>
-<th align="left">Description</th>
+<th style="text-align:left">Variable</th>
+<th style="text-align:left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>authorized</code></td>
-<td align="left">The user is authenticated or not.</td>
+<td style="text-align:left"><code>authorized</code></td>
+<td style="text-align:left">The user is authenticated or not.</td>
 </tr>
 <tr>
-<td align="left"><code>episode</code></td>
-<td align="left">The episode name or number.</td>
+<td style="text-align:left"><code>episode</code></td>
+<td style="text-align:left">The episode name or number.</td>
 </tr>
 <tr>
-<td align="left"><code>asset_id</code></td>
-<td align="left">The TMS ID, which is the industry standard ID for a piece of video content.</td>
+<td style="text-align:left"><code>asset_id</code></td>
+<td style="text-align:left">The TMS ID, which is the industry standard ID for a piece of video content.</td>
 </tr>
 <tr>
-<td align="left"><code>daypart</code></td>
-<td align="left">The part of the day such as morning or primetime.</td>
+<td style="text-align:left"><code>daypart</code></td>
+<td style="text-align:left">The part of the day such as morning or primetime.</td>
 </tr>
 <tr>
-<td align="left"><code>feed_type</code></td>
-<td align="left">The feed type such as HD, SD, or regional.</td>
+<td style="text-align:left"><code>feed_type</code></td>
+<td style="text-align:left">The feed type such as HD, SD, or regional.</td>
 </tr>
 <tr>
-<td align="left"><code>first_air_date</code></td>
-<td align="left">The date the media was first aired.</td>
+<td style="text-align:left"><code>first_air_date</code></td>
+<td style="text-align:left">The date the media was first aired.</td>
 </tr>
 <tr>
-<td align="left"><code>first_digital_date</code></td>
-<td align="left">The date the media was first available digitally.</td>
+<td style="text-align:left"><code>first_digital_date</code></td>
+<td style="text-align:left">The date the media was first available digitally.</td>
 </tr>
 <tr>
-<td align="left"><code>genre</code></td>
-<td align="left">The genre.</td>
+<td style="text-align:left"><code>genre</code></td>
+<td style="text-align:left">The genre.</td>
 </tr>
 <tr>
-<td align="left"><code>media_mvpd</code></td>
-<td align="left">The multichannel video programming distributor. Typically a cable or satellite network such as Cox, DirecTV, or Sky.</td>
+<td style="text-align:left"><code>media_mvpd</code></td>
+<td style="text-align:left">The multichannel video programming distributor. Typically a cable or satellite network such as Cox, DirecTV, or Sky.</td>
 </tr>
 <tr>
-<td align="left"><code>network</code></td>
-<td align="left">The network.</td>
+<td style="text-align:left"><code>network</code></td>
+<td style="text-align:left">The network.</td>
 </tr>
 <tr>
-<td align="left"><code>originator</code></td>
-<td align="left">The show originator.</td>
+<td style="text-align:left"><code>originator</code></td>
+<td style="text-align:left">The show originator.</td>
 </tr>
 <tr>
-<td align="left"><code>rating</code></td>
-<td align="left">The rating.</td>
+<td style="text-align:left"><code>rating</code></td>
+<td style="text-align:left">The rating.</td>
 </tr>
 <tr>
-<td align="left"><code>season</code></td>
-<td align="left">The season number or name.</td>
+<td style="text-align:left"><code>season</code></td>
+<td style="text-align:left">The season number or name.</td>
 </tr>
 <tr>
-<td align="left"><code>show</code></td>
-<td align="left">The name of the show.</td>
+<td style="text-align:left"><code>show</code></td>
+<td style="text-align:left">The name of the show.</td>
 </tr>
 <tr>
-<td align="left"><code>show_type</code></td>
-<td align="left">The show type.</td>
+<td style="text-align:left"><code>show_type</code></td>
+<td style="text-align:left">The show type.</td>
 </tr>
 <tr>
-<td align="left"><code>stream_format</code></td>
-<td align="left">The stream format: <code>0</code> is partial content, <code>1</code> is full episode.</td>
+<td style="text-align:left"><code>stream_format</code></td>
+<td style="text-align:left">The stream format: <code>0</code> is partial content, <code>1</code> is full episode.</td>
 </tr>
 </tbody>
 </table>
@@ -7676,34 +7676,34 @@ An ad is an optional element that occurs within an ad break.</p>
 <table>
 <thead>
 <tr>
-<th align="left">Variable</th>
-<th align="left">Description</th>
+<th style="text-align:left">Variable</th>
+<th style="text-align:left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>album</code></td>
-<td align="left">The album name.</td>
+<td style="text-align:left"><code>album</code></td>
+<td style="text-align:left">The album name.</td>
 </tr>
 <tr>
-<td align="left"><code>artist</code></td>
-<td align="left">The artist name.</td>
+<td style="text-align:left"><code>artist</code></td>
+<td style="text-align:left">The artist name.</td>
 </tr>
 <tr>
-<td align="left"><code>author</code></td>
-<td align="left">The audiobook author name.</td>
+<td style="text-align:left"><code>author</code></td>
+<td style="text-align:left">The audiobook author name.</td>
 </tr>
 <tr>
-<td align="left"><code>publisher</code></td>
-<td align="left">The music publisher.</td>
+<td style="text-align:left"><code>publisher</code></td>
+<td style="text-align:left">The music publisher.</td>
 </tr>
 <tr>
-<td align="left"><code>record_label</code></td>
-<td align="left">The record label name.</td>
+<td style="text-align:left"><code>record_label</code></td>
+<td style="text-align:left">The record label name.</td>
 </tr>
 <tr>
-<td align="left"><code>station</code></td>
-<td align="left">The radio station.</td>
+<td style="text-align:left"><code>station</code></td>
+<td style="text-align:left">The radio station.</td>
 </tr>
 </tbody>
 </table>
@@ -7791,34 +7791,34 @@ An ad is an optional element that occurs within an ad break.</p>
 <table>
 <thead>
 <tr>
-<th align="left">Media % Played</th>
-<th align="left">Value of <code>media_milestone</code></th>
+<th style="text-align:left">Media % Played</th>
+<th style="text-align:left">Value of <code>media_milestone</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">8.0 - 12.0</td>
-<td align="left"><code>10%</code></td>
+<td style="text-align:left">8.0 - 12.0</td>
+<td style="text-align:left"><code>10%</code></td>
 </tr>
 <tr>
-<td align="left">23.0 - 27.0</td>
-<td align="left"><code>25%</code></td>
+<td style="text-align:left">23.0 - 27.0</td>
+<td style="text-align:left"><code>25%</code></td>
 </tr>
 <tr>
-<td align="left">48.0 - 52.0</td>
-<td align="left"><code>50%</code></td>
+<td style="text-align:left">48.0 - 52.0</td>
+<td style="text-align:left"><code>50%</code></td>
 </tr>
 <tr>
-<td align="left">73.0 - 77.0</td>
-<td align="left"><code>75%</code></td>
+<td style="text-align:left">73.0 - 77.0</td>
+<td style="text-align:left"><code>75%</code></td>
 </tr>
 <tr>
-<td align="left">88.0 - 92.0</td>
-<td align="left"><code>90%</code></td>
+<td style="text-align:left">88.0 - 92.0</td>
+<td style="text-align:left"><code>90%</code></td>
 </tr>
 <tr>
-<td align="left">97.0 - 100.0</td>
-<td align="left"><code>100%</code></td>
+<td style="text-align:left">97.0 - 100.0</td>
+<td style="text-align:left"><code>100%</code></td>
 </tr>
 </tbody>
 </table>
@@ -7870,110 +7870,110 @@ An ad is an optional element that occurs within an ad break.</p>
 <table>
 <thead>
 <tr>
-<th align="left">Event</th>
-<th align="left">Full Playback</th>
-<th align="left">Interval</th>
-<th align="left">Milestone</th>
-<th align="left">Interval Milestone</th>
-<th align="left">Summary</th>
+<th style="text-align:left">Event</th>
+<th style="text-align:left">Full Playback</th>
+<th style="text-align:left">Interval</th>
+<th style="text-align:left">Milestone</th>
+<th style="text-align:left">Interval Milestone</th>
+<th style="text-align:left">Summary</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">Session Start/Resume/End</td>
-<td align="left">✔</td>
-<td align="left">✔</td>
-<td align="left">✔</td>
-<td align="left">✔</td>
-<td align="left">✔</td>
+<td style="text-align:left">Session Start/Resume/End</td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left">✔</td>
 </tr>
 <tr>
-<td align="left">Chapter Start/Skip/End</td>
-<td align="left">✔</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td style="text-align:left">Chapter Start/Skip/End</td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left">Ad Break Start/End</td>
-<td align="left">✔</td>
-<td align="left"></td>
-<td align="left">✔</td>
-<td align="left">✔</td>
-<td align="left"></td>
+<td style="text-align:left">Ad Break Start/End</td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left">Ad Start/Click/Skip/End</td>
-<td align="left">✔</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td style="text-align:left">Ad Start/Click/Skip/End</td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left">Buffer Start/End</td>
-<td align="left">✔</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td style="text-align:left">Buffer Start/End</td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left">Milestone</td>
-<td align="left">✔</td>
-<td align="left"></td>
-<td align="left">✔</td>
-<td align="left">✔</td>
-<td align="left"></td>
+<td style="text-align:left">Milestone</td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left">Play</td>
-<td align="left">✔</td>
-<td align="left">✔</td>
-<td align="left">✔</td>
-<td align="left">✔</td>
-<td align="left"></td>
+<td style="text-align:left">Play</td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left">Pause</td>
-<td align="left">✔</td>
-<td align="left"></td>
-<td align="left">✔</td>
-<td align="left">✔</td>
-<td align="left"></td>
+<td style="text-align:left">Pause</td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left">Seek Start/End</td>
-<td align="left">✔</td>
-<td align="left"></td>
-<td align="left">✔</td>
-<td align="left">✔</td>
-<td align="left"></td>
+<td style="text-align:left">Seek Start/End</td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left">Player Bitrate Change</td>
-<td align="left">✔</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td style="text-align:left">Player Bitrate Change</td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left">Player State Change</td>
-<td align="left">✔</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td style="text-align:left">Player State Change</td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left">Interval</td>
-<td align="left"></td>
-<td align="left">✔</td>
-<td align="left"></td>
-<td align="left">✔</td>
-<td align="left"></td>
+<td style="text-align:left">Interval</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">✔</td>
+<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
@@ -8058,71 +8058,71 @@ session.endAd()</p>
 <table>
 <thead>
 <tr>
-<th align="left">Variable</th>
-<th align="left">Description</th>
-<th align="left">Required</th>
+<th style="text-align:left">Variable</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>media_channel_name</code></td>
-<td align="left">The channel name.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_channel_name</code></td>
+<td style="text-align:left">The channel name.</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_custom_id</code></td>
-<td align="left">A custom ID for the media session, not auto-generated, such as <code>customId123</code>.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_custom_id</code></td>
+<td style="text-align:left">A custom ID for the media session, not auto-generated, such as <code>customId123</code>.</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_duration</code></td>
-<td align="left">The media duration, in seconds, such as <code>130</code>.</td>
-<td align="left">Yes</td>
+<td style="text-align:left"><code>media_duration</code></td>
+<td style="text-align:left">The media duration, in seconds, such as <code>130</code>.</td>
+<td style="text-align:left">Yes</td>
 </tr>
 <tr>
-<td align="left"><code>media_milestone</code></td>
-<td align="left">The media milestones, measured by percent of content played. Possible values are <code>10%</code>, <code>25%</code>, <code>50%</code>, <code>75%</code>, <code>90%</code>, or <code>100%</code>.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_milestone</code></td>
+<td style="text-align:left">The media milestones, measured by percent of content played. Possible values are <code>10%</code>, <code>25%</code>, <code>50%</code>, <code>75%</code>, <code>90%</code>, or <code>100%</code>.</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_name</code></td>
-<td align="left">Name of the main content.</td>
-<td align="left">Yes</td>
+<td style="text-align:left"><code>media_name</code></td>
+<td style="text-align:left">Name of the main content.</td>
+<td style="text-align:left">Yes</td>
 </tr>
 <tr>
-<td align="left"><code>media_player_name</code></td>
-<td align="left">The name of the media player such as Brightcove or AVPlayer.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_player_name</code></td>
+<td style="text-align:left">The name of the media player such as Brightcove or AVPlayer.</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_qoe</code></td>
-<td align="left">The media quality of experience stream quality object.</td>
-<td align="left">Yes</td>
+<td style="text-align:left"><code>media_qoe</code></td>
+<td style="text-align:left">The media quality of experience stream quality object.</td>
+<td style="text-align:left">Yes</td>
 </tr>
 <tr>
-<td align="left"><code>media_session_start_time</code></td>
-<td align="left">The media start time (calculated if not defined).</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_session_start_time</code></td>
+<td style="text-align:left">The media start time (calculated if not defined).</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_stream_type</code></td>
-<td align="left">The media stream type, such as <code>DVoD</code>.</td>
-<td align="left">Yes</td>
+<td style="text-align:left"><code>media_stream_type</code></td>
+<td style="text-align:left">The media stream type, such as <code>DVoD</code>.</td>
+<td style="text-align:left">Yes</td>
 </tr>
 <tr>
-<td align="left"><code>media_tracking_type</code></td>
-<td align="left">The <a href="#trackingtype"><code>TrackingType</code></a> value passed into the <code>MediaContent</code> object, such as <code>interval</code></td>
-<td align="left">Yes</td>
+<td style="text-align:left"><code>media_tracking_type</code></td>
+<td style="text-align:left">The <a href="#trackingtype"><code>TrackingType</code></a> value passed into the <code>MediaContent</code> object, such as <code>interval</code></td>
+<td style="text-align:left">Yes</td>
 </tr>
 <tr>
-<td align="left"><code>media_type</code></td>
-<td align="left">The media type, such as <code>video</code>.</td>
-<td align="left">Yes</td>
+<td style="text-align:left"><code>media_type</code></td>
+<td style="text-align:left">The media type, such as <code>video</code>.</td>
+<td style="text-align:left">Yes</td>
 </tr>
 <tr>
-<td align="left"><code>media_uuid</code></td>
-<td align="left">The media session unique ID, auto-generated by Tealium SDK, such as <code>83675D85-F0D3-48BB-A1BB-18111B7A89AA</code>.</td>
-<td align="left">Yes</td>
+<td style="text-align:left"><code>media_uuid</code></td>
+<td style="text-align:left">The media session unique ID, auto-generated by Tealium SDK, such as <code>83675D85-F0D3-48BB-A1BB-18111B7A89AA</code>.</td>
+<td style="text-align:left">Yes</td>
 </tr>
 </tbody>
 </table>
@@ -8131,36 +8131,36 @@ session.endAd()</p>
 <table>
 <thead>
 <tr>
-<th align="left">Variable</th>
-<th align="left">Description</th>
-<th align="left">Required</th>
+<th style="text-align:left">Variable</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>media_chapter_uuid</code></td>
-<td align="left">The unique ID of the chapter, such as <code>83675D85-F0D3-48BB-A1BB-18111B7A89AA</code>.</td>
-<td align="left">Yes</td>
+<td style="text-align:left"><code>media_chapter_uuid</code></td>
+<td style="text-align:left">The unique ID of the chapter, such as <code>83675D85-F0D3-48BB-A1BB-18111B7A89AA</code>.</td>
+<td style="text-align:left">Yes</td>
 </tr>
 <tr>
-<td align="left"><code>media_chapter_name</code></td>
-<td align="left">The chapter name, such as <code>Chapter 2</code>.</td>
-<td align="left">Yes</td>
+<td style="text-align:left"><code>media_chapter_name</code></td>
+<td style="text-align:left">The chapter name, such as <code>Chapter 2</code>.</td>
+<td style="text-align:left">Yes</td>
 </tr>
 <tr>
-<td align="left"><code>media_chapter_duration</code></td>
-<td align="left">The chapter's duration in seconds (calculated if not not defined), such as <code>600</code>.</td>
-<td align="left">Yes</td>
+<td style="text-align:left"><code>media_chapter_duration</code></td>
+<td style="text-align:left">The chapter&rsquo;s duration in seconds (calculated if not not defined), such as <code>600</code>.</td>
+<td style="text-align:left">Yes</td>
 </tr>
 <tr>
-<td align="left"><code>media_chapter_position</code></td>
-<td align="left">The number position of the chapter within the session, starting with <code>0</code>.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_chapter_position</code></td>
+<td style="text-align:left">The number position of the chapter within the session, starting with <code>0</code>.</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_chapter_start_time</code></td>
-<td align="left">Offset in seconds from the start of the content, such as <code>641407641.724858</code>.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_chapter_start_time</code></td>
+<td style="text-align:left">Offset in seconds from the start of the content, such as <code>641407641.724858</code>.</td>
+<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
@@ -8169,41 +8169,41 @@ session.endAd()</p>
 <table>
 <thead>
 <tr>
-<th align="left">Variable</th>
-<th align="left">Description</th>
-<th align="left">Required</th>
+<th style="text-align:left">Variable</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>media_ad_break_id</code></td>
-<td align="left">The custom ID for the ad break.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_ad_break_id</code></td>
+<td style="text-align:left">The custom ID for the ad break.</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_ad_break_index</code></td>
-<td align="left">The index of the ad break, such as <code>1</code> for the first ad break.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_ad_break_index</code></td>
+<td style="text-align:left">The index of the ad break, such as <code>1</code> for the first ad break.</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_ad_break_duration</code></td>
-<td align="left">The ad break duration in seconds (calculated if not defined).</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_ad_break_duration</code></td>
+<td style="text-align:left">The ad break duration in seconds (calculated if not defined).</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_ad_break_name</code></td>
-<td align="left">The name of the ad break. If not provided, is automatically set to the value of <code>media_ad_break_uuid</code>.</td>
-<td align="left">Yes</td>
+<td style="text-align:left"><code>media_ad_break_name</code></td>
+<td style="text-align:left">The name of the ad break. If not provided, is automatically set to the value of <code>media_ad_break_uuid</code>.</td>
+<td style="text-align:left">Yes</td>
 </tr>
 <tr>
-<td align="left"><code>media_ad_break_position</code></td>
-<td align="left">The number position of the ad break within the content, starting with <code>0</code>.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_ad_break_position</code></td>
+<td style="text-align:left">The number position of the ad break within the content, starting with <code>0</code>.</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_ad_break_uuid</code></td>
-<td align="left">The UUID for the ad break, which is auto-generated by the Tealium SDK.</td>
-<td align="left">Yes</td>
+<td style="text-align:left"><code>media_ad_break_uuid</code></td>
+<td style="text-align:left">The UUID for the ad break, which is auto-generated by the Tealium SDK.</td>
+<td style="text-align:left">Yes</td>
 </tr>
 </tbody>
 </table>
@@ -8212,81 +8212,81 @@ session.endAd()</p>
 <table>
 <thead>
 <tr>
-<th align="left">Variable</th>
-<th align="left">Description</th>
-<th align="left">Required</th>
+<th style="text-align:left">Variable</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>media_ad_campaign_id</code></td>
-<td align="left">The campaign ID for the ad.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_ad_campaign_id</code></td>
+<td style="text-align:left">The campaign ID for the ad.</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_ad_creative_id</code></td>
-<td align="left">The ID for the creative content of the ad.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_ad_creative_id</code></td>
+<td style="text-align:left">The ID for the creative content of the ad.</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_ad_creative_url</code></td>
-<td align="left">The URL for the creative content of the ad.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_ad_creative_url</code></td>
+<td style="text-align:left">The URL for the creative content of the ad.</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_ad_duration</code></td>
-<td align="left">The ad duration in seconds (if not provided, calculated by the SDK).</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_ad_duration</code></td>
+<td style="text-align:left">The ad duration in seconds (if not provided, calculated by the SDK).</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_ad_id</code></td>
-<td align="left">The custom ID for the ad.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_ad_id</code></td>
+<td style="text-align:left">The custom ID for the ad.</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_ad_load</code></td>
-<td align="left">The number of ad loads.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_ad_load</code></td>
+<td style="text-align:left">The number of ad loads.</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_ad_name</code></td>
-<td align="left">The name of the ad.</td>
-<td align="left">Yes</td>
+<td style="text-align:left"><code>media_ad_name</code></td>
+<td style="text-align:left">The name of the ad.</td>
+<td style="text-align:left">Yes</td>
 </tr>
 <tr>
-<td align="left"><code>media_ad_placement_id</code></td>
-<td align="left">The placement ID for the ad (typically in the header or footer).</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_ad_placement_id</code></td>
+<td style="text-align:left">The placement ID for the ad (typically in the header or footer).</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_ad_player_name</code></td>
-<td align="left">The player name for the ad.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_ad_player_name</code></td>
+<td style="text-align:left">The player name for the ad.</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_ad_pod</code></td>
-<td align="left">The pod the ad belongs to.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_ad_pod</code></td>
+<td style="text-align:left">The pod the ad belongs to.</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_ad_position</code></td>
-<td align="left">The number position of the ad within the ad break, starting with <code>0</code>.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_ad_position</code></td>
+<td style="text-align:left">The number position of the ad within the ad break, starting with <code>0</code>.</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_ad_site_id</code></td>
-<td align="left">The site ID for the ad.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_ad_site_id</code></td>
+<td style="text-align:left">The site ID for the ad.</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_ad_uuid</code></td>
-<td align="left">The UUID for the ad, such as <code>83675D85-F0D3-48BB-A1BB-18111B7A89AA</code>.</td>
-<td align="left">Yes</td>
+<td style="text-align:left"><code>media_ad_uuid</code></td>
+<td style="text-align:left">The UUID for the ad, such as <code>83675D85-F0D3-48BB-A1BB-18111B7A89AA</code>.</td>
+<td style="text-align:left">Yes</td>
 </tr>
 <tr>
-<td align="left"><code>media_advertiser</code></td>
-<td align="left">The advertiser name for the ad.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_advertiser</code></td>
+<td style="text-align:left">The advertiser name for the ad.</td>
+<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
@@ -8296,36 +8296,36 @@ session.endAd()</p>
 <table>
 <thead>
 <tr>
-<th align="left">Variable</th>
-<th align="left">Description</th>
-<th align="left">Required</th>
+<th style="text-align:left">Variable</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>media_qoe_bitrate</code></td>
-<td align="left">The media quality of experience bitrate value in kilobits per second (kbps), such as <code>1500</code>.</td>
-<td align="left">Yes</td>
+<td style="text-align:left"><code>media_qoe_bitrate</code></td>
+<td style="text-align:left">The media quality of experience bitrate value in kilobits per second (kbps), such as <code>1500</code>.</td>
+<td style="text-align:left">Yes</td>
 </tr>
 <tr>
-<td align="left"><code>media_qoe_startup_time</code></td>
-<td align="left">The time taken, in milliseconds, for the content to start up.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_qoe_startup_time</code></td>
+<td style="text-align:left">The time taken, in milliseconds, for the content to start up.</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_qoe_frames_per_second</code></td>
-<td align="left">The frame rate per second of the content.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_qoe_frames_per_second</code></td>
+<td style="text-align:left">The frame rate per second of the content.</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_qoe_dropped_frames</code></td>
-<td align="left">The sum of all dropped frames during the session.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_qoe_dropped_frames</code></td>
+<td style="text-align:left">The sum of all dropped frames during the session.</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left"><code>media_qoe_playback_speed</code></td>
-<td align="left">The user-selected content playback speed, such as <code>1.5</code> for 1 1/2 times the normal media speed.</td>
-<td align="left"></td>
+<td style="text-align:left"><code>media_qoe_playback_speed</code></td>
+<td style="text-align:left">The user-selected content playback speed, such as <code>1.5</code> for 1 1/2 times the normal media speed.</td>
+<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
@@ -8334,114 +8334,114 @@ session.endAd()</p>
 <table>
 <thead>
 <tr>
-<th align="left">Variable</th>
-<th align="left">Data Type</th>
-<th align="left">Description</th>
-<th align="left">Example</th>
+<th style="text-align:left">Variable</th>
+<th style="text-align:left">Data Type</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>media_ad_uuids</code></td>
-<td align="left"><code>[String]</code></td>
-<td align="left">An array of unique identifiers for ads played during this media session.</td>
-<td align="left"><code>[“8B51B7FA-EEC5-4754-ACAB-58B9B7643AE8”, “83675D85-F0D3-48BB-A1BB-18111B7A89AA”]</code></td>
+<td style="text-align:left"><code>media_ad_uuids</code></td>
+<td style="text-align:left"><code>[String]</code></td>
+<td style="text-align:left">An array of unique identifiers for ads played during this media session.</td>
+<td style="text-align:left"><code>[“8B51B7FA-EEC5-4754-ACAB-58B9B7643AE8”, “83675D85-F0D3-48BB-A1BB-18111B7A89AA”]</code></td>
 </tr>
 <tr>
-<td align="left"><code>media_percentage_ad_complete</code></td>
-<td align="left"><code>Double</code></td>
-<td align="left">The percentage of completed ads after starting.</td>
-<td align="left"><code>90.0</code></td>
+<td style="text-align:left"><code>media_percentage_ad_complete</code></td>
+<td style="text-align:left"><code>Double</code></td>
+<td style="text-align:left">The percentage of completed ads after starting.</td>
+<td style="text-align:left"><code>90.0</code></td>
 </tr>
 <tr>
-<td align="left"><code>media_percentage_ad_time</code></td>
-<td align="left"><code>Double</code></td>
-<td align="left">The percentage of ad content playback time.</td>
-<td align="left"><code>23.7</code></td>
+<td style="text-align:left"><code>media_percentage_ad_time</code></td>
+<td style="text-align:left"><code>Double</code></td>
+<td style="text-align:left">The percentage of ad content playback time.</td>
+<td style="text-align:left"><code>23.7</code></td>
 </tr>
 <tr>
-<td align="left"><code>media_percentage_chapter_complete</code></td>
-<td align="left"><code>Double</code></td>
-<td align="left">The percentage of completed chapters after starting.</td>
-<td align="left"><code>75.0</code></td>
+<td style="text-align:left"><code>media_percentage_chapter_complete</code></td>
+<td style="text-align:left"><code>Double</code></td>
+<td style="text-align:left">The percentage of completed chapters after starting.</td>
+<td style="text-align:left"><code>75.0</code></td>
 </tr>
 <tr>
-<td align="left"><code>media_played_to_end</code></td>
-<td align="left"><code>Boolean</code></td>
-<td align="left">Indicates whether or not the content entirely.</td>
-<td align="left"><code>true</code></td>
+<td style="text-align:left"><code>media_played_to_end</code></td>
+<td style="text-align:left"><code>Boolean</code></td>
+<td style="text-align:left">Indicates whether or not the content entirely.</td>
+<td style="text-align:left"><code>true</code></td>
 </tr>
 <tr>
-<td align="left"><code>media_session_duration</code></td>
-<td align="left"><code>Double</code></td>
-<td align="left">The length of the session in seconds (from <code>sessionStart</code> to <code>sessionEnd</code>.</td>
-<td align="left"><code>1300.0</code></td>
+<td style="text-align:left"><code>media_session_duration</code></td>
+<td style="text-align:left"><code>Double</code></td>
+<td style="text-align:left">The length of the session in seconds (from <code>sessionStart</code> to <code>sessionEnd</code>.</td>
+<td style="text-align:left"><code>1300.0</code></td>
 </tr>
 <tr>
-<td align="left"><code>media_session_end_time</code></td>
-<td align="left"><code>String</code></td>
-<td align="left">The date and time (UTC) the session ended.</td>
-<td align="left"><code>2021-01-26T16:43:53Z</code></td>
+<td style="text-align:left"><code>media_session_end_time</code></td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">The date and time (UTC) the session ended.</td>
+<td style="text-align:left"><code>2021-01-26T16:43:53Z</code></td>
 </tr>
 <tr>
-<td align="left"><code>media_session_start_time</code></td>
-<td align="left"><code>String</code></td>
-<td align="left">The date and time (UTC) the session started.</td>
-<td align="left"><code>2021-01-26T16:43:53Z</code></td>
+<td style="text-align:left"><code>media_session_start_time</code></td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">The date and time (UTC) the session started.</td>
+<td style="text-align:left"><code>2021-01-26T16:43:53Z</code></td>
 </tr>
 <tr>
-<td align="left"><code>media_total_ad_skips</code></td>
-<td align="left"><code>Int</code></td>
-<td align="left">The number of times the <code>skipAd()</code> method was called.</td>
-<td align="left"><code>3</code></td>
+<td style="text-align:left"><code>media_total_ad_skips</code></td>
+<td style="text-align:left"><code>Int</code></td>
+<td style="text-align:left">The number of times the <code>skipAd()</code> method was called.</td>
+<td style="text-align:left"><code>3</code></td>
 </tr>
 <tr>
-<td align="left"><code>media_total_ad_time</code></td>
-<td align="left"><code>Double</code></td>
-<td align="left">The total seconds ad content played.</td>
-<td align="left"><code>30.0</code></td>
+<td style="text-align:left"><code>media_total_ad_time</code></td>
+<td style="text-align:left"><code>Double</code></td>
+<td style="text-align:left">The total seconds ad content played.</td>
+<td style="text-align:left"><code>30.0</code></td>
 </tr>
 <tr>
-<td align="left"><code>media_total_ads</code></td>
-<td align="left"><code>Int</code></td>
-<td align="left">The number of times the <code>startAd()</code> method was called.</td>
-<td align="left"><code>4</code></td>
+<td style="text-align:left"><code>media_total_ads</code></td>
+<td style="text-align:left"><code>Int</code></td>
+<td style="text-align:left">The number of times the <code>startAd()</code> method was called.</td>
+<td style="text-align:left"><code>4</code></td>
 </tr>
 <tr>
-<td align="left"><code>media_total_buffer_time</code></td>
-<td align="left"><code>Double</code></td>
-<td align="left">The total seconds the content was buffering (<code>startBuffer</code> to <code>endBuffer</code>).</td>
-<td align="left"><code>2.1</code></td>
+<td style="text-align:left"><code>media_total_buffer_time</code></td>
+<td style="text-align:left"><code>Double</code></td>
+<td style="text-align:left">The total seconds the content was buffering (<code>startBuffer</code> to <code>endBuffer</code>).</td>
+<td style="text-align:left"><code>2.1</code></td>
 </tr>
 <tr>
-<td align="left"><code>media_total_chapter_skips</code></td>
-<td align="left"><code>Int</code></td>
-<td align="left">The number of times the <code>chapterSkip()</code> method was called.</td>
-<td align="left"><code>1</code></td>
+<td style="text-align:left"><code>media_total_chapter_skips</code></td>
+<td style="text-align:left"><code>Int</code></td>
+<td style="text-align:left">The number of times the <code>chapterSkip()</code> method was called.</td>
+<td style="text-align:left"><code>1</code></td>
 </tr>
 <tr>
-<td align="left"><code>media_total_pauses</code></td>
-<td align="left"><code>Int</code></td>
-<td align="left">The number of times the <code>pause()</code> method was called.</td>
-<td align="left"><code>1</code></td>
+<td style="text-align:left"><code>media_total_pauses</code></td>
+<td style="text-align:left"><code>Int</code></td>
+<td style="text-align:left">The number of times the <code>pause()</code> method was called.</td>
+<td style="text-align:left"><code>1</code></td>
 </tr>
 <tr>
-<td align="left"><code>media_total_play_time</code></td>
-<td align="left"><code>Double</code></td>
-<td align="left">The total seconds the content was playing.</td>
-<td align="left"><code>9300.2</code></td>
+<td style="text-align:left"><code>media_total_play_time</code></td>
+<td style="text-align:left"><code>Double</code></td>
+<td style="text-align:left">The total seconds the content was playing.</td>
+<td style="text-align:left"><code>9300.2</code></td>
 </tr>
 <tr>
-<td align="left"><code>media_total_plays</code></td>
-<td align="left"><code>Int</code></td>
-<td align="left">The number of times the <code>play()</code> method was called.</td>
-<td align="left"><code>2</code></td>
+<td style="text-align:left"><code>media_total_plays</code></td>
+<td style="text-align:left"><code>Int</code></td>
+<td style="text-align:left">The number of times the <code>play()</code> method was called.</td>
+<td style="text-align:left"><code>2</code></td>
 </tr>
 <tr>
-<td align="left"><code>media_total_seek_time</code></td>
-<td align="left"><code>Double</code></td>
-<td align="left">The total seconds in seek (<code>seekStart</code> to <code>seekEnd</code>).</td>
-<td align="left"><code>46.5</code></td>
+<td style="text-align:left"><code>media_total_seek_time</code></td>
+<td style="text-align:left"><code>Double</code></td>
+<td style="text-align:left">The total seconds in seek (<code>seekStart</code> to <code>seekEnd</code>).</td>
+<td style="text-align:left"><code>46.5</code></td>
 </tr>
 </tbody>
 </table>
@@ -8452,7 +8452,7 @@ session.endAd()</p>
 	<div class="di">
 		
 		
-		<a href="/platforms/getting-started/location/"
+		<a href="https://docs-preview.tealium.com/platforms/getting-started/location/"
 			class="inline-flex justify-between ba ba-link b--black-20 br2 pa2">
       <svg class="w1" data-icon="chevronLeft" viewBox="0 0 32 32" style="fill:currentcolor;height:100%">
 				<title>"User Location and Geofencing "</title>
@@ -8471,7 +8471,7 @@ session.endAd()</p>
 	<div class="fr">
 
 		
-		<a href="/platforms/getting-started/deep-linking/"
+		<a href="https://docs-preview.tealium.com/platforms/getting-started/deep-linking/"
       class="inline-flex justify-between ba ba-link b--black-20 br2 pa2">
 			<section class="tl pr3">
 				<div class="f7 text-color-secondary">Next</div>
@@ -8486,7 +8486,7 @@ session.endAd()</p>
 		
 	</div>
 
-</div>
+  </div>
 <br>&nbsp;</br>
 
           

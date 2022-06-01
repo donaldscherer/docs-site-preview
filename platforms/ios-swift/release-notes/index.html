@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.61.0" />
+     <meta name="generator" content="Hugo 0.98.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -4032,8 +4032,8 @@ var utag_data = {
       
       
       
-      <li class="w-100 hover-accent-color-light fw4 f6" data-level="2">
-        <a href="/platforms/ios-swift/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary " data-target=".ios-swift-overview">Overview</a>
+      <li class="w-100 hover-accent-color-light fw4 f6 active" data-level="2">
+        <a href="/platforms/ios-swift/" class="db link pl3 pr2 pv1 bg-secondary white" data-target=".ios-swift-overview">Overview</a>
       </li>
       
     
@@ -7551,7 +7551,7 @@ var utag_data = {
 </ul>
 <p><strong>Low Impact Changes</strong></p>
 <ul>
-<li>Prevented automatic deep link tracking from digesting AppDelegate's deep links, in order to allow other implementations to handle their own deep links.</li>
+<li>Prevented automatic deep link tracking from digesting AppDelegate&rsquo;s deep links, in order to allow other implementations to handle their own deep links.</li>
 <li>Fixed threading issues for <code>TagManagement</code> module and <code>TealiumConfig</code>.</li>
 </ul>
 <h2 id="250-november-2021">2.5.0 (November 2021)</h2>
@@ -7573,14 +7573,14 @@ var utag_data = {
 </ul>
 <p><strong>Low Impact Changes</strong></p>
 <ul>
-<li>Made all data layer and Collector's variables available using the method <a href="/platforms/ios-swift/api/tealium/#gathertrackdata"><code>Tealium.gatherTrackData()</code></a>.</li>
+<li>Made all data layer and Collector&rsquo;s variables available using the method <a href="/platforms/ios-swift/api/tealium/#gathertrackdata"><code>Tealium.gatherTrackData()</code></a>.</li>
 <li>Renamed <code>TealiumKeys</code> to <code>TealiumDataKeys</code>, for use with <a href="/platforms/ios-swift/api/tealium/#gathertrackdata"><code>gatherTrackData()</code></a>.</li>
 <li>Improved Codable support by ignoring non-codable values in release builds and causing a crash in debug builds.</li>
 <li>Reduced Geofences loading usage of main thread.</li>
 </ul>
 <p><strong>Known Issues</strong></p>
 <ul>
-<li>CocoaPods platform iOS version is increased to 11 due to linting issues (but, if required, it's safe to lower it to 9 with a post-install script).</li>
+<li>CocoaPods platform iOS version is increased to 11 due to linting issues (but, if required, it&rsquo;s safe to lower it to 9 with a post-install script).</li>
 <li>Carthage generates warnings with Xcode 13 (<a href="https://github.com/Carthage/Carthage/issues/3238)">https://github.com/Carthage/Carthage/issues/3238)</a>.</li>
 </ul>
 <h2 id="246-october-2021">2.4.6 (October 2021)</h2>
@@ -7620,7 +7620,7 @@ var utag_data = {
 <li>Added <code>device_logical_resolution</code> to the data layer.</li>
 <li>Avoided possible conflicts between Tealium managed geofences and application ones.</li>
 <li>Allowed DeepLinks to be handled before Tealium initialization is complete.</li>
-<li>Fixed a bug where changing <code>loggerType</code> in the configuration didn't reflect in the correct logger instance for custom loggers.</li>
+<li>Fixed a bug where changing <code>loggerType</code> in the configuration didn&rsquo;t reflect in the correct logger instance for custom loggers.</li>
 <li><a href="https://developer.apple.com/documentation/foundation/date"><code>Date</code></a> objects passed to the data layer are converted to <code>ISO8601</code> formatted strings.</li>
 </ul>
 <h2 id="243-september-2021">2.4.3 (September 2021)</h2>
@@ -7681,8 +7681,8 @@ var utag_data = {
 <h2 id="222-january-2021">2.2.2 (January 2021)</h2>
 <p><strong>Low Impact Changes</strong></p>
 <ul>
-<li>Added the ability to set an expiration for the user's consent status and a callback that is triggered when the consent has expired. <a href="/platforms/ios-swift/consent-management/">Learn more about consent management</a>.</li>
-<li>Added public method to <a href="/platforms/ios-swift/api/tealium/#resetvisitorid">reset the user's Visitor ID</a>.</li>
+<li>Added the ability to set an expiration for the user&rsquo;s consent status and a callback that is triggered when the consent has expired. <a href="/platforms/ios-swift/consent-management/">Learn more about consent management</a>.</li>
+<li>Added public method to <a href="/platforms/ios-swift/api/tealium/#resetvisitorid">reset the user&rsquo;s Visitor ID</a>.</li>
 <li>Removed Lifecycle listeners on deinitialization of Tealium.</li>
 </ul>
 <h2 id="221-january-2021">2.2.1 (January 2021)</h2>
@@ -7768,7 +7768,7 @@ var utag_data = {
 	<div class="di">
 		
 		
-		<a href="/platforms/ios-swift/with-objective-c/"
+		<a href="https://docs-preview.tealium.com/platforms/ios-swift/with-objective-c/"
 			class="inline-flex justify-between ba ba-link b--black-20 br2 pa2">
       <svg class="w1" data-icon="chevronLeft" viewBox="0 0 32 32" style="fill:currentcolor;height:100%">
 				<title>"Working with Objective-C "</title>
@@ -7784,7 +7784,7 @@ var utag_data = {
 	</div>
 
 
-</div>
+  </div>
 <br>&nbsp;</br>
 
           
@@ -7825,28 +7825,28 @@ var utag_data = {
 
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">Table of Contents</p>
-      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#2-6-3-march-2022">2.6.3 (March 2022)</a></li>
-              <li><a href="#2-6-2-february-2022">2.6.2 (February 2022)</a></li>
-              <li><a href="#2-6-1-february-2022">2.6.1 (February 2022)</a></li>
-              <li><a href="#2-6-0-january-2022">2.6.0 (January 2022)</a></li>
-              <li><a href="#2-5-1-december-2021">2.5.1 (December 2021)</a></li>
-              <li><a href="#2-5-0-november-2021">2.5.0 (November 2021)</a></li>
-              <li><a href="#2-4-6-october-2021">2.4.6 (October 2021)</a></li>
-              <li><a href="#2-4-5-september-2021">2.4.5 (September 2021)</a></li>
-              <li><a href="#2-4-4-september-2021">2.4.4 (September 2021)</a></li>
-              <li><a href="#2-4-3-september-2021">2.4.3 (September 2021)</a></li>
-              <li><a href="#2-4-2-august-2021">2.4.2 (August 2021)</a></li>
-              <li><a href="#2-4-1-july-2021">2.4.1 (July 2021)</a></li>
-              <li><a href="#2-4-0-july-2021">2.4.0 (July 2021)</a></li>
-              <li><a href="#2-3-2-june-2021">2.3.2 (June 2021)</a></li>
-              <li><a href="#2-3-1-may-2021">2.3.1 (May 2021)</a></li>
-              <li><a href="#2-3-0-april-2021">2.3.0 (April 2021)</a></li>
-              <li><a href="#2-2-2-january-2021">2.2.2 (January 2021)</a></li>
-              <li><a href="#2-2-1-january-2021">2.2.1 (January 2021)</a></li>
-              <li><a href="#2-2-0-november-2020">2.2.0 (November 2020)</a></li>
-              <li><a href="#2-1-1-october-2020">2.1.1 (October 2020)</a></li>
-              <li><a href="#2-1-0-october-2020">2.1.0 (October 2020)</a></li>
-              <li><a href="#2-0-0-july-2020">2.0.0 (July 2020)</a></li>
+      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#263-march-2022">2.6.3 (March 2022)</a></li>
+              <li><a href="#262-february-2022">2.6.2 (February 2022)</a></li>
+              <li><a href="#261-february-2022">2.6.1 (February 2022)</a></li>
+              <li><a href="#260-january-2022">2.6.0 (January 2022)</a></li>
+              <li><a href="#251-december-2021">2.5.1 (December 2021)</a></li>
+              <li><a href="#250-november-2021">2.5.0 (November 2021)</a></li>
+              <li><a href="#246-october-2021">2.4.6 (October 2021)</a></li>
+              <li><a href="#245-september-2021">2.4.5 (September 2021)</a></li>
+              <li><a href="#244-september-2021">2.4.4 (September 2021)</a></li>
+              <li><a href="#243-september-2021">2.4.3 (September 2021)</a></li>
+              <li><a href="#242-august-2021">2.4.2 (August 2021)</a></li>
+              <li><a href="#241-july-2021">2.4.1 (July 2021)</a></li>
+              <li><a href="#240-july-2021">2.4.0 (July 2021)</a></li>
+              <li><a href="#232-june-2021">2.3.2 (June 2021)</a></li>
+              <li><a href="#231-may-2021">2.3.1 (May 2021)</a></li>
+              <li><a href="#230-april-2021">2.3.0 (April 2021)</a></li>
+              <li><a href="#222-january-2021">2.2.2 (January 2021)</a></li>
+              <li><a href="#221-january-2021">2.2.1 (January 2021)</a></li>
+              <li><a href="#220-november-2020">2.2.0 (November 2020)</a></li>
+              <li><a href="#211-october-2020">2.1.1 (October 2020)</a></li>
+              <li><a href="#210-october-2020">2.1.0 (October 2020)</a></li>
+              <li><a href="#200-july-2020">2.0.0 (July 2020)</a></li>
               </nav>
   </aside></div>
 

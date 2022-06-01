@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.61.0" />
+     <meta name="generator" content="Hugo 0.98.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -292,8 +292,8 @@ var utag_data = {
       
       
       
-      <li class="w-100 hover-accent-color-light fw4 f6" data-level="2">
-        <a href="/platforms/getting-started/" class="db link pl3 pr2 pv1 primary-color hover-bg-primary " data-target=".getting-started-overview">Overview</a>
+      <li class="w-100 hover-accent-color-light fw4 f6 active" data-level="2">
+        <a href="/platforms/getting-started/" class="db link pl3 pr2 pv1 bg-secondary white" data-target=".getting-started-overview">Overview</a>
       </li>
       
     
@@ -7507,7 +7507,7 @@ var utag_data = {
 <div class="prose" id="prose">
   <h2 id="basics">Basics</h2>
 <p>When testing mobile apps, it is recommended to only test in the Tealium <code>&quot;dev&quot;</code> environment, and not in <code>&quot;prod&quot;</code>. Also, use a build of the app specifically designed for testing. If you must use a production build (App Store/Play Store), see the section below on switching environments to avoid making changes to the live application.</p>
-<p>When publishing changes while debugging, you are subject to the 5 minute expiry time on Tealium's CDN cache. During this time, the <code>utag.js</code> files are refreshed on the CDN after you publish.</p>
+<p>When publishing changes while debugging, you are subject to the 5 minute expiry time on Tealium&rsquo;s CDN cache. During this time, the <code>utag.js</code> files are refreshed on the CDN after you publish.</p>
 <p>Each time you launch the app from a cold start (app was previously swiped away from the app tray), the Tealium SDK checks for new files, and subsequently every 15 minutes by default (controlled by <a href="https://community.tealiumiq.com/t5/Mobile-Libraries/Mobile-Publish-Settings/ta-p/13633">mobile publish settings</a>. However, if it has been less than 5 minutes since publishing, restarting the app does not always work until after the 5 minute expiry time. Switching between the <code>&quot;dev&quot;</code> and <code>&quot;qa&quot;</code> environments while testing alleviates this somewhat, because the cache on the environment expires if not used within the last 5 minutes, and the new file becomes available immediately.</p>
 <h2 id="tealium-eventstream-live-events">Tealium EventStream Live Events</h2>
 <p>The <strong>Live Events</strong> feature in Tealium EventStream is available to all Tealium customers for the purpose of debugging mobile installations.</p>
@@ -7537,37 +7537,37 @@ var utag_data = {
 <li>In the <strong>Map To</strong> section, perform the same process again, this time changing the environment from &ldquo;prod&rdquo; to &ldquo;dev&rdquo; (or &ldquo;qa&rdquo;) in the URL, depending on which environment you wish to target. Remove the asterisks character from the end of the URL, for example:  <code>https://tags.tiqcdn.com/utag/&lt;account&gt;/&lt;profile&gt;/dev/</code></li>
 <li>Click <strong>OK</strong> to complete the setup.</li>
 </ol>
-<p>Charles Proxy now switches all requests from the &ldquo;prod&rdquo; environment to the &ldquo;dev&rdquo; environment. To switch back to the app's default environment, disable or delete the Map Remote rule, or turn off the proxy on your device.</p>
+<p>Charles Proxy now switches all requests from the &ldquo;prod&rdquo; environment to the &ldquo;dev&rdquo; environment. To switch back to the app&rsquo;s default environment, disable or delete the Map Remote rule, or turn off the proxy on your device.</p>
 <!-- raw HTML omitted -->
 <h4 id="traffic-inspection">Traffic Inspection</h4>
 <p>The following are common examples of requests to inspect using Charles proxy.</p>
 <table>
 <thead>
 <tr>
-<th align="left">Request</th>
-<th align="left">Description</th>
+<th style="text-align:left">Request</th>
+<th style="text-align:left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>\*.tealiumiq.com</code></td>
-<td align="left">These hits are sent if you're using Tealium AudienceStream's Live Events feature for debugging, as described in Option 1 above.</td>
+<td style="text-align:left"><code>\*.tealiumiq.com</code></td>
+<td style="text-align:left">These hits are sent if you&rsquo;re using Tealium AudienceStream&rsquo;s Live Events feature for debugging, as described in Option 1 above.</td>
 </tr>
 <tr>
-<td align="left"><code>mobile.html</code></td>
-<td align="left">Initial hit retrieving settings from Tealium's Multi-CDN.</td>
+<td style="text-align:left"><code>mobile.html</code></td>
+<td style="text-align:left">Initial hit retrieving settings from Tealium&rsquo;s Multi-CDN.</td>
 </tr>
 <tr>
-<td align="left"><code>google-analytics.com, collect.gif</code></td>
-<td align="left">If using Google Analytics, hits are sent to <code>collect.gif</code>, and the query parameters is inspected.</td>
+<td style="text-align:left"><code>google-analytics.com, collect.gif</code></td>
+<td style="text-align:left">If using Google Analytics, hits are sent to <code>collect.gif</code>, and the query parameters is inspected.</td>
 </tr>
 <tr>
-<td align="left"><code>/b/ss</code></td>
-<td align="left">This filter picks up all hits to Adobe Analytics, and Context Data and/or props/eVars is shown in the query string.</td>
+<td style="text-align:left"><code>/b/ss</code></td>
+<td style="text-align:left">This filter picks up all hits to Adobe Analytics, and Context Data and/or props/eVars is shown in the query string.</td>
 </tr>
 <tr>
-<td align="left"><code>tags.tiqcdn.com</code></td>
-<td align="left">To see which of your Tealium tags have fired, look out for hits to this server. If you don't have bundling enabled then you'll see individual files for each tag, for example the tag with UID 123 is <code>utag.123.js</code>. Be aware that if the files are cached, they won't necessarily show in your Charles Proxy session, even if they have fired, so this is not always the most accurate way of testing.</td>
+<td style="text-align:left"><code>tags.tiqcdn.com</code></td>
+<td style="text-align:left">To see which of your Tealium tags have fired, look out for hits to this server. If you don&rsquo;t have bundling enabled then you&rsquo;ll see individual files for each tag, for example the tag with UID 123 is <code>utag.123.js</code>. Be aware that if the files are cached, they won&rsquo;t necessarily show in your Charles Proxy session, even if they have fired, so this is not always the most accurate way of testing.</td>
 </tr>
 </tbody>
 </table>
@@ -7577,7 +7577,7 @@ var utag_data = {
 <p>Set up a test Google Analytics account for yourself, and note the property ID (for example, UA-12345678-1).</p>
 <p>Add the <a href="/t5/Tags/Google-Universal-Analytics-Tag-Basic-Configuration/ta-p/11984">Google Analytics</a> tag through Tealium IQ, entering your new property ID in the relevant config field.</p>
 <p>Enable screen views in the GA tag, and map one of your data variables to <code>screenName</code>.</p>
-<p>(Optional) Set up a custom event in GA by mapping any 2 variables to Event Action and Event Category respectively. If the app is functioning correctly, screen views and custom events appear in your Google Analytics account. A custom event is automatically generated so long as Event Category and Action are set, and it doesn't matter which specific data you pass to these variables for test purposes.</p>
+<p>(Optional) Set up a custom event in GA by mapping any 2 variables to Event Action and Event Category respectively. If the app is functioning correctly, screen views and custom events appear in your Google Analytics account. A custom event is automatically generated so long as Event Category and Action are set, and it doesn&rsquo;t matter which specific data you pass to these variables for test purposes.</p>
 <h2 id="devicelogs">Device Logs</h2>
 <h4 id="standard-device-logs">Standard Device Logs</h4>
 <!-- raw HTML omitted -->
@@ -7604,7 +7604,7 @@ var utag_data = {
 <li>Load the <code>mobile.html</code> URL for your iQ profile in a new browser window.</li>
 <li>Open the developer tools or web console of the browser to inspect the page source.</li>
 </ol>
-<p>From here you are able to perform many of the same troubleshooting techniques that are used for a website with Tealium's <code>utag.js</code> installed.</p>
+<p>From here you are able to perform many of the same troubleshooting techniques that are used for a website with Tealium&rsquo;s <code>utag.js</code> installed.</p>
 <h4 id="verifying-the-publish-timestamp">Verifying the Publish Timestamp</h4>
 <p>The first thing to verify is that your most recently published changes are being loaded in <code>mobile.html</code>. This is done by matching the timestamp from the HTML source to the timestamp from the iQ Versions screen.</p>
 <p>To verify the publish timestamp:</p>
@@ -7640,7 +7640,7 @@ var utag_data = {
 	<div class="di">
 		
 		
-		<a href="/platforms/getting-started/feature-comparison/"
+		<a href="https://docs-preview.tealium.com/platforms/getting-started/feature-comparison/"
 			class="inline-flex justify-between ba ba-link b--black-20 br2 pa2">
       <svg class="w1" data-icon="chevronLeft" viewBox="0 0 32 32" style="fill:currentcolor;height:100%">
 				<title>"Feature Comparison "</title>
@@ -7662,7 +7662,7 @@ var utag_data = {
 		
 	</div>
 
-</div>
+  </div>
 <br>&nbsp;</br>
 
           
@@ -7708,8 +7708,8 @@ var utag_data = {
               <li><a href="#charles-proxy">Charles Proxy</a></li>
               <li><a href="#trace">Trace</a></li>
               <li><a href="#analytics-tools">Analytics Tools</a></li>
-              <li><a href="#device-logs">Device Logs</a></li>
-              <li><a href="#debugging-mobile-html">Debugging mobile.html</a></li>
+              <li><a href="#devicelogs">Device Logs</a></li>
+              <li><a href="#debugging-mobilehtml">Debugging mobile.html</a></li>
               <li><a href="#remote-debugging">Remote Debugging</a></li>
               </nav>
   </aside></div>
