@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.59.0" />
+     <meta name="generator" content="Hugo 0.61.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -7499,49 +7499,31 @@ var utag_data = {
 
 
 <div class="prose" id="prose">
-  
-
-<h2 id="usage">Usage</h2>
-
+  <h2 id="usage">Usage</h2>
 <p>Usage of this module is recommended. <a href="/platforms/getting-started/consent-management/">Learn more</a> about Consent Management.</p>
-
 <ul>
 <li><a href="/platforms/android-kotlin/consent-management/">Consent Manager for Android</a></li>
 <li><a href="/platforms/ios-swift/consent-management/">Consent Manager for iOS</a></li>
 </ul>
-
 <h2 id="consent-status">Consent Status</h2>
-
 <p>To get the consent status of a user as a callback function, call the <a href="/platforms/flutter/api/tealium/#getconsentstatus"><code>getConsentStatus()</code></a> method.</p>
-
 <p>The following example gets the consent status:</p>
-
 <pre><code class="language-flutter">Tealium.getConsentStatus()
   .then((status) =&gt; print('Consent Status: $status')));
 </code></pre>
-
 <p>To set the consent status of a user, call the <a href="/platforms/flutter/api/tealium/#setconsentstatus"><code>setConsentStatus()</code></a> method.</p>
-
 <p>The following example grants consent:</p>
-
 <pre><code class="language-flutter">Tealium.setConsentStatus(ConsentStatus.consented);
 </code></pre>
-
 <h2 id="consent-categories">Consent Categories</h2>
-
 <p>To get the consent categories of a user, call the <a href="/platforms/flutter/api/tealium/#getconsentcategories"><code>getConsentCategories()</code></a> method.</p>
-
 <p>The following example gets the consent categories for a user:</p>
-
 <pre><code class="language-flutter">Tealium.getConsentCategories()
   .then((categories) =&gt;
       print('Consent Categories: ' + categories.join(&quot;,&quot;))));
 </code></pre>
-
 <p>To set the consent categories of a user, call the <a href="/platforms/flutter/api/tealium/#setconsentcategories"><code>setConsentCategories()</code></a> method, passing a list of consent categories.</p>
-
 <p>The following example sets the consent categories:</p>
-
 <pre><code class="language-flutter">Tealium.setConsentCategories([ConsentCategories.analytics,
     ConsentCategories.email]);
 </code></pre>
@@ -7602,7 +7584,7 @@ var utag_data = {
   </span>
 	<span id="feedback_comment">
 		<p><textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="60"></textarea></p>
-    <span><p>This page was last updated:  May 13, 2022 
+    <span><p>This page was last updated:  June 3, 2022 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
     </p>

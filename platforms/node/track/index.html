@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.59.0" />
+     <meta name="generator" content="Hugo 0.61.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -7505,19 +7505,12 @@ var utag_data = {
 
 
 <div class="prose" id="prose">
-  
-
-<h2 id="track-events-views">Track Events / Views</h2>
-
+  <h2 id="track-events--views">Track Events / Views</h2>
 <p>The <a href="/platforms/node/api/#track"><code>track()</code></a> method tracks all events and page views, as shown in the following example:</p>
-
 <pre><code class="language-javascript">tealium.track(&quot;EVENT_NAME&quot;, {&quot;KEY&quot;: &quot;VALUE&quot;}); 
 </code></pre>
-
 <h2 id="track-visitors">Track Visitors</h2>
-
 <p>If your application tracks user activity and you want to associate events with a visitor, include the <code>tealium_visitor_id</code> attribute in the data object as shown in the following example:</p>
-
 <pre><code class="language-javascript">var myVisitorId = myVisitorIdFunction();
 
 tealium.track(&quot;page_view&quot;, {
@@ -7525,7 +7518,6 @@ tealium.track(&quot;page_view&quot;, {
     &quot;some_key&quot;           : &quot;KEY&quot;
 });
 </code></pre>
-
 <p>This event attribute uniquely identifies the current user, either anonymously or with a personal identifier such as an email address.</p>
 
 </div>
@@ -7584,7 +7576,7 @@ tealium.track(&quot;page_view&quot;, {
   </span>
 	<span id="feedback_comment">
 		<p><textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="60"></textarea></p>
-    <span><p>This page was last updated:  October 24, 2019 
+    <span><p>This page was last updated:  June 3, 2022 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
     </p>

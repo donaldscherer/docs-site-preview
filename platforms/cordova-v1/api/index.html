@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.59.0" />
+     <meta name="generator" content="Hugo 0.61.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -7505,12 +7505,8 @@ var utag_data = {
 
 
 <div class="prose" id="prose">
-  
-
-<h2 id="class-tealium">Class: <code>Tealium</code></h2>
-
+  <h2 id="class-tealium">Class: <code>Tealium</code></h2>
 <p>The following summarizes the commonly used methods of the Cordova <code>Tealium</code> class.</p>
-
 <table>
 <thead>
 <tr>
@@ -7518,72 +7514,57 @@ var utag_data = {
 <th align="left">Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left"><code>addPersistent()</code></td>
 <td align="left">Adds data to the Tealium persistent data store</td>
 </tr>
-
 <tr>
 <td align="left"><code>addVolatile()</code></td>
 <td align="left">Adds data to the Tealium volatile data store</td>
 </tr>
-
 <tr>
 <td align="left"><code>init()</code></td>
 <td align="left">Initializes the Tealium Cordova plugin</td>
 </tr>
-
 <tr>
 <td align="left"><code>getPersistent()</code></td>
 <td align="left">Returns a value from the Tealium persistent data</td>
 </tr>
-
 <tr>
 <td align="left"><code>getVisitorID()</code></td>
 <td align="left">Returns the current Tealium visitor ID for the current user</td>
 </tr>
-
 <tr>
 <td align="left"><code>getVolatile()</code></td>
 <td align="left">Returns a value from the Tealium volatile data store</td>
 </tr>
-
 <tr>
 <td align="left"><code>removePersistent()</code></td>
 <td align="left">Removes data from the Tealium persistent data store</td>
 </tr>
-
 <tr>
 <td align="left"><code>removeVolatile()</code></td>
 <td align="left">Removes volatile data from the Tealium volatile data store</td>
 </tr>
-
 <tr>
 <td align="left"><code>track()</code></td>
 <td align="left">Track views by passing <code>&quot;view&quot;</code> as the first argument type, or track events by passing <code>&quot;link&quot;</code> as the first argument type</td>
 </tr>
-
 <tr>
 <td align="left"><code>trackEvent()</code></td>
 <td align="left">Tracks all non-view activity</td>
 </tr>
-
 <tr>
 <td align="left"><code>trackView()</code></td>
 <td align="left">Tracks every time a user opens or changes a screen in the app</td>
 </tr>
 </tbody>
 </table>
-
 <h3 id="addpersistent"><code>addPersistent()</code></h3>
-
 <p>Adds persistent data to the Tealium persistent data store.</p>
-
 <pre><code class="language-javascript">tealium.addPersistent(key, data, instance);
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -7593,7 +7574,6 @@ var utag_data = {
 <th align="left">Example</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left"><code>key</code></td>
@@ -7601,14 +7581,12 @@ var utag_data = {
 <td align="left">Key name of value to be persisted</td>
 <td align="left"><code>&quot;user_hashed_email&quot;</code></td>
 </tr>
-
 <tr>
 <td align="left"><code>data</code></td>
 <td align="left"><code>String</code> or <code>[String]</code></td>
 <td align="left">The value to be persisted for this key</td>
 <td align="left"><code>[&quot;testpersist&quot;, &quot;testpersist2&quot;]</code></td>
 </tr>
-
 <tr>
 <td align="left"><code>instance</code></td>
 <td align="left"><code>String</code></td>
@@ -7617,14 +7595,10 @@ var utag_data = {
 </tr>
 </tbody>
 </table>
-
 <h3 id="addvolatile"><code>addVolatile()</code></h3>
-
 <p>Adds data to the Tealium volatile data store.</p>
-
 <pre><code class="language-javascript">tealium.addVolatile(key, data, instance);
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -7634,7 +7608,6 @@ var utag_data = {
 <th align="left">Example</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left"><code>key</code></td>
@@ -7642,14 +7615,12 @@ var utag_data = {
 <td align="left">Key name of value to be persisted</td>
 <td align="left"><code>&quot;user_hashed_email&quot;</code></td>
 </tr>
-
 <tr>
 <td align="left"><code>data</code></td>
 <td align="left"><code>String</code> or <code>[String]</code></td>
 <td align="left">The value to be persisted for this key</td>
 <td align="left"><code>[&quot;testvolatile1&quot;, &quot;testvolatile2&quot;]</code></td>
 </tr>
-
 <tr>
 <td align="left"><code>instance</code></td>
 <td align="left"><code>String</code></td>
@@ -7658,14 +7629,10 @@ var utag_data = {
 </tr>
 </tbody>
 </table>
-
 <h3 id="init"><code>init()</code></h3>
-
 <p>Initializes the Tealium Cordova plugin.</p>
-
 <pre><code class="language-java">tealium.init(config, successCallBack, errorCallback);
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -7674,20 +7641,17 @@ var utag_data = {
 <th align="left">Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left"><code>config</code></td>
 <td align="left">JavaScript/JSON object</td>
 <td align="left">The config object (see table below)</td>
 </tr>
-
 <tr>
 <td align="left"><code>successCallback</code></td>
 <td align="left">Function</td>
 <td align="left">Overrides the default Success Callback to allow custom success handling</td>
 </tr>
-
 <tr>
 <td align="left"><code>errorCallback</code></td>
 <td align="left">Function</td>
@@ -7695,9 +7659,7 @@ var utag_data = {
 </tr>
 </tbody>
 </table>
-
 <p>The <code>config</code> object is passed as the first argument, and contains the following data:</p>
-
 <pre><code class="language-java">tealium.init({account, profile, environment, instance,
                 isLifecycleEnabled,
                 collectDispatchURL,
@@ -7706,7 +7668,6 @@ var utag_data = {
                 logLevel,
                 dataSourceId});
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -7716,7 +7677,6 @@ var utag_data = {
 <th align="left">Example</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left"><code>account</code></td>
@@ -7724,63 +7684,54 @@ var utag_data = {
 <td align="left">Tealium account name</td>
 <td align="left"><code>&quot;companyXYZ&quot;</code></td>
 </tr>
-
 <tr>
 <td align="left"><code>profile</code></td>
 <td align="left"><code>String</code></td>
 <td align="left">Tealium profile name</td>
 <td align="left"><code>&quot;main&quot;</code></td>
 </tr>
-
 <tr>
 <td align="left"><code>environment</code></td>
 <td align="left"><code>String</code></td>
 <td align="left">Tealium environment name</td>
 <td align="left">[<code>&quot;dev&quot;</code>, <code>&quot;qa&quot;</code>, <code>&quot;prod&quot;</code>]</td>
 </tr>
-
 <tr>
 <td align="left"><code>instance</code></td>
 <td align="left"><code>String</code></td>
 <td align="left">Tealium instance name (multiple instances supported)</td>
 <td align="left"><code>&quot;tealium_main</code></td>
 </tr>
-
 <tr>
 <td align="left"><code>isLifecycleEnabled</code></td>
 <td align="left"><code>String</code></td>
 <td align="left">(Optional) String value &ldquo;true&rdquo; or &ldquo;false&rdquo; to enable lifecycle tracking (default: <code>&quot;true&quot;</code>)</td>
 <td align="left">[<code>&quot;true&quot;</code>, <code>&quot;false&quot;</code>]</td>
 </tr>
-
 <tr>
 <td align="left"><code>collectDispatchURL</code></td>
 <td align="left"><code>String</code></td>
 <td align="left">Override the full Tealium Collect endpoint URL</td>
 <td align="left"><code>&quot;https: //collect. tealiumiq.com/ vdata/i.gif ?tealium_account =companyXYZ &amp;tealium_profile =main&quot;</code></td>
 </tr>
-
 <tr>
 <td align="left"><code>collectDispatchProfile</code></td>
 <td align="left"><code>String</code></td>
 <td align="left">Set the profile to use in the Tealium Collect endpoint</td>
 <td align="left"><code>&quot;cordova-demo&quot;</code></td>
 </tr>
-
 <tr>
 <td align="left"><code>isCrashReporterEnabled</code></td>
 <td align="left"><code>String</code></td>
 <td align="left">(Optional and for Android only) Enable crash reporting (uncaught exception handler)</td>
 <td align="left">[<code>&quot;true&quot;</code>, <code>&quot;false&quot;</code>]</td>
 </tr>
-
 <tr>
 <td align="left"><code>logLevel</code></td>
 <td align="left"><code>String</code></td>
 <td align="left">(Optional) Set the log level (defaults to your environment)</td>
 <td align="left"><code>tealium.logLevels.DEV</code> (Info, Warnings, Errors), <code>tealium.logLevels.QA</code> (Warnings, Errors), <code>tealium.logLevels.PROD</code> (Errors Only), <code>tealium.logLevels.SILENT</code> (No Logs)</td>
 </tr>
-
 <tr>
 <td align="left"><code>dataSourceId</code></td>
 <td align="left"><code>String</code></td>
@@ -7789,14 +7740,10 @@ var utag_data = {
 </tr>
 </tbody>
 </table>
-
 <h3 id="getpersistent"><code>getPersistent()</code></h3>
-
 <p>Returns a value from the Tealium persistent data. Returns <code>null</code> on the JavaScript side if the requested data could not be found.</p>
-
 <pre><code class="language-javascript">tealium.getPersistent(key, instance, callback);
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -7806,7 +7753,6 @@ var utag_data = {
 <th align="left">Example</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left"><code>key</code></td>
@@ -7814,14 +7760,12 @@ var utag_data = {
 <td align="left">Key name of value to be retrieved from persistent storage</td>
 <td align="left"><code>&quot;user_hashed_email&quot;</code></td>
 </tr>
-
 <tr>
 <td align="left"><code>instance</code></td>
 <td align="left"><code>String</code></td>
 <td align="left">Arbitrary instance name constant, used to refer to a specific tracking instance</td>
 <td align="left"><code>&quot;tealium_main&quot;</code></td>
 </tr>
-
 <tr>
 <td align="left"><code>callback</code></td>
 <td align="left"><code>Function</code></td>
@@ -7830,11 +7774,8 @@ var utag_data = {
 </tr>
 </tbody>
 </table>
-
 <h3 id="getvisitorid"><code>getVisitorID()</code></h3>
-
 <p>Returns the current Tealium visitor ID for the current user.</p>
-
 <table>
 <thead>
 <tr>
@@ -7842,7 +7783,6 @@ var utag_data = {
 <th align="left">Return Type</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">Current visitor ID</td>
@@ -7850,14 +7790,10 @@ var utag_data = {
 </tr>
 </tbody>
 </table>
-
 <h3 id="getvolatile"><code>getVolatile()</code></h3>
-
 <p>Returns a value from the Tealium volatile data store. Returns <code>null</code> on the JavaScript side if the requested data could not be found.</p>
-
 <pre><code class="language-javascript">tealium.getVolatile(key, instance, callback);
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -7867,7 +7803,6 @@ var utag_data = {
 <th align="left">Example</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left"><code>key</code></td>
@@ -7875,14 +7810,12 @@ var utag_data = {
 <td align="left">Key name of value to be retrieved from volatile storage</td>
 <td align="left"><code>&quot;user_hashed_email&quot;</code></td>
 </tr>
-
 <tr>
 <td align="left"><code>instance</code></td>
 <td align="left"><code>String</code></td>
 <td align="left">Arbitrary instance name constant, used to refer to a specific tracking instance</td>
 <td align="left"><code>&quot;tealium_main&quot;</code></td>
 </tr>
-
 <tr>
 <td align="left"><code>callback</code></td>
 <td align="left"><code>Function</code></td>
@@ -7891,14 +7824,10 @@ var utag_data = {
 </tr>
 </tbody>
 </table>
-
 <h3 id="removepersistent"><code>removePersistent()</code></h3>
-
 <p>Removes persistent data from the Tealium persistent data store.</p>
-
 <pre><code class="language-javascript">tealium.removePersistent(key, instance);
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -7908,7 +7837,6 @@ var utag_data = {
 <th align="left">Example</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left"><code>key</code></td>
@@ -7916,7 +7844,6 @@ var utag_data = {
 <td align="left">Key name of value to be removed from persistent storage</td>
 <td align="left"><code>&quot;user_hashed_email&quot;</code></td>
 </tr>
-
 <tr>
 <td align="left"><code>instance</code></td>
 <td align="left"><code>String</code></td>
@@ -7925,14 +7852,10 @@ var utag_data = {
 </tr>
 </tbody>
 </table>
-
 <h3 id="removevolatile"><code>removeVolatile()</code></h3>
-
 <p>Removes volatile data from the Tealium volatile data store.</p>
-
 <pre><code class="language-javascript">tealium.removeVolatile(key, instance);
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -7942,7 +7865,6 @@ var utag_data = {
 <th align="left">Example</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left"><code>key</code></td>
@@ -7950,7 +7872,6 @@ var utag_data = {
 <td align="left">Key name of value to be removed from volatile memory</td>
 <td align="left"><code>&quot;user_hashed_email&quot;</code></td>
 </tr>
-
 <tr>
 <td align="left"><code>instance</code></td>
 <td align="left"><code>String</code></td>
@@ -7959,14 +7880,10 @@ var utag_data = {
 </tr>
 </tbody>
 </table>
-
 <h3 id="track"><code>track()</code></h3>
-
 <p>Track views by passing <code>&quot;view&quot;</code> as the first argument type, or track events by passing <code>&quot;link&quot;</code> as the first argument type.</p>
-
 <pre><code class="language-js">tealium.track(type, data, instance);
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -7976,7 +7893,6 @@ var utag_data = {
 <th align="left">Example</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left"><code>type</code></td>
@@ -7984,14 +7900,12 @@ var utag_data = {
 <td align="left">Tealium event type name - <code>&quot;link&quot;</code> (event) or <code>&quot;view&quot;</code> (screen view)</td>
 <td align="left">[<code>&quot;link&quot;</code>, <code>&quot;view&quot;</code>]</td>
 </tr>
-
 <tr>
 <td align="left"><code>data</code></td>
 <td align="left">JavaScript/JSON object</td>
 <td align="left">Populates the data layer for this tracking call with the key-value pairs specified</td>
 <td align="left"><code>{&quot;tealium_event&quot; : &quot;page_view&quot;}</code></td>
 </tr>
-
 <tr>
 <td align="left"><code>instance</code></td>
 <td align="left"><code>String</code></td>
@@ -8000,14 +7914,10 @@ var utag_data = {
 </tr>
 </tbody>
 </table>
-
 <h3 id="trackevent"><code>trackEvent()</code></h3>
-
 <p>Tracks all non-view activity.</p>
-
 <pre><code class="language-js">tealium.trackEvent(data, instance);
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -8017,7 +7927,6 @@ var utag_data = {
 <th align="left">Example</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left"><code>data</code></td>
@@ -8025,7 +7934,6 @@ var utag_data = {
 <td align="left">Event data as key-value pairs</td>
 <td align="left"><code>{&quot;tealium_event&quot;: &quot;cart_add&quot;}</code></td>
 </tr>
-
 <tr>
 <td align="left"><code>instance</code></td>
 <td align="left"><code>String</code></td>
@@ -8034,14 +7942,10 @@ var utag_data = {
 </tr>
 </tbody>
 </table>
-
 <h3 id="trackview"><code>trackView()</code></h3>
-
 <p>Tracks every time a user opens or changes a screen in the app.</p>
-
 <pre><code class="language-js">tealium.trackView(data, instance);
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -8051,15 +7955,13 @@ var utag_data = {
 <th align="left">Example</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left"><code>data</code></td>
 <td align="left">JavaScript/JSON object</td>
-<td align="left">`View data as key-value pairs</td>
-<td align="left"><code>{tealium_event:&quot;screen_view&quot;, &quot;screen_name&quot;:&quot;Homescreen&quot;}</code></td>
+<td align="left"><code>View data as key-value pairs | </code>{tealium_event:&ldquo;screen_view&rdquo;, &ldquo;screen_name&rdquo;:&ldquo;Homescreen&rdquo;}` |</td>
+<td></td>
 </tr>
-
 <tr>
 <td align="left"><code>instance</code></td>
 <td align="left"><code>String</code></td>
@@ -8125,7 +8027,7 @@ var utag_data = {
   </span>
 	<span id="feedback_comment">
 		<p><textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="60"></textarea></p>
-    <span><p>This page was last updated:  July 7, 2021 
+    <span><p>This page was last updated:  June 3, 2022 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
     </p>

@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.59.0" />
+     <meta name="generator" content="Hugo 0.61.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -7505,29 +7505,19 @@ var utag_data = {
 
 
 <div class="prose" id="prose">
-  
-
-<h2 id="how-it-works">How it works</h2>
-
+  <h2 id="how-it-works">How it works</h2>
 <p>To set global data layer values once, instead of setting them in every tracking call, use the <code>AddToDataLayer()</code> method. Data layer values added with this method are included in every tracked event, including lifecycle events. Set the expiry parameter to the length of time to persist the value.</p>
-
 <p><a href="/platforms/getting-started/mobile-concepts/#data-management">Learn more about data management</a>.</p>
-
 <h2 id="usage">Usage</h2>
-
 <p>To set data layer values, call <code>AddToDataLayer()</code> with a data dictionary and an expiration parameter.</p>
-
 <p>Learn more about <a href="/platforms/xamarin/api/#addtodatalayer"><code>AddToDataLayer()</code></a> and <a href="/platforms/xamarin/api/#expiry"><code>Expiry</code></a>.</p>
-
 <pre><code class="language-csharp">tealium.AddToDataLayer(new Dictionary&lt;string, object&gt;(1) {
     {&quot;user_language&quot;, &quot;en-EN&quot;}
   },
   Expiry.Forever
 );
 </code></pre>
-
 <p>To get a data layer value, call <code>GetFromDataLayer()</code> with the name of the value to retrieve.</p>
-
 <pre><code class="language-csharp">string myString = (string)tealium.GetFromDataLayer(&quot;user_language&quot;);
 </code></pre>
 
@@ -7587,7 +7577,7 @@ var utag_data = {
   </span>
 	<span id="feedback_comment">
 		<p><textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="60"></textarea></p>
-    <span><p>This page was last updated:  December 15, 2021 
+    <span><p>This page was last updated:  June 3, 2022 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
     </p>

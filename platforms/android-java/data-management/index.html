@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.59.0" />
+     <meta name="generator" content="Hugo 0.61.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -7505,30 +7505,18 @@ var utag_data = {
 
 
 <div class="prose" id="prose">
-  
-
-<h2 id="usage">Usage</h2>
-
+  <h2 id="usage">Usage</h2>
 <p>Some variables are required on every event. To prevent having to manually add required variable data to every event, you have the option to store data as either volatile or persistent. Once data is stored, it will be appended to every event, including lifecycle events.</p>
-
 <p><a href="/platforms/getting-started/mobile-concepts/#data-management">Learn more</a> about Data Management.</p>
-
 <h2 id="persistent-data">Persistent Data</h2>
-
 <p>Persistent data values are stored on the device as <a href="https://developer.android.com/reference/android/content/SharedPreferences">SharedPreferences</a> and are merged into each event. They are preserved between launches of the app.</p>
-
 <p>The <a href="/platforms/android-java/api/data-sources/#getpersistentdatasources"><code>getPersistentDataSources()</code></a> method gets persistent data, as shown in the following example:</p>
-
 <pre><code class="language-java">SharedPreferences sp = instance.getDataSources().getPersistentDataSources();
 sp.edit().putInt(&quot;KEY_TEALIUM_INIT_COUNT&quot;, sp.getInt(&quot;KEY_TEALIUM_INIT_COUNT&quot;, 0) + 1).commit();
 </code></pre>
-
 <h2 id="volatile-data">Volatile Data</h2>
-
 <p>Volatile data values are stored on the device as <a href="https://developer.android.com/reference/android/content/SharedPreferences">SharedPreferences</a> and are merged into to each event. They are discarded upon closing the app and restarting.</p>
-
 <p>The <a href="/platforms/android-java/api/data-sources/#getvolatiledatasources"><code>getVolatileDataSources()</code></a> method gets volatile data, as shown in the following example:</p>
-
 <pre><code class="language-java">instance.getDataSources().getVolatileDataSources()
    .put(&quot;KEY_TEALIUM_INITIALIZED&quot;, System.currentTimeMillis());
 </code></pre>
@@ -7589,7 +7577,7 @@ sp.edit().putInt(&quot;KEY_TEALIUM_INIT_COUNT&quot;, sp.getInt(&quot;KEY_TEALIUM
   </span>
 	<span id="feedback_comment">
 		<p><textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="60"></textarea></p>
-    <span><p>This page was last updated:  February 25, 2021 
+    <span><p>This page was last updated:  June 3, 2022 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
     </p>

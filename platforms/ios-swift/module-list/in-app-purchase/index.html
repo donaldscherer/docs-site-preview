@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.59.0" />
+     <meta name="generator" content="Hugo 0.61.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -7505,12 +7505,8 @@ var utag_data = {
 
 
 <div class="prose" id="prose">
-  
-
-<h2 id="what-is-an-in-app-purchase">What is an in-app purchase?</h2>
-
+  <h2 id="what-is-an-in-app-purchase">What is an in-app purchase?</h2>
 <p>An in-app purchase is additional content, services, or a subscription that you buy inside the app. Some examples of in-app purchases include:</p>
-
 <ul>
 <li>Upgrade to remove ads</li>
 <li>Game credits</li>
@@ -7518,66 +7514,44 @@ var utag_data = {
 <li>Extra game levels</li>
 <li>Unlock more features</li>
 </ul>
-
 <p>Examples of purchases that are not considered in-app purchases include:</p>
-
 <ul>
 <li>Purchasing clothes or other items in an e-commerce app.</li>
 <li>Using Apple Pay to complete a purchase.</li>
 </ul>
-
 <p>Learn more about <a href="https://developer.apple.com/in-app-purchase/">in-app purchases in the Apple developer portal</a>.</p>
-
 <h2 id="install">Install</h2>
-
 <p>Install the In-App Purchase module with Swift Package Manager, CocoaPods, or Carthage.</p>
-
 <h3 id="swift-package-manager-recommended">Swift Package Manager (Recommended)</h3>
-
 <p>Swift Package Manager is the recommended way to install the Tealium Swift library:</p>
-
 <ol>
 <li>In your Xcode project, select <strong>File &gt; Swift Packages &gt; Add Package Dependency</strong>.</li>
 <li>Enter the repository URL: <code>https://github.com/tealium/tealium-swift</code>.</li>
 <li>Configure the version rules. The default, <code>&quot;Up to next major&quot;</code>, is recommended. If the current Tealium Swift library version does not appear in the list, reset your Swift package cache.</li>
 <li>Select the <code>InAppPurchase</code> module from the list of modules to install. Add the module to each of your app targets in your Xcode project under <strong>Frameworks &gt; Libraries &amp; Embedded Content</strong>.</li>
 </ol>
-
 <p>Learn more about the <a href="https://docs.tealium.com/platforms/ios-swift/install/#swift-package-manager-recommended">Swift Package Manager</a> installation for iOS.</p>
-
 <h3 id="cocoapods">CocoaPods</h3>
-
 <p>To install the In-App Purchase module with CocoaPods, add the following pod to your Podfile:</p>
-
 <pre><code class="language-perl">pod 'tealium-swift/InAppPurchase'
 </code></pre>
-
 <p>Learn more about the <a href="https://docs.tealium.com/platforms/ios-swift/install/#cocoapods">CocoaPods</a> installation for iOS.</p>
-
 <h3 id="carthage">Carthage</h3>
-
 <p>Follw these steps to install the In-App Purchase module with Carthage:</p>
-
 <ol>
 <li>Navigate to the <strong>General</strong> configuration pane for the target app in Xcode.</li>
-
-<li><p>Add the following framework to the <strong>Embedded Binaries</strong> section:</p>
-
-<pre><code class="language-swift">TealiumInAppPurchase.xcframework
-</code></pre></li>
-
-<li><p>To import the In-App Purchase library, add the following import statement to your project:</p>
-
-<pre><code class="language-swift">import TealiumInAppPurchase
-</code></pre></li>
+<li>Add the following framework to the <strong>Embedded Binaries</strong> section:</li>
 </ol>
-
+<pre><code class="language-swift">TealiumInAppPurchase.xcframework
+</code></pre>
+<ol start="3">
+<li>To import the In-App Purchase library, add the following import statement to your project:</li>
+</ol>
+<pre><code class="language-swift">import TealiumInAppPurchase
+</code></pre>
 <p>Learn more about the <a href="https://docs.tealium.com/platforms/ios-swift/install/#carthage">Carthage</a> installation for iOS.</p>
-
 <h2 id="configure">Configure</h2>
-
 <p>To instantiate the In-App Purchase module, you must specify it in your <code>TealiumConfig</code> object when initializing the SDK:</p>
-
 <pre><code class="language-swift">import TealiumCore
 import TealiumInAppPurchase
 
@@ -7589,11 +7563,8 @@ let config = TealiumConfig(account: &quot;ACCOUNT&quot;,
 config.collectors = [Collectors.InAppPurchase]
 tealium = Tealium(config: config) { _ in }
 </code></pre>
-
 <h2 id="data-layer">Data Layer</h2>
-
 <p>The In-App Purchase module sends the following attributes in the event:</p>
-
 <table>
 <thead>
 <tr>
@@ -7602,38 +7573,32 @@ tealium = Tealium(config: config) { _ in }
 <th align="left">Example</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left"><code>purchase_order_id</code></td>
 <td align="left">The order ID of the purchase.</td>
 <td align="left">&ldquo;1234567890&rdquo;</td>
 </tr>
-
 <tr>
 <td align="left"><code>purchase_timestamp</code></td>
 <td align="left">The timestamp of the purchase in ISO 8601 format.</td>
 <td align="left">&ldquo;2022-01-17T14:42:28Z&rdquo;</td>
 </tr>
-
 <tr>
 <td align="left"><code>purchase_quantity</code></td>
 <td align="left">The total number of items purchased.</td>
 <td align="left">&ldquo;1&rdquo;</td>
 </tr>
-
 <tr>
 <td align="left"><code>purchase_skus</code></td>
 <td align="left">An array of the product IDs purchased.</td>
 <td align="left">[&ldquo;com.example.level1&rdquo;]</td>
 </tr>
-
 <tr>
 <td align="left"><code>autotracked</code></td>
 <td align="left">Set to <code>true</code> to indicate that the event was tracked automatically.</td>
 <td align="left">true</td>
 </tr>
-
 <tr>
 <td align="left"><code>tealium_event</code></td>
 <td align="left">The name of the event.</td>
@@ -7698,7 +7663,7 @@ tealium = Tealium(config: config) { _ in }
   </span>
 	<span id="feedback_comment">
 		<p><textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="60"></textarea></p>
-    <span><p>This page was last updated:  February 24, 2022 
+    <span><p>This page was last updated:  June 3, 2022 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
     </p>

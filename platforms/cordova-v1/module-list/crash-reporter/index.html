@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.59.0" />
+     <meta name="generator" content="Hugo 0.61.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -7505,27 +7505,21 @@ var utag_data = {
 
 
 <div class="prose" id="prose">
-  
-
-<h2 id="install">Install</h2>
-
+  <h2 id="install">Install</h2>
 <p>To install the Crash Reporter module:</p>
-
 <ol>
-<li><p>Navigate to your Cordova app&rsquo;s directory in a terminal window.</p></li>
-
-<li><p>Run the following command:</p>
-
-<pre><code class="language-bash">cordova plugin add tealium-cordova-crashreporter
-</code></pre></li>
+<li>
+<p>Navigate to your Cordova app's directory in a terminal window.</p>
+</li>
+<li>
+<p>Run the following command:</p>
+</li>
 </ol>
-
+<pre><code class="language-bash">cordova plugin add tealium-cordova-crashreporter
+</code></pre>
 <h2 id="initialize">Initialize</h2>
-
 <p>No explicit initialization of the Crash Reporter module is required.</p>
-
 <p>It is instantiated by the core Tealium plugin if the <code>isCrashReporterEnabled</code> parameter is set in the config object, as shown in the following example::</p>
-
 <pre><code class="language-javascript">function tealiumInit(account, profile, environment, instance) {
     tealium.init({
        account : account,
@@ -7537,34 +7531,26 @@ var utag_data = {
     });
 }
 </code></pre>
-
 <h2 id="test">Test</h2>
-
 <p>The JavaScript API exposes a method to force a crash to be triggered. In order to avoid accidental triggering of a crash in production, this method is hard-coded to work only if the following conditions are met:</p>
-
 <ul>
 <li>The environment is set to <code>dev</code></li>
 <li>Crash Reporter module is installed</li>
 <li>Crash Reporter module was successfully initialized</li>
 <li>The variable <code>forceCrash</code> is present in the data layer</li>
 </ul>
-
 <p>If the preceding conditions are met, trigger a crash by issuing a tracking call containing the variable <code>forceCrash</code> with the <a href="/platforms/cordova-v1/api/#trackview"><code>trackView()</code></a> method:</p>
-
 <pre><code class="language-javascript">tealium.trackView({&quot;forceCrash&quot;:&quot;true&quot;});
 </code></pre>
-
 <h2 id="uninstall">Uninstall</h2>
-
 <p>To uninstall the Crash Reporter module:</p>
-
 <ol>
-<li><p>Run the following command:</p>
-
+<li>Run the following command:</li>
+</ol>
 <pre><code class="language-bash">cordova plugin rm tealium-cordova-crashreporter
-</code></pre></li>
-
-<li><p>Remove the <code>isCrashReporterEnabled</code> flag from the config object when initializing the main Tealium plugin.</p></li>
+</code></pre>
+<ol start="2">
+<li>Remove the <code>isCrashReporterEnabled</code> flag from the config object when initializing the main Tealium plugin.</li>
 </ol>
 
 </div>
@@ -7623,7 +7609,7 @@ var utag_data = {
   </span>
 	<span id="feedback_comment">
 		<p><textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="60"></textarea></p>
-    <span><p>This page was last updated:  July 7, 2021 
+    <span><p>This page was last updated:  June 3, 2022 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
     </p>

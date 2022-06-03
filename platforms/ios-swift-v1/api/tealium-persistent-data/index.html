@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.59.0" />
+     <meta name="generator" content="Hugo 0.61.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -7505,12 +7505,8 @@ var utag_data = {
 
 
 <div class="prose" id="prose">
-  
-
-<h2 id="class-tealiumpersistentdata">Class: <code>TealiumPersistentData</code></h2>
-
+  <h2 id="class-tealiumpersistentdata">Class: <code>TealiumPersistentData</code></h2>
 <p>The following summarizes the commonly used methods of the iOS (Swift) <code>TealiumPersistentData</code> class.</p>
-
 <table>
 <thead>
 <tr>
@@ -7518,37 +7514,29 @@ var utag_data = {
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>add()</code></td>
 <td>Adds additional persistent data that will be available to all track calls for lifetime of app. Values will overwrite any pre-existing values for a given ke</td>
 </tr>
-
 <tr>
 <td><code>deleteAllData()</code></td>
 <td>Deletes all data in the persistent data store</td>
 </tr>
-
 <tr>
 <td><code>deleteData()</code></td>
 <td>Deletes data for a specific set of known keys from the persistent data store</td>
 </tr>
-
 <tr>
 <td><code>getData()</code></td>
 <td>Gets data from the persistent data store</td>
 </tr>
 </tbody>
 </table>
-
 <h3 id="add"><code>add()</code></h3>
-
 <p>Adds additional persistent data that will be available to all track calls for lifetime of app. Values will overwrite any pre-existing values for a given key.</p>
-
 <pre><code class="language-swift">tealium?.persistentData()?.add(data: [String: Any])
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -7558,31 +7546,23 @@ var utag_data = {
 <th>Example</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td><code>Any</code></td>
-<td><code>[String: Any]</code></td>
+<td><code>Any</code>| <code>[String: Any]</code></td>
 <td>Dictionary of data to add</td>
 <td><code>data: [&quot;customer_id&quot;:&quot;1234567890-a&quot;]</code></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-
 <h3 id="deletealldata"><code>deleteAllData()</code></h3>
-
 <p>Deletes all data in the persistent data store.</p>
-
 <pre><code class="language-swift">tealium?.persistentData()?.deleteAllData()
 </code></pre>
-
 <h3 id="deletedata"><code>deleteData()</code></h3>
-
 <p>Deletes data for a specific set of known keys from the persistent data store.</p>
-
 <pre><code class="language-swift">tealium?.persistentData()?.deleteDate(forKeys: [String])
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -7592,21 +7572,17 @@ var utag_data = {
 <th>Example</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td><code>forKeys</code></td>
-<td><code>[String]</code></td>
+<td><code>forKeys</code>| <code>[String]</code></td>
 <td>Array of keys to remove</td>
 <td><code>forKeys: [&quot;customer_id&quot;]</code></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-
 <h3 id="getdata"><code>getData()</code></h3>
-
 <p>Gets data from the persistent data store.</p>
-
 <pre><code class="language-swift">let data = tealium?.persistentData()?.getData()
 </code></pre>
 
@@ -7666,7 +7642,7 @@ var utag_data = {
   </span>
 	<span id="feedback_comment">
 		<p><textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="60"></textarea></p>
-    <span><p>This page was last updated:  July 23, 2020 
+    <span><p>This page was last updated:  June 3, 2022 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
     </p>

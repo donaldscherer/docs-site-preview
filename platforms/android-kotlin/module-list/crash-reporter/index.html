@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.59.0" />
+     <meta name="generator" content="Hugo 0.61.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -7505,54 +7505,44 @@ var utag_data = {
 
 
 <div class="prose" id="prose">
-  
-
-<h2 id="install">Install</h2>
-
+  <h2 id="install">Install</h2>
 <p>Install the Crash Reporter module using Maven (recommended) or manually.</p>
-
 <h3 id="maven">Maven</h3>
-
 <p>To install the module using Maven:</p>
-
 <ol>
-<li><p>In your project&rsquo;s top-level <code>build.gradle</code> file, add the following Maven repository:</p>
-
+<li>In your project's top-level <code>build.gradle</code> file, add the following Maven repository:</li>
+</ol>
 <pre><code class="language-groovy">maven {
-  url &quot;https://maven.tealiumiq.com/android/releases/&quot;
+      url &quot;https://maven.tealiumiq.com/android/releases/&quot;
 }
-</code></pre></li>
-
-<li><p>In your project module&rsquo;s <code>build.gradle</code> file, add the Maven dependencies for the Tealium library and Crash Reporter:</p>
-
-<pre><code class="language-groovy">dependencies {
-  implementation 'com.tealium:kotlin-core:1.3.0'
-  implementation 'com.tealium:kotlin-crash-reporter:1.1.0'
-}
-</code></pre></li>
+</code></pre>
+<ol start="2">
+<li>In your project module's <code>build.gradle</code> file, add the Maven dependencies for the Tealium library and Crash Reporter:</li>
 </ol>
-
+<pre><code class="language-groovy">dependencies {
+      implementation 'com.tealium:kotlin-core:1.3.0'
+      implementation 'com.tealium:kotlin-crash-reporter:1.1.0'
+}
+</code></pre>
 <h3 id="manual">Manual</h3>
-
 <p>To install the Crash Reporter manually:</p>
-
 <ol>
-<li><p>Download the Tealium <a href="https://github.com/Tealium/tealium-kotlin/tree/master/crashreporter">Crash Reporter</a> module.</p></li>
-
-<li><p>Copy the file <code>tealium-kotlin.crashreporter-1.1.0.aar</code> into your project&rsquo;s <code>&lt;PROJECT_ROOT&gt;/&lt;MODULE&gt;/libs</code> directory.</p></li>
-
-<li><p>Add the Tealium library dependency to your project module’s <code>build.gradle</code> file:</p>
-
-<pre><code class="language-groovy">dependencies {
-  implementation(name:'tealium-kotlin.crashreporter-1.1.0', ext:'aar')
-}
-</code></pre></li>
+<li>
+<p>Download the Tealium <a href="https://github.com/Tealium/tealium-kotlin/tree/master/crashreporter">Crash Reporter</a> module.</p>
+</li>
+<li>
+<p>Copy the file <code>tealium-kotlin.crashreporter-1.1.0.aar</code> into your project's <code>&lt;PROJECT_ROOT&gt;/&lt;MODULE&gt;/libs</code> directory.</p>
+</li>
+<li>
+<p>Add the Tealium library dependency to your project module’s <code>build.gradle</code> file:</p>
+</li>
 </ol>
-
+<pre><code class="language-groovy">dependencies {
+      implementation(name:'tealium-kotlin.crashreporter-1.1.0', ext:'aar')
+}
+</code></pre>
 <h2 id="initialize">Initialize</h2>
-
 <p>Initialize the Crash Reporter module, as shown in the following example:</p>
-
 <pre><code class="language-kotlin">val config = TealiumConfig(application,
               &quot;ACCOUNT&quot;,
               &quot;PROFILE&quot;,
@@ -7563,24 +7553,15 @@ var utag_data = {
               Dispatchers.RemoteCommands)
 )
 </code></pre>
-
-<p>To truncate the Crash Reporter&rsquo;s stack trace, set the configuration option <code>truncateCrashReporterStackTraces</code> to <code>true</code> (default: <code>false</code>).</p>
-
+<p>To truncate the Crash Reporter's stack trace, set the configuration option <code>truncateCrashReporterStackTraces</code> to <code>true</code> (default: <code>false</code>).</p>
 <pre><code class="language-java">config.truncateCrashReporterStackTraces = true
 </code></pre>
-
 <h2 id="tracked-events">Tracked Events</h2>
-
 <p>Once initialized, the Crash Reporter module automatically captures crash data. If a thread abruptly terminates, <code>.uncaughtExceptionHandler()</code> is invoked and the crash information is saved to disk. Upon the next launch, the saved crash information will be dispatched along with your other events.</p>
-
 <p>Crash events are tracked as <code>tealium_event=&quot;crash&quot;</code>.</p>
-
-<p class="note"><i class="fas fa-info-circle"></i>Crash Reporter is a singleton instance call. Chaining handlers is not currently supported.</p>
-
+<!-- raw HTML omitted -->
 <h2 id="data-layer">Data Layer</h2>
-
 <p>The Crash Reporter module sends the following crash attributes in the event:</p>
-
 <table>
 <thead>
 <tr>
@@ -7589,32 +7570,27 @@ var utag_data = {
 <th align="left">Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left"><code>crash_cause</code></td>
 <td align="left">String</td>
 <td align="left">The exception type</td>
 </tr>
-
 <tr>
 <td align="left"><code>crash_count</code></td>
 <td align="left">Number</td>
 <td align="left">An incremented counter for each crash since install</td>
 </tr>
-
 <tr>
 <td align="left"><code>crash_name</code></td>
 <td align="left">String</td>
 <td align="left">The exception message</td>
 </tr>
-
 <tr>
 <td align="left"><code>crash_threads</code></td>
 <td align="left">Array of Strings</td>
 <td align="left">Array of JSON strings containing data of the crashed thread, including the thread ID and stack trace</td>
 </tr>
-
 <tr>
 <td align="left"><code>crash_uuid</code></td>
 <td align="left">String</td>
@@ -7622,9 +7598,7 @@ var utag_data = {
 </tr>
 </tbody>
 </table>
-
 <p>Example:</p>
-
 <pre><code class="language-json">{
   &quot;tealium_event&quot; : &quot;crash&quot;,
   &quot;crash_cause&quot;   : &quot;java.lang.RuntimeException&quot;,
@@ -7693,7 +7667,7 @@ var utag_data = {
   </span>
 	<span id="feedback_comment">
 		<p><textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="60"></textarea></p>
-    <span><p>This page was last updated:  December 14, 2021 
+    <span><p>This page was last updated:  June 3, 2022 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
     </p>

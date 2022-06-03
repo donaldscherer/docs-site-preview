@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.59.0" />
+     <meta name="generator" content="Hugo 0.61.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -7505,12 +7505,8 @@ var utag_data = {
 
 
 <div class="prose" id="prose">
-  
-
-<h2 id="class-tealium">Class: <code>Tealium</code></h2>
-
+  <h2 id="class-tealium">Class: <code>Tealium</code></h2>
 <p>The following summarizes the commonly used methods of the <code>Tealium</code> class.</p>
-
 <table>
 <thead>
 <tr>
@@ -7518,47 +7514,37 @@ var utag_data = {
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td><code>createInstance()</code></td>
-<td>Create a new Tealium Multiton</td>
+<td><code>createInstance()</code>| Create a new Tealium Multiton</td>
+<td></td>
 </tr>
-
 <tr>
-<td><code>disableConsentManager()</code></td>
-<td>Disables Consent Manager</td>
+<td><code>disableConsentManager()</code>| Disables Consent Manager</td>
+<td></td>
 </tr>
-
 <tr>
-<td><code>getConsentManager()</code></td>
-<td>Returns the instance of Consent Manager if enabled</td>
+<td><code>getConsentManager()</code>| Returns the instance of Consent Manager if enabled</td>
+<td></td>
 </tr>
-
 <tr>
 <td><code>requestFlush()</code></td>
 <td>Request to dispatch a batch queue of events</td>
 </tr>
-
 <tr>
 <td><code>trackEvent()</code></td>
 <td>Track an event</td>
 </tr>
-
 <tr>
 <td><code>trackView()</code></td>
 <td>Track a presented view</td>
 </tr>
 </tbody>
 </table>
-
 <h3 id="createinstance"><code>createInstance()</code></h3>
-
 <p>Create a new Tealium Multiton, and returns the newly created instance. Instances are accessible by <code>getInstance()</code> and destroyable by <code>destroyInstance()</code>. Multiple instances are supported.</p>
-
 <pre><code class="language-java">Tealium.createInstance(key, config);
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -7568,7 +7554,6 @@ var utag_data = {
 <th>Example</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>key</code></td>
@@ -7576,7 +7561,6 @@ var utag_data = {
 <td>New Tealium instance name</td>
 <td><code>&quot;abc123&quot;</code></td>
 </tr>
-
 <tr>
 <td><code>config</code></td>
 <td><code>Tealium.Config</code></td>
@@ -7585,7 +7569,6 @@ var utag_data = {
 </tr>
 </tbody>
 </table>
-
 <table>
 <thead>
 <tr>
@@ -7593,7 +7576,6 @@ var utag_data = {
 <th>Return Type</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Tealium Multiton</td>
@@ -7601,25 +7583,18 @@ var utag_data = {
 </tr>
 </tbody>
 </table>
-
 <h3 id="disableconsentmanager"><code>disableConsentManager()</code></h3>
-
 <p>Disables Consent Manager. Call this method after Tealium is fully initialized to disable Consent Manager.</p>
-
 <pre><code class="language-java">final Tealium tealiumInstance = Tealium.createInstance(TEALIUM_MAIN, config);
 
 tealiumInstance.disableConsentManager();
 </code></pre>
-
 <h3 id="getconsentmanager"><code>getConsentManager()</code></h3>
-
 <p>Returns the instance of Consent Manager if enabled.</p>
-
 <pre><code class="language-java">final Tealium tealiumInstance = Tealium.createInstance(TEALIUM_MAIN, config);
 
 ConsentManager consentManager = tealiumInstance.getConsentManager();
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -7627,7 +7602,6 @@ ConsentManager consentManager = tealiumInstance.getConsentManager();
 <th>Return Type</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Consent Manager</td>
@@ -7635,24 +7609,17 @@ ConsentManager consentManager = tealiumInstance.getConsentManager();
 </tr>
 </tbody>
 </table>
-
 <h3 id="requestflush"><code>requestFlush()</code></h3>
-
 <p>Request to dispatch a batch queue of events when the batch limit has not been reached. If all other dispatching checks are okay (online, consent management, dispatch validators), the queue is dispatched.</p>
-
 <pre><code class="language-java">Tealium instance = Tealium.getInstance(&quot;my_instance_name&quot;);
 instance.requestFlush();
 </code></pre>
-
 <h3 id="trackevent"><code>trackEvent()</code></h3>
-
 <p>Track a non-view event.</p>
-
 <pre><code class="language-java">Map&lt;String, Object&gt; data = new HashMap&lt;&gt;(1);
 data.put(&quot;KEY&quot;, &quot;VALUE&quot;);
 Tealium.getInstance(&quot;INSTANCE KEY&quot;).trackEvent(eventName, data);
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -7662,15 +7629,13 @@ Tealium.getInstance(&quot;INSTANCE KEY&quot;).trackEvent(eventName, data);
 <th>Example</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td><code>eventName</code></td>
-<td><code>String</code></td>
+<td><code>eventName</code>| <code>String</code></td>
 <td>Non-view event name</td>
 <td><code>&quot;Button Click&quot;</code></td>
+<td></td>
 </tr>
-
 <tr>
 <td><code>data</code></td>
 <td><code>[Map&lt;String, dynamic&gt;]</code></td>
@@ -7679,16 +7644,12 @@ Tealium.getInstance(&quot;INSTANCE KEY&quot;).trackEvent(eventName, data);
 </tr>
 </tbody>
 </table>
-
 <h3 id="trackview"><code>trackView()</code></h3>
-
 <p>Track a presented view.</p>
-
 <pre><code class="language-java">Map&lt;String, Object&gt; data = new HashMap&lt;&gt;(1);
 data.put(&quot;KEY&quot;, &quot;VALUE&quot;);
 Tealium.getInstance(&quot;INSTANCE KEY&quot;).trackView(screenName, data);
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -7698,15 +7659,13 @@ Tealium.getInstance(&quot;INSTANCE KEY&quot;).trackView(screenName, data);
 <th>Example</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td><code>screenName</code></td>
-<td><code>String</code></td>
+<td><code>screenName</code>| <code>String</code></td>
 <td>View screen name</td>
 <td><code>&quot;Home screen&quot;</code></td>
+<td></td>
 </tr>
-
 <tr>
 <td><code>data</code></td>
 <td><code>[Map&lt;String, dynamic&gt;]</code></td>
@@ -7772,7 +7731,7 @@ Tealium.getInstance(&quot;INSTANCE KEY&quot;).trackView(screenName, data);
   </span>
 	<span id="feedback_comment">
 		<p><textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="60"></textarea></p>
-    <span><p>This page was last updated:  March 18, 2020 
+    <span><p>This page was last updated:  June 3, 2022 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
     </p>

@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.59.0" />
+     <meta name="generator" content="Hugo 0.61.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -7505,63 +7505,53 @@ var utag_data = {
 
 
 <div class="prose" id="prose">
-  
-
-<h2 id="install">Install</h2>
-
+  <h2 id="install">Install</h2>
 <p>Install the Lifecycle Tracking module with Maven or manually.</p>
-
 <h3 id="maven">Maven</h3>
-
 <p>To install the Lifecycle Tracking module using Maven:</p>
-
 <ol>
-<li><p>In your project&rsquo;s top-level <code>build.gradle</code> file, add the following Maven repository:</p>
-
+<li>In your project's top-level <code>build.gradle</code> file, add the following Maven repository:</li>
+</ol>
 <pre><code class="language-groovy">// Top-level build file where you add configuration options common to all sub-projects/modules.
 allprojects {
- repositories {
-   jcenter()
-   // Tealium Maven repo directive
-   maven {
-       url &quot;https://maven.tealiumiq.com/android/releases/&quot;
-   }
- }
+     repositories {
+       jcenter()
+       // Tealium Maven repo directive
+       maven {
+           url &quot;https://maven.tealiumiq.com/android/releases/&quot;
+       }
+     }
 }
-</code></pre></li>
-
-<li><p>In your project module&rsquo;s <code>build.gradle</code> file, add the following Maven dependency:</p>
-
-<pre><code class="language-groovy">dependencies {
- // only add if not already present
- implementation 'com.tealium:kotlin-core:1.3.0'
- // add lifecycle to list of dependencies
- implementation 'com.tealium:kotlin-lifecycle:1.1.0'
-}
-</code></pre></li>
+</code></pre>
+<ol start="2">
+<li>In your project module's <code>build.gradle</code> file, add the following Maven dependency:</li>
 </ol>
-
+<pre><code class="language-groovy">dependencies {
+     // only add if not already present
+     implementation 'com.tealium:kotlin-core:1.3.0'
+     // add lifecycle to list of dependencies
+     implementation 'com.tealium:kotlin-lifecycle:1.1.0'
+}
+</code></pre>
 <h3 id="manual">Manual</h3>
-
 <p>To install the Lifecycle Tracking module manually, following these steps:</p>
-
 <ol>
-<li><p>Download the Tealium <a href="https://github.com/Tealium/tealium-kotlin/tree/master/lifecycle">Lifecycle Tracking Module</a> module.</p></li>
-
-<li><p>Copy the file <code>tealium-kotlin.lifecycle-1.1.0.aar</code> into your project&rsquo;s <code>&lt;PROJECT_ROOT&gt;/&lt;MODULE&gt;/libs</code> directory.</p></li>
-
-<li><p>Add the Tealium library dependency to your project module’s <code>build.gradle</code> file:</p>
-
-<pre><code class="language-groovy">dependencies {
-  implementation(name:'tealium-kotlin.lifecycle-1.1.0', ext:'aar')
-}
-</code></pre></li>
+<li>
+<p>Download the Tealium <a href="https://github.com/Tealium/tealium-kotlin/tree/master/lifecycle">Lifecycle Tracking Module</a> module.</p>
+</li>
+<li>
+<p>Copy the file <code>tealium-kotlin.lifecycle-1.1.0.aar</code> into your project's <code>&lt;PROJECT_ROOT&gt;/&lt;MODULE&gt;/libs</code> directory.</p>
+</li>
+<li>
+<p>Add the Tealium library dependency to your project module’s <code>build.gradle</code> file:</p>
+</li>
 </ol>
-
+<pre><code class="language-groovy">dependencies {
+      implementation(name:'tealium-kotlin.lifecycle-1.1.0', ext:'aar')
+}
+</code></pre>
 <h2 id="automatically-tracked-events">Automatically Tracked Events</h2>
-
 <p>The module tracks the following lifecycle events, set by the <code>lifecycle_type</code> variable:</p>
-
 <table>
 <thead>
 <tr>
@@ -7569,31 +7559,24 @@ allprojects {
 <th align="left">Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left"><code>launch</code></td>
 <td align="left">Generated on the first <code>onActivityResumed</code> to occur. If <code>onActivityPaused</code> is called before <code>onActivityResumed</code> (when the library is initialized in the middle of the <code>Activity</code> lifecycle), then the module creation time is used to generate a <code>launch</code> event.</td>
 </tr>
-
 <tr>
 <td align="left"><code>sleep</code></td>
 <td align="left">Generated 5 seconds after <code>onActivityPaused</code> is called and <code>onActivityResumed</code> was not called. This indicates that the application has been backgrounded because a new view has not been presented.</td>
 </tr>
-
 <tr>
 <td align="left"><code>wake</code></td>
 <td align="left">Generated during <code>onActivityResumed</code> when more than 5 seconds has elapsed since the last <code>onActivityPaused</code>. This indicates that <code>onActivityResumed</code> is called because the app is foregrounding and not because of a view change.</td>
 </tr>
 </tbody>
 </table>
-
 <p>Tealium lifecycle tracking solely associates usage with the activity lifecycle.</p>
-
 <p>The library leverages the <a href="http://developer.android.com/reference/android/app/Application.ActivityLifecycleCallbacks.html">Application.ActivityLifecycleCallbacks</a> API and evaluates its conditions on <a href="http://developer.android.com/reference/android/app/Application.ActivityLifecycleCallbacks.html#onActivityResumed%28android.app.Activity%29">onActivityResumed</a> and <a href="http://developer.android.com/reference/android/app/Application.ActivityLifecycleCallbacks.html#onActivityPaused%28android.app.Activity%29">onActivityPaused</a>.</p>
-
 <p>It is enabled with the following code:</p>
-
 <pre><code class="language-kotlin">val config = TealiumConfig(
                 applicaiton,
                 &quot;accountName&quot;,
@@ -7602,50 +7585,33 @@ allprojects {
                 modules = mutableSetOf(Lifecycle)
                 )
 </code></pre>
-
 <h2 id="manually-tracked-events">Manually Tracked Events</h2>
-
 <p>Available for specific lifecycle paradigms and unconventional lifecycle tracking. This approach is not recommended for most implementations. To allow manual lifecycle tracking update your lifecycle initiation code to set <code>isAutoTrackingEnabled</code> to <code>false</code>.</p>
-
 <h3 id="configuration-options">Configuration Options</h3>
-
 <pre><code class="language-kotlin">val config = TealiumConfig(...)
 
 config.isAutoTrackingEnabled = false
 </code></pre>
-
 <p>To manually track a <code>launch</code> event, call the <code>trackLaunchEvent()</code> method:</p>
-
 <pre><code class="language-kotlin">tealium.lifecycle?.trackLaunchEvent()
 </code></pre>
-
 <p>To manually track a <code>sleep</code> event, call the <code>trackSleepEvent()</code> method:</p>
-
 <pre><code class="language-kotlin">tealium.lifecycle?.trackSleepEvent()
 </code></pre>
-
 <p>To manually track a <code>wake</code> event, call the <code>trackWakeEvent()</code> method:</p>
-
 <pre><code class="language-kotlin">tealium.lifecycle?.trackWakeEvent()
 </code></pre>
-
 <h2 id="crash-detection">Crash Detection</h2>
-
 <p>When a <code>launch</code> event follows a <code>wake</code> event or vice-versa, this indicates a crash has occurred since the app did not successfully <code>sleep</code>. If the aforementioned sequence occurs because of a Tealium library shutdown, this is not considered to be a crash event.</p>
-
 <p>When a crash event is detected, the <code>launch</code> or <code>wake</code> event data has the <code>lifecycle_diddetectcrash</code> variable added.</p>
-
 <pre><code class="language-javascript">{
     &quot;lifecycle_type&quot; : &quot;launch&quot;,
     &quot;lifecycle_diddetectcrash&quot; : &quot;true&quot;,
     //...
 }
 </code></pre>
-
 <h2 id="data-layer">Data Layer</h2>
-
 <p>The Lifecycle Tracking module adds the following additional variables for the listed lifecycle event types (<code>launch</code>, <code>wake</code>, <code>sleep</code>):</p>
-
 <table>
 <thead>
 <tr>
@@ -7656,7 +7622,6 @@ config.isAutoTrackingEnabled = false
 <th align="left">Event</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left"><code>lifecycle_ dayofweek_local</code></td>
@@ -7665,7 +7630,6 @@ config.isAutoTrackingEnabled = false
 <td align="left"><code>2</code></td>
 <td align="left">all</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ dayssincelaunch</code></td>
 <td align="left"><code>Number</code></td>
@@ -7673,7 +7637,6 @@ config.isAutoTrackingEnabled = false
 <td align="left"><code>23</code></td>
 <td align="left">all</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ dayssinceupdate</code></td>
 <td align="left"><code>Number</code></td>
@@ -7681,7 +7644,6 @@ config.isAutoTrackingEnabled = false
 <td align="left"><code>46</code></td>
 <td align="left">all</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ dayssincelastwake</code></td>
 <td align="left"><code>Number</code></td>
@@ -7689,7 +7651,6 @@ config.isAutoTrackingEnabled = false
 <td align="left"><code>1</code></td>
 <td align="left">all</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ diddetectcrash</code></td>
 <td align="left"><code>Boolean</code></td>
@@ -7697,7 +7658,6 @@ config.isAutoTrackingEnabled = false
 <td align="left">[<code>true</code>, <code>false</code>]</td>
 <td align="left">launch</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ firstlaunchdate</code></td>
 <td align="left"><code>String</code></td>
@@ -7705,7 +7665,6 @@ config.isAutoTrackingEnabled = false
 <td align="left"><code>&quot;2013-07-11T17:55:04Z&quot;</code></td>
 <td align="left">all</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ firstlaunchdate_ MMDDYYYY </code></td>
 <td align="left"><code>String</code></td>
@@ -7713,7 +7672,6 @@ config.isAutoTrackingEnabled = false
 <td align="left"><code>&quot;01/17/2012&quot;</code></td>
 <td align="left">all</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ hourofday_local</code></td>
 <td align="left"><code>String</code></td>
@@ -7721,7 +7679,6 @@ config.isAutoTrackingEnabled = false
 <td align="left"><code>&quot;12&quot;</code></td>
 <td align="left">all</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ isfirstlaunch</code></td>
 <td align="left"><code>Boolean</code></td>
@@ -7729,7 +7686,6 @@ config.isAutoTrackingEnabled = false
 <td align="left">[<code>true</code>, <code>false</code>]</td>
 <td align="left">launch</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ isfirstlaunchupdate</code></td>
 <td align="left"><code>Boolean</code></td>
@@ -7737,7 +7693,6 @@ config.isAutoTrackingEnabled = false
 <td align="left">[<code>true</code>, <code>false</code>]</td>
 <td align="left">launch</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ isfirstwakemonth</code></td>
 <td align="left"><code>Boolean</code></td>
@@ -7745,7 +7700,6 @@ config.isAutoTrackingEnabled = false
 <td align="left">[<code>true</code>, <code>false</code>]</td>
 <td align="left">launch, wake</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ isfirstwaketoday</code></td>
 <td align="left"><code>Boolean</code></td>
@@ -7753,7 +7707,6 @@ config.isAutoTrackingEnabled = false
 <td align="left">[<code>true</code>, <code>false</code>]</td>
 <td align="left">launch, wake</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ launchcount</code></td>
 <td align="left"><code>Number</code></td>
@@ -7761,7 +7714,6 @@ config.isAutoTrackingEnabled = false
 <td align="left"><code>3</code></td>
 <td align="left">all</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ secondsawake</code></td>
 <td align="left"><code>Number</code></td>
@@ -7769,7 +7721,6 @@ config.isAutoTrackingEnabled = false
 <td align="left"><code>30</code></td>
 <td align="left">all</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ priorsecondsawake </code></td>
 <td align="left"><code>Number</code></td>
@@ -7777,7 +7728,6 @@ config.isAutoTrackingEnabled = false
 <td align="left"><code>126</code></td>
 <td align="left">all</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ sleepcount</code></td>
 <td align="left"><code>Number</code></td>
@@ -7785,7 +7735,6 @@ config.isAutoTrackingEnabled = false
 <td align="left"><code>5</code></td>
 <td align="left">all</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ totalcrashcount</code></td>
 <td align="left"><code>Number</code></td>
@@ -7793,7 +7742,6 @@ config.isAutoTrackingEnabled = false
 <td align="left"><code>21 </code></td>
 <td align="left">all</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ totallaunchcount</code></td>
 <td align="left"><code>Number</code></td>
@@ -7801,7 +7749,6 @@ config.isAutoTrackingEnabled = false
 <td align="left"><code>3</code></td>
 <td align="left">all</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ totalsecondsawake</code></td>
 <td align="left"><code>Number</code></td>
@@ -7809,7 +7756,6 @@ config.isAutoTrackingEnabled = false
 <td align="left"><code>36</code></td>
 <td align="left">all</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ totalsleepcount</code></td>
 <td align="left"><code>Number</code></td>
@@ -7817,7 +7763,6 @@ config.isAutoTrackingEnabled = false
 <td align="left"><code>400</code></td>
 <td align="left">all</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ totalwakecount</code></td>
 <td align="left"><code>Number</code></td>
@@ -7825,7 +7770,6 @@ config.isAutoTrackingEnabled = false
 <td align="left"><code>563</code></td>
 <td align="left">all</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_type</code></td>
 <td align="left"><code>String</code></td>
@@ -7833,7 +7777,6 @@ config.isAutoTrackingEnabled = false
 <td align="left">[<code>&quot;initial&quot;</code>, <code>&quot;launch&quot;</code>, <code>&quot;wake&quot;</code>, <code>&quot;sleep&quot;</code>, <code>&quot;terminate&quot;</code>]</td>
 <td align="left">all</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ updatelaunchdate</code></td>
 <td align="left"><code>String</code></td>
@@ -7841,7 +7784,6 @@ config.isAutoTrackingEnabled = false
 <td align="left"><code>&quot;2014-09-08T18:10:01Z&quot;</code></td>
 <td align="left">all</td>
 </tr>
-
 <tr>
 <td align="left"><code>lifecycle_ wakecount</code></td>
 <td align="left"><code>Number</code></td>
@@ -7851,9 +7793,7 @@ config.isAutoTrackingEnabled = false
 </tr>
 </tbody>
 </table>
-
 <h2 id="api-reference">API Reference</h2>
-
 <p>For the reference of methods used by the Lifecycle Tracking module, see the <a href="/platforms/android-kotlin/api/lifecycle/"><code>LifeCycle</code></a> class in the Tealium SDK for Android API.</p>
 
 </div>
@@ -7912,7 +7852,7 @@ config.isAutoTrackingEnabled = false
   </span>
 	<span id="feedback_comment">
 		<p><textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="60"></textarea></p>
-    <span><p>This page was last updated:  December 14, 2021 
+    <span><p>This page was last updated:  June 3, 2022 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
     </p>

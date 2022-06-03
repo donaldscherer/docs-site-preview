@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.59.0" />
+     <meta name="generator" content="Hugo 0.61.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -7505,30 +7505,18 @@ var utag_data = {
 
 
 <div class="prose" id="prose">
-  
-
-<h2 id="usage">Usage</h2>
-
+  <h2 id="usage">Usage</h2>
 <p>Some variables are required on every event. To prevent having to manually add required variable data to every event, you have the option to store data as either volatile or persistent. Once data is stored, it will be appended to every event, including lifecycle events.</p>
-
 <p><a href="/platforms/getting-started/mobile-concepts/#data-management">Learn more</a> about Data Management.</p>
-
 <h2 id="persistent-data">Persistent Data</h2>
-
 <p>Persistent data is merged into your data dictionary on every tracking call, as well as persist between launches.</p>
-
 <p>The <code>AddPersistentDataSources()</code> method adds persistent data, as shown in the following example:</p>
-
 <pre><code class="language-csharp">tealium.AddPersistentDataSources(new Dictionary&lt;string, object&gt;(1) {
   {&quot;KEY&quot;, &quot;VALUE&quot;}});
 </code></pre>
-
 <h2 id="volatile-data">Volatile Data</h2>
-
 <p>Volatile data is merged into your data dictionary on every tracking call, but once the application is closed, volatile data is lost is not present on the next launch.</p>
-
 <p>The <code>AddVolatileDataSources()</code> method adds volatile data, as shown in the following example:</p>
-
 <pre><code class="language-csharp">tealium.AddVolatileDataSources(new Dictionary&lt;string, object&gt;(1) {
    {&quot;KEY&quot;, &quot;VALUE&quot;}});
 </code></pre>
@@ -7589,7 +7577,7 @@ var utag_data = {
   </span>
 	<span id="feedback_comment">
 		<p><textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="60"></textarea></p>
-    <span><p>This page was last updated:  December 15, 2021 
+    <span><p>This page was last updated:  June 3, 2022 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
     </p>

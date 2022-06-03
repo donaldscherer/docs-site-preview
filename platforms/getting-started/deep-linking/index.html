@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.59.0" />
+     <meta name="generator" content="Hugo 0.61.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -7505,51 +7505,30 @@ var utag_data = {
 
 
 <div class="prose" id="prose">
-  
-
-<p>A deep link is a hyperlink that launches a mobile app and, optionally, delivers specific content within the app. Deep links are often used to measure the performance of advertisement campaigns or promotional emails that link users to your app.</p>
-
+  <p>A deep link is a hyperlink that launches a mobile app and, optionally, delivers specific content within the app. Deep links are often used to measure the performance of advertisement campaigns or promotional emails that link users to your app.</p>
 <h2 id="supported-platforms">Supported Platforms</h2>
-
 <p>The following platforms support deep link tracking:</p>
-
 <ul>
 <li><a href="/platforms/android-kotlin/">Android (Kotlin)</a></li>
 <li><a href="/platforms/ios-swift/">iOS (Swift v2.x)</a></li>
 </ul>
-
 <h2 id="how-it-works">How it Works</h2>
-
 <p>When your app is launched from a deep link, the Tealium library adds the URL to the data layer as the attribute <code>deep_link_url</code>.</p>
-
-<p>The deep link&rsquo;s query parameters are added to the data layer with attribute names in the format <code>deep_link_param_&lt;param name&gt;</code>.</p>
-
+<p>The deep link's query parameters are added to the data layer with attribute names in the format <code>deep_link_param_&lt;param name&gt;</code>.</p>
 <p>For example, <code>https://example.com/?campaign_code=SUMMER</code> becomes:</p>
-
 <pre><code class="language-javascript">deep_link_url = &quot;https://example.com/?campaign_code=SUMMER&quot;
 deep_link_param_campaign_code = &quot;SUMMER&quot;
 </code></pre>
-
-<p class="note"><i class="fas fa-info-circle"></i>Deep link data layer attributes are only stored for the session.</p>
-
+<!-- raw HTML omitted -->
 <h2 id="configuration">Configuration</h2>
-
 <h3 id="android-kotlin">Android Kotlin</h3>
-
 <p>Deep link tracking is automatically enabled in Tealium for Android (Kotlin).</p>
-
 <p>Disable automatic tracking of deep links by setting the <a href="/platforms/android-kotlin/api/tealium-config/#deeplinktrackingenabled"><code>deepLinkTrackingEnabled</code></a> property to <code>false</code>.</p>
-
-<h3 id="swift-v2-x">Swift v2.x</h3>
-
+<h3 id="swift-v2x">Swift v2.x</h3>
 <p>Deep link tracking is automatically enabled in Tealium for iOS (Swift v2.x).</p>
-
 <p>Disable automatic tracking of deep links by setting the <code>info.plist</code> key <code>TealiumAutotrackingDeepLinkEnabled</code> to <code>false</code>.</p>
-
-<h3 id="swift-v1-x">Swift v1.x</h3>
-
-<p>Tealium for iOS (Swift v1.x) requires a single line of code to be added to your app&rsquo;s <code>AppDelegate</code> class to enable deep linking.</p>
-
+<h3 id="swift-v1x">Swift v1.x</h3>
+<p>Tealium for iOS (Swift v1.x) requires a single line of code to be added to your app's <code>AppDelegate</code> class to enable deep linking.</p>
 <pre><code class="language-swift">func application(_ app: UIApplication,
                  open url: URL,
                  options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -&gt; Bool {
@@ -7557,11 +7536,8 @@ deep_link_param_campaign_code = &quot;SUMMER&quot;
   return true
 }
 </code></pre>
-
 <h2 id="data-layer">Data Layer</h2>
-
 <p>The following properties are added to your data layer when your app is launched from a deep link:</p>
-
 <table>
 <thead>
 <tr>
@@ -7571,7 +7547,6 @@ deep_link_param_campaign_code = &quot;SUMMER&quot;
 <th align="left">Example</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left"><code>deep_link_url</code></td>
@@ -7579,21 +7554,18 @@ deep_link_param_campaign_code = &quot;SUMMER&quot;
 <td align="left">The full URL of the deep link that opened the app, including query parameters.</td>
 <td align="left"><code>https://example.com/?campaign_code=SUMMER</code></td>
 </tr>
-
 <tr>
 <td align="left"><code>deep_link_param_X</code></td>
 <td align="left"><code>String</code></td>
 <td align="left">Each query parameter of the deep link URL, where <code>X</code> is the name of the parameter, such as <code>deep_link_param_campaign_code</code>.</td>
 <td align="left"><code>SUMMER</code></td>
 </tr>
-
 <tr>
 <td align="left"><code>deep_link_referrer_url</code> (iOS)</td>
 <td align="left"><code>String</code></td>
 <td align="left">The full URL of the browser page where the deep link was clicked.</td>
 <td align="left"><code>https://www.example.com/referring/page</code></td>
 </tr>
-
 <tr>
 <td align="left"><code>deep_link_referrer_app</code> (iOS)</td>
 <td align="left"><code>String</code></td>
@@ -7659,7 +7631,7 @@ deep_link_param_campaign_code = &quot;SUMMER&quot;
   </span>
 	<span id="feedback_comment">
 		<p><textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="60"></textarea></p>
-    <span><p>This page was last updated:  December 2, 2021 
+    <span><p>This page was last updated:  June 3, 2022 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
     </p>

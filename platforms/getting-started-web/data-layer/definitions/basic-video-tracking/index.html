@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.59.0" />
+     <meta name="generator" content="Hugo 0.61.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -7505,10 +7505,7 @@ var utag_data = {
 
 
 <div class="prose" id="prose">
-  
-
-<h2 id="data-layer-attributes">Data Layer Attributes</h2>
-
+  <h2 id="data-layer-attributes">Data Layer Attributes</h2>
 <table>
 <thead>
 <tr>
@@ -7518,63 +7515,53 @@ var utag_data = {
 <th>Type</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td><code>tealium_event</code></td>
-<td>Tealium event name</td>
-<td><code>video_pause</code></td>
-<td>String</td>
+<td><code>tealium_event</code>| Tealium event name</td>
+<td><code>video_pause</code>| String</td>
+<td></td>
+<td></td>
 </tr>
-
 <tr>
-<td><code>video_playhead</code></td>
-<td>The playhead position (in seconds) of the video at the time of the event</td>
-<td><code>75</code></td>
-<td>Number</td>
+<td><code>video_playhead</code>| The playhead position (in seconds) of the video at the time of the event</td>
+<td><code>75</code>| Number</td>
+<td></td>
+<td></td>
 </tr>
-
 <tr>
-<td><code>video_id</code></td>
-<td>A unique ID for the video</td>
-<td><code>xWlEk2i9r5Q</code></td>
-<td>String</td>
+<td><code>video_id</code>| A unique ID for the video</td>
+<td><code>xWlEk2i9r5Q</code>| String</td>
+<td></td>
+<td></td>
 </tr>
-
 <tr>
-<td><code>video_length</code></td>
-<td>The total length (in seconds) of the video.</td>
-<td><code>300</code></td>
-<td>Number</td>
+<td><code>video_length</code>| The total length (in seconds) of the video.</td>
+<td><code>300</code>| Number</td>
+<td></td>
+<td></td>
 </tr>
-
 <tr>
-<td><code>video_milestone</code></td>
-<td>The percentage of video played</td>
-<td><code>25</code></td>
-<td>Number</td>
+<td><code>video_milestone</code>| The percentage of video played</td>
+<td><code>25</code>| Number</td>
+<td></td>
+<td></td>
 </tr>
-
 <tr>
-<td><code>video_name</code></td>
-<td>The display name of the video</td>
-<td><code>How to track videos in Tealium</code></td>
-<td>String</td>
+<td><code>video_name</code>| The display name of the video</td>
+<td><code>How to track videos in Tealium</code>| String</td>
+<td></td>
+<td></td>
 </tr>
-
 <tr>
-<td><code>video_platform</code></td>
-<td>The name of the platform serving the video</td>
-<td><code>YouTube</code></td>
-<td>String</td>
+<td><code>video_platform</code>| The name of the platform serving the video</td>
+<td><code>YouTube</code>| String</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-
 <h2 id="event-tracking">Event Tracking</h2>
-
 <h3 id="video-load">Video Load</h3>
-
 <table>
 <thead>
 <tr>
@@ -7582,17 +7569,14 @@ var utag_data = {
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td><code>tealium_event=&quot;video_load&quot;</code></td>
-<td>The video was loaded and made available to the viewer.</td>
+<td><code>tealium_event=&quot;video_load&quot;</code>| The video was loaded and made available to the viewer.</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-
 <p>Sample:</p>
-
 <pre><code class="language-javascript">{
    &quot;tealium_event&quot;  : &quot;video_load&quot;,
    &quot;video_id&quot;       : &quot;xWlEk2i9r5Q&quot;,
@@ -7601,9 +7585,7 @@ var utag_data = {
    &quot;video_platform&quot; : &quot;YouTube&quot;
 }
 </code></pre>
-
 <h3 id="video-start">Video Start</h3>
-
 <table>
 <thead>
 <tr>
@@ -7611,17 +7593,14 @@ var utag_data = {
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td><code>tealium_event=&quot;video_start&quot;</code></td>
-<td>The video began playing for the first time (either via auto-play or user click).</td>
+<td><code>tealium_event=&quot;video_start&quot;</code>| The video began playing for the first time (either via auto-play or user click).</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-
 <p>Sample:</p>
-
 <pre><code class="language-javascript">{
    &quot;tealium_event&quot;  : &quot;video_start&quot;,     
    &quot;video_id&quot;       : &quot;xWlEk2i9r5Q&quot;,     
@@ -7630,9 +7609,7 @@ var utag_data = {
    &quot;video_platform&quot; : &quot;YouTube&quot;
 }
 </code></pre>
-
 <h3 id="video-play">Video Play</h3>
-
 <table>
 <thead>
 <tr>
@@ -7640,17 +7617,14 @@ var utag_data = {
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td><code>tealium_event=&quot;video_play&quot;</code></td>
-<td>The video playback changed from not playing to playing.</td>
+<td><code>tealium_event=&quot;video_play&quot;</code>| The video playback changed from not playing to playing.</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-
 <p>Sample:</p>
-
 <pre><code class="language-javascript">{  
    &quot;tealium_event&quot;  : &quot;video_play&quot;,     
    &quot;video_playhead&quot; : &quot;75&quot;,     
@@ -7660,9 +7634,7 @@ var utag_data = {
    &quot;video_platform&quot; : &quot;YouTube&quot;
 }
 </code></pre>
-
 <h3 id="video-pause">Video Pause</h3>
-
 <table>
 <thead>
 <tr>
@@ -7670,17 +7642,14 @@ var utag_data = {
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td><code>tealium_event=&quot;video_pause&quot;</code></td>
-<td>The video playback changed to paused.</td>
+<td><code>tealium_event=&quot;video_pause&quot;</code>| The video playback changed to paused.</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-
 <p>Sample:</p>
-
 <pre><code class="language-javascript">{
    &quot;tealium_event&quot;  : &quot;video_pause&quot;,     
    &quot;video_playhead&quot; : 75,     
@@ -7690,9 +7659,7 @@ var utag_data = {
    &quot;video_platform&quot; : &quot;YouTube&quot;
 }
 </code></pre>
-
 <h3 id="video-seek">Video Seek</h3>
-
 <table>
 <thead>
 <tr>
@@ -7700,17 +7667,14 @@ var utag_data = {
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td><code>tealium_event=&quot;video_seek&quot;</code></td>
-<td>Video playback was advanced forward or backward to a new playhead.</td>
+<td><code>tealium_event=&quot;video_seek&quot;</code>| Video playback was advanced forward or backward to a new playhead.</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-
 <p>Sample:</p>
-
 <pre><code class="language-javascript">{
    &quot;tealium_event&quot;  : &quot;video_seek&quot;,     
    &quot;video_playhead&quot; : 75,     
@@ -7720,9 +7684,7 @@ var utag_data = {
    &quot;video_platform&quot; : &quot;YouTube&quot;
 }
 </code></pre>
-
 <h3 id="video-complete">Video Complete</h3>
-
 <table>
 <thead>
 <tr>
@@ -7730,17 +7692,14 @@ var utag_data = {
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td><code>tealium_event=&quot;video_complete&quot;</code></td>
-<td>Video playback has completed.</td>
+<td><code>tealium_event=&quot;video_complete&quot;</code>| Video playback has completed.</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-
 <p>Sample:</p>
-
 <pre><code class="language-javascript">{
    &quot;tealium_event&quot;  : &quot;video_complete&quot;,     
    &quot;video_id&quot;       : &quot;xWlEk2i9r5Q&quot;,     
@@ -7749,9 +7708,7 @@ var utag_data = {
    &quot;video_platform&quot; : &quot;YouTube&quot;
 }
 </code></pre>
-
 <h3 id="video-milestone">Video Milestone</h3>
-
 <table>
 <thead>
 <tr>
@@ -7759,17 +7716,14 @@ var utag_data = {
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td><code>tealium_event=&quot;video_milestone&quot;</code></td>
-<td>The video playback reached a specific percentage milestone.</td>
+<td><code>tealium_event=&quot;video_milestone&quot;</code>| The video playback reached a specific percentage milestone.</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-
 <p>Sample:</p>
-
 <pre><code class="language-javascript">{   
    &quot;tealium_event&quot;   : &quot;video_milestone&quot;,     
    &quot;video_playhead&quot;  : 75,     
@@ -7819,7 +7773,7 @@ var utag_data = {
   </span>
 	<span id="feedback_comment">
 		<p><textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="60"></textarea></p>
-    <span><p>This page was last updated:  April 13, 2021 
+    <span><p>This page was last updated:  June 3, 2022 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
     </p>

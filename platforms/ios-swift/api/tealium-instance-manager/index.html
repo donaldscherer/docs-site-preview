@@ -11,7 +11,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.59.0" />
+     <meta name="generator" content="Hugo 0.61.0" />
 
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -7505,12 +7505,8 @@ var utag_data = {
 
 
 <div class="prose" id="prose">
-  
-
-<h2 id="class-tealiuminstancemanager">Class: <code>TealiumInstanceManager</code></h2>
-
+  <h2 id="class-tealiuminstancemanager">Class: <code>TealiumInstanceManager</code></h2>
 <p>The following summarizes the commonly used methods of the iOS (Swift) <code>TealiumInstanceManager</code> class.</p>
-
 <table>
 <thead>
 <tr>
@@ -7518,32 +7514,25 @@ var utag_data = {
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><a href="#getinstancebyname"><code>getInstanceByName()</code></a></td>
 <td>Returns a Tealium instance for a specified account/profile/environment key</td>
 </tr>
-
 <tr>
 <td><a href="#removeinstance"><code>removeInstance()</code></a></td>
 <td>Removes a Tealium instance for a specified <code>TealiumConfig</code> instance</td>
 </tr>
-
 <tr>
 <td><a href="#removeinstanceforkey"><code>removeInstanceForKey()</code></a></td>
 <td>Removes a Tealium instance for a specified key (format: <code>ACCOUNT.PROFILE.ENVIRONMENT</code>)</td>
 </tr>
 </tbody>
 </table>
-
 <h3 id="getinstancebyname"><code>getInstanceByName()</code></h3>
-
 <p>Returns a Tealium instance for a specified key in the following format: <code>ACCOUNT.PROFILE.ENVIRONMENT</code>.</p>
-
 <pre><code class="language-swift">getInstanceByName(instanceKey: String) -&gt; Tealium?
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -7553,32 +7542,25 @@ var utag_data = {
 <th>Example</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td><code>instanceKey</code></td>
-<td><code>String</code></td>
+<td><code>instanceKey</code>| <code>String</code></td>
 <td>The specified key of the <code>Tealium</code> instance to be retrieved</td>
 <td><code>companyXYZ.main.dev</code></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-
 <p>The following example shows how to get a Tealium instance for a specified account/profile/environment key:</p>
-
 <pre><code class="language-swift">let instanceManager = TealiumInstanceManager.shared
 let myTealiumInstance = instanceManager.getInstanceByName(&quot;ACCOUNT.PROFILE.ENVIRONMENT&quot;)
 // call any methods on the Tealium instance you just retrieved
 // myTealiumInstance?.track(&quot;myevent&quot;)
 </code></pre>
-
 <h3 id="removeinstance"><code>removeInstance()</code></h3>
-
 <p>Removes (deallocates) a Tealium instance for a specified <code>TealiumConfig</code> instance. If neither this method nor the <code>removeInstanceForKey()</code> method is called, then a permanent reference is held and the instance is not removed.</p>
-
 <pre><code class="language-swift">removeInstance(config)
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -7588,29 +7570,22 @@ let myTealiumInstance = instanceManager.getInstanceByName(&quot;ACCOUNT.PROFILE.
 <th>Example</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td><code>config</code></td>
-<td><code>TealiumConfig</code></td>
+<td><code>config</code>| <code>TealiumConfig</code></td>
 <td>The Tealium configuration instance to be removed</td>
 <td><code>myTealiumConfig</code></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-
 <p>The following example removes a Tealium instance for a specified account/profile/environment key:</p>
-
 <pre><code class="language-swift">instanceManager.removeInstance(myTealiumConfig)
 </code></pre>
-
 <h3 id="removeinstanceforkey"><code>removeInstanceForKey()</code></h3>
-
 <p>Removes (deallocates) a Tealium instance for a specified key (format: <code>ACCOUNT.PROFILE.ENVIRONMENT</code>). If neither this method nor the <code>removeInstance()</code> method is called, then a permanent reference is held and the instance is not removed.</p>
-
 <pre><code class="language-swift">removeInstanceForKey(instanceKey)
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -7620,28 +7595,22 @@ let myTealiumInstance = instanceManager.getInstanceByName(&quot;ACCOUNT.PROFILE.
 <th>Example</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td><code>instanceKey</code></td>
-<td><code>String</code></td>
+<td><code>instanceKey</code>| <code>String</code></td>
 <td>The specified key of the <code>Tealium</code> instance to be removed</td>
 <td><code>&quot;companyXYZ.main.dev&quot;</code></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-
 <p>The following example removes a Tealium instance for a specified account/profile/environment key:</p>
-
 <pre><code class="language-swift">let instanceManager = TealiumInstanceManager.shared
 instanceManager.removeInstanceForKey(&quot;ACCOUNT.PROFILE.ENVIRONMENT&quot;)
 </code></pre>
-
-<p><strong><code>tealiumInstances</code> variable</strong><br />
+<p><strong><code>tealiumInstances</code> variable</strong><br>
 Stores a dictionary of all registered Tealium instances.</p>
-
 <p>The following example shows how to use the variable to retrieve all registered Tealium instances:</p>
-
 <pre><code class="language-swift">let instanceManager = TealiumInstanceManager.shared
 let allTealiumInstances = instanceManager.tealiumInstances
 // do any required processing with the dictionary of valid Tealium instances
@@ -7685,7 +7654,7 @@ let allTealiumInstances = instanceManager.tealiumInstances
   </span>
 	<span id="feedback_comment">
 		<p><textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="60"></textarea></p>
-    <span><p>This page was last updated:  May 13, 2022 
+    <span><p>This page was last updated:  June 3, 2022 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
     </p>
