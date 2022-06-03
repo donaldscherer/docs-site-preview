@@ -8154,7 +8154,7 @@ import TealiumVisitorService
     }
 </code></pre>
 <h4 id="getcachedprofile"><code>getCachedProfile()</code></h4>
-<p>Returns the most recently retrieved visitor profile from persistent storage, without triggering a new request. Useful in situations where there is no internet connection, but a prior successful request has been made.</p>
+<p>Returns the most recently-retrieved visitor profile from persistent storage, without triggering a new request. Useful in situations where there is no internet connection, but a prior successful request has been made.</p>
 <p>Example:</p>
 <pre><code class="language-swift">self.tealium?.visitorService()?.getCachedProfile(completion: { profile in
                 guard let profile = profile else { return }
