@@ -7515,11 +7515,11 @@ var utag_data = {
 
 <p>The Connectivity module automatically queues dispatches if the device reports no network connectivity, using Apple&rsquo;s Reachability API to monitor the network connectivity.</p>
 
-<p>Each time a tracking call is sent, the module checks the current connection status, and begins queueing requests if the internet is unreachable. Each time a new tracking call is received, it checks the connection status again, and if the connectivity state has changed to reachable again, previously-queued requests are all sent, and the queue is cleared.</p>
+<p>Each time a tracking call is sent, the module checks the current connection status, and begins queueing requests if the internet is unreachable. Each time a new tracking call is received, it checks the connection status again, and if the connectivity state has changed to reachable again, previously queued requests are all sent, and the queue is cleared.</p>
 
-<p>Additionally, as of 1.6.5, the connectivity status is automatically checked every 30 seconds by default (overridable via <code>TealiumConfig</code>) after the status has been detected as &ldquo;not reachable&rdquo;. If the status changes from &ldquo;not reachable&rdquo; to &ldquo;reachable&rdquo;, the queue is flushed automatically (meaning all tracking calls in the queue are dispatched).</p>
+<p>Additionally, as of 1.6.5, the connectivity status is automatically checked every 30 seconds by default (overridable via <code>TealiumConfig</code>) after the status has been detected as &ldquo;not reachable.&rdquo; If the status changes from &ldquo;not reachable&rdquo; to &ldquo;reachable,&rdquo; the queue is flushed automatically (meaning all tracking calls in the queue are dispatched).</p>
 
-<p>The automatic connectivity check is canceled once the connectivity status changes to &ldquo;reachable&rdquo; and resumes when the status is detected as &ldquo;not reachable&rdquo;. This conserves resources by only monitoring for connection changes when strictly necessary.</p>
+<p>The automatic connectivity check is canceled once the connectivity status changes to &ldquo;reachable&rdquo; and resumes when the status is detected as &ldquo;not reachable.&rdquo; This conserves resources by only monitoring for connection changes when strictly necessary.</p>
 
 <h2 id="usage">Usage</h2>
 
@@ -7669,7 +7669,7 @@ TealiumDispatchQueue.framework
   </span>
 	<span id="feedback_comment">
 		<p><textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="60"></textarea></p>
-    <span><p>This page was last updated:  June 3, 2022 
+    <span><p>This page was last updated:  June 7, 2022 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
     </p>

@@ -7519,81 +7519,120 @@ var utag_data = {
 
 <tbody>
 <tr>
-<td><code>getCategories()</code></td>
+<td><a href="#utaggdprdnsgetdnsstate"><code>dns.getDnsState()</code></a></td>
+<td>Returns the value of the <code>dns</code> consent cookie</td>
+</tr>
+
+<tr>
+<td><a href="#utaggdprdnssetdnsstate"><code>dns.setDnsState()</code></a></td>
+<td>Sets the value of the dns consent cookie</td>
+</tr>
+
+<tr>
+<td><a href="#utaggdprgetcategories"><code>getCategories()</code></a></td>
 <td>Returns an <code>Array</code> with the list of compliance categories available for grouping tags</td>
 </tr>
 
 <tr>
-<td><code>getCategoryLanguage()</code></td>
+<td><a href="#utaggdprgetcategorylanguage"><code>getCategoryLanguage()</code></a></td>
 <td>Returns an <code>Object</code> with the category name and description in the active language</td>
 </tr>
 
 <tr>
-<td><code>getConsentState()</code></td>
+<td><a href="#utaggdprgetconsentstate"><code>getConsentState()</code></a></td>
 <td>Returns the consent given by the user either as full, declined, no consent, or partial consent</td>
 </tr>
 
 <tr>
-<td><code>getCookieValues()</code></td>
+<td><a href="#utaggdprgetcookievalues"><code>getCookieValues()</code></a></td>
 <td>Returns an <code>Object</code> representing the consent cookie</td>
 </tr>
 
 <tr>
-<td><code>getLanguage()</code></td>
+<td><a href="#utaggdprgetlanguage"><code>getLanguage()</code></a></td>
 <td>Returns a <code>String</code> with the language used for displaying the consent manager content</td>
 </tr>
 
 <tr>
-<td><code>getSelectedCategories()</code></td>
+<td><a href="#utaggdprgetselectedcategories"><code>getSelectedCategories()</code></a></td>
 <td>Returns an <code>Array</code> with the selected categories by the customer</td>
 </tr>
 
 <tr>
-<td><code>setAllCategories()</code></td>
+<td><a href="#utaggdprsetallcategories"><code>setAllCategories()</code></a></td>
 <td>Sets all categories to the same consent state of either consented or declined, and (optionally) calls the Collect API to track the consent</td>
 </tr>
 
 <tr>
-<td><code>setConsentValue()</code></td>
+<td><a href="#utaggdprsetconsentvalue"><code>setConsentValue()</code></a></td>
 <td>Sets the consent cookie value to enabled or disabled</td>
 </tr>
 
 <tr>
-<td><code>setCookie()</code></td>
+<td><a href="#utaggdprsetcookie"><code>setCookie()</code></a></td>
 <td>Internal function that writes directly to the cookie object</td>
 </tr>
 
 <tr>
-<td><code>setCookieValue()</code></td>
+<td><a href="#utaggdprsetcookievalue"><code>setCookieValue()</code></a></td>
 <td>Sets an individual value in the consent cookie</td>
 </tr>
 
 <tr>
-<td><code>setPreferencesFromList()</code></td>
+<td><a href="#utaggdprsetpreferencesfromlist"><code>setPreferencesFromList()</code></a></td>
 <td>Sets the consent state to <code>allowed</code> for a list of categories</td>
 </tr>
 
 <tr>
-<td><code>setPreferencesValues()</code></td>
+<td><a href="#utaggdprsetpreferencesvalues"><code>setPreferencesValues()</code></a></td>
 <td>Sets the cookie values from an object of categories and their consent state</td>
 </tr>
 
 <tr>
-<td><code>showConsentPreferences()</code></td>
+<td><a href="#utaggdprshowconsentpreferences"><code>showConsentPreferences()</code></a></td>
 <td>Displays the preferences manager pop-up</td>
 </tr>
 
 <tr>
-<td><code>showExplicitConsent()</code></td>
+<td><a href="#utaggdprshowdonotsellbanner"><code>showDoNotSellBanner()</code></a></td>
+<td>Displays the CCPA banner</td>
+</tr>
+
+<tr>
+<td><a href="#utaggdprshowdonotsellprompt"><code>showDoNotSellPrompt()</code></a></td>
+<td>Displays the CCPA banner</td>
+</tr>
+
+<tr>
+<td><a href="#utaggdprshowexplicitconsent"><code>showExplicitConsent()</code></a></td>
 <td>Displays the explicit consent pop-up</td>
 </tr>
 
 <tr>
-<td><code>updateConsentCookie()</code></td>
+<td><a href="#utaggdprupdateconsentcookie"><code>updateConsentCookie()</code></a></td>
 <td>Updates mobile consent from an app using hidden webview</td>
 </tr>
 </tbody>
 </table>
+
+<h2 id="utag-gdpr-dns-getdnsstate"><code>utag.gdpr.dns.getDnsState()</code></h2>
+
+<p>Returns the value of the <code>dns</code> consent cookie.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-js">utag.gdpr.dns.getDnsState()
+true
+</code></pre>
+
+<h2 id="utag-gdpr-dns-setdnsstate"><code>utag.gdpr.dns.setDnsState()</code></h2>
+
+<p>Sets the value of the dns consent cookie. Recognized values: true, false, 1, 0, &ldquo;true,&rdquo; &ldquo;false.&rdquo;</p>
+
+<p>Example:</p>
+
+<pre><code class="language-js">utag.gdpr.dns.setDnsState(true);
+</code></pre>
 
 <h2 id="utag-gdpr-getcategories"><code>utag.gdpr.getCategories()</code></h2>
 
@@ -7634,7 +7673,7 @@ var utag_data = {
 
 <h2 id="utag-gdpr-getcategorylanguage"><code>utag.gdpr.getCategoryLanguage()</code></h2>
 
-<p>Returns an <code>Object</code> with the category name and description in the active language from the Consent Preferences Manager interface &ldquo;Category Parameters&rdquo;. The language of the category is the language returned by the <code>getLanguage()</code> function.</p>
+<p>Returns an <code>Object</code> with the category name and description in the active language from the Consent Preferences Manager interface &ldquo;Category Parameters.&rdquo; The language of the category is the language returned by the <code>getLanguage()</code> function.</p>
 
 <pre><code class="language-js">utag.gdpr.getCategoryLanguage(category)
 </code></pre>
@@ -8052,6 +8091,76 @@ utag.gdpr.setPreferencesValues(cats)
 <pre><code class="language-js">utag.gdpr.showConsentPreferences(&quot;fr-fr&quot;)
 </code></pre>
 
+<h2 id="utag-gdpr-showdonotsellbanner"><code>utag.gdpr.showDoNotSellBanner()</code></h2>
+
+<p>Displays the CCPA banner. By default, this function is called when the display rule evaluates to true.</p>
+
+<pre><code class="language-js">utag.gdpr.showDoNotSellBanner(_lang)
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>_lang</code></td>
+<td><code>String</code></td>
+<td>Optional. Language as an ISO format, such as <code>en</code> or <code>en-gb</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>The following example displays the CCPA banner in the default language or language set up in data layer:</p>
+
+<pre><code class="language-js">utag.gdpr.showDoNotSellBanner()
+</code></pre>
+
+<p>The following example displays the CCPA banner in French:</p>
+
+<pre><code class="language-js">utag.gdpr.showDoNotSellBanner(&quot;fr-fr&quot;)
+</code></pre>
+
+<h2 id="utag-gdpr-showdonotsellprompt"><code>utag.gdpr.showDoNotSellPrompt()</code></h2>
+
+<p>Displays the CCPA popup. If you are not using the banner, integrate this function into your site banner to provide visitors a way to change their consent setting.</p>
+
+<pre><code class="language-js">utag.gdpr.showDoNotSellPrompt(_lang)
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>_lang</code></td>
+<td><code>String</code></td>
+<td>Optional. Language as an ISO format, such as <code>en</code> or <code>en-gb</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>The following example displays the CCPA popup in the default language or language set up in data layer:</p>
+
+<pre><code class="language-js">&lt;a href=&quot;javascript: utag.gdpr.showDoNotSellPrompt()&quot;&gt;Change Consent&lt;/a&gt;
+</code></pre>
+
+<p>The following example displays the CCPA popup in French:</p>
+
+<pre><code class="language-js">&lt;a href=&quot;javascript: utag.gdpr.showDoNotSellPrompt('fr-fr')&quot;&gt;Change Consent&lt;/a&gt;
+</code></pre>
+
 <h2 id="utag-gdpr-showexplicitconsent"><code>utag.gdpr.showExplicitConsent()</code></h2>
 
 <p>Displays the explicit consent pop-up. This function injects the CSS, the HTML and the Javascript defined in the customizations in the page. It is natively called by Tealium Universal Tag <code>utag.js</code> on DOM READY event when the explicit consent is set up.</p>
@@ -8082,9 +8191,17 @@ utag.gdpr.setPreferencesValues(cats)
 <pre><code class="language-js">utag.gdpr.showExplicitConsent()
 </code></pre>
 
-<p>The following example displays explicit consent in French:<br />
-```js
-utag.gdpr.showExplicitConsent(&ldquo;fr-fr&rdquo;)</p>
+<p>The following example displays explicit consent in French:</p>
+
+<pre><code class="language-js">utag.gdpr.showExplicitConsent(&quot;fr-fr&quot;)
+</code></pre>
+
+<h2 id="utag-gdpr-updateconsentcookie"><code>utag.gdpr.updateConsentCookie()</code></h2>
+
+<p>Updates mobile consent from an app using hidden webview.</p>
+
+<pre><code class="language-js">utag.gdpr.updateConsentCookie()
+</code></pre>
 
 </div>
 
@@ -8142,7 +8259,7 @@ utag.gdpr.showExplicitConsent(&ldquo;fr-fr&rdquo;)</p>
   </span>
 	<span id="feedback_comment">
 		<p><textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="60"></textarea></p>
-    <span><p>This page was last updated:  June 3, 2022 
+    <span><p>This page was last updated:  June 7, 2022 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
     </p>
@@ -8167,7 +8284,9 @@ utag.gdpr.showExplicitConsent(&ldquo;fr-fr&rdquo;)</p>
 
   <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-links nested-copy-line-height">
       <p class="b">Table of Contents</p>
-      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#utag-gdpr-getcategories">utag.gdpr.getCategories()</a></li>
+      <nav id="TableOfContents"><ul class="toc-h2"><li><a href="#utag-gdpr-dns-getdnsstate">utag.gdpr.dns.getDnsState()</a></li>
+              <li><a href="#utag-gdpr-dns-setdnsstate">utag.gdpr.dns.setDnsState()</a></li>
+              <li><a href="#utag-gdpr-getcategories">utag.gdpr.getCategories()</a></li>
               <li><a href="#utag-gdpr-getcategorylanguage">utag.gdpr.getCategoryLanguage()</a></li>
               <li><a href="#utag-gdpr-getconsentstate">utag.gdpr.getConsentState()</a></li>
               <li><a href="#utag-gdpr-getcookievalues">utag.gdpr.getCookieValues()</a></li>
@@ -8180,7 +8299,10 @@ utag.gdpr.showExplicitConsent(&ldquo;fr-fr&rdquo;)</p>
               <li><a href="#utag-gdpr-setpreferencesfromlist">utag.gdpr.setPreferencesFromList()</a></li>
               <li><a href="#utag-gdpr-setpreferencesvalues">utag.gdpr.setPreferencesValues()</a></li>
               <li><a href="#utag-gdpr-showconsentpreferences">utag.gdpr.showConsentPreferences()</a></li>
+              <li><a href="#utag-gdpr-showdonotsellbanner">utag.gdpr.showDoNotSellBanner()</a></li>
+              <li><a href="#utag-gdpr-showdonotsellprompt">utag.gdpr.showDoNotSellPrompt()</a></li>
               <li><a href="#utag-gdpr-showexplicitconsent">utag.gdpr.showExplicitConsent()</a></li>
+              <li><a href="#utag-gdpr-updateconsentcookie">utag.gdpr.updateConsentCookie()</a></li>
               </nav>
   </aside></div>
 
