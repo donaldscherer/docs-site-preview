@@ -7589,7 +7589,7 @@ var utag_data = {
 </tr>
 <tr>
 <td><a href="#consentpolicy"><code>consentPolicy</code></a></td>
-<td>Sets the consent policy (defaults to GDPR)</td>
+<td>Sets the <a href="/platforms/ios-swift/consent-management/#set-policy">consent policy</a> (defaults to GDPR)</td>
 </tr>
 <tr>
 <td><a href="#deeplinktrackingenabled"><code>deepLinkTrackingEnabled</code></a></td>
@@ -7622,6 +7622,10 @@ var utag_data = {
 <tr>
 <td><a href="#dispatchvalidators"><code>dispatchValidators</code></a></td>
 <td>Provides the option to add custom <code>DispatchValidator</code>s to control whether to dispatch, queue, or drop events events</td>
+</tr>
+<tr>
+<td><a href="#enablebackgroundlocation"><code>enableBackgroundLocation</code></a></td>
+<td>Enables location updates to take place while the app is running in the background</td>
 </tr>
 <tr>
 <td><a href="#existingvisitorid"><code>existingVisitorId</code></a></td>
@@ -7928,7 +7932,7 @@ config.adobeVisitorAuthState = .unknown
 <pre><code class="language-swift">config.consentLoggingEnabled = true
 </code></pre>
 <h3 id="consentpolicy"><code>consentPolicy</code></h3>
-<p>Sets the consent policy. Consent Manager is only enabled if this property is set.</p>
+<p>Sets the <a href="/platforms/ios-swift/consent-management/#set-policy">consent policy</a>. Consent Manager is only enabled if this property is set.</p>
 <pre><code class="language-swift">config.consentPolicy = .ccpa
 </code></pre>
 <h3 id="deeplinktrackingenabled"><code>deepLinkTrackingEnabled</code></h3>
@@ -8002,6 +8006,10 @@ config.adobeVisitorAuthState = .unknown
 <h3 id="dispatchqueuelimit"><code>dispatchQueueLimit</code></h3>
 <p>Sets the maximum number of events to store in the event queue. If this number is reached, and the queue has not been flushed, the oldest events are deleted.</p>
 <pre><code class="language-swift">config.dispatchQueueLimit = 50
+</code></pre>
+<h3 id="enablebackgroundlocation"><code>enableBackgroundLocation</code></h3>
+<p>Enables location updates to take place while the app is running in the background.</p>
+<pre><code class="language-swift">config.enableBackgroundLocation = true
 </code></pre>
 <h3 id="existingvisitorid"><code>existingVisitorId</code></h3>
 <p>Sets the existing visitor ID, used as the first party ID in the app extension |</p>
@@ -8502,7 +8510,7 @@ config.webviewConfig = configuration
   </span>
 	<span id="feedback_comment">
 		<p><textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="60"></textarea></p>
-    <span><p>This page was last updated:  June 3, 2022 
+    <span><p>This page was last updated:  June 7, 2022 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
     </p>
@@ -8556,6 +8564,7 @@ config.webviewConfig = configuration
               <li><a href="#dispatchafter">dispatchAfter</a></li>
               <li><a href="#dispatchexpiration">dispatchExpiration</a></li>
               <li><a href="#dispatchqueuelimit">dispatchQueueLimit</a></li>
+              <li><a href="#enablebackgroundlocation">enableBackgroundLocation</a></li>
               <li><a href="#existingvisitorid">existingVisitorId</a></li>
               <li><a href="#geofencefilename">geofenceFileName</a></li>
               <li><a href="#geofencetrackingenabled">geofenceTrackingEnabled</a></li>
