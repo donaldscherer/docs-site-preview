@@ -7529,7 +7529,7 @@ var utag_data = {
 <li>Either the JSON configuration file or Remote Command tag that translates event tracking into native Firebase calls</li>
 </ol>
 <p>Adding the Firebase remote command module to your app automatically installs and builds the required Firebase libraries, without having to add vendor-specific code to your app. If you are using a dependency manager installation, there is no need to install the Firebase SDK separately.</p>
-<p>There are two remote command options: A JSON configuration file, or using iQ Tag Management to configure the mappings. A JSON configuration file is the recommended option for your vendor integration, hosted either remotely or locally within your app. If using iQ Tag Management, add the Remote Command tag for the vendor integration.  Learn more about <a href="/platforms/remote-commands/how-it-works/#vendor-integrations">vendor integrations</a>.</p>
+<p>There are two remote command options: A JSON configuration file, or using iQ Tag Management to configure the mappings. A JSON configuration file is the recommended option for your vendor integration, hosted either remotely or locally within your app. If using iQ Tag Management, add the Remote Command tag for the vendor integration. Learn more about <a href="/platforms/remote-commands/how-it-works/#vendor-integrations">vendor integrations</a>.</p>
 <h2 id="install">Install</h2>
 <h3 id="dependency-manager">Dependency Manager</h3>
 <p>If you are not using the JSON configuration file, we recommend using one of the following dependency managers for installation:</p>
@@ -7694,36 +7694,6 @@ remoteCommands.add(firebase)
 <h2 id="track">Track</h2>
 <p>Events triggered by basic interactions with your app are tracked automatically. <a href="https://support.google.com/firebase/answer/6317485?hl=en">Learn more</a> about Firebase automatically collected events.</p>
 <p>Learn about <a href="https://community.tealiumiq.com/t5/Tags/Firebase-Mobile-Remote-Command-Tag-Setup-Guide/ta-p/30310">Firebase Mobile Remote Command Tag setup</a>.</p>
-<h2 id="google-analytics-and-tealium-consent">Google Analytics and Tealium Consent</h2>
-<p>Google Analytics for Firebase is an app measurement solution that provides insight into app usage and user engagement. It integrates across Firebase features and provides unlimited reporting for up to 500 distinct events defined using the Firebase SDK.</p>
-<p>Since there are no public APIs available, use the Firebase native SDK for Android or iOS to pass data into Firebase. Tealium's Firebase remote commands are able to call to the Firebase SDK.  Using your existing data layer and tracking calls, the behavior of the Firebase SDK is modifiable even after the app is released to the Android Play Store, or Apple App Store.</p>
-<p>Learn more in the <a href="https://community.tealiumiq.com/t5/Installation-Libraries/Google-Analytics-for-Firebase-Mobile-Integration-Guide/ta-p/21200">Google Analytics for Firebase Mobile Integration Guide</a>.</p>
-<h3 id="passing-consent">Passing Consent</h3>
-<p>There are three options to pass content from native screen to the web view. The web view pages are generic pages, not dedicated, and only available in the app. Consent management is enabled in Tealium IQ.</p>
-<p><strong>Option 1: Cookie</strong><br>
-With Tealium iQ Tag Manger and consent management enabled, Tealium uses a mobile web view where a cookie is set. The client uses this cookie to read the consent before the website loads any content on the page.</p>
-<p><strong>Option 2: API to web view page</strong><br>
-Set up a listener event and, when a user changes their consent, intercept and send it in an API call to the web view where you then set a cookie. </p>
-<p><strong>Option 3: Query string</strong><br>
-As the web view pages already have the Tealium consent manager, pass the consent in a query string when you move from native to the web view. Then read it with a preloader extension in Tealium iQ, which recreates the cookie.</p>
-<h3 id="faq">FAQ</h3>
-<p><strong>What happens if Google updates the Firebase SDK?</strong></p>
-<p>Assuming no major API changes, it is safe to update your Firebase SDK. Tealium proactively looks for Firebase updates to any API functionality, and makes the necessary updates to the Firebase remote commands.</p>
-<p><strong>The Firebase SDK automatically sends tracking events by default. How do we stop these before the client gives consent?</strong></p>
-<p>In the Firebase SDK, set the setting <code>firebase_analytics_collection_enabled</code> to <code>false</code> (default: <code>true</code>).  Once the user has consented, it can be changed back to <code>true</code> using Firebase remote commands. </p>
-<p>The following steps outlines the user journey:</p>
-<ol>
-<li>User opens app</li>
-<li>Firebase is set to not collect (<code>setAnalyticsCollectionEnabled(false)</code>)</li>
-<li>The user interacts with consent, and Tealium is sent the consent event</li>
-<li>Tealium sends message to the Firebase SDK to set to collect (<code>firebase_analytics_enabled = true</code>)</li>
-<li>The user click is tracked in Google Analytics</li>
-</ol>
-<p><strong>How can we tell what consent has been given whilst in App?</strong></p>
-<p>It is possible to send an API request to the Tealium SDK to see if a user has consented to a specific category. The client can request this at any point while the app is running.</p>
-<!-- raw HTML omitted -->
-<p><strong>Is it possible to turn off individual tags using an API to the Tealium SDK?</strong></p>
-<p>No, it's not possible. Consent opts in and out at the category level. </p>
 
 </div>
 
@@ -7781,7 +7751,7 @@ As the web view pages already have the Tealium consent manager, pass the consent
   </span>
 	<span id="feedback_comment">
 		<p><textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="60"></textarea></p>
-    <span><p>This page was last updated:  June 7, 2022 
+    <span><p>This page was last updated:  June 9, 2022 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
     </p>
@@ -7817,9 +7787,6 @@ As the web view pages already have the Tealium consent manager, pass the consent
               <li><a href="#ios-swift">iOS (Swift)</a></li>
               </ul><li><a href="#json-template">JSON Template</a></li>
               <li><a href="#track">Track</a></li>
-              <li><a href="#google-analytics-and-tealium-consent">Google Analytics and Tealium Consent</a></li>
-              <ul class="toc-h3"><li><a href="#passing-consent">Passing Consent</a></li>
-              <li><a href="#faq">FAQ</a></li>
               </nav>
   </aside></div>
 

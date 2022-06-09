@@ -7535,7 +7535,7 @@ var utag_data = {
 <li>Either the JSON configuration file or Remote Command tag that translates event tracking into native Facebook calls</li>
 </ol>
 <p>Adding the Facebook remote command module to your app automatically installs and builds the required Facebook libraries, without having to add vendor-specific code to your app. If you are using a dependency manager installation, there is no need to install the Facebook SDK separately.</p>
-<p>There are two remote command options: A JSON configuration file, or using iQ Tag Management to configure the mappings. A JSON configuration file is the recommended option for your vendor integration, hosted either remotely or locally within your app. If using iQ Tag Management, add the Remote Command tag for the vendor integration.  Learn more about <a href="/platforms/remote-commands/how-it-works/#vendor-integrations">vendor integrations</a>.</p>
+<p>There are two remote command options: A JSON configuration file, or using iQ Tag Management to configure the mappings. A JSON configuration file is the recommended option for your vendor integration, hosted either remotely or locally within your app. If using iQ Tag Management, add the Remote Command tag for the vendor integration. Learn more about <a href="/platforms/remote-commands/how-it-works/#vendor-integrations">vendor integrations</a>.</p>
 <h2 id="install">Install</h2>
 <h3 id="dependency-manager">Dependency Manager</h3>
 <p>We recommend using one of the following dependency managers for installation:</p>
@@ -8159,8 +8159,8 @@ teal = Tealium(config: config) { responses in
 <h3 id="log-purchase">Log Purchase</h3>
 <p>Log a purchase of the specified amount, in the specified currency, also optionally providing a set of additional characteristics describing the purchase.</p>
 <p>Arbitrary parameter dictionary of characteristics. The keys to this dictionary must
-be <code>NSString</code>'s, and the values are expected to be <code>NSString</code> or <code>NSNumber</code>.  Limitations on the number of
-parameters and name construction are given in the <a href="https://developers.facebook.com/docs/app-events/getting-started-app-events-ios#event-names">FBSDKAppEvents</a> documentation.  Commonly used parameter names
+be <code>NSString</code>'s, and the values are expected to be <code>NSString</code> or <code>NSNumber</code>. Limitations on the number of
+parameters and name construction are given in the <a href="https://developers.facebook.com/docs/app-events/getting-started-app-events-ios#event-names">FBSDKAppEvents</a> documentation. Commonly used parameter names
 are provided in <a href="https://developers.facebook.com/docs/app-events/getting-started-app-events-ios#event-params">FBSDKAppEventParameterName</a> constants.</p>
 <table>
 <thead>
@@ -8197,7 +8197,7 @@ are provided in <a href="https://developers.facebook.com/docs/app-events/getting
 <li><a href="https://github.com/facebook/facebook-android-sdk/blob/8cc5dbb133d49f736845f999a30bfb30cf39e282/facebook-core/src/main/java/com/facebook/appevents/AppEventsLogger.java#L440">Facebook Android SDK Integration - logPurchase</a></li>
 </ul>
 <h3 id="flush">Flush</h3>
-<p>Explicitly kick off flushing of events to Facebook.  This is an asynchronous method, but it does initiate an immediate kick off.  Server failures are reported through the NotificationCenter with notification ID <code>FBSDKAppEventsLoggingResultNotification</code>.</p>
+<p>Explicitly kick off flushing of events to Facebook. This is an asynchronous method, but it does initiate an immediate kick off. Server failures are reported through the NotificationCenter with notification ID <code>FBSDKAppEventsLoggingResultNotification</code>.</p>
 <table>
 <thead>
 <tr>
@@ -8251,7 +8251,7 @@ are provided in <a href="https://developers.facebook.com/docs/app-events/getting
 <!-- raw HTML omitted -->
 <p>Arbitrary parameter dictionary of characteristics. The keys to this dictionary must
 be <code>NSString</code>'s, and the values are expected to be <code>NSString</code> or <code>NSNumber</code>.  Limitations on the number of
-parameters and name construction are given in the <a href="https://github.com/facebook/facebook-ios-sdk/blob/9909ff8215c2ca41b2b1985563a4edd057111017/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L118s">FBSDKAppEvents</a> documentation.  Commonly used parameter names
+parameters and name construction are given in the <a href="https://github.com/facebook/facebook-ios-sdk/blob/9909ff8215c2ca41b2b1985563a4edd057111017/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L118s">FBSDKAppEvents</a> documentation. Commonly used parameter names
 are provided in <a href="https://github.com/facebook/facebook-ios-sdk/blob/9909ff8215c2ca41b2b1985563a4edd057111017/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h#L195">FBSDKAppEventParameterName</a> constants.</p>
 <table>
 <thead>
@@ -8392,7 +8392,7 @@ are provided in <a href="https://github.com/facebook/facebook-ios-sdk/blob/9909f
   </span>
 	<span id="feedback_comment">
 		<p><textarea id="feedback_textarea" type="text" placeholder="Tell us how we can make this article better." rows="4" cols="60"></textarea></p>
-    <span><p>This page was last updated:  June 7, 2022 
+    <span><p>This page was last updated:  June 9, 2022 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button disabled id="feedback_submit" class="f6 ph3 pv1 br2 dib tc mv3 bg-primary-color white hover-bg-blue link">Send Feedback</button></span>
     </p>
